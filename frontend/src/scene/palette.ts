@@ -1,0 +1,21 @@
+/** Монохромная палитра сцены: все цвета — оттенки одного светло-синего тона. */
+export const palette = {
+  background: "#e6effa",
+  ground: "#dde8f7",
+  floor: "#d3e3f7",
+  zone: "#c9dbf4",
+  marking: "#afc8ec",
+  wall: "#c3d8f3",
+  door: "#a9c4ea",
+  rack: "#98b8e5",
+  shelf: "#b2cbee",
+  boxes: ["#f3f7fe", "#e4eefb", "#d5e4f8"],
+  pallet: "#b4ccee",
+  conveyor: "#a7c2e9",
+  belt: "#8fb1e1",
+  robot: "#94b7e7",
+  robotJoint: "#77a0dc",
+  robotTool: "#5f8fd3",
+  person: "#6b97d6",
+  personHead: "#8cb0e3",
+} as const;

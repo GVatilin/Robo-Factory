@@ -1,0 +1,28 @@
+.env
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+node_modules/
+dist/
+.idea/
+.vscode/
+*.log
+
+# Датасеты не хранятся в git: файлы организатора кладутся в datasets/ вручную.
+# В репозитории остаются только скрипт загрузки и инструкция.
+datasets/*
+!datasets/load_datasets.py
+!datasets/README.md
+
+# Файлы данных в любом другом месте репозитория.
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.parquet
+*.sqlite
+*.db

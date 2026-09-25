@@ -1,0 +1,61 @@
+name: robo-factory
+
+services:
+  db:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-robo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-robo}
+      POSTGRES_DB: ${POSTGRES_DB:-robofactory}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      # Порт для отладки с хоста; 5433, чтобы не конфликтовать с локальным PostgreSQL.
+      - "127.0.0.1:${DB_PORT:-5433}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-robo}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-robo}
+      POSTGRES_DB: ${POSTGRES_DB:-robofactory}
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      SECRET_KEY: ${SECRET_KEY:-change-me-in-production}
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080,http://localhost:5173}
+      SEED_ON_STARTUP: ${SEED_ON_STARTUP:-true}
+      DEMO_ADMIN_EMAIL: ${DEMO_ADMIN_EMAIL:-admin@example.com}
+      DEMO_ADMIN_PASSWORD: ${DEMO_ADMIN_PASSWORD:-admin12345}
+      DEMO_USER_EMAIL: ${DEMO_USER_EMAIL:-user@example.com}
+      DEMO_USER_PASSWORD: ${DEMO_USER_PASSWORD:-user12345}
+      UPLOAD_DIR: /data/uploads
+    volumes:
+      - uploads:/data/uploads
+      # Датасеты организатора и скрипт их загрузки: python /datasets/load_datasets.py
+      - ./datasets:/datasets:ro
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+
+volumes:
+  pgdata:
+  uploads:
