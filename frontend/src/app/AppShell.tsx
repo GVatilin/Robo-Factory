@@ -142,7 +142,6 @@ export default function AppShell() {
 
   return (
     <div className="shell">
-      <div className="shell__backdrop" aria-hidden="true" />
       <header className="shell__topbar">
         <Link className="brand" to="/">
           <LogoMark />

@@ -4,20 +4,6 @@
   overflow-x: clip;
 }
 
-/* Мягкий фон с чертёжной сеткой — продолжение лендинга. */
-.shell__backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(60% 50% at 85% 0%, rgb(186 212 247 / 70%) 0%, transparent 70%),
-    radial-gradient(50% 40% at 0% 100%, rgb(205 223 248 / 80%) 0%, transparent 70%),
-    linear-gradient(rgb(36 99 216 / 4%) 1px, transparent 1px) 0 0 / 32px 32px,
-    linear-gradient(90deg, rgb(36 99 216 / 4%) 1px, transparent 1px) 0 0 / 32px 32px,
-    var(--bg);
-}
-
 .shell__topbar {
   position: sticky;
   top: 0;

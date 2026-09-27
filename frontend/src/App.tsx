@@ -1,6 +1,7 @@
 import { createBrowserRouter, Link, Outlet, RouterProvider, ScrollRestoration } from "react-router";
 
 import AppShell, { RequirePermission } from "./app/AppShell";
+import AnimatedBackdrop from "./app/AnimatedBackdrop";
 import { AuthProvider } from "./auth/AuthContext";
 import { CompareProvider } from "./compare/CompareContext";
 import Landing from "./landing/Landing";
@@ -23,6 +24,7 @@ function Root() {
     <AuthProvider>
       <CompareProvider>
         <ScrollRestoration />
+        <AnimatedBackdrop />
         <Outlet />
       </CompareProvider>
     </AuthProvider>
