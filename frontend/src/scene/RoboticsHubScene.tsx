@@ -1,23 +1,36 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { useLayoutEffect, useMemo, useRef } from "react";
-import type { Group } from "three";
+import { useCallback, useLayoutEffect, useMemo, useRef } from "react";
+import { CurvePath, LineCurve3, QuadraticBezierCurve3, Vector3, type Group } from "three";
 import { People } from "./People";
-import type { StandingLayout, WalkerLayout } from "./layout";
-import { geometries, material, seededRandom } from "./shared";
-import { Walker } from "./walker";
+import type { StandingLayout, WalkerLayout, CellLayout } from "./layout";
+import { geometries, material } from "./shared";
+import { RoboticsHubSet } from "./RoboticsHubSet";
+import { Manipulator } from "./Manipulator";
 import { RobotModel } from "./robots/RobotModel";
 import type { RobotKind } from "./robots/kinds";
 
 const PEOPLE: WalkerLayout[] = [
-  {path:[[-16,8],[16,8],[16,10],[-16,10]],speed:1.05,start:.05},
-  {path:[[-16,8],[16,8],[16,10],[-16,10]],speed:.9,start:.4,carry:true,pauses:[0,2]},
-  {path:[[-16,8],[16,8],[16,10],[-16,10]],speed:1.12,start:.7},
-  {path:[[-12,2],[12,2],[12,3],[-12,3]],speed:.85,start:.2,carry:true,pauses:[0,1]},
-  {path:[[-12,2],[12,2],[12,3],[-12,3]],speed:.95,start:.7,pauses:[0,2]},
-  {path:[[-12,-7],[12,-7],[12,-6.5],[-12,-6.5]],speed:.9,start:.3},
+  {path:[[-18,10.1],[18,10.1],[18,11.5],[-18,11.5]],speed:1.05,start:.05},
+  {path:[[-18,10.1],[18,10.1],[18,11.5],[-18,11.5]],speed:.93,start:.4,carry:true,pauses:[0,2]},
+  {path:[[-18,10.1],[18,10.1],[18,11.5],[-18,11.5]],speed:1.08,start:.72},
+  {path:[[-12,5],[14,5],[14,5.6],[-12,5.6]],speed:.85,start:.15,carry:true,pauses:[0,1]},
+  {path:[[-12,5],[14,5],[14,5.6],[-12,5.6]],speed:.95,start:.66,pauses:[0,2]},
+  {path:[[-14,-6.4],[14,-6.4],[14,-6],[-14,-6]],speed:.9,start:.3},
 ];
-const OPERATORS: StandingLayout[] = [{position:[-9,1.4],heading:Math.PI},{position:[9,1.4],heading:Math.PI}];
-const TRACK: WalkerLayout['path'] = [[-15,-4.5],[15,-4.5],[15,5.5],[-15,5.5]];
+const OPERATORS: StandingLayout[] = [{position:[-6,4.45],heading:Math.PI},{position:[6,4.45],heading:Math.PI},{position:[15.8,4.4],heading:Math.PI}];
+const CELLS:CellLayout[]=[-9,3].map(x=>({base:[x,1],pick:[x-2.1,1],beltStart:[x-2.1,-2.6],pallet:[x+2.1,1]}));
+// Скруглённые повороты: мобильные роботы не меняют направление рывком.
+const TRACK=new CurvePath<Vector3>();
+const point=(x:number,z:number)=>new Vector3(x,0,z);
+TRACK.add(new LineCurve3(point(-15,-4.8),point(15,-4.8)));
+TRACK.add(new QuadraticBezierCurve3(point(15,-4.8),point(17,-4.8),point(17,-2.8)));
+TRACK.add(new LineCurve3(point(17,-2.8),point(17,5.2)));
+TRACK.add(new QuadraticBezierCurve3(point(17,5.2),point(17,7.2),point(15,7.2)));
+TRACK.add(new LineCurve3(point(15,7.2),point(-15,7.2)));
+TRACK.add(new QuadraticBezierCurve3(point(-15,7.2),point(-17,7.2),point(-17,5.2)));
+TRACK.add(new LineCurve3(point(-17,5.2),point(-17,-2.8)));
+TRACK.add(new QuadraticBezierCurve3(point(-17,-2.8),point(-17,-4.8),point(-15,-4.8)));
+const TRACK_LENGTH=TRACK.getLength();
 const CAMERA = {position:[28,36,32] as [number,number,number],zoom:30,near:.1,far:160};
 const GL = {antialias:true,alpha:true,powerPreference:'low-power' as const};
 
@@ -25,18 +38,35 @@ function Block({position,size,color='#c3d7ee'}:{position:[number,number,number];
   return <mesh position={position} scale={size} geometry={geometries.box} material={material(color)} castShadow receiveShadow/>;
 }
 
-function CameraRig() {
+function CameraRig({animate}:{animate:boolean}) {
   const {camera,size,invalidate}=useThree();
-  useLayoutEffect(()=>{camera.zoom=Math.max(size.width/48,size.height/34);camera.lookAt(0,0,0);camera.updateProjectionMatrix();invalidate();},[camera,size,invalidate]);
+  const time=useRef(0);
+  const target=useMemo(()=>new Vector3(),[]);
+  const place=useCallback(()=>{
+    const azimuth=.4+Math.sin(time.current*.035)*.027;
+    target.set(size.width>900?1:3,0,-1.5);
+    camera.position.set(target.x+42*Math.sin(azimuth),57,target.z+42*Math.cos(azimuth));
+    camera.lookAt(target);
+  },[camera,size.width,target]);
+  useLayoutEffect(()=>{camera.zoom=Math.max(size.width/47,size.height/34);place();camera.updateProjectionMatrix();invalidate();},[camera,size,place,invalidate]);
+  useFrame((_,dt)=>{if(animate){time.current+=Math.min(dt,.05);place();}});
   return null;
 }
 
 function MobileRobot({index,kind,animate}:{index:number;kind:RobotKind;animate:boolean}) {
   const root=useRef<Group>(null);
-  const route=useMemo(()=>new Walker({path:TRACK,speed:1.05,start:index*.25,pauses:[0,2]},seededRandom(90+index)),[index]);
-  const place=()=>{if(root.current){root.current.position.set(route.x,0,route.z);root.current.rotation.y=route.heading-Math.PI/2;}};
-  useLayoutEffect(place);
-  useFrame((_,dt)=>{if(animate){route.update(Math.min(dt,.05));place();}});
+  const travel=useRef(index*.25);
+  const direction=useMemo(()=>new Vector3(),[]);
+  const position=useMemo(()=>new Vector3(),[]);
+  const place=useCallback(()=>{
+    if(!root.current)return;
+    TRACK.getPointAt(travel.current%1,position);
+    TRACK.getTangentAt(travel.current%1,direction);
+    root.current.position.copy(position);
+    root.current.rotation.y=Math.atan2(direction.x,direction.z)-Math.PI/2;
+  },[position,direction]);
+  useLayoutEffect(place,[place]);
+  useFrame((_,dt)=>{if(animate){travel.current+=Math.min(dt,.05)*1.05/TRACK_LENGTH;place();}});
   return <group ref={root} dispose={null}>
     <RobotModel kind={kind} size={kind==='forklift'?{l:1.9,w:.9,h:2.1}:kind==='delivery'?{l:.7,w:.65,h:1.3}:{l:1.35,w:.95,h:.4}}/>
     {kind==='platform'&&<>
@@ -49,26 +79,15 @@ function MobileRobot({index,kind,animate}:{index:number;kind:RobotKind;animate:b
 
 function Hub({animate}:{animate:boolean}) {
   return <group dispose={null}>
-    <Block position={[0,-.24,0]} size={[38,.4,26]} color="#dbe7f5"/>
-    <gridHelper args={[38,38,'#bfd3e9','#cbdcef']} position={[0,-.025,0]}/>
-    {[-4.5,5.5].map(z=><Block key={z} position={[0,.005,z]} size={[31,.015,1.9]} color="#c5d9ef"/>)}
-    {[-15,15].map(x=><Block key={x} position={[x,.005,.5]} size={[1.9,.015,11.5]} color="#c5d9ef"/>)}
-    {[2.5,9].map(z=><Block key={z} position={[0,.007,z]} size={[34,.016,1.8]} color="#e9f0f9"/>)}
-    {Array.from({length:26},(_,i)=><Block key={i} position={[-16+i*1.3,.025,7.9]} size={[.6,.025,.055]} color="#91b4dc"/>)}
-    {[-11,-4,3,10].map(x=><group key={x} position={[x,0,-10]}>
-      {[-2,2].flatMap(a=>[-.7,.7].map(z=><Block key={`${a}-${z}`} position={[a,1.5,z]} size={[.1,3,.1]} color="#8dadd4"/>))}
-      {[.15,1.25,2.35].map((y,level)=><group key={y}>
-        <Block position={[0,y,0]} size={[4.2,.08,1.6]} color="#abc5e5"/>
-        {[-1.45,-.45,.6,1.5].map((a,i)=><Block key={a} position={[a,y+.37,0]} size={[.66,.65,1]} color={(i+level)%2?'#dce8f7':'#b7cde8'}/>)}
-      </group>)}
-    </group>)}
-    {[-10,0,10].map((x,i)=><group key={x} position={[x,0,-.3]}>
-      <Block position={[0,.02,0]} size={[5.5,.04,3]} color="#cadcf0"/>
-      <group position={[-1,0,0]}><RobotModel kind="arm" size={{l:1,w:1,h:2}} animate={animate}/></group>
-      <Block position={[1.3,.65,0]} size={[1.6,.16,1.1]} color="#a8c4e4"/>
-      <Block position={[1.3,.31,0]} size={[.7,.62,.7]} color="#b8cee7"/>
-      <Block position={[1.3,.98,0]} size={[.6,.5,.65]} color={i%2?'#dbe7f5':'#abc5e5'}/>
-    </group>)}
+    <RoboticsHubSet/>
+    {CELLS.map((layout,i)=><Manipulator key={i} layout={layout} seed={230+i*71} animate={animate}/>)}
+    <group position={[12,0,.5]}>
+      <RobotModel kind="mobileArm" size={{l:1.4,w:1.05,h:1.9}} animate={animate}/>
+      <Block position={[1.7,.6,0]} size={[1.6,.12,1.2]} color="#b0cbe9"/>
+      <Block position={[1.7,.29,0]} size={[.9,.58,.7]} color="#c6d9ee"/>
+      <Block position={[1.7,.95,0]} size={[.64,.58,.64]} color="#e5eef9"/>
+    </group>
+    <group position={[-14,0,12.2]}><RobotModel kind="cleaner" size={{l:1.1,w:.7,h:1.05}} tone="muted"/></group>
     {(['platform','forklift','platform','delivery'] as const).map((kind,index)=><MobileRobot key={index} index={index} kind={kind} animate={animate}/>)}
     <People animate={animate} layouts={PEOPLE} standing={OPERATORS}/>
   </group>;
@@ -76,12 +95,14 @@ function Hub({animate}:{animate:boolean}) {
 
 /** Декоративный роботизированный логистический центр, независимый от расчётов проекта. */
 export default function RoboticsHubScene({animate}:{animate:boolean}) {
-  return <Canvas orthographic camera={CAMERA} gl={GL} dpr={[1,1.25]} shadows frameloop={animate?'always':'demand'}>
-    <CameraRig/>
-    <hemisphereLight args={['#ffffff','#b9cde5',2]}/>
-    <directionalLight position={[-12,26,15]} intensity={2} castShadow shadow-mapSize={[1024,1024]} shadow-normalBias={.04}>
+  return <Canvas orthographic camera={CAMERA} gl={GL} dpr={[1,1.5]} flat shadows="percentage" frameloop={animate?'always':'demand'}>
+    <CameraRig animate={animate}/>
+    <fog attach="fog" args={['#e6effa',85,140]}/>
+    <hemisphereLight args={['#f8fbff','#a6c1e2',1.65]}/>
+    <directionalLight position={[-16,32,18]} intensity={2.4} castShadow shadow-mapSize={[2048,2048]} shadow-normalBias={.035} shadow-bias={-.0003} shadow-radius={3}>
       <orthographicCamera attach="shadow-camera" args={[-28,28,24,-24,1,75]}/>
     </directionalLight>
+    <directionalLight position={[16,12,-18]} intensity={.45} color="#bfdcff"/>
     <Hub animate={animate}/>
   </Canvas>;
 }

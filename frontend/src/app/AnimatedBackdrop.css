@@ -1,8 +1,127 @@
-.animated-backdrop { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; background: #e6effa; }
-.animated-backdrop canvas { width: 100%; height: 100%; display: block; opacity: .9; }
-.animated-backdrop__veil { position: absolute; inset: 0; background: radial-gradient(ellipse at 48% 40%, rgb(230 239 250 / 66%) 0%, rgb(230 239 250 / 38%) 45%, rgb(230 239 250 / 8%) 100%), linear-gradient(180deg, rgb(230 239 250 / 40%), transparent 28%); }
-.backdrop-toggle { position: fixed; z-index: 25; bottom: 12px; left: 12px; display: flex; align-items: center; gap: 6px; padding: 7px 10px; border: 1px solid #b8cde4; border-radius: 18px; background: rgb(246 250 255 / 92%); color: #496688; font: inherit; font-size: 11px; cursor: pointer; box-shadow: 0 2px 10px #527baa12; }
-.backdrop-toggle:hover { background: white; }
-.backdrop-toggle:focus-visible { outline: 2px solid #2463d8; outline-offset: 3px; }
-@media(max-width:600px) { .animated-backdrop canvas { opacity: .48; } .backdrop-toggle span { display: none; } }
-@media print { .animated-backdrop,.backdrop-toggle { display: none !important; } }
+.animated-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 78% 14%, #f5faff 0%, transparent 46%),
+    radial-gradient(ellipse at 10% 85%, #d2e2f4 0%, transparent 58%),
+    #e6effa;
+}
+
+.animated-backdrop canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Soft daylight adds depth while leaving the miniature factory in focus. */
+.animated-backdrop::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  background:
+    radial-gradient(ellipse at 88% 5%, rgb(255 255 255 / 24%) 0%, transparent 47%),
+    radial-gradient(ellipse at 4% 95%, rgb(115 156 211 / 9%) 0%, transparent 40%);
+}
+
+.animated-backdrop__veil {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgb(230 239 250 / 62%) 0%, rgb(230 239 250 / 24%) 17%, transparent 34%),
+    radial-gradient(ellipse at 48% 38%, rgb(234 242 252 / 32%) 0%, rgb(234 242 252 / 12%) 44%, transparent 74%),
+    linear-gradient(0deg, rgb(230 239 250 / 14%) 0%, transparent 16%);
+}
+
+.backdrop-toggle {
+  position: fixed;
+  z-index: 25;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  left: max(16px, env(safe-area-inset-left));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgb(255 255 255 / 90%);
+  border-radius: 999px;
+  background: rgb(245 249 255 / 82%);
+  box-shadow: 0 6px 22px rgb(35 68 113 / 9%), inset 0 1px 0 rgb(255 255 255 / 70%);
+  backdrop-filter: blur(16px) saturate(1.2);
+  color: #476389;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .18s ease, box-shadow .18s ease, color .18s ease;
+}
+
+.backdrop-toggle span {
+  font-size: 11px;
+  letter-spacing: .02em;
+}
+
+.backdrop-toggle:hover {
+  background: rgb(255 255 255 / 96%);
+  box-shadow: 0 8px 24px rgb(35 68 113 / 14%);
+  color: #2456a4;
+}
+
+.backdrop-toggle[aria-pressed="true"] {
+  background: rgb(237 244 255 / 94%);
+  color: #2456a4;
+}
+
+.backdrop-toggle:focus-visible {
+  outline: 2px solid #2463d8;
+  outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  body:has(.ctray) .backdrop-toggle {
+    bottom: calc(88px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 600px) {
+  .animated-backdrop canvas {
+    opacity: .82;
+  }
+
+  .animated-backdrop__veil {
+    background:
+      linear-gradient(180deg, rgb(230 239 250 / 68%) 0%, rgb(230 239 250 / 18%) 26%, transparent 48%),
+      radial-gradient(ellipse at 45% 42%, rgb(234 242 252 / 32%) 0%, transparent 84%);
+  }
+
+  .backdrop-toggle {
+    left: max(12px, env(safe-area-inset-left));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    padding: 0 12px;
+  }
+
+  .backdrop-toggle span {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop-toggle {
+    transition: none;
+  }
+}
+
+@media print {
+  .animated-backdrop,
+  .backdrop-toggle {
+    display: none !important;
+  }
+}
