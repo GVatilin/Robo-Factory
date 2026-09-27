@@ -1,4 +1,5 @@
 .shell {
+  --shell-header-height: 68px;
   position: relative;
   min-height: 100vh;
   overflow-x: clip;
@@ -8,13 +9,15 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 24px;
-  height: 68px;
+  gap: 20px;
+  min-height: 68px;
   padding: 0 var(--gutter);
-  border-bottom: 1px solid rgb(255 255 255 / 80%);
-  background: rgb(236 243 252 / 78%);
+  border-bottom: 1px solid rgb(193 209 229 / 65%);
+  background: rgb(244 248 254 / 95%);
+  box-shadow: 0 4px 24px rgb(28 57 94 / 4%);
   backdrop-filter: blur(16px) saturate(1.4);
 }
 
@@ -35,16 +38,22 @@
 
 .shell__nav {
   display: flex;
-  flex: 1;
+  align-items: center;
   gap: 4px;
   min-width: 0;
+  padding: 5px 2px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #b2c6e1 transparent;
 }
 
 .shell__link {
   display: inline-flex;
+  flex: none;
   align-items: center;
   gap: 8px;
-  height: 38px;
+  min-height: 40px;
   padding: 0 14px;
   border-radius: 10px;
   color: var(--ink-soft);
@@ -53,6 +62,16 @@
   text-decoration: none;
   white-space: nowrap;
   transition: background 0.15s ease, color 0.15s ease;
+}
+
+.shell__link svg,
+.shell__actions svg {
+  flex-shrink: 0;
+}
+
+.shell__link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
 }
 
 .shell__link:hover {
@@ -72,6 +91,15 @@
   flex: none;
   align-items: center;
   gap: 10px;
+}
+
+.shell__actions {
+  justify-self: end;
+  min-width: 0;
+}
+
+.shell__actions .btn {
+  white-space: nowrap;
 }
 
 .shell__main {
@@ -108,6 +136,7 @@
 
 .usermenu__avatar {
   display: grid;
+  flex: none;
   place-items: center;
   width: 34px;
   height: 34px;
@@ -122,6 +151,7 @@
   flex-direction: column;
   align-items: flex-start;
   max-width: 180px;
+  min-width: 0;
   line-height: 1.2;
 }
 
@@ -153,7 +183,7 @@
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
-  width: 280px;
+  width: min(300px, calc(100vw - 32px));
   padding: 8px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -173,10 +203,17 @@
 
 .usermenu__email {
   max-width: 100%;
-  overflow: hidden;
+  overflow-wrap: anywhere;
   color: var(--ink-soft);
   font-size: 0.85rem;
-  text-overflow: ellipsis;
+}
+
+.usermenu__full-name {
+  max-width: 100%;
+  color: var(--ink);
+  font-size: 0.94rem;
+  font-weight: 750;
+  overflow-wrap: anywhere;
 }
 
 .usermenu__company {
@@ -221,7 +258,7 @@
 .page--center {
   display: grid;
   place-items: center;
-  min-height: calc(100vh - 68px);
+  min-height: calc(100vh - var(--shell-header-height));
 }
 
 .page-header {
@@ -233,7 +270,27 @@
   margin-bottom: 24px;
 }
 
+.page-header:not(.projects-hero) {
+  padding: clamp(18px, 2vw, 26px);
+  border: 1px solid rgb(255 255 255 / 88%);
+  border-radius: 22px;
+  background: linear-gradient(115deg, rgb(255 255 255 / 96%), rgb(246 250 255 / 91%) 58%, rgb(233 243 255 / 82%));
+  box-shadow: 0 10px 32px rgb(31 62 98 / 5%), inset 0 1px 0 #ffffff;
+  backdrop-filter: blur(14px);
+}
+
+.page-header > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.page-header h1,
+.page-header p {
+  overflow-wrap: anywhere;
+}
+
 .page-header__text {
+  flex: 1 1 26rem;
   min-width: 0;
 }
 
@@ -266,6 +323,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.page-header__actions .btn {
+  max-width: 100%;
+  height: auto;
+  min-height: 38px;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .crumbs {
@@ -320,9 +385,53 @@
   color: var(--accent);
 }
 
-@media (max-width: 900px) {
+/* Keep every section on its own readable rail before the actions crowd it. */
+@media (max-width: 1580px) {
+  .shell__topbar--admin {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 20px;
+    padding-top: 10px;
+    padding-bottom: 6px;
+  }
+
+  .shell__topbar--admin .shell__nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 6px;
+    border-top: 1px solid rgb(193 209 229 / 50%);
+  }
+
+  .shell__topbar--admin .shell__actions {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 1320px) {
   .shell__topbar {
-    gap: 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0 20px;
+    padding-top: 10px;
+    padding-bottom: 6px;
+  }
+
+  .shell__nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 6px;
+    border-top: 1px solid rgb(193 209 229 / 50%);
+  }
+
+  .shell__actions {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .shell__topbar,
+  .shell__topbar--admin {
+    column-gap: 10px;
   }
 
   .usermenu__text,
@@ -331,27 +440,32 @@
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 560px) {
   .shell__topbar {
     position: relative;
-    flex-wrap: wrap;
-    height: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
   }
 
-  .shell__nav {
-    order: 3;
-    flex-basis: 100%;
-    overflow-x: auto;
+  .shell__topbar .brand {
+    gap: 7px;
+    font-size: 0.98rem;
   }
 
-  .shell__actions {
-    margin-left: auto;
+  .shell__link {
+    padding: 0 12px;
+    font-size: 0.88rem;
   }
 
   .shell__add-label {
     display: none;
+  }
+
+  .shell__actions {
+    gap: 4px;
+  }
+
+  .usermenu__trigger {
+    gap: 4px;
+    padding-right: 3px;
   }
 }
 

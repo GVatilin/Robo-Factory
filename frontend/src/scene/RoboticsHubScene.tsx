@@ -31,7 +31,7 @@ TRACK.add(new QuadraticBezierCurve3(point(-15,7.2),point(-17,7.2),point(-17,5.2)
 TRACK.add(new LineCurve3(point(-17,5.2),point(-17,-2.8)));
 TRACK.add(new QuadraticBezierCurve3(point(-17,-2.8),point(-17,-4.8),point(-15,-4.8)));
 const TRACK_LENGTH=TRACK.getLength();
-const CAMERA = {position:[28,36,32] as [number,number,number],zoom:30,near:.1,far:160};
+const CAMERA = {position:[28,36,32] as [number,number,number],zoom:30,near:.1,far:220};
 const GL = {antialias:true,alpha:true,powerPreference:'low-power' as const};
 
 function Block({position,size,color='#c3d7ee'}:{position:[number,number,number];size:[number,number,number];color?:string}) {
@@ -97,10 +97,10 @@ function Hub({animate}:{animate:boolean}) {
 export default function RoboticsHubScene({animate}:{animate:boolean}) {
   return <Canvas orthographic camera={CAMERA} gl={GL} dpr={[1,1.5]} flat shadows="percentage" frameloop={animate?'always':'demand'}>
     <CameraRig animate={animate}/>
-    <fog attach="fog" args={['#e6effa',85,140]}/>
+    <fog attach="fog" args={['#e6effa',77,128]}/>
     <hemisphereLight args={['#f8fbff','#a6c1e2',1.65]}/>
     <directionalLight position={[-16,32,18]} intensity={2.4} castShadow shadow-mapSize={[2048,2048]} shadow-normalBias={.035} shadow-bias={-.0003} shadow-radius={3}>
-      <orthographicCamera attach="shadow-camera" args={[-28,28,24,-24,1,75]}/>
+      <orthographicCamera attach="shadow-camera" args={[-54,54,46,-46,1,150]}/>
     </directionalLight>
     <directionalLight position={[16,12,-18]} intensity={.45} color="#bfdcff"/>
     <Hub animate={animate}/>

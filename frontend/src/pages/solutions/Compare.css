@@ -84,7 +84,7 @@
 .ctable thead th {
   position: sticky;
   z-index: 3;
-  top: 68px;
+  top: var(--shell-header-height, 68px);
   padding: 8px 6px;
   background: rgb(236 243 252 / 94%);
   backdrop-filter: blur(12px);

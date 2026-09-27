@@ -61,7 +61,7 @@ function UserMenu() {
   const name = user.full_name ?? user.email;
   return (
     <div ref={root} className={cx("usermenu", open && "is-open")}>
-      <button type="button" className="usermenu__trigger" aria-expanded={open} aria-haspopup="menu" onClick={() => setOpen(!open)}>
+      <button type="button" className="usermenu__trigger" aria-label={`Меню пользователя: ${name}`} title={name} aria-expanded={open} aria-haspopup="menu" onClick={() => setOpen(!open)}>
         <span className="usermenu__avatar" aria-hidden="true">
           {name.slice(0, 1).toUpperCase()}
         </span>
@@ -74,6 +74,7 @@ function UserMenu() {
       {open && (
         <div className="usermenu__popover" role="menu">
           <div className="usermenu__head">
+            <span className="usermenu__full-name">{name}</span>
             <span className="usermenu__email">{user.email}</span>
             <RoleBadge role={role} />
             {user.manufacturer && (
@@ -137,12 +138,32 @@ function CompareTray() {
 
 export default function AppShell() {
   const { can, user } = useAuth();
+  const shellRef = useRef<HTMLDivElement>(null);
+  const topbarRef = useRef<HTMLElement>(null);
   const canAddProduct = can("products:manage", "products:manage_own");
   const addProductLink = user?.role === "vendor" && user.manufacturer ? `/products/new?manufacturer=${user.manufacturer.id}` : "/products/new";
 
+  useEffect(() => {
+    const shell = shellRef.current;
+    const topbar = topbarRef.current;
+    if (!shell || !topbar) return;
+    const updateHeight = () => {
+      const height = getComputedStyle(topbar).position === "sticky" ? topbar.getBoundingClientRect().height : 0;
+      shell.style.setProperty("--shell-header-height", `${height}px`);
+    };
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(topbar);
+    window.addEventListener("resize", updateHeight);
+    updateHeight();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", updateHeight);
+    };
+  }, []);
+
   return (
-    <div className="shell">
-      <header className="shell__topbar">
+    <div ref={shellRef} className="shell">
+      <header ref={topbarRef} className={cx("shell__topbar", can("users:manage") && "shell__topbar--admin")}>
         <Link className="brand" to="/">
           <LogoMark />
           <span>Robo-Factory</span>
@@ -172,7 +193,7 @@ export default function AppShell() {
         </nav>
         <div className="shell__actions">
           {canAddProduct && (
-            <Link className="btn btn--primary btn--sm" to={addProductLink}>
+            <Link className="btn btn--primary btn--sm" to={addProductLink} aria-label="Добавить товар" title="Добавить товар">
               <Plus size={16} aria-hidden="true" />
               <span className="shell__add-label">Добавить товар</span>
             </Link>

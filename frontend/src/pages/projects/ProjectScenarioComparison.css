@@ -1,0 +1,16 @@
+.project-comparison { padding: 28px; margin-top: 24px; min-width: 0; background: rgb(255 255 255 / 97%); }
+.project-comparison__heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.project-comparison__heading h2 { margin: 8px 0; font-size: 22px; }
+.project-comparison__eyebrow { color: #3c6ca8; font-weight: 700; font-size: 11px; letter-spacing: .1em; }
+.project-comparison p { color: #4a5f79; max-width: 85ch; line-height: 1.6; }
+.project-comparison__empty { padding: 24px; background: #f2f6fc; border: 1px dashed #b7cbe4; border-radius: 14px; margin-top: 20px; }
+.project-comparison__group { border-top: 1px solid #dce5f1; margin-top: 28px; padding-top: 14px; }
+.project-comparison__notice { padding: 12px 16px; border-radius: 8px; background: #fff4de; color: #785614 !important; }
+.project-comparison__scroll { overflow-x: auto; max-width: 100%; border: 1px solid #dce5f1; border-radius: 12px; }
+.project-comparison table { border-collapse: collapse; width: 100%; text-align: left; font-size: 14px; }
+.project-comparison caption { padding: 12px; text-align: left; background: #f4f7fc; color: #53677f; font-size: 12px; }
+.project-comparison th,.project-comparison td { min-width: 150px; max-width: 290px; padding: 15px; border-bottom: 1px solid #e4ebf5; vertical-align: top; overflow-wrap: anywhere; }
+.project-comparison thead th { background: #edf3fc; color: #193b64; }
+.project-comparison th small { display: block; margin-top: 8px; color: #687d97; font-weight: 400; }
+.project-comparison tbody th { background: #f8fafd; }
+@media(max-width:600px) { .project-comparison { padding: 18px; } .project-comparison__empty { padding: 16px; } }

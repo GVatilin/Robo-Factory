@@ -30,6 +30,11 @@ class ProjectSummary(BaseModel):
     is_demo: bool
     created_at: datetime
     updated_at: datetime
+    status: str = "draft"
+    required_total: int = 0
+    required_filled: int = 0
+    calculated_scenarios: int = 0
+    calculation_count: int = 0
 
 
 class ProjectDetail(ProjectSummary):

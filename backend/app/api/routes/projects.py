@@ -11,6 +11,7 @@ from app.models import FacilityType, ParameterDefinition, Project, ProjectFile, 
 from app.schemas.projects import ParameterOut, ProjectDetail, ProjectInput, ProjectSummary, ProjectUpdate
 from app.services.demo_projects import default_scenarios
 from app.services.projects import missing_required, validate_parameters, parse_parameter_file, parameter_template
+from app.services.project_overview import project_summaries, scenario_overview
 from app.models.enums import ProjectFileKind
 from app.core.config import settings
 
@@ -26,7 +27,7 @@ async def visible_project(db, project_id, user, *, write=False):
     condition = Project.owner_id == user.id if user else Project.is_demo.is_(True)
     if not write:
         condition = or_(condition, Project.is_demo.is_(True))
-    stmt = select(Project).where(Project.id == project_id, condition).options(selectinload(Project.scenarios).selectinload(Scenario.items))
+    stmt = select(Project).where(Project.id == project_id, condition).options(selectinload(Project.scenarios).selectinload(Scenario.items).selectinload(ScenarioItem.product))
     if write:
         stmt = stmt.where(Project.is_demo.is_(False)).with_for_update()
     project = await db.scalar(stmt)
@@ -37,10 +38,16 @@ async def visible_project(db, project_id, user, *, write=False):
 
 async def detail(db, project):
     defs = await definitions(db, project.facility_type_id)
-    return ProjectDetail(**ProjectSummary.model_validate(project).model_dump(), parameters=project.parameters,
+    # Загружаем и пустые коллекции после создания, и продукты после копирования.
+    if project.scenarios:
+        (await db.scalars(select(Scenario).where(Scenario.project_id == project.id)
+                         .options(selectinload(Scenario.items).selectinload(ScenarioItem.product)))).all()
+    scenarios, _ = await scenario_overview(db, project)
+    summary = (await project_summaries(db, [project]))[0]
+    return ProjectDetail(**summary.model_dump(), parameters=project.parameters,
                          parameter_origins=project.parameter_origins,
                          missing_required=missing_required(project.parameters, defs),
-                         scenarios=[{"id": str(s.id), "name": s.name, "kind": s.kind} for s in project.scenarios])
+                         scenarios=scenarios)
 
 
 @router.get("/parameters/{facility_id}", response_model=list[ParameterOut])
@@ -57,8 +64,16 @@ async def list_projects(db: DbSession, user: OptionalUser, demo: bool = False,
     if not demo and not user:
         raise HTTPException(401, "Войдите, чтобы открыть свои проекты.")
     condition = Project.is_demo.is_(True) if demo else Project.owner_id == user.id
-    return list((await db.scalars(select(Project).where(condition).order_by(Project.updated_at.desc(), Project.id)
+    projects = list((await db.scalars(select(Project).where(condition).order_by(Project.updated_at.desc(), Project.id)
                                  .limit(limit).offset(offset))).all())
+    return await project_summaries(db, projects)
+
+
+@router.get("/{project_id}/scenario-comparison")
+async def compare_project_scenarios(project_id: uuid.UUID, db: DbSession, user: OptionalUser):
+    project = await visible_project(db, project_id, user)
+    _, groups = await scenario_overview(db, project)
+    return {"groups": groups}
 
 
 @router.post("", response_model=ProjectDetail, status_code=201)

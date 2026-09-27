@@ -536,7 +536,7 @@ a.mcard:hover {
 
 .mform__side {
   position: sticky;
-  top: 88px;
+  top: calc(var(--shell-header-height, 68px) + 20px);
   display: flex;
   flex-direction: column;
   gap: 14px;
