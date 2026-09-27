@@ -13,6 +13,7 @@ import { EmptyState, ErrorState, Notice, Spinner, Switch } from "../../ui/Contro
 import { cx } from "../../ui/Field";
 import { KIND_ICON } from "../catalog/ProductCard";
 import "./Compare.css";
+import EconomicsPanel from "./EconomicsPanel";
 
 const Lineup = lazy(() => import("../../scene/robots/Lineup"));
 
@@ -203,6 +204,8 @@ export default function ComparePage() {
           </div>
         </section>
       )}
+
+      {count > 0 && <EconomicsPanel key={products.map(p => p.id).join(",")} data={data.data} />}
 
       <div className="ctable-wrap">
         <table className="ctable" style={{ ["--cols" as string]: count }}>

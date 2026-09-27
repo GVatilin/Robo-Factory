@@ -16,6 +16,8 @@ from app.models.enums import DatasetKind
 from app.services.product_images import ImageError, decode_upload, emf_bitmap, remove_files, write_files
 from app.services.solution_examples import (
     ExampleSolution,
+    ExamplesDocumentError,
+    PARSER_VERSION,
     document_source,
     find_or_create_product,
     parse_examples_docx,
@@ -98,7 +100,8 @@ async def import_solution_photos(session: AsyncSession, content: bytes, file_nam
     checksum = hashlib.sha256(content).hexdigest()
     existing = await session.scalar(
         select(DatasetVersion).where(
-            DatasetVersion.kind == DatasetKind.SOLUTION_PHOTOS, DatasetVersion.checksum_sha256 == checksum
+            DatasetVersion.kind == DatasetKind.SOLUTION_PHOTOS, DatasetVersion.checksum_sha256 == checksum,
+            DatasetVersion.stats["parser_version"].as_string() == PARSER_VERSION,
         )
     )
     if existing:
@@ -108,6 +111,8 @@ async def import_solution_photos(session: AsyncSession, content: bytes, file_nam
 
     document = await document_source(session)
     solutions, warnings = parse_examples_docx(content)
+    if not solutions:
+        raise ExamplesDocumentError("Решения не распознаны: " + "; ".join(warnings))
     stats.photos = sum(1 for s in solutions if s.media)
     stats.warnings.extend(warnings)
     try:
@@ -126,7 +131,7 @@ async def import_solution_photos(session: AsyncSession, content: bytes, file_nam
         checksum_sha256=checksum,
         source_id=document.id,
         row_count=stats.photos,
-        stats={"photos": stats.photos, "attached": stats.attached, "products_created": stats.products_created},
+        stats={"parser_version": PARSER_VERSION, "photos": stats.photos, "attached": stats.attached, "products_created": stats.products_created},
         is_current=True,
     )
     session.add(version)

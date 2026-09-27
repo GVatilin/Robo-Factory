@@ -27,6 +27,8 @@ W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
 R = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
 BLIP = "{http://schemas.openxmlformats.org/drawingml/2006/main}blip"
 VML_IMAGE = "{urn:schemas-microsoft-com:vml}imagedata"
+MC = "{http://schemas.openxmlformats.org/markup-compatibility/2006}"
+PARSER_VERSION = "2"
 
 MODEL = re.compile(r"^(?P<kind>.*?)\s*\(на примере(?: модели)?\s+(?P<model>[^)]+)\)", re.IGNORECASE)
 DOCUMENT_SOURCE = "organizer_solution_examples"
@@ -80,13 +82,23 @@ def _text(element: ElementTree.Element) -> str:
 
 
 def _image_ids(element: ElementTree.Element) -> list[str]:
-    """Идентификаторы связей изображений в порядке документа (DrawingML и старый VML)."""
-    ids = []
-    for node in element.iter():
-        if node.tag == BLIP and node.get(f"{R}embed"):
-            ids.append(node.get(f"{R}embed"))
-        elif node.tag == VML_IMAGE and node.get(f"{R}id"):
-            ids.append(node.get(f"{R}id"))
+    """Одно изображение на AlternateContent: Choice и Fallback — альтернативы.
+
+    Не дедуплицируем rId глобально: одна картинка может иллюстрировать разные модели.
+    """
+    if element.tag == f"{MC}AlternateContent":
+        for branch in element:
+            ids = _image_ids(branch)
+            if ids:
+                return ids
+        return []
+    if element.tag == BLIP and element.get(f"{R}embed"):
+        return [element.get(f"{R}embed")]
+    if element.tag == VML_IMAGE and element.get(f"{R}id"):
+        return [element.get(f"{R}id")]
+    ids: list[str] = []
+    for child in element:
+        ids.extend(_image_ids(child))
     return ids
 
 

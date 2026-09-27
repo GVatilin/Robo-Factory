@@ -139,6 +139,25 @@ def test_not_a_docx_raises():
         parse_examples_docx(b"not a zip")
 
 
+@pytest.mark.parametrize("fallback_id", ["r1", "r2"])
+def test_word_alternate_content_uses_one_image_even_with_distinct_fallback(fallback_id):
+    content = make_docx([["IMG:r1"], ["AMR (на примере модели Ronavi H1500)"]],
+                        {"r1": png_bytes(), "r2": png_bytes()})
+    source, output = zipfile.ZipFile(BytesIO(content)), BytesIO()
+    with zipfile.ZipFile(output, "w") as archive:
+        for name in source.namelist():
+            raw = source.read(name)
+            if name == "word/document.xml":
+                document = raw.decode()
+                document = document.replace("<w:drawing>", '<mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"><mc:Choice Requires="a"><w:drawing>')
+                document = document.replace("</w:drawing>", f'</w:drawing></mc:Choice><mc:Fallback><v:imagedata xmlns:v="urn:schemas-microsoft-com:vml" r:id="{fallback_id}"/></mc:Fallback></mc:AlternateContent>')
+                raw = document.encode()
+            archive.writestr(name, raw)
+    solutions, warnings = parse_examples_docx(output.getvalue())
+    assert warnings == [] and len(solutions) == 1
+    assert solutions[0].media == "word/media/r1.png"
+
+
 @pytest.mark.skipif(not DOCX.exists(), reason="документ организатора не положен в datasets/")
 def test_organizer_document_has_eight_photos():
     photos, warnings = parse_examples_docx(DOCX.read_bytes())
@@ -149,7 +168,9 @@ def test_organizer_document_has_eight_photos():
     ]
     for photo in photos:
         image = emf_bitmap(photo.data) if photo.media.endswith(".emf") else decode_upload(photo.data)
-        assert min(image.size) >= 200
+        # В версии DOCX с PNG встречаются исходники 123×130: импорт не должен
+        # увеличивать разрешение или отвергать корректную фотографию из-за размера.
+        assert image.width > 0 and image.height > 0
 
 
 def test_example_spec_lines_are_converted_to_reference_units():

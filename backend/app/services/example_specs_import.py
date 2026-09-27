@@ -21,6 +21,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.models import DatasetVersion, Product, ProductSpecValue, SolutionType, SpecDefinition
 from app.models.enums import DatasetKind
 from app.services.solution_examples import ExampleSolution, document_source, find_or_create_product, parse_examples_docx
+from app.services.solution_examples import ExamplesDocumentError, PARSER_VERSION
 from app.services.taxonomy import resolve_type
 
 # Число без буквы перед ним: «м2» и «N1» не дают чисел. Тысячи через пробел: «3 000».
@@ -206,7 +207,8 @@ async def import_example_specs(session: AsyncSession, content: bytes, file_name:
     checksum = hashlib.sha256(content).hexdigest()
     existing = await session.scalar(
         select(DatasetVersion).where(
-            DatasetVersion.kind == DatasetKind.REFERENCE_SPECS, DatasetVersion.checksum_sha256 == checksum
+            DatasetVersion.kind == DatasetKind.REFERENCE_SPECS, DatasetVersion.checksum_sha256 == checksum,
+            DatasetVersion.stats["parser_version"].as_string() == PARSER_VERSION,
         )
     )
     if existing:
@@ -216,6 +218,8 @@ async def import_example_specs(session: AsyncSession, content: bytes, file_name:
 
     document = await document_source(session)
     solutions, warnings = parse_examples_docx(content)
+    if not solutions:
+        raise ExamplesDocumentError("Решения не распознаны: " + "; ".join(warnings))
     stats.solutions = len(solutions)
     stats.warnings.extend(warnings)
     definitions = {d.code: d for d in (await session.scalars(select(SpecDefinition))).all()}
@@ -277,7 +281,7 @@ async def import_example_specs(session: AsyncSession, content: bytes, file_name:
         checksum_sha256=checksum,
         source_id=document.id,
         row_count=stats.solutions,
-        stats={k: v for k, v in stats.__dict__.items() if k not in ("warnings", "status", "dataset_version_id")},
+        stats={"parser_version": PARSER_VERSION, **{k: v for k, v in stats.__dict__.items() if k not in ("warnings", "status", "dataset_version_id")}},
         is_current=True,
     )
     session.add(version)
