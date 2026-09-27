@@ -2,7 +2,7 @@ import { useFrame } from "@react-three/fiber";
 import { useCallback, useLayoutEffect, useMemo, useRef } from "react";
 import { Vector3, type Group, type Mesh } from "three";
 import { geometries, material, wrapAngle } from "./shared";
-import { RobotModel } from "./robots/RobotModel";
+import { CargoDrone, CargoPlatform } from "./AirCargoVehicles";
 
 type Position = [number,number,number];
 const UP = new Vector3(0,1,0);
@@ -100,11 +100,11 @@ export function AirCargoTransfer({x,phase,animate}:{x:number;phase:number;animat
   useFrame((_,dt)=>{if(animate){elapsed.current+=Math.min(dt,.05);place(Math.min(dt,.05));}});
   return <group dispose={null}>
     <group ref={drone}>
-      <RobotModel kind="drone" size={{l:2.9,w:2.9,h:.85}} animate={animate}/>
+      <CargoDrone animate={animate}/>
       <group ref={sling}>{[-.24,.24].map(offset=><mesh key={offset} geometry={geometries.cylinder} material={material('#7e9cb4')} position={[offset,-.19,0]} scale={[.009,.48,.009]}/>)}</group>
     </group>
     <group ref={robot}>
-      <RobotModel kind="platform" size={{l:1.7,w:1.2,h:.45}} animate={animate}/>
+      <CargoPlatform/>
       <mesh geometry={geometries.roundedBox} material={material('#c7e1e7')} position={[0,.49,0]} scale={[1.5,.08,1.06]} receiveShadow/>
     </group>
     <mesh ref={shoulder} geometry={geometries.cylinder} material={material('#79a4b8')} castShadow/>

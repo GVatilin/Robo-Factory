@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
-import { Color, InstancedMesh, Object3D, RingGeometry } from "three";
+import { Color, InstancedMesh, MeshStandardMaterial, Object3D, PlaneGeometry, RingGeometry } from "three";
 
 import { geometries, material, seededRandom } from "./shared";
 
@@ -12,6 +12,7 @@ type Part = {
 
 const structure: Part[] = [];
 const details: Part[] = [];
+const paintedDetails: Part[] = [];
 const markings: Part[] = [];
 const distant: Part[] = [];
 const stations = [-12, 0, 12];
@@ -46,23 +47,26 @@ for (let z = -160; z <= 160; z += 4) {
 for (const x of stations) {
   // Flush operational apron and route markings leave the drone pad unobstructed.
   add(markings, [x, .014, 0], [6.3, .012, 6.3], "#d9eaf0");
-  add(markings, [x + 1.15, .015, 6.4], [5.4, .014, 7.4], "#dbe9ec");
+  add(markings, [x + 1.15, .015, 6.65], [5.4, .014, 6.9], "#dbe9ec");
   for (let z = 3.6; z < 10.3; z += 1.1) {
     add(markings, [x - 1.55, .026, z], [.055, .012, .45], colors.cyan);
     add(markings, [x + 3.85, .026, z], [.055, .012, .45], colors.cyan);
   }
   // The receiving conveyor runs in +X into a dispatch enclosure. Its exact
   // .45 m top matches the contact height used by the animated robot and crate.
-  add(structure, [x + 5.3, .24, 9], [6.25, .42, 1.65], "#adcbd5");
+  // The frame ends at .40: its top must never compete with the belt at .45.
+  add(structure, [x + 5.3, .215, 9], [6.25, .37, 1.65], "#adcbd5");
   add(details, [x + 5.3, .43, 9], [6.35, .04, 1.76], colors.shell);
   for (const dz of [-.76, .76]) {
     add(details, [x + 5.3, .475, 9 + dz], [6.35, .05, .055], colors.frame);
   }
   add(details, [x + 3, .31, 9.835], [.64, .045, .015], colors.teal);
   add(details, [x + 3.5, .31, 9.838], [.09, .045, .018], colors.amber);
-  // Rollers sit just below the surface, with axes perpendicular to travel.
+  // Matte belt marks are decals, with no shadow casting or shadow reception.
+  // They sit above the .45 contact surface and use a depth offset to keep them
+  // stable when viewed from the distant orthographic camera.
   for (let dx = 2.4; dx <= 8.3; dx += .18) {
-    add(details, [x + dx, .444, 9], [.055, .01, 1.35], "#c1d8e1");
+    add(paintedDetails, [x + dx, .451, 9], [.055, 0, 1.35], "#c1d8e1");
   }
   for (const dz of [-.86, .86]) {
     add(structure, [x + 8.15, 1.12, 9 + dz], [2.0, 1.36, .13], colors.pale);
@@ -163,9 +167,14 @@ for (let column = -3; column <= 3; column++) {
 const outerRing = new RingGeometry(2.035, 2.105, 64);
 const innerRing = new RingGeometry(1.63, 1.655, 64);
 const glowRing = new RingGeometry(2.16, 2.21, 64);
+const paintGeometry = new PlaneGeometry(1, 1);
+const paintMaterial = new MeshStandardMaterial({
+  color: "#ffffff", roughness: 1, metalness: 0,
+  polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2,
+});
 
-function Batch({ parts, shadows = true, receiveShadows = true }: {
-  parts: Part[]; shadows?: boolean; receiveShadows?: boolean;
+function Batch({ parts, shadows = true, receiveShadows = true, flat = false }: {
+  parts: Part[]; shadows?: boolean; receiveShadows?: boolean; flat?: boolean;
 }) {
   const ref = useRef<InstancedMesh>(null);
   useLayoutEffect(() => {
@@ -175,8 +184,9 @@ function Batch({ parts, shadows = true, receiveShadows = true }: {
     const color = new Color();
     parts.forEach((part, index) => {
       pose.position.set(...part.position);
-      pose.scale.set(...part.size);
-      pose.rotation.set(0, part.rotation ?? 0, 0);
+      if (flat) pose.scale.set(part.size[0], part.size[2], 1);
+      else pose.scale.set(...part.size);
+      pose.rotation.set(flat ? -Math.PI / 2 : 0, part.rotation ?? 0, 0);
       pose.updateMatrix();
       mesh.setMatrixAt(index, pose.matrix);
       mesh.setColorAt(index, color.set(part.color));
@@ -184,8 +194,8 @@ function Batch({ parts, shadows = true, receiveShadows = true }: {
     mesh.instanceMatrix.needsUpdate = true;
     if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true;
     mesh.computeBoundingSphere();
-  }, [parts]);
-  return <instancedMesh ref={ref} args={[geometries.box, material("#ffffff"), parts.length]}
+  }, [parts, flat]);
+  return <instancedMesh ref={ref} args={[flat ? paintGeometry : geometries.box, flat ? paintMaterial : material("#ffffff"), parts.length]}
     castShadow={shadows} receiveShadow={receiveShadows} dispose={null} />;
 }
 
@@ -204,7 +214,7 @@ function LandingPad({ x }: { x: number }) {
     {[-.6, .6].map((dx) => <mesh key={dx} geometry={geometries.box} material={material("#a0c6ce")}
       position={[dx, .452, 0]} scale={[.14, .004, 1.65]} />)}
     <mesh geometry={geometries.box} material={material("#a0c6ce")}
-      position={[0, .452, 0]} scale={[1.2, .004, .14]} />
+      position={[0, .452, 0]} scale={[1.06, .004, .14]} />
     {[-1, 1].flatMap((dx) => [-1, 1].map((dz) => <group key={`${dx}:${dz}`} position={[dx * 2.2, 0, dz * 2.2]}>
       <mesh geometry={geometries.cylinder} material={material(colors.frame)}
         position={[0, .25, 0]} scale={[.095, .5, .095]} castShadow />
@@ -222,6 +232,7 @@ export function AirCargoSet() {
     <Batch parts={markings} shadows={false} />
     <Batch parts={structure} />
     <Batch parts={details} />
+    <Batch parts={paintedDetails} flat shadows={false} receiveShadows={false} />
     <Batch parts={distant} shadows={false} receiveShadows={false} />
     {stations.map((x) => <LandingPad key={x} x={x} />)}
   </group>;
