@@ -2,7 +2,7 @@ import { useFrame } from "@react-three/fiber";
 import { type RefObject, useLayoutEffect, useMemo, useRef } from "react";
 import type { Group } from "three";
 
-import { STANDING, WALKERS, type StandingLayout } from "./layout";
+import { STANDING, WALKERS, type StandingLayout, type WalkerLayout } from "./layout";
 import { palette } from "./palette";
 import { geometries, material, seededRandom } from "./shared";
 import { Walker } from "./walker";
@@ -113,18 +113,18 @@ function StandingPerson({ layout, phase, animate }: { layout: StandingLayout; ph
   return <Figure refs={refs} carry={false} />;
 }
 
-export function People({ animate }: { animate: boolean }) {
+export function People({ animate, layouts = WALKERS, standing = STANDING }: { animate: boolean; layouts?: WalkerLayout[]; standing?: StandingLayout[] }) {
   const walkers = useMemo(() => {
     const rand = seededRandom(42);
-    return WALKERS.map((layout) => new Walker(layout, rand));
-  }, []);
+    return layouts.map((layout) => new Walker(layout, rand));
+  }, [layouts]);
 
   return (
     <group>
       {walkers.map((walker, index) => (
         <WalkingPerson key={index} walker={walker} animate={animate} />
       ))}
-      {STANDING.map((layout, index) => (
+      {standing.map((layout, index) => (
         <StandingPerson key={index} layout={layout} phase={index * 1.7} animate={animate} />
       ))}
     </group>
