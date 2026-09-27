@@ -15,6 +15,7 @@ from app.services.catalog_view import mandatory_specs
 from app.services.economics import calculate
 from app.services.economics_reports import sensitivity, workbook_report
 from app.schemas.economics import EconomicsInput
+from app.schemas.equipment import EquipmentInput
 from app.services.selection import VERSION, FORMULA, demand_context, rank_candidate
 
 router = APIRouter(prefix="/projects", tags=["Project selection"])
@@ -88,6 +89,10 @@ async def save_economics(project_id: uuid.UUID, data: SaveProjectEconomics, db: 
             raise HTTPException(422, "Подтвердите допущения и необходимость проверки ограничений.")
         if c["quantity"] != scenario.quantity and len(binding.quantity_reason) < 3:
             raise HTTPException(422, "Обоснуйте изменение рассчитанного количества роботов.")
+        expected_equipment = EquipmentInput.model_validate(c["equipment"]["inputs"])
+        if scenario.equipment is not None and scenario.equipment != expected_equipment:
+            raise HTTPException(422, "Параметры вспомогательного оборудования изменились. Повторите подбор и расчёт экономики.")
+        scenario.equipment = expected_equipment
         key = (binding.product_id, scenario.mode)
         if key in seen:
             raise HTTPException(422, "Повторяющиеся сценарии одного решения.")

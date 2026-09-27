@@ -87,6 +87,13 @@ def workbook_report(result: dict, analysis: dict | None = None, snapshot: dict |
           [[r["name"], y["year"], y["opex"], y["replacement"], y["cashflow"], y["cumulative"]] for r in result["results"] for y in r["years"]])
     sheet("Статьи затрат", ["Сценарий", "Раздел", "Статья", "Сумма, ₽"],
           [[r["name"], section, key, value] for r in result["results"] for section in ("capex_breakdown", "opex_breakdown") for key, value in r[section].items()])
+    equipment_rows = [[r["name"], i["name"], i["calculated"], i["quantity"], i["unit_price"], i["cost"]]
+                      for r in result["results"] if r.get("equipment") for i in r["equipment"]["items"]]
+    if equipment_rows:
+        sheet("Состав оборудования", ["Сценарий", "Позиция", "Расчёт, шт.", "Принято, шт.", "Цена, ₽/шт.", "Стоимость, ₽"], equipment_rows)
+        sheet("Допущения оборудования", ["Сценарий", "Описание"],
+              [[r["name"], text] for r in result["results"] if r.get("equipment")
+               for text in r["equipment"]["formulas"] + r["equipment"]["assumptions"]])
     rows = []
     def flatten(value, path=""):
         if isinstance(value, dict):

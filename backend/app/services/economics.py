@@ -1,9 +1,10 @@
 """Предварительная оценка в постоянных рублях; входные допущения возвращаются со снимком расчёта."""
 from app.schemas.economics import EconomicsInput, EconomicsResponse, EconomicsResult, YearCashflow
+from app.services.equipment import equipment_plan
 
-MODEL_VERSION = "economics-1.0"
+MODEL_VERSION = "economics-1.1"
 FORMULAS = {
-    "CAPEX": "Количество × цена оборудования (покупка) + ПО + инфраструктура + интеграция + обучение + резерв. Резерв = сумма перечисленных статей × процент / 100.",
+    "CAPEX": "Количество × цена оборудования (покупка) + зарядные станции + рабочие посты + ПО + прочая инфраструктура + интеграция + обучение + резерв. Резерв = сумма перечисленных статей × процент / 100.",
     "OPEX": "Оставшиеся затраты базового процесса + операторы + количество × обслуживание + лицензии + электроэнергия + прочие расходы + 12 × количество × ставка RaaS (для услуги).",
     "Электроэнергия": "Количество × средняя мощность, кВт × часы в сутки × дни в году × тариф, ₽/кВт·ч.",
     "Годовой эффект": "OPEX базового процесса − OPEX сценария + дополнительный годовой эффект.",
@@ -18,9 +19,12 @@ def calculate(data: EconomicsInput) -> EconomicsResponse:
     baseline = data.baseline_annual_labor + data.baseline_annual_other
     results = []
     for s in data.scenarios:
+        auxiliary = equipment_plan(s.quantity, s.equipment) if s.equipment else None
         equipment = s.quantity * (s.equipment_price or 0) if s.mode == "purchase" else 0
         capex_parts = {"Оборудование": equipment, "ПО": s.software, "Инфраструктура": s.infrastructure,
                        "Интеграция": s.integration, "Обучение": s.training}
+        if auxiliary:
+            capex_parts.update({item["name"]: item["cost"] for item in auxiliary["items"]})
         capex_parts["Резерв"] = sum(capex_parts.values()) * s.reserve_percent / 100
         capex = sum(capex_parts.values())
         opex_parts = {
@@ -44,7 +48,7 @@ def calculate(data: EconomicsInput) -> EconomicsResponse:
             years.append(YearCashflow(year=year, opex=round(opex, 2), replacement=round(replacement, 2),
                                       cashflow=round(effect - replacement, 2), cumulative=round(cumulative, 2)))
         results.append(EconomicsResult(
-            name=s.name, mode=s.mode, capex=round(capex, 2), annual_opex=round(opex, 2), annual_effect=round(effect, 2),
+            equipment=auxiliary, name=s.name, mode=s.mode, capex=round(capex, 2), annual_opex=round(opex, 2), annual_effect=round(effect, 2),
             tco=round(capex + data.horizon_years * opex + replacements, 2), net_effect=round(cumulative, 2),
             simple_payback_years=round(capex / effect, 4) if capex > 0 and effect > 0 else None,
             roi_percent=round(100 * cumulative / capex, 2) if capex > 0 else None,
@@ -61,5 +65,6 @@ def calculate(data: EconomicsInput) -> EconomicsResponse:
             "Для RaaS в обслуживание, лицензии и прочие статьи вводятся только расходы сверх ежемесячной ставки; первоначальные статьи оплачиваются отдельно.",
             "Без указанного срока службы замены оборудования не учитываются. Срок службы применяется только к покупке оборудования, прочие начальные статьи при замене не повторяются.",
             "Доли экономии относятся к выбранному процессу; затраты на операторов роботов добавляются сверх оставшихся расходов на персонал.",
+            "При наличии плана оборудования зарядки и рабочие посты оплачиваются разово при покупке и RaaS. Нулевая цена требует уточнения. Замены этих позиций и их сервис не рассчитаны автоматически: включите оценку в прочие расходы либо обоснуйте срок службы не короче горизонта.",
         ],
     )

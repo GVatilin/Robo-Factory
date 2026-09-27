@@ -9,11 +9,13 @@ import { ErrorState, Spinner } from "../../ui/Controls";
 import type { Project } from "./ProjectsPage";
 import "./Projects.css";
 import "./Selection.css";
+import {DEFAULT_EQUIPMENT, EquipmentFields, EquipmentTable, type EquipmentInput, type EquipmentPlan} from './Equipment';
+import SimulationPanel from './SimulationPanel';
 
-type Options = {process_id:number; utilization:number; availability:number; reserve_percent:number;
+type Options = {process_id:number; utilization:number; availability:number; reserve_percent:number; equipment:EquipmentInput;
   daily_demand?:number; hours_per_day?:number; peak_factor?:number; demand_reason:string;
   throughput_overrides:Record<string,{value:number;reason:string}>};
-type Candidate = {product_id:number;name:string;status:string;quantity:number|null;throughput:number|null;unit:string;
+type Candidate = {product_id:number;name:string;status:string;quantity:number|null;throughput:number|null;unit:string;equipment:EquipmentPlan|null;
   reasons:string[];missing:string[];excluded:string[];score:number;score_factors:Record<string,number>};
 type Selection = {formula:string;model_version:string;project_updated_at:string;options:Options;parameters:Project['parameters'];
   context:{daily_demand:number|null;hours_per_day:number|null;peak_factor:number;unit:string;missing:string[];assumptions:string[]}; candidates:Candidate[]};
@@ -32,7 +34,7 @@ export default function SelectionPage() {
 
 function Workflow({project,processes}:{project:Project;processes:Facility['processes']}) {
   const history = useApi<Saved[]>(`/projects/${project.id}/calculations`);
-  const [options,setOptions] = useState<Options>({process_id:processes[0]?.id ?? 0,utilization:.8,availability:.9,reserve_percent:10,demand_reason:"",throughput_overrides:{}});
+  const [options,setOptions] = useState<Options>({process_id:processes[0]?.id ?? 0,utilization:.8,availability:.9,reserve_percent:10,demand_reason:"",throughput_overrides:{},equipment:{...DEFAULT_EQUIPMENT}});
   const [selection,setSelection] = useState<Selection|null>(null);
   const [selected,setSelected] = useState<number[]>([]);
   const [comparison,setComparison] = useState<Comparison|null>(null);
@@ -67,7 +69,7 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
           <label>Процесс<select value={options.process_id} onChange={e=>change({process_id:Number(e.target.value),throughput_overrides:{},daily_demand:undefined,hours_per_day:undefined,peak_factor:undefined,demand_reason:""})}>{processes.map(p=><option key={p.id} value={p.id}>{p.name}</option>)}</select></label>
           {([['utilization','Коэффициент загрузки',.01,1],['availability','Техническая доступность',.01,1],['reserve_percent','Резерв парка, %',0,100],['daily_demand','Объём в сутки (пусто — из объекта)',.01,1e9],['hours_per_day','Часы в сутки (пусто — из объекта)',.01,24],['peak_factor','Пиковый коэффициент (пусто — из объекта)',1,10]] as const).map(([key,label,min,max])=><label key={key}>{label}<input type="number" step="any" min={min} max={max} required={['utilization','availability','reserve_percent'].includes(key)} value={options[key]??''} onChange={e=>change({[key]:e.target.value===''?undefined:Number(e.target.value)})}/></label>)}
           <label>Обоснование изменения нагрузки / режима<input maxLength={1000} value={options.demand_reason} onChange={e=>change({demand_reason:e.target.value})}/></label>
-        </div><button className="btn btn--primary" disabled={!options.process_id} type="submit">{busy?'Подбираем…':'Подобрать решения и рассчитать парк'}</button>
+        </div><EquipmentFields value={options.equipment} onChange={equipment=>change({equipment})}/><button className="btn btn--primary" disabled={!options.process_id} type="submit">{busy?'Подбираем…':'Подобрать решения и рассчитать парк'}</button>
       </fieldset></form>
     </section>
     {error && <p role="alert" className="economics__error">{error}</p>}
@@ -81,17 +83,19 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
       <h3><Link to={`/products/${c.product_id}`}>{c.name}</Link></h3>
       <p>{c.status==='excluded'?'Исключено: несовместимость':'Условный подбор: требуется проверка'} · {c.score}/100</p>
       <strong>Количество роботов: {c.quantity??'недостаточно данных'}</strong><p>Производительность: {c.throughput??'не указана'} {c.unit}</p>
+      {c.equipment&&<EquipmentTable plan={c.equipment}/>}
       <details><summary>Причины, ограничения и рейтинг</summary><ul>{[...c.reasons,...c.excluded,...c.missing].map((v,i)=><li key={i}>{v}</li>)}</ul><dl>{Object.entries(c.score_factors).map(([k,v])=><div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl></details>
       {c.status!=='excluded' && <RateForm key={`${c.product_id}-${revision}`} candidate={c} initial={options.throughput_overrides[c.product_id]} busy={busy} apply={rate=>{const next={...options,throughput_overrides:{...options.throughput_overrides,[c.product_id]:rate}};setOptions(next);void select(undefined,next);}}/>}
       <label><input type="checkbox" disabled={busy || c.status==='excluded'||c.quantity===null || (!selected.includes(c.product_id)&&selected.length>=6)} checked={selected.includes(c.product_id)} onChange={e=>{setSelected(ids=>e.target.checked?[...ids,c.product_id]:ids.filter(id=>id!==c.product_id));setComparison(null);}}/> В экономическую оценку</label>
     </article>)}</div>
     <button className="btn btn--primary" disabled={busy||!selected.length} onClick={openEconomics}>Рассчитать экономику выбранных ({selected.length}/6)</button></>}
-    {comparison && selection && <EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),save:async(inputs,bindings)=>{
+    {comparison && selection && <EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,equipment:Object.fromEntries(selection.candidates.filter(c=>c.equipment).map(c=>[c.product_id,c.equipment!.inputs])),quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),save:async(inputs,bindings)=>{
       if(project.is_demo) throw new Error('Скопируйте демо-проект в свои проекты для сохранения расчётов.');
       const result=await api<{project_updated_at:string}>(`/projects/${project.id}/economics`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}});
       setVersion(result.project_updated_at);history.reload();
     }}}/>}
     {project.is_demo && <p>Демо доступно для подбора и расчёта. Для сохранения создайте свою копию на странице параметров проекта.</p>}
+    <SimulationPanel projectId={project.id} version={version} isDemo={project.is_demo} selection={selection} saved={history.data??[]}/>
     <section className="card project-card economics"><h2>Сохранённые расчёты</h2>
       <p>Последние 50 запусков. Исходные данные и результаты сохраняются как снимок; изменение каталога не переписывает историю.</p>
       {history.error ? <ErrorState message={history.error.message} onRetry={history.reload}/> : history.loading ? <Spinner label="Загружаем расчёты…"/> : !history.data?.length ? <p>Сохранённых расчётов пока нет.</p> : history.data.map(run=><details key={run.id} className="economics__draft"><summary>{new Date(run.created_at).toLocaleString('ru-RU')} · {run.results.results.map(r=>r.name).join(', ')}</summary>
