@@ -1,4 +1,10 @@
-import { Component, lazy, Suspense, useEffect, useState, type ReactNode } from "react";
+import { lazy, Suspense, useState } from "react";
+
+import { Link } from "react-router";
+
+import { useAuth } from "../auth/AuthContext";
+import { SceneBoundary, supportsWebGL, usePrefersReducedMotion } from "../scene/support";
+import { LogoMark } from "../ui/LogoMark";
 
 import "./Landing.css";
 
@@ -25,53 +31,8 @@ const STEPS = [
 
 const FACILITIES = ["Склад", "Аэропорт", "Медицинское учреждение"];
 
-/** Если WebGL недоступен или сцена упала, лендинг остаётся с градиентным фоном. */
-class SceneBoundary extends Component<{ children: ReactNode }, { failed: boolean }> {
-  state = { failed: false };
-
-  static getDerivedStateFromError() {
-    return { failed: true };
-  }
-
-  render() {
-    return this.state.failed ? null : this.props.children;
-  }
-}
-
-function supportsWebGL(): boolean {
-  try {
-    const canvas = document.createElement("canvas");
-    return Boolean(canvas.getContext("webgl2") ?? canvas.getContext("webgl"));
-  } catch {
-    return false;
-  }
-}
-
-const REDUCED_MOTION = "(prefers-reduced-motion: reduce)";
-
-function usePrefersReducedMotion(): boolean {
-  const [reduced, setReduced] = useState(() => window.matchMedia(REDUCED_MOTION).matches);
-  useEffect(() => {
-    const query = window.matchMedia(REDUCED_MOTION);
-    const onChange = () => setReduced(query.matches);
-    query.addEventListener("change", onChange);
-    return () => query.removeEventListener("change", onChange);
-  }, []);
-  return reduced;
-}
-
-function LogoMark() {
-  return (
-    <svg className="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
-      <path d="M16 3 28 9.5v13L16 29 4 22.5v-13Z" fill="#dbe8fb" />
-      <path d="M16 3 28 9.5 16 16 4 9.5Z" fill="#9fc0ee" />
-      <path d="M16 16v13L4 22.5v-13Z" fill="#5d8fdb" />
-      <path d="M16 16v13l12-6.5v-13Z" fill="#2463d8" />
-    </svg>
-  );
-}
-
 export default function Landing() {
+  const { user } = useAuth();
   const reducedMotion = usePrefersReducedMotion();
   const [webgl] = useState(supportsWebGL);
 
@@ -95,7 +56,18 @@ export default function Landing() {
         </a>
         <nav className="topbar__nav" aria-label="Навигация по странице">
           <a href="#how">Как это работает</a>
+          <Link to="/solutions">Каталог решений</Link>
+          <Link to="/manufacturers">Производители</Link>
           <a href="/api/docs">API</a>
+          {user ? (
+            <Link to="/solutions" className="topbar__cta">
+              {user.full_name ?? user.email}
+            </Link>
+          ) : (
+            <Link to="/login" className="topbar__cta">
+              Войти
+            </Link>
+          )}
         </nav>
       </header>
 
@@ -112,9 +84,9 @@ export default function Landing() {
             <a className="button button--primary" href="#how">
               Как это работает
             </a>
-            <a className="button button--ghost" href="/api/docs">
-              Документация API
-            </a>
+            <Link className="button button--ghost" to="/solutions">
+              Каталог решений
+            </Link>
           </div>
           <ul className="hero__facilities" aria-label="Типы объектов">
             {FACILITIES.map((name) => (

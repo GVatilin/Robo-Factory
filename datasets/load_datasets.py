@@ -4,7 +4,8 @@
   1. каталог решений        — catalog_export*.csv          (самая свежая версия по имени файла);
   2. параметры объектов     — *.xlsx с листами «Склад», «Аэропорт», «Медучреждение»;
   3. эталонные ТТХ решений  — reference_specs.json;
-  4. демо-проекты           — по одному на тип объекта, на базовых значениях параметров.
+  4. фото и ТТХ решений     — Примеры_решений*.docx (привязываются к карточкам по модели из подписи);
+  5. демо-проекты           — по одному на тип объекта, на базовых значениях параметров.
 
 Повторный запуск безопасен: файл с той же контрольной суммой пропускается, изменённый — обновляет данные.
 Базовые справочники (типы объектов, ТТХ, нормативы) должны быть созданы заранее — это делает backend при старте.
@@ -60,6 +61,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--catalog", type=Path, help="CSV каталога решений (catalog_export_*.csv)")
     parser.add_argument("--facilities", type=Path, help="Excel с параметрами объектов")
     parser.add_argument("--reference", type=Path, help="JSON с эталонными ТТХ")
+    parser.add_argument("--photos", type=Path, help="Документ «Примеры решений по типам объектов» (.docx)")
     return parser.parse_args()
 
 
@@ -79,11 +81,17 @@ async def load(args: argparse.Namespace) -> int:
     from app.services.catalog_import import CatalogFormatError, import_catalog
     from app.services.demo_projects import ensure_demo_projects
     from app.services.facility_parameters_import import FacilityWorkbookError, import_facility_parameters
+    from app.services.product_images import remove_files
     from app.services.reference_specs_import import ReferenceSpecsError, import_reference_specs
+    from app.services.example_specs_import import import_example_specs
+    from app.services.solution_examples import ExamplesDocumentError
+    from app.services.solution_photos_import import import_solution_photos
 
     catalog = args.catalog or latest(args.dir, "catalog_export*.csv")
     facilities = args.facilities or find_facility_workbook(args.dir)
     reference = args.reference or (args.dir / "reference_specs.json")
+    examples = args.photos or latest(args.dir, "Примеры_решений*.docx")
+    photos = None
 
     try:
         async with SessionLocal() as session:
@@ -121,15 +129,39 @@ async def load(args: argparse.Namespace) -> int:
             else:
                 report("Эталонные ТТХ", [f"файл {reference.name} не найден — шаг пропущен"])
 
+            if examples and examples.exists():
+                photos = await import_solution_photos(session, examples.read_bytes(), examples.name)
+                report(f"Фотографии решений: {examples.name}", [
+                    f"статус: {photos.status}",
+                    f"фото в документе {photos.photos}, привязано к карточкам {photos.attached}, пропущено {photos.skipped}",
+                    f"карточек добавлено {photos.products_created}",
+                ], photos.warnings)
+                specs = await import_example_specs(session, examples.read_bytes(), examples.name)
+                report(f"ТТХ эталонных решений: {examples.name}", [
+                    f"статус: {specs.status}",
+                    f"решений {specs.solutions}, значений создано {specs.specs_created}, обновлено {specs.specs_updated}",
+                    f"оставлено значений из карточек {specs.specs_kept}, уточнено типов решений {specs.types_refined}",
+                ], specs.warnings)
+            else:
+                report("Фото и ТТХ эталонных решений", ["файл Примеры_решений*.docx не найден — шаг пропущен"])
+
             created = await ensure_demo_projects(session)
             report("Демо-проекты", [f"создано {created}"])
 
             await session.commit()
-    except (CatalogFormatError, FacilityWorkbookError, ReferenceSpecsError) as exc:
-        print(f"\nОшибка в данных, изменения не сохранены: {exc}")
-        return 2
+    except BaseException as exc:
+        # Транзакция откатилась: новые файлы фотографий больше ни на что не ссылаются.
+        if photos:
+            remove_files(*photos.written)
+        if isinstance(exc, (CatalogFormatError, FacilityWorkbookError, ReferenceSpecsError, ExamplesDocumentError)):
+            print(f"\nОшибка в данных, изменения не сохранены: {exc}")
+            return 2
+        raise
     finally:
         await engine.dispose()
+
+    if photos:
+        remove_files(*photos.replaced)
 
     print("\nГотово: датасеты загружены.")
     return 0

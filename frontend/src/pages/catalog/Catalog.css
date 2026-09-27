@@ -1,0 +1,726 @@
+/* ---------- панель поиска ---------- */
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  margin-bottom: 20px;
+  padding: 12px;
+}
+
+.toolbar__search {
+  flex: 1 1 320px;
+  max-width: 520px;
+}
+
+.toolbar__sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink-muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.toolbar__sort .select {
+  width: auto;
+  min-width: 200px;
+}
+
+.toolbar__total {
+  margin-left: auto;
+  padding-right: 6px;
+  color: var(--ink-muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+/* ---------- производители ---------- */
+
+.mgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 16px;
+}
+
+.mcard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgb(255 255 255 / 92%);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  color: inherit;
+  text-decoration: none;
+  backdrop-filter: blur(14px);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+a.mcard:hover {
+  border-color: rgb(36 99 216 / 25%);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.mcard--skeleton {
+  height: 188px;
+}
+
+.mcard--static {
+  box-shadow: none;
+}
+
+.mcard__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.mcard__title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.mcard__title h3 {
+  margin: 0;
+  overflow: hidden;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mcard__legal {
+  overflow: hidden;
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mcard__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.mcard__types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 24px;
+}
+
+.mcard__types .badge {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  line-height: 24px;
+  text-overflow: ellipsis;
+}
+
+.mcard__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.mcard__count {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.mcard__count strong {
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+/* ---------- страница производителя ---------- */
+
+.mhero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 28px;
+  padding: 28px;
+}
+
+.mhero__main {
+  display: flex;
+  gap: 20px;
+  min-width: 0;
+}
+
+.mhero__text {
+  min-width: 0;
+}
+
+.mhero__text h1 {
+  margin: 4px 0 4px;
+  font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.mhero__legal {
+  margin: 0 0 12px;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+}
+
+.mhero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mhero__meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.mhero__meta a {
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.mhero__meta a:hover {
+  text-decoration: underline;
+}
+
+.mhero__description {
+  max-width: 62em;
+  margin: 16px 0 0;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.mhero__side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.mhero__stats {
+  display: flex;
+  gap: 10px;
+}
+
+.mhero__stats > div {
+  display: flex;
+  flex-direction: column;
+  min-width: 110px;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  background: var(--surface-sunken);
+}
+
+.mhero__stats strong {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.mhero__stats span {
+  color: var(--ink-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.mhero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.page-notice {
+  margin-top: 16px;
+}
+
+.lineup {
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.lineup__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px 0;
+}
+
+.lineup__head h2 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+}
+
+.lineup__head p {
+  max-width: 52em;
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.lineup__icon {
+  flex: none;
+  color: var(--accent);
+}
+
+.lineup__stage {
+  position: relative;
+  height: 300px;
+  background: linear-gradient(180deg, rgb(255 255 255 / 0%) 0%, rgb(214 229 248 / 55%) 100%);
+}
+
+.lineup__loading {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.msection {
+  margin-top: 28px;
+}
+
+.msection__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.msection__head h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.msection__count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 30px;
+  height: 26px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: rgb(36 99 216 / 10%);
+  color: var(--accent-strong);
+  font-size: 0.85rem;
+}
+
+/* ---------- карточка товара ---------- */
+
+.pgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.pcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgb(255 255 255 / 92%);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  color: inherit;
+  text-decoration: none;
+  backdrop-filter: blur(14px);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.pcard:hover,
+.pcard:focus-within,
+.pcard.is-active {
+  border-color: rgb(36 99 216 / 30%);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.pcard--pending {
+  border-style: dashed;
+  border-color: rgb(168 100 10 / 35%);
+}
+
+.pcard__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.pcard__type {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pcard__icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9px;
+  background: rgb(36 99 216 / 10%);
+  color: var(--accent);
+}
+
+.pcard__name {
+  margin: 2px 0 0;
+  font-size: 1.08rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.pcard__purpose {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--ink-soft);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.pcard__specs {
+  display: grid;
+  gap: 6px;
+  margin: 4px 0 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--surface-sunken);
+}
+
+.pcard__specs div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.84rem;
+}
+
+.pcard__specs dt {
+  color: var(--ink-muted);
+}
+
+.pcard__specs dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: right;
+}
+
+.pcard__nospecs {
+  margin: 4px 0 0;
+  padding: 10px 12px;
+  border: 1px dashed var(--line-strong);
+  border-radius: 12px;
+  color: var(--ink-muted);
+  font-size: 0.84rem;
+}
+
+.pcard__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.pcard__price {
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+.meter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meter__track {
+  width: 64px;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgb(14 39 72 / 9%);
+}
+
+.meter__fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.meter--low .meter__fill {
+  background: #e0a23b;
+}
+
+.meter--mid .meter__fill {
+  background: var(--accent);
+}
+
+.meter--good .meter__fill {
+  background: var(--success);
+}
+
+.meter__value {
+  min-width: 34px;
+  color: var(--ink-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* ---------- форма производителя ---------- */
+
+.mform {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 20px;
+  align-items: start;
+}
+
+.mform__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 26px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.mform__side {
+  position: sticky;
+  top: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mform__preview {
+  padding: 16px;
+}
+
+.mform__preview-label {
+  margin: 0 0 12px;
+  color: var(--ink-muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mform__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (max-width: 980px) {
+  .mhero {
+    grid-template-columns: 1fr;
+  }
+
+  .mhero__side {
+    align-items: flex-start;
+  }
+
+  .mhero__actions {
+    justify-content: flex-start;
+  }
+
+  .mform {
+    grid-template-columns: 1fr;
+  }
+
+  .mform__side {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .mhero {
+    padding: 20px;
+  }
+
+  .mhero__main {
+    flex-direction: column;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar__total {
+    margin-left: 0;
+  }
+}
+
+/* flex, а не grid: у элемента grid-строки высотой auto процентная высота картинки не вычисляется. */
+.pcard__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  margin: -8px -8px 2px;
+  overflow: hidden;
+  border-radius: 14px;
+  background:
+    radial-gradient(70% 80% at 50% 60%, #ffffff 0%, rgb(255 255 255 / 0%) 80%),
+    var(--surface-sunken);
+}
+
+.pcard__media img {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  object-fit: contain;
+  /* Белый фон студийных снимков сливается с фоном карточки. */
+  mix-blend-mode: multiply;
+  transition: transform 0.25s ease;
+}
+
+.pcard:hover .pcard__media img,
+.pcard.is-active .pcard__media img {
+  transform: scale(1.04);
+}
+
+.pcard__placeholder {
+  color: #b3c7e6;
+}
+
+/* Ссылка на карточку растянута на всю карточку. */
+.pcard__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pcard__link::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.pcard__link:focus-visible {
+  outline: none;
+}
+
+.pcard:has(.pcard__link:focus-visible) {
+  outline: 3px solid rgb(36 99 216 / 45%);
+  outline-offset: 2px;
+}
+
+.pcard__media {
+  position: relative;
+}
+
+.pcard__compare {
+  position: absolute;
+  z-index: 2;
+  top: 8px;
+  right: 8px;
+}
+
+.pcard__maker {
+  margin-top: -6px;
+  color: var(--ink-muted);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.pcard__unknown {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 0;
+  color: var(--warning);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.pcard__unknown svg {
+  flex: none;
+  margin-top: 1px;
+}
+
+.compare-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 11px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 92%);
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgb(37 84 160 / 10%);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.compare-toggle:not(:disabled):hover {
+  border-color: rgb(36 99 216 / 40%);
+  color: var(--accent-strong);
+}
+
+.compare-toggle.is-on {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.compare-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

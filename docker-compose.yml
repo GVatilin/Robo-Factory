@@ -39,6 +39,8 @@ services:
       DEMO_ADMIN_PASSWORD: ${DEMO_ADMIN_PASSWORD:-admin12345}
       DEMO_USER_EMAIL: ${DEMO_USER_EMAIL:-user@example.com}
       DEMO_USER_PASSWORD: ${DEMO_USER_PASSWORD:-user12345}
+      DEMO_VENDOR_EMAIL: ${DEMO_VENDOR_EMAIL:-vendor@example.com}
+      DEMO_VENDOR_PASSWORD: ${DEMO_VENDOR_PASSWORD:-vendor12345}
       UPLOAD_DIR: /data/uploads
     volumes:
       - uploads:/data/uploads

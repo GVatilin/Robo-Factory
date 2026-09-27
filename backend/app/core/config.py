@@ -31,11 +31,17 @@ class Settings(BaseSettings):
 
     upload_dir: Path = Path("/data/uploads")
     max_upload_mb: int = 20
+    # Фотографии товаров: предел размера файла и стороны сохранённого изображения.
+    max_image_mb: int = 10
+    image_max_side: int = 1600
+    image_thumb_side: int = 560
 
     demo_admin_email: str = "admin@example.com"
     demo_admin_password: str = "admin12345"
     demo_user_email: str = "user@example.com"
     demo_user_password: str = "user12345"
+    demo_vendor_email: str = "vendor@example.com"
+    demo_vendor_password: str = "vendor12345"
 
     # Версия расчётной модели фиксируется в каждом запуске расчёта (п. 3.1.5 ТЗ).
     calc_model_version: str = "0.1.0"

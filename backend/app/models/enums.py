@@ -2,9 +2,11 @@ from enum import StrEnum
 
 
 class UserRole(StrEnum):
+    """Роли учётных записей (п. 3.1.1 ТЗ). Гость — это запрос без токена, в БД он не хранится."""
+
     USER = "user"
     ADMIN = "admin"
-    VENDOR = "vendor"  # дополнительная роль (п. 3.1.1 ТЗ), зарезервирована
+    VENDOR = "vendor"  # представитель производителя: ведёт карточку своей компании и её товары
 
 
 class ProductClass(StrEnum):
@@ -66,6 +68,7 @@ class DatasetKind(StrEnum):
     FACILITY_PARAMETERS = "facility_parameters"
     NORMATIVES = "normatives"
     REFERENCE_SPECS = "reference_specs"
+    SOLUTION_PHOTOS = "solution_photos"  # фотографии эталонных решений из документа организатора
 
 
 class ProjectStatus(StrEnum):

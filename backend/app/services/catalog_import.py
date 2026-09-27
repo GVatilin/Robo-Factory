@@ -272,7 +272,9 @@ async def import_catalog(
             manufacturer = manufacturers.get(record.company)
             if manufacturer is None:
                 # Все организации каталога — российские юрлица с указанием региона РФ.
-                manufacturer = Manufacturer(name=record.company, country="Россия" if record.region else None)
+                manufacturer = Manufacturer(
+                    name=record.company, country="Россия" if record.region else None, region=record.region
+                )
                 session.add(manufacturer)
                 await session.flush()
                 manufacturers[record.company] = manufacturer

@@ -7,6 +7,24 @@
   --accent-strong: #1b4fb4;
   --gutter: clamp(16px, 5vw, 72px);
 
+  --surface: rgb(255 255 255 / 80%);
+  --surface-solid: #ffffff;
+  --surface-sunken: #eef3fb;
+  --line: rgb(14 39 72 / 9%);
+  --line-strong: rgb(14 39 72 / 16%);
+  --radius-lg: 20px;
+  --radius: 14px;
+  --radius-sm: 11px;
+  --shadow: 0 18px 40px rgb(37 84 160 / 8%);
+  --shadow-lg: 0 28px 60px rgb(37 84 160 / 16%);
+  --success: #178a5c;
+  --success-bg: #e2f5ec;
+  --warning: #a8640a;
+  --warning-bg: #fdf1dc;
+  --danger: #cc3b3b;
+  --danger-bg: #fde9e9;
+  --violet: #6a4bd1;
+
   font-family: "Manrope Variable", system-ui, "Segoe UI", Roboto, sans-serif;
   color: var(--ink);
   background: var(--bg);
@@ -31,6 +49,16 @@ body {
 
 a {
   color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background: rgb(36 99 216 / 20%);
 }
 
 :focus-visible {

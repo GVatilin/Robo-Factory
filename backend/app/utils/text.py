@@ -21,3 +21,17 @@ def normalize_spaces(value: str | None) -> str | None:
         return None
     cleaned = re.sub(r"\s+", " ", value.replace(" ", " ")).strip()
     return cleaned or None
+
+
+def _escape_like(query: str) -> str:
+    return query.replace("\\", "\\\\").replace("%", "\\%").replace("_", "\\_")
+
+
+def like_pattern(query: str) -> str:
+    """Шаблон ILIKE «содержит» с экранированием спецсимволов % и _."""
+    return f"%{_escape_like(query.strip())}%"
+
+
+def prefix_pattern(prefix: str) -> str:
+    """Шаблон ILIKE «начинается с» с экранированием спецсимволов."""
+    return f"{_escape_like(prefix)}%"

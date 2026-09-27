@@ -20,6 +20,7 @@ from app.models import (
     DataSource,
     FacilityType,
     Industry,
+    Manufacturer,
     Normative,
     Process,
     Product,
@@ -123,12 +124,23 @@ async def seed_normatives(session: AsyncSession, sources: dict[str, DataSource])
 
 
 async def seed_users(session: AsyncSession) -> None:
-    for email, password, role, name in (
-        (settings.demo_admin_email, settings.demo_admin_password, UserRole.ADMIN, "Администратор (демо)"),
-        (settings.demo_user_email, settings.demo_user_password, UserRole.USER, "Пользователь (демо)"),
+    demo_manufacturer = await session.scalar(select(Manufacturer).where(Manufacturer.name == ref.DEMO_MANUFACTURER["name"]))
+    if demo_manufacturer is None:
+        demo_manufacturer = Manufacturer(**ref.DEMO_MANUFACTURER)
+        session.add(demo_manufacturer)
+        await session.flush()
+    for email, password, role, name, manufacturer_id in (
+        (settings.demo_admin_email, settings.demo_admin_password, UserRole.ADMIN, "Администратор (демо)", None),
+        (settings.demo_user_email, settings.demo_user_password, UserRole.USER, "Пользователь (демо)", None),
+        (settings.demo_vendor_email, settings.demo_vendor_password, UserRole.VENDOR, "Вендор (демо)", demo_manufacturer.id),
     ):
         if await session.scalar(select(User.id).where(User.email == email.lower())) is None:
-            session.add(User(email=email.lower(), password_hash=hash_password(password), role=role, full_name=name))
+            session.add(
+                User(
+                    email=email.lower(), password_hash=hash_password(password), role=role, full_name=name,
+                    manufacturer_id=manufacturer_id,
+                )
+            )
     await session.flush()
 
 

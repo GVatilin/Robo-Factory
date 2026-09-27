@@ -8,6 +8,7 @@
 новые ТТХ добавляются данными, а каждое значение несёт источник, дату и признак подтверждённости (п. 3.3.4 ТЗ).
 """
 
+import uuid
 from datetime import date, datetime
 from decimal import Decimal
 from typing import TYPE_CHECKING, Any
@@ -36,6 +37,7 @@ from app.models.enums import AcquisitionModel, ProductClass, ReadinessStatus, Sp
 if TYPE_CHECKING:
     from app.models.reference import Industry, Process
     from app.models.sources import DataSource, DatasetVersion
+    from app.models.user import User
 
 
 process_solution_types = Table(
@@ -89,7 +91,10 @@ class Manufacturer(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(300), unique=True)
     country: Mapped[str | None] = mapped_column(String(100))
+    region: Mapped[str | None] = mapped_column(String(200))
     website: Mapped[str | None] = mapped_column(String(500))
+    contact_email: Mapped[str | None] = mapped_column(String(320))
+    phone: Mapped[str | None] = mapped_column(String(50))
     description: Mapped[str | None] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
     updated_at: Mapped[datetime] = mapped_column(
@@ -148,6 +153,33 @@ class Product(Base):
     )
     processes: Mapped[list["Process"]] = relationship(secondary=product_processes)
     sources: Mapped[list["DataSource"]] = relationship(secondary=product_sources)
+    image: Mapped["ProductImage | None"] = relationship(
+        back_populates="product", cascade="all, delete-orphan", passive_deletes=True
+    )
+
+
+class ProductImage(Base):
+    """Фотография товара. Одна на товар; файлы лежат в UPLOAD_DIR/products/<id>.webp и <id>_thumb.webp.
+
+    Идентификатор файла меняется при каждой замене, поэтому ссылка на изображение кэшируется навсегда.
+    """
+
+    __tablename__ = "product_images"
+
+    id: Mapped[uuid.UUID] = mapped_column(primary_key=True, default=uuid.uuid4)
+    product_id: Mapped[int] = mapped_column(ForeignKey("products.id", ondelete="CASCADE"), unique=True)
+    original_name: Mapped[str | None] = mapped_column(String(300))
+    width: Mapped[int] = mapped_column(Integer)
+    height: Mapped[int] = mapped_column(Integer)
+    size_bytes: Mapped[int] = mapped_column(Integer)
+    # Откуда фото: документ организатора, сайт производителя, загрузка вендора или администратора.
+    source_id: Mapped[int | None] = mapped_column(ForeignKey("data_sources.id", ondelete="SET NULL"))
+    uploaded_by_id: Mapped[uuid.UUID | None] = mapped_column(ForeignKey("users.id", ondelete="SET NULL"))
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+
+    product: Mapped[Product] = relationship(back_populates="image")
+    source: Mapped["DataSource | None"] = relationship()
+    uploaded_by: Mapped["User | None"] = relationship()
 
 
 class ProductApplication(Base):
