@@ -96,7 +96,7 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
       <p>Последние 50 запусков. Исходные данные и результаты сохраняются как снимок; изменение каталога не переписывает историю.</p>
       {history.error ? <ErrorState message={history.error.message} onRetry={history.reload}/> : history.loading ? <Spinner label="Загружаем расчёты…"/> : !history.data?.length ? <p>Сохранённых расчётов пока нет.</p> : history.data.map(run=><details key={run.id} className="economics__draft"><summary>{new Date(run.created_at).toLocaleString('ru-RU')} · {run.results.results.map(r=>r.name).join(', ')}</summary>
         {run.stale&&<p>Параметры объекта изменились после расчёта. Выполните подбор заново.</p>}
-        <EconomicsResults result={run.results}/><details><summary>Снимок подбора и входных данных</summary><pre className="selection-snapshot">{JSON.stringify(run.inputs,null,2)}</pre></details>
+        <EconomicsResults result={run.results} savedUrl={`/projects/${project.id}/calculations/${run.id}/export.xlsx`} title={`${project.name} — расчёт от ${new Date(run.created_at).toLocaleString('ru-RU')}`}/><details><summary>Снимок подбора и входных данных</summary><pre className="selection-snapshot">{JSON.stringify(run.inputs,null,2)}</pre></details>
       </details>)}
     </section>
   </div>;

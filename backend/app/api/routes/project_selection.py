@@ -2,7 +2,7 @@ import uuid
 import math
 from datetime import UTC, datetime
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Response
 from sqlalchemy import select
 
 from app.api.deps import CurrentUser, DbSession, OptionalUser
@@ -13,6 +13,8 @@ from app.schemas.selection import SelectionInput, SaveProjectEconomics
 from app.services.catalog_query import load_entries, load_hierarchy
 from app.services.catalog_view import mandatory_specs
 from app.services.economics import calculate
+from app.services.economics_reports import sensitivity, workbook_report
+from app.schemas.economics import EconomicsInput
 from app.services.selection import VERSION, FORMULA, demand_context, rank_candidate
 
 router = APIRouter(prefix="/projects", tags=["Project selection"])
@@ -48,6 +50,22 @@ async def history(project_id: uuid.UUID, db: DbSession, user: OptionalUser):
     ).order_by(CalculationRun.created_at.desc()).limit(50))).all()
     return [{"id": str(r.id), "created_at": r.created_at, "inputs": r.inputs_snapshot,
              "results": r.results, "stale": r.inputs_snapshot.get("parameters") != project.parameters} for r in runs]
+
+
+@router.get("/{project_id}/calculations/{run_id}/export.xlsx")
+async def export_saved(project_id: uuid.UUID, run_id: uuid.UUID, db: DbSession, user: OptionalUser):
+    project = await visible_project(db, project_id, user)
+    run = await db.scalar(select(CalculationRun).where(CalculationRun.id == run_id,
+        CalculationRun.project_id == project_id, CalculationRun.scenario_id.is_(None),
+        CalculationRun.calc_type == CalculationType.ECONOMICS, CalculationRun.status == CalculationStatus.SUCCEEDED))
+    if not run or not run.results:
+        raise HTTPException(404, "Расчёт не найден.")
+    inputs = EconomicsInput.model_validate(run.inputs_snapshot["economics"])
+    analysis = sensitivity(inputs, 20) if run.model_version == calculate(inputs).model_version else None
+    content = workbook_report(run.results, analysis,
+        {"project": project.name, "run_id": str(run.id), "created_at": run.created_at.isoformat(), **run.inputs_snapshot}, project.name)
+    return Response(content, media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        headers={"Content-Disposition": f'attachment; filename="project-{run.id}.xlsx"'})
 
 
 @router.post("/{project_id}/economics", status_code=201)

@@ -4,6 +4,7 @@ import type { Comparison } from "../../api/types";
 import { formatMoney, formatNumber } from "../../format";
 import { Field, Input } from "../../ui/Field";
 import "./EconomicsPanel.css";
+import EconomicsReportTools from "./EconomicsReportTools";
 
 type Values = Record<string, string>;
 type Draft = { id: number; name: string; buy: boolean; rent: boolean; values: Values };
@@ -157,9 +158,10 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
   </section>;
 }
 
-export function EconomicsResults({result}: {result: EconomicsResponse}) {
-  const horizon = (result.inputs as {horizon_years:number}).horizon_years;
-  return <div>      <h3>Результаты за {horizon} лет</h3>
+export function EconomicsResults({result,savedUrl,title}: {result: EconomicsResponse;savedUrl?:string;title?:string}) {
+  const inputs = result.inputs as {horizon_years:number;scenarios:({name:string;mode:string}&Record<string,unknown>)[]}&Record<string,unknown>;
+  const horizon = inputs.horizon_years;
+  return <div className="economics-report">      <h3>Результаты за {horizon} лет</h3>
       <div className="economics__scroll"><table className="economics__table">
         <caption>Базовый процесс и сценарии роботизации</caption>
         <thead><tr><th scope="col">Показатель</th><th scope="col">Без роботизации</th>{result.results.map((r, i) => <th key={i} scope="col">{r.name}</th>)}</tr></thead>
@@ -185,5 +187,12 @@ export function EconomicsResults({result}: {result: EconomicsResponse}) {
       <dl className="economics__formulas">{Object.entries(result.formulas).map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
       <ul>{result.assumptions.map(a => <li key={a}>{a}</li>)}</ul>
       <p>Версия модели: {result.model_version}. Снимок содержит входные данные и результаты расчёта.</p>
+      <details className="economics__draft"><summary>Исходные данные экономической модели</summary>
+        <dl className="economics__breakdown">{COMMON.map(f=><div key={f.key}><dt>{f.label}{f.unit?`, ${f.unit}`:''}</dt><dd>{String(inputs[f.key]??'не указано')}</dd></div>)}</dl>
+        {inputs.scenarios.map((s,i)=><section key={i}><h4>{s.name}</h4><p>{s.mode==='purchase'?'Покупка':'RaaS'}</p>
+          <dl className="economics__breakdown">{[{key:'equipment_price',label:'Цена оборудования',unit:'₽/робот'},{key:'monthly_fee',label:'Ставка RaaS',unit:'₽/робот/мес'},...SCENARIO].map(f=><div key={f.key}><dt>{f.label}{f.unit?`, ${f.unit}`:''}</dt><dd>{String(s[f.key]??'не указано')}</dd></div>)}</dl>
+        </section>)}
+      </details>
+      <EconomicsReportTools key={JSON.stringify(result.inputs)} result={result} savedUrl={savedUrl} title={title}/>
 </div>;
 }
