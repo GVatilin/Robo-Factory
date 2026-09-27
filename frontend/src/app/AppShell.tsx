@@ -149,6 +149,9 @@ export default function AppShell() {
           <span>Robo-Factory</span>
         </Link>
         <nav className="shell__nav" aria-label="Разделы">
+          <NavLink to="/projects" className={({ isActive }) => cx("shell__link", isActive && "is-active")}>
+            <Building2 size={17} aria-hidden="true" />Проекты
+          </NavLink>
           <NavLink to="/solutions" className={({ isActive }) => cx("shell__link", isActive && "is-active")}>
             <Boxes size={17} aria-hidden="true" />
             Решения

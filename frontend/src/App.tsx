@@ -13,6 +13,8 @@ import ProductFormPage from "./pages/product-form/ProductFormPage";
 import ComparePage from "./pages/solutions/ComparePage";
 import SolutionsPage from "./pages/solutions/SolutionsPage";
 import UsersPage from "./pages/UsersPage";
+import ProjectsPage from "./pages/projects/ProjectsPage";
+import ProjectPage from "./pages/projects/ProjectPage";
 import { EmptyState } from "./ui/Controls";
 
 function Root() {
@@ -50,6 +52,9 @@ const router = createBrowserRouter([
         children: [
           { path: "/solutions", element: <SolutionsPage /> },
           { path: "/compare", element: <ComparePage /> },
+          { path: "/projects", element: <ProjectsPage /> },
+          { path: "/projects/new", element: <ProjectPage /> },
+          { path: "/projects/:id", element: <ProjectPage /> },
           { path: "/manufacturers", element: <ManufacturersPage /> },
           {
             path: "/manufacturers/new",
