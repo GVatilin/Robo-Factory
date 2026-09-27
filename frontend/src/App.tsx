@@ -15,6 +15,7 @@ import SolutionsPage from "./pages/solutions/SolutionsPage";
 import UsersPage from "./pages/UsersPage";
 import ProjectsPage from "./pages/projects/ProjectsPage";
 import ProjectPage from "./pages/projects/ProjectPage";
+import SelectionPage from "./pages/projects/SelectionPage";
 import { EmptyState } from "./ui/Controls";
 
 function Root() {
@@ -55,6 +56,7 @@ const router = createBrowserRouter([
           { path: "/projects", element: <ProjectsPage /> },
           { path: "/projects/new", element: <ProjectPage /> },
           { path: "/projects/:id", element: <ProjectPage /> },
+          { path: "/projects/:id/selection", element: <SelectionPage /> },
           { path: "/manufacturers", element: <ManufacturersPage /> },
           {
             path: "/manufacturers/new",

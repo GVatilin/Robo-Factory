@@ -142,6 +142,6 @@ function ProjectForm({project, definitions, facilities, facilityId, onFacility, 
         {!readOnly && <button className="btn btn--primary" type="submit">{busy?"Сохраняем…":"Сохранить проект"}</button>}
       </fieldset>
     </form>
-    {project && <section className="card project-card"><h2>Сценарии проекта</h2><ul>{project.scenarios.map(s=><li key={s.id}>{s.name}</li>)}</ul><p>Эти сценарии пока не содержат расчётов. Для предварительной экономической оценки выберите решения в каталоге и откройте сравнение.</p></section>}
+    {project && <section className="card project-card"><h2>Сценарии проекта</h2><ul>{project.scenarios.map(s=><li key={s.id}>{s.name}</li>)}</ul><p>Сначала сохраните изменения параметров, затем подберите решения, рассчитайте парк и сохраните экономику сценариев.</p><Link className="btn btn--primary" to={`/projects/${project.id}/selection`}>Подбор роботов и экономика</Link></section>}
   </div>;
 }

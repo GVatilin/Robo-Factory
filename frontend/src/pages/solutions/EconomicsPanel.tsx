@@ -13,7 +13,7 @@ type Result = {
   capex_breakdown: Record<string, number>; opex_breakdown: Record<string, number>;
   years: { year: number; opex: number; replacement: number; cashflow: number; cumulative: number }[];
 };
-type Response = {
+export type EconomicsResponse = {
   model_version: string; inputs: unknown; baseline_annual_opex: number; baseline_tco: number;
   results: Result[]; formulas: Record<string, string>; assumptions: string[];
 };
@@ -61,20 +61,27 @@ function initialDrafts(data: Comparison): Draft[] {
   });
 }
 
-export default function EconomicsPanel({ data }: { data: Comparison }) {
-  const [common, setCommon] = useState<Values>({ horizon_years: "5", baseline_annual_labor: "", baseline_annual_other: "0", hours_per_day: "8", days_per_year: "250", electricity_price: "0" });
-  const [drafts, setDrafts] = useState(() => initialDrafts(data));
-  const [result, setResult] = useState<Response | null>(null);
+type ProjectEconomics = {
+  quantities: Record<number, number>; common: Values;
+  save: (inputs: unknown, bindings: {product_id: number; quantity_reason: string}[]) => Promise<void>;
+};
+export default function EconomicsPanel({ data, project }: { data: Comparison; project?: ProjectEconomics }) {
+  const [common, setCommon] = useState<Values>({ horizon_years: "5", baseline_annual_labor: "", baseline_annual_other: "0", hours_per_day: "8", days_per_year: "250", electricity_price: "0", ...project?.common });
+  const [drafts, setDrafts] = useState<Draft[]>(() => initialDrafts(data).map(d => ({ ...d, values: {...d.values, quantity: String(project?.quantities[d.id] ?? 1)} })));
+  const [result, setResult] = useState<EconomicsResponse | null>(null);
+  const [saved, setSaved] = useState(false);
+  const [quantityReason, setQuantityReason] = useState("");
+  const [accepted, setAccepted] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  function changeCommon(key: string, value: string) { setCommon(s => ({ ...s, [key]: value })); setResult(null); setError(""); }
+  function changeCommon(key: string, value: string) { setCommon(s => ({ ...s, [key]: value })); setResult(null); setSaved(false); setError(""); }
   function changeDraft(id: number, patch: Partial<Draft>) {
-    setDrafts(ds => ds.map(d => d.id === id ? { ...d, ...patch } : d)); setResult(null); setError("");
+    setDrafts(ds => ds.map(d => d.id === id ? { ...d, ...patch } : d)); setResult(null); setSaved(false); setError("");
   }
   function field(spec: FieldSpec, values: Values, onChange: (key: string, value: string) => void, prefix: string) {
     const id = `econ-${prefix}-${spec.key}`;
-    return <Field key={spec.key} label={spec.label} htmlFor={id} hint={spec.hint} required={!spec.optional}>
-      <Input id={id} type="number" min={spec.min ?? 0} max={spec.max ?? 1e12} step={spec.step ?? "any"}
+    return <Field key={spec.key} label={spec.label} htmlFor={id} hint={project && spec.key === "quantity" ? "Из автоматического подбора. Ручная корректировка требует обоснования." : spec.hint} required={!spec.optional}>
+      <Input id={id} type="number" disabled={!!project && spec.key === "hours_per_day"} min={spec.min ?? 0} max={spec.max ?? 1e12} step={spec.step ?? "any"}
         unit={spec.unit} required={!spec.optional} value={values[spec.key] ?? ""}
         onChange={e => onChange(spec.key, e.target.value)} />
     </Field>;
@@ -92,8 +99,19 @@ export default function EconomicsPanel({ data }: { data: Comparison }) {
     setBusy(true);
     try {
       const inputs = { ...Object.fromEntries(Object.entries(common).map(([k, v]) => [k, Number(v)])), scenarios };
-      setResult(await api<Response>("/economics/calculate", { method: "POST", body: inputs }));
+      setResult(await api<EconomicsResponse>("/economics/calculate", { method: "POST", body: inputs }));
     } catch (e) { setError((e as Error).message); }
+    finally { setBusy(false); }
+  }
+  async function save() {
+    if (!project || !result) return;
+    setBusy(true); setError("");
+    try {
+      await project.save(result.inputs, drafts.flatMap(d => [
+        ...(d.buy ? [{product_id:d.id, quantity_reason:quantityReason}] : []),
+        ...(d.rent ? [{product_id:d.id, quantity_reason:quantityReason}] : [])]));
+      setSaved(true);
+    } catch(e) { setError((e as Error).message); }
     finally { setBusy(false); }
   }
   function download() {
@@ -105,7 +123,7 @@ export default function EconomicsPanel({ data }: { data: Comparison }) {
     <h2 id="economics-heading">Экономическая оценка</h2>
     <p>Сравните базовый процесс с покупкой и услугой RaaS. Цены подставлены из карточек и доступны для изменения.
       Неизвестная цена остаётся пустой. Остальные отсутствующие расходы приняты равными нулю — проверьте их перед расчётом.</p>
-    <p>8 часов в сутки и 250 дней в году — начальные допущения. Количество и экономия задаются вами.
+    <p>{project ? "Количество подставлено из подбора. Режим — из объекта, при отсутствии: 8 ч/сутки и 250 дней/год. Экономию затрат задайте отдельно." : "8 часов в сутки и 250 дней в году — начальные допущения. Количество и экономия задаются вами."}
       ПО и внедрение из карточки подставлены для одного робота: при изменении количества уточните стоимость на весь парк.</p>
     <form onSubmit={submit} onInvalid={e => (e.target as HTMLElement).closest("details")?.setAttribute("open", "")}>
       <fieldset disabled={busy} className="economics__fieldset">
@@ -128,7 +146,20 @@ export default function EconomicsPanel({ data }: { data: Comparison }) {
     </form>
     {error && <p role="alert" className="economics__error">{error}</p>}
     {result && <div aria-live="polite">
-      <h3>Результаты за {common.horizon_years} лет</h3>
+      <EconomicsResults result={result} />
+      {project && <div className="project-card">
+        <label>Обоснование изменения количества (если изменили)<input className="input" value={quantityReason} maxLength={1000} onChange={e=>setQuantityReason(e.target.value)} /></label>
+        <label><input type="checkbox" checked={accepted} onChange={e=>setAccepted(e.target.checked)} /> Подтверждаю допущения подбора и необходимость проверки ограничений на объекте</label>
+        <button type="button" className="btn btn--primary" disabled={busy || saved || !accepted} onClick={save}>{saved ? "Сохранено в сценариях проекта" : busy ? "Сохраняем…" : "Сохранить экономику в проект"}</button>
+      </div>}
+      <button type="button" className="btn btn--ghost" onClick={download}>Скачать расчёт и допущения (JSON)</button>
+    </div>}
+  </section>;
+}
+
+export function EconomicsResults({result}: {result: EconomicsResponse}) {
+  const horizon = (result.inputs as {horizon_years:number}).horizon_years;
+  return <div>      <h3>Результаты за {horizon} лет</h3>
       <div className="economics__scroll"><table className="economics__table">
         <caption>Базовый процесс и сценарии роботизации</caption>
         <thead><tr><th scope="col">Показатель</th><th scope="col">Без роботизации</th>{result.results.map((r, i) => <th key={i} scope="col">{r.name}</th>)}</tr></thead>
@@ -136,7 +167,7 @@ export default function EconomicsPanel({ data }: { data: Comparison }) {
           {([ ["CAPEX", "capex", 0], ["OPEX в год", "annual_opex", result.baseline_annual_opex], ["Эффект в год", "annual_effect", 0],
             ["TCO за горизонт", "tco", result.baseline_tco], ["Чистый эффект за горизонт", "net_effect", 0] ] as const).map(([label, key, base]) =>
             <tr key={key}><th scope="row">{label}</th><td>{formatMoney(base)}</td>{result.results.map((r, i) => <td key={i}>{formatMoney(r[key])}</td>)}</tr>)}
-          <tr><th scope="row">Простая окупаемость</th><td>—</td>{result.results.map((r, i) => <td key={i}>{r.simple_payback_years === null ? (r.capex === 0 ? "Нет начальных инвестиций" : "Нет положительного эффекта") : `${formatNumber(r.simple_payback_years)} лет${r.simple_payback_years > Number(common.horizon_years) ? " — за горизонтом" : ""}`}</td>)}</tr>
+          <tr><th scope="row">Простая окупаемость</th><td>—</td>{result.results.map((r, i) => <td key={i}>{r.simple_payback_years === null ? (r.capex === 0 ? "Нет начальных инвестиций" : "Нет положительного эффекта") : `${formatNumber(r.simple_payback_years)} лет${r.simple_payback_years > Number(horizon) ? " — за горизонтом" : ""}`}</td>)}</tr>
           <tr><th scope="row">ROI за горизонт</th><td>—</td>{result.results.map((r, i) => <td key={i}>{r.roi_percent === null ? "Не определён: CAPEX = 0" : `${formatNumber(r.roi_percent)} %`}</td>)}</tr>
         </tbody>
       </table></div>
@@ -153,8 +184,6 @@ export default function EconomicsPanel({ data }: { data: Comparison }) {
       <h3>Формулы и допущения</h3>
       <dl className="economics__formulas">{Object.entries(result.formulas).map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
       <ul>{result.assumptions.map(a => <li key={a}>{a}</li>)}</ul>
-      <p>Версия модели: {result.model_version}. Расчёт не сохраняется в проект: скачайте снимок входных данных и результатов.</p>
-      <button type="button" className="btn btn--ghost" onClick={download}>Скачать расчёт и допущения (JSON)</button>
-    </div>}
-  </section>;
+      <p>Версия модели: {result.model_version}. Снимок содержит входные данные и результаты расчёта.</p>
+</div>;
 }

@@ -1,0 +1,7 @@
+.selection-page { display: grid; gap: 20px; }
+.selection-fields { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: 16px; margin-bottom: 18px; }
+.selection-fields label { display: flex; flex-direction: column; gap: 7px; }
+.selection-fields input,.selection-fields select { font: inherit; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; width: 100%; box-sizing: border-box; background: white; color: #172336; }
+.selection-candidates { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,350px),1fr)); gap: 16px; align-items: start; }
+.selection-candidates details { margin: 12px 0; }
+.selection-snapshot { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 450px; overflow: auto; font-size: 12px; }
