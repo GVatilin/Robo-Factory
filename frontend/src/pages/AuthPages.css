@@ -1,10 +1,8 @@
 .auth {
-  position: relative;
-  z-index: 1;
   display: grid;
   grid-template-columns: minmax(420px, 520px) 1fr;
   min-height: 100vh;
-  background: transparent;
+  background: var(--bg);
 }
 
 .auth__panel {

@@ -143,7 +143,6 @@ function SpecFilter({ spec, params, onChange }: { spec: SpecFilterInfo; params: 
         checked={specValue(params, spec.code, "=") === "true"}
         onChange={(on) => set("=")(on ? "true" : null)}
         label={spec.name}
-        description={`Данные есть у ${spec.count}`}
       />
     );
   }
@@ -184,7 +183,6 @@ function TextFilter({ id, value, onCommit }: { id: string; value: string; onComm
 
 export function CatalogFilters({ params, facets, info, onChange }: FiltersProps) {
   const specsOf = (group: string) => (info?.specs ?? []).filter((s) => s.group === group && s.count > 0);
-  const missing = (info?.specs ?? []).filter((s) => s.count === 0).map((s) => s.name.toLowerCase());
   const specCount = params.getAll("spec").length;
   const completeness = params.get("min_completeness") ?? "";
 
@@ -211,27 +209,27 @@ export function CatalogFilters({ params, facets, info, onChange }: FiltersProps)
         </div>
       </Group>
 
-      <Group title="Идентификация" hint="класс, статус, страна">
+      <Group title="Идентификация">
         <Checks label="Класс изделия" param="product_class" values={facets?.product_classes ?? []} params={params} onChange={onChange} />
         <Checks label="Статус доступности" param="readiness_status" values={facets?.readiness_statuses ?? []} params={params} onChange={onChange} />
         <Checks label="Страна происхождения" param="country" values={facets?.countries ?? []} params={params} onChange={onChange} />
       </Group>
 
-      <Group title="Технические характеристики" hint={specCount ? `фильтров: ${specCount}` : "габариты, скорость, навигация"} open={specCount > 0}>
+      <Group title="Технические характеристики" hint={specCount ? `фильтров: ${specCount}` : undefined} open={specCount > 0}>
         {specsOf("technical").map((spec) => (
           <SpecFilter key={spec.code} spec={spec} params={params} onChange={onChange} />
         ))}
       </Group>
 
       {specsOf("infrastructure").length > 0 && (
-        <Group title="Инфраструктура" hint="проходы, лифты">
+        <Group title="Инфраструктура">
           {specsOf("infrastructure").map((spec) => (
             <SpecFilter key={spec.code} spec={spec} params={params} onChange={onChange} />
           ))}
         </Group>
       )}
 
-      <Group title="Экономика" hint="стоимость, модель приобретения">
+      <Group title="Экономика">
         <NumberFilter
           id="f-price"
           label="Стоимость оборудования, не выше"
@@ -243,7 +241,7 @@ export function CatalogFilters({ params, facets, info, onChange }: FiltersProps)
         <Checks label="Модель приобретения" param="acquisition_model" values={facets?.acquisition_models ?? []} params={params} onChange={onChange} />
       </Group>
 
-      <Group title="Применимость" hint="процессы — в иерархии выше">
+      <Group title="Применимость">
         <label className="fcheck">
           <input type="checkbox" checked={params.get("has_cases") === "true"} onChange={(e) => onChange(withValue(params, "has_cases", e.target.checked ? "true" : null))} />
           <span className="fcheck__label">Есть реализованные кейсы</span>
@@ -251,7 +249,7 @@ export function CatalogFilters({ params, facets, info, onChange }: FiltersProps)
         </label>
       </Group>
 
-      <Group title="Качество данных" hint="полнота, подтверждённость, фото">
+      <Group title="Качество данных">
         <label className="fcheck">
           <input type="checkbox" checked={params.get("has_image") === "true"} onChange={(e) => onChange(withValue(params, "has_image", e.target.checked ? "true" : null))} />
           <span className="fcheck__label">С фотографией</span>
@@ -276,16 +274,13 @@ export function CatalogFilters({ params, facets, info, onChange }: FiltersProps)
           checked={params.get("confirmed_only") === "true"}
           onChange={(on) => onChange(withValue(params, "confirmed_only", on ? "true" : null))}
           label="Только подтверждённые значения"
-          description="Фильтры ТТХ учитывают значения, подтверждённые источником"
         />
         <Switch
           checked={params.get("with_unknown") === "true"}
           onChange={(on) => onChange(withValue(params, "with_unknown", on ? "true" : null))}
-          label="Показывать решения без данных"
-          description="Товары без значения по фильтру ТТХ остаются в списке с пометкой «требует проверки»"
+          label="Показывать роботов без данных"
         />
       </Group>
-      {missing.length > 0 && <p className="cfilters__note">Нет данных в каталоге: {missing.join(", ")}.</p>}
     </div>
   );
 }

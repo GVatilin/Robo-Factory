@@ -89,14 +89,13 @@ export function CatalogTree({ nodes, params, total, onSelect }: CatalogTreeProps
   const nothingSelected = path.length === 0;
   return (
     <nav className="ctree" aria-label="Иерархия каталога">
-      <div className="ctree__legend">Отрасль → объект → процесс → тип решения</div>
       <ul role="tree">
         <li role="treeitem" aria-selected={nothingSelected}>
           <div className={cx("tnode", "tnode--root", nothingSelected && "is-selected")}>
             <span className="tnode__spacer" />
             <button type="button" className="tnode__label" onClick={() => onSelect(null)}>
               <Layers size={15} aria-hidden="true" className="tnode__icon" />
-              <span className="tnode__name">Все решения</span>
+              <span className="tnode__name">Все роботы</span>
               {total !== null && <span className="tnode__count">{total}</span>}
             </button>
           </div>

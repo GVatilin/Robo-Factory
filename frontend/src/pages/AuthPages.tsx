@@ -70,7 +70,7 @@ function PasswordInput(props: { id: string; value: string; onChange: (v: string)
 function useRedirectTarget(): string {
   const location = useLocation();
   const from = (location.state as { from?: string } | null)?.from;
-  return from && from !== "/login" && from !== "/register" ? from : "/solutions";
+  return from && from !== "/login" && from !== "/register" ? from : "/robots";
 }
 
 export function LoginPage() {
@@ -159,7 +159,7 @@ export function LoginPage() {
 
           <p className="auth__switch">
             Нет учётной записи? <Link to="/register">Зарегистрируйтесь</Link> или{" "}
-            <Link to="/solutions">продолжите как гость</Link>.
+            <Link to="/robots">продолжите как гость</Link>.
           </p>
         </div>
       </section>
