@@ -152,6 +152,8 @@ async def run_seed() -> None:
         await seed_spec_definitions(session)
         await seed_normatives(session, sources)
         await seed_users(session)
+        from app.services.object_requirements import ensure_object_requirements
+        await ensure_object_requirements(session)
         await session.commit()
 
         products = await session.scalar(select(func.count(Product.id))) or 0

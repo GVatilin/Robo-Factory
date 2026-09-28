@@ -17,6 +17,15 @@ dist/
 datasets/*
 !datasets/load_datasets.py
 !datasets/README.md
+!datasets/catalog_illustrations.json
+!datasets/fetch_catalog_illustrations.py
+!datasets/load_catalog_illustrations.py
+!datasets/prepare_catalog_evidence.py
+!datasets/catalog_evidence.json
+!datasets/official_enrichment.json
+!datasets/load_catalog_evidence.py
+!datasets/catalog_enrichment_extended.json
+!datasets/catalog_research_index.json
 
 # Файлы данных в любом другом месте репозитория.
 *.csv

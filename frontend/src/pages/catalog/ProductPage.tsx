@@ -49,12 +49,15 @@ function SpecTable({ title, specs }: { title: string; specs: SpecValue[] }) {
           <div key={spec.code}>
             <dt>{spec.name}</dt>
             <dd>
-              <span>{formatSpec(spec)}</span>
-              {spec.is_confirmed && (
-                <span className="spec-table__ok" title={spec.source ? `Подтверждено: ${spec.source.title}` : "Подтверждено"}>
-                  <BadgeCheck size={14} aria-label="Подтверждено" />
-                </span>
-              )}
+              <strong>{formatSpec(spec)}</strong>
+              <small className={spec.is_confirmed && !spec.is_assumption ? "spec-table__ok" : "spec-table__pending"}>
+                {spec.is_assumption ? "Допущение" : spec.is_confirmed ? <><BadgeCheck size={14} /> Подтверждено источником</> : "Требует уточнения"}
+              </small>
+              <small className="spec-table__source">
+                {spec.source?.url ? <a href={spec.source.url} target="_blank" rel="noreferrer noopener">{spec.source.title}</a> : spec.source?.title || "Источник не указан"}
+                <span>Получено: {formatDate(spec.retrieved_at || spec.source?.retrieved_at || null)}</span>
+              </small>
+              {spec.note && <small className="spec-table__note">{spec.note}</small>}
             </dd>
           </div>
         ))}
@@ -92,6 +95,12 @@ function OfferView({ offer, modelLabel }: { offer: Offer; modelLabel: string }) 
         <p className="offer-view__empty">Цена по запросу</p>
       )}
       <span className="offer-view__vat">{offer.price_includes_vat ? "Цены с НДС" : "Цены без НДС"}</span>
+      <small className="offer-view__vat">{offer.is_confirmed ? "Подтверждено источником" : "Стоимость требует подтверждения поставщиком"}</small>
+      {offer.source && <small className="spec-table__source">
+        {offer.source.url ? <a href={offer.source.url} target="_blank" rel="noreferrer noopener">{offer.source.title}</a> : offer.source.title}
+        <span>Получено: {formatDate(offer.source.retrieved_at)}</span>
+      </small>}
+      {offer.notes && <small className="offer-view__vat">{offer.notes}</small>}
     </div>
   );
 }
@@ -214,7 +223,7 @@ export default function ProductPage() {
                 label="Вид"
                 size="sm"
                 options={[
-                  { value: "photo", label: <><Camera size={14} aria-hidden="true" /> Фото</> },
+                  { value: "photo", label: <><Camera size={14} aria-hidden="true" /> {product.image.is_illustration ? "Иллюстрация" : "Фото"}</> },
                   { value: "model", label: <><Box size={14} aria-hidden="true" /> 3D в масштабе</> },
                 ]}
                 value={shown}
@@ -228,7 +237,7 @@ export default function ProductPage() {
               src={product.image.url}
               width={product.image.width}
               height={product.image.height}
-              alt={`Фотография: ${product.name}`}
+              alt={product.image.caption || `Фотография: ${product.name}`}
             />
           ) : webgl ? (
             <SceneBoundary fallback={<p className="preview__fallback">3D-превью недоступно</p>}>
@@ -244,8 +253,17 @@ export default function ProductPage() {
               <Badge tone="warning">Габариты условные — в карточке их нет</Badge>
             </span>
           )}
+          {shown === "photo" && product.image && (
+            <div className="phero__photo-links">
+              {product.image.source?.url && <a href={product.image.source.url} target="_blank" rel="noreferrer noopener">
+                <ExternalLink size={15} aria-hidden="true" /> Открыть источник фото
+              </a>}
+              <a href={product.image.url} target="_blank" rel="noreferrer noopener">Открыть изображение</a>
+            </div>
+          )}
         </div>
         <div className="phero__info card">
+          {product.image?.is_illustration && <Notice tone="info"><strong>Иллюстрация похожего типа техники</strong><span>Внешний вид конкретной модели уточняется у производителя.</span></Notice>}
           <span className="phero__type">
             <span className="pcard__icon">
               <Icon size={16} aria-hidden="true" />
@@ -256,6 +274,13 @@ export default function ProductPage() {
             {product.solution_type?.name ?? "Тип не указан"}
           </span>
           <h1>{product.name}</h1>
+          {product.image?.source && <section className="product-image-credit" aria-label="Происхождение изображения">
+            <strong>Источник изображения</strong>
+            <p>{product.image.source.url ? <a href={product.image.source.url} target="_blank" rel="noreferrer noopener">{product.image.source.title} <ExternalLink size={12} aria-hidden="true" /></a> : product.image.source.title}</p>
+            {product.image.caption && <p>{product.image.caption}</p>}
+            <p>Получено: {formatDate(product.image.source.retrieved_at)}</p>
+            {product.image.attribution && <details><summary>Сведения об источнике</summary><p>{product.image.attribution}</p></details>}
+          </section>}
           {product.manufacturer && (
             <Link className="phero__maker" to={`/manufacturers/${product.manufacturer.id}`}>
               <Building2 size={15} aria-hidden="true" />
@@ -359,6 +384,10 @@ export default function ProductPage() {
             <div className="pblock__group">
               <h3>Ограничения</h3>
               <p className="pblock__text">{product.limitations}</p>
+              {product.field_sources?.limitations && <small className="spec-table__source">
+                <a href={product.field_sources.limitations.url || undefined} target="_blank" rel="noreferrer noopener">{product.field_sources.limitations.title}</a>
+                <span>Получено: {formatDate(product.field_sources.limitations.retrieved_at)}</span>
+              </small>}
             </div>
           )}
           {product.applications.length > 0 && (
@@ -415,16 +444,23 @@ export default function ProductPage() {
                   ) : (
                     <strong>{s.title}</strong>
                   )}
+                  <span>Получено: {formatDate(s.retrieved_at)}{s.publisher ? ` · ${s.publisher}` : ""}</span>
                 </li>
               ))}
             </ul>
           )}
           {product.completeness.missing.length > 0 && (
             <div className="pblock__group">
-              <h3>Не заполнено</h3>
+              <h3>{product.research_checked_at ? "Не удалось подтвердить" : "Не заполнено"}</h3>
               <p className="pblock__muted">{product.completeness.missing.join(", ")}</p>
+              {product.research_checked_at && <p className="pblock__muted">Проверено: {formatDate(product.research_checked_at)}. {product.research_note || "В проверенных источниках не найдено достаточных данных. Требуется спецификация производителя."}</p>}
             </div>
           )}
+          {!!product.completeness.not_applicable?.length && <div className="pblock__group">
+            <h3>Не применяется к этому типу изделия</h3>
+            <p className="pblock__muted">{product.completeness.not_applicable.join(", ")}</p>
+            <p className="pblock__muted">Исключено из оценки полноты по типу решения. Это правило каталога, а не подтверждённая производителем характеристика.</p>
+          </div>}
         </section>
       </div>
     </div>

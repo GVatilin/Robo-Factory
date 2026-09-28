@@ -1,0 +1,1950 @@
+{
+  "version": 1,
+  "products": [
+    {
+      "product_name": "Ronavi H1500 (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=6",
+        "https://ronavi-robotics.ru/catalogue/h1500"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Ronavi SR (грузоподъемность до 50 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=6",
+        "https://ronavi-robotics.ru/catalogue/sr"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Ronavi H2000 (грузоподъемность до 2 000 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=6",
+        "https://ronavi-robotics.ru/catalogue/h2000"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Ronavi SD (грузоподъемность до 10 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=7",
+        "https://ronavi-robotics.ru/catalogue/sd"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Ronavi M (грузоподъемность до 1200 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=7",
+        "https://ronavi-robotics.ru/catalogue/m"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Ronavi RCM (грузоподъемность до 350 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=7"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "AMR 100 (грузоподъемность до 100 кг)",
+      "manufacturer": "ООО \"Морос\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=8",
+        "https://xn--l1aeahg.xn--p1ai/amr-100/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "AMR 800 (грузоподъемность до 800 кг)",
+      "manufacturer": "ООО \"Морос\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=8",
+        "https://xn--l1aeahg.xn--p1ai/amr-800/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "AMR 1500 (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Морос\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=8",
+        "https://xn--l1aeahg.xn--p1ai/amr-1500/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "DMR 1200 (грузоподъемность до 1 200 кг)",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=9",
+        "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2025/10/buklet-dmr-600-1200-ot-23.04.2026-szhatyj.pdf"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "DMR 600 (грузоподъемность до 600 кг)",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=9",
+        "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2025/10/buklet-dmr-600-1200-ot-23.04.2026-szhatyj.pdf"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Сёмабот (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Семаргл\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=9",
+        "https://semargl.pro/equipment/agv-roboty-syemabot/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "DMR Carrier P",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=10"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "AK-2000-2",
+      "manufacturer": "ООО \"ГК Автомакон\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=10"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Робот-штабелёр RoboCV",
+      "manufacturer": "ООО \"Робосиви\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=10",
+        "https://robocv.ru/robot-shtabelyor"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Робот-тягач RoboCV",
+      "manufacturer": "ООО \"Робосиви\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=11",
+        "https://robocv.ru/robot-tyagach"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "SmartCube",
+      "manufacturer": "ООО \"АРС\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=11",
+        "https://arobosys.ru/",
+        "https://arobosys.ru/software"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Беспилотный погрузчик",
+      "manufacturer": "МФТИ",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=11"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "MULE",
+      "manufacturer": "ООО «СМ РОБОТИКС»",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=12",
+        "https://sm-robotics.ru/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "РУБИ-С-03",
+      "manufacturer": "ООО \"РОБО\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=12",
+        "https://robo.ooo/prime-park"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "MARK 2 SE",
+      "manufacturer": "ООО \"Р2Б\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=12",
+        "https://r2b.company/rent"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "АК-SC80",
+      "manufacturer": "ООО \"ГК Автомакон\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=13",
+        "https://robot.automacon.ru/ak-sc80"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Клинботикс 400 PRO",
+      "manufacturer": "ООО \"Вейбот Автомакон Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=13",
+        "https://waybotrobotics.com/models/400pro"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Клинботикс 600",
+      "manufacturer": "ООО \"Вейбот Автомакон Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=13",
+        "https://waybotrobotics.com/models/600"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Unit",
+      "manufacturer": "ООО \"Яку Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=14",
+        "https://yacuai.com/ru/unit/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Модель А25-1720",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=14"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Модель А12-1450",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=14",
+        "https://magadangorod.ru/common/upload/28/editor/file/AO_Eydos_Robototekhnika.pdf#page=4"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "AS-RS P",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=15"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "AS-RS B",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=15"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Pallet Shuttle",
+      "manufacturer": "ООО \"Завод Стелкон\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=15"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Робот-комплектовщик",
+      "manufacturer": "ООО \"Яндекс Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=16"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Роборука",
+      "manufacturer": "ПАО \"Сбербанк\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=16"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Pick by Voice",
+      "manufacturer": "ООО \"Умный сервис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=16"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Pick by light",
+      "manufacturer": "ООО \"Умный сервис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=17"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Робот инвентаризатор",
+      "manufacturer": "ООО \"Яндекс Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=17",
+        "https://robotics.yandex.ru/robotizatsiya-sklada"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Инвентаризатор AI Stock Counter 12M",
+      "manufacturer": "ООО \"ГК Автомакон\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=17"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Яндекс-ровер R 4.0",
+      "manufacturer": "ООО \"Яндекс Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=18"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Аркус",
+      "manufacturer": "НИУ ВШЭ",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=18"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Promobot V.4",
+      "manufacturer": "ООО \"Промобот\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=18",
+        "https://promo-bot.ru/wp-content/uploads/2025/12/Promobot-V.4-instruktsiya-fin-CMYK-20-12-2025.pdf"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Арди",
+      "manufacturer": "ООО \"Промобот\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=19"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Грин",
+      "manufacturer": "ПАО \"Сбербанк\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=19"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Айдол",
+      "manufacturer": "ООО \"Айдол\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=19"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "R-Cafe 1.3",
+      "manufacturer": "ООО \"Робопро\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=20"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Фудтрак",
+      "manufacturer": "ООО \"Соло Кофе\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=20"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Воркер",
+      "manufacturer": "ПАО \"Сбербанк\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=20"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "IQ-BUS V",
+      "manufacturer": "ООО \"Аврора Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=21",
+        "https://avrora-robotics.com/ru/projects/passenger-logistics/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Роботизированная передвижная зарядная станция для электромобилей",
+      "manufacturer": "Росатом",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=21"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Белка",
+      "manufacturer": "ООО \"Дронсхаб\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=21"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "RC5-16",
+      "manufacturer": "ООО \"Робопро\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=23"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Берилл",
+      "manufacturer": "ООО \"Валдай Роботы\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=23",
+        "https://vald.ai/beryl"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "RH06A2",
+      "manufacturer": "ООО \"СМД\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=23",
+        "https://smd.com.ru/projects/robosvarka/svarka-traktorov/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "ARM95-200 (грузоподъемность до 18 кг)",
+      "manufacturer": "ООО \"Прикладная Робототехника\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=24",
+        "https://www.appliedrobotics-rtc.ru/product"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Робототехнический комплекс REDLOAD PRO 10 COBOT",
+      "manufacturer": "ООО \"Технорэд\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=24",
+        "https://technored.ru/catalog/oborudovanie-dlya-stankov/robotizirovannye-operatory-stankov/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Робототехнический комплекс REDWELD BASIC",
+      "manufacturer": "ООО \"Технорэд\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=24"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Робототехнический комплекс REDWELD PRO 10 COBOT",
+      "manufacturer": "ООО \"Технорэд\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=25"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Модель А6-2000",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=25"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Учебная ячейка REDEDUCATION PRO",
+      "manufacturer": "ООО \"Технорэд\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=25"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Модель А220-2700",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=26"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "D. Operator P",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=27"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Дельта-робот",
+      "manufacturer": "ООО \"Битроботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=27"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "DMR 300 Carrier B",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=27"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "DMP 15000",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=28"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Tagarka (грузоподъемность до 6 000 кг)",
+      "manufacturer": "ООО \"Семаргл\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=29"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Tagarka (грузоподъемность до 35 000 кг)",
+      "manufacturer": "ООО \"Семаргл\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=29"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Робот для транспортировки деталей и инструментов",
+      "manufacturer": "АО \"ОДК-СТАР\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=30"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "ARIPIX А1",
+      "manufacturer": "ООО \"Арипикс Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=30"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Роботизированный комплекс по укладке заготовок",
+      "manufacturer": "ООО \"Битроботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=30"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Робот-паук",
+      "manufacturer": "ООО \"Атоммаш\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=31"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Яша",
+      "manufacturer": "ООО \"Свеза-Лес\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=31"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Робот-лаборант",
+      "manufacturer": "ПАО \"Газпром Нефть\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=31"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Легат Патрол",
+      "manufacturer": "ООО \"Дронсхаб\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=32"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Геоскан 401",
+      "manufacturer": "ООО \"Геоскан\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=34",
+        "https://download.geoscan.ru/site-files/401/Geoscan_401_Manual.pdf#page=125",
+        "https://download.geoscan.ru/site-files/401/Geoscan_401_Manual.pdf"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Supercam X4E",
+      "manufacturer": "ООО \"Финко\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=34",
+        "https://supercam.aero/catalog/supercam-x6m2"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Supercam Х6М2",
+      "manufacturer": "ООО \"Финко\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=34"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "ДИАМ 20К",
+      "manufacturer": "АО ГК \"Икар\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=35",
+        "https://www.diam-aero.ru/bas_diam20k.html"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Геоскан 701",
+      "manufacturer": "ООО \"Геоскан\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=35",
+        "https://download.geoscan.ru/site-files/701/Geoscan_701_Manual.pdf"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Геоскан 201",
+      "manufacturer": "ООО \"Геоскан\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=35",
+        "https://download.geoscan.ru/site-files/201/Geoscan_201_Manual.pdf"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Геоскан 201 Агро",
+      "manufacturer": "ООО \"Геоскан\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=36"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Кати",
+      "manufacturer": "ООО \"Агробит\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=36"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Колесный робот",
+      "manufacturer": "ООО \"Агробит\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=36"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Волшебник",
+      "manufacturer": "ООО \"Промтехника-Приволжье\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=37"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Роботизированный автономный минитрактор CP",
+      "manufacturer": "АО \"Когнитив Пилот\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=37",
+        "https://cognitivepilot.com/products/minitraktor/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "85.0ТК",
+      "manufacturer": "ООО \"Завод Агромаш\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=37"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Агробот",
+      "manufacturer": "ООО \"Аврора Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=38"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Роботизированный трактор с гибридной силовой установкой",
+      "manufacturer": "Донской государственный технический университет (ДГТУ)",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=38"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "MARK A (Agro)",
+      "manufacturer": "ООО \"Электромотив\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=38"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Роботизированная платформа для выборочного сбора плодов",
+      "manufacturer": "Финансовый Университет",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=39"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Кировец Агробот",
+      "manufacturer": "АО \"Петербургский Тракторный Завод\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=39"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Интеллектуальный робот-манипулятор для автоматического сбора томатов",
+      "manufacturer": "Новосибирский Государственный Университет",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=39"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Система автоматизированного сбора ягод с использованием группы мобильных роботов",
+      "manufacturer": "ФГАОУ ВО \"ПНИПУ\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=40"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "COGNITIVE AGRO PILOT для трактора с ИИ",
+      "manufacturer": "АО \"Когнитив Пилот\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=40"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "А-50",
+      "manufacturer": "ООО \"Аэромакс\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=40"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "ИРБИС",
+      "manufacturer": "ООО \"Прикладная Робототехника\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=41"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Внутритрубные роботизированные системы Тьюбот",
+      "manufacturer": "ООО \"Тьюбот\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=43"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Серия Sigma (100D, 150, 200, 250А)",
+      "manufacturer": "ООО \"Тарис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=43"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Роботизированный диагностический комплекс",
+      "manufacturer": "АО \"Диаконт\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=43"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Внутренняя диагностика труб ЖКХ",
+      "manufacturer": "ООО \"Юникон\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=44"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Беспилотный бульдозер",
+      "manufacturer": "ООО \"ДСТ-УРАЛ\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=44"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "БРО 2.1",
+      "manufacturer": "АО \"168Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=44",
+        "https://168robotics.com/robots"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "БРО 3.0",
+      "manufacturer": "АО \"168Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=45",
+        "https://168robotics.com/robots"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Пиксель",
+      "manufacturer": "ООО \"Автономика\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=45",
+        "https://www.avtonomika.ru/products/pixel/",
+        "https://storage.yandexcloud.net/web-fies/automatika/docs/01_%D0%9F%D0%B8%D0%BA%D1%81%D0%B5%D0%BB%D1%8C_%D0%9F%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82_V03_PixV1.pdf"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Веном Саранча",
+      "manufacturer": "ООО \"Робком\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=45"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "МАРК",
+      "manufacturer": "ООО \"Виафор\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=46"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Депеша-3",
+      "manufacturer": "АО «НПO «Высoкoтoчные кoмплексы»",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=46"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Astramis SurfexUnit",
+      "manufacturer": "АО \"Астрамис\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=46",
+        "https://astramis.com/SurfexUnit"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Беспилотный каток",
+      "manufacturer": "АО \"Раскат\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=47"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Беспилотный асфальтоукладчик",
+      "manufacturer": "ООО \"НПО ГКМП\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=47"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Атлант",
+      "manufacturer": "ООО \"Кингпро\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=47"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Марк",
+      "manufacturer": "ООО \"Кингпро\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=48"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Сибирячок",
+      "manufacturer": "ООО \"ЭВР\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=48"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Морской скорпион",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=48"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Astramis AeroUnit",
+      "manufacturer": "АО \"Астрамис\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение. Для AeroUnit 20 кг названы запасом по грузоподъёмности, а не допустимой массой перевозимого груза. Время непрерывной работы от привязного питания не указано.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=49",
+        "https://astramis.com/AeroUnit"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Геоскан 401 Геодезия",
+      "manufacturer": "ООО \"Геоскан\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=51"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Геоскан 401 Лидар",
+      "manufacturer": "ООО \"Геоскан\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=52"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Альбатрос М5",
+      "manufacturer": "ООО \"Альбатрос\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=52",
+        "https://www.alb.aero/catalog/bpla-samoletnogo-tipa/albatros-m5/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Геоскан Gemini",
+      "manufacturer": "ООО \"Геоскан\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=53",
+        "https://download.geoscan.ru/site-files/gemini/Geoscan_Gemini_Manual.pdf"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Легионер Е29",
+      "manufacturer": "ООО \"ГК Тихие Крылья\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=53"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "АМТ S300",
+      "manufacturer": "ООО \"АМТ\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=53",
+        "https://amt-print.com/s300"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Комплекс управления кранами ВИРСАЙН СДУ",
+      "manufacturer": "ООО \"Вирсайн Инновации\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=54"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "МРСК",
+      "manufacturer": "ООО \"КБ-интеграл\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=54"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "DH: Cloud Control",
+      "manufacturer": "ООО \"Дронсхаб\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=54"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Cargo UNIT",
+      "manufacturer": "ООО \"Дронсхаб\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=55"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Дефектоскоп",
+      "manufacturer": "МАИ",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=55"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Azarrus 1.0A",
+      "manufacturer": "ООО \"Деморобот\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=56",
+        "https://azarrus.com/catalog/demolition-machines/412/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Innospector",
+      "manufacturer": "АНО ВО \"Университет Иннополис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=56"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "БВС ОМДЖЕТ -М01",
+      "manufacturer": "ООО \"Роспроект\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=56",
+        "https://omjet.ru/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Omega",
+      "manufacturer": "ООО НПП \"Авакс -Геосервис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=57"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Supercam X4",
+      "manufacturer": "ООО \"Финко\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=60",
+        "https://supercam.aero/catalog/supercam-x4"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "MARTin",
+      "manufacturer": "ООО \"Миррико\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=61",
+        "https://mirrico.ru/catalog/products/robotic-method-of-stripping-petrochemical-equipmen/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Херсонес",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=62"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "МК",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=62"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "БЭК-Р",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=62"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "БЭК \"Сивуч\"",
+      "manufacturer": "АНО \"Техносфера\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=63"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "РБ-100",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=63",
+        "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf#page=1"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "РБ-150",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=63",
+        "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf#page=1"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "РБ-300",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=64",
+        "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf#page=1"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "РБ-600",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=64"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "РБ-Мираж 1000",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=64",
+        "https://www.rovbuilder.com/rb-mirazh1000/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "ТНПА «ГНОМ Про Вектор»",
+      "manufacturer": "ООО \"Подводная робототехника\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=65",
+        "https://gnomrov.ru/products/rovs/gnom-pro-vector.html"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "ТНПА «ГНОМ Про»",
+      "manufacturer": "ООО \"Подводная робототехника\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=65",
+        "https://gnomrov.ru/products/rovs/gnom-pro.html"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "ТНПА «ГНОМ X»",
+      "manufacturer": "ООО \"Подводная робототехника\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=65",
+        "https://gnomrov.ru/products/rovs/gnom-x.html"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "ОМДЖЕТ -ГМ01",
+      "manufacturer": "ООО \"Роспроект\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=66"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "T-16",
+      "manufacturer": "АО \"Зала Аэро\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=66"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Грузовик M700 V2",
+      "manufacturer": "ООО \"Лаборатория Будущего\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=66"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Грузовик М500 V2",
+      "manufacturer": "ООО \"Лаборатория Будущего\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=67"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Геоскан 801",
+      "manufacturer": "ООО \"Геоскан\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=70",
+        "https://download.geoscan.ru/site-files/801/Geoscan_801_Manual.pdf"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Пегас",
+      "manufacturer": "ООО \"Аэродин\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=70"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Геоскан 201 Термо",
+      "manufacturer": "ООО \"Геоскан\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=71"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "ДИАМ 20",
+      "manufacturer": "АО ГК \"Икар\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=71",
+        "https://www.diam-aero.ru/bas_diam20.html"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Робот Городовой",
+      "manufacturer": "ООО \"Гумич РТК\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=72"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Трал Патруль 5",
+      "manufacturer": "ООО \"СМП Сервис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=72"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "TFM-15-8E",
+      "manufacturer": "ООО \"ЛМТ\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=72"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Курьер-30",
+      "manufacturer": "ООО \"Клеверкоптер\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=73"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Ортез-1",
+      "manufacturer": "АО \"НПО Андроидная Техника\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились. Требует проверки и классификация: в исходном наборе «Ортез-1» записан как БАС; название медицинского комплекса нельзя использовать для подбора летательных аппаратов без уточнения.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=73"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Роботизированный лафетный ствол",
+      "manufacturer": "ООО \"Коруфайер\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=73"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Гумич спасатель",
+      "manufacturer": "ООО \"Гумич РТК\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=74"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Роботизированный комплекс по обследованию грунта",
+      "manufacturer": "ООО \"Аврора Роботикс\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=74"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Лоцман",
+      "manufacturer": "АО \"НПП ПТ Океанос\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=74"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Сарган",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=75"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Калкан",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=75"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Роботизированная система патрулирования и охраны",
+      "manufacturer": "МАИ",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=75"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Муравей",
+      "manufacturer": "ООО \"Лаборатория Будущего\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=77"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "EVOCARGO N1",
+      "manufacturer": "ООО \"Эвокарго\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=78"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Беспилотный тягач (Когнитив Пилот)",
+      "manufacturer": "АО \"Когнитив Пилот\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=78"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Беспилотный AMT 6×6",
+      "manufacturer": "ООО \"Амт Н.В.\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=78"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Багира",
+      "manufacturer": "ООО \"Прикладная Робототехника\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=79"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "В-120",
+      "manufacturer": "ООО \"Аэромакс\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=80",
+        "https://www.aeromax-group.ru/produkciya/bas-vertolyotnogo-tipa/b-120/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Беспилотный «Львёнок-Москва»",
+      "manufacturer": "ООО \"ПК ТС\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=80"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Беспилотный поезд \"2024\"",
+      "manufacturer": "АО \"Метровагонмаш\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=81"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "L5",
+      "manufacturer": "ООО \"Автотех\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=81"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Беспилотное такси Яндекс",
+      "manufacturer": "ООО \"Яндекс\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=81"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Робот-расцепщик",
+      "manufacturer": "АО \"Концерн Телематика\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=82"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Робот-растормаживатель",
+      "manufacturer": "АО \"Концерн Телематика\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=82"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Ровер для работы с грузовыми вагонами",
+      "manufacturer": "АО \"Нииас\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=82"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "T-300-8E",
+      "manufacturer": "ООО \"ЛМТ\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=83"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Барабулька",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=83"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "ВТ-440м",
+      "manufacturer": "АО \"НПП \"Радар ММС\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=84"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "ОРКАН",
+      "manufacturer": "ЗАО \"Си Проект\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=84"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "БРИЗ",
+      "manufacturer": "ЗАО \"Си Проект\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=84"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "БВС ОМДЖЕТ-03",
+      "manufacturer": "ООО \"Роспроект\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=85",
+        "https://omjet.ru/"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "OG-07 \"Стрекоза\"",
+      "manufacturer": "ООО \"Бас Глори Эйр\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=85"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Вихрь-1М",
+      "manufacturer": "ООО \"Интэк\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=85"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "Горгона 15",
+      "manufacturer": "ООО \"КБ Атл\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=86"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "InnoVTOL-3S",
+      "manufacturer": "АНО ВО \"Университет Иннополис\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=89",
+        "https://innoit.ru/vtol"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "Геоскан 701 Видео",
+      "manufacturer": "ООО \"Геоскан\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=91",
+        "https://www.geoscan.ru/ru/products/geoscan701-video"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "miniSIGMA",
+      "manufacturer": "ООО НПП \"Авакс -Геосервис\"",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=91",
+        "https://uav-siberia.com/minisigma"
+      ],
+      "status": "primary_data_added"
+    },
+    {
+      "product_name": "SIGMA",
+      "manufacturer": "ООО НПП \"Авакс -Геосервис\"",
+      "checked_at": "2026-09-29",
+      "note": "В материалах организатора нет достаточных характеристик. По результатам поиска не добавлена подтверждённая спецификация этой модели из открытого первоисточника; требуется паспорт производителя. Данные похожих моделей не переносились.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=91"
+      ],
+      "status": "specification_required"
+    },
+    {
+      "product_name": "PuduBot 2",
+      "manufacturer": "Pudu Robotics",
+      "checked_at": "2026-09-29",
+      "note": "Сверены материалы организатора и указанные официальные публикации. Для оставшихся полей нужны паспорт конкретного исполнения и коммерческое предложение.",
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/solution-examples.docx",
+        "https://www.pudurobotics.com/en/products/pudubot2"
+      ],
+      "status": "primary_data_added"
+    }
+  ]
+}

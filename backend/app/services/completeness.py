@@ -16,6 +16,31 @@ class ChecklistItem:
     key: str
     label: str
     group: str
+    excluded_product_classes: tuple[str, ...] = ()
+    excluded_solution_types: tuple[str, ...] = ()
+
+
+# Applicability of the checklist, not manufacturer specifications. Unknown values
+# remain missing; only characteristics with no meaning for this product type are excluded.
+_SOFTWARE_PHYSICAL = {
+    'payload_kg', 'length_mm', 'width_mm', 'height_mm', 'weight_kg', 'max_speed_mps',
+    'runtime_h', 'positioning_accuracy_mm', 'navigation_type', 'operating_temp_c',
+    'min_aisle_width_mm', 'floor_requirements', 'charging_infrastructure',
+}
+_GROUND_ONLY = {'min_aisle_width_mm', 'floor_requirements'}
+_WATER_TYPES = ('marine_robots', 'tnpa', 'bespilotnyy_kater', 'bezekipazhnyy_kater',
+                'bespilotnyy_katamaran', 'bespilotnyy_servisnyy_katamaran',
+                'modulnaya_nadvodnaya_mnogofunktsionalnaya_platforma',
+                'modulnaya_navodnaya_mnogofunktsionalnaya_platforma')
+
+
+def applicable(item: ChecklistItem, product: Product) -> bool:
+    return (str(product.product_class) not in item.excluded_product_classes
+            and (not product.solution_type or product.solution_type.code not in item.excluded_solution_types))
+
+
+def not_applicable(product: Product, mandatory_specs: Sequence[SpecDefinition]) -> list[str]:
+    return [item.label for item in checklist(mandatory_specs) if not applicable(item, product)]
 
 
 _FIELD_CHECKS: list[tuple[ChecklistItem, Callable[[Product], bool]]] = [
@@ -30,7 +55,8 @@ _FIELD_CHECKS: list[tuple[ChecklistItem, Callable[[Product], bool]]] = [
      lambda p: any(o.annual_service_cost is not None for o in p.offers)),
     (ChecklistItem("field:service_life_years", "Срок службы", "economics"),
      lambda p: p.service_life_years is not None),
-    (ChecklistItem("field:processes", "Поддерживаемые процессы", "applicability"), lambda p: bool(p.processes)),
+    (ChecklistItem("field:processes", "Поддерживаемые процессы", "applicability"),
+     lambda p: bool(p.processes) or any(a.scenario for a in p.applications)),
     (ChecklistItem("field:limitations", "Ограничения применения", "applicability"), lambda p: bool(p.limitations)),
 ]
 
@@ -39,7 +65,9 @@ _OTHER = [item for item, _ in _FIELD_CHECKS if item.group != "identification"]
 
 
 def checklist(mandatory_specs: Sequence[SpecDefinition]) -> list[ChecklistItem]:
-    specs = [ChecklistItem(f"spec:{d.code}", d.name, str(d.group)) for d in mandatory_specs]
+    specs = [ChecklistItem(f"spec:{d.code}", d.name, str(d.group),
+             tuple(c for c, excluded in [('software', _SOFTWARE_PHYSICAL), ('bas', _GROUND_ONLY)] if d.code in excluded),
+             _WATER_TYPES if d.code in _GROUND_ONLY else ()) for d in mandatory_specs]
     return [*_IDENTIFICATION, *specs, *_OTHER]
 
 
@@ -52,7 +80,7 @@ def evaluate(product: Product, mandatory_specs: Sequence[SpecDefinition]) -> tup
     }
     checks = {item.key: check for item, check in _FIELD_CHECKS}
     missing: list[str] = []
-    items = checklist(mandatory_specs)
+    items = [item for item in checklist(mandatory_specs) if applicable(item, product)]
     by_code = {d.code: d for d in mandatory_specs}
     for item in items:
         kind, _, name = item.key.partition(":")

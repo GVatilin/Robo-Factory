@@ -1,0 +1,398 @@
+{
+  "version": 1,
+  "description": "Иллюстрации классов техники из открытых источников. Не фотографии конкретных моделей каталога. Существующие фотографии сохраняются.",
+  "assets": [
+    {
+      "key": "amr",
+      "label": "мобильный складской робот",
+      "query": "\"autonomous mobile robot\"",
+      "types": [
+        "amr",
+        "mobile_robots",
+        "robotizirovannaya_telezhka",
+        "universalnaya_avtonomnaya_robotizirovannaya_platforma",
+        "mobile_manipulators",
+        "picking_robot"
+      ],
+      "commons_title": "File:Vector3DHD autonomous mobile robot and EnZone wireless charging.jpg"
+    },
+    {
+      "key": "forklift",
+      "label": "складской погрузчик",
+      "query": "automated forklift",
+      "types": [
+        "fmr",
+        "autonomous_forklift",
+        "stacker_robot"
+      ],
+      "commons_title": "File:Jungheinrich ERC 213a 217a Automated Guided Vehicle.jpg"
+    },
+    {
+      "key": "tug",
+      "label": "складской тягач",
+      "query": "tow tractor warehouse",
+      "types": [
+        "tug_robot"
+      ],
+      "commons_title": "File:Electric Towing Tractor Tecna VTA 10 - Strasbourg.jpg"
+    },
+    {
+      "key": "cleaner",
+      "label": "робот для уборки",
+      "query": "floor cleaning robot",
+      "types": [
+        "cleaning_robot"
+      ],
+      "commons_title": "File:Cleaning robot PUDU 01.jpg"
+    },
+    {
+      "key": "drone",
+      "label": "беспилотный летательный аппарат",
+      "query": "DJI Matrice drone",
+      "types": [
+        "uas",
+        "multirotor",
+        "bas_multirotornogo_tipa",
+        "privyaznoy_robot_na_baze_oktokoptera"
+      ],
+      "commons_title": "File:Salvamont DJI Matrice 300 drone.jpg"
+    },
+    {
+      "key": "plane",
+      "label": "беспилотный самолёт",
+      "query": "civilian fixed wing drone",
+      "types": [
+        "samolet",
+        "vtol"
+      ],
+      "commons_title": "File:WingtraOne drone.jpg"
+    },
+    {
+      "key": "marine",
+      "label": "надводный беспилотный аппарат",
+      "query": "autonomous surface vehicle research",
+      "types": [
+        "marine_robots",
+        "modulnaya_navodnaya_mnogofunktsionalnaya_platforma",
+        "bezekipazhnyy_kater",
+        "bespilotnyy_kater",
+        "mnogofunktsionalnyy_bezekipazhnyy_kater",
+        "modulnaya_nadvodnaya_mnogofunktsionalnaya_platforma"
+      ],
+      "commons_title": "File:NOAAS Thomas Jefferson (S 222) Z-Boat 2015 Wood.jpg"
+    },
+    {
+      "key": "catamaran",
+      "label": "надводный аппарат для обследований",
+      "query": "unmanned catamaran",
+      "types": [
+        "bespilotnyy_servisnyy_katamaran",
+        "bespilotnyy_katamaran"
+      ],
+      "commons_title": "File:NOAAS Thomas Jefferson (S 222) Z-Boat 2015 Carrier.jpg"
+    },
+    {
+      "key": "rov",
+      "label": "подводный робот",
+      "query": "underwater remotely operated vehicle",
+      "types": [
+        "tnpa"
+      ],
+      "commons_title": "File:Nereus (underwater vehicle) hydro20100720-full.jpg"
+    },
+    {
+      "key": "humanoid",
+      "label": "антропоморфный робот",
+      "query": "humanoid robot Pepper",
+      "types": [
+        "antropomorfnyy_robot"
+      ],
+      "commons_title": "File:Pepper the Robot.jpg"
+    },
+    {
+      "key": "arm",
+      "label": "промышленный робот-манипулятор",
+      "query": "industrial robot arm Kuka",
+      "types": [
+        "robot_manipulyator",
+        "manipulyator",
+        "manipulators",
+        "robotizirovannaya_ustanovka",
+        "robotizirovannaya_pristanochnaya_yacheyka",
+        "robot_ukladchik",
+        "robot_sortirovschik",
+        "stationary_systems",
+        "robot"
+      ],
+      "commons_title": "File:KUKA Industrial Robot KR10 SCARA.jpg"
+    },
+    {
+      "key": "cobot",
+      "label": "коллаборативный манипулятор",
+      "query": "Universal Robots UR5",
+      "types": [
+        "kollaborativnyy_robot_manipulyator",
+        "robo_kafe"
+      ],
+      "commons_title": "File:Cobot.jpg"
+    },
+    {
+      "key": "delta",
+      "label": "дельта-робот",
+      "query": "delta robot industrial",
+      "types": [
+        "delta_robot",
+        "robot_pauk"
+      ],
+      "commons_title": "File:TOSY Parallel Robot.JPG"
+    },
+    {
+      "key": "welding",
+      "label": "роботизированная сварка",
+      "query": "welding robot",
+      "types": [
+        "svarochnyy_robot",
+        "robotizirovannyy_svarochnyy_kompleks"
+      ],
+      "commons_title": "File:FANUC 6-axis welding robots.jpg"
+    },
+    {
+      "key": "agriculture",
+      "label": "сельскохозяйственный робот",
+      "query": "agricultural robot",
+      "types": [
+        "robot_dlya_analiza_selkhozzemel",
+        "agrobot"
+      ],
+      "commons_title": "File:Amazone BoniRob Feldroboter-Entwicklungsprojekt.jpg"
+    },
+    {
+      "key": "tractor",
+      "label": "сельскохозяйственный трактор",
+      "query": "autonomous tractor",
+      "types": [
+        "bespilotnyy_traktor"
+      ],
+      "commons_title": "File:Autonomous compact tractors in a Texas vineyard, Nov 2012.jpg"
+    },
+    {
+      "key": "milking",
+      "label": "роботизированная доильная установка",
+      "query": "milking robot",
+      "types": [
+        "robotizirovannaya_doilnaya_ustanovka"
+      ],
+      "commons_title": "File:Milking robot at Carah Farm.jpg"
+    },
+    {
+      "key": "rover",
+      "label": "колёсная роботизированная платформа",
+      "query": "Clearpath Husky robot",
+      "types": [
+        "robot_rover",
+        "rover",
+        "kolesnyy_robot",
+        "mobilnyy_robototekhnicheskiy_kompleks_vysokoy_prokhodimosti",
+        "autonomous_ground_vehicles",
+        "robot_rastsepschik"
+      ],
+      "commons_title": "File:20140618 Husky A200 Cracow Robots Show 3333.jpg"
+    },
+    {
+      "key": "security",
+      "label": "охранный робот",
+      "query": "security robot Knightscope",
+      "types": [
+        "security_robot"
+      ],
+      "commons_title": "File:Knightscope security robot - K5.jpg"
+    },
+    {
+      "key": "delivery",
+      "label": "робот для доставки",
+      "query": "Starship delivery robot",
+      "types": [
+        "robot_kurer",
+        "indoor_delivery_robot",
+        "intellektualnyy_avtobus_vendingovyy_apparat"
+      ],
+      "commons_title": "File:Starship Robot Side View.jpg"
+    },
+    {
+      "key": "inventory",
+      "label": "робот для инвентаризации",
+      "query": "inventory robot supermarket",
+      "types": [
+        "inventory_robot"
+      ],
+      "commons_title": "File:Bossa Nova inventory robot at Walmart front.jpg"
+    },
+    {
+      "key": "pipe",
+      "label": "инспекционный робот",
+      "query": "pipe inspection robot",
+      "types": [
+        "vnutritrubnye_robotizirovannye_sistemy",
+        "robotizirovannaya_teploinspektsiya_truboprovodov",
+        "roboty_dlya_diagnostiki_teplosetey"
+      ],
+      "commons_title": "File:Sewer robot.jpg"
+    },
+    {
+      "key": "truck",
+      "label": "автономный грузовик",
+      "query": "autonomous truck",
+      "types": [
+        "autonomous_truck"
+      ],
+      "commons_title": "File:Kodiak Robotics self-driving truck 01.jpg"
+    },
+    {
+      "key": "storage",
+      "label": "автоматизированная система хранения",
+      "query": "automated storage retrieval system",
+      "types": [
+        "kran_shtabeler",
+        "shuttle",
+        "smart_storage"
+      ],
+      "commons_title": "File:Automated Storage Shuttle.jpg"
+    },
+    {
+      "key": "crane",
+      "label": "погрузочный кран",
+      "query": "automated container crane",
+      "types": [
+        "robotizirovannye_pogruzochnye_krany"
+      ],
+      "commons_title": "File:CTA Containerterminal.jpg"
+    },
+    {
+      "key": "printer",
+      "label": "роботизированная 3D-печать",
+      "query": "industrial 3D printer",
+      "types": [
+        "robotizirovannyy_3d_printer"
+      ],
+      "commons_title": "File:3D Printshow 2014 London - Industrial robot 3D printer v01 (14964343917).jpg"
+    },
+    {
+      "key": "demolition",
+      "label": "демонтажный робот",
+      "query": "Brokk demolition robot",
+      "types": [
+        "demontazhnyy_robot"
+      ],
+      "commons_title": "File:Faschina-Demolation-Brokk - Darda 170-01ASD.jpg"
+    },
+    {
+      "key": "bulldozer",
+      "label": "бульдозер",
+      "query": "bulldozer Caterpillar D6",
+      "types": [
+        "bespilotnyy_buldozer"
+      ],
+      "commons_title": "File:Caterpillar D6 bulldozer VA1.jpg"
+    },
+    {
+      "key": "paver",
+      "label": "асфальтоукладчик",
+      "query": "asphalt paver",
+      "types": [
+        "bespilotnyy_asfaltoukladchik"
+      ],
+      "commons_title": "File:Vögele Super 1303-3i paver and asphalt roller (1).jpg"
+    },
+    {
+      "key": "roller",
+      "label": "дорожный каток",
+      "query": "road roller",
+      "types": [
+        "bespilotnyy_katok"
+      ],
+      "commons_title": "File:Hamm HD10 roller (front).jpg"
+    },
+    {
+      "key": "fire",
+      "label": "пожарный робот",
+      "query": "firefighting robot",
+      "types": [
+        "robotizirovannyy_lafetnyy_stvol"
+      ],
+      "commons_title": "File:POK Jupiter firefighting robot (1).jpg"
+    },
+    {
+      "key": "metro",
+      "label": "автоматизированный метрополитен",
+      "query": "driverless metro train",
+      "types": [
+        "bespilotnoe_metro"
+      ],
+      "commons_title": "File:SydneyMetroDriverlessTrain.jpg"
+    },
+    {
+      "key": "tram",
+      "label": "трамвай",
+      "query": "tram Moscow Vityaz",
+      "types": [
+        "bespilotnyy_tramvay"
+      ],
+      "commons_title": "File:Moscow tram 31234 2025-04 Apakov tram depot Vityaz-M 292.JPG"
+    },
+    {
+      "key": "taxi",
+      "label": "автономный автомобиль",
+      "query": "Waymo self driving car",
+      "types": [
+        "bespilotnoe_taksi"
+      ],
+      "commons_title": "File:Waymo self-driving car side view.gk.jpg"
+    },
+    {
+      "key": "software",
+      "label": "программное управление роботами",
+      "query": "Robot Operating System rviz screenshot",
+      "types": [
+        "software",
+        "po_dlya_sortirovki_tovarov"
+      ],
+      "commons_title": "File:Cart pushing rviz holonomic.jpg"
+    },
+    {
+      "key": "harvest",
+      "label": "робот для сбора урожая",
+      "query": "harvesting robot",
+      "types": [
+        "robot_dlya_sbora_plodov"
+      ],
+      "commons_title": "File:Robotic arm with a cutter end-effector harvesting green chile peppers in an indoor setting.jpg"
+    },
+    {
+      "key": "conveyor",
+      "label": "автоматизированная конвейерная линия",
+      "query": "conveyor factory",
+      "types": [
+        "konveyer_avtomatizirovannoy_vaktsinatsii"
+      ],
+      "commons_title": "File:Conveyor system in a factory.jpg"
+    }
+  ],
+  "name_rules": [
+    {
+      "pattern": "ТНПА|ГНОМ",
+      "asset": "rov"
+    },
+    {
+      "pattern": "REDWELD|свароч",
+      "asset": "welding"
+    },
+    {
+      "pattern": "REDLOAD.*COBOT",
+      "asset": "cobot"
+    },
+    {
+      "pattern": "растормаживатель|расцепщик",
+      "asset": "rover"
+    }
+  ]
+}

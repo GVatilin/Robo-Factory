@@ -46,12 +46,13 @@ PRODUCT_DETAIL_OPTIONS = (
 
 # Достаточно для карточки в списке: ключевые ТТХ, цена и полнота.
 PRODUCT_SUMMARY_OPTIONS = (
+    selectinload(Product.applications),
     selectinload(Product.manufacturer),
     selectinload(Product.solution_type).selectinload(SolutionType.parent),
     selectinload(Product.spec_values).selectinload(ProductSpecValue.definition),
     selectinload(Product.offers),
     selectinload(Product.processes),
-    selectinload(Product.image),
+    selectinload(Product.image).selectinload(ProductImage.source),
 )
 
 SCALAR_FIELDS = (

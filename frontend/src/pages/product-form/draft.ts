@@ -211,7 +211,7 @@ export function evaluateChecklist(draft: ProductDraft, checklist: ChecklistItem[
     "field:price": () => draft.offers.some((o) => validNumber(o.equipment) || validNumber(o.monthly)),
     "field:service_cost": () => draft.offers.some((o) => validNumber(o.service)),
     "field:service_life_years": () => validNumber(draft.serviceLife),
-    "field:processes": () => draft.processIds.length > 0,
+    "field:processes": () => draft.processIds.length > 0 || draft.cases.some(c => c.scenario.trim() !== ""),
     "field:limitations": () => draft.limitations.trim() !== "",
   };
   const done = new Set<string>();

@@ -44,6 +44,8 @@ class ChecklistItemOut(BaseModel):
     key: str
     label: str
     group: str
+    excluded_product_classes: list[str] = []
+    excluded_solution_types: list[str] = []
 
 
 class CatalogOptions(BaseModel):

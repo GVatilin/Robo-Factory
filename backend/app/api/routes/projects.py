@@ -1,6 +1,8 @@
 import uuid
 from pathlib import Path
 from datetime import UTC, datetime
+import json
+from typing import Literal
 
 from fastapi import APIRouter, HTTPException, Query, Response, UploadFile, File, Form
 from sqlalchemy import or_, select
@@ -8,9 +10,9 @@ from sqlalchemy.orm import selectinload
 
 from app.api.deps import CurrentUser, DbSession, OptionalUser
 from app.models import FacilityType, ParameterDefinition, Project, ProjectFile, Scenario, ScenarioItem
-from app.schemas.projects import ParameterOut, ProjectDetail, ProjectInput, ProjectSummary, ProjectUpdate
+from app.schemas.projects import ParameterOut, ParameterValues, ProjectDetail, ProjectInput, ProjectSummary, ProjectUpdate
 from app.services.demo_projects import default_scenarios
-from app.services.projects import missing_required, validate_parameters, parse_parameter_file, parameter_template
+from app.services.projects import missing_required, validate_parameters, parse_parameter_file, parameter_template, parameter_workbook
 from app.services.project_overview import project_summaries, scenario_overview
 from app.models.enums import ProjectFileKind
 from app.core.config import settings
@@ -69,6 +71,54 @@ async def list_projects(db: DbSession, user: OptionalUser, demo: bool = False,
     return await project_summaries(db, projects)
 
 
+def template_response(values, defs, format):
+    content = parameter_workbook(values, defs) if format == "xlsx" else parameter_template(values, defs)
+    mime = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" if format == "xlsx" else "text/csv; charset=utf-8"
+    return Response(content, media_type=mime, headers={"Content-Disposition": f'attachment; filename="project-parameters.{format}"'})
+
+
+@router.get("/parameters/{facility_id}/template")
+async def facility_template(facility_id: int, db: DbSession, format: Literal["csv", "xlsx"] = "xlsx"):
+    if not await db.get(FacilityType, facility_id):
+        raise HTTPException(404, "Тип объекта не найден.")
+    return template_response({}, await definitions(db, facility_id), format)
+
+
+@router.post("/parameters/{facility_id}/validate")
+async def check_parameters(facility_id: int, data: ParameterValues, db: DbSession, user: CurrentUser):
+    if not await db.get(FacilityType, facility_id):
+        raise HTTPException(404, "Тип объекта не найден.")
+    defs = await definitions(db, facility_id)
+    if not defs:
+        raise HTTPException(422, "Справочник параметров ещё не заполнен.")
+    values = validate_parameters(data.parameters, defs, require_complete=True)
+    return {"parameters": values, "ready": True}
+
+
+@router.post("/parameters/{facility_id}/preview")
+async def preview_parameters(facility_id: int, db: DbSession, user: CurrentUser,
+                             file: UploadFile = File(...), parameters: str = Form("{}")):
+    if not await db.get(FacilityType, facility_id):
+        raise HTTPException(404, "Тип объекта не найден.")
+    if len(parameters) > 700_000:
+        raise HTTPException(422, "Слишком большой набор параметров.")
+    try:
+        base = ParameterValues.model_validate({"parameters": json.loads(parameters)}).parameters
+    except ValueError:
+        raise HTTPException(422, "Некорректные текущие параметры.") from None
+    content = await file.read(2_000_001)
+    await file.close()
+    if not content or len(content) > 2_000_000:
+        raise HTTPException(422, "Выберите непустой CSV/XLSX до 2 МБ.")
+    defs = await definitions(db, facility_id)
+    imported = parse_parameter_file(content, Path(file.filename or "").suffix.lower(), defs)
+    merged = validate_parameters({**base, **imported}, defs)
+    missing = missing_required(merged, defs)
+    return {"parameters": merged, "changed_codes": list(imported), "ready": not missing,
+            "missing_required": [{"code": d.code, "name": d.name} for d in defs if d.code in missing],
+            "rows": [{"code": d.code, "name": d.name, "unit": d.unit, "value": merged.get(d.code)} for d in defs if d.code in imported]}
+
+
 @router.get("/{project_id}/scenario-comparison")
 async def compare_project_scenarios(project_id: uuid.UUID, db: DbSession, user: OptionalUser):
     project = await visible_project(db, project_id, user)
@@ -96,10 +146,9 @@ async def get_project(project_id: uuid.UUID, db: DbSession, user: OptionalUser):
 
 
 @router.get("/{project_id}/parameters/template")
-async def download_template(project_id: uuid.UUID, db: DbSession, user: OptionalUser):
+async def download_template(project_id: uuid.UUID, db: DbSession, user: OptionalUser, format: Literal["csv", "xlsx"] = "csv"):
     project = await visible_project(db, project_id, user)
-    content = parameter_template(project.parameters, await definitions(db, project.facility_type_id))
-    return Response(content, media_type="text/csv", headers={"Content-Disposition": 'attachment; filename="project-parameters.csv"'})
+    return template_response(project.parameters, await definitions(db, project.facility_type_id), format)
 
 
 @router.post("/{project_id}/parameters/import", response_model=ProjectDetail)

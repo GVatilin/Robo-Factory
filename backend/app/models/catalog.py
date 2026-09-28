@@ -172,6 +172,9 @@ class ProductImage(Base):
     width: Mapped[int] = mapped_column(Integer)
     height: Mapped[int] = mapped_column(Integer)
     size_bytes: Mapped[int] = mapped_column(Integer)
+    # An illustrative image depicts a similar class of equipment, not this exact model.
+    is_illustration: Mapped[bool] = mapped_column(Boolean, default=False, server_default="false")
+    caption: Mapped[str | None] = mapped_column(String(500))
     # Откуда фото: документ организатора, сайт производителя, загрузка вендора или администратора.
     source_id: Mapped[int | None] = mapped_column(ForeignKey("data_sources.id", ondelete="SET NULL"))
     uploaded_by_id: Mapped[uuid.UUID | None] = mapped_column(ForeignKey("users.id", ondelete="SET NULL"))

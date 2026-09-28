@@ -6,6 +6,7 @@ import {
   CircleAlert,
   Container,
   Drone,
+  ExternalLink,
   Forklift,
   HandGrab,
   MonitorCog,
@@ -130,13 +131,14 @@ export function ProductCard({ product, active, onHover, comparable, unknown }: P
     >
       <div className="pcard__media">
         {product.image_url ? (
-          <img src={product.image_url} alt="" loading="lazy" decoding="async" />
+          <img src={product.image_url} alt={product.image_caption || product.name} loading="lazy" decoding="async" />
         ) : (
           <span className="pcard__placeholder" title="Фото не загружено">
             <Icon size={34} strokeWidth={1.5} aria-hidden="true" />
           </span>
         )}
         {comparable && <CompareToggle product={product} className="pcard__compare" />}
+        {product.image_is_illustration && <span className="pcard__illustration" title={product.image_caption || "Иллюстрация похожего типа техники"}>Иллюстрация типа</span>}
       </div>
       <div className="pcard__top">
         <span className="pcard__type">
@@ -147,6 +149,11 @@ export function ProductCard({ product, active, onHover, comparable, unknown }: P
         </span>
         {!product.is_published ? <Badge tone="warning">На проверке</Badge> : <ReadinessBadge status={product.readiness_status} />}
       </div>
+      {product.image_source_url && (
+        <a className="pcard__image-source" href={product.image_source_url} target="_blank" rel="noreferrer noopener" aria-label={`Источник изображения: ${product.name}`}>
+          <ExternalLink size={13} aria-hidden="true" /> Источник изображения
+        </a>
+      )}
       <h3 className="pcard__name">
         <Link to={`/products/${product.id}`} className="pcard__link">
           {product.name}

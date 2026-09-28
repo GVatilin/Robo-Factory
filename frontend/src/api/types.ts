@@ -94,6 +94,8 @@ export interface ChecklistItem {
   key: string;
   label: string;
   group: string;
+  excluded_product_classes?: string[];
+  excluded_solution_types?: string[];
 }
 
 export interface CatalogOptions {
@@ -130,6 +132,9 @@ export interface ProductImage {
   height: number;
   source: Source | null;
   uploaded_at: string;
+  is_illustration: boolean;
+  caption: string | null;
+  attribution: string | null;
 }
 
 export interface ProductSummary {
@@ -137,6 +142,9 @@ export interface ProductSummary {
   name: string;
   /** Превью фотографии для карточки. */
   image_url: string | null;
+  image_is_illustration: boolean;
+  image_caption: string | null;
+  image_source_url?: string | null;
   manufacturer: Ref | null;
   solution_type: SolutionTypeRef | null;
   product_class: ProductClass;
@@ -215,6 +223,9 @@ export interface ProcessInfo {
 }
 
 export interface Product extends ProductSummary {
+  field_sources?: Record<string, Source>;
+  research_checked_at?: string | null;
+  research_note?: string | null;
   external_id: string | null;
   description: string | null;
   region: string | null;
@@ -229,7 +240,7 @@ export interface Product extends ProductSummary {
   applications: Application[];
   processes: ProcessInfo[];
   sources: Source[];
-  completeness: { percent: number; filled: number; total: number; missing: string[] };
+  completeness: { percent: number; filled: number; total: number; missing: string[]; not_applicable?: string[] };
   image: ProductImage | null;
   can_edit: boolean;
   can_publish: boolean;

@@ -1,10 +1,13 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy import select
 from sqlalchemy.orm import selectinload
 
-from app.api.deps import DbSession
+from app.api.deps import DbSession, AdminUser
 from app.core import labels
-from app.models import FacilityType, Industry, Process, SolutionType, SpecDefinition
+from app.models import FacilityType, Industry, Process, SolutionType, SpecDefinition, ParameterDefinition, DataSource
+from app.schemas.object_reference import ObjectTypeInput, ObjectParameterInput
+from app.services.projects import validate_parameters
 from app.schemas.common import Option, Ref
 from app.schemas.reference import (
     CatalogOptions,
@@ -18,6 +21,47 @@ from app.services.catalog_view import mandatory_specs
 from app.services.completeness import checklist
 
 router = APIRouter(prefix="/reference", tags=["Справочники"])
+
+
+@router.post("/facility-types", status_code=201, summary="Добавить тип объекта (администратор)")
+async def create_facility(data: ObjectTypeInput, db: DbSession, user: AdminUser):
+    if not await db.get(Industry, data.industry_id):
+        raise HTTPException(422, "Отрасль не найдена.")
+    facility = FacilityType(**data.model_dump())
+    db.add(facility)
+    try:
+        await db.commit()
+    except IntegrityError:
+        await db.rollback()
+        raise HTTPException(409, "Тип объекта с таким кодом уже существует.") from None
+    return {"id": facility.id, "code": facility.code, "name": facility.name}
+
+
+@router.get("/parameter-sources", summary="Источники параметров")
+async def parameter_sources(db: DbSession):
+    sources = (await db.scalars(select(DataSource).order_by(DataSource.title))).all()
+    return [{"id": s.id, "title": s.title, "url": s.url} for s in sources]
+
+
+@router.post("/facility-types/{facility_id}/parameters", status_code=201, summary="Добавить параметр объекта (администратор)")
+async def add_parameter(facility_id: int, data: ObjectParameterInput, db: DbSession, user: AdminUser):
+    if not await db.get(FacilityType, facility_id):
+        raise HTTPException(404, "Тип объекта не найден.")
+    if not await db.get(DataSource, data.source_id):
+        raise HTTPException(422, "Выберите существующий источник параметра.")
+    from sqlalchemy import func
+    count = await db.scalar(select(func.count(ParameterDefinition.id)).where(ParameterDefinition.facility_type_id == facility_id))
+    if count >= 300:
+        raise HTTPException(422, "Для одного типа объекта доступно до 300 параметров.")
+    definition = ParameterDefinition(facility_type_id=facility_id, **data.model_dump())
+    validate_parameters({definition.code: definition.default_value}, [definition])
+    db.add(definition)
+    try:
+        await db.commit()
+    except IntegrityError:
+        await db.rollback()
+        raise HTTPException(409, "Параметр с таким кодом уже существует у этого типа объекта.") from None
+    return {"id": definition.id, "code": definition.code, "facility_type_id": facility_id}
 
 
 def _options(mapping: dict) -> list[Option]:
@@ -86,7 +130,10 @@ async def industries(db: DbSession) -> list[Industry]:
 @router.get("/product-checklist", response_model=list[ChecklistItemOut], summary="Чек-лист полноты карточки")
 async def product_checklist(db: DbSession) -> list[ChecklistItemOut]:
     """Обязательные характеристики п. 3.3.7 ТЗ, по которым считается полнота карточки товара."""
-    return [ChecklistItemOut(key=i.key, label=i.label, group=i.group) for i in checklist(await mandatory_specs(db))]
+    return [ChecklistItemOut(key=i.key, label=i.label, group=i.group,
+                            excluded_product_classes=list(i.excluded_product_classes),
+                            excluded_solution_types=list(i.excluded_solution_types))
+            for i in checklist(await mandatory_specs(db))]
 
 
 @router.get("/catalog-options", response_model=CatalogOptions, summary="Значения перечислений каталога")

@@ -6,6 +6,7 @@ from sqlalchemy.orm import selectinload
 
 from app.models import FacilityType, Project, Scenario
 from app.models.enums import ScenarioKind, ValueOrigin
+from app.services.object_requirements import DEMO_EXAMPLES
 
 DEFAULT_SCENARIOS: list[tuple[str, ScenarioKind, str]] = [
     ("Текущий процесс", ScenarioKind.BASELINE, "Базовый сценарий без роботизации — точка отсчёта для сравнения."),
@@ -36,6 +37,8 @@ async def ensure_demo_projects(session: AsyncSession) -> int:
         if exists:
             continue
         parameters = {d.code: d.default_value for d in facility.parameter_definitions if d.default_value is not None}
+        examples = {k: v for k, v in DEMO_EXAMPLES.get(facility.code, {}).items() if k in {d.code for d in facility.parameter_definitions}}
+        parameters.update(examples)
         session.add(
             Project(
                 facility_type_id=facility.id,
@@ -43,7 +46,7 @@ async def ensure_demo_projects(session: AsyncSession) -> int:
                 description="Демонстрационный проект на базовых значениях датасета организатора.",
                 is_demo=True,
                 parameters=parameters,
-                parameter_origins={code: ValueOrigin.DEFAULT.value for code in parameters},
+                parameter_origins={code: "team_assumption" if code in examples else ValueOrigin.DEFAULT.value for code in parameters},
                 scenarios=default_scenarios(),
             )
         )

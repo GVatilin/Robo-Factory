@@ -184,3 +184,26 @@
   .project-savebar .btn svg { width: 14px; }
   .project-next-step .btn { width: 100%; }
 }
+.project-facility-picker { margin: 18px 0; }
+.project-facility-options { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.project-facility-options button { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; padding: 18px; border: 1px solid var(--line-strong); border-radius: 14px; background: var(--surface); color: var(--ink); text-align: left; cursor: pointer; font: inherit; }
+.project-facility-options button.is-selected { border-color: var(--accent); background: var(--accent-soft, #edf4ff); box-shadow: inset 0 0 0 1px var(--accent); }
+.project-facility-options button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.project-facility-options span { color: var(--ink-soft); font-size: .84rem; line-height: 1.5; }
+.project-parameter-scope { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 16px 0; padding: 14px 18px; border-radius: 12px; background: var(--surface); color: var(--ink-soft); font-size: .85rem; }
+.project-parameter-scope strong { color: var(--ink); }
+.parameter-preview__table { overflow: auto; max-height: 400px; margin-block: 16px; }
+.parameter-preview table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.parameter-preview th,.parameter-preview td { padding: 10px; text-align: left; border-bottom: 1px solid var(--line-strong); }
+.parameter-preview th { position: sticky; top: 0; background: var(--surface-sunken); }
+.parameter-preview td { overflow-wrap: anywhere; }
+.parameter-source { position: relative; margin-left: auto; font-size: 12px; }
+.project-editor .parameter-source summary { padding: 0; font-size: 11px; color: var(--ink-soft); cursor: pointer; }
+.parameter-source > div { margin-top: 8px; padding: 12px; border-radius: 10px; background: var(--surface-sunken); max-width: 320px; overflow-wrap: anywhere; }
+.parameter-source p { margin: 5px 0 0; font-size: 12px; }
+.project-completeness { flex-wrap: wrap; }
+.project-missing { flex-basis: 100%; }
+.project-missing ul { columns: 2; padding-left: 22px; }
+.project-missing button { background: none; border: 0; color: var(--accent); text-align: left; cursor: pointer; font: inherit; font-size: 12px; padding: 4px 0; }
+@media (max-width: 740px) { .project-missing ul { columns: 1; } .field__head:has(.parameter-source) { flex-wrap: wrap; } }
+@media (max-width: 740px) { .project-facility-options { grid-template-columns: 1fr; } }

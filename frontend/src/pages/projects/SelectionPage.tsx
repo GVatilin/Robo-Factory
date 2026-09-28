@@ -62,9 +62,10 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
   return <div className="page selection-page">
     <Link to={`/projects/${project.id}`}>← Параметры проекта</Link>
     <header className="page-header"><div><h1>Подбор и экономика</h1><p>{project.name}</p></div></header>
+    {!!project.missing_required.length && <div className="card project-card" role="alert"><p>До расчёта заполните обязательные параметры объекта: осталось {project.missing_required.length}.</p><Link className="btn btn--primary" to={`/projects/${project.id}`}>Заполнить параметры</Link></div>}
     <section className="card project-card"><h2>1. Процесс и нагрузка</h2>
       <p>Подбор использует сохранённые параметры объекта. Количество рассчитывается отдельно для выбранного процесса. Решения ниже — альтернативы, их эффект нельзя складывать.</p>
-      <form onSubmit={select}><fieldset disabled={busy} className="economics__fieldset">
+      <form onSubmit={select}><fieldset disabled={busy || !!project.missing_required.length} className="economics__fieldset">
         <div className="selection-fields">
           <label>Процесс<select value={options.process_id} onChange={e=>change({process_id:Number(e.target.value),throughput_overrides:{},daily_demand:undefined,hours_per_day:undefined,peak_factor:undefined,demand_reason:""})}>{processes.map(p=><option key={p.id} value={p.id}>{p.name}</option>)}</select></label>
           {([['utilization','Коэффициент загрузки',.01,1],['availability','Техническая доступность',.01,1],['reserve_percent','Резерв парка, %',0,100],['daily_demand','Объём в сутки (пусто — из объекта)',.01,1e9],['hours_per_day','Часы в сутки (пусто — из объекта)',.01,24],['peak_factor','Пиковый коэффициент (пусто — из объекта)',1,10]] as const).map(([key,label,min,max])=><label key={key}>{label}<input type="number" step="any" min={min} max={max} required={['utilization','availability','reserve_percent'].includes(key)} value={options[key]??''} onChange={e=>change({[key]:e.target.value===''?undefined:Number(e.target.value)})}/></label>)}

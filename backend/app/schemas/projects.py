@@ -13,6 +13,11 @@ class ProjectInput(BaseModel):
     parameters: dict[str, Any] = Field(default_factory=dict, max_length=300)
 
 
+class ParameterValues(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    parameters: dict[str, Any] = Field(default_factory=dict, max_length=300)
+
+
 class ProjectUpdate(BaseModel):
     model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
     name: str = Field(min_length=1, max_length=300)
@@ -45,6 +50,7 @@ class ProjectDetail(ProjectSummary):
 
 
 class ParameterOut(BaseModel):
+    facility_type_id: int
     code: str
     name: str
     section: str | None

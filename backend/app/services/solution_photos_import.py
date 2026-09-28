@@ -59,7 +59,7 @@ async def _attach_photos(
         stats.products_created += created
         await session.refresh(product, ["image", "sources"])
         current = product.image
-        if current is not None and current.source_id != document.id:
+        if current is not None and current.source_id != document.id and not current.is_illustration:
             stats.warnings.append(f"«{product.name}»: фото уже загружено вручную — оставлено без изменений.")
             stats.skipped += 1
             continue

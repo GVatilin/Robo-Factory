@@ -157,9 +157,13 @@ export default function ProductFormPage() {
     () => resolveSize(kind, { length_mm: entered.l, width_mm: entered.w, height_mm: entered.h }),
     [kind, entered],
   );
+  const applicableChecklist = useMemo(() => (reference?.checklist ?? []).filter(item =>
+    !item.excluded_product_classes?.includes(draft?.productClass ?? "") &&
+    !item.excluded_solution_types?.includes(selectedType?.node.code ?? "")),
+    [reference, draft?.productClass, selectedType?.node.code]);
   const done = useMemo(
-    () => (draft && reference ? evaluateChecklist(draft, reference.checklist, reference.specs) : new Set<string>()),
-    [draft, reference],
+    () => (draft && reference ? evaluateChecklist(draft, applicableChecklist, reference.specs) : new Set<string>()),
+    [draft, reference, applicableChecklist],
   );
   const errorSections = useMemo(
     () => new Set(Object.keys(errors).map((key) => sectionOfError(key, reference?.specs ?? []))),
@@ -352,7 +356,7 @@ export default function ProductFormPage() {
         <nav className="pform__nav" aria-label="Разделы формы">
           <ol>
             {SECTIONS.map((section, index) => {
-              const items = section.group ? reference.checklist.filter((i) => i.group === section.group) : [];
+              const items = section.group ? applicableChecklist.filter((i) => i.group === section.group) : [];
               const filled = items.filter((i) => done.has(i.key)).length;
               const hasPhoto = photo !== null || (!photoRemoved && Boolean(existing.data?.image));
               const complete = section.id === "photo" ? hasPhoto : items.length > 0 && filled === items.length;
@@ -442,7 +446,7 @@ export default function ProductFormPage() {
             estimated={estimated}
             typeName={selectedType?.node.name ?? null}
             entered={entered}
-            checklist={reference.checklist}
+            checklist={applicableChecklist}
             done={done}
             onJump={jump}
             animate={!reduced}

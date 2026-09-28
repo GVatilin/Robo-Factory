@@ -21,7 +21,7 @@ from app.schemas.products import (
     SourceOut,
     SpecValueOut,
 )
-from app.services.completeness import evaluate
+from app.services.completeness import evaluate, not_applicable
 
 
 async def mandatory_specs(session: AsyncSession) -> list[SpecDefinition]:
@@ -59,6 +59,9 @@ def _summary_fields(product: Product, mandatory: Sequence[SpecDefinition]) -> di
         "id": product.id,
         "name": product.name,
         "image_url": image_url(product.image, thumb=True) if product.image else None,
+        "image_is_illustration": bool(product.image and product.image.is_illustration),
+        "image_caption": product.image.caption if product.image else None,
+        "image_source_url": product.image.source.url if product.image and product.image.source else None,
         "manufacturer": Ref.model_validate(product.manufacturer) if product.manufacturer else None,
         "solution_type": solution_type_ref(product.solution_type),
         "product_class": product.product_class,
@@ -89,6 +92,11 @@ def product_detail(product: Product, mandatory: Sequence[SpecDefinition], user: 
     return ProductOut(
         **_summary_fields(product, mandatory),
         external_id=product.external_id,
+        research_checked_at=(product.source_payload or {}).get('catalog_research', {}).get('checked_at'),
+        research_note=(product.source_payload or {}).get('catalog_research', {}).get('note'),
+        field_sources={key: SourceOut.model_validate(source)
+                       for key, evidence in (product.source_payload or {}).get('field_evidence', {}).items()
+                       for source in product.sources if source.id == evidence.get('source_id')},
         description=product.description,
         region=product.region,
         trl=product.trl,
@@ -125,6 +133,7 @@ def product_detail(product: Product, mandatory: Sequence[SpecDefinition], user: 
         ],
         sources=[SourceOut.model_validate(s) for s in product.sources],
         completeness=Completeness(
+            not_applicable=not_applicable(product, mandatory),
             percent=round(filled * 100 / total) if total else 100, filled=filled, total=total, missing=missing
         ),
         image=(
@@ -135,6 +144,9 @@ def product_detail(product: Product, mandatory: Sequence[SpecDefinition], user: 
                 height=product.image.height,
                 source=SourceOut.model_validate(product.image.source) if product.image.source else None,
                 uploaded_at=product.image.created_at,
+                is_illustration=product.image.is_illustration,
+                caption=product.image.caption,
+                attribution=product.image.source.notes if product.image.source else None,
             )
             if product.image
             else None

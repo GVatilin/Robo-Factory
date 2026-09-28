@@ -6,7 +6,8 @@ from fastapi import APIRouter, HTTPException, Response
 from sqlalchemy import select
 
 from app.api.deps import CurrentUser, DbSession, OptionalUser
-from app.api.routes.projects import visible_project
+from app.api.routes.projects import visible_project, definitions
+from app.services.projects import validate_parameters
 from app.models import CalculationRun, Scenario, ScenarioItem, CalculationOverride
 from app.models.enums import CalculationStatus, CalculationType, ScenarioKind
 from app.schemas.selection import SelectionInput, SaveProjectEconomics
@@ -22,6 +23,10 @@ router = APIRouter(prefix="/projects", tags=["Project selection"])
 
 
 async def select_for_project(db, project, options):
+    defs = await definitions(db, project.facility_type_id)
+    if not defs:
+        raise HTTPException(422, "Сначала заполните справочник параметров объекта.")
+    validate_parameters(project.parameters, defs, require_complete=True)
     hierarchy = await load_hierarchy(db)
     facility = next((f for f in hierarchy.facilities if f.id == project.facility_type_id), None)
     process = next((p for p in facility.processes if p.id == options.process_id), None) if facility else None

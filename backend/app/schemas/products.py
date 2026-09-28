@@ -188,6 +188,7 @@ class ProcessOut(Schema):
 class Completeness(BaseModel):
     """Полнота карточки по обязательным характеристикам п. 3.3.7 ТЗ."""
 
+    not_applicable: list[str] = []
     percent: int
     filled: int
     total: int
@@ -209,6 +210,9 @@ class ImageOut(BaseModel):
     height: int
     source: SourceOut | None
     uploaded_at: datetime
+    is_illustration: bool = False
+    caption: str | None = None
+    attribution: str | None = None
 
 
 class ProductSummary(BaseModel):
@@ -216,6 +220,9 @@ class ProductSummary(BaseModel):
     name: str
     # Превью фотографии для карточки каталога.
     image_url: str | None
+    image_is_illustration: bool = False
+    image_caption: str | None = None
+    image_source_url: str | None = None
     manufacturer: Ref | None
     solution_type: SolutionTypeRef | None
     product_class: ProductClass
@@ -234,6 +241,9 @@ class ProductSummary(BaseModel):
 
 
 class ProductOut(ProductSummary):
+    field_sources: dict[str, SourceOut] = {}
+    research_checked_at: date | None = None
+    research_note: str | None = None
     external_id: str | None
     description: str | None
     region: str | None

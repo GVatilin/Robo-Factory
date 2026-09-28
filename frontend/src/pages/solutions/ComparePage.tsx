@@ -49,12 +49,13 @@ function ProductHead({ product, onRemove, onHover }: { product: ProductSummary; 
         <X size={15} aria-hidden="true" />
       </button>
       <div className="chead__media">
-        {product.image_url ? <img src={product.image_url} alt="" /> : <Icon size={30} strokeWidth={1.5} aria-hidden="true" />}
+        {product.image_url ? <img src={product.image_url} alt={product.image_caption || product.name} /> : <Icon size={30} strokeWidth={1.5} aria-hidden="true" />}
       </div>
       <Link to={`/products/${product.id}`} className="chead__name">
         {product.name}
       </Link>
       <span className="chead__meta">
+        {product.image_is_illustration && <>Иллюстрация типа · </>}
         {[product.manufacturer ? companyShortName(product.manufacturer.name) : null, product.solution_type?.name].filter(Boolean).join(" · ")}
       </span>
     </div>

@@ -1,0 +1,925 @@
+{
+  "version": 1,
+  "products": [
+    {
+      "product_name": "Ronavi H1500 (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/catalogue/h1500",
+      "title": "Ronavi: H1500",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1044,
+          "note": "Порядок размеров Д×Ш×В согласно таблице производителя."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 654
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 380
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 250
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 1500
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1.5
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "value": 750
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 10,
+          "note": "До указанного времени при снижении заряда с 80% до 20%; зависит от режима работы."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "QR + SLAM"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Wi-Fi 5 ГГц, 802.11 a/c/n"
+        }
+      ]
+    },
+    {
+      "product_name": "Ronavi SR (грузоподъемность до 50 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/catalogue/sr",
+      "title": "Ronavi: SR",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 590,
+          "note": "Порядок размеров Д×Ш×В согласно таблице производителя."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 810
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 870
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 80
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 50
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 3
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "value": 690
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 16,
+          "note": "До указанного времени при снижении заряда с 80% до 20%; зависит от режима работы."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "QR-метки"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Wi-Fi 5 ГГц, 802.11 a/c/n"
+        }
+      ]
+    },
+    {
+      "product_name": "Ronavi H2000 (грузоподъемность до 2 000 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/catalogue/h2000",
+      "title": "Ronavi: H2000",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1540,
+          "note": "Порядок размеров Д×Ш×В согласно таблице производителя."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 990
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 250
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 320
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 2000
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "value": 1190
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 10,
+          "note": "До указанного времени при снижении заряда с 80% до 20%; зависит от режима работы."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "QR + SLAM"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Wi-Fi 5 ГГц, 802.11 a/c/n"
+        }
+      ]
+    },
+    {
+      "product_name": "Ronavi SD (грузоподъемность до 10 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/catalogue/sd",
+      "title": "Ronavi: SD",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 420,
+          "note": "Порядок размеров Д×Ш×В согласно таблице производителя."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 400
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 200
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 20
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 10
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 2.5
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "value": 500
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 10,
+          "note": "До указанного времени при снижении заряда с 80% до 20%; зависит от режима работы."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "QR-метки"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Wi-Fi 5 ГГц, 802.11 a/c/n"
+        }
+      ]
+    },
+    {
+      "product_name": "Ronavi M (грузоподъемность до 1200 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/catalogue/m",
+      "title": "Ronavi: M",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 960,
+          "note": "Порядок размеров Д×Ш×В согласно таблице производителя."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 660
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 335
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 200
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 1200
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 2.5
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "value": 760
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 8,
+          "note": "До указанного времени при снижении заряда с 80% до 20%; зависит от режима работы."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "QR + SLAM"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Wi-Fi 5 ГГц, 802.11 a/c/n"
+        }
+      ]
+    },
+    {
+      "product_name": "AMR 100 (грузоподъемность до 100 кг)",
+      "manufacturer": "ООО \"Морос\"",
+      "url": "https://xn--l1aeahg.xn--p1ai/amr-100/",
+      "title": "МОРОС: AMR100",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 600
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 400
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 220
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 25
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": false,
+          "text": "100 или 150 кг — уточнить модификацию",
+          "note": "Расхождение: каталог ФЦ БАС называет модель до 100 кг; страница производителя указывает до 150 кг. До уточнения модификации числовое значение не используется."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 3
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 10,
+          "note": "Заявленная точность ±10 мм."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 10,
+          "value_max": 20,
+          "note": "Нижнее значение — при максимальной нагрузке, верхнее — при средней."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Автоматическая док-станция или ручная зарядка"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": 5,
+          "value_max": 40
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "MES, API"
+        }
+      ]
+    },
+    {
+      "product_name": "AMR 800 (грузоподъемность до 800 кг)",
+      "manufacturer": "ООО \"Морос\"",
+      "url": "https://xn--l1aeahg.xn--p1ai/amr-800/",
+      "title": "МОРОС: AMR800",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 940
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 640
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 230
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 150
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 800
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 2
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 10,
+          "note": "Заявленная точность ±10 мм."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 14,
+          "value_max": 24,
+          "note": "Нижнее значение — при максимальной нагрузке, верхнее — при средней."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Автоматическая док-станция или ручная зарядка"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": 5,
+          "value_max": 40
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "MES, WMS, API"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "QR-метки, SLAM"
+        }
+      ]
+    },
+    {
+      "product_name": "AMR 1500 (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Морос\"",
+      "url": "https://xn--l1aeahg.xn--p1ai/amr-1500/",
+      "title": "МОРОС: AMR1500",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1080
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 640
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 230
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 185
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 1500
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1.5
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 10,
+          "note": "Заявленная точность ±10 мм."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 10,
+          "value_max": 20,
+          "note": "Нижнее значение — при максимальной нагрузке, верхнее — при средней."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Автоматическая док-станция или ручная зарядка"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": 5,
+          "value_max": 40
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "MES, WMS, API"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "QR-метки, SLAM"
+        }
+      ]
+    },
+    {
+      "product_name": "MARK 2 SE",
+      "manufacturer": "ООО \"Р2Б\"",
+      "url": "https://r2b.company/rent",
+      "title": "R2B: MARK 2 SE",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 860
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 610
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 980
+        },
+        {
+          "code": "cleaning_width_mm",
+          "confirmed": true,
+          "value": 450
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 4,
+          "note": "Непрерывная работа на одном заряде."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "value": 2
+        },
+        {
+          "code": "tank_volume_l",
+          "confirmed": true,
+          "value": 40,
+          "note": "Бак моющего раствора."
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "value": 1300
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Станция от сети 220 В; автоматические слив и заправка водой"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Ровный твёрдый пол: плитка, ламинат, гладкий бетон, камень. Не подходит для ковролина и ворсовых покрытий."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Ежедневное обслуживание — около 20 минут по оценке производителя"
+        }
+      ]
+    },
+    {
+      "product_name": "Клинботикс 400 PRO",
+      "manufacturer": "ООО \"Вейбот Автомакон Роботикс\"",
+      "url": "https://waybotrobotics.com/models/400pro",
+      "title": "Клинботикс: 400 PRO",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 676
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 560
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 744
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 50,
+          "note": "Без воды."
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "value": 700
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "value": 700,
+          "value_max": 1200,
+          "note": "Заявленная производительность уборки, м²/ч.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "cleaning_width_mm",
+          "confirmed": true,
+          "value": 400,
+          "note": "Влажная уборка; ширина пылесоса 500 мм."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "value": 1,
+          "note": "От 1 часа, не гарантированное максимальное время."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 3,
+          "note": "Режим влажной уборки: 3 часа по строке сравнительной таблицы и блоку особенностей. До 4 часов в общем блоке не привязаны к этому режиму; для влажной уборки не используются."
+        },
+        {
+          "code": "tank_volume_l",
+          "confirmed": false,
+          "text": "28 или 30 л — требуется уточнение",
+          "note": "Таблица сравнения указывает 28 л чистой воды, блок характеристик — 30 л. Требуется уточнение комплектации."
+        }
+      ],
+      "conflict_resolutions": [
+        {
+          "code": "runtime_h",
+          "reviewed_at": "2026-09-29",
+          "decision": "Режим влажной уборки: 3 часа по строке сравнительной таблицы и блоку особенностей. До 4 часов в общем блоке не привязаны к этому режиму; для влажной уборки не используются.",
+          "previous": {
+            "code": "runtime_h",
+            "confirmed": false,
+            "text": "3–4 ч — требуется уточнение режима",
+            "note": "На одной странице указаны 3 часа влажной уборки и до 4 часов в блоке характеристик. Условия отличаются или не раскрыты."
+          }
+        }
+      ]
+    },
+    {
+      "product_name": "Клинботикс 600",
+      "manufacturer": "ООО \"Вейбот Автомакон Роботикс\"",
+      "url": "https://waybotrobotics.com/models/600",
+      "title": "Клинботикс: 600",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 750
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 700
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 1000
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 140
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "value": 750
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "value": 1000,
+          "value_max": 2300,
+          "note": "Расчётная производительность производителя, м²/ч; фактическая зависит от объекта.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "tank_volume_l",
+          "confirmed": true,
+          "value": 60,
+          "note": "Бак чистой воды; бак грязной воды — 65 л."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "value": 1
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": false,
+          "text": "3 или 4 ч — требуется уточнение",
+          "note": "Таблица сравнения указывает 4 ч, технический блок — 3 ч. До уточнения числовое значение не используется."
+        },
+        {
+          "code": "cleaning_width_mm",
+          "confirmed": true,
+          "value": 600,
+          "note": "Ширина влажной уборки 60 см подтверждена техническим блоком, описанием и столбцом Cleanbotics 600 в HTML-таблице. 45 см относятся к R2B Mark 2; мобильная копия таблицы ошибочно меняет подписи столбцов."
+        }
+      ],
+      "conflict_resolutions": [
+        {
+          "code": "cleaning_width_mm",
+          "reviewed_at": "2026-09-29",
+          "decision": "Ширина влажной уборки 60 см подтверждена техническим блоком, описанием и столбцом Cleanbotics 600 в HTML-таблице. 45 см относятся к R2B Mark 2; мобильная копия таблицы ошибочно меняет подписи столбцов.",
+          "previous": {
+            "code": "cleaning_width_mm",
+            "confirmed": false,
+            "text": "450 или 600 мм — требуется уточнение",
+            "note": "Таблица сравнения указывает 45 см, основной блок — 60 см. До уточнения числовое значение не используется."
+          }
+        }
+      ]
+    },
+    {
+      "product_name": "Геоскан 401",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://download.geoscan.ru/site-files/401/Geoscan_401_Manual.pdf#page=125",
+      "title": "Геоскан 401: руководство, стр. 125",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1500,
+          "note": "Размеры в собранном состоянии."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 1500,
+          "note": "Размеры в собранном состоянии."
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 430,
+          "note": "Размеры в собранном состоянии."
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 2
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 15,
+          "note": "54 км/ч ÷ 3,6 = 15 м/с."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 1,
+          "note": "Максимальная продолжительность полёта до 60 минут."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40,
+          "note": "Стандартная аккумуляторная батарея; версия «Арктика» имеет другой диапазон."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Вертикальный взлёт и посадка; площадка диаметром 5 м"
+        }
+      ]
+    },
+    {
+      "product_name": "ТНПА «ГНОМ Про»",
+      "manufacturer": "ООО \"Подводная робототехника\"",
+      "url": "https://gnomrov.ru/products/rovs/gnom-pro.html",
+      "title": "ГНОМ Про: официальный каталог",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 590
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 440
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 350
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 25
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Рабочая глубина до 150 м; длина кабеля 400 м"
+        }
+      ]
+    },
+    {
+      "product_name": "PuduBot 2",
+      "manufacturer": "Pudu Robotics",
+      "url": "https://www.pudurobotics.com/en/products/pudubot2",
+      "title": "Pudu Robotics: PuduBot 2",
+      "retrieved_at": "2026-09-29",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 580
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 535
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 1290
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 39
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 40
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1.2,
+          "note": "Диапазон скорости движения 0,5–1,2 м/с."
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "value": 800
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "value": 4,
+          "note": "Текущая таблица производителя; в старых публикациях встречаются другие значения."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "VSLAM+, два LiDAR"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Type-C, 4G, LoRa, Wi-Fi"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Автоматическая и проводная зарядка"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 12,
+          "note": "По Product Overview: 12 ч без нагрузки, 15 ч при полной нагрузке (формулировки производителя сохранены). Диапазон отражает два режима, а не гарантию автономности. Рекламные «до 24 ч» не подставляются в расчёт. Значения 12/15 ч также повторены в официальной статье https://www.pudurobotics.com/en/news/choosing-hospital-delivery-robot-flashbot-bellabot-pudubot .",
+          "value_max": 15
+        }
+      ],
+      "conflict_resolutions": [
+        {
+          "code": "runtime_h",
+          "reviewed_at": "2026-09-29",
+          "decision": "По Product Overview: 12 ч без нагрузки, 15 ч при полной нагрузке (формулировки производителя сохранены). Диапазон отражает два режима, а не гарантию автономности. Рекламные «до 24 ч» не подставляются в расчёт. Значения 12/15 ч также повторены в официальной статье https://www.pudurobotics.com/en/news/choosing-hospital-delivery-robot-flashbot-bellabot-pudubot .",
+          "previous": {
+            "code": "runtime_h",
+            "confirmed": false,
+            "text": "12 / 15 / до 24 ч — требуется уточнение",
+            "note": "На странице одновременно указаны до 24 ч и 12 ч без нагрузки / 15 ч с полной нагрузкой. До уточнения версии и условий числовое значение не используется."
+          }
+        }
+      ]
+    }
+  ]
+}

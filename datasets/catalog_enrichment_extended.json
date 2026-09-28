@@ -1,0 +1,2503 @@
+{
+  "version": 1,
+  "products": [
+    {
+      "product_name": "Astramis AeroUnit",
+      "manufacturer": "АО \"Астрамис\"",
+      "url": "https://astramis.com/AeroUnit",
+      "title": "Astramis: AeroUnit",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "text": "Заявлен запас по грузоподъёмности 20 кг",
+          "note": "Производитель указывает именно запас, а не допустимую массу транспортируемого груза. В числовом подборе грузоподъёмности не используется."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "LiDAR и датчики; без GPS"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Привязное электропитание с земли или крыши; подвод воды"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Мойка фасадов на высоте до 200 м; давление воды 240 бар"
+        }
+      ],
+      "fields": {
+        "limitations": "Необходимы подвод воды и электропитания с земли или крыши. Заявленная высота работы — до 200 м. Допустимые ветер и погодные условия требуют уточнения: единица скорости ветра на странице производителя указана неоднозначно."
+      }
+    },
+    {
+      "product_name": "Astramis SurfexUnit",
+      "manufacturer": "АО \"Астрамис\"",
+      "url": "https://astramis.com/SurfexUnit",
+      "title": "Astramis: SurfexUnit",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "LiDAR и машинное зрение, без GPS"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Док-станция с автоматической заменой аккумулятора"
+        },
+        {
+          "code": "tank_volume_l",
+          "confirmed": true,
+          "value": 60,
+          "note": "Бак для собираемого мусора, не резервуар моющего раствора."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Сухая уборка складов и производств; гусеничное шасси, преодоление лестниц"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Автоматические сброс мусора и смена аккумулятора; периодичность ручного ТО не опубликована"
+        }
+      ],
+      "fields": {
+        "limitations": "Предназначен для сухой уборки. Предельные высота ступени, уклон, температура и ширина прохода в проверенной публикации не указаны."
+      }
+    },
+    {
+      "product_name": "Робот-штабелёр RoboCV",
+      "manufacturer": "ООО \"Робосиви\"",
+      "url": "https://robocv.ru/robot-shtabelyor",
+      "title": "RoboCV: робот-штабелёр",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 2100
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 1100
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 3000
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 1200
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 1400
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 2
+        },
+        {
+          "code": "lift_height_mm",
+          "confirmed": true,
+          "value": 7000,
+          "note": "Установка и захват выше 1 м допускаются только в безлюдной зоне."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 30,
+          "note": "Точность навигации 3 см; не повторяемость установки груза."
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "value": 1900,
+          "note": "Проезд на максимальной скорости; для разворота требуется 2900 мм."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Сменные или подзаряжаемые АКБ Li-Ion / Pb"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "WMS / ERP через API"
+        }
+      ],
+      "fields": {
+        "limitations": "Подъём и захват паллет выше 1 м — только в безлюдной зоне. Разворот: проход от 2,9 м. Допуск положения паллеты ±20 см и ±15°; расстояние между паллетами от 10 см."
+      }
+    },
+    {
+      "product_name": "Робот-тягач RoboCV",
+      "manufacturer": "ООО \"Робосиви\"",
+      "url": "https://robocv.ru/robot-tyagach",
+      "title": "RoboCV: робот-тягач",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1600
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 800
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 2200
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 1220
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 5000,
+          "note": "Буксируемая масса на прицепах, не нагрузка на корпус робота."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 2.2
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 50,
+          "note": "Точность навигации 5 см."
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "value": 2900,
+          "note": "Для максимальной скорости; разворот с прицепами зависит от их числа и габаритов."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Сменные или подзаряжаемые АКБ Li-Ion / Pb"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Wi-Fi для заданий из IT-системы"
+        }
+      ],
+      "fields": {
+        "limitations": "Количество и ширина прицепов зависят от маршрута. Для разворота без тележек требуется около 3 м; с тележками — расчёт по конфигурации поезда."
+      }
+    },
+    {
+      "product_name": "MULE",
+      "manufacturer": "ООО «СМ РОБОТИКС»",
+      "url": "https://sm-robotics.ru/",
+      "title": "SM Robotics: MULE",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 1500
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1.3
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "SLAM"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Автоматическая зарядка"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "M-Control и WMS склада"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Сопровождение по модели RaaS: ремонт, обновление ПО, удалённый мониторинг и поддержка 24/7"
+        }
+      ],
+      "fields": {
+        "limitations": "Для интеграции нужны анализ процессов и настройка обмена с WMS; изменения WMS выполняются на стороне заказчика."
+      }
+    },
+    {
+      "product_name": "Сёмабот (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Семаргл\"",
+      "url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+      "title": "Семаргл: Сёмабот",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 1500,
+          "note": "В линейке есть отдельная модификация 1500 кг; данные других модификаций не переносятся."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "SLAM либо маяки/метки Data Matrix"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Бортовая АКБ и беспроводные зарядные станции"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Автоматизированные складские системы и станочное оборудование"
+        }
+      ]
+    },
+    {
+      "product_name": "SmartCube",
+      "manufacturer": "ООО \"АРС\"",
+      "url": "https://arobosys.ru/",
+      "title": "АРС: SmartCube",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Движение по рельсовой структуре кубического хранения"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Модульные шахты высотой до 14 м; товары хранятся и перемещаются в ящиках"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Монтаж, ввод в эксплуатацию, обслуживание и модернизация силами производителя"
+        }
+      ],
+      "fields": {
+        "limitations": "Система рассчитана на ящики внутри шахтовой структуры. Конфигурация, производительность и размеры определяются проектом склада."
+      }
+    },
+    {
+      "product_name": "SmartCube",
+      "manufacturer": "ООО \"АРС\"",
+      "url": "https://arobosys.ru/software",
+      "title": "АРС: ПО SmartCube",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "ARS OMS взаимодействует с WMS; локальный командный центр или SaaS"
+        }
+      ]
+    },
+    {
+      "product_name": "Модель А12-1450",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "url": "https://magadangorod.ru/common/upload/28/editor/file/AO_Eydos_Robototekhnika.pdf#page=4",
+      "title": "Эйдос: презентация А12, стр. 4",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 12
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 0.05,
+          "note": "Повторяемость ±0,05 мм, не абсолютная точность."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Программирование на Python"
+        }
+      ]
+    },
+    {
+      "product_name": "Берилл",
+      "manufacturer": "ООО \"Валдай Роботы\"",
+      "url": "https://vald.ai/beryl",
+      "title": "Валдай Роботы: Берилл",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 25
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 265,
+          "note": "Заявленная масса 265 ±10 кг."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 0.1,
+          "note": "Точность ±0,1 мм; отдельно указана повторяемость 0,02–0,2 мм."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": 0,
+          "value_max": 45
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "PROFINET Slave через шлюз, EtherCAT Master, Modbus TCP, VALDAi API"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Напольное стационарное крепление"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Влажность 20–80% без конденсации"
+        }
+      ],
+      "fields": {
+        "limitations": "Рабочая зона радиусом 2200 мм. Оснастка и внешний контур безопасности проектируются под задачу."
+      }
+    },
+    {
+      "product_name": "RH06A2",
+      "manufacturer": "ООО \"СМД\"",
+      "url": "https://smd.com.ru/projects/robosvarka/svarka-traktorov/",
+      "title": "SMD: RH06A2-1490",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 6
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 0.05,
+          "note": "Повторное позиционирование ±0,05 мм."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 185,
+          "note": "Масса RH06A2-1490, без контроллера."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": 5,
+          "value_max": 40
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "value": 70,
+          "note": "Не более 70 дБ."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Сетевой контроллер: 3 фазы, 380 В, 50 Гц"
+        }
+      ],
+      "fields": {
+        "limitations": "Влажность постоянно до 75%, без конденсата и инея. Высота размещения до 1000 м; вибрация не более 0,5g. Радиус действия — 1490 мм."
+      }
+    },
+    {
+      "product_name": "ARM95-200 (грузоподъемность до 18 кг)",
+      "manufacturer": "ООО \"Прикладная Робототехника\"",
+      "url": "https://www.appliedrobotics-rtc.ru/product",
+      "title": "Прикладная робототехника: серия ARM95–ARM200",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 5,
+          "value_max": 18,
+          "note": "Диапазон по линейке: ARM95 — 5 кг, ARM105 — 16 кг, ARM135 — 10 кг, ARM165 — 18 кг, ARM200 — 12 кг. Нужен выбор конкретной модели."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 2,
+          "note": "Скорость рабочего инструмента, не скорость передвижения робота."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 0.05,
+          "note": "Повторяемость, не абсолютная точность."
+        }
+      ],
+      "fields": {
+        "limitations": "Запись каталога объединяет линейку с разной грузоподъёмностью и досягаемостью. Для проекта нужно зафиксировать модификацию."
+      }
+    },
+    {
+      "product_name": "Роботизированный автономный минитрактор CP",
+      "manufacturer": "АО \"Когнитив Пилот\"",
+      "url": "https://cognitivepilot.com/products/minitraktor/",
+      "title": "Cognitive Pilot: автономный минитрактор",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 2670
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 1450
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 1490,
+          "note": "Габариты с подвеской."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 1200
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 12,
+          "value_max": 20,
+          "note": "Заявленный диапазон; зависит от задачи."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "ИИ и компьютерное зрение"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Последовательная гибридная силовая установка"
+        }
+      ]
+    },
+    {
+      "product_name": "БРО 2.1",
+      "manufacturer": "АО \"168Роботикс\"",
+      "url": "https://168robotics.com/robots",
+      "title": "168robotics: BRO 2.1",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1721
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 803
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 1120
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 400
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1.3889,
+          "note": "Рабочая скорость до 5 км/ч; пересчёт в м/с."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 6,
+          "note": "В режиме сплошной уборки; патрулирование — 10 ч."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "value": 4,
+          "note": "Заявленное время зарядки."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -10,
+          "value_max": 30
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Техническое зрение без GPS"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Уклон до 8°; ступень до 50 мм"
+        }
+      ],
+      "fields": {
+        "limitations": "Преодолеваемый уклон до 8°, ступень до 50 мм. Рабочая температура −10…+30 °C."
+      }
+    },
+    {
+      "product_name": "БРО 3.0",
+      "manufacturer": "АО \"168Роботикс\"",
+      "url": "https://168robotics.com/robots",
+      "title": "168robotics: BRO 3.0",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1994
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 1252
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 1276
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 570
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1.3889,
+          "note": "Рабочая скорость до 5 км/ч; пересчёт в м/с."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 5.5,
+          "note": "В режиме сплошной уборки; патрулирование — 15 ч. Для уборки заявлено не менее 5,5 ч."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "value": 2.5,
+          "note": "До указанного времени."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -10,
+          "value_max": 30
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Техническое зрение без GPS"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Уклон до 8°; ступень до 50 мм"
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "value": 2400,
+          "value_max": 6000,
+          "note": "2400–6000 м²/ч в зависимости от режима.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "tank_volume_l",
+          "confirmed": true,
+          "value": 300,
+          "note": "Мусорный бак; вода системы пылеподавления — 80 л."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Сменные аккумуляторы"
+        }
+      ],
+      "fields": {
+        "limitations": "Преодолеваемый уклон до 8°, ступень до 50 мм. Рабочая температура −10…+30 °C."
+      }
+    },
+    {
+      "product_name": "Пиксель",
+      "manufacturer": "ООО \"Автономика\"",
+      "url": "https://www.avtonomika.ru/products/pixel/",
+      "title": "Автономика: Пиксель",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Камеры, LiDAR и датчики"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Удалённый мониторинг и управление через «Пиксель Гоудрайв»"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Дворы, тротуары, велодорожки, парки и скверы"
+        }
+      ]
+    },
+    {
+      "product_name": "Альбатрос М5",
+      "manufacturer": "ООО \"Альбатрос\"",
+      "url": "https://www.alb.aero/catalog/bpla-samoletnogo-tipa/albatros-m5/",
+      "title": "Альбатрос: М5",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 3
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 33.3333,
+          "note": "Максимум 120 км/ч; диапазон 60–120 км/ч."
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 250,
+          "note": "Максимальная длина маршрута."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -30,
+          "value_max": 50
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "GPS / ГЛОНАСС"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Радиолиния до 60 км в прямой видимости"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Li-Ion АКБ; зарядное устройство в комплекте"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": false,
+          "text": "4 или 4,5 ч — требуется уточнение версии",
+          "note": "Вводный блок страницы указывает 4,5 ч, техническая таблица — до 4 ч."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Ресурс корпуса не менее 300 взлётов и посадок"
+        }
+      ],
+      "fields": {
+        "limitations": "Взлёт с катапульты, посадка на парашюте; площадка от 100×100 м. Ветер до 16 м/с по таблице производителя."
+      }
+    },
+    {
+      "product_name": "Azarrus 1.0A",
+      "manufacturer": "ООО \"Деморобот\"",
+      "url": "https://azarrus.com/catalog/demolition-machines/412/",
+      "title": "Деморобот: Azarrus 1.0A",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 2143,
+          "note": "Транспортное положение."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 794,
+          "note": "Транспортное положение."
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 1273,
+          "note": "Транспортное положение."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 1100,
+          "note": "Без навесного оборудования."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 0.6944,
+          "note": "2,5 км/ч ÷ 3,6."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Дистанционное управление оператором"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабель или цифровой радиоканал"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Электродвигатель 20 кВт"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Преодолеваемый уклон до 30°"
+        }
+      ],
+      "fields": {
+        "limitations": "Рекомендуемая масса навесного оборудования — 170 кг; это не грузоподъёмность для перевозки груза. Комплектация согласуется с заказчиком."
+      }
+    },
+    {
+      "product_name": "РБ-100",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf#page=1",
+      "title": "RovBuilder: спецификация РБ-100/150/300",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 340
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 290
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 280
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 5.6,
+          "note": "Масса аппарата на воздухе."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": 0,
+          "value_max": 30,
+          "note": "Температура воды; для кабеля указан отдельный диапазон."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Джойстик оператора; компас, датчики глубины и ориентации"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабель-трос 100 м"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Питание береговой станции 220–240 В, 50 Гц"
+        }
+      ]
+    },
+    {
+      "product_name": "РБ-150",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf#page=1",
+      "title": "RovBuilder: спецификация РБ-100/150/300",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 400
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 315
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 280
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 6.5,
+          "note": "Масса аппарата на воздухе."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": 0,
+          "value_max": 30,
+          "note": "Температура воды; для кабеля указан отдельный диапазон."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Джойстик оператора; компас, датчики глубины и ориентации"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабель-трос 150 м"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Питание береговой станции 220–240 В, 50 Гц"
+        }
+      ]
+    },
+    {
+      "product_name": "РБ-300",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf#page=1",
+      "title": "RovBuilder: спецификация РБ-100/150/300",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 500
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 310
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 300
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 12,
+          "note": "Масса аппарата на воздухе."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": 0,
+          "value_max": 30,
+          "note": "Температура воды; для кабеля указан отдельный диапазон."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Джойстик оператора; компас, датчики глубины и ориентации"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабель-трос 220 м"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Питание береговой станции 220–240 В, 50 Гц"
+        }
+      ]
+    },
+    {
+      "product_name": "РБ-Мираж 1000",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/rb-mirazh1000/",
+      "title": "RovBuilder: РБ-Мираж 1000",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 130,
+          "note": "Без дополнительного оборудования."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Дистанционное управление джойстиком с береговой станции"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Глубина до 1000 м; течение до 2 м/с"
+        }
+      ],
+      "fields": {
+        "limitations": "Работы на глубинах до 1000 м при течении до 2 м/с. Состав камер и дополнительного оборудования определяется комплектацией."
+      }
+    },
+    {
+      "product_name": "ТНПА «ГНОМ Про Вектор»",
+      "manufacturer": "ООО \"Подводная робототехника\"",
+      "url": "https://gnomrov.ru/products/rovs/gnom-pro-vector.html",
+      "title": "Подводная робототехника: ГНОМ Про Вектор",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": false,
+          "text": "660 или 720 мм — уточнить версию",
+          "note": "Две таблицы одной страницы: 720×550×380 и 660×550×400 мм."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 550
+        },
+        {
+          "code": "height_mm",
+          "confirmed": false,
+          "text": "380 или 400 мм — уточнить версию",
+          "note": "Две таблицы одной страницы дают разные размеры."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 35,
+          "note": "Подводный модуль на воздухе; полный комплект — 100 кг."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1.5433,
+          "note": "Маршевая скорость до 3 узлов × 0,514444."
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 7,
+          "note": "Нагрузка подводного аппарата; применимость к конкретной оснастке уточняется."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабель до 400 м; оптоволокно до 1000 м — опция"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Рабочая глубина 300 м; 500 м — опция"
+        }
+      ]
+    },
+    {
+      "product_name": "ТНПА «ГНОМ X»",
+      "manufacturer": "ООО \"Подводная робототехника\"",
+      "url": "https://gnomrov.ru/products/rovs/gnom-x.html",
+      "title": "Подводная робототехника: ГНОМ X",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 470
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 400
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 300
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 10
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 3
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 2.0578,
+          "note": "Маршевая скорость до 4 узлов × 0,514444."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -4,
+          "value_max": 45,
+          "note": "Температура воды; воздух −20…+45 °C."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Телеуправление с береговой станции"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабель до 200 м"
+        }
+      ],
+      "fields": {
+        "limitations": "Рабочая глубина до 200 м. Температура воды −4…+45 °C, воздуха −20…+45 °C; влажность до 98% без конденсации."
+      }
+    },
+    {
+      "product_name": "В-120",
+      "manufacturer": "ООО \"Аэромакс\"",
+      "url": "https://www.aeromax-group.ru/produkciya/bas-vertolyotnogo-tipa/b-120/",
+      "title": "Аэромакс: В-120",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 370,
+          "note": "Масса пустого БВС."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 47.2222,
+          "note": "170 км/ч ÷ 3,6."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 3,
+          "note": "Максимальная продолжительность полёта."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автономная система управления"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Топливная силовая установка; запас топлива до 80 л"
+        }
+      ],
+      "fields": {
+        "limitations": "Площадка взлёта и посадки 20×20 м; боковой ветер при взлёте/посадке до 10 м/с. Высота полёта до 2000 м."
+      }
+    },
+    {
+      "product_name": "БВС ОМДЖЕТ-03",
+      "manufacturer": "ООО \"Роспроект\"",
+      "url": "https://omjet.ru/",
+      "title": "Роспроект: ОМДЖЕТ 03",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 2
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1650
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 3000,
+          "note": "Размах крыльев в полётном положении."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 5,
+          "note": "До 300 минут."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 25,
+          "note": "Максимум опубликованного диапазона 70–90 км/ч."
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 300
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Управление до 40 км; видео до 30 км — опция прямой видимости"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Электрическая система, комплект АКБ и зарядное устройство"
+        }
+      ],
+      "fields": {
+        "limitations": "Ветер до 8 м/с при вертикальном и до 12 м/с при горизонтальном полёте. Высота до 3050 м."
+      }
+    },
+    {
+      "product_name": "БВС ОМДЖЕТ -М01",
+      "manufacturer": "ООО \"Роспроект\"",
+      "url": "https://omjet.ru/",
+      "title": "Роспроект: ОМДЖЕТ М01",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 0.4,
+          "note": "Дополнительная полезная нагрузка 400 г."
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1100
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 1200,
+          "note": "Размах крыльев."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 1
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 23.6111,
+          "note": "85 км/ч ÷ 3,6."
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 90
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -10,
+          "value_max": 40
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Управление до 20 км; видео до 10 км — опция"
+        }
+      ],
+      "fields": {
+        "limitations": "Вертикальный взлёт и посадка; ветер до 8 м/с при вертикальном и до 12 м/с при горизонтальном полёте. Высота до 1850 м."
+      }
+    },
+    {
+      "product_name": "InnoVTOL-3S",
+      "manufacturer": "АНО ВО \"Университет Иннополис\"",
+      "url": "https://innoit.ru/vtol",
+      "title": "Университет Иннополис: InnoVTOL-3s",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 2290
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 3050
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 690
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 5
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 3,
+          "value_max": 4,
+          "note": "3 ч при нагрузке 4 кг; 4 ч при нагрузке 1 кг."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 31.9444,
+          "note": "115 км/ч ÷ 3,6."
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 300
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "900 МГц и 2,4 ГГц либо 5–5,8 ГГц; телеметрия до 40 км, видео до 20 км"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Гибрид: бензиновый маршевый двигатель, электрические подъёмные моторы"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автоматический полёт с коррекцией оператором"
+        }
+      ],
+      "fields": {
+        "limitations": "Высота до 2500 м над уровнем моря. Ветер при взлёте до 8 м/с; температурный диапазон −20…+40 °C."
+      }
+    },
+    {
+      "product_name": "miniSIGMA",
+      "manufacturer": "ООО НПП \"Авакс -Геосервис\"",
+      "url": "https://uav-siberia.com/minisigma",
+      "title": "АВАКС-ГеоСервис: miniSIGMA",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 2.5
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 3048,
+          "note": "Размах крыла."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 2,
+          "note": "Заявленная продолжительность полёта."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Командно-телеметрическая радиолиния"
+        }
+      ],
+      "fields": {
+        "limitations": "Высота полёта до 3 км, ветер до 10 м/с. Вертикальные взлёт и посадка."
+      }
+    },
+    {
+      "product_name": "Unit",
+      "manufacturer": "ООО \"Яку Роботикс\"",
+      "url": "https://yacuai.com/ru/unit/",
+      "title": "ЯКурьер: Unit",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 900
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 560
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 800
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 130,
+          "note": "Масса заправленной машины, не сухая масса."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 5
+        },
+        {
+          "code": "tank_volume_l",
+          "confirmed": true,
+          "value": 50,
+          "note": "По 50 л для чистой и грязной воды."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "RTLS: радиомаяки; лидары, камеры и ультразвуковые датчики для обхода препятствий"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Автоматическая станция замены воды и зарядки"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Поддержка 24/7, дилерский сервис; гарантийное и послегарантийное обслуживание"
+        }
+      ],
+      "fields": {
+        "limitations": "Максимальный уклон 2°. Требуется установка радиомаяков RTLS. Заявленный ресурс эксплуатации — более 5 лет; условия уточняются у производителя."
+      }
+    },
+    {
+      "product_name": "Promobot V.4",
+      "manufacturer": "ООО \"Промобот\"",
+      "url": "https://promo-bot.ru/wp-content/uploads/2025/12/Promobot-V.4-instruktsiya-fin-CMYK-20-12-2025.pdf",
+      "title": "Промобот: руководство Promobot V.4, декабрь 2025",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 788,
+          "note": "Габариты минимальной конфигурации; Д×Ш×В."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 814,
+          "note": "При разложенных руках ширина до 2266 мм."
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 1634,
+          "note": "Верхнее положение: до 1744 мм."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 130,
+          "note": "Не более 130 кг, зависит от комплектации."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 0.2
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 8,
+          "note": "До 8 часов."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "value": 10,
+          "note": "До 10 ч от станции; до 8 ч кабелем."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Автоподъезд к зарядной станции; питание 110–230 В, 50–60 Гц, до 400 Вт"
+        },
+        {
+          "code": "floor_requirements",
+          "text": "Ровное горизонтальное твёрдое покрытие без порогов, ступеней, ковриков и глубоких швов; мягкие и скользкие покрытия недопустимы.",
+          "confirmed": true
+        },
+        {
+          "code": "connectivity",
+          "text": "Бесшовный Wi-Fi 802.11n, 2,4/5 ГГц; не менее 4 Мбит/с в обе стороны, пинг до 50 мс.",
+          "confirmed": true
+        }
+      ],
+      "fields": {
+        "limitations": "Габариты в крайних положениях: до 788×2266×1744 мм (Д×Ш×В). Комплектацию и пространство вокруг манипуляторов необходимо учитывать при размещении."
+      }
+    },
+    {
+      "product_name": "Геоскан 201",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://download.geoscan.ru/site-files/201/Geoscan_201_Manual.pdf",
+      "title": "Геоскан 201: руководство, приложение, стр. 115–116",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 1.5
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 2220,
+          "note": "Размах крыла."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 36.1111,
+          "note": "130 км/ч ÷ 3,6."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 3
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 210
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40,
+          "note": "С базовой АКБ; с АКБ «Арктика» −40…+20 °C."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автоматическое управление; GNSS GPS / ГЛОНАСС / Galileo / BeiDou"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Радиомодем 867,75–872,25 МГц, до 40 км, менее 1 Вт"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Съёмная АКБ 18,5 В, 40 А·ч; рекомендуемый ток зарядки 10 А"
+        }
+      ],
+      "fields": {
+        "limitations": "Ветер до 12 м/с. Запуск с пусковой установки, посадка на парашюте. Срок службы АКБ 1 год не является сроком службы всего аппарата."
+      }
+    },
+    {
+      "product_name": "Геоскан Gemini",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://download.geoscan.ru/site-files/gemini/Geoscan_Gemini_Manual.pdf",
+      "title": "Geoscan Gemini: руководство, приложение, стр. 70–71",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 2,
+          "note": "С аккумулятором и винтами."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 15,
+          "note": "Горизонтальная скорость; вертикальная — до 5 м/с."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 0.6666666666666666
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -15,
+          "value_max": 40
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автоматическое управление"
+        },
+        {
+          "code": "battery_capacity_kwh",
+          "confirmed": true,
+          "value": 0.1447
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Li-Ion АКБ 21,6 В, 6700 мА·ч"
+        }
+      ],
+      "fields": {
+        "limitations": "Ветер до 10 м/с; максимальная высота над землёй 500 м, над уровнем моря 4000 м. Размер 550 мм указан по диагонали без винтов и не подменяет длину/ширину."
+      }
+    },
+    {
+      "product_name": "Геоскан 701",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://download.geoscan.ru/site-files/701/Geoscan_701_Manual.pdf",
+      "title": "Геоскан 701: руководство, стр. 126",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 3.5
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 3330,
+          "note": "Размах крыла."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 33.333333333333336,
+          "note": "120 км/ч ÷ 3,6."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 10
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 1000
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -40,
+          "value_max": 40,
+          "note": "Диапазон действующей публикации; ранние материалы указывали −20…+40 °C. Требуется сверить исполнение поставки."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Маршевый двигатель внутреннего сгорания"
+        }
+      ],
+      "fields": {
+        "limitations": "Высота до 4500 м над уровнем моря. Характеристики необходимо сверять с паспортом конкретного исполнения."
+      }
+    },
+    {
+      "product_name": "Геоскан 701 Видео",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://www.geoscan.ru/ru/products/geoscan701-video",
+      "title": "Геоскан 701 Видео: официальная страница",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 3.5
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 3330,
+          "note": "Размах крыла."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 33.333333333333336,
+          "note": "120 км/ч ÷ 3,6."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 10
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 1000
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -40,
+          "value_max": 40,
+          "note": "Диапазон действующей публикации; ранние материалы указывали −20…+40 °C. Требуется сверить исполнение поставки."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Маршевый двигатель внутреннего сгорания"
+        }
+      ],
+      "fields": {
+        "limitations": "Высота до 4500 м над уровнем моря. Характеристики необходимо сверять с паспортом конкретного исполнения."
+      }
+    },
+    {
+      "product_name": "Supercam X4E",
+      "manufacturer": "ООО \"Финко\"",
+      "url": "https://supercam.aero/catalog/supercam-x6m2",
+      "title": "Беспилотные системы: Supercam X4E (название в содержимом страницы)",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 780
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 715
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 400
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 4
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 0.8333333333333334,
+          "note": "До 50 минут."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 16.666666666666668,
+          "note": "60 км/ч ÷ 3,6."
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 7
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -40,
+          "value_max": 45
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Радиолиния и видеоканал до 7 км"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автопилот; автоматический или полуавтоматический режим"
+        }
+      ],
+      "fields": {
+        "limitations": "Ветер до 10 м/с, умеренный дождь/снег; рабочая высота 50–500 м. URL содержит старое обозначение X6M2, но опубликованные характеристики относятся к X4E."
+      }
+    },
+    {
+      "product_name": "Supercam X4",
+      "manufacturer": "ООО \"Финко\"",
+      "url": "https://supercam.aero/catalog/supercam-x4",
+      "title": "Беспилотные системы: Supercam X4",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 16.666666666666668,
+          "note": "60 км/ч ÷ 3,6."
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 5
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -40,
+          "value_max": 45
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Радиолиния и видео до 5 км"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": false,
+          "text": "В описании 40 минут; в таблице 50 минут",
+          "note": "Противоречие между вводным описанием и таблицей на одной официальной странице; требуется паспорт исполнения."
+        },
+        {
+          "code": "length_mm",
+          "confirmed": false,
+          "text": "580 мм в описании; 520 мм в таблице",
+          "note": "Противоречие между вводным описанием и таблицей на одной официальной странице; требуется паспорт исполнения."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": false,
+          "text": "480 мм в описании; 620 мм в таблице",
+          "note": "Противоречие между вводным описанием и таблицей на одной официальной странице; требуется паспорт исполнения."
+        },
+        {
+          "code": "height_mm",
+          "confirmed": false,
+          "text": "200 мм в описании; 180 мм в таблице",
+          "note": "Противоречие между вводным описанием и таблицей на одной официальной странице; требуется паспорт исполнения."
+        }
+      ],
+      "fields": {
+        "limitations": "Ветер до 8 м/с; высота до 1000 м. Габариты и время полёта требуют уточнения из-за противоречия в публикации."
+      }
+    },
+    {
+      "product_name": "Пиксель",
+      "manufacturer": "ООО \"Автономика\"",
+      "url": "https://storage.yandexcloud.net/web-fies/automatika/docs/01_%D0%9F%D0%B8%D0%BA%D1%81%D0%B5%D0%BB%D1%8C_%D0%9F%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82_V03_PixV1.pdf",
+      "title": "Автоматизация и роботизация: паспорт Пиксель V1",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 2460,
+          "note": "Платформа без навесного оборудования."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 1500,
+          "note": "Платформа без навесного оборудования."
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 1680,
+          "note": "Платформа без навесного оборудования."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 670,
+          "note": "Эксплуатационная масса; полная масса 1800 кг."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 2.7777777777777777,
+          "note": "10 км/ч ÷ 3,6."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Li-Ion АКБ; комплектное зарядное устройство от сети 230/380 В (3P+PE), 32 А"
+        },
+        {
+          "code": "operating_temp_c",
+          "value": -10,
+          "value_max": 40,
+          "confirmed": true,
+          "note": "Нормальные условия эксплуатации; относительная влажность до 95%."
+        },
+        {
+          "code": "service_requirements",
+          "text": "График ТО зависит от эксплуатации и хранения; работы фиксируются в электронной сервисной книжке «Автономика».",
+          "confirmed": true
+        }
+      ],
+      "fields": {
+        "limitations": "Максимальный уклон 20°, минимальный радиус поворота 2500 мм. Заявленные 16 часов работы в сутки включают 4 цикла зарядки и не являются автономностью на одном заряде."
+      }
+    },
+    {
+      "product_name": "Робототехнический комплекс REDLOAD PRO 10 COBOT",
+      "manufacturer": "ООО \"Технорэд\"",
+      "url": "https://technored.ru/catalog/oborudovanie-dlya-stankov/robotizirovannye-operatory-stankov/",
+      "title": "TECHNORED: REDLOAD PRO 10 cobot",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 10
+        }
+      ],
+      "fields": {
+        "limitations": "Досягаемость 1350 мм. Состав ячейки, ограждения и инструмент согласуются под станок и технологическую операцию."
+      }
+    },
+    {
+      "product_name": "АМТ S300",
+      "manufacturer": "ООО \"АМТ\"",
+      "url": "https://amt-print.com/s300",
+      "title": "АМТ: строительный 3D-принтер S300",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Рабочая зона базовой S300 — 11×11×4 м; печать цементными и гипсовыми составами"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Стационарное питание; станция приготовления и подачи бетона в базовой комплектации"
+        }
+      ],
+      "fields": {
+        "limitations": "Рабочую зону 11×11×4 м нельзя считать внешними габаритами принтера. Модификации S300-1 и S300-2 имеют другие рабочие зоны."
+      }
+    },
+    {
+      "product_name": "Робот инвентаризатор",
+      "manufacturer": "ООО \"Яндекс Роботикс\"",
+      "url": "https://robotics.yandex.ru/robotizatsiya-sklada",
+      "title": "Яндекс Роботикс: робот-инвентаризатор",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "value": 30000,
+          "note": "Заявлено до 30 000 палето-мест в час. Это скорость инвентаризации, не перемещения грузов.",
+          "unit": "палето-мест/ч"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Интеграция с WMS и ERP через API"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Сканирующая мачта до 12,5 м; инвентаризация палет и крупногабаритных товаров в стеллажах"
+        }
+      ]
+    },
+    {
+      "product_name": "РУБИ-С-03",
+      "manufacturer": "ООО \"РОБО\"",
+      "url": "https://robo.ooo/prime-park",
+      "title": "ROBO: кейс пяти РУБИ-С-03 в Prime Park",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "value": 790,
+          "note": "Фактическая выработка в кейсе Prime Park; не паспортный максимум и не гарантированная выработка другого объекта.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Управление маршрутами и расписанием в ROBO FMS"
+        }
+      ]
+    },
+    {
+      "product_name": "IQ-BUS V",
+      "manufacturer": "ООО \"Аврора Роботикс\"",
+      "url": "https://avrora-robotics.com/ru/projects/passenger-logistics/",
+      "title": "Аврора Роботикс: IQ-Bus",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Карта проходимости, построение траектории с обходом статических и динамических препятствий"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Выгрузка маршрута, траектории и фактического трека; управление расписанием"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Самодиагностика подсистем, включая заряд и давление в шинах"
+        }
+      ],
+      "fields": {
+        "limitations": "На странице описана общая платформа IQ-Bus. Габариты и нагрузки конкретной вендинговой комплектации IQ-BUS V необходимо подтверждать отдельно."
+      }
+    },
+    {
+      "product_name": "MARTin",
+      "manufacturer": "ООО \"Миррико\"",
+      "url": "https://mirrico.ru/catalog/products/robotic-method-of-stripping-petrochemical-equipmen/",
+      "title": "Миррико: MARTin — роботизированная очистка резервуаров",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Очистка резервуаров, железнодорожных цистерн и шламонакопителей от нефтяных отложений"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантийное обслуживание и обучение эксплуатации и ремонту при поставке заказчику"
+        }
+      ],
+      "fields": {
+        "limitations": "Установка изготавливается под условия заказчика; параметры конкретного исполнения требуют технического предложения."
+      }
+    },
+    {
+      "product_name": "Геоскан 401",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://download.geoscan.ru/site-files/401/Geoscan_401_Manual.pdf",
+      "title": "Геоскан 401: руководство, стр. 125–126",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1500,
+          "note": "Полётная конфигурация; сложенный аппарат без шасси 700×250×200 мм."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 1500
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 430
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 2
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 1
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 15
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40,
+          "note": "С базовой АКБ; с АКБ «Арктика» −40…+20 °C."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автоматическое управление; GNSS GPS / ГЛОНАСС / Galileo / BeiDou"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "LiPo АКБ 37 В, 20 А·ч; рекомендуемый ток зарядки 5 А"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Радиомодем 867,75–872,25 МГц, до 40 км"
+        }
+      ],
+      "fields": {
+        "limitations": "Взлёт и посадка с площадки диаметром 5 м; ветер до 12 м/с. Параметры по руководству, исполнение следует сверять по паспорту."
+      }
+    },
+    {
+      "product_name": "Геоскан 801",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://download.geoscan.ru/site-files/801/Geoscan_801_Manual.pdf",
+      "title": "Геоскан 801: руководство, стр. 87–90",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 570,
+          "note": "Габариты с винтами по текущему руководству; ранние публикации содержат другие размеры."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 620
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 120
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 1.5,
+          "note": "С аккумулятором и винтами."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 0.6666666666666666
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 15,
+          "note": "Горизонтальная скорость; вертикальная до 5 м/с."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Комбинированное управление"
+        },
+        {
+          "code": "battery_capacity_kwh",
+          "confirmed": true,
+          "value": 0.12628
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "LiPo АКБ 15,4 В, 8200 мА·ч"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "До 10 км при прямой видимости; S-band либо 2,4/5,8 ГГц — по паспорту комплекта"
+        }
+      ],
+      "fields": {
+        "limitations": "Ветер до 10 м/с по руководству; до 500 м над землёй и 4000 м над уровнем моря. Канал радиосвязи зависит от комплекта поставки."
+      }
+    },
+    {
+      "product_name": "ДИАМ 20К",
+      "manufacturer": "АО ГК \"Икар\"",
+      "url": "https://www.diam-aero.ru/bas_diam20k.html",
+      "title": "ДИАМ-АЭРО (ГК ИКАР): ДИАМ 20К",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 2000
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 4000,
+          "note": "Размах крыла."
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 3,
+          "value_max": 5,
+          "note": "В зависимости от комплектации полезной нагрузки."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 40
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 800
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -30,
+          "value_max": 40
+        }
+      ],
+      "fields": {
+        "limitations": "Площадка 7×7 м для вертикального взлёта/посадки; ветер до 15 м/с."
+      }
+    },
+    {
+      "product_name": "ДИАМ 20",
+      "manufacturer": "АО ГК \"Икар\"",
+      "url": "https://www.diam-aero.ru/bas_diam20.html",
+      "title": "ДИАМ-АЭРО (ГК ИКАР): ДИАМ 20",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 2000
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 4000,
+          "note": "Размах крыла."
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 3,
+          "value_max": 5,
+          "note": "В зависимости от комплектации полезной нагрузки."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 44
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 800
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -30,
+          "value_max": 40
+        }
+      ],
+      "fields": {
+        "limitations": "Запуск с катапульты, посадка на парашюте; ветер до 15 м/с."
+      }
+    },
+    {
+      "product_name": "АК-SC80",
+      "manufacturer": "ООО \"ГК Автомакон\"",
+      "url": "https://robot.automacon.ru/ak-sc80",
+      "title": "Автомакон: АК-SC80",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "value": 3000,
+          "note": "Заявленная производительность, м²/ч; условия на объекте влияют на фактическую выработку.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Автоматическая зарядка и замена воды"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Картографирование и автономный обход препятствий"
+        }
+      ]
+    },
+    {
+      "product_name": "DMR 600 (грузоподъемность до 600 кг)",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2025/10/buklet-dmr-600-1200-ot-23.04.2026-szhatyj.pdf",
+      "title": "ДиКом: официальный буклет DMR 600/1200 от 23.04.2026",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 600
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "SLAM; в описании также предусмотрены QR-метки"
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 5,
+          "note": "±5 мм; угловая точность ±0,5°."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 8
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "value": 2,
+          "note": "Зарядка с 10% до 80%, не полный цикл 0–100%."
+        },
+        {
+          "code": "lift_height_mm",
+          "confirmed": true,
+          "value": 60
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Уклон до 5%, ступень до 5 мм; допустимую ширину впадин сверять по исполнению.",
+          "note": "Буклет допускает впадины до 30 мм, страница DMR 600 — до 20 мм."
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 960,
+          "note": "Размеры по чертежу буклета (Д×Ш×В); на веб-странице неоднозначный порядок осей."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 650
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 250
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 2
+        }
+      ]
+    },
+    {
+      "product_name": "DMR 1200 (грузоподъемность до 1 200 кг)",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2025/10/buklet-dmr-600-1200-ot-23.04.2026-szhatyj.pdf",
+      "title": "ДиКом: официальный буклет DMR 600/1200 от 23.04.2026",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 1200
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "SLAM; в описании также предусмотрены QR-метки"
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 5,
+          "note": "±5 мм; угловая точность ±0,5°."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 8
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "value": 2,
+          "note": "Зарядка с 10% до 80%, не полный цикл 0–100%."
+        },
+        {
+          "code": "lift_height_mm",
+          "confirmed": true,
+          "value": 60
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Уклон до 5%, ступень до 5 мм; допустимую ширину впадин сверять по исполнению.",
+          "note": "Буклет допускает впадины до 30 мм, страница DMR 600 — до 20 мм."
+        },
+        {
+          "code": "length_mm",
+          "confirmed": false,
+          "text": "1100 мм в таблице буклета; 1115 мм на чертеже и сайте",
+          "note": "Расхождение между таблицей, чертежом и страницей https://dikom-a.ru/product/dmr-1200; требуется паспорт поставляемой версии."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": false,
+          "text": "820 мм в таблице буклета; 845 мм на чертеже и сайте",
+          "note": "Расхождение между таблицей, чертежом и страницей https://dikom-a.ru/product/dmr-1200; требуется паспорт поставляемой версии."
+        },
+        {
+          "code": "height_mm",
+          "confirmed": false,
+          "text": "256 мм в таблице буклета; 255 мм на чертеже и сайте",
+          "note": "Расхождение между таблицей, чертежом и страницей https://dikom-a.ru/product/dmr-1200; требуется паспорт поставляемой версии."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": false,
+          "text": "До 1,5 м/с в буклете; 2 м/с на странице изделия",
+          "note": "Расхождение между таблицей, чертежом и страницей https://dikom-a.ru/product/dmr-1200; требуется паспорт поставляемой версии."
+        }
+      ]
+    }
+  ]
+}

@@ -646,6 +646,20 @@ a.mcard:hover {
   text-decoration: none;
 }
 
+.pcard__image-source {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 5px;
+  padding: 4px 0;
+  color: var(--accent-strong);
+  font-size: .76rem;
+  text-decoration: none;
+}
+.pcard__image-source:hover { text-decoration: underline; }
+
 .pcard__link::after {
   content: "";
   position: absolute;
@@ -729,4 +743,17 @@ a.mcard:hover {
 .compare-toggle:disabled {
   cursor: not-allowed;
   opacity: 0.5;
+}
+.pcard__illustration {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  z-index: 1;
+  padding: 4px 8px;
+  border-radius: 7px;
+  background: rgb(255 255 255 / 94%);
+  color: #52627a;
+  font-size: .68rem;
+  line-height: 1.3;
+  pointer-events: none;
 }
