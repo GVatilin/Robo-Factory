@@ -1,6 +1,7 @@
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from app.schemas.economics import EconomicsInput
+from app.schemas.equipment import EquipmentInput
 
 
 class RateOverride(BaseModel):
@@ -20,6 +21,7 @@ class SelectionInput(BaseModel):
     peak_factor: float | None = Field(default=None, ge=1, le=10)
     demand_reason: str = Field(default="", max_length=1000)
     throughput_overrides: dict[int, RateOverride] = Field(default_factory=dict, max_length=20)
+    equipment: EquipmentInput = Field(default_factory=EquipmentInput)
 
     @model_validator(mode="after")
     def override_reason(self):

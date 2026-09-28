@@ -1,8 +1,9 @@
 """Объяснимый подбор и расчёт парка. Единицы процесса и ТТХ должны совпадать."""
 import math
 from app.schemas.selection import SelectionInput
+from app.services.equipment import equipment_plan
 
-VERSION = "selection-1.0"
+VERSION = "selection-1.1"
 # Процесс → объём в сутки, единица, требуемая масса груза. Не суммируем разные операции.
 DRIVERS = {
     ("warehouse", "inbound"): ("inbound_pallets_per_day", "паллет/ч", "pallet_weight_kg"),
@@ -129,7 +130,9 @@ def rank_candidate(entry, facility, process, params, options, context):
     factors={"Совместимость с процессом":40,"Пройденные технические проверки":min(30,10*(len(reasons)-1)),
              "Возможность расчёта парка":20 if quantity is not None else 0,
              "Полнота карточки":round(entry.summary.completeness_percent/10,1)}
-    return {"product_id":entry.product.id,"name":entry.product.name,"image_url":entry.summary.image_url,
+    equipment = options.equipment.model_copy(update={"peak_rate": (context["daily_demand"] / context["hours_per_day"] * context["peak_factor"]) if not context["missing"] else 0})
+    return {"equipment": equipment_plan(quantity, equipment) if quantity else None,
+            "product_id":entry.product.id,"name":entry.product.name,"image_url":entry.summary.image_url,
             "status":"excluded" if excluded else "needs_review" if missing or context["missing"] else "suitable",
             "reasons":reasons,"missing":missing,"excluded":excluded,"quantity":quantity,"throughput":rate,
             "unit":context["unit"],"score":0 if excluded else round(sum(factors.values()),1),"score_factors":factors,

@@ -5,6 +5,7 @@ import { formatMoney, formatNumber } from "../../format";
 import { Field, Input } from "../../ui/Field";
 import "./EconomicsPanel.css";
 import EconomicsReportTools from "./EconomicsReportTools";
+import {EquipmentTable, type EquipmentInput, type EquipmentPlan} from "../projects/Equipment";
 
 type Values = Record<string, string>;
 type Draft = { id: number; name: string; buy: boolean; rent: boolean; values: Values };
@@ -13,6 +14,7 @@ type Result = {
   tco: number; net_effect: number; simple_payback_years: number | null; roi_percent: number | null;
   capex_breakdown: Record<string, number>; opex_breakdown: Record<string, number>;
   years: { year: number; opex: number; replacement: number; cashflow: number; cumulative: number }[];
+  equipment?: EquipmentPlan | null;
 };
 export type EconomicsResponse = {
   model_version: string; inputs: unknown; baseline_annual_opex: number; baseline_tco: number;
@@ -64,6 +66,7 @@ function initialDrafts(data: Comparison): Draft[] {
 
 type ProjectEconomics = {
   quantities: Record<number, number>; common: Values;
+  equipment?: Record<number, EquipmentInput>;
   save: (inputs: unknown, bindings: {product_id: number; quantity_reason: string}[]) => Promise<void>;
 };
 export default function EconomicsPanel({ data, project }: { data: Comparison; project?: ProjectEconomics }) {
@@ -92,8 +95,8 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
     const scenarios = drafts.flatMap(d => {
       const v = Object.fromEntries(Object.entries(d.values).map(([k, v]) => [k, v === "" ? null : Number(v)]));
       return [
-        ...(d.buy ? [{ ...v, name: `${d.name} — покупка`, mode: "purchase" }] : []),
-        ...(d.rent ? [{ ...v, name: `${d.name} — RaaS`, mode: "raas", annual_service_per_robot: 0 }] : []),
+        ...(d.buy ? [{ ...v, equipment:project?.equipment?.[d.id]??null, name: `${d.name} — покупка`, mode: "purchase" }] : []),
+        ...(d.rent ? [{ ...v, equipment:project?.equipment?.[d.id]??null, name: `${d.name} — RaaS`, mode: "raas", annual_service_per_robot: 0 }] : []),
       ];
     });
     if (!scenarios.length) { setError("Выберите покупку или RaaS хотя бы для одного решения."); return; }
@@ -175,6 +178,7 @@ export function EconomicsResults({result,savedUrl,title}: {result: EconomicsResp
       </table></div>
       {result.results.map((r, i) => <details key={i} className="economics__draft">
         <summary>{r.name}: статьи затрат и денежный поток</summary>
+        {r.equipment&&<EquipmentTable plan={r.equipment}/>}
         <div className="economics__fields">{([ ["CAPEX", r.capex_breakdown], ["OPEX в год", r.opex_breakdown] ] as const).map(([title, parts]) => <div key={title}>
           <h4>{title}</h4><dl className="economics__breakdown">{Object.entries(parts).map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{formatMoney(value)}</dd></div>)}</dl>
         </div>)}</div>

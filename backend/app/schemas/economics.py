@@ -1,6 +1,7 @@
 from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
+from app.schemas.equipment import EquipmentInput
 
 Amount = Annotated[float, Field(ge=0, le=1e12)]
 Percent = Annotated[float, Field(ge=0, le=100)]
@@ -28,6 +29,7 @@ class EconomicsScenario(BaseModel):
     other_saving_percent: Percent = 0
     annual_additional_benefit: Amount = 0
     service_life_years: int | None = Field(default=None, ge=1, le=100)
+    equipment: EquipmentInput | None = None
 
     @model_validator(mode="after")
     def required_price(self):
@@ -71,6 +73,7 @@ class EconomicsResult(BaseModel):
     capex_breakdown: dict[str, float]
     opex_breakdown: dict[str, float]
     years: list[YearCashflow]
+    equipment: dict | None = None
 
 
 class EconomicsResponse(BaseModel):

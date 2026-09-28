@@ -1,0 +1,17 @@
+.simulation { margin-top: 24px; }
+.simulation label { display: grid; gap: 6px; }
+.simulation input,.simulation select { max-width: 100%; padding: 9px 12px; border: 1px solid #b6c8d2; border-radius: 8px; background: #fff; color: #193d54; }
+.simulation fieldset>label { margin-bottom: 12px; }
+.simulation-result { margin-top: 24px; border-top: 1px solid #d8e4eb; padding-top: 16px; }
+.simulation-kpis { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.simulation-kpis>div { display: grid; gap: 8px; border: 1px solid #d8e4eb; border-radius: 12px; padding: 14px; }
+.simulation-kpis span { color: #526b7d; font-size: 13px; }
+.simulation-kpis strong { font-size: 20px; overflow-wrap: anywhere; }
+.simulation-warning { padding: 12px 16px; background: #fff5df; color: #68460b; border-radius: 8px; }
+.simulation-timeline { margin: 16px 0; }
+.simulation-timeline input { width: 100%; }
+.simulation details { margin: 16px 0; }
+.simulation dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.simulation dd { margin: 3px 0 0; font-weight: 700; }
+.simulation-equipment { margin: 14px 0; }
+@media(max-width:700px) { .simulation-kpis { grid-template-columns: repeat(2,minmax(0,1fr)); } .simulation dl { grid-template-columns: 1fr; } }
