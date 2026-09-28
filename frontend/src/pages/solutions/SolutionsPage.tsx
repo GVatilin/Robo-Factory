@@ -89,7 +89,7 @@ export default function SolutionsPage() {
     ["has_image", "С фотографией"],
     ["has_cases", "Есть кейсы"],
     ["confirmed_only", "Только подтверждённые"],
-    ["with_unknown", "С решениями без данных"],
+    ["with_unknown", "С роботами без данных"],
   ];
   for (const [key, label] of flags) if (params.get(key) === "true") chips.push({ key, label, next: withValue(params, key, null) });
   if (params.get("min_completeness")) chips.push({ key: "completeness", label: `Полнота от ${params.get("min_completeness")}%`, next: withValue(params, "min_completeness", null) });
@@ -103,22 +103,16 @@ export default function SolutionsPage() {
   };
 
   return (
-    <div className="page page--wide">
+    <div className="page">
       <header className="page-header">
         <div className="page-header__text">
-          <p className="page-header__eyebrow">Каталог</p>
-          <h1>Каталог решений</h1>
-          <p className="page-header__lead">
-            Роботизированные решения по отраслям, объектам и процессам. Фильтруйте по характеристикам, отмечайте
-            решения кнопкой «Сравнить» и сопоставляйте их в одной таблице.
-          </p>
+          <h1>Каталог роботов</h1>
         </div>
       </header>
 
       <div className="solutions">
         <aside className="solutions__side">
           <section className="side-card card">
-            <h2 className="side-card__title">Иерархия каталога</h2>
             {tree.error && <ErrorState message={tree.error.message} onRetry={tree.reload} />}
             {!tree.data && !tree.error && <Spinner />}
             {tree.data && (
@@ -140,7 +134,7 @@ export default function SolutionsPage() {
               placeholder="Название, производитель, тип или описание"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              aria-label="Поиск решений"
+              aria-label="Поиск роботов"
             />
             <label className="toolbar__sort">
               <span>Сортировка</span>
@@ -169,7 +163,7 @@ export default function SolutionsPage() {
 
           <div className="solutions__summary">
             <strong>
-              {page.data ? `${total} ${plural(total, ["решение", "решения", "решений"])}` : "Загружаем…"}
+              {page.data ? `${total} ${plural(total, ["робот", "робота", "роботов"])}` : "Загружаем…"}
             </strong>
             {chips.length > 0 && (
               <div className="fchips">
@@ -197,12 +191,12 @@ export default function SolutionsPage() {
           {page.data && page.data.items.length === 0 && (
             <EmptyState
               icon={<PackageSearch size={24} />}
-              title="Решения не найдены"
+              title="Роботы не найдены"
               action={
                 <div className="empty__actions">
                   {params.getAll("spec").length > 0 && params.get("with_unknown") !== "true" && (
                     <button type="button" className="btn btn--subtle" onClick={() => change(withValue(params, "with_unknown", "true"))}>
-                      Показать решения без данных
+                      Показать роботов без данных
                     </button>
                   )}
                   <button type="button" className="btn btn--ghost" onClick={reset}>
@@ -211,7 +205,7 @@ export default function SolutionsPage() {
                 </div>
               }
             >
-              Ни одно решение не подходит под все условия. Ослабьте фильтры или включите решения без данных по
+              Ни один робот не подходит под все условия. Ослабьте фильтры или включите роботов без данных по
               характеристикам — они будут отмечены как требующие проверки.
             </EmptyState>
           )}

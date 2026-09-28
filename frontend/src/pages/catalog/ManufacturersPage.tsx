@@ -60,12 +60,7 @@ export default function ManufacturersPage() {
     <div className="page">
       <header className="page-header">
         <div className="page-header__text">
-          <p className="page-header__eyebrow">Каталог</p>
           <h1>Производители</h1>
-          <p className="page-header__lead">
-            Компании и их роботизированные решения. Каждый товар каталога принадлежит производителю — откройте
-            карточку, чтобы увидеть всю линейку.
-          </p>
         </div>
         {can("manufacturers:create") && (
           <div className="page-header__actions">

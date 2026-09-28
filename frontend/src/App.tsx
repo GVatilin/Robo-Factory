@@ -1,7 +1,6 @@
-import { createBrowserRouter, Link, Outlet, RouterProvider, ScrollRestoration } from "react-router";
+import { createBrowserRouter, Link, Navigate, Outlet, RouterProvider, ScrollRestoration, useLocation } from "react-router";
 
 import AppShell, { RequirePermission } from "./app/AppShell";
-import AnimatedBackdrop from "./app/AnimatedBackdrop";
 import { AuthProvider } from "./auth/AuthContext";
 import { CompareProvider } from "./compare/CompareContext";
 import Landing from "./landing/Landing";
@@ -24,7 +23,6 @@ function Root() {
     <AuthProvider>
       <CompareProvider>
         <ScrollRestoration />
-        <AnimatedBackdrop />
         <Outlet />
       </CompareProvider>
     </AuthProvider>
@@ -34,11 +32,17 @@ function Root() {
 function NotFound() {
   return (
     <div className="page">
-      <EmptyState title="Страница не найдена" action={<Link className="btn btn--ghost" to="/solutions">В каталог решений</Link>}>
+      <EmptyState title="Страница не найдена" action={<Link className="btn btn--ghost" to="/robots">В каталог роботов</Link>}>
         Проверьте адрес или вернитесь в каталог.
       </EmptyState>
     </div>
   );
+}
+
+/** Прежний адрес каталога: закладки и ссылки с фильтрами ведут на /robots с теми же параметрами. */
+function LegacyCatalogRedirect() {
+  const { search } = useLocation();
+  return <Navigate to={{ pathname: "/robots", search }} replace />;
 }
 
 const EDITORS = ["products:manage", "products:manage_own"] as const;
@@ -53,7 +57,8 @@ const router = createBrowserRouter([
       {
         element: <AppShell />,
         children: [
-          { path: "/solutions", element: <SolutionsPage /> },
+          { path: "/robots", element: <SolutionsPage /> },
+          { path: "/solutions", element: <LegacyCatalogRedirect /> },
           { path: "/compare", element: <ComparePage /> },
           { path: "/projects", element: <ProjectsPage /> },
           { path: "/projects/new", element: <ProjectPage /> },

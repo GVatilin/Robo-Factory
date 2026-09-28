@@ -56,11 +56,11 @@ export default function Landing() {
         </a>
         <nav className="topbar__nav" aria-label="Навигация по странице">
           <a href="#how">Как это работает</a>
-          <Link to="/solutions">Каталог решений</Link>
+          <Link to="/robots">Каталог роботов</Link>
           <Link to="/manufacturers">Производители</Link>
           <a href="/api/docs">API</a>
           {user ? (
-            <Link to="/solutions" className="topbar__cta">
+            <Link to="/robots" className="topbar__cta">
               {user.full_name ?? user.email}
             </Link>
           ) : (
@@ -84,8 +84,8 @@ export default function Landing() {
             <a className="button button--primary" href="#how">
               Как это работает
             </a>
-            <Link className="button button--ghost" to="/solutions">
-              Каталог решений
+            <Link className="button button--ghost" to="/robots">
+              Каталог роботов
             </Link>
           </div>
           <ul className="hero__facilities" aria-label="Типы объектов">

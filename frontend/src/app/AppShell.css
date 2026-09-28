@@ -5,6 +5,20 @@
   overflow-x: clip;
 }
 
+/* Мягкий фон с чертёжной сеткой — продолжение лендинга. */
+.shell__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 85% 0%, rgb(186 212 247 / 70%) 0%, transparent 70%),
+    radial-gradient(50% 40% at 0% 100%, rgb(205 223 248 / 80%) 0%, transparent 70%),
+    linear-gradient(rgb(36 99 216 / 4%) 1px, transparent 1px) 0 0 / 32px 32px,
+    linear-gradient(90deg, rgb(36 99 216 / 4%) 1px, transparent 1px) 0 0 / 32px 32px,
+    var(--bg);
+}
+
 .shell__topbar {
   position: sticky;
   top: 0;
@@ -249,8 +263,9 @@
 
 /* ---------- страницы ---------- */
 
+/* Одна ширина у всех страниц: при переключении вкладок содержимое не сдвигается. */
 .page {
-  max-width: 1360px;
+  max-width: 1480px;
   margin: 0 auto;
   padding: 28px var(--gutter) 72px;
 }
@@ -280,8 +295,73 @@
 }
 
 .page-header > * {
+  position: relative;
+  z-index: 1;
   min-width: 0;
   max-width: 100%;
+}
+
+/* Фон шапки: крупный манипулятор (статичный 3D-рендер) в повороте. Слой повторяет карточку и
+   обрезается её краями, поэтому высота шапки от картинки не зависит. Рука тянется к заголовку;
+   в шапках с кнопками она стоит левее кнопок, а где места мало — не показывается. */
+.page-header {
+  position: relative;
+}
+
+.page-header::after {
+  --art-shift: 0px;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: url("../ui/header-arm.webp") no-repeat right calc(var(--art-shift) + 20px) top 30% /
+    auto clamp(150px, calc(100% + 90px), min(260px, 16vw));
+  opacity: 0.55;
+  -webkit-mask-image: linear-gradient(90deg, transparent 30%, #000 55%);
+  mask-image: linear-gradient(90deg, transparent 30%, #000 55%);
+  pointer-events: none;
+}
+
+.page-header:has(> .page-header__actions)::after {
+  --art-shift: 290px;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.page-header:has(> .page-header__actions > :nth-child(2))::after {
+  --art-shift: 470px;
+  background-size: auto 150px;
+}
+
+/* В разделе проектов шапки без картинки — обычный фон карточки. */
+.page-header.projects-hero::after,
+.selection-page > .page-header::after {
+  content: none;
+}
+
+@media (max-width: 1280px) {
+  .page-header:has(> .page-header__actions > :nth-child(2))::after {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .page-header:has(> .page-header__actions)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-header::after {
+    display: none;
+  }
+}
+
+@media print {
+  .page-header::after {
+    display: none;
+  }
 }
 
 .page-header h1,

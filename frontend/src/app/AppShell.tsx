@@ -163,6 +163,7 @@ export default function AppShell() {
 
   return (
     <div ref={shellRef} className="shell">
+      <div className="shell__backdrop" aria-hidden="true" />
       <header ref={topbarRef} className={cx("shell__topbar", can("users:manage") && "shell__topbar--admin")}>
         <Link className="brand" to="/">
           <LogoMark />
@@ -172,13 +173,9 @@ export default function AppShell() {
           <NavLink to="/projects" className={({ isActive }) => cx("shell__link", isActive && "is-active")}>
             <Building2 size={17} aria-hidden="true" />Проекты
           </NavLink>
-          <NavLink to="/solutions" className={({ isActive }) => cx("shell__link", isActive && "is-active")}>
+          <NavLink to="/robots" className={({ isActive }) => cx("shell__link", isActive && "is-active")}>
             <Boxes size={17} aria-hidden="true" />
-            Решения
-          </NavLink>
-          <NavLink to="/compare" className={({ isActive }) => cx("shell__link", isActive && "is-active")}>
-            <Scale size={17} aria-hidden="true" />
-            Сравнение
+            Роботы
           </NavLink>
           <NavLink to="/manufacturers" className={({ isActive }) => cx("shell__link", isActive && "is-active")}>
             <Building2 size={17} aria-hidden="true" />

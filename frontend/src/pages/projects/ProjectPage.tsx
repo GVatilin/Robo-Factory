@@ -118,7 +118,7 @@ function ProjectForm({project, definitions, facilities, facilityId, onFacility, 
     </div>}
     <div className="projects-actions">
       {project && loggedIn && !readOnly && <button type="button" className="btn btn--ghost" disabled={busy||dirty} onClick={copy}><Copy size={16} aria-hidden="true" />Создать копию</button>}
-      <Link className="btn btn--ghost" to={`/solutions?facility_type_id=${facilityId}`}>Решения для этого типа объекта</Link>
+      <Link className="btn btn--ghost" to={`/robots?facility_type_id=${facilityId}`}>Роботы для этого типа объекта</Link>
       {project && !readOnly && <button type="button" className="btn btn--danger-ghost project-delete" disabled={busy} onClick={remove}><Trash2 size={16} aria-hidden="true" />Удалить проект</button>}
     </div>
     <section className="project-completeness" aria-label="Заполнение параметров"><div><strong>Готовность исходных данных</strong>

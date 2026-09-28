@@ -11,34 +11,10 @@
   padding: 14px 18px;
 }
 
-.compare__legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-left: auto;
-  color: var(--ink-muted);
-  font-size: 0.8rem;
-  font-weight: 600;
-}
 
-.compare__legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
 
-.compare__legend .mandatory-mark {
-  margin-left: 0;
-  vertical-align: 0;
-}
 
-.legend-best {
-  color: var(--success);
-}
 
-.legend-ok {
-  color: var(--success);
-}
 
 .compare__lineup {
   margin-bottom: 16px;
@@ -62,6 +38,7 @@
   color: var(--ink-muted);
   font-size: 0.84rem;
 }
+
 
 .compare__stage {
   height: 240px;
@@ -178,12 +155,10 @@
 }
 
 .chead__meta {
-  overflow: hidden;
   color: var(--ink-muted);
   font-size: 0.76rem;
   font-weight: 600;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  line-height: 1.3;
 }
 
 .ctable__group th {

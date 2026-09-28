@@ -5,7 +5,7 @@ import { Link, useNavigate, useSearchParams } from "react-router";
 import { useApi } from "../../api/hooks";
 import type { CompareCell, CompareRow, Comparison, ProductSummary } from "../../api/types";
 import { COMPARE_LIMIT, compareLink, useCompare } from "../../compare/CompareContext";
-import { companyShortName, formatDate, formatMoney, formatNumber, plural } from "../../format";
+import { companyShortName, formatDate, formatMoney, formatNumber } from "../../format";
 import { resolveKind, resolveSize } from "../../scene/robots/kinds";
 import type { LineupItem } from "../../scene/robots/Lineup";
 import { SceneBoundary, supportsWebGL, usePrefersReducedMotion } from "../../scene/support";
@@ -122,7 +122,7 @@ export default function ComparePage() {
         <EmptyState
           icon={<Scale size={24} />}
           title="Выберите решения для сравнения"
-          action={<Link className="btn btn--primary" to="/solutions">Перейти в каталог решений</Link>}
+          action={<Link className="btn btn--primary" to="/robots">Перейти в каталог роботов</Link>}
         >
           Отметьте кнопкой «Сравнить» до {COMPARE_LIMIT} решений в каталоге или на странице производителя.
         </EmptyState>
@@ -138,19 +138,14 @@ export default function ComparePage() {
     (!hideEmpty || row.cells.some((c) => !isEmpty(c))) && (!onlyDiff || row.differs);
 
   return (
-    <div className="page page--wide">
+    <div className="page">
       <header className="page-header">
         <div className="page-header__text">
-          <p className="page-header__eyebrow">Сравнение</p>
           <h1>Сравнение решений</h1>
-          <p className="page-header__lead">
-            {count} {plural(count, ["решение", "решения", "решений"])} по группам характеристик п. 3.3.7 ТЗ и
-            дополнительным показателям платформы. Лучшее значение в строке отмечено зелёным.
-          </p>
         </div>
         <div className="page-header__actions">
           {count < COMPARE_LIMIT && (
-            <Link className="btn btn--ghost" to="/solutions">
+            <Link className="btn btn--ghost" to="/robots">
               <Plus size={16} aria-hidden="true" />
               Добавить решение
             </Link>
@@ -174,13 +169,8 @@ export default function ComparePage() {
       )}
 
       <div className="compare__toolbar card">
-        <Switch checked={onlyDiff} onChange={setOnlyDiff} label="Только различия" description="Скрыть строки с одинаковыми значениями" />
-        <Switch checked={hideEmpty} onChange={setHideEmpty} label="Скрыть строки без данных" description="Не показывать строки, где данных нет ни у одного решения" />
-        <div className="compare__legend">
-          <span><Trophy size={14} aria-hidden="true" className="legend-best" /> лучшее значение</span>
-          <span><BadgeCheck size={14} aria-hidden="true" className="legend-ok" /> подтверждено источником</span>
-          <span><span className="mandatory-mark" /> обязательная по ТЗ</span>
-        </div>
+        <Switch checked={onlyDiff} onChange={setOnlyDiff} label="Только различия" />
+        <Switch checked={hideEmpty} onChange={setHideEmpty} label="Скрыть строки без данных" />
       </div>
 
       {webgl && count > 0 && (
