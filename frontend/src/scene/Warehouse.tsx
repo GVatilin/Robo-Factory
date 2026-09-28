@@ -59,7 +59,7 @@ function pick<T>(values: readonly T[], rand: () => number): T {
   return values[Math.floor(rand() * values.length)];
 }
 
-function buildRacks(rand: () => number) {
+function buildRacks(rand: () => number, occupancy: number, rackRowCount: number) {
   const posts: Item[] = [];
   const shelves: Item[] = [];
   const beams: Item[] = [];
@@ -69,7 +69,7 @@ function buildRacks(rand: () => number) {
   const bayWidth = length / RACK.bays;
   const shelfLevels: readonly number[] = RACK.levels;
 
-  for (const row of RACK.rows) {
+  for (const row of RACK.rows.slice(0, rackRowCount)) {
     const sides = [row.z - row.depth / 2 + 0.05, row.z + row.depth / 2 - 0.05];
     for (let bay = 0; bay <= RACK.bays; bay++) {
       for (const z of sides) {
@@ -95,7 +95,7 @@ function buildRacks(rand: () => number) {
             let width = 0.5 + rand() * 0.4;
             if (cursor + width > bayEnd - 0.08) width = bayEnd - 0.08 - cursor;
             if (width < 0.35) break;
-            if (rand() > 0.16) {
+            if (rand() > 1 - occupancy) {
               const height = 0.3 + rand() * (gap - 0.45);
               boxes.push({
                 x: cursor + width / 2,
@@ -116,7 +116,7 @@ function buildRacks(rand: () => number) {
   return { posts, shelves, beams, boxes };
 }
 
-function buildStaging(rand: () => number) {
+function buildStaging(rand: () => number, occupancy: number, dockCount: number) {
   const pallets: Item[] = [];
   const boxes: Item[] = [];
   const offsets = [
@@ -125,9 +125,9 @@ function buildStaging(rand: () => number) {
     [-0.29, 0.24],
     [0.29, 0.24],
   ] as const;
-  for (const x of DOCK_DOORS) {
+  for (const x of DOCK_DOORS.slice(0, dockCount)) {
     for (const z of STAGING_ROWS) {
-      if (rand() < 0.2) continue;
+      if (rand() < 1 - occupancy) continue;
       pallets.push({ x, y: 0.07, z, sx: 1.2, sy: 0.14, sz: 1.0 });
       const layers = 1 + Math.floor(rand() * 3);
       for (let layer = 0; layer < layers; layer++) {
@@ -177,28 +177,28 @@ function buildMarkings() {
   return { lines, zones };
 }
 
-function Walls() {
+function Walls({ dockCount, width, depth }: { dockCount: number; width: number; depth: number }) {
   const wall = material(palette.wall);
-  const innerZ = -FLOOR.depth / 2 + WALL.thickness;
+  const innerZ = -depth / 2 + WALL.thickness;
   return (
     <group>
       <mesh
         geometry={geometries.box}
         material={wall}
-        position={[0, WALL.height / 2, -FLOOR.depth / 2 + WALL.thickness / 2]}
-        scale={[FLOOR.width, WALL.height, WALL.thickness]}
+        position={[0, WALL.height / 2, -depth / 2 + WALL.thickness / 2]}
+        scale={[width, WALL.height, WALL.thickness]}
         castShadow
         receiveShadow
       />
       <mesh
         geometry={geometries.box}
         material={wall}
-        position={[-FLOOR.width / 2 + WALL.thickness / 2, WALL.height / 2, 0]}
-        scale={[WALL.thickness, WALL.height, FLOOR.depth]}
+        position={[-width / 2 + WALL.thickness / 2, WALL.height / 2, 0]}
+        scale={[WALL.thickness, WALL.height, depth]}
         castShadow
         receiveShadow
       />
-      {DOCK_DOORS.map((x) => (
+      {DOCK_DOORS.slice(0, dockCount).map((x) => (
         <group key={x} position={[x, 0, innerZ]}>
           <mesh
             geometry={geometries.box}
@@ -223,9 +223,14 @@ function Walls() {
   );
 }
 
-export function Warehouse() {
-  const racks = useMemo(() => buildRacks(seededRandom(7)), []);
-  const staging = useMemo(() => buildStaging(seededRandom(19)), []);
+export function Warehouse({ seed = 7, occupancy = 0.84, dockCount = DOCK_DOORS.length, rackRows = RACK.rows.length, width = FLOOR.width, depth = FLOOR.depth }: { seed?: number; occupancy?: number; dockCount?: number; rackRows?: number; width?: number; depth?: number }) {
+  const floorWidth = Math.max(FLOOR.width, width);
+  const floorDepth = Math.max(FLOOR.depth, depth);
+  const density = Math.min(0.98, Math.max(0.18, occupancy));
+  const visibleDocks = Math.min(DOCK_DOORS.length, Math.max(1, Math.round(dockCount)));
+  const visibleRackRows = Math.min(RACK.rows.length, Math.max(1, Math.round(rackRows)));
+  const racks = useMemo(() => buildRacks(seededRandom(seed), density, visibleRackRows), [seed, density, visibleRackRows]);
+  const staging = useMemo(() => buildStaging(seededRandom(seed + 12), density, visibleDocks), [seed, density, visibleDocks]);
   const markings = useMemo(buildMarkings, []);
   const allBoxes = useMemo(() => [...racks.boxes, ...staging.boxes], [racks, staging]);
 
@@ -239,11 +244,11 @@ export function Warehouse() {
         geometry={geometries.box}
         material={material(palette.floor)}
         position={[0, -FLOOR.thickness / 2, 0]}
-        scale={[FLOOR.width, FLOOR.thickness, FLOOR.depth]}
+        scale={[floorWidth, FLOOR.thickness, floorDepth]}
         castShadow
         receiveShadow
       />
-      <Walls />
+      <Walls dockCount={visibleDocks} width={floorWidth} depth={floorDepth} />
       <Instances items={markings.zones} geometry={geometries.box} color={palette.zone} shadows={false} />
       <Instances items={markings.lines} geometry={geometries.box} color={palette.marking} shadows={false} />
       <Instances items={racks.posts} geometry={geometries.box} color={palette.rack} />
