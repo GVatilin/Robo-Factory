@@ -1,5 +1,6 @@
 """Отчёты и однофакторная чувствительность на основе общей экономической модели."""
 from io import BytesIO
+import math
 
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill
@@ -13,6 +14,7 @@ FACTORS = {
     "labor": "Расходы базового процесса на персонал",
     "price": "Цена оборудования / ставка RaaS",
     "service": "Ежегодное обслуживание при покупке",
+    "volume": "Объём операций и требуемый парк",
 }
 
 
@@ -25,7 +27,7 @@ def sensitivity(data: EconomicsInput, spread: float):
             multiplier = 1 + delta / 100
             if factor == "labor":
                 variant["baseline_annual_labor"] *= multiplier
-            else:
+            elif factor != "volume":
                 for scenario in variant["scenarios"]:
                     field = ("equipment_price" if scenario["mode"] == "purchase" else "monthly_fee") if factor == "price" else "annual_service_per_robot"
                     if factor == "service" and scenario["mode"] == "raas":
@@ -40,14 +42,20 @@ def sensitivity(data: EconomicsInput, spread: float):
                 target.equipment_price = values["equipment_price"]
                 target.monthly_fee = values["monthly_fee"]
                 target.annual_service_per_robot = values["annual_service_per_robot"]
+            if factor == "volume":
+                for target in adjusted.scenarios:
+                    target.quantity = max(1, math.ceil((target.fleet_unrounded or target.quantity) * multiplier)) if delta else target.quantity
+                    if target.equipment:
+                        target.equipment.peak_rate *= multiplier
             result = base if delta == 0 else calculate(adjusted)
             rows.append({"factor": factor, "label": label, "delta_percent": delta,
-                         "results": result.model_dump(mode="json")["results"]})
+                         "results": [{"name": "Без роботизации", "tco": result.baseline_tco,
+                                      "net_effect": 0, "simple_payback_years": None, "roi_percent": None}] + result.model_dump(mode="json")["results"]})
     return {"model_version": base.model_version, "spread_percent": spread, "rows": rows,
-            "assumptions": ["Каждый фактор меняется отдельно; остальные значения и состав парка фиксированы.",
+            "assumptions": ["Каждый фактор меняется отдельно. Для объёма операций пересчитываются парк, зарядки и рабочие посты; для остальных факторов парк фиксирован.",
                 "Это диапазон допущений, а не прогноз или доверительный интервал.",
                 "Изменение нулевой статьи не влияет на результат. Обслуживание RaaS включено в ставку.",
-                "Изменение нагрузки и производительности требует нового подбора количества роботов."]}
+                "При изменении объёма парк = ceil(исходное неокруглённое количество × множитель объёма). Если точного значения нет, используется указанное количество как допущение. Фиксированные ручные количества зарядок и постов сохраняются. ФОТ, доли экономии и постоянные расходы не масштабируются без отдельной модели базового процесса."]}
 
 
 def workbook_report(result: dict, analysis: dict | None = None, snapshot: dict | None = None, title="Экономика роботизации") -> bytes:
@@ -82,7 +90,9 @@ def workbook_report(result: dict, analysis: dict | None = None, snapshot: dict |
         ["Примечание", "Альтернативные сценарии одного процесса; их эффект не суммируется. Пустая окупаемость/ROI означает, что показатель не определён."]])
     keys = ["name", "mode", "capex", "annual_opex", "annual_effect", "tco", "net_effect", "simple_payback_years", "roi_percent"]
     sheet("Сценарии", ["Сценарий", "Модель", "CAPEX, ₽", "OPEX, ₽/год", "Эффект, ₽/год", "TCO, ₽", "Чистый эффект, ₽", "Окупаемость, лет", "ROI, %"],
-          [[r[k] for k in keys] for r in result["results"]])
+          [["Без роботизации", "baseline", 0, result["baseline_annual_opex"], 0, result["baseline_tco"], 0, None, None]] + [[r[k] for k in keys] for r in result["results"]])
+    sheet("Интерпретация", ["Сценарий", "Экономия ФОТ, ₽/год", "Изменение OPEX, ₽/год", "Вывод", "Риски"],
+          [[r["name"], r.get("annual_labor_saving"), r.get("annual_opex_change"), r.get("interpretation", ""), "\n".join(r.get("risks", []))] for r in result["results"]])
     sheet("Денежные потоки", ["Сценарий", "Год", "OPEX, ₽", "Замены, ₽", "Поток, ₽", "Накоплено, ₽"],
           [[r["name"], y["year"], y["opex"], y["replacement"], y["cashflow"], y["cumulative"]] for r in result["results"] for y in r["years"]])
     sheet("Статьи затрат", ["Сценарий", "Раздел", "Статья", "Сумма, ₽"],

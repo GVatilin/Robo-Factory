@@ -41,6 +41,10 @@ services:
       CORS_ORIGINS: https://${APP_DOMAIN:?Set APP_DOMAIN}
       SEED_ON_STARTUP: "false"
       UPLOAD_DIR: /data/uploads
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_PROXY_URL: ${OPENAI_PROXY_URL:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4.1-mini}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com/v1}
     volumes:
       - uploads:/data/uploads
       - ${DATASETS_DIR:-/opt/robo-factory/shared/datasets}:/datasets:ro

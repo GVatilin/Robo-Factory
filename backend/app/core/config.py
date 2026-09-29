@@ -1,7 +1,7 @@
 from functools import lru_cache
 from pathlib import Path
 
-from pydantic import Field
+from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -45,6 +45,10 @@ class Settings(BaseSettings):
 
     # Версия расчётной модели фиксируется в каждом запуске расчёта (п. 3.1.5 ТЗ).
     calc_model_version: str = "0.1.0"
+    openai_api_key: SecretStr = SecretStr("")
+    openai_proxy_url: SecretStr = SecretStr("")
+    openai_model: str = "gpt-4.1-mini"
+    openai_base_url: str = "https://api.openai.com/v1"
 
     @property
     def database_url(self) -> str:

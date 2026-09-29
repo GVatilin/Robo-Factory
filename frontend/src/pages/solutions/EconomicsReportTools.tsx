@@ -69,7 +69,7 @@ export default function EconomicsReportTools({result,savedUrl,title}:{result:Eco
     </div>
     {analysis&&<section aria-live="polite"><h3>Чувствительность экономики: ±{analysis.spread_percent}%</h3>
       <ul>{analysis.assumptions.map(a=><li key={a}>{a}</li>)}</ul>
-      {['labor','price','service'].map(factor=><details key={factor} className="economics__draft" open><summary>{analysis.rows.find(r=>r.factor===factor)?.label}</summary>
+      {['labor','price','volume','service'].map(factor=><details key={factor} className="economics__draft" open><summary>{analysis.rows.find(r=>r.factor===factor)?.label}</summary>
         <div className="economics__scroll"><table className="economics__table"><thead><tr><th>Сценарий</th><th>Изменение</th><th>TCO</th><th>Чистый эффект</th><th>Окупаемость</th><th>ROI</th></tr></thead>
           <tbody>{analysis.rows.filter(r=>r.factor===factor).flatMap(row=>row.results.map((r,i)=><tr key={`${row.delta_percent}-${i}`}><th>{r.name}</th><td>{row.delta_percent>0?'+':''}{row.delta_percent}%</td><td>{formatMoney(r.tco)}</td><td>{formatMoney(r.net_effect)}</td><td>{r.simple_payback_years===null?'Не определена':`${formatNumber(r.simple_payback_years)} лет`}</td><td>{r.roi_percent===null?'Не определён':`${formatNumber(r.roi_percent)}%`}</td></tr>))}</tbody>
         </table></div>

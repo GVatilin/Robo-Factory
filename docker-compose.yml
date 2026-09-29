@@ -42,6 +42,10 @@ services:
       DEMO_VENDOR_EMAIL: ${DEMO_VENDOR_EMAIL:-vendor@example.com}
       DEMO_VENDOR_PASSWORD: ${DEMO_VENDOR_PASSWORD:-vendor12345}
       UPLOAD_DIR: /data/uploads
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_PROXY_URL: ${OPENAI_PROXY_URL:-}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4.1-mini}
+      OPENAI_BASE_URL: ${OPENAI_BASE_URL:-https://api.openai.com/v1}
     volumes:
       - uploads:/data/uploads
       # Датасеты организатора и скрипт их загрузки: python /datasets/load_datasets.py

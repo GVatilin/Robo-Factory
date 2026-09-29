@@ -48,6 +48,57 @@ async def selection(project_id: uuid.UUID, data: SelectionInput, db: DbSession, 
     return await select_for_project(db, await visible_project(db, project_id, user), data)
 
 
+@router.get("/ai/status")
+async def ai_status(user: CurrentUser):
+    from app.services.ai_recommendation import configured, TIMEOUT_SECONDS
+    return {"configured": configured(), "timeout_seconds": TIMEOUT_SECONDS}
+
+
+@router.post("/{project_id}/recommendation")
+async def ai_recommendation(project_id: uuid.UUID, data: SaveProjectEconomics, db: DbSession, user: CurrentUser):
+    import hashlib
+    import json
+    from app.services.ai_recommendation import recommend
+    from app.services import audit
+    from app.models import Product
+    from app.services.products import PRODUCT_DETAIL_OPTIONS
+    project = await visible_project(db, project_id, user)
+    if project.updated_at != data.project_updated_at:
+        raise HTTPException(409, "Проект изменён. Повторите подбор перед запросом GPT.")
+    if len(data.inputs.scenarios) < 2 or len(data.bindings) != len(data.inputs.scenarios):
+        raise HTTPException(422, "Для рекомендации нужны минимум два рассчитанных варианта и их решения.")
+    selected = await select_for_project(db, project, data.selection)
+    candidates = {c["product_id"]: c for c in selected["candidates"]}
+    if not selected["context"]["hours_per_day"] or not math.isclose(data.inputs.hours_per_day, selected["context"]["hours_per_day"]):
+        raise HTTPException(422, "Режим экономики отличается от подбора. Пересчитайте варианты.")
+    for binding, scenario in zip(data.bindings, data.inputs.scenarios):
+        candidate = candidates.get(binding.product_id)
+        if not candidate or candidate["status"] == "excluded" or candidate["quantity"] is None:
+            raise HTTPException(422, "Сначала рассчитайте парк подходящих решений; исключённые варианты GPT не рекомендует.")
+        if scenario.quantity != candidate["quantity"] and len(binding.quantity_reason) < 3:
+            raise HTTPException(422, "Обоснуйте изменение количества роботов перед запросом GPT.")
+        scenario.fleet_unrounded = (candidate.get("calculation") or {}).get("unrounded_quantity") if scenario.quantity == candidate["quantity"] else scenario.quantity
+        scenario.equipment = EquipmentInput.model_validate(candidate["equipment"]["inputs"])
+    products = (await db.scalars(select(Product).where(Product.id.in_(candidates)).options(*PRODUCT_DETAIL_OPTIONS))).all()
+    product_data = [{"id": p.id, "name": p.name, "purpose": p.purpose, "limitations": p.limitations,
+        "sources": [{"url": s.url, "title": s.title, "type": s.source_type, "date": s.retrieved_at} for s in p.sources],
+        "specs": [{"name": s.definition.name, "unit": s.unit or s.definition.unit,
+                   "value": s.value_numeric, "maximum": s.value_numeric_max, "text": s.value_text,
+                   "boolean": s.value_bool, "date": s.retrieved_at, "assumption": s.is_assumption, "note": s.note,
+                   "confirmed": s.is_confirmed, "source": s.source.url if s.source else None} for s in p.spec_values]} for p in products]
+    result = calculate(data.inputs).model_dump(mode="json")
+    payload = {"project": {"type_id": project.facility_type_id, "parameters": project.parameters},
+        "selection": selected, "products": product_data, "economics": result,
+        "bindings": [b.model_dump() for b in data.bindings], "sensitivity": sensitivity(data.inputs, 20)}
+    advice = await recommend(payload, str(user.id))
+    audit.record(db, user, "project_recommendation", project.id, "create", {
+        "advice": advice, "project_updated_at": project.updated_at.isoformat(),
+        "input_hash": hashlib.sha256(json.dumps(payload, default=str, sort_keys=True).encode()).hexdigest(),
+        "economics": data.inputs.model_dump(mode="json"), "bindings": [b.model_dump() for b in data.bindings]})
+    await db.commit()
+    return advice
+
+
 @router.get("/{project_id}/calculations")
 async def history(project_id: uuid.UUID, db: DbSession, user: OptionalUser):
     project = await visible_project(db, project_id, user)
@@ -82,6 +133,8 @@ async def save_economics(project_id: uuid.UUID, data: SaveProjectEconomics, db: 
         raise HTTPException(409, "Проект изменён. Обновите страницу и выполните подбор заново.")
     if len(data.bindings) != len(data.inputs.scenarios):
         raise HTTPException(422, "Каждому сценарию требуется решение.")
+    if len(data.inputs.scenarios) < 2:
+        raise HTTPException(422, "Добавьте два варианта роботизации для сравнения с базовым процессом.")
     selection = await select_for_project(db, project, data.selection)
     if not selection["context"]["hours_per_day"] or not math.isclose(data.inputs.hours_per_day, selection["context"]["hours_per_day"]):
         raise HTTPException(422, "Режим работы в экономике должен совпадать с расчётом парка. Измените его в подборе.")
@@ -99,6 +152,7 @@ async def save_economics(project_id: uuid.UUID, data: SaveProjectEconomics, db: 
         if scenario.equipment is not None and scenario.equipment != expected_equipment:
             raise HTTPException(422, "Параметры вспомогательного оборудования изменились. Повторите подбор и расчёт экономики.")
         scenario.equipment = expected_equipment
+        scenario.fleet_unrounded = (c.get("calculation") or {}).get("unrounded_quantity") if scenario.quantity == c["quantity"] else scenario.quantity
         key = (binding.product_id, scenario.mode)
         if key in seen:
             raise HTTPException(422, "Повторяющиеся сценарии одного решения.")
@@ -142,6 +196,17 @@ async def save_economics(project_id: uuid.UUID, data: SaveProjectEconomics, db: 
             quantity_calculated=c["quantity"], quantity_manual=inputs.quantity if manual else None,
             warning="\n".join(c["missing"]), notes=binding.quantity_reason)]
         await db.flush()
+        scalar_values = {**{f"common.{key}": value for key, value in data.inputs.model_dump(exclude={"scenarios"}).items() if isinstance(value, (int, float))},
+                         **{f"product.{binding.product_id}.{key}": value for key, value in inputs.model_dump().items() if isinstance(value, (int, float)) or value is None}}
+        for key, before in data.inputs.automatic_values.items():
+            if key in scalar_values and scalar_values[key] != before:
+                # Service included in RaaS is an explicit contract convention, not a user override.
+                if inputs.mode == "raas" and key.endswith("annual_service_per_robot"):
+                    continue
+                if len(data.inputs.adjustment_reason.strip()) < 3:
+                    raise HTTPException(422, "Обоснуйте изменения автоматически заполненных экономических данных.")
+                db.add(CalculationOverride(scenario_id=existing.id, key=key, calculated_value=before,
+                    manual_value=scalar_values[key], reason=data.inputs.adjustment_reason, user_id=user.id))
         if manual:
             db.add(CalculationOverride(scenario_id=existing.id, key="quantity", calculated_value=c["quantity"],
                 manual_value=inputs.quantity, reason=binding.quantity_reason, user_id=user.id))

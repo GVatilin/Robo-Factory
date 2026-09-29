@@ -60,6 +60,11 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
     const value=Number((selection?.parameters??project.parameters)[key]);
     if(Number.isFinite(value) && value>0) common[key==='working_days_per_year'?'days_per_year':key]=String(value);
   }
+  const params=selection?.parameters??project.parameters;
+  const people=Number(params.pickers_count??params.ramp_staff_count??params.orderlies_count);
+  const salary=Number(params.picker_salary_rub_month??params.ramp_staff_salary_rub_month??params.orderly_salary_rub_month);
+  const payroll=Number(params.payroll_tax_coef);
+  if(people>0&&salary>0&&payroll>0)common.baseline_annual_labor=String(people*salary*12*payroll);
   return <div className="page selection-page">
     <Link to={`/projects/${project.id}`}>← Параметры проекта</Link>
     <header className="page-header"><div><h1>Подбор и экономика</h1><p>{project.name}</p></div></header>
@@ -67,6 +72,7 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
     <section id="selection-inputs" className="card project-card"><h2>1. Процесс и нагрузка</h2>
       <p>Подбор использует сохранённые параметры объекта. Количество рассчитывается отдельно для выбранного процесса. Решения ниже — альтернативы, их эффект нельзя складывать.</p>
       <form onSubmit={select}><fieldset disabled={busy || !!project.missing_required.length} className="economics__fieldset">
+        <button type="button" className="btn btn--ghost" onClick={()=>change({utilization:.8,availability:.9,reserve_percent:15,daily_demand:undefined,hours_per_day:undefined,peak_factor:undefined,demand_reason:"Типовые допущения: загрузка 0,8, доступность 0,9, резерв 15%; режим и поток из объекта.",equipment:{...DEFAULT_EQUIPMENT,charger_price:100000,station_price:150000,override_reason:"Допущение команды: зарядная станция 100 000 ₽, рабочий пост 150 000 ₽. Не цены поставщика; уточнить по предложению."}})}>Заполнить допущения парка и оборудования</button>
         <div className="selection-fields">
           <label>Процесс<select value={options.process_id} onChange={e=>change({process_id:Number(e.target.value),throughput_overrides:{},daily_demand:undefined,hours_per_day:undefined,peak_factor:undefined,demand_reason:""})}>{processes.map(p=><option key={p.id} value={p.id}>{p.name}</option>)}</select></label>
           {([['utilization','Коэффициент загрузки',.01,1],['availability','Техническая доступность',.01,1],['reserve_percent','Резерв парка, %',0,100],['daily_demand','Объём в сутки (пусто — из объекта)',.01,1e9],['hours_per_day','Часы в сутки (пусто — из объекта)',.01,24],['peak_factor','Пиковый коэффициент (пусто — из объекта)',1,10]] as const).map(([key,label,min,max])=><label key={key}>{label}<input type="number" step="any" min={min} max={max} required={['utilization','availability','reserve_percent'].includes(key)} value={options[key]??''} onChange={e=>change({[key]:e.target.value===''?undefined:Number(e.target.value)})}/></label>)}
@@ -96,7 +102,7 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
       </span></label>
     </article>)}</div>
     <button className="btn btn--primary" disabled={busy||!selected.length} onClick={openEconomics}>Рассчитать экономику выбранных ({selected.length}/6)</button></>}
-    {comparison && selection && <EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,equipment:Object.fromEntries(selection.candidates.filter(c=>c.equipment).map(c=>[c.product_id,c.equipment!.inputs])),quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),saveBlockedReason:selection.candidates.some(c=>selected.includes(c.product_id)&&c.quantity===null)?'Для сохранения и имитации нужен рассчитанный парк. Заполните объём и часы работы в блоке «Процесс и нагрузка», затем повторите подбор.':undefined,save:async(inputs,bindings)=>{
+    {comparison && selection && <EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,fleetBasis:Object.fromEntries(selection.candidates.filter(c=>c.calculation?.unrounded_quantity).map(c=>[c.product_id,c.calculation!.unrounded_quantity])),recommend:async(inputs,bindings)=>api(`/projects/${project.id}/recommendation`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}}),equipment:Object.fromEntries(selection.candidates.filter(c=>c.equipment).map(c=>[c.product_id,c.equipment!.inputs])),quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),saveBlockedReason:selection.candidates.some(c=>selected.includes(c.product_id)&&c.quantity===null)?'Для сохранения и имитации нужен рассчитанный парк. Заполните объём и часы работы в блоке «Процесс и нагрузка», затем повторите подбор.':undefined,save:async(inputs,bindings)=>{
       if(project.is_demo) throw new Error('Скопируйте демо-проект в свои проекты для сохранения расчётов.');
       const result=await api<{project_updated_at:string}>(`/projects/${project.id}/economics`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}});
       setVersion(result.project_updated_at);history.reload();

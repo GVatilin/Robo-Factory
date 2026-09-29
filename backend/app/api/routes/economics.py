@@ -8,6 +8,12 @@ from app.services.economics_reports import sensitivity, workbook_report
 router = APIRouter(prefix="/economics", tags=["Экономическая оценка"])
 
 
+@router.get("/defaults")
+async def economics_defaults():
+    from app.services.economics_defaults import default_profile
+    return default_profile()
+
+
 @router.post("/calculate", response_model=EconomicsResponse, summary="CAPEX, OPEX, TCO, окупаемость и ROI")
 async def calculate_economics(data: EconomicsInput) -> EconomicsResponse:
     """Расчёт доступен гостям. Возвращает снимок входов, формулы и годовые потоки без сохранения проекта."""

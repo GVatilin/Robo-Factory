@@ -18,11 +18,18 @@ class EconomicsScenario(BaseModel):
     software: Amount = 0
     infrastructure: Amount = 0
     integration: Amount = 0
+    commissioning: Amount = 0
     training: Amount = 0
     reserve_percent: Percent = 0
     annual_service_per_robot: Amount = 0
     annual_licenses: Amount = 0
     annual_other: Amount = 0
+    annual_connectivity: Amount = 0
+    annual_consumables: Amount = 0
+    annual_repairs: Amount = 0
+    component_replacement_cost: Amount = 0
+    component_replacement_interval: int | None = Field(default=None, ge=1, le=100)
+    fleet_unrounded: float | None = Field(default=None, gt=0, le=100000)
     annual_operators: Amount = 0
     power_kw: float = Field(default=0, ge=0, le=100000)
     labor_saving_percent: Percent = 0
@@ -37,6 +44,8 @@ class EconomicsScenario(BaseModel):
             raise ValueError("Укажите цену оборудования для покупки.")
         if self.mode == "raas" and self.monthly_fee is None:
             raise ValueError("Укажите ежемесячную ставку RaaS.")
+        if self.mode == "purchase" and self.component_replacement_cost and not self.component_replacement_interval:
+            raise ValueError("Укажите период замены компонентов, если задана её стоимость.")
         return self
 
 
@@ -50,6 +59,10 @@ class EconomicsInput(BaseModel):
     days_per_year: int = Field(default=250, ge=1, le=366)
     electricity_price: Amount = 0
     scenarios: list[EconomicsScenario] = Field(min_length=1, max_length=12)
+    default_profile: str | None = Field(default=None, max_length=100)
+    input_evidence: dict[Annotated[str, Field(max_length=100)], Annotated[str, Field(max_length=2000)]] = Field(default_factory=dict, max_length=1000)
+    automatic_values: dict[Annotated[str, Field(max_length=100)], float | None] = Field(default_factory=dict, max_length=1000)
+    adjustment_reason: str = Field(default="", max_length=2000)
 
 
 class YearCashflow(BaseModel):
@@ -66,6 +79,10 @@ class EconomicsResult(BaseModel):
     capex: float
     annual_opex: float
     annual_effect: float
+    annual_labor_saving: float = 0
+    annual_opex_change: float = 0
+    interpretation: str = ""
+    risks: list[str] = Field(default_factory=list)
     tco: float
     net_effect: float
     simple_payback_years: float | None
