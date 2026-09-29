@@ -272,7 +272,7 @@ export function EconomicsResults({result,savedUrl,title,advice}: {result: Econom
   return <div className="economics-report"><h3>Результаты за {horizon} лет</h3>
       <EconomicsReportTools key={JSON.stringify(result.inputs)} result={result} savedUrl={savedUrl} title={title} advice={advice}/>
       <div className="economics__summary-grid">{result.results.map((r,i)=><article className="economics__summary-card" key={i}><span>{r.mode==='purchase'?'ПОКУПКА':'АРЕНДА / RaaS'}</span><h4>{r.name}</h4><div className={`economics__effect ${r.net_effect>0?'is-positive':'is-negative'}`}>{formatMoney(r.net_effect)}</div><p>чистый эффект за {horizon} лет</p><dl><div><dt>Вложения</dt><dd>{formatMoney(r.capex)}</dd></div><div><dt>Эффект в год</dt><dd>{formatMoney(r.annual_effect)}</dd></div><div><dt>Окупаемость</dt><dd>{r.simple_payback_years===null?'Не определена':formatPayback(r.simple_payback_years)}</dd></div></dl></article>)}</div>
-      <div className="economics__scroll"><table className="economics__table">
+      <div className="economics__scroll" tabIndex={0} role="region" aria-label="Таблица расчёта: прокрутка по горизонтали"><table className="economics__table">
         <caption>Базовый процесс и сценарии роботизации</caption>
         <thead><tr><th scope="col">Показатель</th><th scope="col">Без роботизации</th>{result.results.map((r, i) => <th key={i} scope="col">{r.name}</th>)}</tr></thead>
         <tbody>
@@ -290,7 +290,7 @@ export function EconomicsResults({result,savedUrl,title,advice}: {result: Econom
         <div className="economics__fields">{([ ["CAPEX", r.capex_breakdown], ["OPEX в год", r.opex_breakdown] ] as const).map(([title, parts]) => <div key={title}>
           <h4>{title}</h4><dl className="economics__breakdown">{Object.entries(parts).map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{formatMoney(value)}</dd></div>)}</dl>
         </div>)}</div>
-        <div className="economics__scroll"><table className="economics__table"><caption>Поток относительно базового процесса; год 0 — начальные инвестиции</caption>
+        <div className="economics__scroll" tabIndex={0} role="region" aria-label="Таблица расчёта: прокрутка по горизонтали"><table className="economics__table"><caption>Поток относительно базового процесса; год 0 — начальные инвестиции</caption>
           <thead><tr><th>Год</th><th>OPEX</th><th>Замены</th><th>Денежный поток</th><th>Накопленный эффект</th></tr></thead>
           <tbody>{r.years.map(y => <tr key={y.year}><th scope="row">{y.year}</th><td>{formatMoney(y.opex)}</td><td>{formatMoney(y.replacement)}</td><td>{formatMoney(y.cashflow)}</td><td>{formatMoney(y.cumulative)}</td></tr>)}</tbody>
         </table></div>

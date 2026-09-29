@@ -26,7 +26,7 @@ export function EquipmentFields({value,onChange}:{value:EquipmentInput;onChange:
 
 export function EquipmentTable({plan}:{plan:EquipmentPlan}) {
   return <div className="simulation-equipment"><h4>Вспомогательное оборудование</h4>
-    <div className="economics__scroll"><table className="economics__table"><thead><tr><th>Позиция</th><th>Расчёт, шт.</th><th>Принято, шт.</th><th>Цена, ₽/шт.</th><th>Всего, ₽</th></tr></thead>
+    <div className="economics__scroll" tabIndex={0} role="region" aria-label="Таблица расчёта: прокрутка по горизонтали"><table className="economics__table"><thead><tr><th>Позиция</th><th>Расчёт, шт.</th><th>Принято, шт.</th><th>Цена, ₽/шт.</th><th>Всего, ₽</th></tr></thead>
     <tbody>{plan.items.map(item=><tr key={item.code}><th>{item.name}</th><td>{item.calculated}</td><td>{item.quantity}</td><td>{item.unit_price.toLocaleString('ru-RU')}</td><td>{item.cost.toLocaleString('ru-RU')}</td></tr>)}</tbody></table></div>
     <p>Итого: {plan.total_cost.toLocaleString('ru-RU')} ₽, до резерва CAPEX. Инфраструктура в экономике — дополнительные затраты сверх этих позиций.</p>
     <details><summary>Формулы и допущения по оборудованию</summary><ul>{[...plan.formulas,...plan.assumptions].map(s=><li key={s}>{s}</li>)}</ul>{plan.inputs.override_reason&&<p>Ручная корректировка: {plan.inputs.override_reason}</p>}</details>
