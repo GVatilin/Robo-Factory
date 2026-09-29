@@ -122,6 +122,14 @@ a.mcard:hover {
   min-height: 24px;
 }
 
+.mcard__description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary, #526278);
+  overflow-wrap: anywhere;
+}
+
 .mcard__types .badge {
   display: inline-block;
   max-width: 100%;

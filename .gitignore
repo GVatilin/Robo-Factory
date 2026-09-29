@@ -31,6 +31,8 @@ datasets/*
 !datasets/catalog_image_review.json
 !datasets/discover_manufacturer_logos.py
 !datasets/load_manufacturer_logos.py
+!datasets/load_manufacturer_descriptions.py
+!datasets/manufacturer_descriptions.json
 !datasets/manufacturer_logos/
 !datasets/load_catalog_expansion.py
 !datasets/catalog_expansion_20260929/

@@ -52,6 +52,10 @@ if [[ -s "$RELEASE/datasets/manufacturer_logos/manifest.json" ]]; then
         -v "$RELEASE/datasets:/logo-data:ro" backend /logo-data/load_manufacturer_logos.py
 fi
 [[ -z "$PREVIOUS" ]] || ln -sfn "$PREVIOUS" "$BASE/previous"
+if [[ -s "$RELEASE/datasets/manufacturer_descriptions.json" ]]; then
+    compose run --rm --no-deps --user root --entrypoint python \
+        -v "$RELEASE/datasets:/description-data:ro" backend /description-data/load_manufacturer_descriptions.py
+fi
 ln -sfn "$RELEASE" "$BASE/current"
 install -m 700 "$RELEASE/deploy/deploy.sh" "$BASE/bin/deploy.sh.next"
 mv "$BASE/bin/deploy.sh.next" "$BASE/bin/deploy.sh"

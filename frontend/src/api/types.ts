@@ -254,6 +254,7 @@ export interface Product extends ProductSummary {
 }
 
 export interface ManufacturerSummary {
+  description?: string | null;
   logo_url?: string | null;
   logo_source_url?: string | null;
   logo_original_url?: string | null;

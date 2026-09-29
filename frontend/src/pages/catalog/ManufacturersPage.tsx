@@ -38,6 +38,7 @@ function ManufacturerCard({ item }: { item: ManufacturerSummary }) {
         ))}
         {item.solution_types.length > types.length && <Badge>+{item.solution_types.length - types.length}</Badge>}
       </div>
+      {item.description && <p className="mcard__description">{item.description}</p>}
       <div className="mcard__foot">
         <span className="mcard__count">
           <strong>{item.product_count}</strong> {plural(item.product_count, ["решение", "решения", "решений"])}

@@ -30,6 +30,7 @@ class ManufacturerIn(Schema):
 
 
 class ManufacturerSummary(Schema):
+    description: str | None = None
     id: int
     name: str
     country: str | None
