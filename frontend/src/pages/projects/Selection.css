@@ -4,4 +4,11 @@
 .selection-fields input,.selection-fields select { font: inherit; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; width: 100%; box-sizing: border-box; background: white; color: #172336; }
 .selection-candidates { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,350px),1fr)); gap: 16px; align-items: start; }
 .selection-candidates details { margin: 12px 0; }
+.selection-candidate-choice { display: flex; align-items: flex-start; gap: 10px; width: fit-content; max-width: 100%; padding: 8px 10px; margin: -8px -10px; border-radius: 9px; cursor: pointer; }
+.selection-candidate-choice:hover { background: rgb(36 99 216 / 7%); }
+.selection-candidate-choice input { flex: 0 0 auto; width: 17px; height: 17px; margin: 2px 0 0; accent-color: var(--accent); cursor: pointer; }
+.selection-candidate-choice span { display: grid; gap: 3px; }
+.selection-candidate-choice small { max-width: 52ch; color: var(--ink-muted); line-height: 1.4; }
+.selection-candidate-choice:has(input:disabled) { cursor: not-allowed; opacity: .65; }
+.selection-candidate-choice:has(input:disabled):hover { background: transparent; }
 .selection-snapshot { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 450px; overflow: auto; font-size: 12px; }

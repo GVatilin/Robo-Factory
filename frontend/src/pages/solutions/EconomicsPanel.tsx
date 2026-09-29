@@ -84,7 +84,12 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
   }
   function field(spec: FieldSpec, values: Values, onChange: (key: string, value: string) => void, prefix: string) {
     const id = `econ-${prefix}-${spec.key}`;
-    return <Field key={spec.key} label={spec.label} htmlFor={id} hint={project && spec.key === "quantity" ? "Из автоматического подбора. Ручная корректировка требует обоснования." : spec.hint} required={!spec.optional}>
+    const hint=project&&spec.key==="quantity"
+      ? project.quantities[Number(prefix)]!==undefined
+        ? "Из автоматического подбора. Ручная корректировка требует обоснования."
+        : "Автоматически рассчитать количество не удалось. Укажите его вручную для предварительной оценки; перед сохранением заполните нагрузку и повторите подбор."
+      : spec.hint;
+    return <Field key={spec.key} label={spec.label} htmlFor={id} hint={hint} required={!spec.optional}>
       <Input id={id} type="number" disabled={!!project && spec.key === "hours_per_day"} min={spec.min ?? 0} max={spec.max ?? 1e12} step={spec.step ?? "any"}
         unit={spec.unit} required={!spec.optional} value={values[spec.key] ?? ""}
         onChange={e => onChange(spec.key, e.target.value)} />

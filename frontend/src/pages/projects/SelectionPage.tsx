@@ -90,7 +90,10 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
       {c.equipment&&<EquipmentTable plan={c.equipment}/>}
       <details><summary>Причины, ограничения, риски и рейтинг</summary><ul>{[...c.reasons,...c.excluded,...c.missing,...(c.risks??[])].map((v,i)=><li key={i}>{v}</li>)}</ul><dl>{Object.entries(c.score_factors).map(([k,v])=><div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl></details>
       {c.status!=='excluded' && <RateForm key={`${c.product_id}-${revision}`} candidate={c} initial={options.throughput_overrides[c.product_id]} busy={busy} apply={rate=>{const next={...options,throughput_overrides:{...options.throughput_overrides,[c.product_id]:rate}};setOptions(next);void select(undefined,next);}}/>}
-      <label><input type="checkbox" disabled={busy || c.status==='excluded'||c.quantity===null || (!selected.includes(c.product_id)&&selected.length>=6)} checked={selected.includes(c.product_id)} onChange={e=>{setSelected(ids=>e.target.checked?[...ids,c.product_id]:ids.filter(id=>id!==c.product_id));setComparison(null);}}/> В экономическую оценку</label>
+      <label className="selection-candidate-choice"><input type="checkbox" disabled={busy || c.status==='excluded' || (!selected.includes(c.product_id)&&selected.length>=6)} checked={selected.includes(c.product_id)} onChange={e=>{setSelected(ids=>e.target.checked?[...ids,c.product_id]:ids.filter(id=>id!==c.product_id));setComparison(null);}}/><span>В экономическую оценку
+        {c.quantity===null&&c.status!=='excluded'&&<small>Количество не рассчитано — задайте его вручную в экономической модели.</small>}
+        {c.status==='excluded'&&<small>Исключённое решение нельзя добавить в расчёт.</small>}
+      </span></label>
     </article>)}</div>
     <button className="btn btn--primary" disabled={busy||!selected.length} onClick={openEconomics}>Рассчитать экономику выбранных ({selected.length}/6)</button></>}
     {comparison && selection && <EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,equipment:Object.fromEntries(selection.candidates.filter(c=>c.equipment).map(c=>[c.product_id,c.equipment!.inputs])),quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),save:async(inputs,bindings)=>{
