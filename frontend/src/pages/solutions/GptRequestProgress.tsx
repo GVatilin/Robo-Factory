@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Bot, Check, CircleAlert } from 'lucide-react';
 
 /** API returns one complete answer, so this meter shows elapsed time, not model progress. */
-export default function GptRequestProgress({active,complete,failed}:{active:boolean;complete:boolean;failed:boolean}) {
+export default function GptRequestProgress({active,complete,failed,task='recommendation'}:{active:boolean;complete:boolean;failed:boolean;task?:'recommendation'|'import'}) {
   const [elapsed,setElapsed]=useState(0);
   useEffect(()=>{
     if(!active)return;
@@ -13,8 +13,8 @@ export default function GptRequestProgress({active,complete,failed}:{active:bool
   },[active]);
   const state=active?'waiting':complete?'complete':failed?'failed':'idle';
   const seconds=Math.floor(elapsed);
-  const title=active?(elapsed>=50?'Ожидаем завершения запроса':'Ожидаем ответ GPT'):complete?'Рекомендация готова':failed?'Не удалось получить ответ':'Готов к анализу';
-  const caption=active?'Шкала показывает время ожидания':complete?'Объяснение и риски — ниже':failed?'Можно повторить запрос':'Сравнение вариантов и объяснение выбора';
+  const title=active?(elapsed>=50?'Ожидаем завершения запроса':'Ожидаем ответ GPT'):complete?(task==='import'?'Документ разобран':'Рекомендация готова'):failed?'Не удалось получить ответ':'Готов к анализу';
+  const caption=active?'Шкала показывает время ожидания':complete?(task==='import'?'Проверьте модели и характеристики ниже':'Объяснение и риски — ниже'):failed?'Можно повторить запрос':task==='import'?'Извлечение моделей и характеристик':'Сравнение вариантов и объяснение выбора';
   const Icon=complete&&!active?Check:failed&&!active?CircleAlert:Bot;
   return <div className={`gpt-progress gpt-progress--${state}`}>
     <div className="gpt-progress__orb" aria-hidden="true"><span/><Icon size={22}/></div>
