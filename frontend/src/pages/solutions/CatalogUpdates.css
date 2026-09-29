@@ -1,0 +1,17 @@
+.catalog-updates { margin: 0 0 20px; }
+.catalog-updates__panel { margin-top: 12px; padding: 24px; }
+.catalog-updates__panel h2 { margin: 0 0 10px; font-size: 21px; }
+.catalog-updates__panel p { max-width: 850px; line-height: 1.6; }
+.catalog-updates__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin: 20px 0; }
+.catalog-updates__file { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13px; }
+.catalog-updates__file input { max-width: 250px; }
+.catalog-updates__totals { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0; }
+.catalog-updates__totals div { background: #f0f5ff; padding: 13px 18px; border-radius: 12px; }
+.catalog-updates__totals dt { font-size: 12px; color: #536981; }
+.catalog-updates__totals dd { margin: 5px 0 0; font-size: 24px; font-weight: 750; color: #1d4ed8; }
+.catalog-updates__list { max-height: 400px; overflow-y: auto; padding-left: 22px; }
+.catalog-updates__list li { margin: 12px 0; }
+.catalog-updates__list span { display: block; margin-top: 5px; color: #536981; font-size: 13px; }
+.catalog-updates__panel details { margin: 15px 0; }
+.catalog-updates__panel summary { cursor: pointer; }
+.catalog-updates__error { color: #ad243c; }

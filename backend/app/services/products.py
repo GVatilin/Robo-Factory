@@ -7,7 +7,7 @@
 """
 
 from datetime import date
-from decimal import Decimal
+from decimal import Decimal, ROUND_HALF_UP
 from typing import Any
 
 from sqlalchemy import select
@@ -67,6 +67,7 @@ _PRICE_KEYS = (
 _NUMERIC_TYPES = {ValueDataType.NUMBER, ValueDataType.INTEGER, ValueDataType.RANGE}
 # Numeric(18, 4): не более 14 знаков в целой части.
 _NUMERIC_LIMIT = Decimal("1e14")
+_NUMERIC_QUANTUM = Decimal("0.0001")
 # Источники, данные которых считаются подтверждёнными; ручной ввод и допущения — нет.
 _CONFIRMING_SOURCES = {
     SourceType.ORGANIZER, SourceType.MANUFACTURER, SourceType.INTEGRATOR, SourceType.PUBLIC_SPEC,
@@ -112,14 +113,17 @@ def normalize_specs(
         data_type = definition.data_type
         if data_type in _NUMERIC_TYPES:
             low, high = item.value, item.value_max
-            if low is None and high is None:
+            if low is None and high is None and not item.text:
                 continue
             if data_type != ValueDataType.RANGE and high is not None:
                 errors.append(FieldError(f"{field}.value_max", "Для этой характеристики укажите одно значение"))
                 continue
             if low is None:
                 low, high = high, None
-            if high is not None and high < low:
+            if any(not v.is_finite() for v in (low, high) if v is not None):
+                errors.append(FieldError(f"{field}.value", "Введите конечное число"))
+                continue
+            if high is not None and low is not None and high < low:
                 errors.append(FieldError(f"{field}.value_max", "Верхняя граница меньше нижней"))
                 continue
             bad = next(
@@ -128,8 +132,8 @@ def normalize_specs(
                     for check, message in (
                         (any(abs(v) >= _NUMERIC_LIMIT for v in (low, high) if v is not None), "Слишком большое число"),
                         # Отрицательные значения допустимы только для температуры.
-                        (definition.unit != "°C" and low < 0, "Значение не может быть отрицательным"),
-                        (data_type == ValueDataType.INTEGER and low != low.to_integral_value(), "Введите целое число"),
+                        (definition.unit != "°C" and low is not None and low < 0, "Значение не может быть отрицательным"),
+                        (data_type == ValueDataType.INTEGER and low is not None and low != low.to_integral_value(), "Введите целое число"),
                     )
                     if check
                 ),
@@ -138,8 +142,16 @@ def normalize_specs(
             if bad:
                 errors.append(FieldError(f"{field}.value", bad))
                 continue
+            low = low.quantize(_NUMERIC_QUANTUM, rounding=ROUND_HALF_UP) if low is not None else None
+            high = high.quantize(_NUMERIC_QUANTUM, rounding=ROUND_HALF_UP) if high is not None else None
+            if any(abs(v) >= _NUMERIC_LIMIT for v in (low, high) if v is not None):
+                errors.append(FieldError(f"{field}.value", "Слишком большое число"))
+                continue
             values["value_numeric"] = low
             values["value_numeric_max"] = high if high != low else None
+            # A published conditional value may have only a textual explanation,
+            # or text qualifying its numeric bound. Neither is an empty value.
+            values["value_text"] = item.text
         elif data_type == ValueDataType.BOOLEAN:
             if item.flag is None:
                 continue
@@ -233,15 +245,40 @@ async def _validate_references(
     return manufacturer, solution_type, processes, errors
 
 
-def _apply_offer(offer: ProductOffer, item: OfferIn, source: DataSource) -> None:
-    price_changed = offer.id is None or any(getattr(offer, k) != getattr(item, k) for k in _PRICE_KEYS)
-    for key in (*_PRICE_KEYS, "acquisition_model", "price_includes_vat", "included_services", "notes"):
-        setattr(offer, key, getattr(item, key))
-    offer.label = item.label or _DEFAULT_OFFER_LABEL[item.acquisition_model]
-    offer.is_default = item.is_default
-    if price_changed:
+def _apply_offer(offer: ProductOffer, item: OfferIn, source: DataSource) -> bool:
+    """Apply supplied offer fields, retaining evidence metadata omitted by older clients."""
+    is_new = offer.id is None
+    supplied = item.model_fields_set
+    values = {key: getattr(item, key) for key in (*_PRICE_KEYS, "acquisition_model", "price_includes_vat", "is_default")}
+    for key in ("included_services", "notes"):
+        if is_new or key in supplied:
+            values[key] = getattr(item, key)
+    if is_new or "label" in supplied:
+        values["label"] = item.label or _DEFAULT_OFFER_LABEL[item.acquisition_model]
+
+    terms = dict(offer.terms or {})
+    # Preserve VAT uncertainty, quantity limits and calculation eligibility. In
+    # particular, round-tripping the legacy bool False does not mean "VAT excluded".
+    if "price_includes_vat" in supplied and (is_new or item.price_includes_vat != offer.price_includes_vat):
+        terms["vat_status"] = "included" if item.price_includes_vat else "excluded"
+    if "terms" in supplied and isinstance(getattr(item, "terms", None), dict):
+        terms.update(item.terms)
+    for key in ("vat_status", "minimum_quantity", "estimation_eligible"):
+        if key in supplied and getattr(item, key, None) is not None:
+            terms[key] = getattr(item, key)
+
+    changed_keys = {key for key, value in values.items() if getattr(offer, key) != value}
+    terms_changed = terms != (offer.terms or {})
+    for key, value in values.items():
+        setattr(offer, key, value)
+    if terms_changed:
+        offer.terms = terms
+    # Selecting the default offer protects that selection without changing the
+    # provenance of otherwise untouched published prices.
+    if is_new or terms_changed or changed_keys - {"is_default"}:
         offer.source = source
         offer.is_confirmed = source.source_type in _CONFIRMING_SOURCES
+    return is_new or bool(changed_keys) or terms_changed
 
 
 async def save_product(
@@ -267,8 +304,21 @@ async def save_product(
     if product is None:
         product = Product(spec_values=[], offers=[], applications=[], processes=[], sources=[])
         session.add(product)
+    payload = dict(product.source_payload or {})
+    manual_fields = set(payload.get("manual_fields", []))
+    manual_specs = set(payload.get("manual_specs", []))
+    manual_offer_ids = set(payload.get("manual_offer_ids", []))
+    manual_application_ids = set(payload.get("manual_application_ids", []))
+    field_evidence = dict(payload.get("field_evidence", {}))
     for key in SCALAR_FIELDS:
+        if getattr(product, key) != getattr(data, key):
+            manual_fields.add(key)
+            field_evidence[key] = {"source_id": source.id, "retrieved_at": retrieved_at.isoformat(), "is_confirmed": source.source_type in _CONFIRMING_SOURCES}
         setattr(product, key, getattr(data, key))
+    for key, value in (("manufacturer_id", manufacturer.id), ("solution_type_id", solution_type.id)):
+        if getattr(product, key) != value:
+            manual_fields.add(key)
+            field_evidence[key] = {"source_id": source.id, "retrieved_at": retrieved_at.isoformat(), "is_confirmed": source.source_type in _CONFIRMING_SOURCES}
     product.manufacturer = manufacturer
     product.solution_type = solution_type
     product.processes = processes
@@ -276,29 +326,54 @@ async def save_product(
     product.last_verified_at = retrieved_at
 
     by_id = {d.id: d for d in definitions.values()}
+    supplied_specs = {item.code: item for item in data.specs}
     current = {v.spec_definition_id: v for v in product.spec_values}
     for definition_id, values in specs.items():
         spec = current.pop(definition_id, None)
-        changed = spec is None or any(getattr(spec, k) != values[k] for k in _VALUE_KEYS)
+        definition = by_id[definition_id]
+        if spec is not None:
+            supplied = supplied_specs[definition.code].model_fields_set
+            for key in ("note", "is_assumption", "is_confirmed"):
+                if key not in supplied:
+                    values[key] = getattr(spec, key)
+            if "text" not in supplied:
+                values["value_text"] = spec.value_text
+        changed = spec is None or (
+            any(getattr(spec, k) != values[k] for k in (*_VALUE_KEYS[:-1], "note", "is_assumption", "is_confirmed"))
+            or (spec.unit or definition.unit) != (values["unit"] or definition.unit)
+        )
         if spec is None:
             spec = ProductSpecValue(definition=by_id[definition_id])
             product.spec_values.append(spec)
-        for key, value in values.items():
-            setattr(spec, key, value)
         if changed:
+            for key, value in values.items():
+                setattr(spec, key, value)
+            manual_specs.add(by_id[definition_id].code)
             spec.source = source
             spec.retrieved_at = retrieved_at
     for spec in current.values():
+        manual_specs.add(by_id[spec.spec_definition_id].code)
         product.spec_values.remove(spec)
 
+    payload["manual_fields"] = sorted(manual_fields)
+    payload["manual_specs"] = sorted(manual_specs)
+    payload["field_evidence"] = field_evidence
     offers = {o.id: o for o in product.offers}
+    changed_offers = []
     for item in data.offers:
         offer = offers.pop(item.id, None) if item.id is not None else None
         if offer is None:
             offer = ProductOffer()
             product.offers.append(offer)
-        _apply_offer(offer, item, source)
+        if _apply_offer(offer, item, source):
+            changed_offers.append(offer)
+            if offer.source is source:
+                offer.valid_from = retrieved_at
     for offer in offers.values():
+        # A deliberate deletion freezes organizer replenishment of the collection.
+        # Source IDs and labels may change in later files, so an ID-only tombstone
+        # cannot reliably prevent the deleted commercial proposal from returning.
+        payload["manual_offers_deleted"] = True
         product.offers.remove(offer)
     if product.offers and sum(o.is_default for o in product.offers) != 1:
         default = next((o for o in product.offers if o.is_default), product.offers[0])
@@ -306,21 +381,40 @@ async def save_product(
             offer.is_default = offer is default
 
     applications = {a.id: a for a in product.applications}
+    changed_applications = []
     industries = {i.id: i for i in (await session.scalars(select(Industry))).all()} if data.applications else {}
     for item in data.applications:
         if not (item.scenario or item.case_description or item.industry_id):
             continue
         application = applications.pop(item.id, None) if item.id is not None else None
+        changed = application is None or any(
+            getattr(application, key) != getattr(item, key)
+            for key in ("industry_id", "scenario", "case_description")
+        )
         if application is None:
             application = ProductApplication(source_id=source.id)
             product.applications.append(application)
         application.industry = industries.get(item.industry_id) if item.industry_id else None
         application.scenario = item.scenario
         application.case_description = item.case_description
+        if changed:
+            application.source_id = source.id
+            changed_applications.append(application)
     for application in applications.values():
+        payload["manual_applications_deleted"] = True
         product.applications.remove(application)
 
     if source not in product.sources:
         product.sources.append(source)
+    product.source_payload = payload
+    # New children receive IDs during flush; include them in the same transaction's
+    # protection metadata, rather than relying only on their current source type.
+    await session.flush()
+    manual_offer_ids.update(o.id for o in changed_offers)
+    manual_application_ids.update(a.id for a in changed_applications)
+    payload = dict(payload)
+    payload["manual_offer_ids"] = sorted(manual_offer_ids & {o.id for o in product.offers})
+    payload["manual_application_ids"] = sorted(manual_application_ids & {a.id for a in product.applications})
+    product.source_payload = dict(payload)
     await session.flush()
     return product

@@ -26,6 +26,9 @@ datasets/*
 !datasets/load_catalog_evidence.py
 !datasets/catalog_enrichment_extended.json
 !datasets/catalog_research_index.json
+!datasets/research_round2_*.json
+!datasets/prepare_catalog_update.py
+!datasets/catalog_image_review.json
 
 # Файлы данных в любом другом месте репозитория.
 *.csv

@@ -1,7 +1,7 @@
 import { BadgeCheck, Cable, Gauge } from "lucide-react";
 
 import type { SpecDefinition } from "../../api/types";
-import { Segmented } from "../../ui/Controls";
+import { Segmented, Switch } from "../../ui/Controls";
 import { cx, Field, Input, TextArea } from "../../ui/Field";
 import { emptySpec, isSpecFilled, type SpecDraft } from "./draft";
 import { SectionShell, SPEC_HINTS, THROUGHPUT_UNITS, type SectionProps } from "./Section";
@@ -35,6 +35,62 @@ interface SpecFieldProps {
   spec: SpecDraft;
   onChange: (changes: Partial<SpecDraft>) => void;
   errors: Record<string, string>;
+}
+
+function SpecDetails({ definition, spec, onChange, errors, title = "Условия и примечания" }: SpecFieldProps & { title?: string }) {
+  const id = `spec-${definition.code}`;
+  const key = `specs.${definition.code}`;
+  const numeric = ["number", "integer", "range"].includes(definition.data_type);
+  const textError = errors[`${key}.text`];
+  const noteError = errors[`${key}.note`];
+  return (
+    <details className="spec-more" open={Boolean((numeric && spec.text) || spec.note || spec.assumption || textError || noteError)}>
+      <summary>{title}</summary>
+      <div className="form-grid">
+        {numeric && (
+          <Field
+            label="Текстовое значение с условиями"
+            htmlFor={`${id}-text`}
+            name={`${key}.text`}
+            error={textError}
+            className="field--wide"
+            hint="Можно заполнить без числа, если значение зависит от комплектации или источники расходятся"
+          >
+            <TextArea
+              id={`${id}-text`}
+              rows={2}
+              value={spec.text}
+              onChange={(e) => onChange({ text: e.target.value })}
+              invalid={Boolean(textError)}
+              placeholder="Например: 12 ч при полной нагрузке, до 20 ч без груза"
+            />
+          </Field>
+        )}
+        <Field
+          label="Примечание к характеристике"
+          htmlFor={`${id}-note`}
+          name={`${key}.note`}
+          error={noteError}
+          className="field--wide"
+          hint="Условия измерения, версия изделия и пояснения источника"
+        >
+          <TextArea
+            id={`${id}-note`}
+            rows={2}
+            value={spec.note}
+            onChange={(e) => onChange({ note: e.target.value })}
+            invalid={Boolean(noteError)}
+          />
+        </Field>
+        <Switch
+          checked={spec.assumption}
+          onChange={(assumption) => onChange({ assumption })}
+          label="Оценочное значение"
+          description="Значение рассчитано или принято как допущение"
+        />
+      </div>
+    </details>
+  );
 }
 
 function SpecField({ definition, spec, onChange, errors }: SpecFieldProps) {
@@ -153,6 +209,7 @@ function SpecField({ definition, spec, onChange, errors }: SpecFieldProps) {
   return (
     <Field label={label} htmlFor={id} name={key} error={error} hint={hints.hint ?? definition.description ?? undefined} aside={aside} className={cx(WIDE.has(definition.code) && "field--wide")}>
       {control}
+      <SpecDetails definition={definition} spec={spec} onChange={onChange} errors={errors} />
     </Field>
   );
 }
@@ -205,6 +262,16 @@ function DimensionsField({ definitions, specs, setSpec, errors }: { definitions:
           );
         })}
       </div>
+      {parts.map((definition) => (
+        <SpecDetails
+          key={definition.code}
+          definition={definition}
+          spec={specs[definition.code] ?? emptySpec()}
+          onChange={(changes) => setSpec(definition.code, changes)}
+          errors={errors}
+          title={`${labels[definition.code as (typeof DIMENSIONS)[number]]}: условия и примечания`}
+        />
+      ))}
     </Field>
   );
 }

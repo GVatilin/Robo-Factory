@@ -3,7 +3,7 @@ import { Coins, Plus, Trash2 } from "lucide-react";
 import type { AcquisitionModel } from "../../api/types";
 import { formatMoneyCompact, parseNumber } from "../../format";
 import { Segmented, Switch } from "../../ui/Controls";
-import { cx, Field, Input } from "../../ui/Field";
+import { cx, Field, Input, TextArea } from "../../ui/Field";
 import { emptyOffer, type OfferDraft } from "./draft";
 import { SectionShell, type SectionProps } from "./Section";
 
@@ -109,6 +109,38 @@ function OfferCard({ offer, index, single, errors, onChange, onDefault, onRemove
           suffix=" в год"
           hint={rented ? "Если сервис не входит в платёж" : "Сервисный контракт производителя"}
         />
+        <Field
+          label="Что входит в стоимость"
+          htmlFor={`f-${key}-included-services`}
+          name={`${key}.included_services`}
+          error={e("included_services")}
+          className="field--wide"
+          hint="Комплектация, лицензии, обучение и услуги, включённые в предложение"
+        >
+          <TextArea
+            id={`f-${key}-included-services`}
+            value={offer.includedServices}
+            onChange={(ev) => onChange({ includedServices: ev.target.value })}
+            invalid={Boolean(e("included_services"))}
+            placeholder="Например: робот, зарядная станция, настройка и обучение операторов"
+          />
+        </Field>
+        <Field
+          label="Условия и примечания к цене"
+          htmlFor={`f-${key}-notes`}
+          name={`${key}.notes`}
+          error={e("notes")}
+          className="field--wide"
+          hint="Уточнения источника, срок действия цены и условия поставки"
+        >
+          <TextArea
+            id={`f-${key}-notes`}
+            value={offer.notes}
+            onChange={(ev) => onChange({ notes: ev.target.value })}
+            invalid={Boolean(e("notes"))}
+            placeholder="Например: цена за комплект; окончательная стоимость уточняется в КП"
+          />
+        </Field>
       </div>
       <Switch checked={offer.vat} onChange={(vat) => onChange({ vat })} label="Цены с НДС" description="Цены каталога организатора указаны с НДС" />
     </div>

@@ -1,0 +1,2034 @@
+{
+  "version": 2,
+  "products": [
+    {
+      "product_name": "Роботизированный комплекс по укладке заготовок",
+      "manufacturer": "ООО \"Битроботикс\"",
+      "url": "https://bitrobotics.com/",
+      "title": "Битроботикс: укладка тестовых заготовок",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Модульная установка в производственную линию; ПО поддерживает PackML и OPC UA."
+        }
+      ],
+      "reviewed_urls": [
+        "https://bitrobotics.com/"
+      ],
+      "research_note": "Найден точный кейс «Вкусилия». Общая скорость 150 ед/мин относится к дельта-роботу в линейке, поэтому не присвоена всему комплексу.",
+      "fields": {
+        "description": "Комплекс на дельта-роботах внедрён на производстве основы для пиццы «Вкусилия». Производитель сообщает об освобождении двух сотрудников в смену от этой операции.",
+        "purpose": "Автоматическая укладка тестовых заготовок в оборотную тару."
+      }
+    },
+    {
+      "product_name": "Робот-паук",
+      "manufacturer": "ООО \"Атоммаш\"",
+      "url": "https://www.aemtech.ru/news/atommash-zapustil-v-ekspluatatsiyu-robota-dlya-proverki-svarnykh-shvov-atomnykh-reaktorov/",
+      "title": "Атоммаш: робот для ультразвукового контроля",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Контроль сварных соединений толщиной до 300 мм, включая труднодоступные участки и поверхности сложной формы."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Перемещение сканера с помощью блока управления."
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.aemtech.ru/news/atommash-zapustil-v-ekspluatatsiyu-robota-dlya-proverki-svarnykh-shvov-atomnykh-reaktorov/"
+      ],
+      "research_note": "Официальный кейс эксплуатации. Публичного паспорта массы, размеров, интерфейсов и цены не найдено.",
+      "fields": {
+        "description": "Комплекс введён в эксплуатацию на заводе «Атоммаш» в Волгодонске. Заявленное ускорение контроля — в три раза по сравнению с прежним процессом.",
+        "purpose": "Ультразвуковой контроль сварных соединений реакторов и парогенераторов АЭС."
+      }
+    },
+    {
+      "product_name": "Яша",
+      "manufacturer": "ООО \"Свеза-Лес\"",
+      "url": "https://sveza.com/press-center/news/robot-yasha-uskoril-sortirovku-fanery-na-manturovskom-kombinate-sveza/",
+      "title": "Свеза: робот-сортировщик Яша",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Ограждённая зона; электронная система останавливает оборудование при пересечении защитного периметра."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Манипулятор с вакуумными присосками; выбор сортировочного кармана по команде оператора."
+        }
+      ],
+      "reviewed_urls": [
+        "https://sveza.com/press-center/news/robot-yasha-uskoril-sortirovku-fanery-na-manturovskom-kombinate-sveza/"
+      ],
+      "research_note": "Масса листа 80 кг не считается паспортной грузоподъёмностью. Бюджет проекта не внесён в цену оборудования.",
+      "fields": {
+        "description": "Эксплуатируется на мантуровском комбинате «Свеза». Листы в этом процессе весят до 80 кг. Инвестиции в проект — 12 млн ₽; это бюджет внедрения, а не цена одного робота.",
+        "purpose": "Снятие листов фанеры со стопы, предъявление для оценки качества и распределение по сортам."
+      },
+      "image": {
+        "url": "https://sveza.com/upload/iblock/7c9/7sah60s2jkq9m1rmbxlbhcekog9jiw8i.webp",
+        "page_url": "https://sveza.com/press-center/news/robot-yasha-uskoril-sortirovku-fanery-na-manturovskom-kombinate-sveza/",
+        "caption": "Яша — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Робот-лаборант",
+      "manufacturer": "ПАО \"Газпром Нефть\"",
+      "url": "https://innoit.ru/robot-himik",
+      "title": "Университет Иннополис: робот-химик на Мессояхе",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [],
+      "reviewed_urls": [
+        "https://innoit.ru/robot-himik"
+      ],
+      "research_note": "Найден первоисточник разработчика о конкретном внедрении. Публичных точных ТТХ и коммерческого предложения на комплекс нет.",
+      "fields": {
+        "description": "Мобильная платформа с коллаборативным манипулятором создана совместно с инженерами «Газпром нефти» и работает в лаборатории «Мессояханефтегаза».",
+        "purpose": "Перемещение проб и автоматизация лабораторных операций при анализе нефти."
+      }
+    },
+    {
+      "product_name": "Легат Патрол",
+      "manufacturer": "ООО \"Дронсхаб\"",
+      "url": "https://droneshub.group/",
+      "title": "Дронсхаб: актуальный каталог платформ",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://droneshub.group/"
+      ],
+      "research_note": "Проверен текущий каталог: представлен DH:LEGAT 2 (200 кг), а в исходном датасете Легат Патрол. Характеристики и фото новой модификации не перенесены на прежнюю. Нужен паспорт именно Легат Патрол."
+    },
+    {
+      "product_name": "Геоскан 401",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://download.geoscan.ru/site-files/401/Geoscan_401_Manual.pdf",
+      "title": "Геоскан 401: руководство по эксплуатации",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 9.3,
+          "note": "Максимальная взлётная масса, не сухая масса."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Взлёт и посадка вертикально с площадки диаметром 5 м."
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "value": 0.95,
+          "value_max": 2.1,
+          "unit": "км²/полёт",
+          "text": "0,95 / 1,4 / 2,1 км² за полёт при разрешении 2 / 3 / 5 см на пиксель."
+        }
+      ],
+      "reviewed_urls": [
+        "https://download.geoscan.ru/site-files/401/Geoscan_401_Manual.pdf"
+      ],
+      "research_note": "Дополнены инфраструктура и производительность по руководству. Основные лётные данные уже подтверждены предыдущим импортом."
+    },
+    {
+      "product_name": "Supercam X4E",
+      "manufacturer": "ООО \"Финко\"",
+      "url": "https://supercam.aero/catalog/supercam-x6m2",
+      "title": "Supercam X4Е: текущая карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 10,
+          "note": "Максимальная взлётная масса."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Допускаются умеренный дождь и снегопад; рабочая высота 50–500 м."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "ПО наземной станции производителя; управление с двух НСУ, передача управления между ними, обновление ПО."
+        }
+      ],
+      "reviewed_urls": [
+        "https://supercam.aero/catalog/supercam-x6m2"
+      ],
+      "research_note": "URL содержит x6m2, но название модели в актуальном меню — Supercam X4Е. Характеристики соседних изделий не переносились."
+    },
+    {
+      "product_name": "Supercam Х6М2",
+      "manufacturer": "ООО \"Финко\"",
+      "url": "https://supercam.aero/catalog/supercam-x6m2",
+      "title": "Supercam: проверка исторической модели Х6М2",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://supercam.aero/catalog/supercam-x6m2"
+      ],
+      "research_note": "Страница по историческому адресу x6m2 в текущем меню называется X4Е. Из-за переиспользования URL паспортные параметры Х6М2 и фотография этой модификации требуют отдельного подтверждения."
+    },
+    {
+      "product_name": "ДИАМ 20К",
+      "manufacturer": "АО ГК \"Икар\"",
+      "url": "https://www.diam-aero.ru/bas_diam20k.html",
+      "title": "ДИАМ-АЭРО: БАС ДИАМ 20К",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 30,
+          "note": "Предельная взлётная масса."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Площадка 7×7 м для вертикального взлёта и посадки; инженерная подготовка не требуется."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Ветер до 15 м/с; максимальная высота полёта 2000 м."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Маршевый ДВС 40 см³; четыре электрических двигателя вертикального взлёта/посадки."
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.diam-aero.ru/bas_diam20k.html"
+      ],
+      "research_note": "Проверена публичная страница конкретного решения. Неопубликованные параметры и стоимость обслуживания не заменялись оценками.",
+      "fields": {
+        "purpose": "Аэросъёмка, мониторинг протяжённых объектов и доставка грузов с вертикальным взлётом."
+      }
+    },
+    {
+      "product_name": "Геоскан 701",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://download.geoscan.ru/site-files/701/Geoscan_701_Manual.pdf",
+      "title": "Геоскан 701: официальный паспорт и руководство",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://download.geoscan.ru/site-files/701/Geoscan_701_Manual.pdf"
+      ],
+      "research_note": "Проверен официальный паспорт серии 701. Числа уже внесены ранее; текущий сайт производителя не открылся стабильно. Дополнительные показатели без сверки конкретного исполнения не добавлены."
+    },
+    {
+      "product_name": "Геоскан 201",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://download.geoscan.ru/site-files/201/Geoscan_201_Manual.pdf",
+      "title": "Геоскан 201: руководство по эксплуатации",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://download.geoscan.ru/site-files/201/Geoscan_201_Manual.pdf"
+      ],
+      "research_note": "Официальное руководство доступно по прежнему адресу; основные лётные параметры уже внесены. Запрошена повторная проверка сайта, но он отдаёт техническую заглушку."
+    },
+    {
+      "product_name": "Геоскан 201 Агро",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://www.geoscan.ru/ru/products/geoscan201/agro",
+      "title": "Геоскан 201 Агро: проверка специализированной версии",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://www.geoscan.ru/ru/products/geoscan201/agro"
+      ],
+      "research_note": "Поиск выполнен по точному названию «Геоскан 201 Агро». Параметры базового Геоскан 201 автоматически не переносились. Страница агроверсии недоступна; требуется подтверждение состава камеры и комплектации."
+    },
+    {
+      "product_name": "Кати",
+      "manufacturer": "ООО \"Агробит\"",
+      "url": "https://agrobit.ru/conveyor-automated-vaccine/",
+      "title": "Агробит: конвейер КАТИ",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://agrobit.ru/conveyor-automated-vaccine/"
+      ],
+      "research_note": "На официальной странице конкретного КАТИ найдены назначение и схема процесса. Паспортная скорость и размеры не опубликованы.",
+      "fields": {
+        "description": "Конвейер контролирует инъектирование; совместная работа с автоматом сортировки сокращает ручные операции при грейдировании птицы.",
+        "purpose": "Автоматизированная вакцинация и сортировка птицы."
+      }
+    },
+    {
+      "product_name": "Колесный робот",
+      "manufacturer": "ООО \"Агробит\"",
+      "url": "https://agrobit.ru/agrobot/",
+      "title": "Агробит: колесный робот Агробот",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Сервер управления и колесный робот; автономный и дистанционный режимы."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Эксплуатация внутри птичников."
+        }
+      ],
+      "reviewed_urls": [
+        "https://agrobit.ru/agrobot/"
+      ],
+      "research_note": "Официальная страница присутствует в поисковом индексе; прямой доступ нестабилен. Числовые параметры не опубликованы.",
+      "fields": {
+        "purpose": "Очистка, дезинфекция, инспекция и зооветеринарные операции в корпусах содержания птицы."
+      }
+    },
+    {
+      "product_name": "Волшебник",
+      "manufacturer": "ООО \"Промтехника-Приволжье\"",
+      "url": "https://sovmolko.ru/catalog/oborudovanie/doilnoe-oborudovanie/volshebnik-robot-dlya-doeniya-korov/",
+      "title": "СОВМОЛКО: доильный робот Волшебник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "value": 200,
+          "unit": "доений/сутки",
+          "text": "До 200 доений в сутки."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Питание от электросети; допускается использование альтернативных источников энергии."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Сенсорный экран и Telegram-бот; интеграция с кормораздатчиками, подгонщиками и роботами для подстилки."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Промывка горячей водой, цикл около 8 минут; гарантия один год."
+        }
+      ],
+      "reviewed_urls": [
+        "https://sovmolko.ru/catalog/oborudovanie/doilnoe-oborudovanie/volshebnik-robot-dlya-doeniya-korov/"
+      ],
+      "research_note": "Проверена публичная страница конкретного решения. Неопубликованные параметры и стоимость обслуживания не заменялись оценками.",
+      "fields": {
+        "purpose": "Автоматизированное доение коров с контролем качества молока."
+      },
+      "image": {
+        "url": "https://sovmolko.ru/upload/iblock/a64/fz1we5h85euep43225ykq82ed0gdgmcy/12.jpg",
+        "page_url": "https://sovmolko.ru/catalog/oborudovanie/doilnoe-oborudovanie/volshebnik-robot-dlya-doeniya-korov/",
+        "caption": "Волшебник — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Роботизированный автономный минитрактор CP",
+      "manufacturer": "АО \"Когнитив Пилот\"",
+      "url": "https://cognitivepilot.com/products/minitraktor/",
+      "title": "Cognitive Pilot: автономный минитрактор",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Удалённое управление парком с пульта или ПК; телеуправление FPV до 12 км."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Цифровая карта площадки, задания по расписанию/команде через онлайн-сервис; централизованная диспетчеризация парка."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Внутри помещений и на открытой территории; навигация работает без GPS/ГЛОНАСС."
+        }
+      ],
+      "reviewed_urls": [
+        "https://cognitivepilot.com/products/minitraktor/"
+      ],
+      "research_note": "Проверена публичная страница конкретного решения. Неопубликованные параметры и стоимость обслуживания не заменялись оценками.",
+      "fields": {
+        "purpose": "Автономные работы на ферме, включая подталкивание корма."
+      },
+      "image": {
+        "url": "https://cognitivepilot.com/upload/iblock/761/l2t7v0r8n4fws1lpac8slr5hfgvk1491.JPG",
+        "page_url": "https://cognitivepilot.com/products/minitraktor/",
+        "caption": "Роботизированный автономный минитрактор CP — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "85.0ТК",
+      "manufacturer": "ООО \"Завод Агромаш\"",
+      "url": "https://agromh.tplants.com/wp-content/uploads/2015/03/AGROMASH-85TK_Katalog-detalej-i-sborochnyh-edinits.pdf",
+      "title": "Агромаш: каталог деталей базового 85ТК",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://agromh.tplants.com/wp-content/uploads/2015/03/AGROMASH-85TK_Katalog-detalej-i-sborochnyh-edinits.pdf"
+      ],
+      "research_note": "Поиск по точному «85.0ТК» и вариантам написания вывел документы базового Агромаш 85ТК. Они не подтверждают параметры беспилотного исполнения 85.0ТК, поэтому технические цифры не присвоены."
+    },
+    {
+      "product_name": "Агробот",
+      "manufacturer": "ООО \"Аврора Роботикс\"",
+      "url": "https://avrora-robotics.com/ru/projects/agrobot/",
+      "title": "Аврора Роботикс: проект АгроБот",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://avrora-robotics.com/ru/projects/agrobot/"
+      ],
+      "research_note": "АгроБот — система управления на разных базовых машинах. Общие габариты, грузоподъёмность и масса без указания шасси неприменимы.",
+      "fields": {
+        "description": "Универсальная система управления для установки на трактор или спецтехнику. Возможна работа нескольких машин под общим контролем.",
+        "purpose": "Автоматизация обработки почвы, удобрения и уборки урожая сельскохозяйственной техникой."
+      }
+    },
+    {
+      "product_name": "Роботизированный трактор с гибридной силовой установкой",
+      "manufacturer": "Донской государственный технический университет (ДГТУ)",
+      "url": "https://news.donstu.ru/news/v-dgtu-nachnut-seriyno-vypuskat-bespilotnye-traktory",
+      "title": "ДГТУ: беспилотный гибридный трактор Донтех",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://news.donstu.ru/news/v-dgtu-nachnut-seriyno-vypuskat-bespilotnye-traktory"
+      ],
+      "research_note": "Разработка идентифицирована как «Донтех». Заявленные для будущего исполнения характеристики не записаны как прошедшие испытания.",
+      "fields": {
+        "description": "Университет готовит серийный выпуск платформы «Донтех». Используется гибридный привод и дистанционное управление; конфигурация навесного оборудования выбирается под задачу.",
+        "purpose": "Автономные сельскохозяйственные работы на гибридной платформе тягового класса 1,4."
+      },
+      "image": {
+        "url": "https://news.donstu.ru/upload/iblock/ee4/793n6ghck0jr1ceqgre0px4k2ytd8kay.jpg",
+        "page_url": "https://news.donstu.ru/news/v-dgtu-nachnut-seriyno-vypuskat-bespilotnye-traktory",
+        "caption": "Роботизированный трактор с гибридной силовой установкой — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "MARK A (Agro)",
+      "manufacturer": "ООО \"Электромотив\"",
+      "url": "https://electromotive.ru/",
+      "title": "Электромотив: проверка MARK A (Agro)",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://electromotive.ru/"
+      ],
+      "research_note": "Найден официальный сайт и официальный профиль компании со ссылками на испытания робота-сборщика яблок. Сайт не открылся. ТТХ MARK A и фото конкретного исполнения не подтверждены; модель не подменена одноимёнными зарубежными роботами."
+    },
+    {
+      "product_name": "Роботизированная платформа для выборочного сбора плодов",
+      "manufacturer": "Финансовый Университет",
+      "url": "https://www.fa.ru/upload/medialibrary/ee7/qvbsk50us1szgp1nuybes62r50iko563/Finansist-_216_-oktyabr-2021.pdf",
+      "title": "Финансовый университет: роботизированный сбор плодов",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://www.fa.ru/upload/medialibrary/ee7/qvbsk50us1szgp1nuybes62r50iko563/Finansist-_216_-oktyabr-2021.pdf",
+        "https://www.fa.ru/university/press-center/rektor-finansovogo-universiteta-dlya-studentov-vazhno-videt-vostrebovannost-svoikh-idey-tvorit-a-nash",
+        "https://vim.ru/center/newsmedia/news/9450/"
+      ],
+      "research_note": "Найден официальный университетский материал о прототипе совместно с ФНАЦ ВИМ. Публичного действующего паспорта товарного изделия, серийной комплектации, стоимости и ресурса не найдено. Рекламные оценки производительности не внесены как результат промышленных испытаний.",
+      "fields": {
+        "purpose": "Выборочный сбор созревших яблок с применением машинного зрения.",
+        "limitations": "Исследовательский прототип; характеристики серийного исполнения требуют подтверждения."
+      }
+    },
+    {
+      "product_name": "Кировец Агробот",
+      "manufacturer": "АО \"Петербургский Тракторный Завод\"",
+      "url": "https://kirovets-ptz.com/uchebnyy-tsentr/images/abiturientam.pdf",
+      "title": "ПТЗ: Кировец-Агробот",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://kirovets-ptz.com/uchebnyy-tsentr/images/abiturientam.pdf"
+      ],
+      "research_note": "Официальный материал ПТЗ содержит концепцию «Кировец-Агробот». Поиск точной модели не выявил паспорт серийного беспилотного исполнения. Показатели обычных К-7 и К-7М не перенесены.",
+      "fields": {
+        "purpose": "Разработка автономного сельскохозяйственного трактора.",
+        "limitations": "Концепция перспективной техники; серийная доступность и состав оборудования не подтверждены."
+      }
+    },
+    {
+      "product_name": "Интеллектуальный робот-манипулятор для автоматического сбора томатов",
+      "manufacturer": "Новосибирский Государственный Университет",
+      "url": "https://t.me/s/nsuniversity/8515",
+      "title": "НГУ: интеллектуальный манипулятор для сбора томатов",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Компьютерное зрение распознаёт степень созревания; ультразвуковые датчики контролируют расстояние до препятствий."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Промышленные теплицы; датчики контролируют усилие захвата плода."
+        }
+      ],
+      "reviewed_urls": [
+        "https://t.me/s/nsuniversity/8515",
+        "https://web.nsc.ru/ru/news/54170"
+      ],
+      "research_note": "Первичная публикация официального канала НГУ. Числовые ТТХ, коммерческая цена и результаты промышленных испытаний пока не опубликованы.",
+      "fields": {
+        "description": "Студент НГУ Антон Власенко создал прототип. Университет сообщает о домашних испытаниях и предварительной договорённости о будущих испытаниях на тепличном комбинате «Толмачевский».",
+        "purpose": "Выборочный сбор спелых томатов и прогнозирование времени созревания.",
+        "limitations": "Прототип; промышленная готовность требует подтверждения."
+      }
+    },
+    {
+      "product_name": "Система автоматизированного сбора ягод с использованием группы мобильных роботов",
+      "manufacturer": "ФГАОУ ВО \"ПНИПУ\"",
+      "url": "https://naked-science.ru/article/column/uchenye-predlozhili-siste/amp",
+      "title": "ПНИПУ: групповая система сбора ягод",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Прототип разведчика: магнитные энкодеры и инфракрасные датчики препятствий."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Последовательный радиообмен мобильных агентов с координатором."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Центральный координатор распределяет маршруты и задания разведчиков, сборщиков и транспортировщиков."
+        }
+      ],
+      "reviewed_urls": [
+        "https://naked-science.ru/article/column/uchenye-predlozhili-siste/amp"
+      ],
+      "research_note": "Публикация написана ПНИПУ. Физически изготовлен ранний прототип разведчика; сборщики и транспортировщики разрабатываются. Оценка количества машин на гектар не является подтверждённой производительностью.",
+      "fields": {
+        "purpose": "Мониторинг созревания, сбор ягод и доставка собранного урожая группой роботов.",
+        "limitations": "Исследовательская система: фото показывает ранний прототип разведчика, а не промышленную систему сбора."
+      },
+      "image": {
+        "url": "https://naked-science.ru/wp-content/uploads/2025/11/Istochnik_i_avtor_Press_sluzhba_PNIPU.jpg",
+        "page_url": "https://naked-science.ru/article/column/uchenye-predlozhili-siste/amp",
+        "caption": "Ранний прототип мобильного разведчика; автор фотографии — пресс-служба ПНИПУ",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "COGNITIVE AGRO PILOT для трактора с ИИ",
+      "manufacturer": "АО \"Когнитив Пилот\"",
+      "url": "https://cognitivepilot.com/trdoc/passport_tr.pdf",
+      "title": "Cognitive Agro Pilot: паспорт универсального комплекта L3",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 50,
+          "text": "±50 мм по параллельным линиям при RTK и сотовом покрытии; визуальная навигация ±150 мм.",
+          "note": "Паспорт, с. 5; условия точности нельзя исключать из сравнения."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "GPS/ГЛОНАСС, RTK и навигация по визуальным ориентирам."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 65,
+          "unit": "°C",
+          "note": "Нижняя граница −20 °C допустима при наличии осушителя пневмосистемы техники."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Питание 12–24 В от бортовой сети; потребление не более 150 Вт."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Сотовая связь HSPA+/HSDPA/UMTS/EDGE/GSM; для RTK-режима необходимо покрытие базовой станции и 3G/4G."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Интерфейс CAN, телеметрия и отчёты; управление прицепными агрегатами опционально."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Монтажный комплект под конкретную модель техники; ПО предустановлено. Гарантия 12 месяцев после пусконаладки, максимум 18 месяцев после приёмки."
+        }
+      ],
+      "reviewed_urls": [
+        "https://cognitivepilot.com/trdoc/passport_tr.pdf",
+        "https://cognitivepilot.com/products/tractor/"
+      ],
+      "research_note": "Официальный паспорт, страницы 4–7. Масса и грузоподъёмность базового трактора к системе управления не относятся.",
+      "fields": {
+        "service_life_years": 10,
+        "purpose": "Автоматическое вождение сельхозтехники с контролем пробуксовки, предупреждением о препятствиях и разворотами.",
+        "limitations": "Точность визуальной навигации зависит от видимости ориентиров, освещения, погоды, чистоты камер и ширины орудия."
+      }
+    },
+    {
+      "product_name": "А-50",
+      "manufacturer": "ООО \"Аэромакс\"",
+      "url": "https://www.aeromax-group.ru/",
+      "title": "Аэромакс: проверка агродрона А-50",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://www.aeromax-group.ru/",
+        "https://aeronext.aero/press_room/news/213949"
+      ],
+      "research_note": "Проверены официальный сайт Аэромакс и публикации о запуске А-50. Прямая актуальная техническая карточка этой модели не найдена. Характеристики AVIS A50 не перенесены: это другой производитель.",
+      "fields": {
+        "purpose": "Сельскохозяйственная обработка и мониторинг полей; конфигурация требует подтверждения производителя."
+      }
+    },
+    {
+      "product_name": "ИРБИС",
+      "manufacturer": "ООО \"Прикладная Робототехника\"",
+      "url": "https://wiki.appliedrobotics.ru/mobile_rtk/irbis/card.html",
+      "title": "Applied Robotics: мобильный комплекс Ирбис",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автономно: 2D/3D SLAM и движение по точкам GPS; также ручное управление."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Радиоканал, оптический канал или LTE — в зависимости от режима управления."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Гусеничная платформа повышенной проходимости."
+        }
+      ],
+      "reviewed_urls": [
+        "https://wiki.appliedrobotics.ru/mobile_rtk/irbis/card.html"
+      ],
+      "research_note": "Проверена публичная страница конкретного решения. Неопубликованные параметры и стоимость обслуживания не заменялись оценками.",
+      "fields": {
+        "purpose": "Перевозка грузов и людей, мониторинг и патрулирование с заменой навесного оборудования."
+      }
+    },
+    {
+      "product_name": "Внутритрубные роботизированные системы Тьюбот",
+      "manufacturer": "ООО \"Тьюбот\"",
+      "url": "https://tubot.pro/",
+      "title": "Тьюбот: внутритрубные роботизированные системы",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Заявлен проход поворотов 90° с радиусом оси от 1,5 DN; подбор конфигурации под геометрию трубопровода."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "В опубликованной конфигурации наружный диаметр трубы 530 мм; внутренний — не менее 80% наружного."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Модульная система с диагностическими и очистными инструментами; методы контроля выбираются под задачу."
+        }
+      ],
+      "reviewed_urls": [
+        "https://tubot.pro/"
+      ],
+      "research_note": "Характеристики относятся к опубликованной конфигурации платформы. Число «2000 кг» на странице не внесено в транспортную грузоподъёмность без пояснения производителя.",
+      "fields": {
+        "purpose": "Внутритрубная диагностика, очистка и обслуживание сложных трубопроводов."
+      },
+      "image": {
+        "url": "https://thb.tildacdn.com/tild3935-3066-4163-a463-656639353764/-/resize/504x/P1316610.JPG",
+        "page_url": "https://tubot.pro/",
+        "caption": "Внутритрубные роботизированные системы Тьюбот — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Серия Sigma (100D, 150, 200, 250А)",
+      "manufacturer": "ООО \"Тарис\"",
+      "url": "https://taris.ru/teleinspekziya-truboprovodov",
+      "title": "ТАРИС: семейство SIGMA",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Исполнение подбирается по диаметру трубы: SIGMA 100D — 100–1500 мм; SIGMA 200 — 200–3000 мм."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Телеинспекция, дистанционное управление и подготовка отчётов обследования."
+        }
+      ],
+      "reviewed_urls": [
+        "https://taris.ru/teleinspekziya-truboprovodov",
+        "https://taris.ru/teleinspekziya-truboprovodov/sigma-100d",
+        "https://taris.ru/teleinspekziya-truboprovodov/sigma-150",
+        "https://taris.ru/teleinspekziya-truboprovodov/robot-sigma",
+        "https://taris.ru/avtonomnie-roboty/sigma-250a"
+      ],
+      "research_note": "Карточка объединяет несколько моделей: общую массу, скорость и автономность для всей серии определить нельзя. Параметры SIGMA 250A требуют отдельного паспорта. Фото — SIGMA 100D, представитель указанной серии.",
+      "fields": {
+        "purpose": "Визуальная диагностика трубопроводов мобильными роботами."
+      },
+      "image": {
+        "url": "https://taris.ru/uploads/Page/93/sigma-100d_preview_basic.jpeg",
+        "page_url": "https://taris.ru/teleinspekziya-truboprovodov",
+        "caption": "SIGMA 100D — представитель серии SIGMA, фото производителя ТАРИС",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Роботизированный диагностический комплекс",
+      "manufacturer": "АО \"Диаконт\"",
+      "url": "https://www.diakont.ru/projects/in-line-diagnostics-of-heating-networks/",
+      "title": "Диаконт: роботизированная диагностика тепловых сетей",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Беспроводная передача данных по Wi-Fi."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Автономное питание от аккумуляторных батарей."
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 3,
+          "note": "Дальность обследования в одну сторону от места загрузки; не пробег на заряде."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Трубопроводы Ду400–Ду1400; технологическое окно для загрузки 800×600 мм."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Опорожнённый трубопровод; в местах локального прогиба остаточная вода допускается до половины диаметра."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Телевизионный и магнитный контроль; отчёт о дефектах и рекомендации по ремонту."
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.diakont.ru/projects/in-line-diagnostics-of-heating-networks/"
+      ],
+      "research_note": "Добавлены данные конкретного применения ТДК в тепловых сетях. Погрешность измерения дефектов ±0,3 мм не записана как точность позиционирования робота.",
+      "fields": {
+        "purpose": "Диагностика основного металла и сварных соединений труб тепловых сетей."
+      },
+      "image": {
+        "url": "https://www.diakont.ru/wp-content/uploads/2023/06/image-30964_11zon.webp",
+        "page_url": "https://www.diakont.ru/projects/in-line-diagnostics-of-heating-networks/",
+        "caption": "Роботизированный диагностический комплекс — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Внутренняя диагностика труб ЖКХ",
+      "manufacturer": "ООО \"Юникон\"",
+      "url": "https://unicon-pirs.ru/uslugi/kompleksnaya-diagnostika-truboprovodov/",
+      "title": "ЮНИКОН-ЗСК: комплексная диагностика трубопроводов",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Технический отчёт, заключение об остаточном ресурсе трубопровода и рекомендации по ремонту."
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "source_url": "https://unicon-pirs.ru/uslugi/kompleksnaya-diagnostika-truboprovodov/vnutritrubnaya-diagnostika-truboprovodov-po-tekhnologii-akusticheskogo-rezonansa/",
+          "value": 1.5,
+          "note": "Обследование до 1500 м из одной точки доступа; не автономный пробег."
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "source_url": "https://unicon-pirs.ru/uslugi/kompleksnaya-diagnostika-truboprovodov/vnutritrubnaya-diagnostika-truboprovodov-po-tekhnologii-akusticheskogo-rezonansa/",
+          "text": "Обследование 750 м за 2 ч 40 мин по данным интегратора.",
+          "unit": "м/цикл"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://unicon-pirs.ru/uslugi/kompleksnaya-diagnostika-truboprovodov/vnutritrubnaya-diagnostika-truboprovodov-po-tekhnologii-akusticheskogo-rezonansa/",
+          "text": "Стальные и чугунные трубопроводы диаметром 300–1200 мм; требуется узел доступа."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://unicon-pirs.ru/uslugi/kompleksnaya-diagnostika-truboprovodov/vnutritrubnaya-diagnostika-truboprovodov-po-tekhnologii-akusticheskogo-rezonansa/",
+          "text": "Труба полностью заполнена водой. Допускаются отложения и наросты на стенках."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://unicon-pirs.ru/uslugi/kompleksnaya-diagnostika-truboprovodov/vnutritrubnaya-diagnostika-truboprovodov-po-tekhnologii-akusticheskogo-rezonansa/",
+          "text": "Измерительное оборудование проходит ежегодную метрологическую поверку."
+        }
+      ],
+      "reviewed_urls": [
+        "https://unicon-pirs.ru/uslugi/kompleksnaya-diagnostika-truboprovodov/",
+        "https://unicon-pirs.ru/uslugi/kompleksnaya-diagnostika-truboprovodov/vnutritrubnaya-diagnostika-truboprovodov-po-tekhnologii-akusticheskogo-rezonansa/"
+      ],
+      "research_note": "Найдена детальная официальная страница технологии и комплекса собственной разработки ЮНИКОН. Цена услуги — по опросному листу; масса и размеры конкретного сканера не опубликованы.",
+      "fields": {
+        "purpose": "Внутритрубное обследование по технологии акустического резонанса с измерением толщины стенки по окружности трубы."
+      }
+    },
+    {
+      "product_name": "Беспилотный бульдозер",
+      "manufacturer": "ООО \"ДСТ-УРАЛ\"",
+      "url": "https://tm10.it74.ru/news/dst-ural-na-innoprom-2026-bespilotnyy-buldozer-i-robotizirovannaya-svarka/",
+      "title": "ДСТ-УРАЛ: беспилотный бульдозер D12 ДС",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://tm10.it74.ru/news/dst-ural-na-innoprom-2026-bespilotnyy-buldozer-i-robotizirovannaya-svarka/"
+      ],
+      "research_note": "Идентифицирована актуальная беспилотная модель производителя. Паспорт базового бульдозера не подтверждает параметры этой бескабинной конфигурации, поэтому числа не перенесены.",
+      "fields": {
+        "description": "На ИННОПРОМ-2026 завод представил D12 ДС в бескабинном исполнении.",
+        "purpose": "Безэкипажные земляные и планировочные работы."
+      }
+    },
+    {
+      "product_name": "БРО 2.1",
+      "manufacturer": "АО \"168Роботикс\"",
+      "url": "https://168robotics.com/robots",
+      "title": "168robotics: БРО 2.1",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Батареи LiFePO4 48 В, суммарно 230 А·ч; автоматический возврат к точке обслуживания."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Автоматизированное управление парком роботов; режим следования за пешеходом."
+        }
+      ],
+      "reviewed_urls": [
+        "https://168robotics.com/robots"
+      ],
+      "research_note": "Добавлены фото конкретного BRO 2.1, зарядная инфраструктура и управление. Основные размеры и время работы уже подтверждены.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild6135-6230-4966-b536-626333626464/bro21_2brand.png",
+        "page_url": "https://168robotics.com/robots",
+        "caption": "БРО 2.1 — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "БРО 3.0",
+      "manufacturer": "АО \"168Роботикс\"",
+      "url": "https://168robotics.com/robots",
+      "title": "168robotics: БРО 3.0",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Управление парком; автономный режим, телеуправление и ручной режим; следование за пешеходом."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Уклон до 8° и ступень до 50 мм; сменная оснастка для уборки мусора, травы, снега и распределения реагентов."
+        }
+      ],
+      "reviewed_urls": [
+        "https://168robotics.com/robots"
+      ],
+      "research_note": "Технические параметры BRO 3.0 отделены от BRO 2.1. Показатель 22 часа в сутки не считается временем работы на одном заряде.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild6332-6236-4131-b938-316537356363/bro30_2.png",
+        "page_url": "https://168robotics.com/robots",
+        "caption": "БРО 3.0 — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Пиксель",
+      "manufacturer": "ООО \"Автономика\"",
+      "url": "https://www.avtonomika.ru/products/pixel/",
+      "title": "Автономика: Пиксель",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "value": 20000,
+          "unit": "м²/сутки",
+          "text": "До 20 000 м² за рабочие сутки; не производительность в час."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Внедрение включает картирование территории и обучение; комплекс обслуживания Пиксель Хоум."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Летняя и зимняя уборка дворов, тротуаров и парков."
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.avtonomika.ru/products/pixel/"
+      ],
+      "research_note": "16 часов в сутки не записаны как автономность аккумулятора; 15 лет использования батареи не приравнены к сроку службы робота.",
+      "fields": {
+        "description": "Автономная платформа для круглогодичной уборки. Реализованные площадки: Сокольники, Кузьминки, Радуга, Ходынское поле и парк 50-летия Октября."
+      },
+      "image": {
+        "url": "https://www.avtonomika.ru/assets/images/689353c76d96b727e2b14372_c3fcd34ca8315ea788d7bd24827dfdcc_cover.jpg",
+        "page_url": "https://www.avtonomika.ru/products/pixel/",
+        "caption": "Пиксель — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Веном Саранча",
+      "manufacturer": "ООО \"Робком\"",
+      "url": "https://svoefermerstvo.ru/product/39628-02/39628-02-venom-sarancha/39628-02",
+      "title": "РОБКОМ: Веном Саранча, предложение производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 344
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1.388889,
+          "text": "Максимальная скорость в карточке: 3–5 км/ч.",
+          "note": "5 км/ч / 3,6 = 1,388889 м/с."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Дистанционное управление с пульта."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Две батареи: 72 В 116 А·ч для ротора и 48 В 93 А·ч для ходовой части."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Мульчирование травы и поросли диаметром до 2 см; верхняя рабочая температура +32 °C."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Гусеничный ход, усиленные кевларом гусеницы."
+        }
+      ],
+      "reviewed_urls": [
+        "https://svoefermerstvo.ru/product/39628-02/39628-02-venom-sarancha/39628-02",
+        "https://rob-com.ru/",
+        "https://rob-com.ru/news/moschniy-shnekorotor-dlya-venom-sarancha"
+      ],
+      "research_note": "Продавец карточки — непосредственно ООО «РОБКОМ». Габариты ротора 950×400 мм не считаются габаритами всей машины.",
+      "fields": {
+        "purpose": "Кошение и мульчирование травы, сорняков и молодой кустарниковой поросли."
+      },
+      "image": {
+        "url": "https://s56442.cdn.ngenix.net/img/600/744/resize/catalog/product/a/n/anVs5spNZsef_1.png",
+        "page_url": "https://svoefermerstvo.ru/product/39628-02/39628-02-venom-sarancha/39628-02",
+        "caption": "Веном Саранча — изображение с официальной страницы",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "Веном Саранча — предложение ООО РОБКОМ",
+          "equipment_price": 2350000,
+          "currency": "RUB",
+          "acquisition_model": "purchase",
+          "confirmed": true,
+          "notes": "Цена за одну машину в карточке продавца-производителя. Доставка оплачивается отдельно; НДС не уточнён.",
+          "source_url": "https://svoefermerstvo.ru/product/39628-02/39628-02-venom-sarancha/39628-02"
+        }
+      ]
+    },
+    {
+      "product_name": "МАРК",
+      "manufacturer": "ООО \"Виафор\"",
+      "url": "https://t.me/s/armawir_adm?after=18491",
+      "title": "Администрация Армавира: робот МАРК компании Виафор",
+      "retrieved_at": "2026-09-29",
+      "source_type": "case_study",
+      "specs": [],
+      "reviewed_urls": [
+        "https://t.me/s/armawir_adm?after=18491"
+      ],
+      "research_note": "Официальная городская публикация идентифицирует разработку Виафор и испытания в Геленджике. Паспортные размеры, грузоподъёмность и цена не приведены. Не смешивалась с одноимёнными моделями Кингпро и Электромотив.",
+      "fields": {
+        "purpose": "Модульная электрическая платформа для уборки городских территорий, перевозки грузов и сельскохозяйственных задач."
+      }
+    },
+    {
+      "product_name": "Депеша-3",
+      "manufacturer": "АО «НПO «Высoкoтoчные кoмплексы»",
+      "url": "https://rostec.ru/media/news/rostekh-predstavil-na-inzhenerakh-budushchego-novye-modifikatsii-kompleksov-depesha/",
+      "title": "Ростех: гражданское исполнение Депеша-3",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Производитель заявляет защиту от пыли и влаги; степень IP в публикации не указана."
+        }
+      ],
+      "reviewed_urls": [
+        "https://rostec.ru/media/news/rostekh-predstavil-na-inzhenerakh-budushchego-novye-modifikatsii-kompleksov-depesha/"
+      ],
+      "research_note": "Использован официальный материал именно о гражданском исполнении. Размеры, скорость, батарея и цена этой комплектации не опубликованы.",
+      "fields": {
+        "description": "В июне 2026 года представлена модификация со снегоотвалом. Универсальная платформа допускает установку оборудования для дорожно-хозяйственных работ.",
+        "purpose": "Уборка снега на дорогах, промышленных территориях, в парках и скверах."
+      }
+    },
+    {
+      "product_name": "Astramis SurfexUnit",
+      "manufacturer": "АО \"Астрамис\"",
+      "url": "https://astramis.com/SurfexUnit",
+      "title": "Astramis: SurfexUnit",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Гусеничный ход; заявлена возможность преодоления лестниц и препятствий."
+        }
+      ],
+      "reviewed_urls": [
+        "https://astramis.com/SurfexUnit"
+      ],
+      "research_note": "Добавлено официальное изображение SurfexUnit. Числовые пределы высоты препятствий и уклона не опубликованы.",
+      "fields": {
+        "purpose": "Автономная сухая уборка складов, заводов и логистических центров."
+      },
+      "image": {
+        "url": "https://static.tildacdn.com/tild3764-3561-4630-b836-356535353432/IMG_3204.jpeg",
+        "page_url": "https://astramis.com/SurfexUnit",
+        "caption": "Astramis SurfexUnit — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Беспилотный каток",
+      "manufacturer": "АО \"Раскат\"",
+      "url": "https://oao-raskat.ru/katok-raskat-stal-pobeditelem-konkursa-innovacii-v-stroitelnoj-texnike-v-rossii-2026/",
+      "title": "РАСКАТ: беспилотный каток РВ-11ДД-БП",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Программно-аппаратный комплекс «Прометей» и система позиционирования/нивелирования «Филин»."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 20,
+          "note": "В новости производителя указана точность автономной работы до 2 см; это не погрешность толщины покрытия."
+        }
+      ],
+      "reviewed_urls": [
+        "https://oao-raskat.ru/katok-raskat-stal-pobeditelem-konkursa-innovacii-v-stroitelnoj-texnike-v-rossii-2026/"
+      ],
+      "research_note": "Производитель идентифицировал беспилотную модель РВ-11ДД-БП. Показатели обычного РВ-11ДД без беспилотного комплекта не переносились. Фотография награды на капоте не выбрана как основное фото товара.",
+      "fields": {
+        "purpose": "Автономное уплотнение дорожного покрытия."
+      }
+    },
+    {
+      "product_name": "Беспилотный асфальтоукладчик",
+      "manufacturer": "ООО \"НПО ГКМП\"",
+      "url": "https://td-desna.com/news/bespilotnaya-tehnologiya-ukladki-asfaltovogo-pokrytiya-s-ispolzovaniem-rossijskogo-asfaltoukladchika-desna-2100/",
+      "title": "ДСТ Десна: беспилотный асфальтоукладчик ДЕСНА 2100",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "GPS/ГЛОНАСС с базовой станцией, работа по заданной траектории и 3D-модели."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Команды движения через CAN; телеметрия на планшете и сервере, температурные датчики, метеостанция; нивелирование «Горизонт»."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Передача собранной телеметрии на сервер для формирования отчётов."
+        }
+      ],
+      "reviewed_urls": [
+        "https://td-desna.com/news/bespilotnaya-tehnologiya-ukladki-asfaltovogo-pokrytiya-s-ispolzovaniem-rossijskogo-asfaltoukladchika-desna-2100/"
+      ],
+      "research_note": "Источник — компания группы производителя. Сведения относятся к оснащению беспилотного ДЕСНА 2100; параметры сторонних асфальтоукладчиков не использовались.",
+      "fields": {
+        "description": "На полигоне в Смоленской области испытан комплекс из ДЕСНА 2100 и двух катков. Поддержаны дистанционное управление и автономное движение.",
+        "purpose": "Автоматизированная укладка асфальтобетона в комплексе с дорожными катками."
+      },
+      "image": {
+        "url": "https://td-desna.com/wp-content/uploads/2025/10/photo_2025-10-23-10.06.03.png",
+        "page_url": "https://td-desna.com/news/bespilotnaya-tehnologiya-ukladki-asfaltovogo-pokrytiya-s-ispolzovaniem-rossijskogo-asfaltoukladchika-desna-2100/",
+        "caption": "Беспилотный асфальтоукладчик — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Атлант",
+      "manufacturer": "ООО \"Кингпро\"",
+      "url": "https://kingpro.global/",
+      "title": "Кингпро: проверка модели Атлант",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://kingpro.global/"
+      ],
+      "research_note": "Выполнен поиск по производителю, точному названию «Атлант» и мойке фасадов. На текущем официальном сайте карточка этого исполнения не найдена. ТТХ и фото другого беспилотника подставлять нельзя."
+    },
+    {
+      "product_name": "Марк",
+      "manufacturer": "ООО \"Кингпро\"",
+      "url": "https://kingpro.global/",
+      "title": "Кингпро: проверка модели Марк",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://kingpro.global/"
+      ],
+      "research_note": "Выполнен поиск точной модели «Марк» компании Кингпро и фасадных работ. Действующий официальный паспорт не найден. МАРК компании Виафор и MARK A компании Электромотив — другие продукты; их характеристики не перенесены."
+    },
+    {
+      "product_name": "Сибирячок",
+      "manufacturer": "ООО \"ЭВР\"",
+      "url": "https://favt.gov.ru/public/materials/e/8/5/9/d/e859d1cd15f5d8497796d18cfca3246c.pdf",
+      "title": "Росавиация: сведения об аппарате Сибирячок производства ЭВР",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [],
+      "reviewed_urls": [
+        "https://favt.gov.ru/public/materials/e/8/5/9/d/e859d1cd15f5d8497796d18cfca3246c.pdf",
+        "https://ectru.ru/passport/1102994191717428"
+      ],
+      "research_note": "В официальных авиационных материалах найдено наименование квадрокоптера ЭВР. У публичного паспорта «Сибирячок-5» другая модификация: её показатели не присвоены базовой карточке «Сибирячок». Нужен паспорт точного исполнения."
+    },
+    {
+      "product_name": "Морской скорпион",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "url": "https://t.me/s/sevsu_live?before=5756",
+      "title": "СевГУ: беспилотный уборщик Морской Скорпион",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1500,
+          "note": "Приблизительная длина прототипа, описанного университетом в январе 2024 года."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 60,
+          "note": "Около 60 кг; масса описанного прототипа, не максимальная масса с мусором."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Уборка плавающего мусора с поверхности водоёмов; катамаранная схема."
+        }
+      ],
+      "reviewed_urls": [
+        "https://t.me/s/sevsu_live?before=5756"
+      ],
+      "research_note": "Первоисточник — официальный канал университета. Числа характеризуют представленный в январе 2024 года прототип; последующие версии требуют отдельного паспорта.",
+      "fields": {
+        "purpose": "Сбор мусора с водной поверхности."
+      }
+    },
+    {
+      "product_name": "Astramis AeroUnit",
+      "manufacturer": "АО \"Астрамис\"",
+      "url": "https://astramis.com/AeroUnit",
+      "title": "Astramis: AeroUnit",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://astramis.com/AeroUnit"
+      ],
+      "research_note": "Параметры уже внесены ранее; добавлены реальная фотография и опубликованная стоимость. Запас по подъёмной силе 20 кг не считается транспортной грузоподъёмностью.",
+      "fields": {
+        "purpose": "Привязная автоматизированная мойка фасадов."
+      },
+      "image": {
+        "url": "https://static.tildacdn.com/tild3038-3036-4166-a232-366466616561/IMG_2997.jpeg",
+        "page_url": "https://astramis.com/AeroUnit",
+        "caption": "Astramis AeroUnit — изображение с официальной страницы",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "Покупка AeroUnit — опубликованный ориентир производителя",
+          "equipment_price": 1500000,
+          "currency": "RUB",
+          "acquisition_model": "purchase",
+          "confirmed": true,
+          "notes": "Указана цена покупки 1,5 млн ₽. Состав комплекта и НДС не уточнены; нужна актуальная оферта. Альтернатива на странице: услуга мойки от 15 ₽/м²; это не абонентская плата.",
+          "source_url": "https://astramis.com/AeroUnit"
+        }
+      ]
+    },
+    {
+      "product_name": "Геоскан 401 Геодезия",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://www.geoscan.ru/ru/products/geoscan401/geodesy",
+      "title": "Геоскан 401 Геодезия: проверка комплектации",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://www.geoscan.ru/ru/products/geoscan401/geodesy"
+      ],
+      "research_note": "Проведён отдельный поиск версии Геодезия. Базовое руководство 401 не подтверждает состав геодезической полезной нагрузки, точность и цену комплекта. Требуется действующая спецификация этой комплектации."
+    },
+    {
+      "product_name": "Геоскан 401 Лидар",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://www.geoscan.ru/ru/products/geoscan401/lidar",
+      "title": "Геоскан 401 Лидар: проверка комплектации",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://www.geoscan.ru/ru/products/geoscan401/lidar"
+      ],
+      "research_note": "Проведён поиск версии Лидар. Сайт отдаёт техническую заглушку; универсальные показатели сканеров и базового 401 не перенесены на этот комплект. Необходим паспорт установленного лидара."
+    },
+    {
+      "product_name": "Альбатрос М5",
+      "manufacturer": "ООО \"Альбатрос\"",
+      "url": "https://www.alb.aero/catalog/bpla-samoletnogo-tipa/albatros-m5/",
+      "title": "Альбатрос: М5",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 12,
+          "note": "Максимальная взлётная масса."
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "value": 20,
+          "unit": "км²/полёт",
+          "text": "До 20 км² аэрофотосъёмки за вылет."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Площадка для старта/посадки от 100×100 м; старт с катапульты, посадка с парашютом."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Наземная станция на ноутбуке и лицензия управления входят в стандартный комплект; опциональный RTK/PPK модуль."
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.alb.aero/catalog/bpla-samoletnogo-tipa/albatros-m5/"
+      ],
+      "research_note": "Таблица и рекламное описание расходятся по длительности и дальности. Значения, уже помеченные как требующие сверки, не заменяются.",
+      "image": {
+        "url": "https://www.alb.aero/upload/iblock/923/923f0aa15ed39849610aae1c03ada8fc.jpg",
+        "page_url": "https://www.alb.aero/catalog/bpla-samoletnogo-tipa/albatros-m5/",
+        "caption": "Альбатрос М5 — официальное изображение модели производителя",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Геоскан Gemini",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://download.geoscan.ru/site-files/gemini/Geoscan_Gemini_Manual.pdf",
+      "title": "Геоскан Gemini: руководство по эксплуатации",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://download.geoscan.ru/site-files/gemini/Geoscan_Gemini_Manual.pdf"
+      ],
+      "research_note": "Найден официальный паспорт; основные сведения Gemini уже внесены. Текущие страницы сайта недоступны для дополнительной проверки фотографий и комплекта поставки."
+    },
+    {
+      "product_name": "Легионер Е29",
+      "manufacturer": "ООО \"ГК Тихие Крылья\"",
+      "url": "https://xn--80aaorhk2b.xn--p1ai/product/legioner_e29",
+      "title": "Тихие Крылья: Легионер Е29, публичная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 3
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 29.9,
+          "note": "Максимальная взлётная масса."
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 2100
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 4010
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 635
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 30.555556,
+          "text": "110 км/ч."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 2.2
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 220,
+          "note": "Максимальная дальность с типовой полезной нагрузкой."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -25,
+          "value_max": 30,
+          "unit": "°C"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Ветер до 15 м/с; полёты при грозе и обледенении не допускаются."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Дальность линии связи до 50 км; диапазоны 868 и 2400–2483 МГц."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Вертикальный взлёт и посадка."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "ТО каждые 100 лётных часов; первое ТО входит в цену. Ресурс 2800 лётных часов; гарантия 200 лётных часов / один год."
+        }
+      ],
+      "reviewed_urls": [
+        "https://xn--80aaorhk2b.xn--p1ai/product/legioner_e29",
+        "https://silentwings.ru/",
+        "https://silentwings.ru/educations/"
+      ],
+      "research_note": "Карточка размещена производителем ООО «ГК Тихие Крылья». Не смешивалась с G29s. Указано отсутствие сертификата типа; экипаж минимум два человека.",
+      "fields": {
+        "country_of_origin": "Россия",
+        "service_life_years": 5,
+        "purpose": "Аэрофотосъёмка, воздушное лазерное сканирование и мониторинг.",
+        "limitations": "Запрещены полёты при грозе и обледенении; условия эксплуатации и допуски согласуются для конкретной задачи."
+      },
+      "image": {
+        "url": "https://cdn.xn--80aaorhk2b.xn--p1ai/products/views/db97fb89-ada5-4946-8a02-b36b2c08742d_812x440.jpg",
+        "page_url": "https://xn--80aaorhk2b.xn--p1ai/product/legioner_e29",
+        "caption": "Легионер Е29 — изображение с официальной страницы",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "Легионер Е29 — цена производителя от",
+          "equipment_price": 12200000,
+          "currency": "RUB",
+          "acquisition_model": "purchase",
+          "confirmed": true,
+          "price_includes_vat": true,
+          "notes": "Цена от 12,2 млн ₽ с НДС; одно ТО после 100 лётных часов включено. Итог зависит от комплектации.",
+          "source_url": "https://xn--80aaorhk2b.xn--p1ai/product/legioner_e29"
+        }
+      ]
+    },
+    {
+      "product_name": "АМТ S300",
+      "manufacturer": "ООО \"АМТ\"",
+      "url": "https://amt-print.com/s300",
+      "title": "АМТ: строительный принтер S300",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 14000
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 14000
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 6300
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 2434
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 2
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 0.2,
+          "note": "Скорость позиционирования печатающего узла 12 м/мин; не скорость самоходной платформы."
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "value": 0.8,
+          "unit": "м³/ч"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Ноутбук, лицензионное ПО, шкаф управления и станция подготовки/подачи смеси входят в комплект."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Паспорт и руководство на русском языке; гарантия 12 месяцев."
+        }
+      ],
+      "reviewed_urls": [
+        "https://amt-print.com/s300"
+      ],
+      "research_note": "Таблица S300 содержит размеры 14×14×6,3 м, массу 2434 кг и производительность 0,8 м³/ч. Параметры относятся к строительному принтеру, а не к транспортному роботу.",
+      "fields": {
+        "purpose": "Печать строительных элементов и зданий на фундаментах до 180 м²."
+      },
+      "offers": [
+        {
+          "label": "S300 — цена производителя без НДС",
+          "equipment_price": 8460000,
+          "currency": "RUB",
+          "acquisition_model": "purchase",
+          "confirmed": true,
+          "notes": "Цена без НДС, комплектация S300. S300-1 и S300-2 имеют отдельные цены; в эту карточку они не подставлены.",
+          "source_url": "https://amt-print.com/s300",
+          "price_includes_vat": false
+        }
+      ]
+    },
+    {
+      "product_name": "Комплекс управления кранами ВИРСАЙН СДУ",
+      "manufacturer": "ООО \"Вирсайн Инновации\"",
+      "url": "https://virsign.ru/remote-control-system",
+      "title": "Вирсайн: система дистанционного управления кранами",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://virsign.ru/remote-control-system"
+      ],
+      "research_note": "СДУ является комплектом автоматизации крана, а не отдельным подъёмным механизмом. Грузоподъёмность и скорость определяются базовым краном.",
+      "fields": {
+        "description": "Комплекс переносит рабочее место оператора из кабины крана в безопасное помещение. Внедрение подбирается под кран и промышленную площадку.",
+        "purpose": "Дистанционное управление и автоматизация крановой техники."
+      }
+    },
+    {
+      "product_name": "МРСК",
+      "manufacturer": "ООО \"КБ-интеграл\"",
+      "url": "https://kb-integral.ru/o-mobilnom-robotizirovannom-svarochnom-komplekse/",
+      "title": "КБ-Интеграл: мобильный роботизированный сварочный комплекс МРСК",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://kb-integral.ru/o-mobilnom-robotizirovannom-svarochnom-komplekse/"
+      ],
+      "research_note": "Найдена официальная карточка МРСК с изображениями конструкции. Технические таблицы на странице приведены изображениями; числа без дополнительной проверки не извлекались.",
+      "fields": {
+        "purpose": "Роботизированное выполнение сварочных работ."
+      }
+    },
+    {
+      "product_name": "DH: Cloud Control",
+      "manufacturer": "ООО \"Дронсхаб\"",
+      "url": "https://droneshub.group/",
+      "title": "Дронсхаб: DH Cloud Control Center",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Открытый API, объединение техники разных производителей; интеграция с 1С, CRM и ERP."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "АРМ на ПК, планшете или смартфоне; сбор телеметрии и видеопотоков."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Диспетчеризация, мониторинг состояния и диагностика парка."
+        }
+      ],
+      "reviewed_urls": [
+        "https://droneshub.group/"
+      ],
+      "research_note": "Программная платформа: масса, габариты, грузоподъёмность и батарея к ней не относятся.",
+      "fields": {
+        "description": "Предусмотрено развёртывание в контуре заказчика (on-premise) и единый интерфейс управления разными производителями.",
+        "purpose": "Облачное управление парком наземных роботов, кранов, конвейеров и другой техники."
+      },
+      "image": {
+        "url": "https://droneshub.group/img/cloud/cloud_inter_1.png",
+        "page_url": "https://droneshub.group/",
+        "caption": "DH: Cloud Control — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Cargo UNIT",
+      "manufacturer": "ООО \"Дронсхаб\"",
+      "url": "https://droneshub.group/",
+      "title": "Дронсхаб: Cargo Unit",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "GNSS/RTK с GPS и ГЛОНАСС."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "4G/LTE и Wi-Fi; АРМ, мобильное приложение и радиопульт."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Интеграция по API с облачной системой управления DH:Cloud Control Center."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Полный привод 4×4, открытый или закрытый сменный кузов."
+        }
+      ],
+      "reviewed_urls": [
+        "https://droneshub.group/"
+      ],
+      "research_note": "Грузоподъёмность соседних моделей Frame, Docker, Legat и Region не приписана Cargo Unit. Общие для актуальной линейки интерфейсы явно указаны производителем.",
+      "fields": {
+        "purpose": "Перевозка грузов на заводах, предприятиях и строительных площадках."
+      },
+      "image": {
+        "url": "https://droneshub.group/img/rovers/cargo-unit-07.jpg",
+        "page_url": "https://droneshub.group/",
+        "caption": "Cargo UNIT — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Дефектоскоп",
+      "manufacturer": "МАИ",
+      "url": "https://oblako.mai.ru/articles/item.php?ID=178255",
+      "title": "МАИ: беспилотная система Дефектоскоп",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автоматический полёт по маршруту с фотосъёмкой в заданных точках."
+        }
+      ],
+      "reviewed_urls": [
+        "https://oblako.mai.ru/articles/item.php?ID=178255"
+      ],
+      "research_note": "Источник — издание самого разработчика МАИ. Публичная статья подтверждает назначение и алгоритм работы; паспортная грузоподъёмность, габариты и коммерческая цена отсутствуют.",
+      "fields": {
+        "purpose": "Промышленный мониторинг и выявление дефектов объектов и оборудования."
+      }
+    },
+    {
+      "product_name": "Azarrus 1.0A",
+      "manufacturer": "ООО \"Деморобот\"",
+      "url": "https://azarrus.com/catalog/demolition-machines/412/",
+      "title": "Azarrus: демонтажный робот 1.0A",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Опциональная автоматическая смазка гидромолота; сервис и запасные части производителя."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Рекомендуемая масса навесного оборудования — 170 кг; работа с гидравлическим инструментом."
+        }
+      ],
+      "reviewed_urls": [
+        "https://azarrus.com/catalog/demolition-machines/412/"
+      ],
+      "research_note": "170 кг — рекомендуемая масса навески, не грузоподъёмность. Нулевая цена в интерфейсе магазина — заглушка, в экономику не включена.",
+      "image": {
+        "url": "https://azarrus.com/upload/iblock/236/72a82jz1lji967pebym7067kk3jrdvff.png",
+        "page_url": "https://azarrus.com/catalog/demolition-machines/412/",
+        "caption": "Azarrus 1.0A — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Innospector",
+      "manufacturer": "АНО ВО \"Университет Иннополис\"",
+      "url": "https://innoit.ru/innospector",
+      "title": "Университет Иннополис: InnoSpector",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 3.5
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 600
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 500
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 260
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 0.25,
+          "text": "До 15 минут."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 45
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "SLAM: LiDAR и IMU, полёт без GPS; активный обход препятствий."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Радиоканал 2,4/5,8 ГГц, до 4 км на открытой местности; внутри дальность уменьшается."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Два аккумулятора и зарядная станция в комплекте; подготовка/смена АКБ до 3 минут."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Экспорт облака точек LAS 1.4; обработка результатов в InnoSpector Workflow."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "В первый год расширенное ТО; комплект ЗИП, обучение. Гарантия 20 часов или 50 вылетов по условиям производителя."
+        }
+      ],
+      "reviewed_urls": [
+        "https://innoit.ru/innospector"
+      ],
+      "research_note": "RMSE облака точек 2 см не является точностью позиционирования аппарата. IP53 заявлен конструктивно, но по FAQ не сертифицирован; Ex-исполнение не подтверждено.",
+      "fields": {
+        "purpose": "Инспекция шахт, резервуаров, тоннелей и труднодоступных промышленных объектов.",
+        "limitations": "Нет подтверждения взрывозащищённого исполнения. В закрытом пространстве фактическая радиодальность зависит от препятствий и переотражений."
+      },
+      "image": {
+        "url": "https://static.tildacdn.com/tild6235-3566-4036-b837-393434663837/DSC09956-Photoroom.png",
+        "page_url": "https://innoit.ru/innospector",
+        "caption": "Innospector — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "БВС ОМДЖЕТ -М01",
+      "manufacturer": "ООО \"Роспроект\"",
+      "url": "https://omjet.ru/",
+      "title": "ОМДЖЕТ: М01",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 3.35,
+          "note": "Максимальная взлётная масса."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Зарядное устройство и аккумулятор Li-Po 10 000 мА·ч в базовом комплекте."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Ветер до 8 м/с при вертикальном полёте и до 12 м/с в горизонтальном; высота до 1850 м."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Аппаратура Skydroid T10 в базовом комплекте; модификация АФС дополняется камерой и GNSS."
+        }
+      ],
+      "reviewed_urls": [
+        "https://omjet.ru/"
+      ],
+      "research_note": "М01 отделён от ОмДжет 01, 02, 03 и 04. Цены опубликованы без НДС.",
+      "image": {
+        "url": "https://cdn-ru.bitrix24.ru/b3963943/landing/a90/a90455f700def87b2a1b19f266f71988/dsc07888_1x.jpg",
+        "page_url": "https://omjet.ru/",
+        "caption": "БВС ОМДЖЕТ -М01 — изображение с официальной страницы",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "М01 — базовый комплект без НДС",
+          "equipment_price": 440000,
+          "currency": "RUB",
+          "acquisition_model": "purchase",
+          "confirmed": true,
+          "notes": "Базовый М01: 440 000 ₽ без НДС. Модель АФС: 880 000 ₽ без НДС; это другая комплектация.",
+          "source_url": "https://omjet.ru/",
+          "price_includes_vat": false
+        }
+      ]
+    },
+    {
+      "product_name": "Omega",
+      "manufacturer": "ООО НПП \"Авакс -Геосервис\"",
+      "url": "https://omega.uav-siberia.com/",
+      "title": "АВАКС-ГеоСервис: OMEGA",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 1.6
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 0.75,
+          "text": "45 минут."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Дальность связи до 15 км."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автоматический и ручной режимы; полётные задания через ПО EFIR."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "ПО EFIR: задания, телеметрия и изменение параметров полёта в реальном времени."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "В комплекте аккумулятор, зарядное устройство, пульт, винты и транспортный кейс."
+        }
+      ],
+      "reviewed_urls": [
+        "https://omega.uav-siberia.com/"
+      ],
+      "research_note": "Крейсерская скорость до 60 км/ч не внесена в поле максимальной скорости. Точный предел дополнительной полезной нагрузки не опубликован.",
+      "fields": {
+        "purpose": "Визуальный и тепловизионный мониторинг объектов, природоохранные и поисково-спасательные задачи."
+      }
+    },
+    {
+      "product_name": "Supercam X4",
+      "manufacturer": "ООО \"Финко\"",
+      "url": "https://supercam.aero/catalog/supercam-x4",
+      "title": "Supercam: X4",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 4.5,
+          "note": "Максимальная взлётная масса."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автоматический маршрут и возврат к месту старта при потере связи; возможен полуавтоматический режим."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "ПО НСУ производителя, передача управления между станциями, обновление ПО."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Умеренный дождь и снегопад; максимальная рабочая высота до 1000 м."
+        }
+      ],
+      "reviewed_urls": [
+        "https://supercam.aero/catalog/supercam-x4"
+      ],
+      "research_note": "Текст страницы и таблица расходятся по размерам и длительности; новые числовые значения по этим полям не добавлены."
+    },
+    {
+      "product_name": "MARTin",
+      "manufacturer": "ООО \"Миррико\"",
+      "url": "https://mirrico.ru/catalog/products/robotic-method-of-stripping-petrochemical-equipmen/",
+      "title": "Миррико: роботизированная установка MARTin",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Дизельное топливо либо подключение электроэнергии; подвод пара не требуется."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Дистанционный контроль процесса очистки и информация о ходе работ онлайн."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Для монтажа установки не требуется крановая/тракторная техника и специальная подготовка площадки."
+        }
+      ],
+      "reviewed_urls": [
+        "https://mirrico.ru/catalog/products/robotic-method-of-stripping-petrochemical-equipmen/"
+      ],
+      "research_note": "Публично предложены услуга очистки и изготовление установки под заказ с гарантией и обучением. Фиксированная цена не опубликована.",
+      "fields": {
+        "description": "Обрабатывает ёмкости объёмом до 50 000 м³. Есть внедрения на Самотлорнефтегазе, Ванкорнефти, Сибур-Химпроме, Газпромнефть-Хантосе.",
+        "purpose": "Очистка нефтяных резервуаров с переработкой извлечённых донных отложений."
+      },
+      "image": {
+        "url": "https://mirrico.ru/upload/iblock/362/62494a542cb555712685f37ecd6b34c1.png",
+        "page_url": "https://mirrico.ru/catalog/products/robotic-method-of-stripping-petrochemical-equipmen/",
+        "caption": "MARTin — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Херсонес",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "url": "https://t.me/s/sevsu_live/8755",
+      "title": "СевГУ: исследовательский подводный аппарат Херсонес",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "text": "Телеуправляемый подводный аппарат с системой 3D-технического зрения.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Видеоосмотр и измерение геометрии подводных объектов; наблюдение за процессом в реальном времени.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://t.me/s/sevsu_live?before=7178",
+        "https://t.me/s/sevsu_live/10535",
+        "https://www.t.me/s/sevsu_live?before=8756",
+        "https://t.me/s/sevsu_live/8755"
+      ],
+      "research_note": "Найден первичный отчёт университета о реальном применении. Глубина 20 м — глубина этого обследования, не предельная глубина погружения аппарата. Полный паспорт, цена и ресурс не опубликованы.",
+      "fields": {
+        "purpose": "Обследование подводных объектов и научные исследования.",
+        "description": "Реальный кейс СевГУ: обследование фрагментов затонувшего танкера «Волгонефть» у Керченского пролива на глубине до 20 м."
+      }
+    },
+    {
+      "product_name": "МК",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "url": "https://t.me/s/sevsu_live/10535",
+      "title": "СевГУ: модульная платформа МК",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://t.me/s/sevsu_live/10535"
+      ],
+      "research_note": "Официальная публикация СевГУ о представленных на ПМЭФ разработках подтверждает модель МК. Публичной индивидуальной технической таблицы нет. Характеристики других аппаратов в той же публикации не перенесены.",
+      "fields": {
+        "purpose": "Модульная платформа для морских исследовательских задач."
+      }
+    }
+  ]
+}

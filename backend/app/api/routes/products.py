@@ -204,6 +204,9 @@ async def upload_image(
         )
         if source not in product.sources:
             product.sources.append(source)
+        payload = dict(product.source_payload or {})
+        payload.pop("manual_image_deleted", None)
+        product.source_payload = payload
         if not has_permission(user.role, Permission.PRODUCTS_PUBLISH):
             product.is_published = False
         audit.record(db, user, "product", product.id, "image_upload", {"image_id": str(image_id), "file": file.filename})
@@ -223,6 +226,7 @@ async def delete_image(product_id: int, db: DbSession, user: CatalogEditor) -> P
         raise HTTPException(status.HTTP_404_NOT_FOUND, "У товара нет фотографии.")
     image_id = product.image.id
     await db.delete(product.image)
+    product.source_payload = {**(product.source_payload or {}), "manual_image_deleted": True}
     if not has_permission(user.role, Permission.PRODUCTS_PUBLISH):
         product.is_published = False
     audit.record(db, user, "product", product.id, "image_delete", {"image_id": str(image_id)})

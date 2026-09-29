@@ -1,0 +1,3355 @@
+{
+  "version": 2,
+  "products": [
+    {
+      "product_name": "БЭК-Р",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "url": "https://www.sevsu.ru/",
+      "title": "ФГАОУ ВО \"Севастопольский Государственный Университет\": БЭК-Р",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=62",
+        "https://www.sevsu.ru/"
+      ],
+      "research_note": "Поиск точного БЭК-Р обнаружил публикации об испытаниях, но доступного отдельного паспорта на сайте университета не найдено. Сохранены данные и точное изображение каталога организатора."
+    },
+    {
+      "product_name": "БЭК \"Сивуч\"",
+      "manufacturer": "АНО \"Техносфера\"",
+      "url": "https://xn--80afcdbalict6afooklqi5o.xn--p1ai/public/application/item?id=0C23A16F-C989-44D5-ABDE-482B58AABD20",
+      "title": "АНО \"Техносфера\": БЭК \"Сивуч\"",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=63",
+        "https://xn--80afcdbalict6afooklqi5o.xn--p1ai/public/application/item?id=0C23A16F-C989-44D5-ABDE-482B58AABD20"
+      ],
+      "research_note": "Карточка проекта «Сивуч», поданная разработчиком в Фонд президентских грантов. Подтверждает образовательное происхождение и разработчика; параметры современных исполнений требуют отдельного паспорта.",
+      "fields": {
+        "purpose": "Безэкипажный катер, созданный в образовательном инженерном проекте центра «Техносфера»."
+      }
+    },
+    {
+      "product_name": "РБ-100",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/rb-100/",
+      "title": "ООО \"Ровбилдер\": РБ-100",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 340,
+          "note": "Паспорт производителя, издание 2022; масса на воздухе.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 290,
+          "note": "Паспорт производителя, издание 2022; масса на воздухе.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 280,
+          "note": "Паспорт производителя, издание 2022; масса на воздухе.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "мм"
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 5.6,
+          "note": "Паспорт производителя, издание 2022; масса на воздухе.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "кг"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1,
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "м/с"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": 0,
+          "value_max": 30,
+          "note": "Температура воды; кабель рассчитан на −30…+45 °C.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "°C"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабель-трос 100 м; береговой пульт, видеовыход HDMI, USB 2.0",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Питание береговой станции от сети 220–240 В, 50 Гц",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Управление оператором; компас, датчики глубины, крена и дифферента",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Опционально: гидроакустическая навигация, альтиметр, батометр",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия 2 года; регламент обслуживания запрашивается у изготовителя",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=63",
+        "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf#page=1",
+        "https://www.rovbuilder.com/rb-100/",
+        "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+        "https://www.rovbuilder.com/galereya/"
+      ],
+      "research_note": "Сверены индивидуальная карточка и официальный паспорт РБ-100/150/300. Цена опубликована рядом с пометкой «по запросу»: считать ориентиром, актуальную комплектацию и НДС подтвердить у производителя.",
+      "fields": {
+        "purpose": "Подводный осмотр гидросооружений и судов, сопровождение водолазных работ.",
+        "limitations": "Предельная глубина 100 м; изготовитель рекомендует 30–50 м при течении не более 0,5 м/с."
+      },
+      "image": {
+        "url": "https://www.rovbuilder.com/wp-content/uploads/2020/01/rb-100-1-1024x568-1.jpg",
+        "page_url": "https://www.rovbuilder.com/galereya/",
+        "caption": "РБ-100 в работе. Фотография из официальной галереи RovBuilder, раздел РБ-100.",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "Опубликованная цена РБ",
+          "equipment_price": 320000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "notes": "На странице одновременно указана цена и «по запросу». Срок действия цены, НДС, ПО, внедрение и обслуживание отдельно не раскрыты.",
+          "confirmed": true,
+          "source_url": "https://www.rovbuilder.com/rb-100/"
+        }
+      ]
+    },
+    {
+      "product_name": "РБ-150",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/rb-150/",
+      "title": "ООО \"Ровбилдер\": РБ-150",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 400,
+          "note": "Паспорт производителя, издание 2022; масса на воздухе.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 315,
+          "note": "Паспорт производителя, издание 2022; масса на воздухе.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 280,
+          "note": "Паспорт производителя, издание 2022; масса на воздухе.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "мм"
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 6.5,
+          "note": "Паспорт производителя, издание 2022; масса на воздухе.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "кг"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1,
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "м/с"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": 0,
+          "value_max": 30,
+          "note": "Температура воды; кабель рассчитан на −30…+45 °C.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "°C"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабель-трос 150 м; береговой пульт, видеовыход HDMI, USB 2.0",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Питание береговой станции от сети 220–240 В, 50 Гц",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Управление оператором; компас, датчики глубины, крена и дифферента",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Опционально: гидроакустическая навигация, альтиметр, батометр",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия 2 года; регламент обслуживания запрашивается у изготовителя",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=63",
+        "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf#page=1",
+        "https://www.rovbuilder.com/rb-150/",
+        "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+      ],
+      "research_note": "Сверены индивидуальная карточка и официальный паспорт РБ-100/150/300. Цена опубликована рядом с пометкой «по запросу»: считать ориентиром, актуальную комплектацию и НДС подтвердить у производителя.",
+      "fields": {
+        "purpose": "Подводный осмотр гидросооружений и судов, сопровождение водолазных работ.",
+        "limitations": "Предельная глубина 100 м; изготовитель рекомендует 30–50 м при течении не более 0,5 м/с."
+      },
+      "image": {
+        "url": "https://www.rovbuilder.com/wp-content/uploads/2020/01/IMG_9928-1024x683.jpg",
+        "page_url": "https://www.rovbuilder.com/rb-150/",
+        "caption": "РБ-150. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "Опубликованная цена РБ",
+          "equipment_price": 420000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "notes": "На странице одновременно указана цена и «по запросу». Срок действия цены, НДС, ПО, внедрение и обслуживание отдельно не раскрыты.",
+          "confirmed": true,
+          "source_url": "https://www.rovbuilder.com/rb-150/"
+        }
+      ]
+    },
+    {
+      "product_name": "РБ-300",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/rb-300/",
+      "title": "ООО \"Ровбилдер\": РБ-300",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 500,
+          "note": "Паспорт производителя, издание 2022; масса на воздухе.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 310,
+          "note": "Паспорт производителя, издание 2022; масса на воздухе.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 300,
+          "note": "Паспорт производителя, издание 2022; масса на воздухе.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "мм"
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 12,
+          "note": "Паспорт производителя, издание 2022; масса на воздухе.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "кг"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1,
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "м/с"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": 0,
+          "value_max": 30,
+          "note": "Температура воды; кабель рассчитан на −30…+45 °C.",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf",
+          "unit": "°C"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабель-трос 220 м; береговой пульт, видеовыход HDMI, USB 2.0",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Питание береговой станции от сети 220–240 В, 50 Гц",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Управление оператором; компас, датчики глубины, крена и дифферента",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Опционально: гидроакустическая навигация, альтиметр, батометр",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия 2 года; регламент обслуживания запрашивается у изготовителя",
+          "source_url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=64",
+        "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf#page=1",
+        "https://www.rovbuilder.com/rb-300/",
+        "https://www.rovbuilder.com/wp-content/uploads/2022/02/spec_2022.pdf"
+      ],
+      "research_note": "Сверены индивидуальная карточка и официальный паспорт РБ-100/150/300. Цена опубликована рядом с пометкой «по запросу»: считать ориентиром, актуальную комплектацию и НДС подтвердить у производителя.",
+      "fields": {
+        "purpose": "Подводный осмотр гидросооружений и судов, сопровождение водолазных работ.",
+        "limitations": "Предельная глубина 200 м в простых пресноводных условиях; морская работа при ветре и течении ориентировочно до 70 м."
+      },
+      "image": {
+        "url": "https://www.rovbuilder.com/wp-content/uploads/2020/01/RB-300_8-1.jpeg",
+        "page_url": "https://www.rovbuilder.com/rb-300/",
+        "caption": "РБ-300. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "Опубликованная цена РБ",
+          "equipment_price": 730000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "notes": "На странице одновременно указана цена и «по запросу». Срок действия цены, НДС, ПО, внедрение и обслуживание отдельно не раскрыты.",
+          "confirmed": true,
+          "source_url": "https://www.rovbuilder.com/rb-300/"
+        }
+      ]
+    },
+    {
+      "product_name": "РБ-600",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/rb-600/",
+      "title": "ООО \"Ровбилдер\": РБ-600",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 28,
+          "note": "Масса носителя без дополнительного оборудования.",
+          "unit": "кг"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Предельная глубина 300 м; заявленная работа в море на глубинах 200–250 м"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Опционально: многолучевой сонар, гидроакустическая навигация, манипулятор, батометр"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=64",
+        "https://www.rovbuilder.com/rb-600/"
+      ],
+      "research_note": "Официальная карточка РБ-600, исполнение после рестайлинга 2021 года. Данные РБ-660 не переносились.",
+      "fields": {
+        "purpose": "Осмотр подводных сооружений и водолазное сопровождение.",
+        "limitations": "Дополнительное оборудование меняет массу и условия эксплуатации; скорость допустимого течения не опубликована."
+      },
+      "image": {
+        "url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/i13-1024x576.jpeg",
+        "page_url": "https://www.rovbuilder.com/rb-600/",
+        "caption": "РБ-600. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "РБ-Мираж 1000",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/rb-mirazh1000/",
+      "title": "ООО \"Ровбилдер\": РБ-Мираж 1000",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 130,
+          "note": "Без дополнительного оборудования.",
+          "unit": "кг"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Подводные обследования на глубинах до 1000 м при течении до 2 м/с"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабельное управление с берегового джойстика; цифровое видео"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Внешнее питание; потребляемая мощность аппарата до 6 кВт"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Возможна установка дополнительных камер и подводного оборудования"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=64",
+        "https://www.rovbuilder.com/rb-mirazh1000/"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Глубоководное обследование акваторий и подводных объектов.",
+        "limitations": "Масса 130 кг относится к носителю; комплект дополнительного оборудования согласовывается отдельно."
+      },
+      "image": {
+        "url": "https://www.rovbuilder.com/wp-content/uploads/2020/01/1-glavnaya-1024x681.jpg",
+        "page_url": "https://www.rovbuilder.com/rb-mirazh1000/",
+        "caption": "РБ-Мираж 1000. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "ТНПА «ГНОМ Про Вектор»",
+      "manufacturer": "ООО \"Подводная робототехника\"",
+      "url": "https://gnomrov.ru/products/rovs/gnom-pro-vector.html",
+      "title": "ООО \"Подводная робототехника\": ТНПА «ГНОМ Про Вектор»",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 35,
+          "note": "Масса подводного модуля на воздухе.",
+          "unit": "кг"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Подводные осмотровые работы; базовая предельная глубина 300 м"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабельная связь с береговой станцией; управление оператором и передача видео"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Береговой источник питания 220 В, 50 Гц",
+          "source_url": "https://gnomrov.ru/support/faq/"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Дополнительное оборудование: манипулятор, сонар, гидроакустическая навигационная система",
+          "source_url": "https://gnomrov.ru/support/faq/"
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 7,
+          "note": "Дополнительное оборудование: масса в воде, не масса груза на воздухе.",
+          "unit": "кг"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1.5433,
+          "note": "Маршевая скорость до 3 узлов, пересчитано в м/с.",
+          "unit": "м/с"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Инерциальная система ориентации, датчик глубины, удержание курса и глубины"
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "text": "720 мм в сводной таблице; 660 мм в подробной таблице",
+          "note": "Противоречие внутри официальной страницы: числовое значение требует паспорта исполнения."
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "text": "380 мм в сводной таблице; 400 мм в подробной таблице",
+          "note": "Противоречие внутри официальной страницы: числовое значение не выбирается автоматически."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 550,
+          "unit": "мм"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия 1 год, кроме кабеля-связки и гребных винтов; срок изготовления 8–12 недель"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=65",
+        "https://gnomrov.ru/products/rovs/gnom-pro-vector.html",
+        "https://gnomrov.ru/support/faq/"
+      ],
+      "research_note": "Выявлено внутреннее противоречие габаритов 720×550×380 и 660×550×400 мм. Длину и высоту следует подтвердить паспортом; не подменять числом из одной таблицы.",
+      "fields": {
+        "purpose": "Подводный осмотр сооружений, резервуаров и акваторий."
+      },
+      "image": {
+        "url": "https://gnomrov.ru/_files/products/photos/pr/202/prov_right_up_ss.png",
+        "page_url": "https://gnomrov.ru/products/rovs/gnom-pro-vector.html",
+        "caption": "ТНПА «ГНОМ Про Вектор». Фото с официальной страницы продукта.",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "Цена на официальной карточке ГНОМ",
+          "equipment_price": 5700000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "notes": "Комплектация и НДС на странице однозначно не раскрыты. Не включает автоматически стоимость внедрения и годового сервиса.",
+          "confirmed": true,
+          "source_url": "https://gnomrov.ru/products/rovs/gnom-pro-vector.html"
+        }
+      ]
+    },
+    {
+      "product_name": "ТНПА «ГНОМ Про»",
+      "manufacturer": "ООО \"Подводная робототехника\"",
+      "url": "https://gnomrov.ru/products/rovs/gnom-pro.html",
+      "title": "ООО \"Подводная робототехника\": ТНПА «ГНОМ Про»",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 25,
+          "note": "Масса подводного модуля на воздухе.",
+          "unit": "кг"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Подводные осмотровые работы; базовая предельная глубина 150 м"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабельная связь с береговой станцией; управление оператором и передача видео"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Береговой источник питания 220 В, 50 Гц",
+          "source_url": "https://gnomrov.ru/support/faq/"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Дополнительное оборудование: манипулятор, сонар, гидроакустическая навигационная система",
+          "source_url": "https://gnomrov.ru/support/faq/"
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 590,
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 440,
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 350,
+          "unit": "мм"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 45,
+          "note": "Температура воздуха; вода −4…+45 °C.",
+          "unit": "°C"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Управление с береговой станции; визуальное наблюдение",
+          "note": "Автономная навигация без оператора на странице не заявлена."
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 5,
+          "note": "Рекомендованная масса дополнительного оборудования в воде, по FAQ производителя.",
+          "source_url": "https://gnomrov.ru/support/faq/",
+          "unit": "кг"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия 1 год, кроме кабеля-связки и гребных винтов; изготовление 8–12 недель"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=65",
+        "https://gnomrov.ru/products/rovs/gnom-pro.html",
+        "https://gnomrov.ru/support/faq/"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Подводный осмотр сооружений, резервуаров и акваторий."
+      },
+      "image": {
+        "url": "https://gnomrov.ru/_files/products/photos/pr/6/pro4_front_left_s.png",
+        "page_url": "https://gnomrov.ru/products/rovs/gnom-pro.html",
+        "caption": "ТНПА «ГНОМ Про». Фото с официальной страницы продукта.",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "Цена на официальной карточке ГНОМ",
+          "equipment_price": 4800000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "notes": "Комплектация и НДС на странице однозначно не раскрыты. Не включает автоматически стоимость внедрения и годового сервиса.",
+          "confirmed": true,
+          "source_url": "https://gnomrov.ru/products/rovs/gnom-pro.html"
+        }
+      ]
+    },
+    {
+      "product_name": "ТНПА «ГНОМ X»",
+      "manufacturer": "ООО \"Подводная робототехника\"",
+      "url": "https://gnomrov.ru/products/rovs/gnom-x.html",
+      "title": "ООО \"Подводная робототехника\": ТНПА «ГНОМ X»",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 10,
+          "note": "Масса подводного модуля на воздухе.",
+          "unit": "кг"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Подводные осмотровые работы; базовая предельная глубина 200 м"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Кабельная связь с береговой станцией; управление оператором и передача видео"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Береговой источник питания 220 В, 50 Гц",
+          "source_url": "https://gnomrov.ru/support/faq/"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Дополнительное оборудование: манипулятор, сонар, гидроакустическая навигационная система",
+          "source_url": "https://gnomrov.ru/support/faq/"
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 470,
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 400,
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 300,
+          "unit": "мм"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 45,
+          "note": "Температура воздуха; вода −4…+45 °C.",
+          "unit": "°C"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Управление с береговой станции; визуальное наблюдение",
+          "note": "Автономная навигация без оператора на странице не заявлена."
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=65",
+        "https://gnomrov.ru/products/rovs/gnom-x.html",
+        "https://gnomrov.ru/support/faq/"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Подводный осмотр сооружений, резервуаров и акваторий."
+      },
+      "image": {
+        "url": "https://gnomrov.ru/_files/products/photos/pr/203/gnom_x_sideview.png",
+        "page_url": "https://gnomrov.ru/products/rovs/gnom-x.html",
+        "caption": "ТНПА «ГНОМ X». Фото с официальной страницы продукта.",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "Цена на официальной карточке ГНОМ",
+          "equipment_price": 2380000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "notes": "Комплектация и НДС на странице однозначно не раскрыты. Не включает автоматически стоимость внедрения и годового сервиса.",
+          "confirmed": true,
+          "source_url": "https://gnomrov.ru/products/rovs/gnom-x.html"
+        }
+      ]
+    },
+    {
+      "product_name": "ОМДЖЕТ -ГМ01",
+      "manufacturer": "ООО \"Роспроект\"",
+      "url": "https://omjet.ru/",
+      "title": "ООО \"Роспроект\": ОМДЖЕТ -ГМ01",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1500,
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 800,
+          "unit": "мм"
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 20,
+          "note": "Без аккумулятора и полезной нагрузки; с ними опубликована масса 30 кг.",
+          "unit": "кг"
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 5,
+          "unit": "кг"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 3,
+          "note": "До 180 минут движения.",
+          "unit": "ч"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 2.7778,
+          "note": "До 10 км/ч.",
+          "unit": "м/с"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 20,
+          "unit": "км"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": 0,
+          "value_max": 40,
+          "unit": "°C"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Катамаран-аэроглиссер; ветер до 8 м/с; высота от воды 800 мм"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Управление до 5 км, видео до 2,5 км при прямой видимости"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Сменные Li-Po АКБ 30 000 мА·ч; 2 АКБ в опубликованном комплекте"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "В исполнении «Батиметрия»: эхолот Lowrance Hook Reveal 5, ГНСС"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=66",
+        "https://omjet.ru/"
+      ],
+      "research_note": "Отдельный раздел ОМДЖЕТ ГМ01 на официальной странице. Высота 800 мм дана от уровня воды, поэтому не подменяет полную высоту изделия.",
+      "fields": {
+        "purpose": "Батиметрия, гидрологические обследования и мониторинг воды."
+      },
+      "image": {
+        "url": "https://cdn-ru.bitrix24.ru/b3963943/landing/89f/89fcb7a4bb24e8a586226cb905093fc8/katamaran_whiteback_2_1x.jpg",
+        "page_url": "https://omjet.ru/",
+        "caption": "ОМДЖЕТ ГМ01. Фото катамарана из раздела производителя.",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "ГМ01: опубликованная цена комплекта, 2 катамарана по перечню",
+          "equipment_price": 550000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "notes": "Без НДС. На странице комплект включает 2 катамарана: цену нельзя считать подтверждённой ценой одного аппарата; запросить КП. Не опубликованы отдельные цены ПО, внедрения и сервиса.",
+          "confirmed": true,
+          "source_url": "https://omjet.ru/",
+          "price_includes_vat": false,
+          "estimation_eligible": false
+        }
+      ]
+    },
+    {
+      "product_name": "T-16",
+      "manufacturer": "АО \"Зала Аэро\"",
+      "url": "https://zala-aero.com/en/product/zala-t-16/",
+      "title": "АО \"Зала Аэро\": T-16",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "text": "Более 4 часов",
+          "note": "Нижняя заявленная граница, а не максимальная автономность."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "text": "Максимальная взлётная масса 12 кг",
+          "note": "Не собственная масса аппарата без нагрузки."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Дальность применения более 75 км; удалённый доступ к мониторингу через ПО ZALA 4Z1"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "ПО ZALA 4Z1 для просмотра данных мониторинга и видеотрансляций"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=66",
+        "https://zala-aero.com/en/product/zala-t-16/"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Воздушный мониторинг линейной инфраструктуры, обследование объектов и поиск утечек.",
+        "limitations": "Карточка относится к T-16; данные T-16 VTOL и Z-16 не переносились."
+      },
+      "image": {
+        "url": "https://zala-aero.com/wp-content/uploads/2025/04/t-16_1-scaled.webp",
+        "page_url": "https://zala-aero.com/en/product/zala-t-16/",
+        "caption": "T-16. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Грузовик M700 V2",
+      "manufacturer": "ООО \"Лаборатория Будущего\"",
+      "url": "https://cablewalker.ru/products/700/",
+      "title": "ООО \"Лаборатория Будущего\": Грузовик M700 V2",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=66",
+        "https://cablewalker.ru/products/700/"
+      ],
+      "research_note": "Официальная карточка серии М700 найдена. Суффикс V2 в текущей странице не указан, поэтому данные другого исполнения и фотография не переносятся как подтверждённые для V2. Нужен паспорт V2.",
+      "fields": {
+        "purpose": "Аэрологистика грузов в труднодоступные места."
+      }
+    },
+    {
+      "product_name": "Грузовик М500 V2",
+      "manufacturer": "ООО \"Лаборатория Будущего\"",
+      "url": "https://xn--80aaorhk2b.xn--p1ai/product/gruzovik_m500",
+      "title": "Грузовик М500 V2: карточка изготовителя на Налетай.рф",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 40,
+          "note": "Именно М500 V2; данные карточки ООО «Лаборатория будущего» на Налетай.рф.",
+          "unit": "кг"
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1800,
+          "note": "Именно М500 V2; данные карточки ООО «Лаборатория будущего» на Налетай.рф.",
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 1700,
+          "note": "Именно М500 V2; данные карточки ООО «Лаборатория будущего» на Налетай.рф.",
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 500,
+          "note": "Именно М500 V2; данные карточки ООО «Лаборатория будущего» на Налетай.рф.",
+          "unit": "мм"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 27.777778,
+          "note": "Именно М500 V2; данные карточки ООО «Лаборатория будущего» на Налетай.рф.",
+          "unit": "м/с"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 0.2,
+          "note": "Именно М500 V2; данные карточки ООО «Лаборатория будущего» на Налетай.рф.",
+          "unit": "ч"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -10,
+          "value_max": 30,
+          "unit": "°C"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "text": "Описание: доставка на 10 км; таблица: максимальная дальность 20 км с типовой нагрузкой",
+          "note": "Разные режимы и дальность маршрута/доставки; безусловное число не подставляется."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "text": "65 кг — максимальная взлётная масса, не масса пустого аппарата"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автоматический возврат к точке старта; вертикальные взлёт и посадка"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Линия связи до 10 км, 2400 МГц"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия 1 год; минимальный заказ 1 аппарат"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Без грозы и обледенения; высота полёта до 1000 м; экипаж от 1 человека"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=67",
+        "https://cablewalker.ru/products/500/",
+        "https://xn--80aaorhk2b.xn--p1ai/product/gruzovik_m500"
+      ],
+      "research_note": "Найдена точная модификация М500 V2 в публичной карточке производителя ООО «Лаборатория будущего». Обычный М500 на cablewalker.ru имеет другое описание режимов; сведения разных версий не смешаны.",
+      "fields": {
+        "purpose": "Доставка грузов до 40 кг.",
+        "country_of_origin": "Россия",
+        "limitations": "Параметры относятся к М500 V2. Дальность доставки и максимальная дальность полёта имеют разные условия; гроза и обледенение исключены."
+      },
+      "offers": [
+        {
+          "label": "Цена изготовителя на Налетай.рф, от",
+          "equipment_price": 4775080,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "price_includes_vat": true,
+          "confirmed": true,
+          "source_url": "https://xn--80aaorhk2b.xn--p1ai/product/gruzovik_m500",
+          "notes": "Публичная цена от 4 775 080 ₽ с НДС. Базовый комплект: БАС М500 V2; отдельные цены ПО, внедрения и сервиса не опубликованы."
+        }
+      ],
+      "image": {
+        "url": "https://cdn.xn--80aaorhk2b.xn--p1ai/products/views/7291d0da-1055-4cb8-958b-08721b7f06eb_812x440.jpg",
+        "page_url": "https://xn--80aaorhk2b.xn--p1ai/product/gruzovik_m500",
+        "caption": "Грузовик М500 V2. Изображение в карточке ООО «Лаборатория будущего» на Налетай.рф.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Геоскан 801",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://download.geoscan.ru/site-files/801/Geoscan_801_Manual.pdf",
+      "title": "ООО \"Геоскан\": Геоскан 801",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Тепловизор 640×512 и две видеокамеры; десятикратное приближение",
+          "source_url": "https://www.geoscan.ru/ru/blog/novyy-produkt-geoskana-kompaktnyy-videokopter"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=70",
+        "https://download.geoscan.ru/site-files/801/Geoscan_801_Manual.pdf",
+        "https://www.geoscan.ru/ru/blog/novyy-produkt-geoskana-kompaktnyy-videokopter"
+      ],
+      "research_note": "Найден официальный паспорт и публикация производителя. При повторном получении сайт выдаёт проверку браузера; ранее загруженные паспортные характеристики сохранены без догадок."
+    },
+    {
+      "product_name": "Пегас",
+      "manufacturer": "ООО \"Аэродин\"",
+      "url": "https://xn--80aaorhk2b.xn--p1ai/product/udrone_pegas",
+      "title": "Пегас: карточка изготовителя на Налетай.рф",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 7,
+          "note": "До 7 кг в зависимости от конфигурации.",
+          "source_url": "https://aerodyne.tech/products",
+          "unit": "кг"
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 820,
+          "note": "Карточка производителя ООО «Аэродин» на Налетай.рф; конфигурация уточняется при заказе.",
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 2220,
+          "note": "Карточка производителя ООО «Аэродин» на Налетай.рф; конфигурация уточняется при заказе.",
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 230,
+          "note": "Карточка производителя ООО «Аэродин» на Налетай.рф; конфигурация уточняется при заказе.",
+          "unit": "мм"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 40,
+          "note": "Карточка производителя ООО «Аэродин» на Налетай.рф; конфигурация уточняется при заказе.",
+          "unit": "км"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 16.666667,
+          "note": "Карточка производителя ООО «Аэродин» на Налетай.рф; конфигурация уточняется при заказе.",
+          "unit": "м/с"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -30,
+          "value_max": 40,
+          "note": "Текущая карточка продавца; более ранний профиль НТИ указывает нижнюю границу −10 °C. Необходим паспорт выбранного исполнения.",
+          "unit": "°C"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "text": "Карточка: 1,2 ч с полезной нагрузкой, описание до 80 мин; профиль НТИ: около 75 мин при 1 кг и 45 мин при 7 кг",
+          "note": "Разные нагрузки и комплектации АКБ; безусловная автономность одной цифрой не установлена."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "text": "26 кг — максимальная взлётная масса, не масса пустого аппарата"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Связь до 20 км; 1400 и 2400 МГц"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Полетный комплект АКБ, шестиканальное зарядное устройство; 2, 4 или 6 АКБ в зависимости от задачи"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Пакет ПО uDrone; наземная станция с ноутбуком, пультом и антеннами; модульные полезные нагрузки"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия от 1 до 2 лет; комплект ЗИП"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Без грозы и обледенения; высота до 2500 м; экипаж от 1 человека"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=70",
+        "https://aerodyne.tech/products",
+        "https://xn--80aaorhk2b.xn--p1ai/product/udrone_pegas",
+        "https://pt.2035.university/project/udron-pegas"
+      ],
+      "research_note": "Подробные параметры найдены в карточке ООО «Аэродин» на Налетай.рф. У НТИ опубликованы другие режимы скорости, температуры и автономности; нужна сверка поколения и комплекта. Заголовок площадки содержит старую цену 657 000 ₽, в актуальном блоке заказа 2 500 000 ₽ с НДС: цену не использовать без КП.",
+      "fields": {
+        "purpose": "Модульная промышленная платформа для аэросъёмки, геологоразведки и логистики."
+      },
+      "offers": [
+        {
+          "label": "Цена изготовителя на Налетай.рф, от",
+          "equipment_price": 2500000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "price_includes_vat": true,
+          "confirmed": true,
+          "source_url": "https://xn--80aaorhk2b.xn--p1ai/product/udrone_pegas",
+          "notes": "Основной блок заказа: от 2 500 000 ₽ с НДС. Заголовок той же страницы содержит старую цену 657 000 ₽; требуется подтверждение комплектации и цены. ПО, АКБ, зарядное устройство и наземная станция входят в описанный комплект.",
+          "estimation_eligible": false
+        }
+      ],
+      "image": {
+        "url": "https://cdn.xn--80aaorhk2b.xn--p1ai/products/views/4572b3fd-b6fa-4cc8-90a7-45ab90cd8c2f_812x440.jpg",
+        "page_url": "https://xn--80aaorhk2b.xn--p1ai/product/udrone_pegas",
+        "caption": "Пегас. Изображение в карточке ООО «Аэродин» на Налетай.рф.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Геоскан 201 Термо",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://www.geoscankz.aero/catalog/bespilotnye-samolety/seriya-geoskan-201/geoskan-201-termo",
+      "title": "ООО \"Геоскан\": Геоскан 201 Термо",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 1.5,
+          "unit": "кг"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 3,
+          "unit": "ч"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40,
+          "note": "Опционально указывается исполнение до −40 °C; к базовому не относится.",
+          "unit": "°C"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 210,
+          "unit": "км"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 2220,
+          "note": "Размах крыла.",
+          "unit": "мм"
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "text": "Максимальная взлётная масса 8,5 кг",
+          "note": "Не собственная масса."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Ветер до 12 м/с; минимальная безопасная высота 100 м; предел высоты 4000 м"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Старт с пусковой установки; посадка на парашюте"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Зарядное устройство и две АКБ 5S 34 000 мА·ч в комплекте"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Радиомодем канала управления и телеметрии"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Geoscan Planner; тепловизор VLM640-Т и Sony ZV-E10"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия 2 года / 160 полётов; обучение и бессрочная техническая поддержка"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=71",
+        "https://www.geoscankz.aero/catalog/bespilotnye-samolety/seriya-geoskan-201/geoskan-201-termo"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "image": {
+        "url": "https://www.geoscankz.aero/images/catalog/geoscan-201-termo/201t_1.jpg",
+        "page_url": "https://www.geoscankz.aero/catalog/bespilotnye-samolety/seriya-geoskan-201/geoskan-201-termo",
+        "caption": "Геоскан 201 Термо. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "ДИАМ 20",
+      "manufacturer": "АО ГК \"Икар\"",
+      "url": "https://www.diam-aero.ru/bas_diam20.html",
+      "title": "АО ГК \"Икар\": ДИАМ 20",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 2000,
+          "note": "Ширина означает размах крыла.",
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 4000,
+          "note": "Ширина означает размах крыла.",
+          "unit": "мм"
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 5,
+          "note": "Опубликованный диапазон полезной нагрузки 3–5 кг.",
+          "unit": "кг"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 44,
+          "note": "На странице также округлено до 160 км/ч.",
+          "unit": "м/с"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "text": "Не менее 11 ч с 1,5 кг; 8 ч с 3 кг; 6 ч с 5 кг"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 800,
+          "unit": "км"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -30,
+          "value_max": 40,
+          "unit": "°C"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Бензиновый ДВС; бортовой генератор 12 В, до 200 Вт"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Взлёт с пусковой установки; посадка на парашюте"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Ветер до 15 м/с; высота до 4000 м"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Два отсека: фотокамера, тепловизор, магнитометр или грузовой бокс"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Изготовитель предлагает обслуживание БАС и полезных нагрузок"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=71",
+        "https://www.diam-aero.ru/bas_diam20.html"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Аэросъёмка, инспекция линейной инфраструктуры и доставка грузов."
+      }
+    },
+    {
+      "product_name": "Робот Городовой",
+      "manufacturer": "ООО \"Гумич РТК\"",
+      "url": "https://gumich-rtk.ru/roboty/patrulnyj/",
+      "title": "ООО \"Гумич РТК\": Робот Городовой",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=72",
+        "https://gumich-rtk.ru/roboty/patrulnyj/"
+      ],
+      "research_note": "Найдена современная карточка «Патрульный». В каталоге организатора название «Городовой»; соответствие комплектаций и паспорта требует подтверждения, числовые ТТХ не перенесены."
+    },
+    {
+      "product_name": "Трал Патруль 5",
+      "manufacturer": "ООО \"СМП Сервис\"",
+      "url": "https://www.smprobotics.ru/upload/medialibrary/178/tral_patrul_5_2019.pdf",
+      "title": "ООО \"СМП Сервис\": Трал Патруль 5",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автоматическое патрулирование по заданным маршрутам"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "IP-видеонаблюдение; видеозапись и аналитика зависят от исполнения 5.1/5.2"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Беспроводная связь с ситуационным центром; варианты оснащения согласовываются"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=72",
+        "https://www.smprobotics.ru/upload/medialibrary/178/tral_patrul_5_2019.pdf",
+        "https://www.smprobotics.ru/upload/medialibrary/679/tral-patrul-5-0.pdf",
+        "https://securityrobot.ru/mt-content/uploads/2019/04/tral_patrul_52_and_additional_equipment.pdf"
+      ],
+      "research_note": "Семейство Трал Патруль 5 имеет разные версии 5.0, 5.1, 5.2. Найдены противоречащие паспорта (например, запас хода 24 и 120 км), единая характеристика семейства не выбрана; требуется точный индекс исполнения."
+    },
+    {
+      "product_name": "TFM-15-8E",
+      "manufacturer": "ООО \"ЛМТ\"",
+      "url": "https://dexaero.ru/flot/",
+      "title": "ООО \"ЛМТ\": TFM-15-8E",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 15,
+          "unit": "кг"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 200,
+          "unit": "км"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "text": "Крейсерская скорость 140 км/ч; максимальная не опубликована"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=72",
+        "https://dexaero.ru/flot/"
+      ],
+      "research_note": "Точные обозначения аппаратов указаны эксплуатантом DEX AERO. Крейсерская скорость не записывается как максимальная. Дальность и нагрузка зависят от сценария полёта.",
+      "fields": {
+        "purpose": "Беспилотная перевозка грузов на удалённые территории."
+      },
+      "image": {
+        "url": "https://dexaero.ru/wp-content/uploads/2025/12/flot-1.png",
+        "page_url": "https://dexaero.ru/flot/",
+        "caption": "TFM-15-8E. Изображение из флота оператора DEX AERO.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Курьер-30",
+      "manufacturer": "ООО \"Клеверкоптер\"",
+      "url": "https://clevercopter.ru/курьер/",
+      "title": "ООО \"Клеверкоптер\": Курьер-30",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 8,
+          "note": "Текущая публикация производителя; ранее в реестре 6 кг.",
+          "unit": "кг"
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 2120,
+          "note": "Рабочее положение с грузовым коробом; транспортные габариты 880×800×480 мм.",
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 2090,
+          "note": "Рабочее положение с грузовым коробом; транспортные габариты 880×800×480 мм.",
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 760,
+          "note": "Рабочее положение с грузовым коробом; транспортные габариты 880×800×480 мм.",
+          "unit": "мм"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 0.6667,
+          "note": "До 40 минут с полной загрузкой, зависит от АКБ.",
+          "unit": "ч"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 30,
+          "note": "Радиус работы; доставка 5 кг с возвратом без замены АКБ — 20 км.",
+          "unit": "км"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40,
+          "unit": "°C"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Радиолиния до 30 км в прямой видимости; LTE в зоне покрытия"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Сменная Li-Po батарея, ёмкость подбирается по задаче"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Ручной режим и автоматический полёт по заданию"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Грузовой короб IP65; опционально агромодуль, лидар или фотограмметрическая камера"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=73",
+        "https://clevercopter.ru/курьер/"
+      ],
+      "research_note": "Официальная карточка обновлена: до 8 кг и до 40 минут; в более раннем реестре Аэронет указаны 6 кг и 20 минут. Условия и исполнение различаются, старые значения нельзя молча заменять.",
+      "fields": {
+        "purpose": "Перевозка грузов последней мили, мониторинг и сельскохозяйственные задачи.",
+        "limitations": "Ветер до 10 м/с. Сильный или ледяной дождь и метель нежелательны; условия тумана согласовываются."
+      },
+      "image": {
+        "url": "https://clevercopter.ru/wp-content/uploads/2025/02/IMG_0454-убрать-фон-400x300.jpg",
+        "page_url": "https://clevercopter.ru/%D0%BA%D1%83%D1%80%D1%8C%D0%B5%D1%80/",
+        "caption": "Курьер-30. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Ортез-1",
+      "manufacturer": "АО \"НПО Андроидная Техника\"",
+      "url": "https://npo-at.com/news/novyj-mediczinskij-robotizirovannyj-kompleks-poluchil-registraczionnoe-udostoverenie/",
+      "title": "АО \"НПО Андроидная Техника\": Ортез-1",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Механотерапия кисти с биологической обратной связью и интерфейсом мозг–компьютер"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Медицинская реабилитация; регистрационное удостоверение РЗН 2023/19818 от 20.03.2023"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=73",
+        "https://npo-at.com/news/novyj-mediczinskij-robotizirovannyj-kompleks-poluchil-registraczionnoe-udostoverenie/"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Восстановление двигательных функций кистей рук.",
+        "limitations": "Медицинское изделие: применение в рамках зарегистрированного назначения и инструкции конкретного комплекта. Не является грузовым транспортным роботом."
+      }
+    },
+    {
+      "product_name": "Роботизированный лафетный ствол",
+      "manufacturer": "ООО \"Коруфайер\"",
+      "url": "https://korufire.ru/product/лафетные-стволы/robotizirovannye/роботы/",
+      "title": "ООО \"Коруфайер\": Роботизированный лафетный ствол",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "text": "Расход 10–100 л/с по модификациям при 0,8 МПа",
+          "note": "Это расход огнетушащего вещества, не операции/час. Индекс ствола в исходном каталоге не уточнён."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Стационарное электропитание 230 В; мощность до 500 Вт; подключение к пожарному водоснабжению"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Рабочее давление 0,4–1,6 МПа; дальность струи 27–80 м в зависимости от модели"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Датчики поиска пламени и программно-аппаратный комплекс автоматического пожаротушения"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия на фурнитуру 3 года; обслуживание по паспорту исполнения"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=73",
+        "https://korufire.ru/product/лафетные-стволы/robotizirovannye/роботы/"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Автоматическое обнаружение очага и пожаротушение зданий и открытых площадок.",
+        "limitations": "Требуется проект пожаротушения и выбор точной модификации. Взрывозащита относится только к исполнению Ех."
+      },
+      "image": {
+        "url": "https://korufire.ru/upload/iblock/8be/3om6ylzx66v7d9p3oibehj4330dys4gv/Роботы_осн1.jpg",
+        "page_url": "https://korufire.ru/product/%D0%BB%D0%B0%D1%84%D0%B5%D1%82%D0%BD%D1%8B%D0%B5-%D1%81%D1%82%D0%B2%D0%BE%D0%BB%D1%8B/robotizirovannye/%D1%80%D0%BE%D0%B1%D0%BE%D1%82%D1%8B/",
+        "caption": "Роботизированный лафетный ствол. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Гумич спасатель",
+      "manufacturer": "ООО \"Гумич РТК\"",
+      "url": "https://gumich-rtk.ru/roboty/spasatel/",
+      "title": "ООО \"Гумич РТК\": Гумич спасатель",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 450,
+          "note": "Верхняя граница: масса не превышает 450 кг; зависит от исполнения.",
+          "unit": "кг"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Управление и видео до 40 км при прямой видимости; до 60 км с ретранслятором"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Мобильное приложение; дополнительно пульт или планшет; крепления пострадавшего и отсек аптечки"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=74",
+        "https://gumich-rtk.ru/roboty/spasatel/"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Перевозка пострадавших, самоходные носилки и мобильный перевязочный стол.",
+        "limitations": "Размеры зависят от платформы; заявление о проезде в дверной проём не заменяет числового требования к проходу."
+      },
+      "image": {
+        "url": "https://gumich-rtk.ru/wp-content/uploads/2022/spasatel/photo_2022-02-11_16-21-46.jpg",
+        "page_url": "https://gumich-rtk.ru/roboty/spasatel/",
+        "caption": "Гумич спасатель. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Роботизированный комплекс по обследованию грунта",
+      "manufacturer": "ООО \"Аврора Роботикс\"",
+      "url": "https://avrora-robotics.com/ru/",
+      "title": "ООО \"Аврора Роботикс\": Роботизированный комплекс по обследованию грунта",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Обработка измерений магнитометра, георадара и металлоискателя для обнаружения подземных объектов"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=74",
+        "https://avrora-robotics.com/ru/"
+      ],
+      "research_note": "Официальный сайт подтверждает геофизическое направление и применение набора мобильных датчиков. Масса, габариты и коммерческая комплектация обследовательского комплекса не опубликованы.",
+      "fields": {
+        "purpose": "Инженерные изыскания, геофизические обследования, археология и неразрушающий контроль."
+      }
+    },
+    {
+      "product_name": "Лоцман",
+      "manufacturer": "АО \"НПП ПТ Океанос\"",
+      "url": "https://www.oceanos.ru/plavsredstvo_dlya_gidrografii_i_gidrofiziki",
+      "title": "АО \"НПП ПТ Океанос\": Лоцман",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "text": "6–7 либо до 30 км/ч в зависимости от исполнения"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "text": "Не менее 60 минут",
+          "note": "Минимальная заявленная автономность."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Модульное размещение гидрографического, геофизического и экологического оборудования"
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "text": "90–200 кг снаряжённой массы в зависимости от исполнения",
+          "note": "Разные исполнения семейства; единое значение для автоматического подбора не установлено."
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "text": "130–200 кг в зависимости от исполнения",
+          "note": "Разные исполнения семейства; грузоподъёмность конкретной поставки требует паспорта."
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=74",
+        "https://www.oceanos.ru/plavsredstvo_dlya_gidrografii_i_gidrofiziki"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Гидрографические и геофизические работы на мелководье, перевозка оборудования.",
+        "limitations": "Модульная серия: полезная нагрузка, скорость и масса выбираются по конкретному исполнению."
+      },
+      "image": {
+        "url": "https://www.oceanos.ru/s1/files/Image/BEK/naeco_4.jpg",
+        "page_url": "https://www.oceanos.ru/plavsredstvo_dlya_gidrografii_i_gidrofiziki",
+        "caption": "Лоцман. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Сарган",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "url": "https://t.me/s/sevsu_live/10700",
+      "title": "ФГАОУ ВО \"Севастопольский Государственный Университет\": Сарган",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=75",
+        "https://t.me/s/sevsu_live/10700"
+      ],
+      "research_note": "Официальная публикация СевГУ подтверждает модель и разработчика, но не содержит полного паспорта. ТТХ соседних морских аппаратов не переносились; сохранено точное фото из каталога организатора."
+    },
+    {
+      "product_name": "Калкан",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "url": "https://t.me/s/sevsu_live/10700",
+      "title": "ФГАОУ ВО \"Севастопольский Государственный Университет\": Калкан",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=75",
+        "https://t.me/s/sevsu_live/10700"
+      ],
+      "research_note": "Официальная публикация СевГУ подтверждает модель и разработчика, но не содержит полного паспорта. ТТХ соседних морских аппаратов не переносились; сохранено точное фото из каталога организатора."
+    },
+    {
+      "product_name": "Роботизированная система патрулирования и охраны",
+      "manufacturer": "МАИ",
+      "url": "https://mai.ru/press/news/detail.php?ID=119181",
+      "title": "МАИ: Роботизированная система патрулирования и охраны",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Колёсная роботизированная система с круговым видеонаблюдением и ИК-подсветкой"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=75",
+        "https://mai.ru/press/news/detail.php?ID=119181"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Патрулирование и охрана воздушных судов на аэродромной стоянке.",
+        "limitations": "Публикация описывает исследовательскую разработку 2020 года; серийность, комплектацию и допуск на аэродром нужно подтвердить."
+      },
+      "image": {
+        "url": "https://mai.ru/upload/iblock/685/Foto-ZHukovskiy-2019-_1_.jpeg",
+        "page_url": "https://mai.ru/press/news/detail.php?ID=119181",
+        "caption": "Роботизированная система МАИ. Фото пресс-службы университета в публикации о проекте.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Муравей",
+      "manufacturer": "ООО \"Лаборатория Будущего\"",
+      "url": "https://cablewalker.ru/products/muravey24/",
+      "title": "ООО \"Лаборатория Будущего\": Муравей",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1941,
+          "note": "С учётом пропеллеров, текущая версия страницы производителя.",
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 1941,
+          "note": "С учётом пропеллеров, текущая версия страницы производителя.",
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 662,
+          "note": "С учётом пропеллеров, текущая версия страницы производителя.",
+          "unit": "мм"
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 17.3,
+          "note": "Снаряжённая масса; без АКБ 9,9 кг.",
+          "unit": "кг"
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "text": "12 кг в технической таблице, до 15 кг в описании",
+          "note": "Внутреннее противоречие официального источника; требуется паспорт."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 0.3833,
+          "note": "23 минуты с нагрузкой; до 52 минут без нагрузки.",
+          "unit": "ч"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 22,
+          "unit": "м/с"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40,
+          "unit": "°C"
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "value": 2500,
+          "note": "ГНСС 2,5 м; не точность посадки.",
+          "unit": "мм"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "ГНСС: GPS, ГЛОНАСС, Galileo, BeiDou"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Ровная площадка от 2,5×2,5 м; подготовленное покрытие не требуется"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "4 АКБ 22,2 В по 16 000 мА·ч"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Радиосвязь до 20 км, зависит от условий и комплектации"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия 12 месяцев или 100 циклов взлёт–посадка"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=77",
+        "https://cablewalker.ru/products/muravey24/"
+      ],
+      "research_note": "Официальная страница содержит разночтение: описание до 15 кг, техническая таблица до 12 кг; не подменять эти значения без паспорта конкретной версии.",
+      "fields": {
+        "purpose": "Доставка грузов в труднодоступные районы.",
+        "limitations": "Ветер до 10 м/с, нормальные климатические условия по ГОСТ Р 15150-69; требуется уточнение грузоподъёмности по паспорту."
+      },
+      "image": {
+        "url": "https://cablewalker.ru/media/products/muravey_iIurU3S.png",
+        "page_url": "https://cablewalker.ru/products/muravey24/",
+        "caption": "Муравей. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "EVOCARGO N1",
+      "manufacturer": "ООО \"Эвокарго\"",
+      "url": "https://www.evocargo.com/",
+      "title": "ООО \"Эвокарго\": EVOCARGO N1",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Модель сервиса Robots-as-a-Service включает обслуживание автономных грузовиков"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Собственное ПО диспетчеризации и электронный сбор данных о перевозках"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Электрический транспорт; круглосуточная работа с остановками на подзарядку"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Межскладские и внутризаводские перевозки; кузов выбирается под груз и площадку"
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 2000,
+          "note": "Опубликовано для Evocargo N1 на Томскнефтехиме 12.03.2024; до 6 европаллет.",
+          "source_url": "https://mintrans.gov.ru/press-center/branch-news/3446",
+          "unit": "кг"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 150,
+          "value_max": 200,
+          "note": "Пробег на одном заряде в описанном внедрении; зависит от условий.",
+          "source_url": "https://mintrans.gov.ru/press-center/branch-news/3446",
+          "unit": "км"
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "text": "В официальном сообщении о внедрении заявлена точность до сантиметра без спутниковой навигации",
+          "note": "Описание кейса не заменяет протокол измерений для конкретной площадки.",
+          "source_url": "https://mintrans.gov.ru/press-center/branch-news/3446"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=78",
+        "https://www.evocargo.com/",
+        "https://mintrans.gov.ru/press-center/branch-news/3446"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Автономная перевозка паллет и грузов между складами и производствами.",
+        "description": "Действующие внедрения изготовителя: Wildberries, «Почта России» во Внуково-2, «СИБУР», «Русклимат» и другие предприятия."
+      },
+      "image": {
+        "url": "https://www.evocargo.com/upload/resize_cache/iblock/59b/la2wzp7fad1x2sfjqlkicne3kw0856wl/972_630_1/01_Wildberries.webp",
+        "page_url": "https://www.evocargo.com/",
+        "caption": "Evocargo N1 в работе у Wildberries. Фото с сайта разработчика.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Беспилотный тягач (Когнитив Пилот)",
+      "manufacturer": "АО \"Когнитив Пилот\"",
+      "url": "https://cognitivepilot.com/cognitive-news/blog/aeroport-budushchego/",
+      "title": "АО \"Когнитив Пилот\": Беспилотный тягач (Когнитив Пилот)",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=78",
+        "https://cognitivepilot.com/cognitive-news/blog/aeroport-budushchego/"
+      ],
+      "research_note": "Официальная публикация об испытаниях тягача в Пулково; тяговое усилие, массы и ресурс конкретной модели в ней не раскрыты.",
+      "fields": {
+        "purpose": "Автономное перемещение багажных тележек в аэропорту.",
+        "description": "Cognitive Pilot описывает навигацию, планирование маршрута и безопасное движение на испытаниях в Пулково."
+      }
+    },
+    {
+      "product_name": "Беспилотный AMT 6×6",
+      "manufacturer": "ООО \"Амт Н.В.\"",
+      "url": "https://tehno-trans74.ru/news/bespilotnyj-sedelnyj-tyagach-amt-638914-rossijskaya-moshh-i-avtonomnost-na-innoprom-2026",
+      "title": "ООО \"Амт Н.В.\": Беспилотный AMT 6×6",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=78",
+        "https://tehno-trans74.ru/news/bespilotnyj-sedelnyj-tyagach-amt-638914-rossijskaya-moshh-i-avtonomnost-na-innoprom-2026"
+      ],
+      "research_note": "Найден официальный дилерский материал про АМТ 638914 6×6. Исходная позиция не содержит индекса шасси, поэтому параметры 638914 не перенесены автоматически; необходима идентификация комплектации."
+    },
+    {
+      "product_name": "Багира",
+      "manufacturer": "ООО \"Прикладная Робототехника\"",
+      "url": "https://wiki.appliedrobotics.ru/",
+      "title": "ООО \"Прикладная Робототехника\": Багира",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=79",
+        "https://wiki.appliedrobotics.ru/",
+        "https://appliedrobotics.ru/?page_id=13"
+      ],
+      "research_note": "Проверены сайт и база знаний изготовителя. Отдельная открытая карточка «Багира» с паспортом не найдена; название не подменялось другими мобильными платформами. Сохранено фото организатора."
+    },
+    {
+      "product_name": "В-120",
+      "manufacturer": "ООО \"Аэромакс\"",
+      "url": "https://www.aeromax-group.ru/produkciya/bas-vertolyotnogo-tipa/b-120/",
+      "title": "ООО \"Аэромакс\": В-120",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 120,
+          "unit": "кг"
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 370,
+          "note": "Масса пустого БВС; максимальный взлётный вес не менее 500 кг.",
+          "unit": "кг"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 47.2222,
+          "note": "170 км/ч.",
+          "unit": "м/с"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 3,
+          "unit": "ч"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 350,
+          "unit": "км"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Взлётно-посадочная площадка 20×20 м; вертикальный взлёт и посадка"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Топливная силовая установка; запас топлива до 80 л"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Требуется прямая радиовидимость наземной станции управления"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Транспортный контейнер, оптические системы и оборудование экологического мониторинга"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=80",
+        "https://www.aeromax-group.ru/produkciya/bas-vertolyotnogo-tipa/b-120/"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Перевозка грузов, мониторинг линейной инфраструктуры и поисково-спасательные работы.",
+        "limitations": "Простые метеоусловия, боковой ветер при взлёте/посадке до 10 м/с; высота до 2000 м."
+      },
+      "image": {
+        "url": "https://www.aeromax-group.ru/wp-content/uploads/2026/05/v-120.png",
+        "page_url": "https://www.aeromax-group.ru/produkciya/bas-vertolyotnogo-tipa/b-120/",
+        "caption": "В-120. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Беспилотный «Львёнок-Москва»",
+      "manufacturer": "ООО \"ПК ТС\"",
+      "url": "https://www.mosmetro.ru/news/details/7726",
+      "title": "ООО \"ПК ТС\": Беспилотный «Львёнок-Москва»",
+      "retrieved_at": "2026-09-29",
+      "source_type": "case_study",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=80",
+        "https://www.mosmetro.ru/news/details/7726"
+      ],
+      "research_note": "Первичный источник — эксплуатант Московский метрополитен. Технические параметры обычного 71-911ЕМ не перенесены на беспилотную модификацию «Львёнок-Москва».",
+      "fields": {
+        "purpose": "Автоматизированные пассажирские перевозки по трамвайным маршрутам.",
+        "description": "Эксплуатант сообщил о регулярном движении с пассажирами по маршруту №10 с сентября 2025 года.",
+        "limitations": "Требуются оборудованный маршрут и интеграция с городской трамвайной инфраструктурой; наличие сотрудника в салоне не означает продажу автономного серийного комплекта."
+      }
+    },
+    {
+      "product_name": "Беспилотный поезд \"2024\"",
+      "manufacturer": "АО \"Метровагонмаш\"",
+      "url": "https://transport.mos.ru/mostrans/all_news/128068",
+      "title": "АО \"Метровагонмаш\": Беспилотный поезд \"2024\"",
+      "retrieved_at": "2026-09-29",
+      "source_type": "case_study",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=81",
+        "https://transport.mos.ru/mostrans/all_news/128068"
+      ],
+      "research_note": "Первичный источник Московского транспорта описывает обкатку на базе «Москва-2024». Испытания без пассажиров; планы внедрения не превращены в статус серийного доступного продукта.",
+      "fields": {
+        "purpose": "Автоматизированное движение поезда метро.",
+        "limitations": "Опытная эксплуатация на БКЛ без пассажиров; коммерческие условия и характеристики системы автоведения требуют подтверждения у поставщика."
+      }
+    },
+    {
+      "product_name": "L5",
+      "manufacturer": "ООО \"Автотех\"",
+      "url": "https://truck.navio.auto/",
+      "title": "ООО \"Автотех\": L5",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Камеры, лидары и радары; собственная система AI-водителя"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "text": "До 23 часов движения в сутки",
+          "note": "Режим использования, не пробег или время на одной заправке."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Постоянное наблюдение удалённых операторов; параметры канала согласовываются"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Совместимость с различными полуприцепами"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=81",
+        "https://truck.navio.auto/"
+      ],
+      "research_note": "Исходный CSV организатора описывает L5 как магистральный грузовой тягач; сопоставлен с официальной страницей truck.navio.auto. У Navio также есть пассажирский шаттл L5, его данные сюда не переносились.",
+      "fields": {
+        "purpose": "Автономные магистральные грузоперевозки.",
+        "limitations": "L5 опубликован как прототип тягача, отличается от одноимённого пассажирского шаттла L5."
+      }
+    },
+    {
+      "product_name": "Беспилотное такси Яндекс",
+      "manufacturer": "ООО \"Яндекс\"",
+      "url": "https://www.yandex.ru/company/news/10-07-2026-01",
+      "title": "ООО \"Яндекс\": Беспилотное такси Яндекс",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Вызов машины в приложении Яндекс Go"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Тестовый маршрут между офисами Яндекса в Москве; в салоне водитель-испытатель"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=81",
+        "https://www.yandex.ru/company/news/10-07-2026-01"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Пассажирские перевозки на роботакси.",
+        "description": "Официально описаны сервисы в Иннополисе и Сириусе, а также тестирование между офисами в Москве.",
+        "limitations": "Параметры зависят от автомобильной платформы и разрешённой зоны эксплуатации; отдельная серийная модель и цена продажи не опубликованы."
+      },
+      "image": {
+        "url": "https://avatars.mds.yandex.net/get-yablogs/6208947/file_1783677206014/orig",
+        "page_url": "https://www.yandex.ru/company/news/10-07-2026-01",
+        "caption": "Беспилотное такси Яндекс. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Робот-расцепщик",
+      "manufacturer": "АО \"Концерн Телематика\"",
+      "url": "https://r.telematika.com/",
+      "title": "АО \"Концерн Телематика\": Робот-расцепщик",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Изготовитель выполняет монтаж, пусконаладку, сервисное обслуживание и поддержку РТС"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Интеграция в технологические процессы железнодорожной станции"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 2.7778,
+          "note": "До 10 км/ч; синхронизация с движением состава.",
+          "unit": "м/с"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Расцепка вагонов на сортировочных горках; режим эксплуатации 24/7"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=82",
+        "https://r.telematika.com/"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "image": {
+        "url": "https://r.telematika.com/upload/iblock/808/ihlhqgnea6zkvv1fk21t4yi7fm7tjrjx.jpg",
+        "page_url": "https://r.telematika.com/",
+        "caption": "Робот-расцепщик. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      },
+      "fields": {
+        "purpose": "Автоматическая расцепка грузовых вагонов.",
+        "limitations": "Стационарная интеграция в конкретную сортировочную станцию; размеры и обеспечение проходов определяются проектом."
+      }
+    },
+    {
+      "product_name": "Робот-растормаживатель",
+      "manufacturer": "АО \"Концерн Телематика\"",
+      "url": "https://r.telematika.com/",
+      "title": "АО \"Концерн Телематика\": Робот-растормаживатель",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Изготовитель выполняет монтаж, пусконаладку, сервисное обслуживание и поддержку РТС"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Интеграция в технологические процессы железнодорожной станции"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=82",
+        "https://r.telematika.com/"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "image": {
+        "url": "https://r.telematika.com/upload/iblock/07d/kn50vzx9bgy0e8bl8fy1t4cvtcrxpjby.jpg",
+        "page_url": "https://r.telematika.com/",
+        "caption": "Робот-растормаживатель. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      },
+      "fields": {
+        "purpose": "Автоматический отпуск тормозов грузовых вагонов.",
+        "limitations": "Публикуемые эффекты +4,6% к пропускной способности и −50% времени обработки состава относятся к заявлению изготовителя; не являются универсальной производительностью."
+      }
+    },
+    {
+      "product_name": "Ровер для работы с грузовыми вагонами",
+      "manufacturer": "АО \"Нииас\"",
+      "url": "https://www.vniias.ru/",
+      "title": "АО \"Нииас\": Ровер для работы с грузовыми вагонами",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=82",
+        "https://www.vniias.ru/"
+      ],
+      "research_note": "Отдельной подтверждённой карточки ровера для работы с грузовыми вагонами не найдено. Робот-расцепщик «Горан» является отдельным изделием: его ТТХ не переносились. Сохранено изображение организатора."
+    },
+    {
+      "product_name": "T-300-8E",
+      "manufacturer": "ООО \"ЛМТ\"",
+      "url": "https://dexaero.ru/flot/",
+      "title": "ООО \"ЛМТ\": T-300-8E",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 100,
+          "unit": "кг"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 200,
+          "unit": "км"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "text": "Крейсерская скорость 155 км/ч; максимальная не опубликована"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=83",
+        "https://dexaero.ru/flot/"
+      ],
+      "research_note": "Точные обозначения аппаратов указаны эксплуатантом DEX AERO. Крейсерская скорость не записывается как максимальная. Дальность и нагрузка зависят от сценария полёта.",
+      "fields": {
+        "purpose": "Беспилотная перевозка грузов на удалённые территории."
+      },
+      "image": {
+        "url": "https://dexaero.ru/wp-content/uploads/2025/12/flot-2.png",
+        "page_url": "https://dexaero.ru/flot/",
+        "caption": "T-300-8E. Изображение из флота оператора DEX AERO.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Барабулька",
+      "manufacturer": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "url": "https://t.me/s/sevsu_live/10700",
+      "title": "ФГАОУ ВО \"Севастопольский Государственный Университет\": Барабулька",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=83",
+        "https://t.me/s/sevsu_live/10700"
+      ],
+      "research_note": "Официальная публикация СевГУ подтверждает модель и разработчика, но не содержит полного паспорта. ТТХ соседних морских аппаратов не переносились; сохранено точное фото из каталога организатора."
+    },
+    {
+      "product_name": "ВТ-440м",
+      "manufacturer": "АО \"НПП \"Радар ММС\"",
+      "url": "https://aeronext.aero/UserFiles/ContentFiles/%D0%A0%D0%B0%D0%B4%D0%B0%D1%80%20%D0%9C%D0%9C%D0%A1_%D0%A5%D0%B5%D0%BB%D0%B8%D0%A0%D0%B0%D1%88%D0%B0_2025_638831716775729885.pdf#page=5",
+      "title": "АО \"НПП \"Радар ММС\": ВТ-440м",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 100,
+          "unit": "кг"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 5,
+          "unit": "ч"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 400,
+          "unit": "км"
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 7200,
+          "note": "С раскрытыми лопастями; сложенная длина 5900 мм.",
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 1650,
+          "note": "С раскрытыми лопастями; сложенная длина 5900 мм.",
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 2400,
+          "note": "С раскрытыми лопастями; сложенная длина 5900 мм.",
+          "unit": "мм"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автопилот"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Двигатель внутреннего сгорания; топливная инфраструктура"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=84",
+        "https://aeronext.aero/UserFiles/ContentFiles/%D0%A0%D0%B0%D0%B4%D0%B0%D1%80%20%D0%9C%D0%9C%D0%A1_%D0%A5%D0%B5%D0%BB%D0%B8%D0%A0%D0%B0%D1%88%D0%B0_2025_638831716775729885.pdf#page=5"
+      ],
+      "research_note": "Официальная презентация АО «НПП Радар ММС» на отраслевом мероприятии, слайд 5. Отличается от ранней модели ВТ 440: использованы именно данные ВТ-440м.",
+      "fields": {
+        "purpose": "Воздушная доставка тяжёлых грузов в труднодоступные регионы.",
+        "description": "В презентации производителя описаны регулярные грузовые рейсы для «Газпромнефть-Снабжения» в ЯНАО.",
+        "limitations": "В источнике скорость 110 км/ч обозначена крейсерской, не максимальной; температуры числом не раскрыты."
+      }
+    },
+    {
+      "product_name": "ОРКАН",
+      "manufacturer": "ЗАО \"Си Проект\"",
+      "url": "https://seaproject.ru/orkan",
+      "title": "ЗАО \"Си Проект\": ОРКАН",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 5300,
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 1700,
+          "unit": "мм"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автономный, дистанционный и смешанный режимы; маршрут, удержание позиции и обход препятствий"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Телеметрия и данные на береговой пульт в реальном времени либо бортовая запись"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Модульная установка гидроакустического оборудования, средств спасения, лидаров и подводных аппаратов"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Бензиновый двигатель с водомётным движителем"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=84",
+        "https://seaproject.ru/orkan"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Гидрографические обследования, доставка грузов, экологический мониторинг и спасательные работы.",
+        "country_of_origin": "Россия"
+      }
+    },
+    {
+      "product_name": "БРИЗ",
+      "manufacturer": "ЗАО \"Си Проект\"",
+      "url": "https://seaproject.ru/breeze",
+      "title": "ЗАО \"Си Проект\": БРИЗ",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 7900,
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 2200,
+          "unit": "мм"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автономный, дистанционный и смешанный режимы; маршрут, удержание позиции и обход препятствий"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Телеметрия и данные на береговой пульт в реальном времени либо бортовая запись"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Модульная установка гидроакустического оборудования, средств спасения, лидаров и подводных аппаратов"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Дизельный двигатель с водомётным движителем"
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 500,
+          "unit": "кг"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 7.7167,
+          "note": "15 узлов, пересчитано в м/с.",
+          "unit": "м/с"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=84",
+        "https://seaproject.ru/breeze"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Гидрографические обследования, доставка грузов, экологический мониторинг и спасательные работы.",
+        "country_of_origin": "Россия"
+      }
+    },
+    {
+      "product_name": "БВС ОМДЖЕТ-03",
+      "manufacturer": "ООО \"Роспроект\"",
+      "url": "https://omjet.ru/",
+      "title": "ООО \"Роспроект\": БВС ОМДЖЕТ-03",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1650,
+          "note": "Ширина означает размах крыла.",
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 3000,
+          "note": "Ширина означает размах крыла.",
+          "unit": "мм"
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 2,
+          "unit": "кг"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 5,
+          "note": "До 300 минут, зависит от нагрузки.",
+          "unit": "ч"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 300,
+          "unit": "км"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40,
+          "unit": "°C"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Электрическая силовая установка; комплект АКБ и зарядное устройство"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Управление до 40 км; опциональное видео до 30 км в прямой видимости"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Вертикальный взлёт и посадка"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Опция АФС: камера 45 Мп с центральным затвором, геотегирование и ГНСС"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=85",
+        "https://omjet.ru/"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Аэрофотосъёмка и мониторинг территорий.",
+        "limitations": "Ветер при вертикальном полёте до 8 м/с, горизонтальном до 12 м/с; высота до 3050 м."
+      },
+      "offers": [
+        {
+          "label": "ОМДЖЕТ-03, базовый комплект",
+          "equipment_price": 3300000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "notes": "Без НДС. Комплект с АКБ, пультом, зарядным устройством и кейсом. Версия АФС опубликована за 4 400 000 ₽ без НДС; стоимость сервиса отдельно не раскрыта.",
+          "confirmed": true,
+          "source_url": "https://omjet.ru/",
+          "price_includes_vat": false
+        }
+      ]
+    },
+    {
+      "product_name": "OG-07 \"Стрекоза\"",
+      "manufacturer": "ООО \"Бас Глори Эйр\"",
+      "url": "https://basga.ru/",
+      "title": "ООО \"Бас Глори Эйр\": OG-07 \"Стрекоза\"",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=85",
+        "https://basga.ru/"
+      ],
+      "research_note": "Официальный каталог производителя проверен, но точная модель OG-07 «Стрекоза» в текущей линейке не найдена. Модели OG-25/40/50/65/202 не использовались вместо неё; сохранено фото организатора."
+    },
+    {
+      "product_name": "Вихрь-1М",
+      "manufacturer": "ООО \"Интэк\"",
+      "url": "https://xn--80aaorhk2b.xn--p1ai/product/geksakopter_vihr_1m",
+      "title": "Вихрь-1М: карточка изготовителя на Налетай.рф",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 20,
+          "note": "Карточка точной модификации Вихрь-1М; типовая нагрузка для времени и дальности не раскрыта.",
+          "unit": "кг"
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 1844,
+          "note": "Карточка точной модификации Вихрь-1М; типовая нагрузка для времени и дальности не раскрыта.",
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 1844,
+          "note": "Карточка точной модификации Вихрь-1М; типовая нагрузка для времени и дальности не раскрыта.",
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 663,
+          "note": "Карточка точной модификации Вихрь-1М; типовая нагрузка для времени и дальности не раскрыта.",
+          "unit": "мм"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 40,
+          "note": "Карточка точной модификации Вихрь-1М; типовая нагрузка для времени и дальности не раскрыта.",
+          "unit": "км"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 30,
+          "note": "Карточка точной модификации Вихрь-1М; типовая нагрузка для времени и дальности не раскрыта.",
+          "unit": "м/с"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -30,
+          "value_max": 50,
+          "unit": "°C"
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "text": "30 кг — максимальная взлётная масса, не масса пустого аппарата"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Таблица: линия связи до 15 км; базовый комплект содержит пульт на 10 км",
+          "note": "Два значения в одной карточке; дальность определяется комплектацией и условиями."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "В комплекте 2 АКБ и зарядная станция с одним слотом"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "ПО настройки, маршрутных миссий и телеметрии; FPV-камера и кронштейн полезной нагрузки"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Ветер до 15 м/с; высота до 2000 м; экипаж от 1 человека"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "text": "45 минут в карточке; до 40 минут в приложенной презентации изготовителя",
+          "note": "В архиве документации, слайд 7, опубликовано другое время; условия нагрузки и версия не раскрыты. Требуется паспорт конкретной комплектации."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия 1 год; изготовитель предлагает обучение эксплуатации и дальнейшее сопровождение",
+          "note": "Сопровождение указано в презентации компании, слайд 15; объём сервиса определяется договором."
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=85",
+        "https://uav.intecgroup.ru/",
+        "https://xn--80aaorhk2b.xn--p1ai/product/geksakopter_vihr_1m",
+        "https://cdn.xn--80aaorhk2b.xn--p1ai/products/documents/dee71370-9d84-46c2-aecb-91f57b4a2c03.zip"
+      ],
+      "research_note": "Найдена точная модификация Вихрь-1М в публичной карточке ООО «ИНТЭК ПРОМЫШЛЕННЫЕ СИСТЕМЫ» на Налетай.рф. На собственном сайте указано более общее название Вихрь-1; данные 1 и 1М не объединялись. Для связи карточка указывает 15 км, а комплектный пульт — 10 км. Приложенная презентация изготовителя, слайд 7, подтверждает размеры 1844×1844×663 мм, 20 кг и 30 м/с, но указывает 40 минут против 45 минут в карточке; автономность оставлена текстом.",
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Перевозка грузов и мониторинг.",
+        "limitations": "Точная модификация 1М. Опубликованные дальность, время и масса нагрузки имеют разные условия и не гарантируются одновременно."
+      },
+      "offers": [
+        {
+          "label": "Цена изготовителя на Налетай.рф, от",
+          "equipment_price": 2000000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "price_includes_vat": true,
+          "confirmed": true,
+          "source_url": "https://xn--80aaorhk2b.xn--p1ai/product/geksakopter_vihr_1m",
+          "notes": "Опубликовано от 2 000 000 ₽, включая НДС. Комплект: аппарат, камера, пульт, кронштейн, две АКБ, одноканальное зарядное устройство. Отдельная стоимость сервиса не опубликована."
+        }
+      ],
+      "image": {
+        "url": "https://cdn.xn--80aaorhk2b.xn--p1ai/products/views/a7e71c74-7ff3-4d02-8eae-cf85b173fb9e_812x440.jpg",
+        "page_url": "https://xn--80aaorhk2b.xn--p1ai/product/geksakopter_vihr_1m",
+        "caption": "Вихрь-1М. Изображение в карточке изготовителя на Налетай.рф.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Горгона 15",
+      "manufacturer": "ООО \"КБ Атл\"",
+      "url": "https://kb-atl.ru/drone-gorgona-22",
+      "title": "ООО \"КБ Атл\": Горгона 15",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=86",
+        "https://kb-atl.ru/drone-gorgona-22"
+      ],
+      "research_note": "Найдена точная официальная карточка «Горгона 15». Сохранена ссылка на изготовителя; специальные боевые настройки, инструкции и оборудование не извлекались.",
+      "fields": {
+        "country_of_origin": "Россия"
+      }
+    },
+    {
+      "product_name": "InnoVTOL-3S",
+      "manufacturer": "АНО ВО \"Университет Иннополис\"",
+      "url": "https://innoit.ru/vtol",
+      "title": "АНО ВО \"Университет Иннополис\": InnoVTOL-3S",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 2290,
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 3050,
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 690,
+          "unit": "мм"
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 5,
+          "unit": "кг"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 31.9444,
+          "note": "115 км/ч.",
+          "unit": "м/с"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "text": "4 ч с 1 кг; 3 ч с 4 кг; 5 ч в FAQ без условий"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 300,
+          "unit": "км"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40,
+          "unit": "°C"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Площадка от 10×10 м с уклоном не более 7%; исключить попадание грязи на винты"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Гибридная схема: бензиновый маршевый двигатель и электрические подъёмные моторы"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Видео до 20 км, телеметрия до 40 км; диапазоны зависят от исполнения"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия 1 год или 100 лётных часов"
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "text": "До 15 км²/ч в сценарии создания цифровой модели местности",
+          "note": "Условная производительность аэросъёмки, не транспортные операции/час."
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=89",
+        "https://innoit.ru/vtol"
+      ],
+      "research_note": "В текущей таблице 4 часа с 1 кг и 3 часа с 4 кг; FAQ указывает максимум 5 часов без условий. Автономность сохранена с нагрузкой, без выбора удобного значения.",
+      "fields": {
+        "purpose": "Мониторинг территорий, геодезия и воздушная доставка грузов.",
+        "limitations": "Ветер при взлёте до 8 м/с; в текущей таблице максимальная высота 2500 м над уровнем моря."
+      },
+      "image": {
+        "url": "https://static.tildacdn.com/tild6162-3731-4133-a633-396638393534/11_1_1.png",
+        "page_url": "https://innoit.ru/vtol",
+        "caption": "InnoVTOL-3S. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Геоскан 701 Видео",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://geoscankz.aero/catalog/bespilotnye-samolety/geoskan-701/geoskan-701-video",
+      "title": "ООО \"Геоскан\": Геоскан 701 Видео",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 3.5,
+          "unit": "кг"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 10,
+          "unit": "ч"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 1000,
+          "unit": "км"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40,
+          "unit": "°C"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 3300,
+          "note": "Размах крыла.",
+          "unit": "мм"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Четырёхтактный бензиновый ДВС; заправочная канистра 5 л в комплекте"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Пусковая установка; парашютная посадка с баллонетом"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Дуплексный радиомодем для Full HD-видео, команд и телеметрии"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия 1 год / 200 часов полёта, обучение и бессрочная техническая поддержка"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=91",
+        "https://www.geoscan.ru/ru/products/geoscan701-video",
+        "https://geoscankz.aero/catalog/bespilotnye-samolety/geoskan-701/geoskan-701-video"
+      ],
+      "research_note": "Проведён поиск по точному наименованию и производителю. Числовые параметры других моделей не переносились. Для неопубликованных параметров необходим паспорт конкретного исполнения и коммерческое предложение.",
+      "fields": {
+        "purpose": "Видеомониторинг протяжённых и труднодоступных территорий."
+      },
+      "image": {
+        "url": "https://geoscankz.aero/images/catalog/geoscan-701-video/701_video_stranica_1.jpg",
+        "page_url": "https://geoscankz.aero/catalog/bespilotnye-samolety/geoskan-701/geoskan-701-video",
+        "caption": "Геоскан 701 Видео. Изображение со страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "miniSIGMA",
+      "manufacturer": "ООО НПП \"Авакс -Геосервис\"",
+      "url": "https://uav-siberia.com/minisigma",
+      "title": "ООО НПП \"Авакс -Геосервис\": miniSIGMA",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 2.5,
+          "unit": "кг"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 2,
+          "unit": "ч"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 140,
+          "unit": "км"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -20,
+          "value_max": 40,
+          "unit": "°C"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 3048,
+          "note": "Размах крыла текущей версии.",
+          "unit": "мм"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автономный полёт по маршруту; инерциальная навигация"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "ПО ЭФИР, совместимость с Astra Linux, интеграция с «Небосвод»; групповое управление до 10 БВС"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Вертикальный взлёт и посадка; сборка менее 15 минут"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Ветер до 10 м/с; предельная высота 3000 м"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Обучение операторов, онлайн-поддержка; гарантия 1 год",
+          "source_url": "https://sigma.uav-siberia.com/"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=91",
+        "https://uav-siberia.com/minisigma",
+        "https://sigma.uav-siberia.com/"
+      ],
+      "research_note": "Текущая версия отличается от старой sigma.uav-siberia.com/ms: размах 3048 вместо 2500 мм, температура до +40 вместо +45 °C. Проверять паспорт поколения; взлётная масса не записывалась как собственная.",
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Мониторинг, геодезия и картография."
+      },
+      "image": {
+        "url": "https://static.tildacdn.com/tild6136-6566-4736-b235-636236613566/_387.png",
+        "page_url": "https://uav-siberia.com/minisigma",
+        "caption": "miniSIGMA. Фото с официальной страницы продукта.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "SIGMA",
+      "manufacturer": "ООО НПП \"Авакс -Геосервис\"",
+      "url": "https://xn--80aaorhk2b.xn--p1ai/product/sigma",
+      "title": "SIGMA: карточка изготовителя на Налетай.рф",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "Аэромагнитный комплекс AGP-UAV-mag",
+          "source_url": "https://aerogeo.ru/news/peredovye-tehnologii-v-geofizike-aeromagnitnyy-kompleks-na-baze-bespilotnogo-samoleta-vtol"
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 5,
+          "note": "Публичная карточка изготовителя ООО НПП «АВАКС-ГеоСервис», модель SIGMA, не miniSIGMA.",
+          "unit": "кг"
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 2210,
+          "note": "Публичная карточка изготовителя ООО НПП «АВАКС-ГеоСервис», модель SIGMA, не miniSIGMA.",
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 4050,
+          "note": "Публичная карточка изготовителя ООО НПП «АВАКС-ГеоСервис», модель SIGMA, не miniSIGMA.",
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 860,
+          "note": "Публичная карточка изготовителя ООО НПП «АВАКС-ГеоСервис», модель SIGMA, не miniSIGMA.",
+          "unit": "мм"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 30.555556,
+          "note": "Публичная карточка изготовителя ООО НПП «АВАКС-ГеоСервис», модель SIGMA, не miniSIGMA.",
+          "unit": "м/с"
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "value": 500,
+          "note": "Публичная карточка изготовителя ООО НПП «АВАКС-ГеоСервис», модель SIGMA, не miniSIGMA.",
+          "unit": "км"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "value": 6,
+          "note": "Публичная карточка изготовителя ООО НПП «АВАКС-ГеоСервис», модель SIGMA, не miniSIGMA.",
+          "unit": "ч"
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "value": -30,
+          "value_max": 40,
+          "unit": "°C"
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "text": "29,9 кг — максимальная взлётная масса, не масса пустого аппарата"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "Автоматический маршрут, вертикальные взлёт и посадка"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Командно-телеметрическая связь до 100 км; 868,7–869,2 МГц"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "В комплекте 2 АКБ и зарядное устройство с блоком питания; маршевый ДВС 61 см³"
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "text": "Гарантия 300 лётных часов / 1 год; до 3 лет при регламентных работах",
+          "note": "Гарантийный срок не равен сроку службы."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Без грозы и обледенения; ветер до 15 м/с; высота до 3000 м; экипаж от 2 человек"
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "text": "Специально подготовленная взлётно-посадочная площадка не требуется; сборка около 15 минут"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/organizer-catalog.pdf#page=91",
+        "https://aerogeo.ru/news/peredovye-tehnologii-v-geofizike-aeromagnitnyy-kompleks-na-baze-bespilotnogo-samoleta-vtol",
+        "https://xn--80aaorhk2b.xn--p1ai/product/sigma"
+      ],
+      "research_note": "Точная SIGMA найдена в карточке изготовителя на Налетай.рф; автономность до 6 ч также подтверждается реализованным кейсом АО «ГНПП Аэрогеофизика». Характеристики miniSIGMA не переносились.",
+      "fields": {
+        "purpose": "Продолжительные аэрогеофизические исследования и магнитная съёмка.",
+        "country_of_origin": "Россия",
+        "limitations": "SIGMA отличается от miniSIGMA. Полёты при грозе и обледенении исключены; гарантия до 3 лет требует регламентного обслуживания."
+      },
+      "offers": [
+        {
+          "label": "Цена изготовителя на Налетай.рф, от",
+          "equipment_price": 6741000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "price_includes_vat": true,
+          "confirmed": true,
+          "source_url": "https://xn--80aaorhk2b.xn--p1ai/product/sigma",
+          "notes": "Опубликовано от 6 741 000 ₽, включая НДС. Комплект включает БАС, пульт, радиомодем, 2 АКБ, зарядное устройство, ноутбук, ПО ЭФИР и транспортную тару. Сервис отдельно не оценён."
+        }
+      ],
+      "image": {
+        "url": "https://cdn.xn--80aaorhk2b.xn--p1ai/products/views/49ecd60e-1cbb-4ff6-bcde-cdcaabcb5e1a_812x440.jpg",
+        "page_url": "https://xn--80aaorhk2b.xn--p1ai/product/sigma",
+        "caption": "SIGMA. Изображение в карточке ООО НПП «АВАКС-ГеоСервис» на Налетай.рф.",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "PuduBot 2",
+      "manufacturer": "Pudu Robotics",
+      "url": "https://www.pudurobotics.com/en/products/pudubot2",
+      "title": "Pudu Robotics: PuduBot 2",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "value": 580,
+          "unit": "мм"
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "value": 535,
+          "unit": "мм"
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "value": 1290,
+          "unit": "мм"
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "value": 39,
+          "unit": "кг"
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "value": 40,
+          "unit": "кг"
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "value": 1.2,
+          "note": "Диапазон движения 0,5–1,2 м/с.",
+          "unit": "м/с"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "text": "Таблица: 12 ч без нагрузки / 15 ч с нагрузкой; рекламный блок: до 24 ч",
+          "note": "Противоречие в официальной странице. Не использовать 24 ч как безусловную автономность."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "value": 4,
+          "unit": "ч"
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "value": 800,
+          "unit": "мм"
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "text": "PUDU VSLAM+, два лидара; без потолочных маркеров"
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "text": "Проводная зарядка и автоматическое возвращение на зарядную станцию"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "text": "Type-C, 4G, LoRa, Wi-Fi"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "text": "PUDU OS; сторонняя разработка; Pudu Watch, Pager и Link"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "text": "Картирование до 40 000 м²; высота потолка до 30 м; полузакрытые пространства"
+        }
+      ],
+      "reviewed_urls": [
+        "/api/v1/catalog-documents/solution-examples.docx",
+        "https://www.pudurobotics.com/en/products/pudubot2"
+      ],
+      "research_note": "Внутреннее противоречие автономности: рекламный блок до 24 ч, таблица 12 ч без груза и 15 ч с грузом. Значения сохранены текстом, необходим паспорт партии.",
+      "fields": {
+        "purpose": "Доставка небольших грузов, посуды и материалов в учреждениях, офисах, торговле и на производстве.",
+        "limitations": "Размер подноса 520×432 мм; проход от 800 мм; условия конкретного покрытия и автономность согласовываются по паспорту."
+      },
+      "image": {
+        "url": "https://cdn.pudutech.com/product_info_0fe4a2cc8a.png",
+        "page_url": "https://www.pudurobotics.com/en/products/pudubot2",
+        "caption": "PuduBot 2. Изображение со страницы продукта.",
+        "is_illustration": false
+      }
+    }
+  ]
+}

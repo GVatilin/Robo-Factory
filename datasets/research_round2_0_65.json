@@ -1,0 +1,2729 @@
+{
+  "version": 2,
+  "products": [
+    {
+      "product_name": "Ronavi H1500 (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/catalogue/h1500",
+      "title": "Ronavi H1500 (грузоподъемность до 1 500 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "Открытый API для WMS и MES.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Локальная сервисная поддержка в России; гарантия один год.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Производитель указывает работу в холодных зонах от +5 °C; верхняя граница не опубликована.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://ronavi-robotics.ru/catalogue/h1500"
+      ],
+      "research_note": "Сверена официальная карточка H1500; опубликованное изображение производителя. Цена относится к партии от 100 единиц, а не к одиночной поставке.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild6537-3432-4231-a139-356662636235/Ronavi_H1500_gen.jpg",
+        "page_url": "https://ronavi-robotics.ru/catalogue/h1500",
+        "caption": "Ronavi H1500 (грузоподъемность до 1 500 кг) — изображение с официальной страницы",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "Поставка H1500 от 100 единиц",
+          "equipment_price": 2160000,
+          "currency": "RUB",
+          "acquisition_model": "purchase",
+          "minimum_quantity": 100,
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/h1500",
+          "notes": "На странице указан диапазон 2 160 000–2 700 000 ₽ при количестве от 100 шт. Итоговая комплектация и стоимость согласуются с производителем."
+        }
+      ]
+    },
+    {
+      "product_name": "Ronavi SR (грузоподъемность до 50 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/catalogue/sr",
+      "title": "Ronavi SR (грузоподъемность до 50 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "Открытый API для интеграции с WMS и системами управления предприятием.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Сервисная поддержка и запасные части в России; гарантия производителя 1 год. Стоимость обслуживания согласуется отдельно.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://ronavi-robotics.ru/catalogue/sr"
+      ],
+      "research_note": "Повторно просмотрена официальная страница конкретного продукта; выбран оригинал изображения, опубликованный производителем. Ранее подтверждённые характеристики сохраняются.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild6632-6633-4263-a139-303262346334/Ronavi_Robotics_SR.jpg",
+        "page_url": "https://ronavi-robotics.ru/catalogue/sr",
+        "caption": "Ronavi SR (грузоподъемность до 50 кг) — изображение с официальной страницы",
+        "is_illustration": false
+      },
+      "fields": {
+        "country_of_origin": "Россия"
+      },
+      "offers": [
+        {
+          "label": "Опубликованная цена от, партия от 100 штук",
+          "equipment_price": 600000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "notes": "Цена ОТ 600,000 ₽ за единицу при покупке от 100 шт.; опубликованный диапазон до 950,000 ₽. Комплектация и итоговая стоимость согласуются индивидуально. Не является ценой единичной поставки. ПО, внедрение, доставка и сервис отдельно не оценены.",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/sr",
+          "minimum_quantity": 100
+        }
+      ]
+    },
+    {
+      "product_name": "Ronavi H2000 (грузоподъемность до 2 000 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/catalogue/h2000",
+      "title": "Ronavi H2000 (грузоподъемность до 2 000 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "Открытый API для интеграции с WMS и системами управления предприятием.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Сервисная поддержка и запасные части в России; гарантия производителя 1 год. Стоимость обслуживания согласуется отдельно.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://ronavi-robotics.ru/catalogue/h2000"
+      ],
+      "research_note": "Повторно просмотрена официальная страница конкретного продукта; выбран оригинал изображения, опубликованный производителем. Ранее подтверждённые характеристики сохраняются.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild3131-6361-4864-a261-626639313366/XL-napolnyj_mobilnyj.jpg",
+        "page_url": "https://ronavi-robotics.ru/catalogue/h2000",
+        "caption": "Ronavi H2000 (грузоподъемность до 2 000 кг) — изображение с официальной страницы",
+        "is_illustration": false
+      },
+      "fields": {
+        "country_of_origin": "Россия"
+      },
+      "offers": [
+        {
+          "label": "Опубликованная цена от, партия от 100 штук",
+          "equipment_price": 2805000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "notes": "Цена ОТ 2,805,000 ₽ за единицу при покупке от 100 шт.; опубликованный диапазон до 3,300,000 ₽. Комплектация и итоговая стоимость согласуются индивидуально. Не является ценой единичной поставки. ПО, внедрение, доставка и сервис отдельно не оценены.",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/h2000",
+          "minimum_quantity": 100
+        }
+      ]
+    },
+    {
+      "product_name": "Ronavi SD (грузоподъемность до 10 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/catalogue/sd",
+      "title": "Ronavi SD (грузоподъемность до 10 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "Открытый API для интеграции с WMS и системами управления предприятием.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Сервисная поддержка и запасные части в России; гарантия производителя 1 год. Стоимость обслуживания согласуется отдельно.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://ronavi-robotics.ru/catalogue/sd"
+      ],
+      "research_note": "Повторно просмотрена официальная страница конкретного продукта; выбран оригинал изображения, опубликованный производителем. Ранее подтверждённые характеристики сохраняются.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild3333-3063-4036-a566-306333316264/ronavi_SD_sorting.jpg",
+        "page_url": "https://ronavi-robotics.ru/catalogue/sd",
+        "caption": "Ronavi SD (грузоподъемность до 10 кг) — изображение с официальной страницы",
+        "is_illustration": false
+      },
+      "fields": {
+        "country_of_origin": "Россия"
+      },
+      "offers": [
+        {
+          "label": "Опубликованная цена от, партия от 100 штук",
+          "equipment_price": 360000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "notes": "Цена ОТ 360,000 ₽ за единицу при покупке от 100 шт.; опубликованный диапазон до 400,000 ₽. Комплектация и итоговая стоимость согласуются индивидуально. Не является ценой единичной поставки. ПО, внедрение, доставка и сервис отдельно не оценены.",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/sd",
+          "minimum_quantity": 100
+        }
+      ]
+    },
+    {
+      "product_name": "Ronavi M (грузоподъемность до 1200 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/catalogue/m",
+      "title": "Ronavi M (грузоподъемность до 1200 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "Открытый API для интеграции с WMS и системами управления предприятием.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Сервисная поддержка и запасные части в России; гарантия производителя 1 год. Стоимость обслуживания согласуется отдельно.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://ronavi-robotics.ru/catalogue/m"
+      ],
+      "research_note": "Повторно просмотрена официальная страница конкретного продукта; выбран оригинал изображения, опубликованный производителем. Ранее подтверждённые характеристики сохраняются.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild6434-6636-4033-b166-323431613666/Ronavi_M.jpg",
+        "page_url": "https://ronavi-robotics.ru/catalogue/m",
+        "caption": "Ronavi M (грузоподъемность до 1200 кг) — изображение с официальной страницы",
+        "is_illustration": false
+      },
+      "fields": {
+        "country_of_origin": "Россия"
+      },
+      "offers": [
+        {
+          "label": "Опубликованная цена от, партия от 100 штук",
+          "equipment_price": 1785000,
+          "acquisition_model": "purchase",
+          "currency": "RUB",
+          "notes": "Цена ОТ 1,785,000 ₽ за единицу при покупке от 100 шт.; опубликованный диапазон до 2,400,000 ₽. Комплектация и итоговая стоимость согласуются индивидуально. Не является ценой единичной поставки. ПО, внедрение, доставка и сервис отдельно не оценены.",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/m",
+          "minimum_quantity": 100
+        }
+      ]
+    },
+    {
+      "product_name": "Ronavi RCM (грузоподъемность до 350 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/",
+      "title": "Ronavi RCM (грузоподъемность до 350 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://ronavi-robotics.ru/"
+      ],
+      "research_note": "Проверен текущий официальный каталог Ronavi и выполнен поиск точного имени RCM. Публичный паспорт этой модели не найден; 350 кг присутствуют в наименовании организатора, но численно по одному названию не переносились. Изображения и параметры других моделей Ronavi не использованы."
+    },
+    {
+      "product_name": "AMR 100 (грузоподъемность до 100 кг)",
+      "manufacturer": "ООО \"Морос\"",
+      "url": "https://xn--l1aeahg.xn--p1ai/amr-100/",
+      "title": "AMR 100 (грузоподъемность до 100 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "operating_temp_c",
+          "value": 5,
+          "confirmed": true,
+          "value_max": 40
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Автоматическая док-станция или ручная зарядка.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "API и интеграция с MES; подключение конвейеров, подъёмников, манипуляторов.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Работа в производственных и складских помещениях; исполнение с защитой IP54 и выше предлагается опционально.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://xn--l1aeahg.xn--p1ai/amr-100/"
+      ],
+      "research_note": "Официальный паспорт на сайте МОРОС; опубликованы режимы зарядки, API/MES и температура. В каталоге организатора AMR100 обозначен как 100 кг, современная страница заявляет до 150 кг; это разные версии сведений, исходную характеристику не заменяли.",
+      "image": {
+        "url": "https://xn--l1aeahg.xn--p1ai/wp-content/uploads/2019/05/amr100-1-0x0.png",
+        "page_url": "https://xn--l1aeahg.xn--p1ai/amr-100/",
+        "caption": "AMR 100 (грузоподъемность до 100 кг) — официальный рендер модели (не фотография)",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "AMR 800 (грузоподъемность до 800 кг)",
+      "manufacturer": "ООО \"Морос\"",
+      "url": "https://xn--l1aeahg.xn--p1ai/amr-800/",
+      "title": "AMR 800 (грузоподъемность до 800 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "operating_temp_c",
+          "value": 5,
+          "confirmed": true,
+          "value_max": 40
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Автоматическая док-станция или ручная зарядка.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "API и интеграция с MES; подключение конвейеров, подъёмников, манипуляторов.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Работа в производственных и складских помещениях; исполнение с защитой IP54 и выше предлагается опционально.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://xn--l1aeahg.xn--p1ai/amr-800/"
+      ],
+      "research_note": "Повторно сверены официальные характеристики и найден оригинал рендера конкретной модели. Стоимость и регламент ТО не опубликованы.",
+      "image": {
+        "url": "https://xn--l1aeahg.xn--p1ai/wp-content/uploads/2025/08/amr-800-1-0x0.png",
+        "page_url": "https://xn--l1aeahg.xn--p1ai/amr-800/",
+        "caption": "AMR 800 (грузоподъемность до 800 кг) — официальный рендер модели (не фотография)",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "AMR 1500 (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Морос\"",
+      "url": "https://xn--l1aeahg.xn--p1ai/amr-1500/",
+      "title": "AMR 1500 (грузоподъемность до 1 500 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "operating_temp_c",
+          "value": 5,
+          "confirmed": true,
+          "value_max": 40
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Автоматическая док-станция или ручная зарядка.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "API и интеграция с MES; подключение конвейеров, подъёмников, манипуляторов.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Работа в производственных и складских помещениях; исполнение с защитой IP54 и выше предлагается опционально.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://xn--l1aeahg.xn--p1ai/amr-1500/"
+      ],
+      "research_note": "Повторно сверены официальные характеристики и найден оригинал рендера конкретной модели. Стоимость и регламент ТО не опубликованы.",
+      "image": {
+        "url": "https://xn--l1aeahg.xn--p1ai/wp-content/uploads/2025/08/amr1500-1-0x0.png",
+        "page_url": "https://xn--l1aeahg.xn--p1ai/amr-1500/",
+        "caption": "AMR 1500 (грузоподъемность до 1 500 кг) — официальный рендер модели (не фотография)",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "DMR 1200 (грузоподъемность до 1 200 кг)",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://dikom-a.ru/product/dmr-1200",
+      "title": "DMR 1200 (грузоподъемность до 1 200 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 1200.0,
+          "confirmed": true
+        },
+        {
+          "code": "max_speed_mps",
+          "value": 2.0,
+          "confirmed": true
+        },
+        {
+          "code": "navigation_type",
+          "text": "SLAM",
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 5.0,
+          "confirmed": true
+        },
+        {
+          "code": "runtime_h",
+          "value": 8.0,
+          "confirmed": true
+        },
+        {
+          "code": "charge_time_h",
+          "value": 2.0,
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Совместимость с Яндекс Роботикс заявлена производителем; интерфейс и состав проекта уточняются.",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Зарядная станция входит в комплект.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://dikom-a.ru/product/dmr-1200",
+        "https://dikom-a.ru/category/avtonomnye-mobilnye-roboty"
+      ],
+      "research_note": "Извлечены опубликованные таблицы характеристик и оригинал изображения из данных официального сайта ДиКом (Next.js). Цена оборудования и обслуживания публично не указана.",
+      "fields": {
+        "purpose": "Базовая платформа ДиКом DMR 1200 для перемещения грузов на отдельно стоящих стеллажах и тележках. В комплекте зарядная станция.",
+        "limitations": "На официальной странице приведены габариты 1115 x 845 x 255 мм под заголовком В×Ш×Г. Порядок осей требует сверки с чертежом: для моделей этой серии в разных публикациях порядок отличается. Ширина рабочего прохода и допустимые полы уточняются по проекту."
+      },
+      "image": {
+        "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2026/07/dmr-1200-bez-fona-scaled.png",
+        "page_url": "https://dikom-a.ru/product/dmr-1200",
+        "caption": "DMR 1200 (грузоподъемность до 1 200 кг) — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "DMR 600 (грузоподъемность до 600 кг)",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://dikom-a.ru/product/dmr-600",
+      "title": "DMR 600 (грузоподъемность до 600 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 600.0,
+          "confirmed": true
+        },
+        {
+          "code": "max_speed_mps",
+          "value": 2.0,
+          "confirmed": true
+        },
+        {
+          "code": "navigation_type",
+          "text": "SLAM",
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 5.0,
+          "confirmed": true
+        },
+        {
+          "code": "runtime_h",
+          "value": 8.0,
+          "confirmed": true
+        },
+        {
+          "code": "charge_time_h",
+          "value": 2.0,
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Совместимость с Яндекс Роботикс заявлена производителем; интерфейс и состав проекта уточняются.",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Зарядная станция входит в комплект.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://dikom-a.ru/product/dmr-600",
+        "https://dikom-a.ru/category/avtonomnye-mobilnye-roboty"
+      ],
+      "research_note": "Извлечены опубликованные таблицы характеристик и оригинал изображения из данных официального сайта ДиКом (Next.js). Цена оборудования и обслуживания публично не указана.",
+      "fields": {
+        "purpose": "Базовая платформа ДиКом DMR 600 для перемещения мелких и средних грузов на отдельно стоящих стеллажах и тележках. В комплекте зарядная станция.",
+        "limitations": "На официальной странице приведены габариты 250x960x650 мм под заголовком В×Ш×Г. Порядок осей требует сверки с чертежом: для моделей этой серии в разных публикациях порядок отличается. Ширина рабочего прохода и допустимые полы уточняются по проекту."
+      },
+      "image": {
+        "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2026/07/dmr-600_bez-fona.png",
+        "page_url": "https://dikom-a.ru/product/dmr-600",
+        "caption": "DMR 600 (грузоподъемность до 600 кг) — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Сёмабот (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Семаргл\"",
+      "url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+      "title": "Сёмабот (грузоподъемность до 1 500 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 1500,
+          "confirmed": true,
+          "note": "Исполнение 1500 кг явно перечислено в линейке производителя."
+        },
+        {
+          "code": "navigation_type",
+          "text": "SLAM (техническое зрение) либо маяки/метки Data Matrix; исполнение выбирается при заказе.",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Бортовая аккумуляторная батарея и беспроводные зарядные станции производителя.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Интеграция с автоматизированными складскими системами и станками; дополнительные подъёмные столы, конвейеры, винтовой подъёмник или манипулятор.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://semargl.pro/equipment/agv-roboty-syemabot/"
+      ],
+      "research_note": "Модель 1500 кг явно выделена в официальной линейке. Изображение привязано в HTML к карточке Сёмабот 400/1000/1500 кг; остальные механические ТТХ требуют паспорта конкретного исполнения.",
+      "image": {
+        "url": "https://semargl.pro/upload/iblock/4b3/w8qos2envc4s4p2bg0kd19bb9k3u6ycw.png",
+        "page_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+        "caption": "Сёмабот (грузоподъемность до 1 500 кг) — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "DMR Carrier P",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://dikom-a.ru/product/d-carrier-p",
+      "title": "DMR Carrier P — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 1500.0,
+          "confirmed": true
+        },
+        {
+          "code": "lift_height_mm",
+          "value": 1500.0,
+          "confirmed": true
+        },
+        {
+          "code": "max_speed_mps",
+          "value": 1.5,
+          "confirmed": true
+        },
+        {
+          "code": "navigation_type",
+          "text": "SLAM",
+          "confirmed": true
+        },
+        {
+          "code": "charge_time_h",
+          "value": 2.0,
+          "confirmed": true
+        },
+        {
+          "code": "runtime_h",
+          "value": 10.0,
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 10.0,
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Совместимость с Яндекс Роботикс заявлена производителем; интерфейс и состав проекта уточняются.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://dikom-a.ru/product/d-carrier-p",
+        "https://dikom-a.ru/category/avtonomnye-mobilnye-roboty"
+      ],
+      "research_note": "Извлечены опубликованные таблицы характеристик и оригинал изображения из данных официального сайта ДиКом (Next.js). Цена оборудования и обслуживания публично не указана.",
+      "fields": {
+        "purpose": "Автономный вилочный погрузчик для перевозки грузов на палетах.",
+        "limitations": "На официальной странице приведены габариты 2050x1975x1000 мм под заголовком В×Ш×Г. Порядок осей требует сверки с чертежом: для моделей этой серии в разных публикациях порядок отличается. Ширина рабочего прохода и допустимые полы уточняются по проекту."
+      },
+      "image": {
+        "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2025/12/carrier-p-kvadrat-scaled.png",
+        "page_url": "https://dikom-a.ru/product/d-carrier-p",
+        "caption": "DMR Carrier P — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "AK-2000-2",
+      "manufacturer": "ООО \"ГК Автомакон\"",
+      "url": "https://robot.automacon.ru/agv-fmr",
+      "title": "AK-2000-2 — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 2000,
+          "confirmed": true
+        },
+        {
+          "code": "weight_kg",
+          "value": 700,
+          "confirmed": true
+        },
+        {
+          "code": "length_mm",
+          "value": 1980,
+          "confirmed": true
+        },
+        {
+          "code": "width_mm",
+          "value": 1065,
+          "confirmed": true
+        },
+        {
+          "code": "height_mm",
+          "value": 2285,
+          "confirmed": true
+        },
+        {
+          "code": "lift_height_mm",
+          "value": 175,
+          "confirmed": true
+        },
+        {
+          "code": "runtime_h",
+          "value": 6,
+          "confirmed": true,
+          "value_max": 8
+        },
+        {
+          "code": "max_speed_mps",
+          "value": 2.6,
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 30,
+          "confirmed": true
+        },
+        {
+          "code": "charge_time_h",
+          "value": 2,
+          "confirmed": true
+        },
+        {
+          "code": "navigation_type",
+          "text": "3D Laser SLAM",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Ручная или автоматическая зарядка; замена аккумулятора LiFePO4 24 В, 225 А·ч.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Допустимый уклон ±8%; минимальный радиус разворота 1555 мм; защитные лидары и датчики столкновения.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://robot.automacon.ru/agv-fmr"
+      ],
+      "research_note": "Полная модель AK-2000-2 найдена в официальной таблице Автомакон; не использованы характеристики соседних АК-С/АК-L2. Публичной цены нет.",
+      "fields": {
+        "purpose": "Автономная перевозка паллет; самостоятельное распознавание, захват и маршрутизация груза."
+      }
+    },
+    {
+      "product_name": "Робот-штабелёр RoboCV",
+      "manufacturer": "ООО \"Робосиви\"",
+      "url": "https://robocv.ru/robot-shtabelyor",
+      "title": "Робот-штабелёр RoboCV — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "charging_infrastructure",
+          "text": "Li-Ion или свинцовая аккумуляторная батарея; смена батареи либо подзарядка по выбранному исполнению.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Сервер RoboCV через API получает задания из WMS/ERP, обменивается штрихкодами груза и формирует отчёты. Поддерживаются ручные задания через веб-интерфейс и циклические операции.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Для разворота требуется проезд не менее 2,9 м; для движения на максимальной скорости — не менее 1,9 м. Допуск расположения паллеты при захвате ±20 см и ±15°.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://robocv.ru/robot-shtabelyor"
+      ],
+      "research_note": "Повторно проверена официальная карточка; добавлены сведения о зарядке, интерфейсах и условиях маршрута. Показатель 24/7 — режим организации работы со сменой/зарядкой батарей, а не 24 часа от одного заряда.",
+      "image": {
+        "url": "https://robocv.ru/wp-content/uploads/2021/09/exv-foto-111.png",
+        "page_url": "https://robocv.ru/robot-shtabelyor",
+        "caption": "Робот-штабелёр RoboCV — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Робот-тягач RoboCV",
+      "manufacturer": "ООО \"Робосиви\"",
+      "url": "https://robocv.ru/robot-tyagach",
+      "title": "Робот-тягач RoboCV — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "charging_infrastructure",
+          "text": "Li-Ion или свинцовая аккумуляторная батарея; смена батареи либо подзарядка по выбранному исполнению.",
+          "confirmed": true
+        },
+        {
+          "code": "connectivity",
+          "text": "Wi-Fi для получения команд от информационной системы управления производством.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Проезд для разворота и движения на максимальной скорости — не менее 2,9 м. Количество и размеры буксируемых тележек согласуются под поезд и маршрут.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://robocv.ru/robot-tyagach"
+      ],
+      "research_note": "Повторно проверена официальная карточка; добавлены сведения о зарядке, интерфейсах и условиях маршрута. Показатель 24/7 — режим организации работы со сменой/зарядкой батарей, а не 24 часа от одного заряда.",
+      "image": {
+        "url": "https://robocv.ru/wp-content/uploads/2021/05/ltx-bez-fona-bolshoj.png",
+        "page_url": "https://robocv.ru/robot-tyagach",
+        "caption": "Робот-тягач RoboCV — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "SmartCube",
+      "manufacturer": "ООО \"АРС\"",
+      "url": "https://arobosys.ru/",
+      "title": "SmartCube — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "service_requirements",
+          "text": "Монтаж и последующее обслуживание выполняет собственная интеграционная команда АРС; возможны замена робота на временный и модернизация системы.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Кубическая система с рельсовыми направляющими и шахтами до 14 м; размеры системы определяются планировкой склада.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://arobosys.ru/"
+      ],
+      "research_note": "Официальный сайт описывает модульную систему SmartCube, обслуживание и внедрения. Не переносим высоту шахты в габариты робота; цена рассчитывается по проекту.",
+      "fields": {
+        "purpose": "Плотное хранение товаров в ящиках и доставка ящика к рабочей станции для комплектации."
+      }
+    },
+    {
+      "product_name": "Беспилотный погрузчик",
+      "manufacturer": "МФТИ",
+      "url": "https://roboticsworld.ru/drones/snyali-importnogo-robota-s-proizvodstva-ne-problema-kak-rossiyskiy-pak-kompanii-bespilotnyy-pogruzch/",
+      "title": "Беспилотный погрузчик — источник технических сведений",
+      "retrieved_at": "2026-09-29",
+      "source_type": "public_spec",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "text": "Потолочная оптическая навигация: камера распознаёт круглые метки с известными координатами; для определения положения необходимы две видимые метки.",
+          "confirmed": true
+        },
+        {
+          "code": "floor_requirements",
+          "text": "Ровный пол без глубоких выбоин; выступы более 10–15 мм вредят колёсам и устойчивости позиционирования.",
+          "confirmed": true
+        },
+        {
+          "code": "connectivity",
+          "text": "Стабильная беспроводная сеть по всему маршруту; при потере связи робот останавливается.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "WMS обязательна как источник заданий; программно-аппаратный комплекс устанавливается на совместимые электрические тележки разных производителей.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Локальная разработка и поддержка с выездом на объект; управляющий комплекс может быть перенесён на другое совместимое шасси.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://roboticsworld.ru/drones/snyali-importnogo-robota-s-proizvodstva-ne-problema-kak-rossiyskiy-pak-kompanii-bespilotnyy-pogruzch/",
+        "https://ssmipt.ru/",
+        "https://phystech-union.org/wp-content/uploads/2025/12/6.-Ivashhenko.pdf"
+      ],
+      "research_note": "Первичный авторский материал подписан Андреем Леусом, руководителем компании «Беспилотный погрузчик», и её пресс-секретарём; приведены собственный кейс «Нижбел», схема и фото производителя. Это не пересказ характеристик редакцией.",
+      "fields": {
+        "purpose": "Горизонтальная транспортировка паллет между фиксированными зонами склада.",
+        "limitations": "Решение — программно-аппаратный комплект роботизации тележки. Нагрузка, размеры, батарея и скорость зависят от выбранного шасси; единого паспорта для всех вариантов нет."
+      },
+      "image": {
+        "url": "https://roboticsworld.ru/upload/iblock/afa/9qaf1a28imk9wfy1g406zh6hop7uwduu/bp_1.jpg",
+        "page_url": "https://roboticsworld.ru/drones/snyali-importnogo-robota-s-proizvodstva-ne-problema-kak-rossiyskiy-pak-kompanii-bespilotnyy-pogruzch/",
+        "caption": "Беспилотный погрузчик — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "MULE",
+      "manufacturer": "ООО «СМ РОБОТИКС»",
+      "url": "https://sm-robotics.ru/",
+      "title": "MULE — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 1500,
+          "confirmed": true
+        },
+        {
+          "code": "max_speed_mps",
+          "value": 1.3,
+          "confirmed": true
+        },
+        {
+          "code": "navigation_type",
+          "text": "SLAM",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Автоматическая зарядка.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Собственная система управления флотом интегрируется с WMS. Изменения WMS выполняются на стороне заказчика.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "RaaS: сопровождение, ремонт, обновления ПО, удалённый мониторинг, замена робота и поддержка 24/7 включены в услугу; условия и тариф по договору.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://sm-robotics.ru/"
+      ],
+      "research_note": "Подтверждены ТТХ MULE и состав услуги на официальном сайте SM Robotics. Публичный тариф не обнаружен.",
+      "fields": {
+        "purpose": "Автономная перевозка паллет на складах и производствах."
+      }
+    },
+    {
+      "product_name": "РУБИ-С-03",
+      "manufacturer": "ООО \"РОБО\"",
+      "url": "https://robo.ooo/robots/rubi-s/",
+      "title": "РУБИ-С-03 — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "floor_requirements",
+          "text": "Для линейки РУБИ-С: бетон, наливной пол, плитка, керамогранит, ПВХ и линолеум; ковролин, лестницы и крутые пандусы исключены.",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Док-станция с автоматической зарядкой, заполнением чистой и сливом грязной воды. Необходимы питание, подвод и слив воды.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "ROBO FMS: карты, расписания, зоны, задания и отчёты. Облачное или локальное развёртывание, API для управления парком.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Поддержка 24/7, собственные инженеры и локальный склад компонентов; подбор и проверка на пилоте.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://robo.ooo/robots/rubi-s/",
+        "https://robo.ooo/",
+        "https://robo.ooo/prime-park"
+      ],
+      "research_note": "Проверены официальные карточка линейки РУБИ-С и кейс Prime Park. Точная версия С-03 в текущем названии не выделена, поэтому спорные числа и новое изображение не назначены автоматически.",
+      "fields": {
+        "limitations": "Современная публичная карточка использует имя РУБИ-С без суффикса -03. Общая инфраструктура семейства описана; новые численные ТТХ и фото не подменяют паспорт исполнения С-03."
+      }
+    },
+    {
+      "product_name": "MARK 2 SE",
+      "manufacturer": "ООО \"Р2Б\"",
+      "url": "https://r2b.company/rent",
+      "title": "MARK 2 SE — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "charging_infrastructure",
+          "text": "Базовая станция: розетка 220 В, автоматическая зарядка, слив грязной и залив чистой воды.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Ежедневное обслуживание около 20 минут; выездной специалист, обучение оператора и удалённая поддержка инженеров. Поддержка 24/7.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Помещения, подходящие для механизированной уборки. До 14 часов уборки в сутки с технологическими паузами; 4 часа непрерывно от АКБ.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://r2b.company/rent"
+      ],
+      "research_note": "Повторно просмотрена официальная страница конкретного продукта; выбран оригинал изображения, опубликованный производителем. Ранее подтверждённые характеристики сохраняются.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild3864-3363-4465-b433-323965643532/noroot.png",
+        "page_url": "https://r2b.company/rent",
+        "caption": "MARK 2 SE — изображение с официальной страницы",
+        "is_illustration": false
+      },
+      "offers": [
+        {
+          "label": "Аренда Mark 2 SE от 100000 ₽/месяц",
+          "monthly_fee": 100000,
+          "acquisition_model": "raas",
+          "currency": "RUB",
+          "notes": "Опубликованная начальная ставка аренды; включает станцию автоматической замены воды и зарядки. Итоговые условия зависят от срока и договора.",
+          "confirmed": true,
+          "source_url": "https://r2b.company/rent"
+        }
+      ]
+    },
+    {
+      "product_name": "АК-SC80",
+      "manufacturer": "ООО \"ГК Автомакон\"",
+      "url": "https://robot.automacon.ru/ak-sc80",
+      "title": "АК-SC80 — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://robot.automacon.ru/ak-sc80"
+      ],
+      "research_note": "Повторно проверена официальная ссылка AK-SC80; страница ограничивает автоматическое получение. Ранее подтверждённые сведения сохраняются, новых ТТХ или изображения именно этой модели получить не удалось. Данные Waybot, Neurus и AK-2000 не перенесены."
+    },
+    {
+      "product_name": "Клинботикс 400 PRO",
+      "manufacturer": "ООО \"Вейбот Автомакон Роботикс\"",
+      "url": "https://waybotrobotics.com/models/400pro",
+      "title": "Клинботикс 400 PRO — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "floor_requirements",
+          "text": "Керамическая плитка, керамогранит, камень, ПВХ/винил, полимерные полы и твёрдая древесина; преодолеваемые препятствия до 10 мм.",
+          "confirmed": true
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "value": 700,
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Система Waybot Control; интеграция с лифтами и турникетами.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Модульная конструкция с доступом к расходным материалам и обслуживаемым узлам.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://waybotrobotics.com/models/400pro"
+      ],
+      "research_note": "Сверена официальная страница 400 PRO. Числа для массы, объёма бака и времени работы в разных блоках страницы расходятся, поэтому новые значения для этих полей не внесены.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild3130-3238-4331-b738-643466346239/1.png",
+        "page_url": "https://waybotrobotics.com/models/400pro",
+        "caption": "Клинботикс 400 PRO — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Клинботикс 600",
+      "manufacturer": "ООО \"Вейбот Автомакон Роботикс\"",
+      "url": "https://waybotrobotics.com/models/600",
+      "title": "Клинботикс 600 — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "service_requirements",
+          "text": "Модульная конструкция с доступом к узлам; производитель публикует сменные щётки и водосборные сквиджи с артикулами.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Сухая и влажная уборка дисковыми щётками, пылесос и уборка падами; необходим подбор расходных материалов под покрытие.",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Несъёмный литиевый аккумулятор 50 В, 40 А·ч; заявленная полная зарядка — один час.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://waybotrobotics.com/models/600"
+      ],
+      "research_note": "Проверена официальная карточка Cleanbotics 600. На странице расходятся производительность, ширина уборки и время автономности в сравнительной таблице и паспорте; спорные числа не перезаписаны. Добавлены сервис и зарядная инфраструктура.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild3637-6437-4430-b066-336432393531/fc670cdb-4b50-4d4a-9.png",
+        "page_url": "https://waybotrobotics.com/models/600",
+        "caption": "Клинботикс 600 — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Unit",
+      "manufacturer": "ООО \"Яку Роботикс\"",
+      "url": "https://yacuai.com/ru/unit/",
+      "title": "Unit — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "charging_infrastructure",
+          "text": "Автоматическая станция замены воды и зарядки аккумулятора.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Гарантия 1 год; дилерская сервисная поддержка 24/7.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Веб-система управления и мониторинга флота.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Уклон до 2°; уборка коммерческих помещений; заявлена локализация RTLS на объектах до 20000 м².",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://yacuai.com/ru/unit/"
+      ],
+      "research_note": "Повторно просмотрена официальная страница конкретного продукта; выбран оригинал изображения, опубликованный производителем. Ранее подтверждённые характеристики сохраняются.",
+      "image": {
+        "url": "https://yacuai.com/upload/medialibrary/1fb/z60thykkhl2q9b30oliqc9y1texj4uyw.png",
+        "page_url": "https://yacuai.com/ru/unit/",
+        "caption": "Unit — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Модель А25-1720",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "url": "https://tnvst.ru/catalog/promyshlennye-roboty/promyshlennyy-robot-manipulyator-eydos-a25-1720/",
+      "title": "Модель А25-1720 — источник технических сведений",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 25,
+          "confirmed": true
+        },
+        {
+          "code": "weight_kg",
+          "value": 235,
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 0.05,
+          "confirmed": true,
+          "note": "Повторяемость позиционирования, не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "value": 0,
+          "confirmed": true,
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "value": 80,
+          "confirmed": true,
+          "note": "Не более 80 дБ."
+        },
+        {
+          "code": "operating_conditions",
+          "text": "IP54; запястье IP65; влажность до 75%, кратковременно до 95%, без конденсата; досягаемость 1718 мм.",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Стационарное питание 380 В, 50 Гц, 25 А.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Программирование Python; встроенная сигнальная линия на 16 проводов.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://tnvst.ru/catalog/promyshlennye-roboty/promyshlennyy-robot-manipulyator-eydos-a25-1720/",
+        "https://magadangorod.ru/common/upload/28/editor/file/AO_Eydos_Robototekhnika.pdf#page=8"
+      ],
+      "research_note": "Модель и ТТХ сверены по карточке TINVEST, заявленного официального дилера Эйдос; существование модели подтверждено презентацией производителя на сайте администрации Магадана.",
+      "fields": {
+        "purpose": "Погрузочно-разгрузочные и сборочные операции.",
+        "limitations": "Стационарный промышленный манипулятор. Рабочая зона и безопасность ячейки проектируются отдельно; опубликованные угловые скорости осей не являются скоростью перемещения по объекту."
+      },
+      "image": {
+        "url": "https://tnvst.ru/upload/iblock/d30/g72tfogtiabxqv4s8kpl4zqhokyqxh6m.jpg",
+        "page_url": "https://tnvst.ru/catalog/promyshlennye-roboty/promyshlennyy-robot-manipulyator-eydos-a25-1720/",
+        "caption": "Модель А25-1720 — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Модель А12-1450",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "url": "https://eidos-robotics.ru/robot",
+      "title": "Модель А12-1450 — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "Программирование на Python, подключение к внешней сети и видеокамерам; дополнительные Python-пакеты, CV/CNN и GPU-инструменты доступны в управляющей платформе.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Поддержка и обслуживание российскими специалистами производителя; сопровождение полного цикла производства и поставки.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://eidos-robotics.ru/robot"
+      ],
+      "research_note": "Сверена официальная страница с точным обозначением А12-1450; добавлены интерфейсы и условия поддержки. Фото взято из карточки модели, сведения о других роботах Эйдос не переносились.",
+      "fields": {
+        "country_of_origin": "Россия"
+      },
+      "image": {
+        "url": "https://static.tildacdn.com/tild6435-3966-4835-b833-386231663430/004_copy_3.png",
+        "page_url": "https://eidos-robotics.ru/robot",
+        "caption": "Модель А12-1450 — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "AS-RS P",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://dikom-a.ru/product/dikom-as-rs-p",
+      "title": "AS-RS P — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 3000.0,
+          "confirmed": true,
+          "note": "Максимум по странице производителя."
+        },
+        {
+          "code": "max_speed_mps",
+          "value": 3.0,
+          "confirmed": true,
+          "note": "Скорость горизонтального перемещения штабелёра; вертикальная скорость указывается отдельно."
+        },
+        {
+          "code": "operating_conditions",
+          "text": "EUR-поддоны; стационарные паллетные стеллажи; вилы Single Deep/Double Deep; вертикальная скорость до 1 м/с. Проектная высота системы до 24 м.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://dikom-a.ru/product/dikom-as-rs-p",
+        "https://dikom-a.ru/category/avtomatizirovannye-sistemy-hraneniya"
+      ],
+      "research_note": "Извлечены опубликованные таблицы характеристик и оригинал изображения из данных официального сайта ДиКом (Next.js). Цена оборудования и обслуживания публично не указана.",
+      "fields": {
+        "purpose": "Груз хранится на стеллажах на EUR-поддонах. Тип стеллажа: стационарный палетный стеллаж/ Автоматическая система хранения и доставки грузов. Подача груза по принципу «товар к человеку» механизирована с помощью кран-штабелера."
+      },
+      "image": {
+        "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2026/07/as-rs_r-bez-fona-scaled.png",
+        "page_url": "https://dikom-a.ru/product/dikom-as-rs-p",
+        "caption": "AS-RS P — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "AS-RS B",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://dikom-a.ru/product/dikom-as-rs-b",
+      "title": "AS-RS B — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "max_speed_mps",
+          "value": 4.0,
+          "confirmed": true,
+          "note": "Скорость горизонтального перемещения штабелёра; вертикальная скорость указывается отдельно."
+        },
+        {
+          "code": "payload_kg",
+          "value": 30.0,
+          "confirmed": true
+        },
+        {
+          "code": "height_mm",
+          "value": 12000,
+          "confirmed": true,
+          "note": "Максимальная высота робота-штабелёра."
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Пластиковые ящики 600×400×220/340/420 мм; Double Deep; вертикальная скорость до 2 м/с.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://dikom-a.ru/product/dikom-as-rs-b",
+        "https://dikom-a.ru/category/avtomatizirovannye-sistemy-hraneniya"
+      ],
+      "research_note": "Извлечены опубликованные таблицы характеристик и оригинал изображения из данных официального сайта ДиКом (Next.js). Цена оборудования и обслуживания публично не указана.",
+      "fields": {
+        "purpose": "Груз хранится в KLT ящиках. Тип стеллажа: фронтальный палетный стеллаж/Автоматическая система хранения и доставки грузов. Подача груза по принципу «товар к человеку» механизирована с помощью робота-штабелера."
+      },
+      "image": {
+        "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2026/06/asrs-b-8-scaled.png",
+        "page_url": "https://dikom-a.ru/product/dikom-as-rs-b",
+        "caption": "AS-RS B — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Pallet Shuttle",
+      "manufacturer": "ООО \"Завод Стелкон\"",
+      "url": "https://www.stelkon.ru/catalog/palletnye-stellazhi/pallet/",
+      "title": "Pallet Shuttle — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "text": "Радиоуправляемая тележка перемещается по дополнительным рельсам внутри паллетного стеллажа.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Команды загрузки/выгрузки из WMS/ERP или вручную через графический интерфейс; возможны сканер паллет и транспортная система.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Поддержка FIFO/LIFO; специальное морозильное исполнение до −35 °C. Размеры шаттла и стеллажей проектируются под паллеты заказчика.",
+          "confirmed": true
+        },
+        {
+          "code": "floor_requirements",
+          "text": "Шаттл движется по рельсам стеллажа. Требуется проект и расчёт стеллажной системы; параметры основания и погрузочной зоны задаются проектом.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Ввод в эксплуатацию, настройка и обучение; гарантийный и постгарантийный ремонт, диагностика и плановое ТО, выезд инженера, склад запасных частей.",
+          "confirmed": true,
+          "source_url": "https://www.stelkon.ru/catalog/palletnye-stellazhi/pallet/shuttle/"
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.stelkon.ru/catalog/palletnye-stellazhi/pallet/",
+        "https://www.stelkon.ru/catalog/palletnye-stellazhi/pallet/shuttle/"
+      ],
+      "research_note": "Официальное описание системы и сервисная страница Стелкон. Габариты стеллажей не использованы как габариты тележки; −35 °C относится только к морозильному исполнению.",
+      "image": {
+        "url": "https://www.stelkon.ru/upload/iblock/20f/20f35c8560171d5635f44b00088ecf77.jpg",
+        "page_url": "https://www.stelkon.ru/catalog/palletnye-stellazhi/pallet/",
+        "caption": "Pallet Shuttle — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Робот-комплектовщик",
+      "manufacturer": "ООО \"Яндекс Роботикс\"",
+      "url": "https://robotics.yandex.ru/news",
+      "title": "Робот-комплектовщик — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://robotics.yandex.ru/news",
+        "https://robotics.yandex.ru/blogs/komplektatsiya-tovarov",
+        "https://robotics.yandex.ru/robotizatsiya-sklada"
+      ],
+      "research_note": "Официальная лента Яндекс Роботикс содержит публикацию от 22.08.2025 о прототипе мобильного комплектовщика. Полный аппаратный паспорт этого прототипа не найден; источник сохранён, данные стационарного пикера не перенесены.",
+      "fields": {
+        "limitations": "В исходном каталоге указан прототип мобильного комплектовщика. Показатели стационарного пикера и системы «Товар к человеку» относятся к другим решениям и не должны применяться к этому роботу."
+      }
+    },
+    {
+      "product_name": "Роборука",
+      "manufacturer": "ПАО \"Сбербанк\"",
+      "url": "https://habr.com/ru/companies/sberbank/articles/1086726/",
+      "title": "Роборука — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://habr.com/ru/companies/sberbank/articles/1086726/"
+      ],
+      "research_note": "Проверены публичные материалы Сбера о робототехнике и Green-VLA. Отдельный официальный паспорт «Роборуки» из исходного каталога не найден. Параметры Грина, Воркера и одноимённой роборуки Яндекса не перенесены; требуется идентификация исполнения производителем."
+    },
+    {
+      "product_name": "Pick by Voice",
+      "manufacturer": "ООО \"Умный сервис\"",
+      "url": "https://www.umserv.ru/catalog/resheniya-dlya-sklada/sistemy-upravleniya/pick-by-voice/",
+      "title": "Pick by Voice — источник технических сведений",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "Задания из WMS через Voiceman API; доступны руководство, архитектура и технические требования к тестовому запуску.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Гарнитура (наушники и микрофон), распознавание речи и наручный терминал сбора данных. Мультиязычные процессы настраиваются из готовых блоков.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.umserv.ru/catalog/resheniya-dlya-sklada/sistemy-upravleniya/pick-by-voice/"
+      ],
+      "research_note": "Официальная карточка интегратора описывает решение и подключение к учётной системе. Нет открытой фиксированной цены или универсальной производительности; показатели зависят от операций и комплектации.",
+      "fields": {
+        "purpose": "Помощь сотруднику при комплектации заказов и отборе товаров на складе.",
+        "limitations": "Система автоматизации ручного отбора. Грузоподъёмность, скорость перемещения и автономность мобильного робота к этому решению не применяются; комплект оборудования определяется проектом."
+      },
+      "image": {
+        "url": "https://s3storage.umserv.ru/18909-qzbw7o736tewo3pn6qivx3wmcgncgijb.png",
+        "page_url": "https://www.umserv.ru/catalog/resheniya-dlya-sklada/sistemy-upravleniya/pick-by-voice/",
+        "caption": "Pick by Voice — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Pick by light",
+      "manufacturer": "ООО \"Умный сервис\"",
+      "url": "https://www.umserv.ru/catalog/resheniya-dlya-sklada/sistemy-upravleniya/pick-by-light-sistema-svetovogo-otbora/",
+      "title": "Pick by light — источник технических сведений",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "Интеграция с SGA/ERP; возможна интеграция с радиочастотными системами.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Индикаторы устанавливаются на ячейках хранения. Сотрудник сканирует штрихкод заказа, видит количество и подтверждает отбор; модели с датчиками контроля доступны опционально.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.umserv.ru/catalog/resheniya-dlya-sklada/sistemy-upravleniya/pick-by-light-sistema-svetovogo-otbora/"
+      ],
+      "research_note": "Официальная карточка интегратора описывает решение и подключение к учётной системе. Нет открытой фиксированной цены или универсальной производительности; показатели зависят от операций и комплектации.",
+      "fields": {
+        "purpose": "Помощь сотруднику при комплектации заказов и отборе товаров на складе.",
+        "limitations": "Система автоматизации ручного отбора. Грузоподъёмность, скорость перемещения и автономность мобильного робота к этому решению не применяются; комплект оборудования определяется проектом."
+      },
+      "image": {
+        "url": "https://s3storage.umserv.ru/18906-ptl.png",
+        "page_url": "https://www.umserv.ru/catalog/resheniya-dlya-sklada/sistemy-upravleniya/pick-by-light-sistema-svetovogo-otbora/",
+        "caption": "Pick by light — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Робот инвентаризатор",
+      "manufacturer": "ООО \"Яндекс Роботикс\"",
+      "url": "https://robotics.yandex.ru/robotizatsiya-sklada",
+      "title": "Робот инвентаризатор — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "API для обмена заданиями и результатами с WMS и ERP; в кейсе «Азбука вкуса» API адаптирован под систему заказчика.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Телескопическая мачта сканирования до 12,5 м, охват ярусов за один проход. Требуются читаемые этикетки; повреждённая или отсутствующая маркировка ограничивает полноту инвентаризации.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Пусконаладка, обучение сотрудников, гарантийная и сервисная поддержка в составе проекта внедрения.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://robotics.yandex.ru/robotizatsiya-sklada",
+        "https://robotics.yandex.ru/cases/azbuka-vkusa"
+      ],
+      "research_note": "Сверен раздел именно робота-инвентаризатора и опубликованный кейс «Азбуки вкуса». Показатели соседних решений (пикер, G2P и депалетизатор) не переносились.",
+      "fields": {
+        "purpose": "Проверка паллетных и крупногабаритных складских ячеек без остановки складских процессов.",
+        "limitations": "Производитель заявляет до 30 000 паллетомест в час; значение требует проверки для конкретной конфигурации и не введено автоматически в расчёт как универсальный такт. Высота сканирования не равна транспортной высоте корпуса."
+      },
+      "image": {
+        "url": "https://avatars.mds.yandex.net/get-lpc/17800094/fd4a7cc6-4a6e-4b9a-a6b4-10f2ce453367/width_2560_q80",
+        "page_url": "https://robotics.yandex.ru/robotizatsiya-sklada",
+        "caption": "Робот инвентаризатор — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Инвентаризатор AI Stock Counter 12M",
+      "manufacturer": "ООО \"ГК Автомакон\"",
+      "url": "https://automacon.ru/inventarizator/",
+      "title": "Инвентаризатор AI Stock Counter 12M — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "max_speed_mps",
+          "value": 0.6,
+          "confirmed": true
+        },
+        {
+          "code": "runtime_h",
+          "value": 2,
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Автоматическая зарядка.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Сопоставление QR-кодов товаров и ячеек; передача результатов в систему складского учёта.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Мачта 12 м; дальность сканирования до 2 м; камеры и дополнительная подсветка; настраиваемый маршрут патрулирования.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://automacon.ru/inventarizator/",
+        "https://robot.automacon.ru/inventory-robot"
+      ],
+      "research_note": "Найдена официальная страница с полным именем «Neurus AI Stock Counter 12M (AUSC12)», что подтверждает соответствие названия. На новой странице Neurus встречается 500 паллет/мин; сомнительную производительность не переносим в расчёт.",
+      "fields": {
+        "purpose": "Автоматическая инвентаризация товаров и сверка фактического размещения с учётной системой."
+      }
+    },
+    {
+      "product_name": "Яндекс-ровер R 4.0",
+      "manufacturer": "ООО \"Яндекс Роботикс\"",
+      "url": "https://autonomy.yandex.ru/products/robot",
+      "title": "Яндекс-ровер R 4.0 — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 20,
+          "confirmed": true
+        },
+        {
+          "code": "length_mm",
+          "value": 880,
+          "confirmed": true
+        },
+        {
+          "code": "width_mm",
+          "value": 678,
+          "confirmed": true
+        },
+        {
+          "code": "height_mm",
+          "value": 1191,
+          "confirmed": true
+        },
+        {
+          "code": "runtime_h",
+          "value": 12,
+          "confirmed": true,
+          "value_max": 14
+        },
+        {
+          "code": "navigation_type",
+          "text": "Лидар, пять камер, четыре ультразвуковых датчика и собственная модель автономного движения.",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Аккумулятор собственной разработки с быстрой заменой для работы на линии.",
+          "confirmed": true
+        },
+        {
+          "code": "floor_requirements",
+          "text": "Городские тротуары; шесть ведущих колёс и независимая подвеска, препятствия до 140 мм, клиренс 130 мм.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Заказы и уведомления пользователя через Яндекс Лавку и Яндекс Еду; удалённый оператор подключается при затруднениях.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://autonomy.yandex.ru/products/robot"
+      ],
+      "research_note": "Текущая официальная страница прямо называет четвёртое поколение. Размеры груза не смешаны с размерами робота; 10 км/ч названы средней скоростью по городу, поэтому не занесены как максимальная скорость.",
+      "image": {
+        "url": "https://autonomy.yandex.ru/static/images/v2/product/robot/technologies/rover-parameters-bg-@2x.jpg",
+        "page_url": "https://autonomy.yandex.ru/products/robot",
+        "caption": "Яндекс-ровер R 4.0 — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Аркус",
+      "manufacturer": "НИУ ВШЭ",
+      "url": "https://ir.hse.ru/news/1144440463.html",
+      "title": "Аркус — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://ir.hse.ru/news/1144440463.html"
+      ],
+      "research_note": "Найден первичный источник разработчика — НИУ ВШЭ. Полный технический паспорт и фотография с однозначной идентификацией модели для обновления карточки не найдены.",
+      "fields": {
+        "purpose": "Автономная доставка посылок на территории кампусов, взаимодействие с городской инфраструктурой и постаматами.",
+        "limitations": "Университетская разработка: публичная статья описывает сценарий доставки, но не содержит полного паспорта или серийной цены."
+      }
+    },
+    {
+      "product_name": "Promobot V.4",
+      "manufacturer": "ООО \"Промобот\"",
+      "url": "https://promo-bot.ru/production/promobot-v4/",
+      "title": "Promobot V.4 — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "SDK для сторонних разработчиков; подключение внешних баз данных, систем безопасности, сайтов, электронной очереди и других сервисов.",
+          "confirmed": true
+        },
+        {
+          "code": "navigation_type",
+          "text": "Автономная навигация с объездом препятствий, распознаванием лиц и речи.",
+          "confirmed": true
+        },
+        {
+          "code": "connectivity",
+          "text": "USB для загрузки промоматериалов; внешние системы подключаются через предусмотренные платформой интерфейсы.",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "В корпусе предусмотрен разъём зарядного устройства; режим зарядки определяется руководством эксплуатации.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://promo-bot.ru/production/promobot-v4/",
+        "https://promo-bot.ru/wp-content/uploads/2025/12/Promobot-V.4-instruktsiya-fin-CMYK-20-12-2025.pdf"
+      ],
+      "research_note": "Сверена официальная карточка Promobot V.4 и ссылка на руководство. Добавлены SDK, инфраструктура и ограничения комплектации; публичной цены обслуживания нет.",
+      "fields": {
+        "purpose": "Консультирование посетителей, выдача информации и документов, управление очередью, печать и приём оплаты в выбранной комплектации.",
+        "limitations": "Принтер, сканер, банковский терминал и другие периферийные модули выбираются под задачу; наличие конкретной функции необходимо сверять с комплектацией."
+      },
+      "image": {
+        "url": "https://promo-bot.ru/wp-content/uploads/2022/05/img-promobot-v4-360-2-1.jpg",
+        "page_url": "https://promo-bot.ru/production/promobot-v4/",
+        "caption": "Promobot V.4 — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Арди",
+      "manufacturer": "ООО \"Промобот\"",
+      "url": "https://promo-bot.ru/news/samyj-populyarnyj-robot-vystavki-rossiya-na-vdnh-podklyuchilsya-k-iskusstvennomu-intellektu-ot-yandex/",
+      "title": "Арди — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "YandexGPT совместно с лингвистической базой Promobot; Motion Capture для воспроизведения мимики и жестов.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://promo-bot.ru/news/samyj-populyarnyj-robot-vystavki-rossiya-na-vdnh-podklyuchilsya-k-iskusstvennomu-intellektu-ot-yandex/"
+      ],
+      "research_note": "Первоисточник — публикация производителя о роботе Арди, включая фотографию. Серийный паспорт и цена именно Арди публично не опубликованы.",
+      "fields": {
+        "purpose": "Общение с посетителями, ответы на вопросы, выступления и интерактивные шоу на выставках.",
+        "limitations": "Индивидуальный проект на платформе Robo-C для «Дабл Ю Экспо». Технические характеристики других заказных андроидов и базовых исполнений Robo-C автоматически не применяются."
+      },
+      "image": {
+        "url": "https://promo-bot.ru/wp-content/uploads/2024/03/1.jpg",
+        "page_url": "https://promo-bot.ru/news/samyj-populyarnyj-robot-vystavki-rossiya-na-vdnh-podklyuchilsya-k-iskusstvennomu-intellektu-ot-yandex/",
+        "caption": "Арди — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Грин",
+      "manufacturer": "ПАО \"Сбербанк\"",
+      "url": "https://habr.com/ru/companies/sberbank/articles/1086726/",
+      "title": "Грин — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "В официальном исследовательском комплекте Green Challenge доступны Green-VLA, URDF-модель робота, окружение Isaac Sim и данные LeRobot; это инструменты разработки, не готовая интеграция с WMS.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://habr.com/ru/companies/sberbank/articles/1086726/"
+      ],
+      "research_note": "Найдена подробная первичная публикация Sber Robotics в официальном блоге Сбера. Нет полного публичного аппаратного паспорта, серийной цены или SLA.",
+      "fields": {
+        "purpose": "Исследование и обучение физического ИИ задачам мобильной манипуляции в торговле и логистике.",
+        "limitations": "Источник описывает конкурсное цифровое окружение Грина. Параметры симулятора и число камер наблюдения не выданы за паспорт физического серийного робота."
+      }
+    },
+    {
+      "product_name": "Айдол",
+      "manufacturer": "ООО \"Айдол\"",
+      "url": "https://aidoltech.ru/walking",
+      "title": "Айдол — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "height_mm",
+          "value": 1860,
+          "confirmed": true
+        },
+        {
+          "code": "weight_kg",
+          "value": 95,
+          "confirmed": true
+        },
+        {
+          "code": "max_speed_mps",
+          "value": 1.6667,
+          "confirmed": true,
+          "note": "Пересчитано из опубликованных 6 км/ч: 6 / 3,6."
+        },
+        {
+          "code": "runtime_h",
+          "value": 6,
+          "confirmed": true,
+          "note": "До 6 часов по заявлению производителя."
+        },
+        {
+          "code": "payload_kg",
+          "value": 10,
+          "confirmed": true,
+          "note": "Грузоподъёмность 10 кг заявлена при согнутом плече; не распространяется на полностью вытянутую руку."
+        },
+        {
+          "code": "integration",
+          "text": "AIDOL AI с онлайн- и офлайн-режимами; интеграция с внешним программным обеспечением.",
+          "confirmed": true
+        },
+        {
+          "code": "connectivity",
+          "text": "Для функции захвата мимики: iPhone с TrueDepth и iOS 13+, подключение к той же Wi-Fi-сети; обмен по TCP.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://aidoltech.ru/walking"
+      ],
+      "research_note": "Официальный паспорт шагающей версии и изображение из её галереи; соответствие исполнению в исходном PDF проверено по фотографии.",
+      "fields": {
+        "purpose": "Гуманоид для взаимодействия с человеком, движения, воспроизведения жестов и мимики.",
+        "limitations": "Сверено полноразмерное шагающее исполнение AIDOL: именно оно изображено в каталоге организатора. Параметры настольной версии и её цена не перенесены."
+      },
+      "image": {
+        "url": "https://static.tildacdn.com/tild6637-6165-4333-b236-363364643430/aidol-walking.png",
+        "page_url": "https://aidoltech.ru/walking",
+        "caption": "AIDOL — полный вид шагающего робота, официальный рендер производителя",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "R-Cafe 1.3",
+      "manufacturer": "ООО \"Робопро\"",
+      "url": "https://doka-robots.ru/",
+      "title": "R-Cafe 1.3 — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://doka-robots.ru/"
+      ],
+      "research_note": "Выполнен поиск точной модели R-Cafe 1.3 и проверен текущий официальный ресурс РОБОПРО/DOKA. Отдельный открытый паспорт и однозначное изображение модели не найдены. Кафе других производителей и параметры коботов RC не используются как характеристики R-Cafe."
+    },
+    {
+      "product_name": "Фудтрак",
+      "manufacturer": "ООО \"Соло Кофе\"",
+      "url": "https://coffeesolo.ru/robo-cafe/",
+      "title": "Фудтрак — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "Терминал заказа и безналичной оплаты; интеграция с системами управления заказами, учёт остатков и электронная очередь.",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Для установки робокафе требуется розетка 220 В; это сетевое питание, а не автономная аккумуляторная зарядка.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Изготовление, доставка, установка и обслуживание силами поставщика.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Формат «Фудтрак» предназначен для смены мест с высокой проходимостью. Для робокафе в целом указана площадка 2,5 × 2,5 м; это требование к месту размещения, не габариты фудтрака.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://coffeesolo.ru/robo-cafe/"
+      ],
+      "research_note": "На официальной странице явно выделен формат «Фудтрак». Условия общей платформы отражены текстом с ограничением применимости; фото стационарных киосков не выдано за фудтрак.",
+      "fields": {
+        "purpose": "Продажа и приготовление кофе, мороженого, молочных коктейлей и лимонадов с автоматическим дозированием ингредиентов.",
+        "limitations": "На странице объединены три формата: помещение, улица и фудтрак. Габариты транспортного средства, его скорость, масса и автономность отдельно не опубликованы."
+      },
+      "image": {
+        "url": "https://coffeesolo.ru/wp-content/themes/solo-coffee/assets/images/robots/setup-mobile.png",
+        "page_url": "https://coffeesolo.ru/robo-cafe/",
+        "caption": "Фудтрак SoloCoffee — изображение блока «Фудтрак» официального сайта",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Воркер",
+      "manufacturer": "ПАО \"Сбербанк\"",
+      "url": "https://www.sberbank.ru/ru/sberpress/all/article?blockID=1303&lang=ru&newsID=a29cf17e-6df2-41ca-a235-59a478f8d225&regionID=77&type=NEWS",
+      "title": "Воркер — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://www.sberbank.ru/ru/sberpress/all/article?blockID=1303&lang=ru&newsID=a29cf17e-6df2-41ca-a235-59a478f8d225&regionID=77&type=NEWS",
+        "https://incrussia.ru/news/sber-predstavil-robota-vorker-i-ustroil-ego-na-rabotu-v-perekrestok/"
+      ],
+      "research_note": "Найдена прямая ссылка на пресс-релиз Сбера о Воркере через публикацию Инк. от 06.06.2026; сайт Сбера возвращает страницу о сертификате вместо материала. Полный технический паспорт, серийная цена и изображение из доступного первоисточника не получены; данные Грина не перенесены."
+    },
+    {
+      "product_name": "IQ-BUS V",
+      "manufacturer": "ООО \"Аврора Роботикс\"",
+      "url": "https://avrora-robotics.com/ru/projects/passenger-logistics/",
+      "title": "IQ-BUS V — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "navigation_type",
+          "text": "Движение по заданному замкнутому маршруту под контролем оператора; глобальная и локальная карты проходимости, объезд статических и динамических препятствий.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Загрузка и выгрузка маршрутов, траекторий и карт проходимости; самодиагностика уровня заряда и подсистем.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Вендинговая V-series работает на закрытых территориях по маршруту, останавливается по требованию или в запрограммированных точках.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://avrora-robotics.com/ru/projects/passenger-logistics/"
+      ],
+      "research_note": "Проверена официальная страница семейства IQ-Bus; выделены сведения V-series. Указание 20 км/ч относится к функции построения карты и не принято за максимальную скорость конкретной комплектации V.",
+      "fields": {
+        "purpose": "Мобильный вендинговый аппарат: продажа напитков, мороженого и снеков с оплатой и выдачей товара.",
+        "limitations": "V-series отличается от пассажирской P-series и рекламной A-series. Пассажировместимость P-series и характеристики рекламных панелей A-series не относятся к этому товару."
+      }
+    },
+    {
+      "product_name": "Роботизированная передвижная зарядная станция для электромобилей",
+      "manufacturer": "Росатом",
+      "url": "https://strana-rosatom.ru/2026/04/09/rosatom-sozdal-pervogo-bespilotno/",
+      "title": "Роботизированная передвижная зарядная станция для электромобилей — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "max_speed_mps",
+          "value": 2.7778,
+          "confirmed": true,
+          "note": "До 10 км/ч по заявлению директора направления ТВЭЛ; 10 / 3,6."
+        },
+        {
+          "code": "battery_capacity_kwh",
+          "value": 35,
+          "confirmed": true,
+          "note": "Пилотный образец. Для планируемой серии заявлено до 105 кВт·ч, это другое исполнение."
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Автоматическое возвращение к модулю зарядки с пантографом пиковой мощностью до 22 кВт.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Вызов станции через клиентское приложение; работа в пределах заданной зоны.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Колёсное шасси для парковок бизнес-центров, жилых комплексов и придорожных зон; производитель заявляет преодоление уклонов и неровностей без публикации предельных значений.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://strana-rosatom.ru/2026/04/09/rosatom-sozdal-pervogo-bespilotno/",
+        "https://tvel.ru/press-center/news/?ELEMENT_ID=22697&arrNewsFilter_idBlock=1"
+      ],
+      "research_note": "Первичный источник — отраслевое издание госкорпорации Росатом с прямыми данными руководителя ТВЭЛ и фотографией разработки. Пилотная и планируемая серийная батареи явно разделены.",
+      "fields": {
+        "purpose": "Мобильная зарядка электромобилей на парковках при недостатке или занятости стационарных зарядных мест.",
+        "country_of_origin": "Россия",
+        "limitations": "Данные относятся к пилотным образцам; 105 кВт·ч заявлены для планируемой серии. Скорость зарядки автомобиля, совместимые разъёмы, габариты и масса требуют паспорта комплектации."
+      },
+      "image": {
+        "url": "https://strana-rosatom.ru/wp-content/uploads/2026/04/atm-80545.jpeg",
+        "page_url": "https://strana-rosatom.ru/2026/04/09/rosatom-sozdal-pervogo-bespilotno/",
+        "caption": "Роботизированная передвижная зарядная станция для электромобилей — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Белка",
+      "manufacturer": "ООО \"Дронсхаб\"",
+      "url": "https://droneshub.group/",
+      "title": "Белка — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://droneshub.group/",
+        "https://droneshub.ru/",
+        "https://rovershub.ru/"
+      ],
+      "research_note": "Проверены актуальные официальные сайты Дронсхаб и RoversHub (перенаправляет на droneshub.group). Полный открытый паспорт модели «Белка» не найден; характеристики платформ «Контакт» и «Пиранья» не перенесены. Для подтверждения параметров требуется документ разработчика."
+    },
+    {
+      "product_name": "RC5-16",
+      "manufacturer": "ООО \"Робопро\"",
+      "url": "https://doka-robots.ru/cobots/rc16/",
+      "title": "RC5-16 — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "text": "Семейство RC5–16: RC5 — 5 кг, RC10 — 10 кг, RC16 — 16 кг номинально (до 18 кг максимально).",
+          "confirmed": true
+        },
+        {
+          "code": "weight_kg",
+          "text": "Масса манипулятора зависит от исполнения: RC5 — 27 кг, RC10 — 38 кг, RC16 — 36 кг.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Графическая среда «Пульс», Python API, Ethernet и дискретные/аналоговые входы и выходы контроллера.",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Контроллер питается от сети 100–240 В AC, 47–55 Гц; автономная работа от батарей не заявлена.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Для RC16: IP54, повторяемость ±0,05 мм, радиус 950 мм. Температура контроллера 0…45 °C; класс защиты контроллера IP42.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://doka-robots.ru/cobots/rc16/"
+      ],
+      "research_note": "Проверена официальная карточка РОБОПРО/DOKA: перечислены RC5, RC10 и RC16. Общесерийные сведения и параметры отдельных версий явно разделены. Скорость рабочего органа 2 м/с не отнесена к перемещению робота.",
+      "fields": {
+        "limitations": "Название RC5–16 в исходном каталоге обозначает семейство. Перед подбором требуется выбрать конкретную модификацию; её параметры нельзя объединить в один числовой паспорт."
+      }
+    },
+    {
+      "product_name": "Берилл",
+      "manufacturer": "ООО \"Валдай Роботы\"",
+      "url": "https://vald.ai/beryl",
+      "title": "Берилл — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "ПО СКАЛА-П; EtherCAT Master, Modbus TCP Master/Slave, PROFINET через Slave-шлюз, VALDAi API.",
+          "confirmed": true
+        },
+        {
+          "code": "floor_requirements",
+          "text": "Стационарная установка на пол; эксплуатация с предусмотренными проектом средствами ограждения и безопасности.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "STO, тормоза осей и подключение внешних средств безопасности. Скорость рабочего органа не является скоростью передвижения по объекту.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://vald.ai/beryl"
+      ],
+      "research_note": "Добавлены интерфейсы и инфраструктура из официальной карточки Берилл. Производитель описывает промышленный манипулятор, поэтому автоматическое движение по складу не подразумевается.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild3432-3535-4432-b265-303166653363/IMG_3043.PNG",
+        "page_url": "https://vald.ai/beryl",
+        "caption": "Берилл — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "RH06A2",
+      "manufacturer": "ООО \"СМД\"",
+      "url": "https://smd.com.ru/landings/robot-rh06a2-gsk/",
+      "title": "RH06A2 — источник технических сведений",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 6,
+          "confirmed": true,
+          "note": "Общее значение для опубликованных исполнений RH06A2-1490 и RH06A2-2000."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 0.05,
+          "confirmed": true,
+          "note": "Повторяемость позиционирования обеих модификаций RH06A2."
+        },
+        {
+          "code": "weight_kg",
+          "text": "RH06A2-1490 — 190 кг; RH06A2-2000 — 265 кг. Выбор исполнения обязателен.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "DeviceNet для совместимых сварочных источников; аналоговый ввод-вывод, Ethernet и CAN, общая система управления с позиционерами.",
+          "confirmed": true
+        },
+        {
+          "code": "floor_requirements",
+          "text": "Стационарный монтаж на полу, столе, треке, поворотном устройстве или подвесная установка по проекту.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "СМД заявляет гарантию два года на оборудование и сервисную поддержку интегратора.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Шесть осей и полая рука для прокладки сварочных коммуникаций; рабочий радиус 1490 либо 2000 мм по модификации.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://smd.com.ru/landings/robot-rh06a2-gsk/",
+        "https://smd.com.ru/projects/robosvarka/svarka-traktorov/"
+      ],
+      "research_note": "Найдена официальная страница интегратора по серии RH06A2 с таблицей и оригинальными фото (data-src). Общие числа отделены от параметров вариантов; угловые скорости осей не превращены в м/с.",
+      "fields": {
+        "purpose": "Роботизированная дуговая сварка деталей и металлоконструкций в составе сварочной ячейки.",
+        "country_of_origin": "Китай",
+        "limitations": "Изготовитель манипулятора — GSX/GSK (Китай), СМД — российский интегратор. Размеры и грузоподъёмность позиционеров сварочного комплекса не являются параметрами манипулятора."
+      },
+      "image": {
+        "url": "https://smd.com.ru/upload/medialibrary/f10/s7t6407ovpe1oo3fryzdgf1xmnsu2fh4/14_42_44-_BELOV.jpg",
+        "page_url": "https://smd.com.ru/landings/robot-rh06a2-gsk/",
+        "caption": "RH06A2 — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "ARM95-200 (грузоподъемность до 18 кг)",
+      "manufacturer": "ООО \"Прикладная Робототехника\"",
+      "url": "https://www.appliedrobotics-rtc.ru/product",
+      "title": "ARM95-200 (грузоподъемность до 18 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [],
+      "reviewed_urls": [
+        "https://www.appliedrobotics-rtc.ru/product"
+      ],
+      "research_note": "Текущий официальный сайт показывает общую карточку ARM95 и таблицу с незаполненными шаблонными ячейками. Паспорт именно ARM95-200 не обнаружен; шаблонные значения и фото неопределённой модификации не перенесены. 18 кг в названии организатора не принято как отдельно проверенный паспорт."
+    },
+    {
+      "product_name": "Робототехнический комплекс REDLOAD PRO 10 COBOT",
+      "manufacturer": "ООО \"Технорэд\"",
+      "url": "https://technored.ru/catalog/oborudovanie-dlya-stankov/robotizirovannye-operatory-stankov/robototehnicheskij-kompleks-redload-pro-10-cobot.html",
+      "title": "Робототехнический комплекс REDLOAD PRO 10 COBOT — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 10,
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 0.03,
+          "confirmed": true,
+          "note": "Повторяемость по данным производителя."
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Сетевое питание 230 В, 50 Гц. Среднее потребление 500 Вт, максимальное 2000 Вт; батарейная автономность не заявлена.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Шесть осей; рабочий радиус манипулятора 1350 мм.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://technored.ru/catalog/oborudovanie-dlya-stankov/robotizirovannye-operatory-stankov/robototehnicheskij-kompleks-redload-pro-10-cobot.html"
+      ],
+      "research_note": "На официальной странице точной модели подтверждены нагрузка, повторяемость и электрические требования. Публичная фиксированная стоимость комплекса не опубликована.",
+      "fields": {
+        "purpose": "Загрузка и выгрузка деталей при обслуживании станков с ЧПУ.",
+        "limitations": "Радиус рабочего пространства относится к досягаемости манипулятора, а не к длине его корпуса."
+      },
+      "image": {
+        "url": "https://technored.ru/upload/iblock/73f/l8iyymwe7um74wgchasz0ylmuy7eki02.png",
+        "page_url": "https://technored.ru/catalog/oborudovanie-dlya-stankov/robotizirovannye-operatory-stankov/robototehnicheskij-kompleks-redload-pro-10-cobot.html",
+        "caption": "Робототехнический комплекс REDLOAD PRO 10 COBOT — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Робототехнический комплекс REDWELD BASIC",
+      "manufacturer": "ООО \"Технорэд\"",
+      "url": "https://technored.ru/upload/uf/c51/gncpzbmjcer5pl3dmf5ruj3jbukr7n38.pdf#page=6",
+      "title": "Робототехнический комплекс REDWELD BASIC — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "text": "6 кг для опубликованных исполнений BASIC 1.5 MIG и BASIC 2 MIG.",
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "text": "Повторяемость ±0,05 мм для 1.5 MIG; ±0,08 мм для 2 MIG.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "IP54; досягаемость 1440 мм (1.5 MIG) или 2008 мм (2 MIG).",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "6-осевой REDS, шкаф и пульт управления, сварочное ПО; варианты MIG/TIG/LASER.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Комплект ЗИП, станция очистки горелки и обучение входят в опубликованный состав.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://technored.ru/upload/uf/c51/gncpzbmjcer5pl3dmf5ruj3jbukr7n38.pdf#page=6"
+      ],
+      "research_note": "Официальный каталог раскрывает варианты семейства; не объединяем в числовой паспорт параметры разных исполнений.",
+      "fields": {
+        "purpose": "Автоматическая промышленная сварка.",
+        "limitations": "REDWELD BASIC — семейство комплексов. До подбора оборудования необходимо выбрать исполнение: радиус и точность у вариантов отличаются."
+      }
+    },
+    {
+      "product_name": "Робототехнический комплекс REDWELD PRO 10 COBOT",
+      "manufacturer": "ООО \"Технорэд\"",
+      "url": "https://technored.ru/upload/uf/c51/gncpzbmjcer5pl3dmf5ruj3jbukr7n38.pdf#page=5",
+      "title": "Робототехнический комплекс REDWELD PRO 10 COBOT — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 10,
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 0.03,
+          "confirmed": true,
+          "note": "Повторяемость манипулятора REDS C10."
+        },
+        {
+          "code": "operating_conditions",
+          "text": "IP54; радиус досягаемости 1350 мм; рабочая зона платформы MT Kit 1400×1400 мм.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Специализированное сварочное ПО и пульт управления; исполнение MIG/MAG либо LASER.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Комплект ЗИП и обучение RED UNIVERSITY входят в опубликованный состав; для MIG/MAG — станция очистки горелки.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://technored.ru/upload/uf/c51/gncpzbmjcer5pl3dmf5ruj3jbukr7n38.pdf#page=5"
+      ],
+      "research_note": "Точное имя REDWELD PRO 10 COBOT найдено в официальном каталоге TECHNORED. Размер рабочей зоны не записывается как внешний габарит комплекса.",
+      "fields": {
+        "purpose": "Роботизированная сварка с коллаборативным манипулятором."
+      }
+    },
+    {
+      "product_name": "Модель А6-2000",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "url": "https://aa-start.ru/equipment/svarochnye-roboty-i-kompleksy/",
+      "title": "Модель А6-2000 — источник технических сведений",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 6,
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 0.05,
+          "confirmed": true,
+          "note": "Повторяемость."
+        },
+        {
+          "code": "integration",
+          "text": "Программирование Python, возможности подключения компьютерного зрения; сварочный комплект KolArc.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Стационарная MIG/MAG сварка; рабочий радиус 2010 мм; станция очистки и обрезки проволоки.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://aa-start.ru/equipment/svarochnye-roboty-i-kompleksy/"
+      ],
+      "research_note": "Официальный дилер Эйдос ООО «Старт» прямо указывает А6-2000 и его характеристики; состав сварочной ячейки отделён от параметров манипулятора.",
+      "fields": {
+        "purpose": "Промышленная электродуговая сварка MIG/MAG.",
+        "limitations": "Требуются подготовленное рабочее место, защита от сварочного излучения и проект подключения. Характеристики соседних ячеек А12 не перенесены."
+      }
+    },
+    {
+      "product_name": "Учебная ячейка REDEDUCATION PRO",
+      "manufacturer": "ООО \"Технорэд\"",
+      "url": "https://technored.ru/catalog/uchebnye_roboty/robotizirovannyj-kompleks-rededucation-pro.html",
+      "title": "Учебная ячейка REDEDUCATION PRO — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "text": "5 или 10 кг в зависимости от выбранной комплектации REDS.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Учебные модули захвата, технического зрения, конвейера, пневматики и имитации загрузки станка предлагаются опционально.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "В комплекте методическое пособие, доставка, шеф-монтаж, практическое обучение двух человек и доступ к онлайн-платформе на 3 месяца.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Учебная ячейка для вузов, колледжей и кванториумов; защита манипуляторов IP54.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://technored.ru/catalog/uchebnye_roboty/robotizirovannyj-kompleks-rededucation-pro.html"
+      ],
+      "research_note": "Официальная карточка модели содержит варианты исполнения; добавлены только общие характеристики и явные условия комплектации.",
+      "fields": {
+        "purpose": "Обучение программированию роботов, техническому зрению, транспортировке и загрузке оборудования.",
+        "limitations": "Существуют комплектации на 5 и 10 кг; размеры, масса и повторяемость манипулятора зависят от исполнения и не равны характеристикам целой ячейки."
+      },
+      "image": {
+        "url": "https://technored.ru/upload/iblock/e40/n4cndfbq75j120lgb36tzs5md7ci6k8j.png",
+        "page_url": "https://technored.ru/catalog/uchebnye_roboty/robotizirovannyj-kompleks-rededucation-pro.html",
+        "caption": "Учебная ячейка REDEDUCATION PRO — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Модель А220-2700",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "url": "https://tnvst.ru/catalog/promyshlennye-roboty/promyshlennyy-robot-manipulyator-eydos-a220-2700/",
+      "title": "Модель А220-2700 — источник технических сведений",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 220,
+          "confirmed": true
+        },
+        {
+          "code": "weight_kg",
+          "value": 1100,
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 0.06,
+          "confirmed": true,
+          "note": "Повторяемость позиционирования, не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "value": 0,
+          "confirmed": true,
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "value": 80,
+          "confirmed": true,
+          "note": "Не более 80 дБ."
+        },
+        {
+          "code": "operating_conditions",
+          "text": "IP65; запястье IP67; влажность до 75%, кратковременно до 95%, без конденсата; досягаемость 2701 мм.",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Стационарное питание 380 В, 50 Гц, 25 А.",
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Программирование Python; встроенная сигнальная линия на 16 проводов.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://tnvst.ru/catalog/promyshlennye-roboty/promyshlennyy-robot-manipulyator-eydos-a220-2700/",
+        "https://magadangorod.ru/common/upload/28/editor/file/AO_Eydos_Robototekhnika.pdf#page=8"
+      ],
+      "research_note": "Модель и ТТХ сверены по карточке TINVEST, заявленного официального дилера Эйдос; существование модели подтверждено презентацией производителя на сайте администрации Магадана.",
+      "fields": {
+        "purpose": "Погрузочно-разгрузочные и сборочные операции; точечная сварка.",
+        "limitations": "Стационарный промышленный манипулятор. Рабочая зона и безопасность ячейки проектируются отдельно; опубликованные угловые скорости осей не являются скоростью перемещения по объекту."
+      },
+      "image": {
+        "url": "https://tnvst.ru/upload/iblock/bb2/4cxd3ga59pnxpuktt2qnkbbj88s5xf1e.jpg",
+        "page_url": "https://tnvst.ru/catalog/promyshlennye-roboty/promyshlennyy-robot-manipulyator-eydos-a220-2700/",
+        "caption": "Модель А220-2700 — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "D. Operator P",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://dikom-a.ru/product/dikom-d-operator-p",
+      "title": "D. Operator P — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 20.0,
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "IP54; скорость операций манипулятора до 2 м/с. Стационарная ячейка, не скорость движения робота по объекту.",
+          "confirmed": true
+        },
+        {
+          "code": "charging_infrastructure",
+          "text": "Стационарное электропитание 220 В; аккумуляторная зарядка для этой ячейки не требуется.",
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 0.1,
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://dikom-a.ru/product/dikom-d-operator-p",
+        "https://dikom-a.ru/category/roboti-k-stankam"
+      ],
+      "research_note": "Извлечены опубликованные таблицы характеристик и оригинал изображения из данных официального сайта ДиКом (Next.js). Цена оборудования и обслуживания публично не указана.",
+      "fields": {
+        "purpose": "Робототехнический комплекс обеспечивают непрерывность работы станков (фрезерных, токарных, лазерных и т.д.)",
+        "limitations": "Радиус действия манипулятора — 1800 мм; опубликованный вес 64 кг относится к роботу CS620. Габариты 830×1600×700 мм приведены для ячейки; рабочий объём и защитное ограждение определяются проектом."
+      },
+      "image": {
+        "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2026/07/operator-p-bez-fona-1-scaled.png",
+        "page_url": "https://dikom-a.ru/product/dikom-d-operator-p",
+        "caption": "D. Operator P — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Дельта-робот",
+      "manufacturer": "ООО \"Битроботикс\"",
+      "url": "https://bitrobotics.com/",
+      "title": "Дельта-робот — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "throughput",
+          "value": 150,
+          "confirmed": true,
+          "note": "Заявленная производителем скорость дельта-робота — до 150 единиц продукции в минуту; фактическая скорость зависит от продукта и комплекса.",
+          "unit": "ед/мин"
+        },
+        {
+          "code": "integration",
+          "text": "PackML и OPC UA, контроллеры реального времени, HMI, системы машинного зрения 2D/3D.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "Поддержка на русском языке, заявленный ответ в течение 24 часов; собственный запас запасных частей.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://bitrobotics.com/"
+      ],
+      "research_note": "Официальный сайт производителя описывает дельта-роботов, интерфейсы и сервис. Маркетинговый срок окупаемости не использован как параметр экономической модели.",
+      "fields": {
+        "purpose": "Перекладка продукции, первичная упаковка, групповая укладка в короб и контроль качества на производственных линиях.",
+        "limitations": "Карточка каталога обозначает класс дельта-роботов без артикула. Масса, габариты, нагрузка, комплектация захвата и итоговый такт уточняются под конкретную линию."
+      }
+    },
+    {
+      "product_name": "DMR 300 Carrier B",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://dikom-a.ru/product/d-carrier-b",
+      "title": "DMR 300 Carrier B — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "max_speed_mps",
+          "value": 1.5,
+          "confirmed": true
+        },
+        {
+          "code": "payload_kg",
+          "value": 100.0,
+          "confirmed": true,
+          "note": "На официальном сайте точное имя «DMR 300 Carrier B», но грузоподъёмность указана 100 кг. Число 300 в названии не интерпретируется как грузоподъёмность. Для заказа требуется подтверждение исполнения производителем."
+        },
+        {
+          "code": "navigation_type",
+          "text": "SLAM",
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 5.0,
+          "confirmed": true
+        },
+        {
+          "code": "runtime_h",
+          "value": 8.0,
+          "confirmed": true
+        },
+        {
+          "code": "charge_time_h",
+          "value": 2.0,
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://dikom-a.ru/product/d-carrier-b",
+        "https://dikom-a.ru/category/avtonomnye-mobilnye-roboty"
+      ],
+      "research_note": "Извлечены опубликованные таблицы характеристик и оригинал изображения из данных официального сайта ДиКом (Next.js). Цена оборудования и обслуживания публично не указана.",
+      "fields": {
+        "purpose": "Автономный мобильный робот с надстройкой для перевозки, загрузки и выгрузки материалов, заготовок и комплектующих в пластиковых ящиках KLT.",
+        "limitations": "На официальной странице приведены габариты 825х570х1695 мм под заголовком В×Ш×Г. Порядок осей требует сверки с чертежом: для моделей этой серии в разных публикациях порядок отличается. Ширина рабочего прохода и допустимые полы уточняются по проекту."
+      },
+      "image": {
+        "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2025/12/carrier-b-kvadrat-scaled.png",
+        "page_url": "https://dikom-a.ru/product/d-carrier-b",
+        "caption": "DMR 300 Carrier B — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "DMP 15000",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://dikom-a.ru/product/dmp-15000",
+      "title": "DMP 15000 — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 15000.0,
+          "confirmed": true,
+          "note": "Максимум по странице производителя."
+        },
+        {
+          "code": "lift_height_mm",
+          "value": 250.0,
+          "confirmed": true
+        },
+        {
+          "code": "max_speed_mps",
+          "value": 0.5,
+          "confirmed": true
+        },
+        {
+          "code": "runtime_h",
+          "value": 12.0,
+          "confirmed": true
+        },
+        {
+          "code": "charge_time_h",
+          "value": 10.0,
+          "confirmed": true
+        },
+        {
+          "code": "navigation_type",
+          "text": "SLAM / ручной ПУ",
+          "confirmed": true
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "value": 2.0,
+          "confirmed": true
+        },
+        {
+          "code": "height_mm",
+          "value": 653,
+          "confirmed": true
+        },
+        {
+          "code": "width_mm",
+          "value": 2534,
+          "confirmed": true
+        },
+        {
+          "code": "length_mm",
+          "value": 6770,
+          "confirmed": true
+        },
+        {
+          "code": "integration",
+          "text": "Возможна сцепка платформ для совместной перевозки крупногабаритного груза.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://dikom-a.ru/product/dmp-15000",
+        "https://dikom-a.ru/category/avtonomnye-mobilnye-roboty"
+      ],
+      "research_note": "Извлечены опубликованные таблицы характеристик и оригинал изображения из данных официального сайта ДиКом (Next.js). Цена оборудования и обслуживания публично не указана.",
+      "fields": {
+        "purpose": "Высокоманевренные автономные платформы для перевозки крупногабаритных сборочных единиц с участка на участок (например, от сварочного участка до покрасочной линии и между ее этапами)."
+      },
+      "image": {
+        "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2026/07/dmp-15000-bez-fona.png",
+        "page_url": "https://dikom-a.ru/product/dmp-15000",
+        "caption": "DMP 15000 — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Tagarka (грузоподъемность до 6 000 кг)",
+      "manufacturer": "ООО \"Семаргл\"",
+      "url": "https://semargl.pro/equipment/avtomatizirovannye-transportnye-sistemy-tagarka-agv-sagv-m/",
+      "title": "Tagarka (грузоподъемность до 6 000 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 6000,
+          "confirmed": true,
+          "note": "6 т явно указаны в тексте грузоподъёмности семейства и в карточке TAGARKA 6t."
+        },
+        {
+          "code": "integration",
+          "text": "Возможна интеграция с роботизированными ячейками, подъёмными столами, фиксаторами и кассетами; несколько платформ могут работать в тандеме.",
+          "confirmed": true
+        },
+        {
+          "code": "navigation_type",
+          "text": "Автоматическое управление либо радиопульт, в зависимости от исполнения.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://semargl.pro/equipment/avtomatizirovannye-transportnye-sistemy-tagarka-agv-sagv-m/"
+      ],
+      "research_note": "Найдена отдельная карточка TAGARKA 6t на официальной странице; оригинальная фотография извлечена из HTML этой карточки. Грузоподъёмность 6 т подтверждена текстом производителя.",
+      "fields": {
+        "purpose": "Внутрицеховое перемещение тяжёлых заготовок, материалов и оснастки между складом и производственными роботизированными участками.",
+        "limitations": "Габариты, точность, время работы, ширина прохода и требования к полу определяются паспортом заказанного исполнения."
+      },
+      "image": {
+        "url": "https://semargl.pro/upload/iblock/348/3i3679nttzbmrbgf02ik1nz14uosxn3t.jpg",
+        "page_url": "https://semargl.pro/equipment/avtomatizirovannye-transportnye-sistemy-tagarka-agv-sagv-m/",
+        "caption": "Tagarka (грузоподъемность до 6 000 кг) — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Tagarka (грузоподъемность до 35 000 кг)",
+      "manufacturer": "ООО \"Семаргл\"",
+      "url": "https://semargl.pro/equipment/avtomatizirovannye-transportnye-sistemy-tagarka-agv-sagv-m/",
+      "title": "Tagarka (грузоподъемность до 35 000 кг) — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "integration",
+          "text": "Возможна интеграция с роботизированными ячейками, подъёмными столами, фиксаторами и кассетами; несколько платформ могут работать в тандеме.",
+          "confirmed": true
+        },
+        {
+          "code": "navigation_type",
+          "text": "Автоматическое управление либо радиопульт, в зависимости от исполнения.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://semargl.pro/equipment/avtomatizirovannye-transportnye-sistemy-tagarka-agv-sagv-m/"
+      ],
+      "research_note": "Найдена отдельная карточка TAGARKA 35t на официальной странице; оригинальная фотография извлечена из HTML этой карточки. 35 000 кг указаны организатором и обозначением производителя «35t», однако отдельная таблица паспорта отсутствует; значение не извлечено численно из одного названия.",
+      "fields": {
+        "purpose": "Внутрицеховое перемещение тяжёлых заготовок, материалов и оснастки между складом и производственными роботизированными участками.",
+        "limitations": "Габариты, точность, время работы, ширина прохода и требования к полу определяются паспортом заказанного исполнения."
+      },
+      "image": {
+        "url": "https://semargl.pro/upload/iblock/9fa/vy32i7k28c72y50vg6v1w88q41q6hjbt.jpg",
+        "page_url": "https://semargl.pro/equipment/avtomatizirovannye-transportnye-sistemy-tagarka-agv-sagv-m/",
+        "caption": "Tagarka (грузоподъемность до 35 000 кг) — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "Робот для транспортировки деталей и инструментов",
+      "manufacturer": "АО \"ОДК-СТАР\"",
+      "url": "https://www.rostec.ru/media/news/v-odk-star-sozdayut-robota-dlya-transportirovki-detaley-i-instrumenta/",
+      "title": "Робот для транспортировки деталей и инструментов — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "value": 100,
+          "confirmed": true
+        },
+        {
+          "code": "max_speed_mps",
+          "value": 1.5,
+          "confirmed": true
+        },
+        {
+          "code": "navigation_type",
+          "text": "Навигация по карте в автономном режиме либо управление с пульта; комплекс датчиков предотвращения столкновений.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Полноприводная платформа с независимым управлением колёсами; планируется перевозка по четырём маршрутам производственного корпуса.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.rostec.ru/media/news/v-odk-star-sozdayut-robota-dlya-transportirovki-detaley-i-instrumenta/"
+      ],
+      "research_note": "Полная официальная публикация Ростех/ОДК от 21.04.2026 получена; подтверждены имя САДКО, нагрузка и скорость. Серийные SLA, стоимость и точность ещё не опубликованы.",
+      "fields": {
+        "purpose": "Внутрицеховая доставка деталей, комплектующих и инструмента.",
+        "limitations": "Прототип САДКО: производитель сообщает о предстоящих испытаниях и дальнейшей настройке позиционирования. Решение о серийном внедрении ещё зависит от результатов испытаний."
+      },
+      "image": {
+        "url": "https://www.rostec.ru/upload/resize_cache/iblock/498/1500_1500_1/u7h4celh8elhpipmmmajk6iabl3ns8r9.jpeg",
+        "page_url": "https://www.rostec.ru/media/news/v-odk-star-sozdayut-robota-dlya-transportirovki-detaley-i-instrumenta/",
+        "caption": "Робот для транспортировки деталей и инструментов — изображение с официальной страницы",
+        "is_illustration": false
+      }
+    },
+    {
+      "product_name": "ARIPIX А1",
+      "manufacturer": "ООО \"Арипикс Роботикс\"",
+      "url": "https://aripix.com/",
+      "title": "ARIPIX А1 — официальный источник",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "text": "В исторической англоязычной карточке ARIPIX A1 указано 10 кг; актуальную грузоподъёмность заказанного исполнения нужно уточнить.",
+          "confirmed": true
+        },
+        {
+          "code": "operating_conditions",
+          "text": "Историческая спецификация A1: шесть осей, рабочий радиус 1,5 м, повторяемость 0,3 мм, температура −30…+40 °C. Актуальность конкретного исполнения требует подтверждения.",
+          "confirmed": true
+        },
+        {
+          "code": "service_requirements",
+          "text": "В опубликованном предложении производителя предусмотрено бесплатное обучение сотрудников в течение пяти дней.",
+          "confirmed": true
+        }
+      ],
+      "reviewed_urls": [
+        "https://aripix.com/",
+        "https://aripix.ru/"
+      ],
+      "research_note": "Найден официальный исторический паспорт ARIPIX A1. Данные оставлены с указанием версии; гарантийный срок капитального ремонта на текущем общем сайте не приравнен к сроку службы A1.",
+      "fields": {
+        "purpose": "Обслуживание станков, подача и укладка деталей, работа на производственных конвейерах.",
+        "limitations": "Официальный исторический сайт aripix.com и текущий aripix.ru не дают однозначного актуального паспорта поставляемой A1. Числа исторической версии сохранены текстом с оговоркой; не подменяют подтверждённый паспорт."
+      }
+    }
+  ]
+}

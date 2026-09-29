@@ -153,6 +153,9 @@ class OfferOut(Schema):
     is_default: bool
     currency: str
     price_includes_vat: bool
+    vat_status: str | None = None
+    minimum_quantity: int = 1
+    estimation_eligible: bool = True
     equipment_price: float | None
     software_price: float | None
     implementation_price: float | None
@@ -213,6 +216,19 @@ class ImageOut(BaseModel):
     is_illustration: bool = False
     caption: str | None = None
     attribution: str | None = None
+    original_url: str | None = None
+
+
+class SpecificationAlternative(BaseModel):
+    code: str
+    source_url: str
+    retrieved_at: date
+    value: float | None = None
+    value_max: float | None = None
+    text: str | None = None
+    unit: str | None = None
+    note: str | None = None
+    current_source_url: str | None = None
 
 
 class ProductSummary(BaseModel):
@@ -244,6 +260,8 @@ class ProductOut(ProductSummary):
     field_sources: dict[str, SourceOut] = {}
     research_checked_at: date | None = None
     research_note: str | None = None
+    reviewed_urls: list[str] = []
+    specification_alternatives: list[SpecificationAlternative] = []
     external_id: str | None
     description: str | None
     region: str | None

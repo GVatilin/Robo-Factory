@@ -23,6 +23,8 @@ export interface SpecDraft {
   flag: boolean | null;
   unit: string;
   confirmed: boolean;
+  note: string;
+  assumption: boolean;
 }
 
 export interface OfferDraft {
@@ -38,6 +40,8 @@ export interface OfferDraft {
   service: string;
   monthly: string;
   months: string;
+  notes: string;
+  includedServices: string;
 }
 
 export interface CaseDraft {
@@ -79,7 +83,7 @@ export interface ProductDraft {
 let keySeq = 0;
 export const newKey = () => `k${++keySeq}`;
 
-export const emptySpec = (): SpecDraft => ({ value: "", max: "", text: "", flag: null, unit: "", confirmed: false });
+export const emptySpec = (): SpecDraft => ({ value: "", max: "", text: "", flag: null, unit: "", confirmed: false, note: "", assumption: false });
 
 export const emptyOffer = (model: AcquisitionModel = "purchase", isDefault = false): OfferDraft => ({
   key: newKey(),
@@ -94,6 +98,8 @@ export const emptyOffer = (model: AcquisitionModel = "purchase", isDefault = fal
   service: "",
   monthly: "",
   months: model === "purchase" ? "" : "36",
+  notes: "",
+  includedServices: "",
 });
 
 export const emptyCase = (): CaseDraft => ({ key: newKey(), id: null, industryId: null, scenario: "", description: "" });
@@ -155,6 +161,8 @@ export function draftFromProduct(product: Product): ProductDraft {
           flag: s.flag,
           unit: s.unit ?? "",
           confirmed: s.is_confirmed,
+          note: s.note ?? "",
+          assumption: s.is_assumption,
         },
       ]),
     ),
@@ -171,6 +179,8 @@ export function draftFromProduct(product: Product): ProductDraft {
       service: numberToInput(o.annual_service_cost),
       monthly: numberToInput(o.monthly_fee),
       months: numberToInput(o.min_contract_months),
+      notes: o.notes ?? "",
+      includedServices: o.included_services ?? "",
     })),
     cases: product.applications.map((a) => ({
       key: newKey(),
@@ -190,7 +200,7 @@ export function isSpecFilled(definition: SpecDefinition, spec: SpecDraft | undef
   if (NUMERIC.has(definition.data_type)) {
     const low = parseNumber(spec.value);
     const high = parseNumber(spec.max);
-    return (low !== null && !Number.isNaN(low)) || (high !== null && !Number.isNaN(high));
+    return (low !== null && !Number.isNaN(low)) || (high !== null && !Number.isNaN(high)) || spec.text.trim() !== "";
   }
   if (definition.data_type === "boolean") return spec.flag !== null;
   return spec.text.trim() !== "";
@@ -210,6 +220,8 @@ export function evaluateChecklist(draft: ProductDraft, checklist: ChecklistItem[
     "field:readiness_status": () => draft.readiness !== null,
     "field:price": () => draft.offers.some((o) => validNumber(o.equipment) || validNumber(o.monthly)),
     "field:service_cost": () => draft.offers.some((o) => validNumber(o.service)),
+    "field:software_cost": () => draft.offers.some((o) => validNumber(o.software)),
+    "field:implementation_cost": () => draft.offers.some((o) => validNumber(o.implementation)),
     "field:service_life_years": () => validNumber(draft.serviceLife),
     "field:processes": () => draft.processIds.length > 0 || draft.cases.some(c => c.scenario.trim() !== ""),
     "field:limitations": () => draft.limitations.trim() !== "",
@@ -235,6 +247,8 @@ export function checklistField(key: string): string {
       readiness_status: "readiness_status",
       price: "offers",
       service_cost: "offers",
+      software_cost: "offers",
+      implementation_cost: "offers",
       service_life_years: "service_life_years",
       processes: "process_ids",
       limitations: "limitations",
@@ -278,13 +292,22 @@ export function draftToInput(
     const spec = draft.specs[definition.code];
     if (!spec) continue;
     const key = `specs.${definition.code}`;
-    const base = { code: definition.code, value: null, value_max: null, text: null, flag: null, is_confirmed: spec.confirmed };
+    const base = {
+      code: definition.code,
+      value: null,
+      value_max: null,
+      text: text(spec.text),
+      flag: null,
+      is_confirmed: spec.confirmed,
+      note: text(spec.note),
+      is_assumption: spec.assumption,
+    };
     const unit = definition.unit ? null : text(spec.unit);
     if (NUMERIC.has(definition.data_type)) {
       const rule = { integer: definition.data_type === "integer", negative: definition.unit === "°C" };
       const low = num(spec.value, `${key}.value`, rule);
       const high = definition.data_type === "range" ? num(spec.max, `${key}.value_max`, rule) : null;
-      if (low === null && high === null) continue;
+      if (low === null && high === null && base.text === null) continue;
       if (low !== null && high !== null && high < low) errors[`${key}.value_max`] = "Верхняя граница меньше нижней";
       specs.push({ ...base, value: low, value_max: high, unit });
     } else if (definition.data_type === "boolean") {
@@ -310,6 +333,8 @@ export function draftToInput(
       annual_service_cost: num(offer.service, `${key}.annual_service_cost`),
       monthly_fee: offer.model === "purchase" ? null : num(offer.monthly, `${key}.monthly_fee`),
       min_contract_months: offer.model === "purchase" ? null : num(offer.months, `${key}.min_contract_months`, { integer: true, max: 240 }),
+      notes: text(offer.notes),
+      included_services: text(offer.includedServices),
     };
   });
 

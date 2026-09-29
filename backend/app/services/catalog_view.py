@@ -52,8 +52,10 @@ def _summary_fields(product: Product, mandatory: Sequence[SpecDefinition]) -> di
         value = numeric.get(code)
         return float(value) if value is not None else None
 
-    prices = [o.equipment_price for o in product.offers if o.equipment_price is not None]
-    fees = [o.monthly_fee for o in product.offers if o.monthly_fee is not None]
+    individual_offers = [o for o in product.offers if (o.terms or {}).get("minimum_quantity", 1) <= 1
+                         and (o.terms or {}).get("estimation_eligible", True)]
+    prices = [o.equipment_price for o in individual_offers if o.equipment_price is not None]
+    fees = [o.monthly_fee for o in individual_offers if o.monthly_fee is not None]
     filled, total, _ = evaluate(product, mandatory)
     return {
         "id": product.id,
@@ -94,6 +96,8 @@ def product_detail(product: Product, mandatory: Sequence[SpecDefinition], user: 
         external_id=product.external_id,
         research_checked_at=(product.source_payload or {}).get('catalog_research', {}).get('checked_at'),
         research_note=(product.source_payload or {}).get('catalog_research', {}).get('note'),
+        reviewed_urls=(product.source_payload or {}).get('catalog_research', {}).get('reviewed_urls', []),
+        specification_alternatives=(product.source_payload or {}).get('specification_alternatives', []),
         field_sources={key: SourceOut.model_validate(source)
                        for key, evidence in (product.source_payload or {}).get('field_evidence', {}).items()
                        for source in product.sources if source.id == evidence.get('source_id')},
@@ -125,7 +129,9 @@ def product_detail(product: Product, mandatory: Sequence[SpecDefinition], user: 
             )
             for v in specs
         ],
-        offers=[OfferOut.model_validate(o) for o in product.offers],
+        offers=[OfferOut.model_validate(o).model_copy(update={"vat_status": (o.terms or {}).get("vat_status"),
+            "estimation_eligible": (o.terms or {}).get("estimation_eligible", True),
+            "minimum_quantity": (o.terms or {}).get("minimum_quantity", 1)}) for o in product.offers],
         applications=[ApplicationOut.model_validate(a) for a in product.applications],
         processes=[
             ProcessOut.model_validate(p)
@@ -147,6 +153,8 @@ def product_detail(product: Product, mandatory: Sequence[SpecDefinition], user: 
                 is_illustration=product.image.is_illustration,
                 caption=product.image.caption,
                 attribution=product.image.source.notes if product.image.source else None,
+                original_url=((product.source_payload or {}).get('official_image', {}).get('url')
+                              if not product.image.uploaded_by_id else None),
             )
             if product.image
             else None

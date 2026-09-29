@@ -1,0 +1,877 @@
+{
+  "reviewed_at": "2026-09-29",
+  "images": [
+    {
+      "product_name": "Ronavi SR (грузоподъемность до 50 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://static.tildacdn.com/tild6632-6633-4263-a139-303262346334/Ronavi_Robotics_SR.jpg",
+      "sha256": "fe9d6c7f4be8eec343eed7e0bba1adb9d4158f69620bf2a90e3d9b455da86f62",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Ronavi H2000 (грузоподъемность до 2 000 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://static.tildacdn.com/tild3131-6361-4864-a261-626639313366/XL-napolnyj_mobilnyj.jpg",
+      "sha256": "803f9e59a143a0a3f3403228ce4f921f4d6fb746cdf02c9971cfd093f35e7cd7",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Ronavi SD (грузоподъемность до 10 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://static.tildacdn.com/tild3333-3063-4036-a566-306333316264/ronavi_SD_sorting.jpg",
+      "sha256": "0067c64502dbfe784f61a305e6e7099ed0e25c0d78a3f4c3d791088522d9d44a",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Ronavi M (грузоподъемность до 1200 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://static.tildacdn.com/tild6434-6636-4033-b166-323431613666/Ronavi_M.jpg",
+      "sha256": "ef63cc1887076a1cbb7af28be399fcc315b2ed7f158af68977c211e756b02109",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "AMR 100 (грузоподъемность до 100 кг)",
+      "manufacturer": "ООО \"Морос\"",
+      "url": "https://xn--l1aeahg.xn--p1ai/wp-content/uploads/2019/05/amr100-1-0x0.png",
+      "sha256": "0328ee6a03ef86b9ca7a7a67b09f82c142044e20419fafea8d83c0127d45801c",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "AMR 800 (грузоподъемность до 800 кг)",
+      "manufacturer": "ООО \"Морос\"",
+      "url": "https://xn--l1aeahg.xn--p1ai/wp-content/uploads/2025/08/amr-800-1-0x0.png",
+      "sha256": "7b7db9340e2b6f75242b901b5664f2fe29e1da5e5a6486086270e2dfc5ab17b4",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "AMR 1500 (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Морос\"",
+      "url": "https://xn--l1aeahg.xn--p1ai/wp-content/uploads/2025/08/amr1500-1-0x0.png",
+      "sha256": "330ff50b5cb87a934043a686e30afa58724a68154865200c9d8aa4670070d48e",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "DMR 1200 (грузоподъемность до 1 200 кг)",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2026/07/dmr-1200-bez-fona-scaled.png",
+      "sha256": "a68d1f9ca14cdd6ff28b76c1342214287af0e95b45ebe86d56493a92ace9fc74",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "DMR 600 (грузоподъемность до 600 кг)",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2026/07/dmr-600_bez-fona.png",
+      "sha256": "f36f1615e5ece5e7199bfefc425d69b6c570251143ec92bc34107112dec12e7f",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "DMR Carrier P",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2025/12/carrier-p-kvadrat-scaled.png",
+      "sha256": "594da1681673a719ff16aac517d55d28ceef38c3f7c3612865a8eed7eea29055",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Робот-штабелёр RoboCV",
+      "manufacturer": "ООО \"Робосиви\"",
+      "url": "https://robocv.ru/wp-content/uploads/2021/09/exv-foto-111.png",
+      "sha256": "8298bee6d04eee785723ed363fa976de24f97e1a891212da341457713fbd1c89",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Робот-тягач RoboCV",
+      "manufacturer": "ООО \"Робосиви\"",
+      "url": "https://robocv.ru/wp-content/uploads/2021/05/ltx-bez-fona-bolshoj.png",
+      "sha256": "8aeb2453eb728aaad64533dcbd9c617e7d3ecdf66214bdefc9c250f4e8a528da",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "MARK 2 SE",
+      "manufacturer": "ООО \"Р2Б\"",
+      "url": "https://static.tildacdn.com/tild3864-3363-4465-b433-323965643532/noroot.png",
+      "sha256": "57b805d5c7f983e979671ca4f2191dee655f777dad651d2e859882244b5a7e93",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Клинботикс 600",
+      "manufacturer": "ООО \"Вейбот Автомакон Роботикс\"",
+      "url": "https://static.tildacdn.com/tild3637-6437-4430-b066-336432393531/fc670cdb-4b50-4d4a-9.png",
+      "sha256": "a615a6e41b04df635dea7b4431fe1cd7711eb053e0c4de6068e4913046d5c11d",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Unit",
+      "manufacturer": "ООО \"Яку Роботикс\"",
+      "url": "https://yacuai.com/upload/medialibrary/1fb/z60thykkhl2q9b30oliqc9y1texj4uyw.png",
+      "sha256": "bdf27a6e993863623b742254972e54d9292b536e3d7e438691e46ffa1b172e6f",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Модель А25-1720",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "url": "https://tnvst.ru/upload/iblock/d30/g72tfogtiabxqv4s8kpl4zqhokyqxh6m.jpg",
+      "sha256": "42ae06ea0e06de63f3606d21a5e6ff24493602a06101b849952c66b9467dada5",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "AS-RS P",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2026/07/as-rs_r-bez-fona-scaled.png",
+      "sha256": "33ad162aea1a2bd39e76d17254f780e47360441a27bd5d011a5ba542cb630e69",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "AS-RS B",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2026/06/asrs-b-8-scaled.png",
+      "sha256": "affa0d00aa75924449ffddbfbe1522a634b96150d5dd81fa87ff3a4a61533bf0",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Учебная ячейка REDEDUCATION PRO",
+      "manufacturer": "ООО \"Технорэд\"",
+      "url": "https://technored.ru/upload/iblock/e40/n4cndfbq75j120lgb36tzs5md7ci6k8j.png",
+      "sha256": "e75ba76a86a53b003be23d1540bfd2aa00c6a919d6dc8bb6f71b77c82c1a569e",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Модель А220-2700",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "url": "https://tnvst.ru/upload/iblock/bb2/4cxd3ga59pnxpuktt2qnkbbj88s5xf1e.jpg",
+      "sha256": "b58cfdd8961931aa0dd1491c45f458984b6d7db40a889dd75603918b7c11c178",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "D. Operator P",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2026/07/operator-p-bez-fona-1-scaled.png",
+      "sha256": "cff910cf895c297c3fb81f0e89b8f59403d4d62f0e22e87086e691d4515572ea",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "DMR 300 Carrier B",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2025/12/carrier-b-kvadrat-scaled.png",
+      "sha256": "ab7f0d108b7a74d019646e1f0d54fab39b97efe9e2ae266f09b8cf915a24439f",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "DMP 15000",
+      "manufacturer": "ООО \"Диком-Сервис\"",
+      "url": "https://khvrptyuackxdmxadmin.dikom-a.ru/wp-content/uploads/2026/07/dmp-15000-bez-fona.png",
+      "sha256": "67173dd5560f46a38b1d9b1253bad59faa58e57c9627e4f31a4a8d6274149602",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "РБ-100",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/rmain.jpg",
+      "sha256": "bbb9e8a661fc4360fc6f46da5ec80322b6a145199c362597006cd0e262bea1e9",
+      "approved": false,
+      "note": "Робот слишком мелкий на сюжетной фотографии; сохранить имеющееся фото."
+    },
+    {
+      "product_name": "РБ-150",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/wp-content/uploads/2020/01/IMG_9928-1024x683.jpg",
+      "sha256": "d0e60fd182053cf6e6bbcbd996b165ed2b8e5339c91e5f985ec242da84b5e478",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "РБ-300",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/wp-content/uploads/2020/01/RB-300_8-1.jpeg",
+      "sha256": "ed56972d2bf3561026c582b7c73e6b43038511cc0e1d01905db4aba93d53e9ae",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "РБ-600",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/wp-content/uploads/2022/02/i13-1024x576.jpeg",
+      "sha256": "4199ce8437d1465245dbd5f0504b77e33f61434cfdec77a78d0cb89a0c890892",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "РБ-Мираж 1000",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/wp-content/uploads/2020/01/1-glavnaya-1024x681.jpg",
+      "sha256": "a919a7628dc305d341ab6e5d17d98ac58bef8a32f1db228cb00b548777f09fd4",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "ТНПА «ГНОМ Про Вектор»",
+      "manufacturer": "ООО \"Подводная робототехника\"",
+      "url": "https://gnomrov.ru/_files/products/photos/pr/202/prov_right_up_ss.png",
+      "sha256": "83030a3fba34ac9f46b0fe20a29c67860e08e67b356d5880ef9330cc29069bae",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "ТНПА «ГНОМ Про»",
+      "manufacturer": "ООО \"Подводная робототехника\"",
+      "url": "https://gnomrov.ru/_files/products/photos/pr/6/pro4_front_left_s.png",
+      "sha256": "f2d389887ac3a3a2ded6a01b84e4e38fb27629d5e2c5358de5b7b60239dd93b6",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "ТНПА «ГНОМ X»",
+      "manufacturer": "ООО \"Подводная робототехника\"",
+      "url": "https://gnomrov.ru/_files/products/photos/pr/203/gnom_x_sideview.png",
+      "sha256": "21a2007ee27b6773e074fc11269a1333c2bdf46efe5aec7f7cbb2e84794ef4bf",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "ОМДЖЕТ -ГМ01",
+      "manufacturer": "ООО \"Роспроект\"",
+      "url": "https://cdn-ru.bitrix24.ru/b3963943/landing/89f/89fcb7a4bb24e8a586226cb905093fc8/katamaran_whiteback_2_1x.jpg",
+      "sha256": "e2ebb45db11f020e7f37b8b13d46578e957f53c59de290a30e11657f34a92b92",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "T-16",
+      "manufacturer": "АО \"Зала Аэро\"",
+      "url": "https://zala-aero.com/wp-content/uploads/2025/04/t-16_1-scaled.webp",
+      "sha256": "e7bd4ef6da8d9adb60064e2f124d69b92f813fea85bad77ba9b2faa1ece2443d",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Геоскан 201 Термо",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://www.geoscankz.aero/images/catalog/geoscan-201-termo/201t_1.jpg",
+      "sha256": "a42a3e15388a1cde7937baebed34232e0901ba74bc11ff00f4f1492812511816",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "TFM-15-8E",
+      "manufacturer": "ООО \"ЛМТ\"",
+      "url": "https://dexaero.ru/wp-content/uploads/2025/12/flot-1.png",
+      "sha256": "1298dd397c2ab0a51ca0735d46382c59aab58ce3a36cfa1276ff728b0f734d67",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Курьер-30",
+      "manufacturer": "ООО \"Клеверкоптер\"",
+      "url": "https://clevercopter.ru/wp-content/uploads/2025/02/IMG_0454-убрать-фон-400x300.jpg",
+      "sha256": "824125f81af6277ccdc5de2fc27481615c7ba31af45468af6f860ba2ab92a5dd",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Роботизированный лафетный ствол",
+      "manufacturer": "ООО \"Коруфайер\"",
+      "url": "https://korufire.ru/upload/iblock/8be/3om6ylzx66v7d9p3oibehj4330dys4gv/Роботы_осн1.jpg",
+      "sha256": "b2c8f04e178f13543297b5d029bde3461da6e7d8f51430204fa14704681e7e3e",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Гумич спасатель",
+      "manufacturer": "ООО \"Гумич РТК\"",
+      "url": "https://gumich-rtk.ru/wp-content/uploads/2022/spasatel/photo_2022-02-11_16-21-46.jpg",
+      "sha256": "e02a07a1a49b7f3c5b890c8a963a2ebbf0950f1f082ace02c1b3003b57ee9bb2",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Лоцман",
+      "manufacturer": "АО \"НПП ПТ Океанос\"",
+      "url": "https://www.oceanos.ru/s1/files/Image/BEK/naeco_4.jpg",
+      "sha256": "d286424042e093d98bbbc14dc54bfcbb08bac87be209de754296da0fce807608",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Роботизированная система патрулирования и охраны",
+      "manufacturer": "МАИ",
+      "url": "https://mai.ru/upload/iblock/685/Foto-ZHukovskiy-2019-_1_.jpeg",
+      "sha256": "fbee11d9caea86ef7cfe87d13c6be800688fd0f6101a2d405343f63727ac1637",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Муравей",
+      "manufacturer": "ООО \"Лаборатория Будущего\"",
+      "url": "https://cablewalker.ru/media/products/muravey_iIurU3S.png",
+      "sha256": "172f4cceafdf8461245ba20368481186c2f2b8110ffee4452a0011f8c171b803",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "EVOCARGO N1",
+      "manufacturer": "ООО \"Эвокарго\"",
+      "url": "https://www.evocargo.com/upload/resize_cache/iblock/59b/la2wzp7fad1x2sfjqlkicne3kw0856wl/972_630_1/01_Wildberries.webp",
+      "sha256": "60ddad23d393c88a95e9935a3d8526963c3e89274379ad95143410f3c330f8a4",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "В-120",
+      "manufacturer": "ООО \"Аэромакс\"",
+      "url": "https://www.aeromax-group.ru/wp-content/uploads/2026/05/v-120.png",
+      "sha256": "dc7a05098e1a581aae94466e32bc9a1ce8b8ad48066ef718cbe020601d27489e",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Беспилотное такси Яндекс",
+      "manufacturer": "ООО \"Яндекс\"",
+      "url": "https://avatars.mds.yandex.net/get-yablogs/6208947/file_1783677206014/orig",
+      "sha256": "d452c4ed9a0c8b609064a25ddfd0c260b8779f785c81702a59d52a339193715a",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Робот-расцепщик",
+      "manufacturer": "АО \"Концерн Телематика\"",
+      "url": "https://r.telematika.com/upload/iblock/808/ihlhqgnea6zkvv1fk21t4yi7fm7tjrjx.jpg",
+      "sha256": "8fec2fb097b0dfd1d71dc1fde8d6f78de1d242be0194a3d69ee62846618ffb49",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Робот-растормаживатель",
+      "manufacturer": "АО \"Концерн Телематика\"",
+      "url": "https://r.telematika.com/upload/iblock/07d/kn50vzx9bgy0e8bl8fy1t4cvtcrxpjby.jpg",
+      "sha256": "6fc863bd3100aeb702aa29b43ed7187182b40f73fb104fd8d48c478cbab28fa0",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "T-300-8E",
+      "manufacturer": "ООО \"ЛМТ\"",
+      "url": "https://dexaero.ru/wp-content/uploads/2025/12/flot-2.png",
+      "sha256": "23aef78fd66b8d1d43398dc3b226b92f3ef29829ff900db0675bfd89bcca3ab8",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "InnoVTOL-3S",
+      "manufacturer": "АНО ВО \"Университет Иннополис\"",
+      "url": "https://static.tildacdn.com/tild6162-3731-4133-a633-396638393534/11_1_1.png",
+      "sha256": "ef8450e32df57f8744bb6388062f6e196303a1243f7cc8473e8769bf1186a2aa",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "miniSIGMA",
+      "manufacturer": "ООО НПП \"Авакс -Геосервис\"",
+      "url": "https://static.tildacdn.com/tild6136-6566-4736-b235-636236613566/_387.png",
+      "sha256": "0c43eaf6d5bc12abd5650a343b601896ddf632c40d2eafd678207ccff2e8679b",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Яша",
+      "manufacturer": "ООО \"Свеза-Лес\"",
+      "url": "https://sveza.com/upload/iblock/7c9/7sah60s2jkq9m1rmbxlbhcekog9jiw8i.webp",
+      "sha256": "c2a2c3fd6ece171571387794bf50399d1ca19cecd5e00928c751ac33e33a1a0e",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Волшебник",
+      "manufacturer": "ООО \"Промтехника-Приволжье\"",
+      "url": "https://sovmolko.ru/upload/iblock/a64/fz1we5h85euep43225ykq82ed0gdgmcy/12.jpg",
+      "sha256": "706b498f0aa2ead0ae07a519f32ef676ce4360f4debb0490297acc275d7da787",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Роботизированный автономный минитрактор CP",
+      "manufacturer": "АО \"Когнитив Пилот\"",
+      "url": "https://cognitivepilot.com/upload/iblock/bbb/ymlghfq66p0imvs08ald4809gfmipbdf.jpg",
+      "sha256": "67299b8621f509a8a9a2add774c52678fd07130928a754cd36b1b7f960e5c3ce",
+      "approved": false,
+      "note": "Общая заставка с сеном; изделие не изображено."
+    },
+    {
+      "product_name": "Роботизированный трактор с гибридной силовой установкой",
+      "manufacturer": "Донской государственный технический университет (ДГТУ)",
+      "url": "https://news.donstu.ru/upload/iblock/ee4/793n6ghck0jr1ceqgre0px4k2ytd8kay.jpg",
+      "sha256": "7e11b1d6f4f52b6d282987f09f74f2c4d97826234d6c17142b458e4f75147a65",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "БРО 2.1",
+      "manufacturer": "АО \"168Роботикс\"",
+      "url": "https://static.tildacdn.com/tild6135-6230-4966-b536-626333626464/bro21_2brand.png",
+      "sha256": "3db87bf7467173724f5da58588c86c2ba8809f28b2e1e65c7e8c2fac060cea52",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "БРО 3.0",
+      "manufacturer": "АО \"168Роботикс\"",
+      "url": "https://static.tildacdn.com/tild6332-6236-4131-b938-316537356363/bro30_2.png",
+      "sha256": "7ea3cf994bd7d09122fa7c18e10009f616498b13468ea836e71a99b32c1183c4",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Пиксель",
+      "manufacturer": "ООО \"Автономика\"",
+      "url": "https://www.avtonomika.ru/assets/images/689353c76d96b727e2b14372_c3fcd34ca8315ea788d7bd24827dfdcc_cover.jpg",
+      "sha256": "8a999aa0fa1c6b5371f8e188ad42ecd6f33c3a122782a7657f4c8656b82f05b6",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Astramis SurfexUnit",
+      "manufacturer": "АО \"Астрамис\"",
+      "url": "https://static.tildacdn.com/tild3764-3561-4630-b836-356535353432/IMG_3204.jpeg",
+      "sha256": "88af8c4366ff8c6e3909a3f1c2612ca05c8ba7696e729e9c6279001bd98917a3",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Astramis AeroUnit",
+      "manufacturer": "АО \"Астрамис\"",
+      "url": "https://static.tildacdn.com/tild3038-3036-4166-a232-366466616561/IMG_2997.jpeg",
+      "sha256": "00e61b2bdeb5a08457b06d7e7af682c9507af245abf3c624bcc72af72eb7d253",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Альбатрос М5",
+      "manufacturer": "ООО \"Альбатрос\"",
+      "url": "https://www.alb.aero/upload/iblock/e1e/e1e128dea5229fa7a0580e5b6debb882.jpg",
+      "sha256": "625bebbf3148087d67b0e2258391ea040206cda069f11daffd08f1c6021042ec",
+      "approved": false,
+      "note": "Логотип вместо фотографии модели."
+    },
+    {
+      "product_name": "МРСК",
+      "manufacturer": "ООО \"КБ-интеграл\"",
+      "url": "https://kb-integral.ru/wp-content/uploads/2024/05/Картинка-№2.png",
+      "sha256": "081881529b72230a78154743d7975916909f90712b7194c0c62b7b4dc5bcab34",
+      "approved": false,
+      "note": "Целая страница технического листа; исходная фотография лучше для карточки."
+    },
+    {
+      "product_name": "DH: Cloud Control",
+      "manufacturer": "ООО \"Дронсхаб\"",
+      "url": "https://droneshub.group/img/cloud/cloud_inter_1.png",
+      "sha256": "825a27c2ffcf28bd21289e4e9bf7be6f6dda11d06ef11604e038cd1c9d061a94",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Cargo UNIT",
+      "manufacturer": "ООО \"Дронсхаб\"",
+      "url": "https://droneshub.group/img/rovers/cargo-unit-07.jpg",
+      "sha256": "f37ac0ddbbf5e9790f10c55cd5f828844f11353a19edd00aea604d950ca14636",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Azarrus 1.0A",
+      "manufacturer": "ООО \"Деморобот\"",
+      "url": "https://azarrus.com/upload/iblock/236/72a82jz1lji967pebym7067kk3jrdvff.png",
+      "sha256": "979a9c16023450f863e593eb79bdaa385e08006859a177d687b30003cc94ec59",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Innospector",
+      "manufacturer": "АНО ВО \"Университет Иннополис\"",
+      "url": "https://static.tildacdn.com/tild6235-3566-4036-b837-393434663837/DSC09956-Photoroom.png",
+      "sha256": "3235998767e9a84427425b0feed0e0bdaa5d8599a22f16235af43c98699700b2",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "БВС ОМДЖЕТ -М01",
+      "manufacturer": "ООО \"Роспроект\"",
+      "url": "https://cdn-ru.bitrix24.ru/b3963943/landing/a90/a90455f700def87b2a1b19f266f71988/dsc07888_1x.jpg",
+      "sha256": "dd02715c1ceca2dac0295d372f64e98ddc08169f5466541b54de644d831d9d6c",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "MARTin",
+      "manufacturer": "ООО \"Миррико\"",
+      "url": "https://mirrico.ru/upload/iblock/362/62494a542cb555712685f37ecd6b34c1.png",
+      "sha256": "e2f1784aa324ee297d98dd7caceb46f61508da651f054654239cd7d1d9f0c7c4",
+      "approved": true,
+      "note": "Просмотрено изображение: показана модель со страницы указанного первоисточника; не логотип и не таблица характеристик."
+    },
+    {
+      "product_name": "Ronavi H1500 (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://thb.tildacdn.com/tild6537-3432-4231-a139-356662636235/-/empty/Ronavi_H1500_gen.jpg",
+      "sha256": "e4b189ef000916e49551b2bf44fee123f545a5e17899a51935f49dcc4baf3143",
+      "approved": false,
+      "note": "Пустая заглушка изображения."
+    },
+    {
+      "product_name": "Клинботикс 400 PRO",
+      "manufacturer": "ООО \"Вейбот Автомакон Роботикс\"",
+      "url": "https://static.tildacdn.com/tild3130-3238-4331-b738-643466346239/1.png",
+      "sha256": "4e540339d845a4bedfb790ef50409397a94dc00b0c0096db1124a66e7e70458e",
+      "approved": true,
+      "note": "Изображение просмотрено, модель или система соответствует официальной странице."
+    },
+    {
+      "product_name": "Pick by Voice",
+      "manufacturer": "ООО \"Умный сервис\"",
+      "url": "https://s3storage.umserv.ru/18909-qzbw7o736tewo3pn6qivx3wmcgncgijb.png",
+      "sha256": "f8720b5a13981b5ac75f900c6049764ef9b4f0937cc29644d9796a4e9a319f06",
+      "approved": true,
+      "note": "Изображение просмотрено, модель или система соответствует официальной странице."
+    },
+    {
+      "product_name": "Pick by light",
+      "manufacturer": "ООО \"Умный сервис\"",
+      "url": "https://s3storage.umserv.ru/18906-ptl.png",
+      "sha256": "1f7733ff49a2db346966d13917af58132a044607c0033dd8e5b03911aa160a57",
+      "approved": true,
+      "note": "Изображение просмотрено, модель или система соответствует официальной странице."
+    },
+    {
+      "product_name": "Айдол",
+      "manufacturer": "ООО \"Айдол\"",
+      "url": "https://thb.tildacdn.com/tild3038-3131-4638-b462-306636656333/-/empty/aidol-w-gallery-2.png",
+      "sha256": "55d33e066fde7a9337f36010e0a54a1c82fd2cec199b851e96ef561b00773a15",
+      "approved": false,
+      "note": "Пустая заглушка изображения."
+    },
+    {
+      "product_name": "Берилл",
+      "manufacturer": "ООО \"Валдай Роботы\"",
+      "url": "https://thb.tildacdn.com/tild3432-3535-4432-b265-303166653363/-/empty/IMG_3043.PNG",
+      "sha256": "d69fb74c74033b3b1784393bb15d2e9998fb01a1d36fae107b2ef6eb78fc24a9",
+      "approved": false,
+      "note": "Пустая заглушка изображения."
+    },
+    {
+      "product_name": "Робототехнический комплекс REDLOAD PRO 10 COBOT",
+      "manufacturer": "ООО \"Технорэд\"",
+      "url": "https://technored.ru/upload/iblock/73f/l8iyymwe7um74wgchasz0ylmuy7eki02.png",
+      "sha256": "0bde36398e13752ff2cdd28c7b3ff562f34a1421cd92814e4b7defab12c77b89",
+      "approved": true,
+      "note": "Изображение просмотрено, модель или система соответствует официальной странице."
+    },
+    {
+      "product_name": "Ronavi H1500 (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://static.tildacdn.com/tild6537-3432-4231-a139-356662636235/Ronavi_H1500_gen.jpg",
+      "sha256": "0fc27f83bbfeaa23ce6894851b02c05ac3ba372c7c13a522049a32c3bd0be0b6",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Сёмабот (грузоподъемность до 1 500 кг)",
+      "manufacturer": "ООО \"Семаргл\"",
+      "url": "https://semargl.pro/upload/iblock/4b3/w8qos2envc4s4p2bg0kd19bb9k3u6ycw.png",
+      "sha256": "6389232e037813aefc416f224bab35f91b88d7ef0fdbb13d5ac0a05e0882e83f",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Беспилотный погрузчик",
+      "manufacturer": "МФТИ",
+      "url": "https://roboticsworld.ru/upload/iblock/afa/9qaf1a28imk9wfy1g406zh6hop7uwduu/bp_1.jpg",
+      "sha256": "1912ac323b1a02bcab768b034c0fcc325f45962c52e694a1906694fd38747fce",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Модель А12-1450",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "url": "https://static.tildacdn.com/tild3732-6230-4461-a335-303537316439/__1.png",
+      "sha256": "2b273f59f7e36a2db6d5ee650d8f815ccee863f4d3932412b8a7eb3abdf82fa0",
+      "approved": false,
+      "note": "Логотип вместо фотографии модели."
+    },
+    {
+      "product_name": "Pallet Shuttle",
+      "manufacturer": "ООО \"Завод Стелкон\"",
+      "url": "https://www.stelkon.ru/upload/iblock/20f/20f35c8560171d5635f44b00088ecf77.jpg",
+      "sha256": "f87d64a28458c7b729332d789caf54196b9ed52fd7d6947f7f14523a32599af7",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Робот инвентаризатор",
+      "manufacturer": "ООО \"Яндекс Роботикс\"",
+      "url": "https://avatars.mds.yandex.net/get-lpc/17800094/fd4a7cc6-4a6e-4b9a-a6b4-10f2ce453367/width_2560_q80",
+      "sha256": "0339f2386303d7b7ecfd4a1a06bba479d0461c07f8262e1d5ce229126baf2bfc",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Яндекс-ровер R 4.0",
+      "manufacturer": "ООО \"Яндекс Роботикс\"",
+      "url": "https://autonomy.yandex.ru/static/images/v2/product/robot/hero/hero-robot-poster.jpg",
+      "sha256": "8ddaed0e88543d4bfe641f7ada8ba2a3849c5cc864ec64a5a5868b3b485e664e",
+      "approved": false,
+      "note": "Крупный фрагмент корпуса; сохранено более информативное прежнее фото."
+    },
+    {
+      "product_name": "Promobot V.4",
+      "manufacturer": "ООО \"Промобот\"",
+      "url": "https://promo-bot.ru/wp-content/uploads/2022/05/img-promobot-v4-360-2-1.jpg",
+      "sha256": "fd85b943205201888439e0a9fbce20de4e1168be6be922730314c7d0308bbc32",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Арди",
+      "manufacturer": "ООО \"Промобот\"",
+      "url": "https://promo-bot.ru/wp-content/uploads/2024/03/1.jpg",
+      "sha256": "0c77bedeb64e865af3ca160f35fb19cbf172f03bebf28629deaf622efbdf0cae",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Айдол",
+      "manufacturer": "ООО \"Айдол\"",
+      "url": "https://static.tildacdn.com/tild3038-3131-4638-b462-306636656333/aidol-w-gallery-2.png",
+      "sha256": "28dd34480f0df318a8baf033ff8e0e7cad4c8e701d5cc7446ad3ce1c71277b7a",
+      "approved": false,
+      "note": "Только кисть; сохранено прежнее изображение робота."
+    },
+    {
+      "product_name": "Фудтрак",
+      "manufacturer": "ООО \"Соло Кофе\"",
+      "url": "https://coffeesolo.ru/wp-content/themes/solo-coffee/assets/images/robots/setup-mobile.png",
+      "sha256": "acc4cac384af6522169fb2fabdd9f9da43512d4314a51f2a5411adcd755162de",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Роботизированная передвижная зарядная станция для электромобилей",
+      "manufacturer": "Росатом",
+      "url": "https://strana-rosatom.ru/wp-content/uploads/2026/04/atm-80545.jpeg",
+      "sha256": "ff32784e7b63d242d64a8a0fce9f10769a968223d50adc83e2041879987aa1a1",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Берилл",
+      "manufacturer": "ООО \"Валдай Роботы\"",
+      "url": "https://static.tildacdn.com/tild3432-3535-4432-b265-303166653363/IMG_3043.PNG",
+      "sha256": "bbbc1473ba6c83f0303c8c495fecf2d8681f572797c6111f2e38627d0e614a22",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "RH06A2",
+      "manufacturer": "ООО \"СМД\"",
+      "url": "https://smd.com.ru/upload/iblock/2f8/t3elh2dodd9b7gx7v611k70uhqk8vut2/15_10_37-_BELOV.jpg",
+      "sha256": "0fb4df9ad4bed5be8cb667db9584b8180e05c7babbd495188bede526bcf57d19",
+      "approved": false,
+      "note": "Общий вид производственного участка не подтверждает точную модель."
+    },
+    {
+      "product_name": "Tagarka (грузоподъемность до 6 000 кг)",
+      "manufacturer": "ООО \"Семаргл\"",
+      "url": "https://semargl.pro/upload/iblock/348/3i3679nttzbmrbgf02ik1nz14uosxn3t.jpg",
+      "sha256": "7092609a597e1026ec457a96131f59ad9e9b948df820beebf2ed071dfcf47ca3",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Tagarka (грузоподъемность до 35 000 кг)",
+      "manufacturer": "ООО \"Семаргл\"",
+      "url": "https://semargl.pro/upload/iblock/9fa/vy32i7k28c72y50vg6v1w88q41q6hjbt.jpg",
+      "sha256": "35701ef6795226def17bce4d75333f37463fc5277d475f12da5ab16dacc30d8e",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "РБ-100",
+      "manufacturer": "ООО \"Ровбилдер\"",
+      "url": "https://www.rovbuilder.com/wp-content/uploads/2020/01/rb-100-1-1024x568-1.jpg",
+      "sha256": "d6dcd15343a09e7f13269799d60dc146c455fc8285b555e154148f4c10a76b15",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Грузовик М500 V2",
+      "manufacturer": "ООО \"Лаборатория Будущего\"",
+      "url": "https://cdn.xn--80aaorhk2b.xn--p1ai/products/views/7291d0da-1055-4cb8-958b-08721b7f06eb_812x440.jpg",
+      "sha256": "ad4436cb39678825ce7e711a08bde6b03e4175c3cdca3babc9c88b29d1463beb",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Пегас",
+      "manufacturer": "ООО \"Аэродин\"",
+      "url": "https://cdn.xn--80aaorhk2b.xn--p1ai/products/views/4572b3fd-b6fa-4cc8-90a7-45ab90cd8c2f_812x440.jpg",
+      "sha256": "2a4e71337b4402d42e24df16755a2c62c3dc79916864d21b431262abd107cc9b",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Геоскан 701 Видео",
+      "manufacturer": "ООО \"Геоскан\"",
+      "url": "https://geoscankz.aero/images/catalog/geoscan-701-video/701_video_stranica_1.jpg",
+      "sha256": "82b795f7387f673a37bce681f29b62ad3770a6496f1ffad05039f20f42449883",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "SIGMA",
+      "manufacturer": "ООО НПП \"Авакс -Геосервис\"",
+      "url": "https://cdn.xn--80aaorhk2b.xn--p1ai/products/views/49ecd60e-1cbb-4ff6-bcde-cdcaabcb5e1a_812x440.jpg",
+      "sha256": "e2b45eb19adee512eec8bbe57b67b1a56781eff011c90761406685c6668e3f98",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "PuduBot 2",
+      "manufacturer": "Pudu Robotics",
+      "url": "https://cdn.pudutech.com/product_info_0fe4a2cc8a.png",
+      "sha256": "871eae1e3157b14baa534186f7fb17211f0b4db0089d875915c597684aca2380",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Роботизированный автономный минитрактор CP",
+      "manufacturer": "АО \"Когнитив Пилот\"",
+      "url": "https://cognitivepilot.com/upload/iblock/761/l2t7v0r8n4fws1lpac8slr5hfgvk1491.JPG",
+      "sha256": "e7556f6bb3293c528d0447f19ced2a6647d28dc4a5948825945b99fda6fdad66",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Система автоматизированного сбора ягод с использованием группы мобильных роботов",
+      "manufacturer": "ФГАОУ ВО \"ПНИПУ\"",
+      "url": "https://naked-science.ru/wp-content/uploads/2025/11/Istochnik_i_avtor_Press_sluzhba_PNIPU.jpg",
+      "sha256": "1a900be786d0d2f665ae7420045943211357acfab7cc097e96ea508faaffad45",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Внутритрубные роботизированные системы Тьюбот",
+      "manufacturer": "ООО \"Тьюбот\"",
+      "url": "https://thb.tildacdn.com/tild3935-3066-4163-a463-656639353764/-/resize/504x/P1316610.JPG",
+      "sha256": "abe7bdd37c79ccc610b458d4f9430ff08443b540bd4038eb1cc6ef494eacb272",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Серия Sigma (100D, 150, 200, 250А)",
+      "manufacturer": "ООО \"Тарис\"",
+      "url": "https://taris.ru/uploads/Page/93/sigma-100d_preview_basic.jpeg",
+      "sha256": "9dbdc0b35ae1ea6b48291a24ddc07b0ab02f7e009db56ae07f80274a07a2a750",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Роботизированный диагностический комплекс",
+      "manufacturer": "АО \"Диаконт\"",
+      "url": "https://www.diakont.ru/wp-content/uploads/2023/06/image-30964_11zon.webp",
+      "sha256": "9627451b590bd52739c95c113bc3423f7e3dd5b8aa8cc10eea20ca4a5ecacded",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Веном Саранча",
+      "manufacturer": "ООО \"Робком\"",
+      "url": "https://s56442.cdn.ngenix.net/img/600/744/resize/catalog/product/a/n/anVs5spNZsef_1.png",
+      "sha256": "7a306127d27f92058af7fcea51a7b99015353d2640079239faf553972e09ce8f",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Беспилотный асфальтоукладчик",
+      "manufacturer": "ООО \"НПО ГКМП\"",
+      "url": "https://td-desna.com/wp-content/uploads/2025/10/photo_2025-10-23-10.06.03.png",
+      "sha256": "4772fa0f629f674cbdb02f916b0b1ddf50a4539888706b9027571de1439f38cd",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Альбатрос М5",
+      "manufacturer": "ООО \"Альбатрос\"",
+      "url": "https://www.alb.aero/upload/iblock/923/923f0aa15ed39849610aae1c03ada8fc.jpg",
+      "sha256": "341c30968c7559b478023658da9dd589fbbcb981e99ff92c9854267399855e9b",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Легионер Е29",
+      "manufacturer": "ООО \"ГК Тихие Крылья\"",
+      "url": "https://cdn.xn--80aaorhk2b.xn--p1ai/products/views/db97fb89-ada5-4946-8a02-b36b2c08742d_812x440.jpg",
+      "sha256": "38afcf67c03fae2839140dad932a52d69b978bc4e71e5d13ffca0e67b3af136d",
+      "approved": true,
+      "note": "Фотография модели просмотрена; соответствует указанной странице первоисточника."
+    },
+    {
+      "product_name": "Модель А12-1450",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "url": "https://static.tildacdn.com/tild6435-3966-4835-b833-386231663430/004_copy_3.png",
+      "sha256": "823b94c0968193a70e946f13809762b8da3dab0b2ac8904a067ed3b3daa59790",
+      "approved": true,
+      "note": "Просмотрен полный вид конкретной модели с указанной официальной страницы; для Айдол — официальный рендер."
+    },
+    {
+      "product_name": "Яндекс-ровер R 4.0",
+      "manufacturer": "ООО \"Яндекс Роботикс\"",
+      "url": "https://autonomy.yandex.ru/static/images/v2/product/robot/technologies/rover-parameters-bg-@2x.jpg",
+      "sha256": "3f432f252b10fdd5218f738154b30507713d99942133c4e40d3a335337cefba1",
+      "approved": true,
+      "note": "Просмотрен полный вид конкретной модели с указанной официальной страницы; для Айдол — официальный рендер."
+    },
+    {
+      "product_name": "Айдол",
+      "manufacturer": "ООО \"Айдол\"",
+      "url": "https://static.tildacdn.com/tild6637-6165-4333-b236-363364643430/aidol-walking.png",
+      "sha256": "2bbf3aea3113b471250a45396c8e1bd845ff3b75d63495cf06f21babd185599b",
+      "approved": true,
+      "note": "Просмотрен полный вид конкретной модели с указанной официальной страницы; для Айдол — официальный рендер."
+    },
+    {
+      "product_name": "RH06A2",
+      "manufacturer": "ООО \"СМД\"",
+      "url": "https://smd.com.ru/upload/medialibrary/f10/s7t6407ovpe1oo3fryzdgf1xmnsu2fh4/14_42_44-_BELOV.jpg",
+      "sha256": "a794b5dddc5f313a14753343d5d421ed4d26ebc28e0a086d9672fe15efcfaf35",
+      "approved": true,
+      "note": "Просмотрен полный вид конкретной модели с указанной официальной страницы; для Айдол — официальный рендер."
+    },
+    {
+      "product_name": "Вихрь-1М",
+      "manufacturer": "ООО \"Интэк\"",
+      "url": "https://cdn.xn--80aaorhk2b.xn--p1ai/products/views/a7e71c74-7ff3-4d02-8eae-cf85b173fb9e_812x440.jpg",
+      "sha256": "39cfa2acecd4a4ff5caf97fbf9dc8961496790cd996b9cdecaff4423c4e58db4",
+      "approved": true,
+      "note": "Просмотрен полный вид конкретной модели с указанной официальной страницы; для Айдол — официальный рендер."
+    }
+  ]
+}

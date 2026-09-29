@@ -10,6 +10,7 @@ import { Input } from "../../ui/Field";
 import { ProductCard } from "../catalog/ProductCard";
 import { CatalogFilters } from "./CatalogFilters";
 import { CatalogTree } from "./CatalogTree";
+import { CatalogUpdates } from "./CatalogUpdates";
 import { apiQuery, hasHierarchy, PAGE_SIZE, selectedPath, toggleValue, withHierarchy, withSpec, withValue } from "./params";
 import "../catalog/Catalog.css";
 import "./Solutions.css";
@@ -110,6 +111,7 @@ export default function SolutionsPage() {
         </div>
       </header>
 
+      <CatalogUpdates onUpdated={() => { page.reload(); tree.reload(); info.reload(); }} />
       <div className="solutions">
         <aside className="solutions__side">
           <section className="side-card card">

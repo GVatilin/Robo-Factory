@@ -82,6 +82,8 @@ function OfferView({ offer, modelLabel }: { offer: Offer; modelLabel: string }) 
         {offer.is_default && <span className="offer-view__main">Основное</span>}
       </div>
       <strong className="offer-view__label">{offer.label}</strong>
+      {(offer.minimum_quantity ?? 1) > 1 && <p className="offer-view__vat">Цена за единицу при заказе от {offer.minimum_quantity} шт. Не используется как цена единичной поставки в подборе.</p>}
+      {offer.estimation_eligible === false && <p className="offer-view__vat">Предложение не используется для автоматического расчёта: см. условия и примечания. Актуальную стоимость одного робота нужно уточнить у поставщика.</p>}
       {rows.length ? (
         <dl>
           {rows.map(([label, value]) => (
@@ -94,7 +96,7 @@ function OfferView({ offer, modelLabel }: { offer: Offer; modelLabel: string }) 
       ) : (
         <p className="offer-view__empty">Цена по запросу</p>
       )}
-      <span className="offer-view__vat">{offer.price_includes_vat ? "Цены с НДС" : "Цены без НДС"}</span>
+      <span className="offer-view__vat">{offer.vat_status === "unknown" ? "Условия НДС в источнике не указаны" : offer.price_includes_vat ? "Цены с НДС" : "Цены без НДС"}</span>
       <small className="offer-view__vat">{offer.is_confirmed ? "Подтверждено источником" : "Стоимость требует подтверждения поставщиком"}</small>
       {offer.source && <small className="spec-table__source">
         {offer.source.url ? <a href={offer.source.url} target="_blank" rel="noreferrer noopener">{offer.source.title}</a> : offer.source.title}
@@ -259,6 +261,7 @@ export default function ProductPage() {
                 <ExternalLink size={15} aria-hidden="true" /> Открыть источник фото
               </a>}
               <a href={product.image.url} target="_blank" rel="noreferrer noopener">Открыть изображение</a>
+              {product.image.original_url && <a href={product.image.original_url} target="_blank" rel="noreferrer noopener">Оригинал у производителя <ExternalLink size={12} /></a>}
             </div>
           )}
         </div>
@@ -456,6 +459,15 @@ export default function ProductPage() {
               {product.research_checked_at && <p className="pblock__muted">Проверено: {formatDate(product.research_checked_at)}. {product.research_note || "В проверенных источниках не найдено достаточных данных. Требуется спецификация производителя."}</p>}
             </div>
           )}
+          {!!product.specification_alternatives?.length && <details className="pblock__group">
+            <summary>Другие опубликованные значения ({product.specification_alternatives.length})</summary>
+            <p className="pblock__muted">В источниках отличаются значения или условия измерения. Эти сведения требуют уточнения у производителя и не заменяют характеристики в расчёте.</p>
+            <ul className="sources-view">{product.specification_alternatives.map((entry, index) => <li key={index}>
+              <strong>{product.specs.find(spec => spec.code === entry.code)?.name || entry.code}: {entry.text || `${entry.value ?? "—"}${entry.value_max != null ? `–${entry.value_max}` : ""} ${entry.unit || ""}`}</strong>
+              <a href={entry.source_url} target="_blank" rel="noreferrer noopener">Публикация производителя <ExternalLink size={12} /></a>
+              <span>Получено: {formatDate(entry.retrieved_at)}{entry.note ? ` · ${entry.note}` : ""}</span>
+            </li>)}</ul>
+          </details>}
           {!!product.completeness.not_applicable?.length && <div className="pblock__group">
             <h3>Не применяется к этому типу изделия</h3>
             <p className="pblock__muted">{product.completeness.not_applicable.join(", ")}</p>

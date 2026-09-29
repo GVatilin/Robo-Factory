@@ -10,6 +10,7 @@
 """
 
 import csv
+from datetime import date
 import hashlib
 import io
 import uuid
@@ -201,6 +202,7 @@ async def import_catalog(
         code=f"{CATALOG_SOURCE_PREFIX}{checksum[:16]}",
         title=f"Каталог решений организатора ({file_name})",
         source_type=SourceType.ORGANIZER,
+        retrieved_at=date.today(),
         publisher="ФЦ БАС",
         notes="Цены указаны с НДС, без доставки, пусконаладки и глубокой интеграции (п. 6 дополнений к ТЗ).",
     )
@@ -303,23 +305,50 @@ async def import_catalog(
             await session.flush()
             products[record.external_id] = product
             stats.products_created += 1
+            payload = dict(product.source_payload or {})
         else:
+            # Updating the organizer table must retain provenance, downloaded
+            # photos and fields subsequently edited by the catalog administrator.
+            payload = dict(product.source_payload or {})
+            payload["rows"] = record.rows
+            fields["source_payload"] = payload
+            protected = set(payload.get("manual_fields", [])) | set(payload.get("field_evidence", {}))
             for key, value in fields.items():
-                setattr(product, key, value)
-            await session.execute(
-                delete(ProductApplication).where(
-                    ProductApplication.product_id == product.id,
-                    ProductApplication.source_id.in_(catalog_source_ids),
+                if key not in protected:
+                    setattr(product, key, value)
+            if not payload.get("manual_applications_deleted"):
+                await session.execute(
+                    delete(ProductApplication).where(
+                        ProductApplication.product_id == product.id,
+                        ProductApplication.source_id.in_(catalog_source_ids),
+                        ProductApplication.id.not_in(payload.get("manual_application_ids", [])),
+                    )
                 )
-            )
-            await session.execute(
-                delete(ProductOffer).where(
-                    ProductOffer.product_id == product.id, ProductOffer.source_id.in_(catalog_source_ids)
+            if not payload.get("manual_offers_deleted"):
+                await session.execute(
+                    delete(ProductOffer).where(
+                        ProductOffer.product_id == product.id,
+                        ProductOffer.source_id.in_(catalog_source_ids),
+                        ProductOffer.id.not_in(payload.get("manual_offer_ids", [])),
+                    )
                 )
-            )
             stats.products_updated += 1
 
-        for app_data in record.applications:
+        # Removing an entry manually is an explicit decision to curate the whole
+        # collection. Freeze organizer replacement/replenishment until that marker
+        # is explicitly cleared; row IDs/labels are not stable across CSV versions.
+        keep_applications = bool(payload.get("manual_applications_deleted"))
+        keep_offers = bool(payload.get("manual_offers_deleted"))
+        if keep_applications:
+            stats.warnings.append(f"{record.name}: применения сохранены после ручного удаления; CSV их не заменяет.")
+        if keep_offers:
+            stats.warnings.append(f"{record.name}: предложения сохранены после ручного удаления; CSV их не заменяет.")
+
+        surviving_offers = list((await session.scalars(
+            select(ProductOffer).where(ProductOffer.product_id == product.id).order_by(ProductOffer.id)
+        )).all())
+
+        for app_data in ([] if keep_applications else record.applications):
             industry = await get_industry(app_data["industry"])
             session.add(
                 ProductApplication(
@@ -333,22 +362,33 @@ async def import_catalog(
             stats.applications += 1
 
         multiple = len(record.prices) > 1
-        for index, (price, scenario) in enumerate(record.prices):
+        imported_offers = []
+        for price, scenario in ([] if keep_offers else record.prices):
             label = f"Вариант для сценария «{scenario}»" if multiple and scenario else "Базовая комплектация"
-            session.add(
-                ProductOffer(
-                    product_id=product.id,
-                    label=label,
-                    acquisition_model=AcquisitionModel.PURCHASE,
-                    is_default=index == 0,
-                    price_includes_vat=True,
-                    equipment_price=price,
-                    included_services="Только оборудование: без доставки, пусконаладки и интеграции.",
-                    source_id=source.id,
-                    is_confirmed=True,
-                )
+            offer = ProductOffer(
+                product_id=product.id,
+                label=label,
+                acquisition_model=AcquisitionModel.PURCHASE,
+                is_default=False,
+                price_includes_vat=True,
+                equipment_price=price,
+                included_services="Только оборудование: без доставки, пусконаладки и интеграции.",
+                source_id=source.id,
+                is_confirmed=True,
             )
+            session.add(offer)
+            imported_offers.append(offer)
             stats.offers += 1
+
+        all_offers = surviving_offers + imported_offers
+        if all_offers:
+            manual_ids = set(payload.get("manual_offer_ids", []))
+            # Keep the manually selected proposal, otherwise an existing default,
+            # otherwise the first available offer. There is exactly one default.
+            default = next((o for o in surviving_offers if o.is_default and o.id in manual_ids), None)
+            default = default or next((o for o in surviving_offers if o.is_default), None) or all_offers[0]
+            for offer in all_offers:
+                offer.is_default = offer is default
 
     version.stats = {k: v for k, v in stats.as_dict().items() if k != "warnings"}
     stats.dataset_version_id = version.id

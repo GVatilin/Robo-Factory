@@ -75,8 +75,10 @@ def spec_cell(value: ProductSpecValue | None) -> CompareCell:
 
 def main_offer(product: Product) -> ProductOffer | None:
     """Основное предложение покупки: отмеченное основным или самое дешёвое с ценой оборудования."""
-    priced = [o for o in product.offers if o.equipment_price is not None and o.acquisition_model == AcquisitionModel.PURCHASE]
-    priced = priced or [o for o in product.offers if o.equipment_price is not None]
+    eligible = [o for o in product.offers if (o.terms or {}).get("minimum_quantity", 1) <= 1
+                and (o.terms or {}).get("estimation_eligible", True)]
+    priced = [o for o in eligible if o.equipment_price is not None and o.acquisition_model == AcquisitionModel.PURCHASE]
+    priced = priced or [o for o in eligible if o.equipment_price is not None]
     if not priced:
         return None
     return next((o for o in priced if o.is_default), min(priced, key=lambda o: o.equipment_price))
@@ -118,7 +120,8 @@ def build_groups(entries: Sequence[Entry], definitions: Sequence[SpecDefinition]
         return [CompareCell(value=_num(getter(o)), unit="₽") if o and getter(o) is not None else CompareCell() for o in offers]
 
     rentals = [
-        min((float(o.monthly_fee) for o in p.offers if o.monthly_fee is not None), default=None) for p in products
+        min((float(o.monthly_fee) for o in p.offers if o.monthly_fee is not None and (o.terms or {}).get("minimum_quantity", 1) <= 1
+             and (o.terms or {}).get("estimation_eligible", True)), default=None) for p in products
     ]
     process_names = {proc.id: proc.name for f in hierarchy.facilities for proc in f.processes}
     facility_names = {f.id: f.name for f in hierarchy.facilities}
@@ -167,7 +170,7 @@ def build_groups(entries: Sequence[Entry], definitions: Sequence[SpecDefinition]
                  mandatory=True),
             _row("service_life", "Срок службы", "number",
                  [CompareCell(value=_num(p.service_life_years)) for p in products], unit="лет", better="higher", mandatory=True),
-            _row("vat", "Цены с НДС", "bool", [CompareCell(flag=o.price_includes_vat) if o else CompareCell() for o in offers]),
+            _row("vat", "Цены с НДС", "bool", [CompareCell(flag=o.price_includes_vat) if o and (o.terms or {}).get("vat_status") != "unknown" else CompareCell() for o in offers]),
         ],
     )
 

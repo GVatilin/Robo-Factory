@@ -135,6 +135,7 @@ export interface ProductImage {
   is_illustration: boolean;
   caption: string | null;
   attribution: string | null;
+  original_url?: string | null;
 }
 
 export interface ProductSummary {
@@ -196,6 +197,9 @@ export interface Offer {
   is_default: boolean;
   currency: string;
   price_includes_vat: boolean;
+  vat_status?: string | null;
+  minimum_quantity?: number;
+  estimation_eligible?: boolean;
   equipment_price: number | null;
   software_price: number | null;
   implementation_price: number | null;
@@ -226,6 +230,8 @@ export interface Product extends ProductSummary {
   field_sources?: Record<string, Source>;
   research_checked_at?: string | null;
   research_note?: string | null;
+  reviewed_urls?: string[];
+  specification_alternatives?: { code: string; source_url: string; retrieved_at: string; value: number | null; value_max: number | null; text: string | null; unit: string | null; note: string | null; current_source_url: string | null }[];
   external_id: string | null;
   description: string | null;
   region: string | null;
@@ -287,6 +293,8 @@ export interface SpecValueInput {
   flag: boolean | null;
   unit: string | null;
   is_confirmed: boolean;
+  note?: string | null;
+  is_assumption?: boolean;
 }
 
 export interface OfferInput {
@@ -301,6 +309,8 @@ export interface OfferInput {
   annual_service_cost: number | null;
   monthly_fee: number | null;
   min_contract_months: number | null;
+  notes?: string | null;
+  included_services?: string | null;
 }
 
 export interface ApplicationInput {
