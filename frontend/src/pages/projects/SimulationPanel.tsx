@@ -40,7 +40,7 @@ const VISIBLE_ROBOTS=18;
 const number=(value:number)=>value.toLocaleString("ru-RU",{maximumFractionDigits:2});
 const clock=(value:number)=>`${Math.floor(value/3600)}:${String(Math.floor(value/60)%60).padStart(2,"0")}:${String(Math.floor(value)%60).padStart(2,"0")}`;
 
-export default function SimulationPanel({projectId,version,isDemo,selection,saved}:{projectId:string;version:string;isDemo:boolean;selection:Selection|null;saved:EconomicsRun[]}) {
+export default function SimulationPanel({projectId,version,isDemo,selection,saved,onSetup}:{onSetup?:()=>void;projectId:string;version:string;isDemo:boolean;selection:Selection|null;saved:EconomicsRun[]}) {
   const history=useApi<History[]>(`/projects/${projectId}/simulations`);
   const [source,setSource]=useState("");
   const [route,setRoute]=useState("50");
@@ -85,11 +85,12 @@ export default function SimulationPanel({projectId,version,isDemo,selection,save
       <div><p className="simulation__eyebrow">Цифровой прогон смены</p><h2 id="simulation-heading">Имитация работы на объекте</h2>
         <p>Проверьте парк на пиковом потоке: 3D-сцена воспроизводит расчётные маршруты, операции, очереди и зарядку в течение всей смены.</p></div>
     </div>
+    <button type="button" className="btn btn--ghost" disabled={busy} onClick={()=>edit(()=>{setRoute('50');setSpeed('1');setReason('Допущение команды: маршрут 50 м в одну сторону, скорость 1 м/с. Уточнить на объекте.');setSource(choices[0]?.key??'');})}>Заполнить симуляцию по умолчанию</button>
     <fieldset disabled={busy} className="economics__fieldset simulation-config">
       <label className="simulation-config__scenario"><span>Сценарий</span><select value={chosen?.key??""} onChange={event=>edit(()=>setSource(event.target.value))}>
         {!choices.length&&<option value="">Сначала выполните подбор с рассчитанным парком</option>}
         {choices.map(choice=><option key={choice.key} value={choice.key}>{choice.name}</option>)}</select></label>
-      {!choices.length&&<p className="simulation-source-help"><AlertTriangle size={18} aria-hidden="true"/><span><strong>Экономику заполнять не нужно.</strong> Укажите объём в сутки и часы работы в блоке «Процесс и нагрузка», затем повторите подбор. <a href="#selection-inputs">Перейти к нагрузке</a></span></p>}
+      {!choices.length&&<p className="simulation-source-help"><AlertTriangle size={18} aria-hidden="true"/><span><strong>Экономику заполнять не нужно.</strong> Укажите объём в сутки и часы работы в блоке «Процесс и нагрузка», затем повторите подбор. <button type="button" className="btn btn--ghost" onClick={onSetup}>Перейти к настройке и заполнить пример</button></span></p>}
       <div className="simulation-config__grid">
         <label><span><Route size={15} aria-hidden="true"/>Маршрут в одну сторону, м</span><input type="number" min="0" max="100000" step="any" value={route} onChange={event=>edit(()=>setRoute(event.target.value))}/></label>
         <label><span><Gauge size={15} aria-hidden="true"/>Средняя скорость, м/с</span><input type="number" min="0.01" max="30" step="any" value={speed} onChange={event=>edit(()=>setSpeed(event.target.value))}/></label>

@@ -43,6 +43,12 @@ class ScenarioBinding(BaseModel):
     quantity_reason: str = Field(default="", max_length=1000)
 
 
+class SelectionDefaultsInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    selection: SelectionInput
+    product_ids: list[int] = Field(default_factory=list, max_length=6)
+
+
 class SaveProjectEconomics(BaseModel):
     model_config = ConfigDict(extra="forbid")
     project_updated_at: datetime

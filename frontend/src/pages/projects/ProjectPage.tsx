@@ -64,6 +64,13 @@ function ProjectForm({project, definitions, facilities, facilityId, onFacility, 
     airport:"Пассажиры, багаж и грузы, зоны операций, маршруты и безопасность.",
     medical:"Корпуса и этажи, доставки, лифты, санитарные требования и доступ.",
   };
+  function fillMissingDefaults(section?:string) {
+    const chosen=definitions.filter(d=>(!section||(d.section||"Общие параметры")===section)&&(values[d.code]===undefined||values[d.code]==="")&&d.default_value!==null);
+    setValues(previous=>({...previous,...Object.fromEntries(chosen.map(d=>[d.code,d.default_value!]))}));
+    if(!name.trim()||name==='Новый проект')setName(`Роботизация: ${facility?.name??'объект'}`);
+    if(!description.trim())setDescription('Предварительная оценка роботизации. Примерные значения из справочника требуют уточнения для объекта.');
+    setDirty(true);setFields({});setError('');setMessage(`Заполнено полей: ${chosen.length}. Сохраните проект. Поля без справочного значения заполняются вручную.`);
+  }
   function selectFacility(next:number) {
     if(next===facilityId)return;
     if(!dirty || window.confirm("Сменить тип объекта и сбросить введённые данные?"))onFacility(next);
@@ -152,10 +159,10 @@ function ProjectForm({project, definitions, facilities, facilityId, onFacility, 
           <div className="project-section-heading"><h2>Об объекте</h2><p>Название и краткое описание задачи роботизации.</p></div>
           <Field label="Название проекта" htmlFor="project-name" required error={fields.name}><Input id="project-name" required maxLength={300} value={name} onChange={e=>{setName(e.target.value);setDirty(true);setMessage("");}}/></Field>
           <Field label="Описание" htmlFor="project-description"><TextArea id="project-description" maxLength={5000} value={description} onChange={e=>{setDescription(e.target.value);setDirty(true);setMessage("");}}/></Field>
-          {!readOnly && <div className="project-defaults"><p>Для первого расчёта можно использовать типовые значения, затем заменить их данными вашего объекта.</p><button type="button" className="btn btn--ghost" onClick={()=>{if((dirty || Object.keys(values).length > 0) && !window.confirm("Заменить параметры значениями по умолчанию?"))return;setValues(Object.fromEntries(definitions.filter(d=>d.default_value!==null).map(d=>[d.code,d.default_value!])));setDirty(true);setMessage("");}}>Заполнить значениями по умолчанию</button></div>}
+          {!readOnly && <div className="project-defaults"><p>Для первого расчёта можно использовать справочные значения. Их источники указаны рядом с каждым полем.</p><button type="button" className="btn btn--primary" onClick={()=>fillMissingDefaults()}>Заполнить пустые поля по умолчанию</button><button type="button" className="btn btn--ghost" onClick={()=>{if((dirty || Object.keys(values).length > 0) && !window.confirm("Заменить параметры значениями по умолчанию?"))return;setValues(Object.fromEntries(definitions.filter(d=>d.default_value!==null).map(d=>[d.code,d.default_value!])));setDirty(true);setMessage("");}}>Заменить все параметры примером</button></div>}
         </div>
         {groups.map((group,index)=><details key={group} className="card project-card" open={index===0 || undefined}>
-          <summary><span>{group}</span><small>{definitions.filter(d=>(d.section||"Общие параметры")===group && values[d.code]!==undefined && values[d.code]!=="").length} / {definitions.filter(d=>(d.section||"Общие параметры")===group).length} заполнено</small></summary><div className="project-fields">{definitions.filter(d=>(d.section||"Общие параметры")===group).map(d=>{
+          <summary><span>{group}</span><small>{definitions.filter(d=>(d.section||"Общие параметры")===group && values[d.code]!==undefined && values[d.code]!=="").length} / {definitions.filter(d=>(d.section||"Общие параметры")===group).length} заполнено</small></summary>{!readOnly&&<button type="button" className="btn btn--ghost" onClick={()=>fillMissingDefaults(group)}>Заполнить пустые поля раздела</button>}<div className="project-fields">{definitions.filter(d=>(d.section||"Общие параметры")===group).map(d=>{
             const id=`param-${d.code}`;const value=values[d.code];
             return <Field key={d.code} htmlFor={id} label={d.name} required={d.is_required} error={fields[`parameters.${d.code}`]}
               aside={<details className="parameter-source"><summary>Источник и допущения</summary><div><strong>{d.source_type==="team_assumption" ? "Допущение команды" : d.source_type==="organizer" ? "Данные организатора — справочный пример" : d.source_type==="regulation" ? "Нормативный документ" : "Справочные данные"}</strong><p>{d.source || "Источник не указан"}</p>{d.source_url && /^https?:\/\//.test(d.source_url) && <a href={d.source_url} target="_blank" rel="noreferrer">Открыть источник</a>}{d.source_note && <p>{d.source_note}</p>}<p>{d.default_value===null?"Значение по умолчанию не задано: введите данные объекта.":"Значение по умолчанию справочное. Уточните его для своего объекта."}</p></div></details>}

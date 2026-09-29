@@ -73,3 +73,10 @@ export function formatDimensions(d: { length_mm: number | null; width_mm: number
   if (parts.every((v) => v === null)) return null;
   return `${parts.map((v) => (v === null ? "?" : moneyFormat.format(v))).join(" × ")} мм`;
 }
+
+/** Короткая окупаемость отображается в днях, а не округляется до нуля лет. */
+export function formatPayback(years: number | null | undefined): string {
+  if(years==null)return "Не определена";
+  if(years<1)return years*365<1?"Менее 1 дня":`${formatNumber(years*365)} дн.`;
+  return `${formatNumber(years)} лет`;
+}
