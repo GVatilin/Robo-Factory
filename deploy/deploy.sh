@@ -39,10 +39,13 @@ if ! compose up -d --wait --wait-timeout 240; then
 fi
 compose exec -T frontend wget -q -O /dev/null http://127.0.0.1/api/health
 # Reviewed new products and their assets are applied once, preserving later edits.
-if [[ -s "$RELEASE/datasets/catalog_expansion_20260929/bundle.json" ]]; then
+for package in "$RELEASE"/datasets/catalog_expansion_*/bundle.json; do
+    [[ -s "$package" ]] || continue
+    package_name=$(basename "$(dirname "$package")")
     compose run --rm --no-deps --user root --entrypoint python \
-        -v "$RELEASE/datasets:/catalog-data:ro" backend /catalog-data/load_catalog_expansion.py
-fi
+        -v "$RELEASE/datasets:/catalog-data:ro" backend /catalog-data/load_catalog_expansion.py \
+        --package "/catalog-data/$package_name"
+done
 # Curated logo assets travel with the release; repeat imports are idempotent.
 if [[ -s "$RELEASE/datasets/manufacturer_logos/manifest.json" ]]; then
     compose run --rm --no-deps --user root --entrypoint python \

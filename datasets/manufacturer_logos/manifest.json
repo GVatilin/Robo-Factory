@@ -1363,6 +1363,32 @@
         "background": "#ffffff",
         "note": null
       }
+    },
+    {
+      "name": "KEENON Robotics",
+      "logo": {
+        "approved": true,
+        "sha256": "35b37aec1f7632ac99012be9cacdc2ca8072ce9a7d7011032b8b913d58aaa671",
+        "original_sha256": "087230625f7ac1e085063c9f2e9b9f5ffa4d717880e5c2821acde58d028fc4db",
+        "source_url": "https://www.keenon.com/en/",
+        "original_url": "https://storage.keenon.cn/assets/site/keenon-static/static.keenon.com/assets/images/common/logo-Colorful.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "Mobile Industrial Robots (MiR)",
+      "logo": {
+        "approved": true,
+        "sha256": "14e417eb8c88cefe5653d29dd29c422cf6a7de076ed25268a29ffb633576fbae",
+        "original_sha256": "6835209c9b30d61b1b693f783ddf0e1d288b3b798fbbe19b394c3ba2dbba38a0",
+        "source_url": "https://mobile-industrial-robots.com/",
+        "original_url": "https://mobile-industrial-robots.com/logo/mir-main-logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
     }
   ]
 }
