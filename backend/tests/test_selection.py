@@ -100,7 +100,8 @@ def test_context_parses_medical_24_7_and_does_not_invent_internal_flow():
     )
     assert internal["daily_demand"] is None
     assert any("суточный объём" in message for message in internal["missing"])
-    assert any("нельзя надёжно вывести" in message for message in internal["assumptions"])
+    assert internal["sources"]["daily_demand"] == "internal_moves_per_day"
+    assert any("Внутренний поток" in message for message in internal["assumptions"])
 
 
 def test_fully_verified_candidate_is_suitable_and_score_is_reproducible():

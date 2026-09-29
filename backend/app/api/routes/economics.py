@@ -1,4 +1,9 @@
-from fastapi import APIRouter, Response
+from datetime import date
+from fastapi import APIRouter, Response, Query
+from sqlalchemy import select, or_
+from sqlalchemy.orm import selectinload
+from app.api.deps import DbSession
+from app.models import Normative
 from pydantic import BaseModel, ConfigDict, Field
 
 from app.schemas.economics import EconomicsInput, EconomicsResponse
@@ -9,9 +14,18 @@ router = APIRouter(prefix="/economics", tags=["Экономическая оце
 
 
 @router.get("/defaults")
-async def economics_defaults():
+async def economics_defaults(db: DbSession, facility_type_id: int | None = Query(default=None, gt=0)):
     from app.services.economics_defaults import default_profile
-    return default_profile()
+    refs = (await db.scalars(select(Normative).options(selectinload(Normative.source)).where(
+        Normative.is_active.is_(True),
+        or_(Normative.valid_from.is_(None), Normative.valid_from <= date.today()),
+        or_(Normative.facility_type_id.is_(None), Normative.facility_type_id == facility_type_id),
+    ).order_by(Normative.facility_type_id.nullsfirst(), Normative.id))).all()
+    return default_profile([{"code": r.code, "value": float(r.value), "source":
+        f"Справочник: {r.name} ({r.code}), значение {r.value} {r.unit or ''}. "
+        f"{'Допущение' if r.is_assumption else 'Норматив'}. "
+        f"Источник: {r.source.title if r.source else 'не указан'}; {r.source.url or '' if r.source else ''}. "
+        f"Обновлено: {r.updated_at.isoformat()}. {r.description or ''}"} for r in refs])
 
 
 @router.post("/calculate", response_model=EconomicsResponse, summary="CAPEX, OPEX, TCO, окупаемость и ROI")

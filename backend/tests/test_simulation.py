@@ -81,11 +81,10 @@ def test_fractional_batch_does_not_invent_demand():
     assert result["frames"][-1]["arrived"] == 10.5
 
 
-@pytest.mark.parametrize("change", ["fleet", "events", "battery", "excluded"])
+@pytest.mark.parametrize("change", ["fleet", "battery", "excluded"])
 def test_unsupported_workload_fails_with_actionable_error(change):
     source = snapshot()
     if change == "fleet": source["quantity"] = 201
-    if change == "events": source["context"]["daily_demand"] = 12001
     if change == "battery": source["equipment"]["runtime_hours"] = .001
     if change == "excluded": source["candidate"]["status"] = "excluded"
     with pytest.raises(ValueError):
@@ -213,3 +212,12 @@ def test_shift_clipping_preserves_actual_motion_duration():
     assert last["state"] == "outbound"
     assert last["end"] == 36
     assert last["phase_end"] == 100
+
+
+def test_large_queue_preserves_demand_without_old_12000_limit():
+    source = snapshot()
+    source["context"]["daily_demand"] = 12001
+    result = simulate(source, SimulationOptions())
+    assert result["kpi"]["target"] == 12001
+    assert result["frames"][-1]["arrived"] == 12001
+    assert result["kpi"]["completed"] <= 12001

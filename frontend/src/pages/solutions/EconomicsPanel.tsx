@@ -83,7 +83,7 @@ function initialDrafts(data: Comparison): Draft[] {
 }
 
 type ProjectEconomics = {
-  quantities: Record<number, number>; common: Values; volumeUnit?:string; onFixSelection?:()=>void;
+  quantities: Record<number, number>; common: Values; commonEvidence?:Record<string,string>; facilityTypeId?:number; volumeUnit?:string; onFixSelection?:()=>void;
   prepareFleet?:()=>Promise<{quantities:Record<number,number>;hoursPerDay:number;dailyVolume:number|null;volumeUnit:string;notes:string[]}>;
   fleetBasis?: Record<number, number>;
   recommend?: (inputs: unknown, bindings: {product_id:number;quantity_reason:string}[]) => Promise<unknown>;
@@ -99,7 +99,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
   const [profile,setProfile]=useState<string|null>(null);
   const [defaultNotes,setDefaultNotes]=useState<string[]>([]);
   const [evidence,setEvidence]=useState<Record<string,string>>(()=>Object.fromEntries([
-    ...Object.entries(common).filter(([,v])=>v!=='').map(([k])=>[`common.${k}`,k==='daily_volume'?'Плановый суточный объём выбранного процесса из подбора, без пикового коэффициента.':project?.common[k]!==undefined?'Параметры объекта. ФОТ = персонал × зарплата × 12 × коэффициент начислений; уточните долю выбранного процесса.':'Начальное допущение формы: горизонт 5 лет, режим 8 часов × 250 дней, прочие затраты 0. Требует уточнения.']),
+    ...Object.entries(common).filter(([,v])=>v!=='').map(([k])=>[`common.${k}`,project?.commonEvidence?.[k]??(k==='daily_volume'?'Плановый суточный объём выбранного процесса из подбора, без пикового коэффициента.':project?.common[k]!==undefined?'Параметры объекта. ФОТ = персонал × зарплата × 12 × коэффициент начислений; уточните долю выбранного процесса.':'Начальное допущение формы: горизонт 5 лет, режим 8 часов × 250 дней, прочие затраты 0. Требует уточнения.')]),
     ...drafts.flatMap(d=>Object.entries(d.values).filter(([,v])=>v!=='').map(([k])=>[`product.${d.id}.${k}`,catalogValue(data,d.id,k)!=null?`Каталог, карточка решения /products/${d.id}; проверить условия предложения.`:k==='quantity'&&project?.quantities[d.id]!==undefined?'Рассчитанное количество из автоматического подбора.':'Начальное допущение формы: количество 1, неизвестные дополнительные затраты и экономия 0. Требует уточнения.']))
   ]));
   const [automaticValues,setAutomaticValues]=useState<Record<string,number|null>>(()=>Object.fromEntries([
@@ -114,7 +114,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
     if(!window.confirm("Заполнить экономику демонстрационными допущениями? Режим объекта, рассчитанный парк и известные данные каталога будут сохранены. Введённые вручную экономические значения заменятся."))return;
     setBusy(true);setError("");
     try {
-      const defaults=await api<{profile:string;common:Record<string,number>;scenario:Record<string,number>;source:string;notes:string[]}>("/economics/defaults");
+      const defaults=await api<{profile:string;common:Record<string,number>;scenario:Record<string,number>;source:string;field_sources:Record<string,string>;notes:string[]}>(`/economics/defaults${project?.facilityTypeId?`?facility_type_id=${project.facilityTypeId}`:''}`);
       const nextCommon={...Object.fromEntries(Object.entries(defaults.common).map(([k,v])=>[k,String(v)])),...project?.common};
       const originals=initialDrafts(data);
       const nextDrafts=originals.map(d=>{
@@ -124,12 +124,12 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
         return {...d,buy:true,rent:true,values};
       });
       const origins:Record<string,string>={};const automatic:Record<string,number|null>={};
-      for(const [key,value] of Object.entries(nextCommon)){origins[`common.${key}`]=key==='daily_volume'&&project?.common[key]!==undefined?'Плановый суточный объём выбранного процесса из подбора, без пикового коэффициента.':project?.common[key]!==undefined?'Параметры объекта или ФОТ = персонал × зарплата × 12 × коэффициент начислений. Уточните долю выбранного процесса.':defaults.source;automatic[`common.${key}`]=Number(value);}
+      for(const [key,value] of Object.entries(nextCommon)){origins[`common.${key}`]=project?.commonEvidence?.[key]??(key==='daily_volume'&&project?.common[key]!==undefined?'Плановый суточный объём выбранного процесса из подбора, без пикового коэффициента.':project?.common[key]!==undefined?'Параметры объекта или ФОТ = персонал × зарплата × 12 × коэффициент начислений. Уточните долю выбранного процесса.':defaults.field_sources[`common.${key}`]??defaults.source);automatic[`common.${key}`]=Number(value);}
       for(const d of nextDrafts)for(const [key,value] of Object.entries(d.values)){
-        origins[`product.${d.id}.${key}`]=key==='quantity'&&project?.quantities[d.id]!==undefined?'Автоматический подбор: пиковая нагрузка / эффективная производительность с резервом.':catalogValue(data,d.id,key)!=null?`Каталог, карточка решения /products/${d.id}; проверить условия предложения.`:defaults.source;
+        origins[`product.${d.id}.${key}`]=key==='quantity'&&project?.quantities[d.id]!==undefined?'Автоматический подбор: пиковая нагрузка / эффективная производительность с резервом.':catalogValue(data,d.id,key)!=null?`Каталог, карточка решения /products/${d.id}; проверить условия предложения.`:defaults.field_sources[`scenario.${key}`]??defaults.source;
         automatic[`product.${d.id}.${key}`]=value===''?null:Number(value);
       }
-      setCommon(nextCommon);setDrafts(nextDrafts);setProfile(defaults.profile);setDefaultNotes(defaults.notes);setEvidence(origins);setAutomaticValues(automatic);setAdjustmentReason("");setResult(null);setAdvice(null);setSaved(false);
+      setCommon(nextCommon);setDrafts(nextDrafts);setProfile(defaults.profile);setDefaultNotes(defaults.notes);setEvidence(origins);setAutomaticValues(automatic);setAdjustmentReason("");setResult(null);setAdvice(null);setSaved(false);setAccepted(false);setAdviceError('');
     }catch(e){setError((e as Error).message);}finally{setBusy(false);}
   }
   const [result, setResult] = useState<EconomicsResponse | null>(null);
@@ -153,13 +153,13 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
       setAutomaticValues(v=>({...v,...values}));
       setEvidence(v=>({...v,...Object.fromEntries(Object.keys(values).map(key=>[key,('Расчёт парка с явными демонстрационными допущениями. '+[...new Set(fleet.notes)].join(' ')).slice(0,2000)]))}));
       setDefaultNotes(notes=>[...new Set([...notes,...fleet.notes])]);
-      setResult(null);setAdvice(null);setSaved(false);setAccepted(false);setQuantityReason('');setView('inputs');
+      setResult(null);setAdvice(null);setSaved(false);setAccepted(false);setAdviceError('');setQuantityReason('');setView('inputs');
       setFleetNotice('Парк рассчитан. Количество роботов, объём и часы работы обновлены, введённые цены и затраты сохранены. Проверьте данные, нажмите «Рассчитать экономику», затем «Сохранить экономику в проект».');
     }catch(e){setError((e as Error).message);}finally{setBusy(false);}
   }
-  function changeCommon(key: string, value: string) { setCommon(s => ({ ...s, [key]: value })); setResult(null); setAdvice(null); setSaved(false); setError(""); }
+  function changeCommon(key: string, value: string) { setCommon(s => ({ ...s, [key]: value })); setResult(null); setAdvice(null); setSaved(false);setAccepted(false);setAdviceError(''); setError(""); }
   function changeDraft(id: number, patch: Partial<Draft>) {
-    setDrafts(ds => ds.map(d => d.id === id ? { ...d, ...patch } : d)); setResult(null); setAdvice(null); setSaved(false); setError("");
+    setDrafts(ds => ds.map(d => d.id === id ? { ...d, ...patch } : d)); setResult(null); setAdvice(null); setSaved(false);setAccepted(false);setAdviceError(''); setError("");
   }
   function field(spec: FieldSpec, values: Values, onChange: (key: string, value: string) => void, prefix: string) {
     const id = `econ-${prefix}-${spec.key}`;
@@ -172,6 +172,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
       <Input id={id} type="number" disabled={!!project && spec.key === "hours_per_day"} min={spec.min ?? 0} max={spec.max ?? 1e12} step={spec.step ?? "any"}
         unit={spec.key==='daily_volume'?`${volumeUnit}/сутки`:spec.unit} required={!spec.optional} value={values[spec.key] ?? ""}
         onChange={e => onChange(spec.key, e.target.value)} />
+      {evidence[`${prefix==='common'?'common':`product.${prefix}`}.${spec.key}`]&&<details className="economics__field-source"><summary>Источник значения</summary>{evidence[`${prefix==='common'?'common':`product.${prefix}`}.${spec.key}`]}</details>}
     </Field>;
   }
   async function submit(event: FormEvent) {
@@ -192,7 +193,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
     try {
       const inputs = { ...Object.fromEntries(Object.entries(common).map(([k, v]) => [k, k==='daily_volume'&&v===''?null:Number(v)])), volume_unit:volumeUnit, scenarios, default_profile:profile,input_evidence:evidence,automatic_values:automaticValues,adjustment_reason:adjustmentReason };
       setResult(await api<EconomicsResponse>("/economics/calculate", { method: "POST", body: inputs }));
-      setView("results");setSaved(false);document.getElementById("economics-heading")?.scrollIntoView({block:"start"});
+      setView("results");setSaved(false);setAccepted(false);setAdviceError('');document.getElementById("economics-heading")?.scrollIntoView({block:"start"});
     } catch (e) { setError((e as Error).message); }
     finally { setBusy(false); }
   }
@@ -224,11 +225,11 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
       ПО и внедрение из карточки подставлены для одного робота: при изменении количества уточните стоимость на весь парк.</p>
 
     {profile&&<details className="economics__draft"><summary>Источники и допущения заполнения</summary><ul>{defaultNotes.map(n=><li key={n}>{n}</li>)}</ul><p>Значения примера не являются ценами поставщиков или нормативами. Изменяйте их под свой объект.</p></details>}
-    <Field label="Обоснование ручных изменений" hint="Сохраняется вместе с исходными и изменёнными значениями."><Input disabled={advising||busy} maxLength={2000} value={adjustmentReason} onChange={e=>{setAdjustmentReason(e.target.value);setResult(null);setAdvice(null);setSaved(false);}}/></Field>
+    <Field label="Обоснование ручных изменений" htmlFor="economics-adjustment-reason" hint="Сохраняется вместе с исходными и изменёнными значениями."><Input id="economics-adjustment-reason" disabled={advising||busy} maxLength={2000} value={adjustmentReason} onChange={e=>{setAdjustmentReason(e.target.value);setResult(null);setAdvice(null);setSaved(false);setAccepted(false);setAdviceError('');}}/></Field>
     <form onSubmit={submit} onInvalid={e => {let node=(e.target as HTMLElement).parentElement;while(node){if(node.tagName==='DETAILS')node.setAttribute('open','');node=node.parentElement;}}}>
       <fieldset disabled={busy||advising} className="economics__fieldset">
         <legend>Сегодня: расходы и режим работы</legend>
-        {project?<p className="economics__unit-note">Единица выбранного процесса: <strong>{volumeUnit}</strong>. Объём из подбора можно уточнить с обоснованием; парк пересчитывается на шаге «Решения».</p>:<Field label="Единица работы"><select className="input" value={volumeUnit} onChange={e=>{setVolumeUnit(e.target.value);setResult(null);setAdvice(null);setSaved(false);}}>{['операция','паллета','рейс','строка','отправление','м²','кг','порция','контейнер','заявка','образец','позиция'].map(unit=><option key={unit}>{unit}</option>)}</select></Field>}
+        {project?<p className="economics__unit-note">Единица выбранного процесса: <strong>{volumeUnit}</strong>. Объём из подбора можно уточнить с обоснованием; парк пересчитывается на шаге «Решения».</p>:<Field label="Единица работы" htmlFor="economics-volume-unit"><select id="economics-volume-unit" className="input" value={volumeUnit} onChange={e=>{setVolumeUnit(e.target.value);setResult(null);setAdvice(null);setSaved(false);setAccepted(false);setAdviceError('');}}>{['операция','паллета','рейс','строка','отправление','м²','кг','порция','контейнер','заявка','образец','позиция'].map(unit=><option key={unit}>{unit}</option>)}</select></Field>}
         <div className="economics__fields">{COMMON.map(f => field(f, common, changeCommon, "common"))}</div>
         {drafts.map(d => <details className="economics__draft" key={d.id} open={drafts.length === 1 ? true : undefined}>
           <summary><span>{d.name}</span><small className="economics__product-caption">{d.values.quantity} роботов · настройка сценариев</small></summary>
