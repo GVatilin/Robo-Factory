@@ -5,6 +5,7 @@ import { formatMoney, formatNumber, formatPayback } from "../../format";
 import { Field, Input } from "../../ui/Field";
 import "./EconomicsPanel.css";
 import EconomicsReportTools from "./EconomicsReportTools";
+import GptRequestProgress from "./GptRequestProgress";
 import {EquipmentTable, type EquipmentInput, type EquipmentPlan} from "../projects/Equipment";
 
 export type GptAdvice = {selected_scenario:number;recommendation:string;alternatives:string[];risks:string[];missing_data:string[];model:string};
@@ -104,6 +105,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
   const [adjustmentReason,setAdjustmentReason]=useState("");
   const [advice,setAdvice]=useState<GptAdvice|null>(null);
   const [advising,setAdvising]=useState(false);
+  const [adviceError,setAdviceError]=useState('');
   async function fillDefaults() {
     if(!window.confirm("Заполнить экономику демонстрационными допущениями? Режим объекта, рассчитанный парк и известные данные каталога будут сохранены. Введённые вручную экономические значения заменятся."))return;
     setBusy(true);setError("");
@@ -167,7 +169,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
     </Field>;
   }
   async function submit(event: FormEvent) {
-    event.preventDefault(); setError(""); setResult(null); setAdvice(null);
+    event.preventDefault(); setError(""); setResult(null); setAdvice(null);setAdviceError('');
     if(project?.saveBlockedReason){setError(project.saveBlockedReason);return;}
     const scenarios = drafts.flatMap(d => {
       const v = Object.fromEntries(Object.entries(d.values).map(([k, v]) => [k, v === "" ? null : Number(v)]));
@@ -245,7 +247,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
     {error && view==='inputs' && <p role="alert" className="economics__error">{error}</p>}
     <div hidden={view!=='results'}>
     {result && <div className="economics__result-intro"><strong>Расчёт готов</strong><span>Сравните варианты ниже. GPT поможет объяснить различия и риски.</span></div>}
-    {result && project?.recommend && <div className="economics__advisor"><h3>Рекомендация GPT</h3><p>GPT сравнит рассчитанные варианты и объяснит выбор. Параметры объекта и расчёты будут отправлены в сервис. Ответ — до 50 секунд.</p><button className="btn btn--primary" disabled={advising||busy||!!project?.saveBlockedReason} onClick={async()=>{setAdvising(true);setError("");setAdvice(null);try{const response=await project.recommend!(result.inputs,drafts.flatMap(d=>[...(d.buy?[{product_id:d.id,quantity_reason:quantityReason||adjustmentReason}]:[]),...(d.rent?[{product_id:d.id,quantity_reason:quantityReason||adjustmentReason}]:[])]));setAdvice(response as typeof advice);}catch(e){setError((e as Error).message);}finally{setAdvising(false);}}}>{advising?'GPT анализирует варианты…':'Объяснить и рекомендовать через GPT'}</button>{advice&&<section><h4>{advice.selected_scenario===-1?"Сохранить базовый процесс или уточнить данные":`Рекомендация: ${result.results[advice.selected_scenario]?.name??"уточнить данные"}`}</h4><p style={{whiteSpace:'pre-wrap'}}>{advice.recommendation}</p><h4>Альтернативы</h4><ul>{advice.alternatives.map((v,i)=><li key={i}>{v}</li>)}</ul><h4>Риски и недостающие данные</h4><ul>{[...advice.risks,...advice.missing_data].map((v,i)=><li key={i}>{v}</li>)}</ul><small>Модель: {advice.model}. Рекомендация не изменяет расчёт автоматически.</small></section>}</div>}
+    {result && project?.recommend && <div className="economics__advisor"><h3>Рекомендация GPT</h3><p>GPT сравнит рассчитанные варианты и объяснит выбор. Параметры объекта и расчёты будут отправлены в сервис. Ожидание ответа — до 50 секунд.</p><div className="economics__advisor-action"><button type="button" className="btn btn--primary" disabled={advising||busy||!!project?.saveBlockedReason} onClick={async()=>{setAdvising(true);setError("");setAdvice(null);setAdviceError('');try{const response=await project.recommend!(result.inputs,drafts.flatMap(d=>[...(d.buy?[{product_id:d.id,quantity_reason:quantityReason||adjustmentReason}]:[]),...(d.rent?[{product_id:d.id,quantity_reason:quantityReason||adjustmentReason}]:[])]));setAdvice(response as typeof advice);}catch(e){setAdviceError((e as Error).message);}finally{setAdvising(false);}}}>{advising?'Запрос выполняется…':adviceError?'Повторить запрос к GPT':'Объяснить и рекомендовать через GPT'}</button><GptRequestProgress active={advising} complete={!!advice} failed={!!adviceError}/></div>{adviceError&&<p role="alert" className="economics__advisor-error">{adviceError}</p>}{advice&&<section><h4>{advice.selected_scenario===-1?"Сохранить базовый процесс или уточнить данные":`Рекомендация: ${result.results[advice.selected_scenario]?.name??"уточнить данные"}`}</h4><p style={{whiteSpace:'pre-wrap'}}>{advice.recommendation}</p><h4>Альтернативы</h4><ul>{advice.alternatives.map((v,i)=><li key={i}>{v}</li>)}</ul><h4>Риски и недостающие данные</h4><ul>{[...advice.risks,...advice.missing_data].map((v,i)=><li key={i}>{v}</li>)}</ul><small>Модель: {advice.model}. Рекомендация не изменяет расчёт автоматически.</small></section>}</div>}
     {error&&!project&&<p role="alert" className="economics__error">{error}</p>}
     {result && <div aria-live="polite">
       <EconomicsResults result={result} advice={advice}/>

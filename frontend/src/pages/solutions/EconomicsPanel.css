@@ -51,6 +51,33 @@
 .economics__advisor h3 { color:#35487e; margin:0; }
 .economics__advisor p { color:#53637f; line-height:1.7; font-size:14px; max-width:90ch; }
 .economics__advisor section { margin-top:24px; padding-top:8px; border-top:1px solid #d8e0f1; }
+.economics__advisor-action { display:flex; align-items:center; flex-wrap:wrap; gap:20px 28px; margin-top:20px; }
+.economics__advisor-action > button { min-height:48px; white-space:normal; }
+.economics__advisor .economics__advisor-error { color:#a12c2c; margin-bottom:0; }
+.gpt-progress { display:flex; align-items:center; gap:14px; flex:1 1 280px; max-width:480px; min-width:0; padding:14px 16px; border:1px solid #dce4f6; border-radius:16px; background:#ffffffb8; box-shadow:0 6px 22px #4762a008; }
+.gpt-progress__orb { position:relative; display:grid; place-items:center; width:46px; height:46px; flex-shrink:0; color:#5973b1; border-radius:50%; background:linear-gradient(135deg,#e9efff,#f2eaff); }
+.gpt-progress__orb > span { position:absolute; inset:-3px; border:2px solid transparent; border-radius:50%; }
+.gpt-progress--waiting .gpt-progress__orb > span { border-top-color:#557df5; border-right-color:#a78bfa; animation:gpt-orbit 1.7s linear infinite; }
+.gpt-progress--waiting .gpt-progress__orb svg { animation:gpt-breathe 2.4s ease-in-out infinite; }
+.gpt-progress__content { flex:1; min-width:0; }
+.gpt-progress__heading { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:4px 12px; font-size:12px; color:#384f7b; }
+.gpt-progress__heading strong { font-weight:700; }
+.gpt-progress__heading > span { font-size:11px; font-variant-numeric:tabular-nums; color:#627595; white-space:nowrap; }
+.gpt-progress__track { height:6px; border-radius:99px; background:#e7edf8; margin:9px 0 6px; overflow:hidden; }
+.gpt-progress__track > span { display:block; height:100%; border-radius:inherit; background:linear-gradient(90deg,#3679ec,#8470eb,#50b4d7); transition:width .25s linear; position:relative; overflow:hidden; }
+.gpt-progress--waiting .gpt-progress__track > span::after { content:''; position:absolute; inset:0; background:linear-gradient(100deg,transparent, #ffffff9c,transparent); animation:gpt-shimmer 1.8s ease-in-out infinite; }
+.gpt-progress__content > small { display:block; font-size:11px; line-height:1.5; color:#647591; }
+.gpt-progress--complete { border-color:#c7e7d8; background:#f3fbf7; }
+.gpt-progress--complete .gpt-progress__orb { color:#25815b; background:#dff4e9; }
+.gpt-progress--complete .gpt-progress__track > span { background:linear-gradient(90deg,#39a776,#6dcca3); }
+.gpt-progress--failed { border-color:#ebd8bf; background:#fffaf3; }
+.gpt-progress--failed .gpt-progress__orb { color:#a26a27; background:#f8ebd8; }
+.gpt-progress--failed .gpt-progress__track > span { background:#d6ad72; }
+@keyframes gpt-orbit { to { transform:rotate(360deg); } }
+@keyframes gpt-breathe { 50% { transform:translateY(-2px); opacity:.65; } }
+@keyframes gpt-shimmer { from { transform:translateX(-100%); } to { transform:translateX(100%); } }
+@media(max-width:600px) { .economics__advisor-action { gap:14px; } .economics__advisor-action > button,.gpt-progress { width:100%; max-width:none; } .gpt-progress { flex-basis:100%; padding:12px; box-sizing:border-box; } }
+@media(prefers-reduced-motion:reduce) { .gpt-progress *, .gpt-progress *::after { animation:none !important; transition:none !important; } }
 .economics__summary-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:14px; margin:20px 0; }
 .economics__summary-card { padding:22px; border:1px solid #dce6f2; border-radius:16px; background:linear-gradient(150deg,#fff,#f7faff); min-width:0; }
 .economics__summary-card > span { font-size:10px; letter-spacing:.09em; color:#647d9c; font-weight:800; }
