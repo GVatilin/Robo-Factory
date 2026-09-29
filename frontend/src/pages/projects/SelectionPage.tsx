@@ -73,11 +73,23 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
     }catch(e){setError((e as Error).message);}finally{setBusy(false);}
   }
   async function openEconomics() {
-    const missing=selection?.candidates.filter(c=>selected.includes(c.product_id)&&c.quantity===null)??[];
-    if(missing.length){setError(`Парк ещё не рассчитан: ${missing.map(c=>c.name).join(', ')}. Нажмите «Заполнить допущения и рассчитать парк» или укажите производительность вручную.`);return;}
     setBusy(true);setError("");
     try {setComparison(await api<Comparison>(`/catalog/compare?${selected.map(id=>`ids=${id}`).join('&')}`));navigateStep('economics');}
     catch(e) {setError((e as Error).message);} finally {setBusy(false);}
+  }
+  async function prepareEconomicsFleet() {
+    const ids=comparison?.products.map(p=>p.id)??selected;
+    setBusy(true);setError('');
+    try {
+      const result=await api<Selection>(`/projects/${project.id}/selection/defaults`,{method:'POST',body:{selection:options,product_ids:ids}});
+      const candidates=ids.map(id=>result.candidates.find(c=>c.product_id===id));
+      const unavailable=candidates.filter(c=>!c||c.status==='excluded'||c.quantity===null);
+      if(unavailable.length)throw new Error(`Не удалось рассчитать парк: ${unavailable.map(c=>c?`${c.name}: ${[...c.excluded,...c.missing].join('; ')}`:'решение больше не доступно для этого процесса').join('. ')}. Уточните параметры в разделе «Решения».`);
+      // Keep the economics component mounted: prices and other user inputs must survive.
+      setOptions(result.options);setSelection(result);setVersion(result.project_updated_at);
+      return {quantities:Object.fromEntries(candidates.map(c=>[c!.product_id,c!.quantity!])),hoursPerDay:result.context.hours_per_day!,
+        notes:[...result.context.assumptions,result.options.demand_reason,...ids.map(id=>result.options.throughput_overrides[id]?.reason)].filter((n):n is string=>!!n)};
+    }finally{setBusy(false);}
   }
   const common:Record<string,string> = {};
   if(selection?.context.hours_per_day) common.hours_per_day=String(selection.context.hours_per_day);
@@ -148,7 +160,7 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
       </span></label>
     </article>)}</div>
     <div className="model-actionbar"><span><strong>{selected.length} из 6</strong> решений выбрано</span><button className="btn btn--primary" disabled={busy||!selected.length} onClick={openEconomics}>{busy?'Открываем…':'К экономике →'}</button></div></div>}
-    {comparison && selection && <div hidden={step!=='economics'}><EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,onFixSelection:()=>navigateStep('robots'),fleetBasis:Object.fromEntries(selection.candidates.filter(c=>c.calculation?.unrounded_quantity).map(c=>[c.product_id,c.calculation!.unrounded_quantity])),recommend:async(inputs,bindings)=>api(`/projects/${project.id}/recommendation`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}}),equipment:Object.fromEntries(selection.candidates.filter(c=>c.equipment).map(c=>[c.product_id,c.equipment!.inputs])),quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),saveBlockedReason:selection.candidates.some(c=>selected.includes(c.product_id)&&c.quantity===null)?'Для экономики, GPT и имитации нужен рассчитанный парк. В разделе «Решения» нажмите «Заполнить допущения и рассчитать парк» или уточните нагрузку и производительность.':undefined,save:async(inputs,bindings)=>{
+    {comparison && selection && <div hidden={step!=='economics'}><EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,onFixSelection:()=>navigateStep('robots'),prepareFleet:prepareEconomicsFleet,fleetBasis:Object.fromEntries(selection.candidates.filter(c=>c.calculation?.unrounded_quantity).map(c=>[c.product_id,c.calculation!.unrounded_quantity])),recommend:async(inputs,bindings)=>api(`/projects/${project.id}/recommendation`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}}),equipment:Object.fromEntries(selection.candidates.filter(c=>c.equipment).map(c=>[c.product_id,c.equipment!.inputs])),quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),saveBlockedReason:comparison.products.some(p=>!selection.candidates.some(c=>c.product_id===p.id&&c.status!=='excluded'&&c.quantity!==null))?'Не хватает объёма операций, часов работы или производительности робота. Заполните недостающие данные примерами кнопкой ниже — количество рассчитается автоматически.':undefined,save:async(inputs,bindings)=>{
       if(project.is_demo) throw new Error('Скопируйте демо-проект в свои проекты для сохранения расчётов.');
       const result=await api<{project_updated_at:string}>(`/projects/${project.id}/economics`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}});
       setVersion(result.project_updated_at);history.reload();

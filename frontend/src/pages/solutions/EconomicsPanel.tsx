@@ -80,6 +80,7 @@ function initialDrafts(data: Comparison): Draft[] {
 
 type ProjectEconomics = {
   quantities: Record<number, number>; common: Values; onFixSelection?:()=>void;
+  prepareFleet?:()=>Promise<{quantities:Record<number,number>;hoursPerDay:number;notes:string[]}>;
   fleetBasis?: Record<number, number>;
   recommend?: (inputs: unknown, bindings: {product_id:number;quantity_reason:string}[]) => Promise<unknown>;
   equipment?: Record<number, EquipmentInput>;
@@ -131,6 +132,23 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
   const [accepted, setAccepted] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
+  const [fleetNotice,setFleetNotice]=useState('');
+  async function prepareFleet() {
+    if(!project?.prepareFleet)return;
+    setBusy(true);setError('');setFleetNotice('');
+    try {
+      const fleet=await project.prepareFleet();
+      setDrafts(ds=>ds.map(d=>({...d,values:{...d.values,quantity:String(fleet.quantities[d.id])}})));
+      setCommon(c=>({...c,hours_per_day:String(fleet.hoursPerDay)}));
+      const values=Object.fromEntries(Object.entries(fleet.quantities).map(([id,value])=>[`product.${id}.quantity`,value]));
+      values['common.hours_per_day']=fleet.hoursPerDay;
+      setAutomaticValues(v=>({...v,...values}));
+      setEvidence(v=>({...v,...Object.fromEntries(Object.keys(values).map(key=>[key,('Расчёт парка с явными демонстрационными допущениями. '+[...new Set(fleet.notes)].join(' ')).slice(0,2000)]))}));
+      setDefaultNotes(notes=>[...new Set([...notes,...fleet.notes])]);
+      setResult(null);setAdvice(null);setSaved(false);setAccepted(false);setQuantityReason('');setView('inputs');
+      setFleetNotice('Парк рассчитан. Количество роботов и часы работы обновлены, введённые цены и затраты сохранены. Проверьте данные, нажмите «Рассчитать экономику», затем «Сохранить экономику в проект».');
+    }catch(e){setError((e as Error).message);}finally{setBusy(false);}
+  }
   function changeCommon(key: string, value: string) { setCommon(s => ({ ...s, [key]: value })); setResult(null); setAdvice(null); setSaved(false); setError(""); }
   function changeDraft(id: number, patch: Partial<Draft>) {
     setDrafts(ds => ds.map(d => d.id === id ? { ...d, ...patch } : d)); setResult(null); setAdvice(null); setSaved(false); setError("");
@@ -172,6 +190,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
   }
   async function save() {
     if (!project || !result || project.saveBlockedReason) return;
+    if(!accepted){setError('Для сохранения подтвердите допущения: поставьте галочку над кнопкой сохранения.');document.getElementById('economics-accept')?.focus();return;}
     setBusy(true); setError("");
     try {
       await project.save(result.inputs, drafts.flatMap(d => [
@@ -189,7 +208,8 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
   return <section className="economics card" aria-labelledby="economics-heading">
     <div className="economics__heading"><div><span className="model-eyebrow">ЭКОНОМИЧЕСКАЯ МОДЕЛЬ</span><h2 id="economics-heading">Сколько стоит роботизация?</h2><p>Сравните расходы сегодня и после внедрения роботов.</p></div><span className="economics__horizon">{common.horizon_years} лет · {drafts.length} решений</span></div>
     <nav className="economics__tabs" aria-label="Экономическая модель"><button type="button" aria-current={view==='inputs'?'page':undefined} disabled={advising||busy} onClick={()=>setView('inputs')}>1. Данные и допущения</button><button type="button" aria-current={view==='results'?'page':undefined} disabled={!result||advising||busy} onClick={()=>setView('results')}>2. Результат и рекомендация</button></nav>
-    {project?.saveBlockedReason&&<div className="economics__warning" role="status"><strong>Сначала нужно рассчитать количество роботов</strong><p>{project.saveBlockedReason}</p><button type="button" className="btn btn--ghost" onClick={project.onFixSelection}>Перейти к решениям и заполнить допущения</button></div>}
+    {project?.saveBlockedReason&&<div className="economics__warning" role="status"><strong>Рассчитаем, сколько роботов нужно объекту</strong><p>{project.saveBlockedReason}</p><p>Примеры нагрузки и производительности будут отмечены как допущения команды. Перед внедрением замените их замерами.</p><button type="button" className="btn btn--primary" disabled={busy||advising} onClick={()=>void prepareFleet()}>{busy?'Рассчитываем парк…':'Заполнить недостающее и рассчитать парк'}</button> <button type="button" className="btn btn--ghost" disabled={busy||advising} onClick={project.onFixSelection}>Уточнить вручную</button></div>}
+    {fleetNotice&&<div className="economics__quickstart" role="status"><div><strong>Теперь можно рассчитать и сохранить экономику</strong><p>{fleetNotice}</p><details><summary>Какие допущения использованы</summary><ul>{defaultNotes.map((n,i)=><li key={i}>{n}</li>)}</ul></details></div></div>}
     <div hidden={view!=='inputs'}>
     <div className="economics__quickstart"><div><strong>Начните с готового примера</strong><p>Заполните форму одним нажатием, затем уточните цены и затраты под свой объект. Это допущения, а не предложения поставщиков.</p></div><button type="button" className="btn btn--primary" disabled={busy||advising} onClick={()=>void fillDefaults()}>Заполнить по умолчанию</button></div>
     <p>{project ? "Количество подставлено из подбора. Режим — из объекта, при отсутствии: 8 ч/сутки и 250 дней/год. Экономию затрат задайте отдельно." : "8 часов в сутки и 250 дней в году — начальные допущения. Количество и экономия задаются вами."}
@@ -222,17 +242,21 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
       </fieldset>
     </form>
     </div>
-    {error && <p role="alert" className="economics__error">{error}</p>}
+    {error && view==='inputs' && <p role="alert" className="economics__error">{error}</p>}
     <div hidden={view!=='results'}>
     {result && <div className="economics__result-intro"><strong>Расчёт готов</strong><span>Сравните варианты ниже. GPT поможет объяснить различия и риски.</span></div>}
     {result && project?.recommend && <div className="economics__advisor"><h3>Рекомендация GPT</h3><p>GPT сравнит рассчитанные варианты и объяснит выбор. Параметры объекта и расчёты будут отправлены в сервис. Ответ — до 50 секунд.</p><button className="btn btn--primary" disabled={advising||busy||!!project?.saveBlockedReason} onClick={async()=>{setAdvising(true);setError("");setAdvice(null);try{const response=await project.recommend!(result.inputs,drafts.flatMap(d=>[...(d.buy?[{product_id:d.id,quantity_reason:quantityReason||adjustmentReason}]:[]),...(d.rent?[{product_id:d.id,quantity_reason:quantityReason||adjustmentReason}]:[])]));setAdvice(response as typeof advice);}catch(e){setError((e as Error).message);}finally{setAdvising(false);}}}>{advising?'GPT анализирует варианты…':'Объяснить и рекомендовать через GPT'}</button>{advice&&<section><h4>{advice.selected_scenario===-1?"Сохранить базовый процесс или уточнить данные":`Рекомендация: ${result.results[advice.selected_scenario]?.name??"уточнить данные"}`}</h4><p style={{whiteSpace:'pre-wrap'}}>{advice.recommendation}</p><h4>Альтернативы</h4><ul>{advice.alternatives.map((v,i)=><li key={i}>{v}</li>)}</ul><h4>Риски и недостающие данные</h4><ul>{[...advice.risks,...advice.missing_data].map((v,i)=><li key={i}>{v}</li>)}</ul><small>Модель: {advice.model}. Рекомендация не изменяет расчёт автоматически.</small></section>}</div>}
+    {error&&!project&&<p role="alert" className="economics__error">{error}</p>}
     {result && <div aria-live="polite">
       <EconomicsResults result={result} advice={advice}/>
       {project && <div className="project-card">
         <label>Обоснование изменения количества (если изменили)<input className="input" value={quantityReason} maxLength={1000} onChange={e=>setQuantityReason(e.target.value)} /></label>
-        <label><input type="checkbox" checked={accepted} onChange={e=>setAccepted(e.target.checked)} /> Подтверждаю допущения подбора и необходимость проверки ограничений на объекте</label>
+        <label><input id="economics-accept" type="checkbox" disabled={busy||advising} checked={accepted} onChange={e=>{setAccepted(e.target.checked);setError('');}} /> Подтверждаю допущения подбора и необходимость проверки ограничений на объекте</label>
         {project.saveBlockedReason&&<p role="status" className="economics__warning">{project.saveBlockedReason}</p>}
-        <button type="button" className="btn btn--primary" disabled={busy || saved || !accepted || !!project.saveBlockedReason} onClick={save}>{saved ? "Сохранено в сценариях проекта" : busy ? "Сохраняем…" : "Сохранить экономику в проект"}</button>
+        {!accepted&&!saved&&<p>Перед сохранением отметьте подтверждение допущений выше. Расчёт появится в разделе «История» и в сценариях проекта.</p>}
+        {error&&<p role="alert" className="economics__error">{error}</p>}
+        {project.prepareFleet&&<details><summary>Парк изменился или сохранение просит повторить подбор?</summary><p>Пересчитаем количество роботов и оборудование. Недостающую нагрузку и производительность заполним явными примерами. Цены и затраты сохранятся; экономику и рекомендацию GPT потребуется рассчитать повторно.</p><button type="button" className="btn btn--ghost" disabled={busy||advising} onClick={()=>void prepareFleet()}>Обновить парк с допущениями</button></details>}
+        <button type="button" className="btn btn--primary" disabled={busy || advising || saved || !!project.saveBlockedReason} onClick={save}>{saved ? "Сохранено в сценариях проекта" : busy ? "Сохраняем…" : "Сохранить экономику в проект"}</button>
       </div>}
       <button type="button" className="btn btn--ghost" onClick={download}>Скачать расчёт и допущения (JSON)</button>
     </div>}

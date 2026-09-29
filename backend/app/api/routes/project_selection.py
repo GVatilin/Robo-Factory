@@ -190,8 +190,17 @@ async def save_economics(project_id: uuid.UUID, data: SaveProjectEconomics, db: 
     seen = set()
     for binding, scenario in zip(data.bindings, data.inputs.scenarios):
         c = candidates.get(binding.product_id)
-        if not c or c["status"] == "excluded" or c["quantity"] is None:
-            raise HTTPException(422, "Решение исключено или недостаточно данных для расчёта парка.")
+        if not c:
+            raise HTTPException(422, f"Решение {binding.product_id} больше не доступно для выбранного процесса. Выберите другое решение.")
+        if c["status"] == "excluded":
+            reasons = "; ".join(c.get("excluded", []))
+            raise HTTPException(422, f"{c['name']}: решение исключено. {reasons} Выберите подходящего робота в разделе «Решения».")
+        if c["quantity"] is None:
+            missing = list(selection["context"].get("missing", []))
+            if not c.get("throughput"):
+                missing.append("производительность робота")
+            detail = "; ".join(missing) or "; ".join(c.get("missing", []))
+            raise HTTPException(422, f"{c['name']}: количество роботов не рассчитано. Не хватает: {detail}. В блоке сохранения нажмите «Обновить парк с допущениями», затем пересчитайте экономику.")
         if c["status"] == "needs_review" and not data.accept_assumptions:
             raise HTTPException(422, "Подтвердите допущения и необходимость проверки ограничений.")
         if c["quantity"] != scenario.quantity and len(binding.quantity_reason) < 3:
