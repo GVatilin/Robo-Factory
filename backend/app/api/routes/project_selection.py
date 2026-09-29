@@ -123,11 +123,15 @@ async def ai_recommendation(project_id: uuid.UUID, data: SaveProjectEconomics, d
                    "confirmed": s.is_confirmed, "source": s.source.url if s.source else None} for s in p.spec_values]} for p in products]
     result = calculate(data.inputs).model_dump(mode="json")
     ai_selection = {**selected, "candidates": [c for c in selected["candidates"] if c["product_id"] in compared_ids]}
+    # Identical object parameters are already in payload.project.parameters.
+    ai_selection.pop("parameters", None)
     analysis = sensitivity(data.inputs, 20)
     # Do not repeat full cashflows, equipment plans and risk paragraphs in every sensitivity cell.
-    metrics = ("name", "capex", "annual_opex", "annual_effect", "net_effect", "tco", "simple_payback_years", "roi_percent")
+    metrics = ("capex", "annual_opex", "annual_effect", "net_effect", "tco", "simple_payback_years", "roi_percent")
+    analysis["result_columns"] = ["scenario_index", *metrics]
+    analysis["scenario_index_note"] = "-1 — базовый процесс; 0 и далее — индекс в economics.results. Значения строки соответствуют result_columns."
     for row in analysis["rows"]:
-        row["results"] = [{key: r[key] for key in metrics if key in r} for r in row["results"]]
+        row["results"] = [[index - 1, *(r.get(key) for key in metrics)] for index, r in enumerate(row["results"])]
     payload = {"project": {"type_id": project.facility_type_id, "parameters": project.parameters},
         "selection": ai_selection, "products": product_data, "economics": result,
         "catalog_overview": [{key: c[key] for key in ("product_id", "name", "status", "score", "quantity", "excluded")} for c in selected["candidates"]],
