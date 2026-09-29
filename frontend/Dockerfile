@@ -10,4 +10,7 @@ RUN npm run build
 FROM nginx:stable-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist /usr/share/nginx/html
+# Deployment extracts sources with umask 077; Vite preserves public asset modes.
+# Nginx workers need read access to every static file, including favicons.
+RUN chmod -R a+rX /usr/share/nginx/html
 EXPOSE 80
