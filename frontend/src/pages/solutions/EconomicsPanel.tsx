@@ -67,6 +67,7 @@ function initialDrafts(data: Comparison): Draft[] {
 type ProjectEconomics = {
   quantities: Record<number, number>; common: Values;
   equipment?: Record<number, EquipmentInput>;
+  saveBlockedReason?: string;
   save: (inputs: unknown, bindings: {product_id: number; quantity_reason: string}[]) => Promise<void>;
 };
 export default function EconomicsPanel({ data, project }: { data: Comparison; project?: ProjectEconomics }) {
@@ -113,7 +114,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
     finally { setBusy(false); }
   }
   async function save() {
-    if (!project || !result) return;
+    if (!project || !result || project.saveBlockedReason) return;
     setBusy(true); setError("");
     try {
       await project.save(result.inputs, drafts.flatMap(d => [
@@ -159,7 +160,8 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
       {project && <div className="project-card">
         <label>Обоснование изменения количества (если изменили)<input className="input" value={quantityReason} maxLength={1000} onChange={e=>setQuantityReason(e.target.value)} /></label>
         <label><input type="checkbox" checked={accepted} onChange={e=>setAccepted(e.target.checked)} /> Подтверждаю допущения подбора и необходимость проверки ограничений на объекте</label>
-        <button type="button" className="btn btn--primary" disabled={busy || saved || !accepted} onClick={save}>{saved ? "Сохранено в сценариях проекта" : busy ? "Сохраняем…" : "Сохранить экономику в проект"}</button>
+        {project.saveBlockedReason&&<p role="status" className="economics__warning">{project.saveBlockedReason}</p>}
+        <button type="button" className="btn btn--primary" disabled={busy || saved || !accepted || !!project.saveBlockedReason} onClick={save}>{saved ? "Сохранено в сценариях проекта" : busy ? "Сохраняем…" : "Сохранить экономику в проект"}</button>
       </div>}
       <button type="button" className="btn btn--ghost" onClick={download}>Скачать расчёт и допущения (JSON)</button>
     </div>}

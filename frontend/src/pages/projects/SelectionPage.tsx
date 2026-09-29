@@ -64,7 +64,7 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
     <Link to={`/projects/${project.id}`}>← Параметры проекта</Link>
     <header className="page-header"><div><h1>Подбор и экономика</h1><p>{project.name}</p></div></header>
     {!!project.missing_required.length && <div className="card project-card" role="alert"><p>До расчёта заполните обязательные параметры объекта: осталось {project.missing_required.length}.</p><Link className="btn btn--primary" to={`/projects/${project.id}`}>Заполнить параметры</Link></div>}
-    <section className="card project-card"><h2>1. Процесс и нагрузка</h2>
+    <section id="selection-inputs" className="card project-card"><h2>1. Процесс и нагрузка</h2>
       <p>Подбор использует сохранённые параметры объекта. Количество рассчитывается отдельно для выбранного процесса. Решения ниже — альтернативы, их эффект нельзя складывать.</p>
       <form onSubmit={select}><fieldset disabled={busy || !!project.missing_required.length} className="economics__fieldset">
         <div className="selection-fields">
@@ -96,7 +96,7 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
       </span></label>
     </article>)}</div>
     <button className="btn btn--primary" disabled={busy||!selected.length} onClick={openEconomics}>Рассчитать экономику выбранных ({selected.length}/6)</button></>}
-    {comparison && selection && <EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,equipment:Object.fromEntries(selection.candidates.filter(c=>c.equipment).map(c=>[c.product_id,c.equipment!.inputs])),quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),save:async(inputs,bindings)=>{
+    {comparison && selection && <EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,equipment:Object.fromEntries(selection.candidates.filter(c=>c.equipment).map(c=>[c.product_id,c.equipment!.inputs])),quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),saveBlockedReason:selection.candidates.some(c=>selected.includes(c.product_id)&&c.quantity===null)?'Для сохранения и имитации нужен рассчитанный парк. Заполните объём и часы работы в блоке «Процесс и нагрузка», затем повторите подбор.':undefined,save:async(inputs,bindings)=>{
       if(project.is_demo) throw new Error('Скопируйте демо-проект в свои проекты для сохранения расчётов.');
       const result=await api<{project_updated_at:string}>(`/projects/${project.id}/economics`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}});
       setVersion(result.project_updated_at);history.reload();

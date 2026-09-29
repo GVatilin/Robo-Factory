@@ -63,6 +63,10 @@
 .simulation-config select:focus,
 .simulation-controls select:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgb(36 99 216 / 10%); }
 .simulation-config__scenario { margin-bottom: 14px; }
+.simulation-source-help { display: flex; align-items: flex-start; gap: 9px; padding: 11px 13px; margin: 0 0 14px; border-radius: 10px; background: #fff2de; color: #865613; font-size: 12px; line-height: 1.5; }
+.simulation-source-help svg { flex: 0 0 auto; margin-top: 1px; }
+.simulation-source-help strong { display: block; }
+.simulation-source-help a { font-weight: 700; }
 .simulation-config__grid { display: grid; grid-template-columns: minmax(175px,.65fr) minmax(175px,.65fr) minmax(280px,1.7fr); gap: 13px; }
 .simulation-config__footer { display: flex; align-items: center; justify-content: space-between; gap: 14px 24px; padding-top: 15px; margin-top: 16px; border-top: 1px solid #e2eaf5; }
 .simulation-config__footer > p { display: flex; align-items: center; gap: 8px; max-width: 480px; margin: 0; color: #657892; font-size: 11px; }

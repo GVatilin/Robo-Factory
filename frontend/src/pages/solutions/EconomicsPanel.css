@@ -19,4 +19,5 @@
 .economics__formulas dd { margin: 6px 0; line-height: 1.6; }
 .economics li { margin: 10px 0; line-height: 1.5; }
 .economics__error { color: #a12c2c; }
+.economics__warning { padding: 10px 12px; border-radius: 9px; background: #fff2de; color: #865613; line-height: 1.5; }
 @media (max-width: 600px) { .economics { padding: 16px; } .economics__fields { grid-template-columns: 1fr; } }
