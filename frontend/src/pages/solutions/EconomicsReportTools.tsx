@@ -57,13 +57,13 @@ export default function EconomicsReportTools({result,savedUrl,title}:{result:Eco
     setTimeout(()=>frame.remove(),300000);
   }
   return <div ref={root}>
-    <div className="report-controls"><h3>Отчёт и what-if анализ</h3>
+    <div className="report-controls"><h3>Отчёт и устойчивость результата</h3>
       <div className="projects-actions">
         <button type="button" className="btn btn--ghost" disabled={busy||(!savedUrl&&!valid)} onClick={excel}>Скачать Excel</button>
         <button type="button" className="btn btn--ghost" onClick={print}>Печать / сохранить PDF</button>
       </div>
       <p>Для PDF выберите «Сохранить как PDF» в окне печати. В Excel — исходные данные, статьи затрат, годовые потоки, формулы и чувствительность.{savedUrl&&' Для сохранённого расчёта Excel использует исходный снимок и диапазон ±20%.'}</p>
-      <label>Диапазон изменения факторов, ±% <input aria-label="Диапазон чувствительности" type="number" min="1" max="50" step="any" value={spread} onChange={e=>{setSpread(e.target.value);setAnalysis(null);}} disabled={busy}/></label>{' '}
+      <label>Насколько изменить цены, нагрузку и зарплаты, ±% <input aria-label="Диапазон чувствительности" type="number" min="1" max="50" step="any" value={spread} onChange={e=>{setSpread(e.target.value);setAnalysis(null);}} disabled={busy}/></label>{' '}
       <button type="button" className="btn btn--primary" disabled={busy||!valid} onClick={analyze}>{busy?'Обрабатываем…':'Рассчитать чувствительность'}</button>
       {error&&<p role="alert" className="economics__error">{error}</p>}
     </div>

@@ -88,6 +88,7 @@ type ProjectEconomics = {
 export default function EconomicsPanel({ data, project }: { data: Comparison; project?: ProjectEconomics }) {
   const [common, setCommon] = useState<Values>({ horizon_years: "5", baseline_annual_labor: "", baseline_annual_other: "0", hours_per_day: "8", days_per_year: "250", electricity_price: "0", ...project?.common });
   const [drafts, setDrafts] = useState<Draft[]>(() => initialDrafts(data).map(d => ({ ...d, values: {...d.values, quantity: String(project?.quantities[d.id] ?? 1)} })));
+  const [view,setView]=useState<'inputs'|'results'>('inputs');
   const [profile,setProfile]=useState<string|null>(null);
   const [defaultNotes,setDefaultNotes]=useState<string[]>([]);
   const [evidence,setEvidence]=useState<Record<string,string>>(()=>Object.fromEntries([
@@ -163,6 +164,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
     try {
       const inputs = { ...Object.fromEntries(Object.entries(common).map(([k, v]) => [k, Number(v)])), scenarios, default_profile:profile,input_evidence:evidence,automatic_values:automaticValues,adjustment_reason:adjustmentReason };
       setResult(await api<EconomicsResponse>("/economics/calculate", { method: "POST", body: inputs }));
+      setView("results");setSaved(false);document.getElementById("economics-heading")?.scrollIntoView({block:"start"});
     } catch (e) { setError((e as Error).message); }
     finally { setBusy(false); }
   }
@@ -183,35 +185,44 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   return <section className="economics card" aria-labelledby="economics-heading">
-    <h2 id="economics-heading">Экономическая оценка</h2>
-    <p>Сравните базовый процесс с покупкой и услугой RaaS. Цены подставлены из карточек и доступны для изменения.
-      Неизвестная цена остаётся пустой. Можно заполнить все статьи демонстрационными допущениями кнопкой ниже. Проверьте их перед принятием решения.</p>
+    <div className="economics__heading"><div><span className="model-eyebrow">ЭКОНОМИЧЕСКАЯ МОДЕЛЬ</span><h2 id="economics-heading">Сколько стоит роботизация?</h2><p>Сравните расходы сегодня и после внедрения роботов.</p></div><span className="economics__horizon">{common.horizon_years} лет · {drafts.length} решений</span></div>
+    <nav className="economics__tabs" aria-label="Экономическая модель"><button type="button" aria-current={view==='inputs'?'page':undefined} disabled={advising||busy} onClick={()=>setView('inputs')}>1. Данные и допущения</button><button type="button" aria-current={view==='results'?'page':undefined} disabled={!result||advising||busy} onClick={()=>setView('results')}>2. Результат и рекомендация</button></nav>
+    <div hidden={view!=='inputs'}>
+    <div className="economics__quickstart"><div><strong>Начните с готового примера</strong><p>Заполните форму одним нажатием, затем уточните цены и затраты под свой объект. Это допущения, а не предложения поставщиков.</p></div><button type="button" className="btn btn--primary" disabled={busy||advising} onClick={()=>void fillDefaults()}>Заполнить по умолчанию</button></div>
     <p>{project ? "Количество подставлено из подбора. Режим — из объекта, при отсутствии: 8 ч/сутки и 250 дней/год. Экономию затрат задайте отдельно." : "8 часов в сутки и 250 дней в году — начальные допущения. Количество и экономия задаются вами."}
       ПО и внедрение из карточки подставлены для одного робота: при изменении количества уточните стоимость на весь парк.</p>
-    <button type="button" className="btn btn--ghost" disabled={busy||advising} onClick={()=>void fillDefaults()}>Заполнить экономику значениями по умолчанию</button>
-    {profile&&<details open><summary>Источники и допущения заполнения</summary><ul>{defaultNotes.map(n=><li key={n}>{n}</li>)}</ul><p>Значения примера не являются ценами поставщиков или нормативами. Изменяйте их под свой объект.</p></details>}
-    <Field label="Обоснование ручных изменений" hint="Сохраняется вместе с исходными и изменёнными значениями."><Input disabled={advising||busy} maxLength={2000} value={adjustmentReason} onChange={e=>{setAdjustmentReason(e.target.value);setResult(null);setAdvice(null);}}/></Field>
-    <form onSubmit={submit} onInvalid={e => (e.target as HTMLElement).closest("details")?.setAttribute("open", "")}>
+
+    {profile&&<details className="economics__draft"><summary>Источники и допущения заполнения</summary><ul>{defaultNotes.map(n=><li key={n}>{n}</li>)}</ul><p>Значения примера не являются ценами поставщиков или нормативами. Изменяйте их под свой объект.</p></details>}
+    <Field label="Обоснование ручных изменений" hint="Сохраняется вместе с исходными и изменёнными значениями."><Input disabled={advising||busy} maxLength={2000} value={adjustmentReason} onChange={e=>{setAdjustmentReason(e.target.value);setResult(null);setAdvice(null);setSaved(false);}}/></Field>
+    <form onSubmit={submit} onInvalid={e => {let node=(e.target as HTMLElement).parentElement;while(node){if(node.tagName==='DETAILS')node.setAttribute('open','');node=node.parentElement;}}}>
       <fieldset disabled={busy||advising} className="economics__fieldset">
-        <legend>Базовый процесс и режим работы</legend>
+        <legend>Сегодня: расходы и режим работы</legend>
         <div className="economics__fields">{COMMON.map(f => field(f, common, changeCommon, "common"))}</div>
         {drafts.map(d => <details className="economics__draft" key={d.id} open={drafts.length === 1 ? true : undefined}>
-          <summary>{d.name}</summary>
+          <summary><span>{d.name}</span><small className="economics__product-caption">{d.values.quantity} роботов · настройка сценариев</small></summary>
           <div className="economics__modes">
             <label><input type="checkbox" checked={d.buy} onChange={e => changeDraft(d.id, { buy: e.target.checked })} /> Покупка</label>
-            <label><input type="checkbox" checked={d.rent} onChange={e => changeDraft(d.id, { rent: e.target.checked })} /> RaaS</label>
+            <label><input type="checkbox" checked={d.rent} onChange={e => changeDraft(d.id, { rent: e.target.checked })} /> Аренда / RaaS</label>
           </div>
           {(d.buy || d.rent) && <div className="economics__fields">
             {d.buy && field({ key: "equipment_price", label: "Цена одного робота", unit: "₽", hint: "Из предложения каталога или ваша оценка." }, d.values, (k, v) => changeDraft(d.id, { values: { ...d.values, [k]: v } }), String(d.id))}
             {d.rent && field({ key: "monthly_fee", label: "RaaS за одного робота", unit: "₽/мес", hint: "Договорная ставка, включая обслуживание и замены. Прочие поля — расходы сверх ставки." }, d.values, (k, v) => changeDraft(d.id, { values: { ...d.values, [k]: v } }), String(d.id))}
-            {SCENARIO.map(f => field(f, d.values, (k, v) => changeDraft(d.id, { values: { ...d.values, [k]: v } }), String(d.id)))}
+            {SCENARIO.filter(f=>['quantity','labor_saving_percent','other_saving_percent','annual_additional_benefit'].includes(f.key)).map(f => field(f, d.values, (k, v) => changeDraft(d.id, { values: { ...d.values, [k]: v } }), String(d.id)))}
+            {[
+              {title:'Разовые затраты · CAPEX',hint:'ПО, внедрение, инфраструктура и резерв',keys:['software','infrastructure','integration','commissioning','training','reserve_percent']},
+              {title:'Расходы в год · OPEX',hint:'Сервис, персонал, связь и электроэнергия',keys:['annual_service_per_robot','annual_licenses','annual_operators','annual_connectivity','annual_consumables','annual_repairs','annual_other','power_kw']},
+              {title:'Срок службы и замены',hint:'Учёт затрат на протяжении всего горизонта',keys:['service_life_years','component_replacement_cost','component_replacement_interval']},
+            ].map(group=><details className="economics__field-group" key={group.title}><summary>{group.title}<small>{group.hint}</small></summary><div className="economics__fields">{SCENARIO.filter(f=>group.keys.includes(f.key)).map(f=>field(f,d.values,(k,v)=>changeDraft(d.id,{values:{...d.values,[k]:v}}),String(d.id)))}</div></details>)}
           </div>}
         </details>)}
         <button className="btn btn--primary" type="submit">{busy ? "Рассчитываем…" : "Рассчитать экономику"}</button>
       </fieldset>
     </form>
+    </div>
     {error && <p role="alert" className="economics__error">{error}</p>}
-    {result && project?.recommend && <div className="card"><h3>Рекомендация GPT</h3><p>Параметры объекта, варианты, расчёты и риски отправляются в GPT через серверный прокси. Ожидание — до 50 секунд.</p><button className="btn btn--primary" disabled={advising||busy} onClick={async()=>{setAdvising(true);setError("");setAdvice(null);try{const response=await project.recommend!(result.inputs,drafts.flatMap(d=>[...(d.buy?[{product_id:d.id,quantity_reason:quantityReason}]:[]),...(d.rent?[{product_id:d.id,quantity_reason:quantityReason}]:[])]));setAdvice(response as typeof advice);}catch(e){setError((e as Error).message);}finally{setAdvising(false);}}}>{advising?'GPT анализирует варианты…':'Объяснить и рекомендовать через GPT'}</button>{advice&&<section><h4>{advice.selected_scenario===-1?"Сохранить базовый процесс или уточнить данные":`Рекомендация: ${result.results[advice.selected_scenario]?.name??"уточнить данные"}`}</h4><p style={{whiteSpace:'pre-wrap'}}>{advice.recommendation}</p><h4>Альтернативы</h4><ul>{advice.alternatives.map((v,i)=><li key={i}>{v}</li>)}</ul><h4>Риски и недостающие данные</h4><ul>{[...advice.risks,...advice.missing_data].map((v,i)=><li key={i}>{v}</li>)}</ul><small>Модель: {advice.model}. Рекомендация не изменяет расчёт автоматически.</small></section>}</div>}
+    <div hidden={view!=='results'}>
+    {result && <div className="economics__result-intro"><strong>Расчёт готов</strong><span>Сравните варианты ниже. GPT поможет объяснить различия и риски.</span></div>}
+    {result && project?.recommend && <div className="economics__advisor"><h3>Рекомендация GPT</h3><p>GPT сравнит рассчитанные варианты и объяснит выбор. Параметры объекта и расчёты будут отправлены в сервис. Ответ — до 50 секунд.</p><button className="btn btn--primary" disabled={advising||busy} onClick={async()=>{setAdvising(true);setError("");setAdvice(null);try{const response=await project.recommend!(result.inputs,drafts.flatMap(d=>[...(d.buy?[{product_id:d.id,quantity_reason:quantityReason}]:[]),...(d.rent?[{product_id:d.id,quantity_reason:quantityReason}]:[])]));setAdvice(response as typeof advice);}catch(e){setError((e as Error).message);}finally{setAdvising(false);}}}>{advising?'GPT анализирует варианты…':'Объяснить и рекомендовать через GPT'}</button>{advice&&<section><h4>{advice.selected_scenario===-1?"Сохранить базовый процесс или уточнить данные":`Рекомендация: ${result.results[advice.selected_scenario]?.name??"уточнить данные"}`}</h4><p style={{whiteSpace:'pre-wrap'}}>{advice.recommendation}</p><h4>Альтернативы</h4><ul>{advice.alternatives.map((v,i)=><li key={i}>{v}</li>)}</ul><h4>Риски и недостающие данные</h4><ul>{[...advice.risks,...advice.missing_data].map((v,i)=><li key={i}>{v}</li>)}</ul><small>Модель: {advice.model}. Рекомендация не изменяет расчёт автоматически.</small></section>}</div>}
     {result && <div aria-live="polite">
       <EconomicsResults result={result} />
       {project && <div className="project-card">
@@ -222,13 +233,15 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
       </div>}
       <button type="button" className="btn btn--ghost" onClick={download}>Скачать расчёт и допущения (JSON)</button>
     </div>}
+    </div>
   </section>;
 }
 
 export function EconomicsResults({result,savedUrl,title}: {result: EconomicsResponse;savedUrl?:string;title?:string}) {
   const inputs = result.inputs as {horizon_years:number;scenarios:({name:string;mode:string}&Record<string,unknown>)[]}&Record<string,unknown>;
   const horizon = inputs.horizon_years;
-  return <div className="economics-report">      <h3>Результаты за {horizon} лет</h3>
+  return <div className="economics-report"><h3>Результаты за {horizon} лет</h3>
+      <div className="economics__summary-grid">{result.results.map((r,i)=><article className="economics__summary-card" key={i}><span>{r.mode==='purchase'?'ПОКУПКА':'АРЕНДА / RaaS'}</span><h4>{r.name}</h4><div className={`economics__effect ${r.net_effect>0?'is-positive':'is-negative'}`}>{formatMoney(r.net_effect)}</div><p>чистый эффект за {horizon} лет</p><dl><div><dt>Вложения</dt><dd>{formatMoney(r.capex)}</dd></div><div><dt>Эффект в год</dt><dd>{formatMoney(r.annual_effect)}</dd></div><div><dt>Окупаемость</dt><dd>{r.simple_payback_years===null?'Не определена':`${formatNumber(r.simple_payback_years)} лет`}</dd></div></dl></article>)}</div>
       <div className="economics__scroll"><table className="economics__table">
         <caption>Базовый процесс и сценарии роботизации</caption>
         <thead><tr><th scope="col">Показатель</th><th scope="col">Без роботизации</th>{result.results.map((r, i) => <th key={i} scope="col">{r.name}</th>)}</tr></thead>
@@ -252,10 +265,10 @@ export function EconomicsResults({result,savedUrl,title}: {result: EconomicsResp
           <tbody>{r.years.map(y => <tr key={y.year}><th scope="row">{y.year}</th><td>{formatMoney(y.opex)}</td><td>{formatMoney(y.replacement)}</td><td>{formatMoney(y.cashflow)}</td><td>{formatMoney(y.cumulative)}</td></tr>)}</tbody>
         </table></div>
       </details>)}
-      <h3>Формулы и допущения</h3>
+      <details className="economics__draft"><summary>Как мы считаем: формулы и допущения</summary>
       <dl className="economics__formulas">{Object.entries(result.formulas).map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
       <ul>{result.assumptions.map(a => <li key={a}>{a}</li>)}</ul>
-      <p>Версия модели: {result.model_version}. Снимок содержит входные данные и результаты расчёта.</p>
+      <p>Версия модели: {result.model_version}. Снимок содержит входные данные и результаты расчёта.</p></details>
       <details className="economics__draft"><summary>Исходные данные экономической модели</summary>
         <dl className="economics__breakdown">{COMMON.map(f=><div key={f.key}><dt>{f.label}{f.unit?`, ${f.unit}`:''}</dt><dd>{String(inputs[f.key]??'не указано')}</dd></div>)}</dl>
         {inputs.scenarios.map((s,i)=><section key={i}><h4>{s.name}</h4><p>{s.mode==='purchase'?'Покупка':'RaaS'}</p>

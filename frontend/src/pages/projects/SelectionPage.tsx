@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { Bot, Calculator, SlidersHorizontal, Play, History } from "lucide-react";
 import { Link, useParams } from "react-router";
 import { api } from "../../api/client";
 import { useApi } from "../../api/hooks";
@@ -43,15 +44,28 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
   const [error,setError] = useState("");
   const [version,setVersion] = useState(project.updated_at);
   const [revision,setRevision] = useState(0);
+  const [step,setStep] = useState('setup');
+  const [candidateFilter,setCandidateFilter] = useState('available');
+  function navigateStep(next:string) {
+    setStep(next);
+    document.getElementById('model-navigation')?.scrollIntoView({block:'start'});
+  }
+  const steps=[
+    {id:'setup',label:'Настройка',hint:'Процесс и нагрузка',icon:SlidersHorizontal,disabled:false},
+    {id:'robots',label:'Решения',hint:'Выбор роботов',icon:Bot,disabled:!selection},
+    {id:'economics',label:'Экономика',hint:'Затраты и выгода',icon:Calculator,disabled:!comparison},
+    {id:'simulation',label:'Симуляция',hint:'Работа парка',icon:Play,disabled:false},
+    {id:'history',label:'История',hint:'Сохранённые расчёты',icon:History,disabled:false},
+  ];
   function change(patch:Partial<Options>) {setOptions(o=>({...o,...patch}));setSelection(null);setComparison(null);setSelected([]);setError("");}
   async function select(e?:FormEvent, next=options) {
     e?.preventDefault();setBusy(true);setError("");setComparison(null);setSelected([]);setSelection(null);
-    try {const result=await api<Selection>(`/projects/${project.id}/selection`,{method:"POST",body:next});setSelection(result);setVersion(result.project_updated_at);setRevision(r=>r+1);}
-    catch(e) {setError((e as Error).message);} finally {setBusy(false);}
+    try {const result=await api<Selection>(`/projects/${project.id}/selection`,{method:"POST",body:next});setSelection(result);setVersion(result.project_updated_at);setRevision(r=>r+1);navigateStep('robots');}
+    catch(e) {setError((e as Error).message);setStep('setup');} finally {setBusy(false);}
   }
   async function openEconomics() {
     setBusy(true);setError("");
-    try {setComparison(await api<Comparison>(`/catalog/compare?${selected.map(id=>`ids=${id}`).join('&')}`));}
+    try {setComparison(await api<Comparison>(`/catalog/compare?${selected.map(id=>`ids=${id}`).join('&')}`));navigateStep('economics');}
     catch(e) {setError((e as Error).message);} finally {setBusy(false);}
   }
   const common:Record<string,string> = {};
@@ -67,33 +81,37 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
   if(people>0&&salary>0&&payroll>0)common.baseline_annual_labor=String(people*salary*12*payroll);
   return <div className="page selection-page">
     <Link to={`/projects/${project.id}`}>← Параметры проекта</Link>
-    <header className="page-header"><div><h1>Подбор и экономика</h1><p>{project.name}</p></div></header>
+    <header className="model-hero"><div><span className="model-eyebrow">МОДЕЛИРОВАНИЕ РОБОТИЗАЦИИ</span><h1>От задачи — к решению</h1><p>{project.name}</p><span>Настройте процесс, выберите роботов и сравните экономику.</span></div><div className="model-hero__symbol" aria-hidden="true"><Bot size={54}/></div></header>
+    <nav id="model-navigation" className="model-navigation" aria-label="Разделы моделирования">{steps.map((item,i)=><button key={item.id} type="button" disabled={item.disabled||busy} aria-current={step===item.id?'step':undefined} onClick={()=>navigateStep(item.id)} title={item.disabled?'Сначала выполните предыдущий шаг':undefined}><span className="model-navigation__icon"><item.icon size={20}/></span><span><strong>{i+1}. {item.label}</strong><small>{item.hint}</small></span></button>)}</nav>
     {!!project.missing_required.length && <div className="card project-card" role="alert"><p>До расчёта заполните обязательные параметры объекта: осталось {project.missing_required.length}.</p><Link className="btn btn--primary" to={`/projects/${project.id}`}>Заполнить параметры</Link></div>}
-    <section id="selection-inputs" className="card project-card"><h2>1. Процесс и нагрузка</h2>
+    <section hidden={step!=='setup'} id="selection-inputs" className="card project-card model-panel"><span className="model-eyebrow">ШАГ 01</span><h2>Как работает ваш объект?</h2>
       <p>Подбор использует сохранённые параметры объекта. Количество рассчитывается отдельно для выбранного процесса. Решения ниже — альтернативы, их эффект нельзя складывать.</p>
-      <form onSubmit={select}><fieldset disabled={busy || !!project.missing_required.length} className="economics__fieldset">
+      <form onSubmit={select} onInvalid={e=>{let node=(e.target as HTMLElement).parentElement;while(node){if(node.tagName==='DETAILS')node.setAttribute('open','');node=node.parentElement;}}}><fieldset disabled={busy || !!project.missing_required.length} className="economics__fieldset">
         <button type="button" className="btn btn--ghost" onClick={()=>change({utilization:.8,availability:.9,reserve_percent:15,daily_demand:undefined,hours_per_day:undefined,peak_factor:undefined,demand_reason:"Типовые допущения: загрузка 0,8, доступность 0,9, резерв 15%; режим и поток из объекта.",equipment:{...DEFAULT_EQUIPMENT,charger_price:100000,station_price:150000,override_reason:"Допущение команды: зарядная станция 100 000 ₽, рабочий пост 150 000 ₽. Не цены поставщика; уточнить по предложению."}})}>Заполнить допущения парка и оборудования</button>
         <div className="selection-fields">
           <label>Процесс<select value={options.process_id} onChange={e=>change({process_id:Number(e.target.value),throughput_overrides:{},daily_demand:undefined,hours_per_day:undefined,peak_factor:undefined,demand_reason:""})}>{processes.map(p=><option key={p.id} value={p.id}>{p.name}</option>)}</select></label>
           {([['utilization','Коэффициент загрузки',.01,1],['availability','Техническая доступность',.01,1],['reserve_percent','Резерв парка, %',0,100],['daily_demand','Объём в сутки (пусто — из объекта)',.01,1e9],['hours_per_day','Часы в сутки (пусто — из объекта)',.01,24],['peak_factor','Пиковый коэффициент (пусто — из объекта)',1,10]] as const).map(([key,label,min,max])=><label key={key}>{label}<input type="number" step="any" min={min} max={max} required={['utilization','availability','reserve_percent'].includes(key)} value={options[key]??''} onChange={e=>change({[key]:e.target.value===''?undefined:Number(e.target.value)})}/></label>)}
           <label>Обоснование изменения нагрузки / режима / коэффициентов<input maxLength={1000} value={options.demand_reason} onChange={e=>change({demand_reason:e.target.value})}/></label>
-        </div><EquipmentFields value={options.equipment} onChange={equipment=>change({equipment})}/><button className="btn btn--primary" disabled={!options.process_id} type="submit">{busy?'Подбираем…':'Подобрать решения и рассчитать парк'}</button>
+        </div><details className="model-disclosure"><summary>Зарядные станции и рабочие посты <small>Дополнительные параметры</small></summary><EquipmentFields value={options.equipment} onChange={equipment=>change({equipment})}/></details><button className="btn btn--primary" disabled={!options.process_id} type="submit">{busy?'Подбираем…':'Подобрать решения и рассчитать парк'}</button>
       </fieldset></form>
     </section>
     {error && <p role="alert" className="economics__error">{error}</p>}
-    {selection && <><section className="card project-card"><h2>2. Результаты подбора</h2>
+    {selection && <div hidden={step!=='robots'} className="model-stage"><section className="card project-card model-panel"><span className="model-eyebrow">ШАГ 02</span><h2>Выберите решения для сравнения</h2><p>Добавьте до 6 роботов. Затем сравните покупку и аренду, затраты и окупаемость.</p><div className="model-stats"><div><strong>{selection.candidates.filter(c=>c.status!=='excluded').length}</strong><span>доступно для оценки</span></div><div><strong>{selected.length} / 6</strong><span>выбрано решений</span></div><div><strong>{selection.context.hours_per_day??'—'} ч</strong><span>рабочий день</span></div></div><details className="model-disclosure"><summary>Как рассчитан подбор</summary>
       <p>{selection.formula}</p><p>Объём: {selection.context.daily_demand??'не указан'} в сутки · Производительность: {selection.context.unit} · Режим: {selection.context.hours_per_day??'не указан'} ч/сутки · Пик: {selection.context.peak_factor}</p>
       <ul>{[...selection.context.missing,...selection.context.assumptions].map((n,i)=><li key={i}>{n}</li>)}</ul>
       <p>Сначала применяются блокирующие ограничения, затем решения ранжируются по совместимости, проверкам, расчётности парка и качеству данных. Балл не является гарантией пригодности.</p>
+      </details>
       {!selection.candidates.length && <p>В опубликованном каталоге нет решений для этого процесса.</p>}
     </section>
-    <div className="selection-candidates">{selection.candidates.map(c=><article className="card project-card" key={c.product_id}>
+    <div className="model-filters" aria-label="Фильтр решений">{[['available','Доступные'],['selected','Выбранные'],['all','Все, включая исключённые']].map(([id,label])=><button type="button" key={id} aria-pressed={candidateFilter===id} onClick={()=>setCandidateFilter(id)}>{label}</button>)}</div>
+    {candidateFilter==='selected'&&!selected.length&&<p className="model-empty">Пока ничего не выбрано. Откройте «Доступные» и отметьте подходящих роботов.</p>}
+    <div className="selection-candidates">{selection.candidates.filter(c=>candidateFilter==='all'||(candidateFilter==='selected'?selected.includes(c.product_id):c.status!=='excluded')).map(c=><article className={`card project-card model-candidate ${selected.includes(c.product_id)?'is-selected':''}`} key={c.product_id}>
       <h3><Link to={`/products/${c.product_id}`}>{c.name}</Link></h3>
-      <p>{c.status==='excluded'?'Исключено':c.status==='suitable'?'Предварительно подходит':'Требуется проверка'} · {c.score}/100</p>
+      <p className={`model-status model-status--${c.status}`}>{c.status==='excluded'?'Исключено':c.status==='suitable'?'Предварительно подходит':'Требуется проверка'} · {c.score}/100</p>
       {c.decision&&<p>{c.decision}</p>}
       <strong>Количество роботов: {c.quantity??'недостаточно данных'}</strong><p>Производительность: {c.throughput??'не указана'} {c.unit}</p>
-      {c.calculation&&<p>Пиковая потребность: {c.calculation.peak_hourly_demand.toLocaleString('ru-RU')} {c.unit}; эффективная производительность робота: {c.calculation.effective_throughput.toLocaleString('ru-RU')} {c.unit}; до округления: {c.calculation.unrounded_quantity.toLocaleString('ru-RU')}.</p>}
-      {c.equipment&&<EquipmentTable plan={c.equipment}/>}
+      <details className="model-disclosure"><summary>Расчёт парка и оборудование</summary>{c.calculation&&<p>Пиковая потребность: {c.calculation.peak_hourly_demand.toLocaleString('ru-RU')} {c.unit}; эффективная производительность робота: {c.calculation.effective_throughput.toLocaleString('ru-RU')} {c.unit}; до округления: {c.calculation.unrounded_quantity.toLocaleString('ru-RU')}.</p>}
+      {c.equipment&&<EquipmentTable plan={c.equipment}/>}</details>
       <details><summary>Причины, ограничения, риски и рейтинг</summary><ul>{[...c.reasons,...c.excluded,...c.missing,...(c.risks??[])].map((v,i)=><li key={i}>{v}</li>)}</ul><dl>{Object.entries(c.score_factors).map(([k,v])=><div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl></details>
       {c.status!=='excluded' && <RateForm key={`${c.product_id}-${revision}`} candidate={c} initial={options.throughput_overrides[c.product_id]} busy={busy} apply={rate=>{const next={...options,throughput_overrides:{...options.throughput_overrides,[c.product_id]:rate}};setOptions(next);void select(undefined,next);}}/>}
       <label className="selection-candidate-choice"><input type="checkbox" disabled={busy || c.status==='excluded' || (!selected.includes(c.product_id)&&selected.length>=6)} checked={selected.includes(c.product_id)} onChange={e=>{setSelected(ids=>e.target.checked?[...ids,c.product_id]:ids.filter(id=>id!==c.product_id));setComparison(null);}}/><span>В экономическую оценку
@@ -101,15 +119,15 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
         {c.status==='excluded'&&<small>Исключённое решение нельзя добавить в расчёт.</small>}
       </span></label>
     </article>)}</div>
-    <button className="btn btn--primary" disabled={busy||!selected.length} onClick={openEconomics}>Рассчитать экономику выбранных ({selected.length}/6)</button></>}
-    {comparison && selection && <EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,fleetBasis:Object.fromEntries(selection.candidates.filter(c=>c.calculation?.unrounded_quantity).map(c=>[c.product_id,c.calculation!.unrounded_quantity])),recommend:async(inputs,bindings)=>api(`/projects/${project.id}/recommendation`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}}),equipment:Object.fromEntries(selection.candidates.filter(c=>c.equipment).map(c=>[c.product_id,c.equipment!.inputs])),quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),saveBlockedReason:selection.candidates.some(c=>selected.includes(c.product_id)&&c.quantity===null)?'Для сохранения и имитации нужен рассчитанный парк. Заполните объём и часы работы в блоке «Процесс и нагрузка», затем повторите подбор.':undefined,save:async(inputs,bindings)=>{
+    <div className="model-actionbar"><span><strong>{selected.length} из 6</strong> решений выбрано</span><button className="btn btn--primary" disabled={busy||!selected.length} onClick={openEconomics}>{busy?'Открываем…':'К экономике →'}</button></div></div>}
+    {comparison && selection && <div hidden={step!=='economics'}><EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,fleetBasis:Object.fromEntries(selection.candidates.filter(c=>c.calculation?.unrounded_quantity).map(c=>[c.product_id,c.calculation!.unrounded_quantity])),recommend:async(inputs,bindings)=>api(`/projects/${project.id}/recommendation`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}}),equipment:Object.fromEntries(selection.candidates.filter(c=>c.equipment).map(c=>[c.product_id,c.equipment!.inputs])),quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),saveBlockedReason:selection.candidates.some(c=>selected.includes(c.product_id)&&c.quantity===null)?'Для сохранения и имитации нужен рассчитанный парк. Заполните объём и часы работы в блоке «Процесс и нагрузка», затем повторите подбор.':undefined,save:async(inputs,bindings)=>{
       if(project.is_demo) throw new Error('Скопируйте демо-проект в свои проекты для сохранения расчётов.');
       const result=await api<{project_updated_at:string}>(`/projects/${project.id}/economics`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}});
       setVersion(result.project_updated_at);history.reload();
-    }}}/>}
+    }}}/></div>}
     {project.is_demo && <p>Демо доступно для подбора и расчёта. Для сохранения создайте свою копию на странице параметров проекта.</p>}
-    <SimulationPanel projectId={project.id} version={version} isDemo={project.is_demo} selection={selection} saved={history.data??[]}/>
-    <section className="card project-card economics"><h2>Сохранённые расчёты</h2>
+    {step==='simulation'&&<SimulationPanel projectId={project.id} version={version} isDemo={project.is_demo} selection={selection} saved={history.data??[]}/>}
+    <section hidden={step!=='history'} className="card project-card economics model-panel"><span className="model-eyebrow">ВАШИ РЕЗУЛЬТАТЫ</span><h2>Сохранённые расчёты</h2>
       <p>Последние 50 запусков. Исходные данные и результаты сохраняются как снимок; изменение каталога не переписывает историю.</p>
       {history.error ? <ErrorState message={history.error.message} onRetry={history.reload}/> : history.loading ? <Spinner label="Загружаем расчёты…"/> : !history.data?.length ? <p>Сохранённых расчётов пока нет.</p> : history.data.map(run=><details key={run.id} className="economics__draft"><summary>{new Date(run.created_at).toLocaleString('ru-RU')} · {run.results.results.map(r=>r.name).join(', ')}</summary>
         {run.stale&&<p>Параметры объекта изменились после расчёта. Выполните подбор заново.</p>}
