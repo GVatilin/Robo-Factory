@@ -2,8 +2,11 @@
 from app.schemas.economics import EconomicsInput, EconomicsResponse, EconomicsResult, YearCashflow
 from app.services.equipment import equipment_plan
 
-MODEL_VERSION = "economics-1.2"
+MODEL_VERSION = "economics-1.3"
 FORMULAS = {
+    "Стоимость единицы работы": "TCO / (суточный объём × рабочих дней в году × горизонт). Включает CAPEX, OPEX и замены; дополнительный доход не вычитается.",
+    "Экономия на единице работы": "Стоимость единицы без роботизации − стоимость единицы сценария. Отрицательное значение означает удорожание.",
+    "Снижение TCO": "(TCO базового процесса − TCO сценария) / TCO базового процесса × 100%. При TCO базы = 0 показатель не определён. Минус означает рост затрат.",
     "CAPEX": "Количество × цена оборудования (покупка) + зарядные станции + рабочие посты + ПО + прочая инфраструктура + интеграция + пусконаладка + обучение + резерв. Резерв = сумма перечисленных статей × процент / 100.",
     "OPEX": "Оставшиеся затраты базового процесса + операторы + количество × обслуживание + лицензии + электроэнергия + связь + расходники + ремонт + прочие расходы + 12 × количество × ставка RaaS (для услуги).",
     "Электроэнергия": "Количество × средняя мощность, кВт × часы в сутки × дни в году × тариф, ₽/кВт·ч.",
@@ -20,6 +23,9 @@ FORMULAS = {
 
 def calculate(data: EconomicsInput) -> EconomicsResponse:
     baseline = data.baseline_annual_labor + data.baseline_annual_other
+    annual_volume = data.daily_volume * data.days_per_year if data.daily_volume else None
+    total_volume = annual_volume * data.horizon_years if annual_volume else None
+    baseline_tco = baseline * data.horizon_years
     results = []
     for s in data.scenarios:
         auxiliary = equipment_plan(s.quantity, s.equipment) if s.equipment else None
@@ -70,20 +76,27 @@ def calculate(data: EconomicsInput) -> EconomicsResponse:
             interpretation = "Годовой эффект положительный, но за выбранный горизонт инвестиции и замены не компенсированы."
         else:
             interpretation = "За выбранный горизонт модель показывает положительный чистый эффект. Решение требует проверки технической применимости и устойчивости к изменению допущений."
+        tco = capex + data.horizon_years * opex + replacements
         results.append(EconomicsResult(
+            cost_per_unit=round(tco / total_volume, 4) if total_volume else None,
+            saving_per_unit=round((baseline_tco - tco) / total_volume, 4) if total_volume else None,
+            tco_saving_percent=round(100 * (baseline_tco - tco) / baseline_tco, 2) if baseline_tco > 0 else None,
             annual_labor_saving=round(data.baseline_annual_labor * s.labor_saving_percent / 100, 2),
             annual_opex_change=round(opex - baseline, 2), interpretation=interpretation, risks=risks,
             equipment=auxiliary, name=s.name, mode=s.mode, capex=round(capex, 2), annual_opex=round(opex, 2), annual_effect=round(effect, 2),
-            tco=round(capex + data.horizon_years * opex + replacements, 2), net_effect=round(cumulative, 2),
+            tco=round(tco, 2), net_effect=round(cumulative, 2),
             simple_payback_years=round(capex / effect, 4) if capex > 0 and effect > 0 else None,
             roi_percent=round(100 * cumulative / capex, 2) if capex > 0 else None,
             capex_breakdown={k: round(v, 2) for k, v in capex_parts.items()},
             opex_breakdown={k: round(v, 2) for k, v in opex_parts.items()}, years=years,
         ))
     return EconomicsResponse(
+        annual_volume=annual_volume, baseline_cost_per_unit=round(baseline_tco / total_volume, 4) if total_volume else None,
         model_version=MODEL_VERSION, inputs=data, baseline_annual_opex=round(baseline, 2),
         baseline_tco=round(baseline * data.horizon_years, 2), results=results, formulas=FORMULAS,
-        assumptions=([
+        assumptions=(["Объём работы не указан: стоимость и экономия на единице не рассчитываются."] if not total_volume else []) + [
+            "Удельные затраты сравнивают одинаковый объём выбранного процесса во всех сценариях. Объём постоянен по годам, пиковый коэффициент в годовой объём не включается. Единица зависит от процесса: операция, паллета, рейс, м², кг и т. д. Это расчёт на плановый объём, не подтверждение мощности парка.",
+        ] + ([
             "Сравнение неполное: добавьте второй вариант роботизации к базовому процессу."
         ] if len(data.scenarios) < 2 else []) + (["Источники автоматически заполненных значений сохранены в исходных данных и в отчёте; ручные изменения фиксируются отдельно."] if data.input_evidence else []) + [
             "Расчёт в постоянных рублях: без инфляции, дисконтирования, налоговых вычетов, кредита и остаточной стоимости. Все суммы вводятся на одной базе НДС.",

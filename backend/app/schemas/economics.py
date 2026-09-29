@@ -57,6 +57,8 @@ class EconomicsInput(BaseModel):
     baseline_annual_other: Amount = 0
     hours_per_day: float = Field(default=8, gt=0, le=24)
     days_per_year: int = Field(default=250, ge=1, le=366)
+    daily_volume: float | None = Field(default=None, ge=0.000001, le=1e12)
+    volume_unit: str = Field(default="операция", min_length=1, max_length=40)
     electricity_price: Amount = 0
     scenarios: list[EconomicsScenario] = Field(min_length=1, max_length=12)
     default_profile: str | None = Field(default=None, max_length=100)
@@ -79,6 +81,9 @@ class EconomicsResult(BaseModel):
     capex: float
     annual_opex: float
     annual_effect: float
+    cost_per_unit: float | None = None
+    saving_per_unit: float | None = None
+    tco_saving_percent: float | None = None
     annual_labor_saving: float = 0
     annual_opex_change: float = 0
     interpretation: str = ""
@@ -98,6 +103,8 @@ class EconomicsResponse(BaseModel):
     inputs: EconomicsInput
     baseline_annual_opex: float
     baseline_tco: float
+    annual_volume: float | None = None
+    baseline_cost_per_unit: float | None = None
     results: list[EconomicsResult]
     formulas: dict[str, str]
     assumptions: list[str]

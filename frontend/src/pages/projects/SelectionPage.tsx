@@ -24,6 +24,9 @@ type Selection = {process:{id:number;name:string;code:string};formula:string;mod
 type Saved = {id:string;created_at:string;stale:boolean;inputs:unknown;results:EconomicsResponse};
 type Facility = {id:number;processes:{id:number;name:string}[]};
 
+function economicVolumeUnit(rateUnit:string) {
+  return ({'паллет/ч':'паллета','рейсов/ч':'рейс','строк/ч':'строка','отправлений/ч':'отправление','операций/ч':'операция','позиций/ч':'позиция','порций/ч':'порция','контейнеров/ч':'контейнер','заявок/ч':'заявка','образцов/ч':'образец','м²/ч':'м²','кг/ч':'кг'} as Record<string,string>)[rateUnit]??rateUnit.replace(/\/ч$/,'');
+}
 export default function SelectionPage() {
   const {id} = useParams();
   const {user} = useAuth();
@@ -87,11 +90,12 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
       if(unavailable.length)throw new Error(`Не удалось рассчитать парк: ${unavailable.map(c=>c?`${c.name}: ${[...c.excluded,...c.missing].join('; ')}`:'решение больше не доступно для этого процесса').join('. ')}. Уточните параметры в разделе «Решения».`);
       // Keep the economics component mounted: prices and other user inputs must survive.
       setOptions(result.options);setSelection(result);setVersion(result.project_updated_at);
-      return {quantities:Object.fromEntries(candidates.map(c=>[c!.product_id,c!.quantity!])),hoursPerDay:result.context.hours_per_day!,
+      return {quantities:Object.fromEntries(candidates.map(c=>[c!.product_id,c!.quantity!])),hoursPerDay:result.context.hours_per_day!,dailyVolume:result.context.daily_demand,volumeUnit:economicVolumeUnit(result.context.unit),
         notes:[...result.context.assumptions,result.options.demand_reason,...ids.map(id=>result.options.throughput_overrides[id]?.reason)].filter((n):n is string=>!!n)};
     }finally{setBusy(false);}
   }
   const common:Record<string,string> = {};
+  if(selection?.context.daily_demand)common.daily_volume=String(selection.context.daily_demand);
   if(selection?.context.hours_per_day) common.hours_per_day=String(selection.context.hours_per_day);
   for(const key of ['horizon_years','working_days_per_year']) {
     const value=Number((selection?.parameters??project.parameters)[key]);
@@ -160,7 +164,7 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
       </span></label>
     </article>)}</div>
     <div className="model-actionbar"><span><strong>{selected.length} из 6</strong> решений выбрано</span><button className="btn btn--primary" disabled={busy||!selected.length} onClick={openEconomics}>{busy?'Открываем…':'К экономике →'}</button></div></div>}
-    {comparison && selection && <div hidden={step!=='economics'}><EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,onFixSelection:()=>navigateStep('robots'),prepareFleet:prepareEconomicsFleet,fleetBasis:Object.fromEntries(selection.candidates.filter(c=>c.calculation?.unrounded_quantity).map(c=>[c.product_id,c.calculation!.unrounded_quantity])),recommend:async(inputs,bindings)=>api(`/projects/${project.id}/recommendation`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}}),equipment:Object.fromEntries(selection.candidates.filter(c=>c.equipment).map(c=>[c.product_id,c.equipment!.inputs])),quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),saveBlockedReason:comparison.products.some(p=>!selection.candidates.some(c=>c.product_id===p.id&&c.status!=='excluded'&&c.quantity!==null))?'Не хватает объёма операций, часов работы или производительности робота. Заполните недостающие данные примерами кнопкой ниже — количество рассчитается автоматически.':undefined,save:async(inputs,bindings)=>{
+    {comparison && selection && <div hidden={step!=='economics'}><EconomicsPanel key={`${revision}-${comparison.products.map(p=>p.id).join(',')}`} data={comparison} project={{common,volumeUnit:economicVolumeUnit(selection.context.unit),onFixSelection:()=>navigateStep('robots'),prepareFleet:prepareEconomicsFleet,fleetBasis:Object.fromEntries(selection.candidates.filter(c=>c.calculation?.unrounded_quantity).map(c=>[c.product_id,c.calculation!.unrounded_quantity])),recommend:async(inputs,bindings)=>api(`/projects/${project.id}/recommendation`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}}),equipment:Object.fromEntries(selection.candidates.filter(c=>c.equipment).map(c=>[c.product_id,c.equipment!.inputs])),quantities:Object.fromEntries(selection.candidates.filter(c=>c.quantity!==null).map(c=>[c.product_id,c.quantity!])),saveBlockedReason:comparison.products.some(p=>!selection.candidates.some(c=>c.product_id===p.id&&c.status!=='excluded'&&c.quantity!==null))?'Не хватает объёма операций, часов работы или производительности робота. Заполните недостающие данные примерами кнопкой ниже — количество рассчитается автоматически.':undefined,save:async(inputs,bindings)=>{
       if(project.is_demo) throw new Error('Скопируйте демо-проект в свои проекты для сохранения расчётов.');
       const result=await api<{project_updated_at:string}>(`/projects/${project.id}/economics`,{method:'POST',body:{project_updated_at:version,selection:selection.options,inputs,bindings,accept_assumptions:true}});
       setVersion(result.project_updated_at);history.reload();

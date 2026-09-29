@@ -13,6 +13,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, LongTable, TableStyle, PageBreak
 
 LABELS = {
+    "daily_volume": "Объём работы в сутки", "volume_unit": "Единица работы",
     "horizon_years": "Горизонт, лет", "baseline_annual_labor": "ФОТ базового процесса, ₽/год",
     "baseline_annual_other": "Прочие расходы базы, ₽/год", "hours_per_day": "Работа, ч/сутки",
     "days_per_year": "Рабочих дней в году", "electricity_price": "Электроэнергия, ₽/кВт·ч",
@@ -107,6 +108,13 @@ def pdf_report(result: dict, analysis: dict | None = None, snapshot: dict | None
     table(["Сценарий", "CAPEX, ₽", "OPEX, ₽/год", "Эффект, ₽/год", "TCO, ₽"], rows, [2, 1, 1, 1, 1])
     table(["Сценарий", "Чистый эффект, ₽", "Окупаемость", "ROI, %"],
           [[r["name"], number(r["net_effect"]), payback(r["simple_payback_years"]), number(r["roi_percent"])] for r in result["results"]], [2, 1, 1, 1])
+    if "baseline_cost_per_unit" in result:
+        unit = result["inputs"].get("volume_unit", "операция")
+        text("Стоимость единицы работы включает инвестиции, эксплуатацию и замены на всём горизонте. Минус в экономии или снижении TCO означает удорожание. Объём одинаков для всех вариантов; без объёма удельные показатели не определены.")
+        text(f"Плановый годовой объём: {number(result.get('annual_volume'))}; единица: {unit}.")
+        table(["Сценарий", f"Стоимость, ₽/{unit}", f"Экономия, ₽/{unit}", "Снижение TCO, %"],
+              [["Без роботизации", number(result.get("baseline_cost_per_unit")), "—", "—"]] +
+              [[r["name"], number(r.get("cost_per_unit")), number(r.get("saving_per_unit")), number(r.get("tco_saving_percent"))] for r in result["results"]], [2, 1, 1, 1])
     if recommendation:
         section("Объяснение GPT")
         text("Текст рекомендации из текущего интерфейса. Числовые результаты рассчитаны приложением.")

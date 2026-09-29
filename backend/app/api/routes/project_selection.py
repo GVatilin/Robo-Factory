@@ -257,7 +257,7 @@ async def save_economics(project_id: uuid.UUID, data: SaveProjectEconomics, db: 
             quantity_calculated=c["quantity"], quantity_manual=inputs.quantity if manual else None,
             warning="\n".join(c["missing"]), notes=binding.quantity_reason)]
         await db.flush()
-        scalar_values = {**{f"common.{key}": value for key, value in data.inputs.model_dump(exclude={"scenarios"}).items() if isinstance(value, (int, float))},
+        scalar_values = {**{f"common.{key}": value for key, value in data.inputs.model_dump(exclude={"scenarios"}).items() if isinstance(value, (int, float)) or key == "daily_volume"},
                          **{f"product.{binding.product_id}.{key}": value for key, value in inputs.model_dump().items() if isinstance(value, (int, float)) or value is None}}
         for key, before in data.inputs.automatic_values.items():
             if key in scalar_values and scalar_values[key] != before:

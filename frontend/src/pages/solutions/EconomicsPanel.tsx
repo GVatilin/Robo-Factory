@@ -18,6 +18,7 @@ function catalogValue(data:Comparison,id:number,key:string) {
 type Draft = { id: number; name: string; buy: boolean; rent: boolean; values: Values };
 type Result = {
   name: string; mode: string; capex: number; annual_opex: number; annual_effect: number;
+  cost_per_unit?: number|null; saving_per_unit?: number|null; tco_saving_percent?: number|null;
   annual_labor_saving?: number; annual_opex_change?: number; interpretation?: string; risks?: string[];
   tco: number; net_effect: number; simple_payback_years: number | null; roi_percent: number | null;
   capex_breakdown: Record<string, number>; opex_breakdown: Record<string, number>;
@@ -26,11 +27,13 @@ type Result = {
 };
 export type EconomicsResponse = {
   model_version: string; inputs: unknown; baseline_annual_opex: number; baseline_tco: number;
+  annual_volume?: number|null; baseline_cost_per_unit?: number|null;
   results: Result[]; formulas: Record<string, string>; assumptions: string[];
 };
 type FieldSpec = { key: string; label: string; unit?: string; hint?: string; min?: number; max?: number; step?: string; optional?: boolean };
 
 const COMMON: FieldSpec[] = [
+  { key: "daily_volume", label: "Объём работы в сутки", unit: "ед./сутки", optional: true, min: 0.000001, hint: "Одинаковый плановый объём для всех вариантов, без пикового коэффициента. Нужен только для стоимости и экономии на единице работы." },
   { key: "horizon_years", label: "Горизонт", unit: "лет", min: 5, max: 30, step: "1" },
   { key: "baseline_annual_labor", label: "Персонал базового процесса", unit: "₽/год", hint: "Полные расходы, включая взносы. Укажите сумму для выбранного процесса." },
   { key: "baseline_annual_other", label: "Прочие расходы базового процесса", unit: "₽/год" },
@@ -80,8 +83,8 @@ function initialDrafts(data: Comparison): Draft[] {
 }
 
 type ProjectEconomics = {
-  quantities: Record<number, number>; common: Values; onFixSelection?:()=>void;
-  prepareFleet?:()=>Promise<{quantities:Record<number,number>;hoursPerDay:number;notes:string[]}>;
+  quantities: Record<number, number>; common: Values; volumeUnit?:string; onFixSelection?:()=>void;
+  prepareFleet?:()=>Promise<{quantities:Record<number,number>;hoursPerDay:number;dailyVolume:number|null;volumeUnit:string;notes:string[]}>;
   fleetBasis?: Record<number, number>;
   recommend?: (inputs: unknown, bindings: {product_id:number;quantity_reason:string}[]) => Promise<unknown>;
   equipment?: Record<number, EquipmentInput>;
@@ -89,13 +92,14 @@ type ProjectEconomics = {
   save: (inputs: unknown, bindings: {product_id: number; quantity_reason: string}[]) => Promise<void>;
 };
 export default function EconomicsPanel({ data, project }: { data: Comparison; project?: ProjectEconomics }) {
-  const [common, setCommon] = useState<Values>({ horizon_years: "5", baseline_annual_labor: "", baseline_annual_other: "0", hours_per_day: "8", days_per_year: "250", electricity_price: "0", ...project?.common });
+  const [common, setCommon] = useState<Values>({ daily_volume: "", horizon_years: "5", baseline_annual_labor: "", baseline_annual_other: "0", hours_per_day: "8", days_per_year: "250", electricity_price: "0", ...project?.common });
+  const [volumeUnit,setVolumeUnit]=useState(project?.volumeUnit??"операция");
   const [drafts, setDrafts] = useState<Draft[]>(() => initialDrafts(data).map(d => ({ ...d, values: {...d.values, quantity: String(project ? project.quantities[d.id] ?? '' : 1)} })));
   const [view,setView]=useState<'inputs'|'results'>('inputs');
   const [profile,setProfile]=useState<string|null>(null);
   const [defaultNotes,setDefaultNotes]=useState<string[]>([]);
   const [evidence,setEvidence]=useState<Record<string,string>>(()=>Object.fromEntries([
-    ...Object.entries(common).filter(([,v])=>v!=='').map(([k])=>[`common.${k}`,project?.common[k]!==undefined?'Параметры объекта. ФОТ = персонал × зарплата × 12 × коэффициент начислений; уточните долю выбранного процесса.':'Начальное допущение формы: горизонт 5 лет, режим 8 часов × 250 дней, прочие затраты 0. Требует уточнения.']),
+    ...Object.entries(common).filter(([,v])=>v!=='').map(([k])=>[`common.${k}`,k==='daily_volume'?'Плановый суточный объём выбранного процесса из подбора, без пикового коэффициента.':project?.common[k]!==undefined?'Параметры объекта. ФОТ = персонал × зарплата × 12 × коэффициент начислений; уточните долю выбранного процесса.':'Начальное допущение формы: горизонт 5 лет, режим 8 часов × 250 дней, прочие затраты 0. Требует уточнения.']),
     ...drafts.flatMap(d=>Object.entries(d.values).filter(([,v])=>v!=='').map(([k])=>[`product.${d.id}.${k}`,catalogValue(data,d.id,k)!=null?`Каталог, карточка решения /products/${d.id}; проверить условия предложения.`:k==='quantity'&&project?.quantities[d.id]!==undefined?'Рассчитанное количество из автоматического подбора.':'Начальное допущение формы: количество 1, неизвестные дополнительные затраты и экономия 0. Требует уточнения.']))
   ]));
   const [automaticValues,setAutomaticValues]=useState<Record<string,number|null>>(()=>Object.fromEntries([
@@ -120,7 +124,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
         return {...d,buy:true,rent:true,values};
       });
       const origins:Record<string,string>={};const automatic:Record<string,number|null>={};
-      for(const [key,value] of Object.entries(nextCommon)){origins[`common.${key}`]=project?.common[key]!==undefined?'Параметры объекта или ФОТ = персонал × зарплата × 12 × коэффициент начислений. Уточните долю выбранного процесса.':defaults.source;automatic[`common.${key}`]=Number(value);}
+      for(const [key,value] of Object.entries(nextCommon)){origins[`common.${key}`]=key==='daily_volume'&&project?.common[key]!==undefined?'Плановый суточный объём выбранного процесса из подбора, без пикового коэффициента.':project?.common[key]!==undefined?'Параметры объекта или ФОТ = персонал × зарплата × 12 × коэффициент начислений. Уточните долю выбранного процесса.':defaults.source;automatic[`common.${key}`]=Number(value);}
       for(const d of nextDrafts)for(const [key,value] of Object.entries(d.values)){
         origins[`product.${d.id}.${key}`]=key==='quantity'&&project?.quantities[d.id]!==undefined?'Автоматический подбор: пиковая нагрузка / эффективная производительность с резервом.':catalogValue(data,d.id,key)!=null?`Каталог, карточка решения /products/${d.id}; проверить условия предложения.`:defaults.source;
         automatic[`product.${d.id}.${key}`]=value===''?null:Number(value);
@@ -141,14 +145,16 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
     try {
       const fleet=await project.prepareFleet();
       setDrafts(ds=>ds.map(d=>({...d,values:{...d.values,quantity:String(fleet.quantities[d.id])}})));
-      setCommon(c=>({...c,hours_per_day:String(fleet.hoursPerDay)}));
-      const values=Object.fromEntries(Object.entries(fleet.quantities).map(([id,value])=>[`product.${id}.quantity`,value]));
+      setCommon(c=>({...c,hours_per_day:String(fleet.hoursPerDay),daily_volume:fleet.dailyVolume==null?'':String(fleet.dailyVolume)}));
+      setVolumeUnit(fleet.volumeUnit);
+      const values:Record<string,number|null>=Object.fromEntries(Object.entries(fleet.quantities).map(([id,value])=>[`product.${id}.quantity`,value]));
       values['common.hours_per_day']=fleet.hoursPerDay;
+      values['common.daily_volume']=fleet.dailyVolume;
       setAutomaticValues(v=>({...v,...values}));
       setEvidence(v=>({...v,...Object.fromEntries(Object.keys(values).map(key=>[key,('Расчёт парка с явными демонстрационными допущениями. '+[...new Set(fleet.notes)].join(' ')).slice(0,2000)]))}));
       setDefaultNotes(notes=>[...new Set([...notes,...fleet.notes])]);
       setResult(null);setAdvice(null);setSaved(false);setAccepted(false);setQuantityReason('');setView('inputs');
-      setFleetNotice('Парк рассчитан. Количество роботов и часы работы обновлены, введённые цены и затраты сохранены. Проверьте данные, нажмите «Рассчитать экономику», затем «Сохранить экономику в проект».');
+      setFleetNotice('Парк рассчитан. Количество роботов, объём и часы работы обновлены, введённые цены и затраты сохранены. Проверьте данные, нажмите «Рассчитать экономику», затем «Сохранить экономику в проект».');
     }catch(e){setError((e as Error).message);}finally{setBusy(false);}
   }
   function changeCommon(key: string, value: string) { setCommon(s => ({ ...s, [key]: value })); setResult(null); setAdvice(null); setSaved(false); setError(""); }
@@ -164,7 +170,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
       : spec.hint;
     return <Field key={spec.key} label={spec.label} htmlFor={id} hint={hint} required={!spec.optional}>
       <Input id={id} type="number" disabled={!!project && spec.key === "hours_per_day"} min={spec.min ?? 0} max={spec.max ?? 1e12} step={spec.step ?? "any"}
-        unit={spec.unit} required={!spec.optional} value={values[spec.key] ?? ""}
+        unit={spec.key==='daily_volume'?`${volumeUnit}/сутки`:spec.unit} required={!spec.optional} value={values[spec.key] ?? ""}
         onChange={e => onChange(spec.key, e.target.value)} />
     </Field>;
   }
@@ -184,7 +190,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
     if(changed&&adjustmentReason.trim().length<3){setError("Укажите обоснование изменения автоматически заполненных значений.");return;}
     setBusy(true);
     try {
-      const inputs = { ...Object.fromEntries(Object.entries(common).map(([k, v]) => [k, Number(v)])), scenarios, default_profile:profile,input_evidence:evidence,automatic_values:automaticValues,adjustment_reason:adjustmentReason };
+      const inputs = { ...Object.fromEntries(Object.entries(common).map(([k, v]) => [k, k==='daily_volume'&&v===''?null:Number(v)])), volume_unit:volumeUnit, scenarios, default_profile:profile,input_evidence:evidence,automatic_values:automaticValues,adjustment_reason:adjustmentReason };
       setResult(await api<EconomicsResponse>("/economics/calculate", { method: "POST", body: inputs }));
       setView("results");setSaved(false);document.getElementById("economics-heading")?.scrollIntoView({block:"start"});
     } catch (e) { setError((e as Error).message); }
@@ -222,6 +228,7 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
     <form onSubmit={submit} onInvalid={e => {let node=(e.target as HTMLElement).parentElement;while(node){if(node.tagName==='DETAILS')node.setAttribute('open','');node=node.parentElement;}}}>
       <fieldset disabled={busy||advising} className="economics__fieldset">
         <legend>Сегодня: расходы и режим работы</legend>
+        {project?<p className="economics__unit-note">Единица выбранного процесса: <strong>{volumeUnit}</strong>. Объём из подбора можно уточнить с обоснованием; парк пересчитывается на шаге «Решения».</p>:<Field label="Единица работы"><select className="input" value={volumeUnit} onChange={e=>{setVolumeUnit(e.target.value);setResult(null);setAdvice(null);setSaved(false);}}>{['операция','паллета','рейс','строка','отправление','м²','кг','порция','контейнер','заявка','образец','позиция'].map(unit=><option key={unit}>{unit}</option>)}</select></Field>}
         <div className="economics__fields">{COMMON.map(f => field(f, common, changeCommon, "common"))}</div>
         {drafts.map(d => <details className="economics__draft" key={d.id} open={drafts.length === 1 ? true : undefined}>
           <summary><span>{d.name}</span><small className="economics__product-caption">{d.values.quantity} роботов · настройка сценариев</small></summary>
@@ -269,9 +276,13 @@ export default function EconomicsPanel({ data, project }: { data: Comparison; pr
 export function EconomicsResults({result,savedUrl,title,advice}: {result: EconomicsResponse;savedUrl?:string;title?:string;advice?:GptAdvice|null}) {
   const inputs = result.inputs as {horizon_years:number;scenarios:({name:string;mode:string}&Record<string,unknown>)[]}&Record<string,unknown>;
   const horizon = inputs.horizon_years;
+  const unit=String(inputs.volume_unit??'операция');
+  const hasUnitMetrics='baseline_cost_per_unit' in result;
+  const unitMoney=(value:number|null|undefined)=>value==null?'Укажите объём':`${new Intl.NumberFormat('ru-RU',{maximumFractionDigits:4}).format(value)} ₽/${unit}`;
   return <div className="economics-report"><h3>Результаты за {horizon} лет</h3>
       <EconomicsReportTools key={JSON.stringify(result.inputs)} result={result} savedUrl={savedUrl} title={title} advice={advice}/>
       <div className="economics__summary-grid">{result.results.map((r,i)=><article className="economics__summary-card" key={i}><span>{r.mode==='purchase'?'ПОКУПКА':'АРЕНДА / RaaS'}</span><h4>{r.name}</h4><div className={`economics__effect ${r.net_effect>0?'is-positive':'is-negative'}`}>{formatMoney(r.net_effect)}</div><p>чистый эффект за {horizon} лет</p><dl><div><dt>Вложения</dt><dd>{formatMoney(r.capex)}</dd></div><div><dt>Эффект в год</dt><dd>{formatMoney(r.annual_effect)}</dd></div><div><dt>Окупаемость</dt><dd>{r.simple_payback_years===null?'Не определена':formatPayback(r.simple_payback_years)}</dd></div></dl></article>)}</div>
+      {hasUnitMetrics&&<div className="economics__unit-note"><strong>Сравнение на единицу работы</strong><p>{result.annual_volume?`План: ${formatNumber(result.annual_volume)} ${unit} в год, одинаковый для всех вариантов.`:'Укажите объём работы в сутки на вкладке «Данные и допущения», чтобы увидеть удельные затраты.'} Стоимость включает вложения, эксплуатацию и замены за {horizon} лет. Отрицательная экономия означает удорожание; дополнительный доход в неё не входит.</p></div>}
       <div className="economics__scroll" tabIndex={0} role="region" aria-label="Таблица расчёта: прокрутка по горизонтали"><table className="economics__table">
         <caption>Базовый процесс и сценарии роботизации</caption>
         <thead><tr><th scope="col">Показатель</th><th scope="col">Без роботизации</th>{result.results.map((r, i) => <th key={i} scope="col">{r.name}</th>)}</tr></thead>
@@ -279,6 +290,11 @@ export function EconomicsResults({result,savedUrl,title,advice}: {result: Econom
           {([ ["CAPEX", "capex", 0], ["OPEX в год", "annual_opex", result.baseline_annual_opex], ["Эффект в год", "annual_effect", 0],
             ["TCO за горизонт", "tco", result.baseline_tco], ["Чистый эффект за горизонт", "net_effect", 0] ] as const).map(([label, key, base]) =>
             <tr key={key}><th scope="row">{label}</th><td>{formatMoney(base)}</td>{result.results.map((r, i) => <td key={i}>{formatMoney(r[key])}</td>)}</tr>)}
+          {hasUnitMetrics&&<>
+            <tr className="economics__unit-row"><th scope="row">Полная стоимость единицы<small>TCO ÷ объём за {horizon} лет</small></th><td>{unitMoney(result.baseline_cost_per_unit)}</td>{result.results.map((r,i)=><td key={i}>{unitMoney(r.cost_per_unit)}</td>)}</tr>
+            <tr className="economics__unit-row"><th scope="row">Экономия на единице<small>Стоимость базы − стоимость варианта</small></th><td>{result.annual_volume?'0 ₽':'—'}</td>{result.results.map((r,i)=><td key={i}>{unitMoney(r.saving_per_unit)}</td>)}</tr>
+            <tr className="economics__unit-row"><th scope="row">Снижение полной стоимости<small>Относительно TCO базового процесса</small></th><td>{result.baseline_tco>0?'0 %':'—'}</td>{result.results.map((r,i)=><td key={i}>{r.tco_saving_percent==null?'Не определено: TCO базы = 0':`${formatNumber(r.tco_saving_percent)} %`}</td>)}</tr>
+          </>}
           <tr><th scope="row">Простая окупаемость</th><td>—</td>{result.results.map((r, i) => <td key={i}>{r.simple_payback_years === null ? (r.capex === 0 ? "Нет начальных инвестиций" : "Нет положительного эффекта") : `${formatPayback(r.simple_payback_years)}${r.simple_payback_years > Number(horizon) ? " — за горизонтом" : ""}`}</td>)}</tr>
           <tr><th scope="row">ROI за горизонт</th><td>—</td>{result.results.map((r, i) => <td key={i}>{r.roi_percent === null ? "Не определён: CAPEX = 0" : `${formatNumber(r.roi_percent)} %`}</td>)}</tr>
         </tbody>
@@ -299,7 +315,7 @@ export function EconomicsResults({result,savedUrl,title,advice}: {result: Econom
       <dl className="economics__formulas">{Object.entries(result.formulas).map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
       <ul>{result.assumptions.map(a => <li key={a}>{a}</li>)}</ul>
       <p>Версия модели: {result.model_version}. Снимок содержит входные данные и результаты расчёта.</p></details>
-      <details className="economics__draft"><summary>Исходные данные экономической модели</summary>
+      <details className="economics__draft"><summary>Исходные данные экономической модели</summary><p>Единица объёма: {unit}</p>
         <dl className="economics__breakdown">{COMMON.map(f=><div key={f.key}><dt>{f.label}{f.unit?`, ${f.unit}`:''}</dt><dd>{String(inputs[f.key]??'не указано')}</dd></div>)}</dl>
         {inputs.scenarios.map((s,i)=><section key={i}><h4>{s.name}</h4><p>{s.mode==='purchase'?'Покупка':'RaaS'}</p>
           <dl className="economics__breakdown">{[{key:'equipment_price',label:'Цена оборудования',unit:'₽/робот'},{key:'monthly_fee',label:'Ставка RaaS',unit:'₽/робот/мес'},...SCENARIO].map(f=><div key={f.key}><dt>{f.label}{f.unit?`, ${f.unit}`:''}</dt><dd>{String(s[f.key]??'не указано')}</dd></div>)}</dl>

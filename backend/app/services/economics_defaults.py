@@ -1,8 +1,8 @@
 """Explicit illustrative inputs, not manufacturer quotes or official norms."""
-PROFILE = "illustrative-economics-2026-09-29-v2"
+PROFILE = "illustrative-economics-2026-09-29-v3"
 SOURCE = "Допущение команды для демонстрационного расчёта; заменить данными объекта и коммерческими предложениями."
 COMMON = {"horizon_years": 5, "baseline_annual_labor": 6240000,
-          "baseline_annual_other": 300000, "hours_per_day": 8, "days_per_year": 250, "electricity_price": 8}
+          "baseline_annual_other": 300000, "hours_per_day": 8, "days_per_year": 250, "electricity_price": 8, "daily_volume": 1000}
 SCENARIO = {"quantity": 1, "equipment_price": 3000000, "monthly_fee": 100000,
     "software": 200000, "infrastructure": 300000, "integration": 300000,
     "commissioning": 100000, "training": 50000, "reserve_percent": 10,
@@ -17,6 +17,7 @@ SCENARIO = {"quantity": 1, "equipment_price": 3000000, "monthly_fee": 100000,
 def default_profile():
     return {"profile": PROFILE, "common": COMMON, "scenario": SCENARIO, "source": SOURCE,
         "notes": [
+            "Объём примера: 1000 единиц выбранного процесса в сутки. В проекте приоритет у нагрузки из подбора. Объём одинаков для сравниваемых вариантов; пиковый коэффициент не увеличивает годовой объём.",
             "ФОТ примера: 5 сотрудников × 80 000 ₽/мес × 12 × 1,3 = 6 240 000 ₽/год. Это пример, не норматив страховых взносов.",
             "Известные цены и срок службы каталога, количество из подбора и режим объекта имеют приоритет над примером.",
             "Цена 3 млн ₽ и RaaS 100 тыс. ₽/мес — условные значения для проверки модели, не предложения поставщика.",

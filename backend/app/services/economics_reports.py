@@ -43,6 +43,8 @@ def sensitivity(data: EconomicsInput, spread: float):
                 target.monthly_fee = values["monthly_fee"]
                 target.annual_service_per_robot = values["annual_service_per_robot"]
             if factor == "volume":
+                if adjusted.daily_volume is not None:
+                    adjusted.daily_volume *= multiplier
                 for target in adjusted.scenarios:
                     target.quantity = max(1, math.ceil((target.fleet_unrounded or target.quantity) * multiplier)) if delta else target.quantity
                     if target.equipment:
@@ -74,7 +76,7 @@ def workbook_report(result: dict, analysis: dict | None = None, snapshot: dict |
                     cell.data_type = "s"
                 cell.alignment = Alignment(vertical="top", wrap_text=True)
                 if isinstance(cell.value, float):
-                    cell.number_format = '#,##0.00'
+                    cell.number_format = '#,##0.00##'
         for cell in ws[1]:
             cell.font = Font(color="FFFFFF", bold=True)
             cell.fill = PatternFill("solid", fgColor="193D54")
@@ -91,6 +93,11 @@ def workbook_report(result: dict, analysis: dict | None = None, snapshot: dict |
     keys = ["name", "mode", "capex", "annual_opex", "annual_effect", "tco", "net_effect", "simple_payback_years", "roi_percent"]
     sheet("Сценарии", ["Сценарий", "Модель", "CAPEX, ₽", "OPEX, ₽/год", "Эффект, ₽/год", "TCO, ₽", "Чистый эффект, ₽", "Окупаемость, лет", "ROI, %"],
           [["Без роботизации", "baseline", 0, result["baseline_annual_opex"], 0, result["baseline_tco"], 0, None, None]] + [[r[k] for k in keys] for r in result["results"]])
+    if "baseline_cost_per_unit" in result:
+        unit = result["inputs"].get("volume_unit", "операция")
+        sheet("Удельные затраты", ["Сценарий", f"Полная стоимость, ₽/{unit}", f"Экономия, ₽/{unit}", "Снижение TCO, %"],
+              [["Без роботизации", result.get("baseline_cost_per_unit"), 0 if result.get("annual_volume") else None, 0 if result["baseline_tco"] else None]] +
+              [[r["name"], r.get("cost_per_unit"), r.get("saving_per_unit"), r.get("tco_saving_percent")] for r in result["results"]])
     sheet("Интерпретация", ["Сценарий", "Экономия ФОТ, ₽/год", "Изменение OPEX, ₽/год", "Вывод", "Риски"],
           [[r["name"], r.get("annual_labor_saving"), r.get("annual_opex_change"), r.get("interpretation", ""), "\n".join(r.get("risks", []))] for r in result["results"]])
     sheet("Денежные потоки", ["Сценарий", "Год", "OPEX, ₽", "Замены, ₽", "Поток, ₽", "Накоплено, ₽"],
