@@ -71,6 +71,8 @@ async def ai_recommendation(project_id: uuid.UUID, data: SaveProjectEconomics, d
     candidates = {c["product_id"]: c for c in selected["candidates"]}
     if not selected["context"]["hours_per_day"] or not math.isclose(data.inputs.hours_per_day, selected["context"]["hours_per_day"]):
         raise HTTPException(422, "Режим экономики отличается от подбора. Пересчитайте варианты.")
+    if len({(b.product_id, s.mode) for b, s in zip(data.bindings, data.inputs.scenarios)}) != len(data.bindings):
+        raise HTTPException(422, "Выберите разные варианты для рекомендации.")
     for binding, scenario in zip(data.bindings, data.inputs.scenarios):
         candidate = candidates.get(binding.product_id)
         if not candidate or candidate["status"] == "excluded" or candidate["quantity"] is None:
@@ -79,8 +81,15 @@ async def ai_recommendation(project_id: uuid.UUID, data: SaveProjectEconomics, d
             raise HTTPException(422, "Обоснуйте изменение количества роботов перед запросом GPT.")
         scenario.fleet_unrounded = (candidate.get("calculation") or {}).get("unrounded_quantity") if scenario.quantity == candidate["quantity"] else scenario.quantity
         scenario.equipment = EquipmentInput.model_validate(candidate["equipment"]["inputs"])
-    products = (await db.scalars(select(Product).where(Product.id.in_(candidates)).options(*PRODUCT_DETAIL_OPTIONS))).all()
+    # All technical ranking results are retained; detailed sources are needed for the compared products.
+    compared_ids = {binding.product_id for binding in data.bindings}
+    products = (await db.scalars(select(Product).where(Product.id.in_(compared_ids)).options(*PRODUCT_DETAIL_OPTIONS))).all()
     product_data = [{"id": p.id, "name": p.name, "purpose": p.purpose, "limitations": p.limitations,
+        "offers": [{"model": o.acquisition_model, "currency": o.currency, "vat_included": o.price_includes_vat,
+                    "equipment_price": o.equipment_price, "software": o.software_price, "integration": o.implementation_price,
+                    "annual_service": o.annual_service_cost, "monthly_fee": o.monthly_fee, "terms": o.terms,
+                    "included_services": o.included_services, "confirmed": o.is_confirmed, "date": o.valid_from,
+                    "source": o.source.url if o.source else None} for o in p.offers],
         "sources": [{"url": s.url, "title": s.title, "type": s.source_type, "date": s.retrieved_at} for s in p.sources],
         "specs": [{"name": s.definition.name, "unit": s.unit or s.definition.unit,
                    "value": s.value_numeric, "maximum": s.value_numeric_max, "text": s.value_text,
