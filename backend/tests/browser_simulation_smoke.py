@@ -17,6 +17,7 @@ from app.schemas.equipment import EquipmentInput
 from app.schemas.simulation import SimulationOptions
 from app.services.equipment import equipment_plan
 from app.services.simulation import simulate
+from app.services.simulation_profiles import default_options, scene_profile
 from app.schemas.economics import EconomicsInput
 from app.services.economics import calculate
 
@@ -50,6 +51,8 @@ def handle(route):
     elif path == "/reference/facility-types": data = [{"id": 1, "processes": [{"id": 1, "name": "Перевозка паллет"}]}]
     elif path.endswith("/calculations"): data = [{"id": "economics-run", "created_at": version, "stale": False, "inputs": {}, "results": economics}]
     elif path.endswith("/selection"): data = selection
+    elif path.endswith("/simulations/defaults"):
+        data = {"options": default_options(snapshot), "scene": scene_profile(snapshot)}
     elif path.endswith("/simulations") and method == "POST":
         selected = economics["inputs"]["scenarios"][body["scenario_index"]] if body.get("economics_run_id") else snapshot
         result = simulate({**snapshot, "name": selected["name"], "quantity": selected["quantity"]}, SimulationOptions.model_validate(body["options"]))
@@ -95,7 +98,7 @@ with sync_playwright() as p, tempfile.TemporaryDirectory() as directory:
         target = Path(directory)/f"result.{suffix}"
         download.value.save_as(target)
         assert target.stat().st_size > 100
-        if suffix == "svg": assert "simulation-1.1" in target.read_text(encoding="utf-8")
+        if suffix == "svg": assert "simulation-1.2" in target.read_text(encoding="utf-8")
         if suffix == "png": assert target.read_bytes().startswith(b"\x89PNG")
         if suffix == "json": assert json.loads(target.read_text(encoding="utf-8"))["results"]["quantity"] == 4
     panel.get_by_label("Маршрут в одну сторону, м",exact=True).fill("200")

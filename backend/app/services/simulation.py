@@ -9,18 +9,20 @@ import math
 from app.schemas.equipment import EquipmentInput
 from app.schemas.simulation import SimulationOptions
 from app.services.equipment import equipment_plan
+from app.services.simulation_profiles import scene_profile
 
-VERSION = "simulation-1.1"
+VERSION = "simulation-1.2"
 # Bound executed work, rather than rejecting a large incoming queue.
 MAX_STARTED_CYCLES = 200000
-MAX_ROBOTS = 200
+MAX_ROBOTS = 100000
+MAX_RECORDED_ROBOTS = 60
 
 
 def simulate(snapshot: dict, options: SimulationOptions) -> dict:
     context, candidate = snapshot["context"], snapshot["candidate"]
     n = snapshot["quantity"]
     if not 1 <= n <= MAX_ROBOTS:
-        raise ValueError("Имитация поддерживает от 1 до 200 роботов. Уменьшите парк для демонстрации.")
+        raise ValueError("Имитация поддерживает от 1 до 100 000 роботов. Проверьте рассчитанное количество.")
     if context.get("missing") or not candidate.get("throughput") or candidate.get("status") == "excluded":
         raise ValueError("Недостаточно данных или решение исключено. Уточните подбор.")
     equipment = EquipmentInput.model_validate(snapshot["equipment"])
@@ -65,7 +67,8 @@ def simulate(snapshot: dict, options: SimulationOptions) -> dict:
     idle = deque(range(n))
     idle_since = [0.] * n
     batteries = [equipment.runtime_hours * 3600] * n
-    segments = [[] for _ in range(n)]
+    recorded = min(n, MAX_RECORDED_ROBOTS)
+    segments = [[] for _ in range(recorded)]
     stats = {key: 0. for key in ("preparation", "outbound", "operation", "return", "station_queue", "charger_queue", "charging", "downtime", "idle")}
     completed = in_progress = 0.
     max_queue = 0.
@@ -80,7 +83,8 @@ def simulate(snapshot: dict, options: SimulationOptions) -> dict:
         phase_end = end
         start, end = min(start, horizon), min(end, horizon)
         if end > start:
-            segments[robot].append({"state": state, "start": start, "end": end, "phase_end": phase_end})
+            if robot < recorded:
+                segments[robot].append({"state": state, "start": start, "end": end, "phase_end": phase_end})
             stats[state] += end - start
     def dispatch(now):
         nonlocal in_progress, started_jobs, arrival_scheduled
@@ -176,7 +180,10 @@ def simulate(snapshot: dict, options: SimulationOptions) -> dict:
         "Предварительная оценка требует верификации при обследовании объекта. Достижение 95% — индикатор этой модели, а не гарантия внедрения.",
         options.reason,
     ]
-    return {"model_version": VERSION, "duration_seconds": horizon, "unit": context["unit"],
+    profile = scene_profile(snapshot)
+    assumptions.append(f"{profile['label']}: {profile['source_zone']} → {profile['target_zone']}. Сцена соответствует типу объекта и выбранному процессу; внешний вид робота — условная модель типа из каталога.")
+    assumptions.append(f"Показатели рассчитаны для всех {n} роботов. Подробные траектории сохранены для первых {recorded}; визуальное ограничение не меняет поток или размер партии.")
+    return {"scene": profile, "recorded_robots": recorded, "model_version": VERSION, "duration_seconds": horizon, "unit": context["unit"],
         "name": snapshot["name"], "quantity": n, "equipment": plan,
         "kpi": {"target": round(target, 3), "completed": round(completed, 3),
             "backlog": round(max(0, target - completed), 3), "max_queue": round(max_queue, 3),

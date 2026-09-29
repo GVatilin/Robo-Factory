@@ -296,3 +296,9 @@
 @media(prefers-reduced-motion:reduce) {
   .simulation-loading > span,.simulation-scene__loading > span,.simulation-stage__hud .is-live i { animation: none; }
 }
+
+.simulation-object { display:flex; flex-wrap:wrap; align-items:center; gap:8px 20px; margin:18px 0; padding:16px 20px; border:1px solid #cfdeef; border-radius:14px; background:#edf4ff; color:#284c78; }
+.simulation-object strong { font-size:17px; }
+.simulation-object small { flex-basis:100%; color:#627d97; }
+.simulation-object--medical { background:#eaf6f2; border-color:#c7e4d9; color:#286859; }
+.simulation-object--airport { background:#edf3fa; border-color:#c6d9eb; color:#365e84; }

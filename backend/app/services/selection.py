@@ -560,6 +560,8 @@ def rank_candidate(
         "product_id": entry.product.id,
         "name": entry.product.name,
         "image_url": entry.summary.image_url,
+        "robot_visual": {"solution_type": entry.summary.solution_type.model_dump(mode="json") if entry.summary.solution_type else None,
+                         "product_class": entry.summary.product_class.value if hasattr(entry.summary.product_class, "value") else entry.summary.product_class},
         "status": status,
         "decision": decision,
         "reasons": reasons,

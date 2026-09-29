@@ -40,7 +40,7 @@ def entry(*values, completeness=100, limitations=None):
             limitations=limitations,
             updated_at=datetime(2026, 9, 29, tzinfo=UTC),
         ),
-        summary=SimpleNamespace(image_url=None, completeness_percent=completeness),
+        summary=SimpleNamespace(image_url=None, completeness_percent=completeness, solution_type=None, product_class="robot"),
         specs={value.definition.code: value for value in values},
     )
 

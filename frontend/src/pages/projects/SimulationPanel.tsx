@@ -7,7 +7,7 @@ import {
 import {api} from "../../api/client";
 import {useApi} from "../../api/hooks";
 import {EquipmentTable, type EquipmentPlan} from "./Equipment";
-import {createSimulationWarehouseLayout, type SimulationSceneOrder} from "./SimulationLayout";
+import {GENERIC_SCENE, type SimulationSceneProfile, type SimulationSceneOrder} from "./SimulationLayout";
 import type {SimulationSegment, SimulationView} from "./SimulationScene3D";
 import "./Simulation.css";
 
@@ -15,7 +15,7 @@ const SimulationScene3D=lazy(()=>import("./SimulationScene3D"));
 
 type Segment=SimulationSegment;
 type Frame={time:number;arrived:number;completed:number;queue:number};
-type Simulation={model_version:string;duration_seconds:number;name:string;quantity:number;unit:string;
+type Simulation={scene?:SimulationSceneProfile;recorded_robots?:number;model_version:string;duration_seconds:number;name:string;quantity:number;unit:string;
   options:{route_m:number;speed_mps:number;reason:string};equipment:EquipmentPlan;frames:Frame[];
   robots:{id:number;segments:Segment[]}[];warnings:string[];assumptions:string[];
   kpi:{target:number;completed:number;backlog:number;max_queue:number;completion_percent:number;throughput:number;
@@ -42,6 +42,7 @@ const clock=(value:number)=>`${Math.floor(value/3600)}:${String(Math.floor(value
 
 export default function SimulationPanel({projectId,version,isDemo,selection,saved,onSetup}:{onSetup?:()=>void;projectId:string;version:string;isDemo:boolean;selection:Selection|null;saved:EconomicsRun[]}) {
   const history=useApi<History[]>(`/projects/${projectId}/simulations`);
+  const [sceneProfile,setSceneProfile]=useState<SimulationSceneProfile>(GENERIC_SCENE);
   const [source,setSource]=useState("");
   const [route,setRoute]=useState("50");
   const [speed,setSpeed]=useState("1");
@@ -58,6 +59,17 @@ export default function SimulationPanel({projectId,version,isDemo,selection,save
 
   useEffect(()=>{generation.current++;setRun(null);setBusy(false);},[version,selection]);
   useEffect(()=>()=>{generation.current++;},[]);
+
+  async function fillDefaults(){
+    if(!chosen)return;
+    const ticket=++generation.current;setBusy(true);setError('');setRun(null);
+    try {
+      const data=await api<{scene:SimulationSceneProfile;options:{route_m:number;speed_mps:number;reason:string}}>(`/projects/${projectId}/simulations/defaults`,{method:'POST',body:{...chosen.body,project_updated_at:version}});
+      if(ticket===generation.current){setRoute(String(data.options.route_m));setSpeed(String(data.options.speed_mps));setReason(data.options.reason);setSceneProfile(data.scene);}
+    }catch(e){if(ticket===generation.current)setError((e as Error).message);}
+    finally{if(ticket===generation.current)setBusy(false);}
+  }
+  useEffect(()=>{if(chosen)void fillDefaults();},[chosen?.key,version,selection]);
 
   function edit(action:()=>void){action();setRun(null);setError("");}
   async function calculate(save:boolean){
@@ -85,7 +97,8 @@ export default function SimulationPanel({projectId,version,isDemo,selection,save
       <div><p className="simulation__eyebrow">Цифровой прогон смены</p><h2 id="simulation-heading">Имитация работы на объекте</h2>
         <p>Проверьте парк на пиковом потоке: 3D-сцена воспроизводит расчётные маршруты, операции, очереди и зарядку в течение всей смены.</p></div>
     </div>
-    <button type="button" className="btn btn--ghost" disabled={busy} onClick={()=>edit(()=>{setRoute('50');setSpeed('1');setReason('Допущение команды: маршрут 50 м в одну сторону, скорость 1 м/с. Уточнить на объекте.');setSource(choices[0]?.key??'');})}>Заполнить симуляцию по умолчанию</button>
+    <button type="button" className="btn btn--ghost" disabled={busy} onClick={()=>void fillDefaults()}>Заполнить симуляцию по умолчанию</button>
+    <div className={`simulation-object simulation-object--${sceneProfile.facility_code}`}><strong>{sceneProfile.label}</strong><span>{sceneProfile.source_zone} → {sceneProfile.target_zone}</span><small>{sceneProfile.process_name}. Используется робот выбранного сценария.</small></div>
     <fieldset disabled={busy} className="economics__fieldset simulation-config">
       <label className="simulation-config__scenario"><span>Сценарий</span><select value={chosen?.key??""} onChange={event=>edit(()=>setSource(event.target.value))}>
         {!choices.length&&<option value="">Сначала выполните подбор с рассчитанным парком</option>}
@@ -128,13 +141,13 @@ function SimulationPlayer({run}:{run:SavedSimulation}) {
   const sceneCanvas=useRef<HTMLCanvasElement>(null);
   const sceneOrder=useMemo<SimulationSceneOrder>(()=>({
     key:result.name,
+    scene:result.scene,
     target:result.kpi.target,
     fleet:result.quantity,
     routeM:result.options.route_m,
     stationCount:result.equipment.items.find(item=>item.code==="station")?.quantity??1,
     chargerCount:result.equipment.items.find(item=>item.code==="charger")?.quantity??1,
   }),[result]);
-  const warehouseLayout=useMemo(()=>createSimulationWarehouseLayout(sceneOrder),[sceneOrder]);
 
   useEffect(()=>{
     if(!playing)return;
@@ -219,19 +232,19 @@ function SimulationPlayer({run}:{run:SavedSimulation}) {
         <div className={`simulation-stage simulation-stage--${view}`}>
           <div className="simulation-stage__hud"><span className={playing?"is-live":""}><i/>{playing?"Модель запущена":"Модель на паузе"}</span><strong>{clock(time)}</strong></div>
           <div className="simulation-scene"><Suspense fallback={<div className="simulation-scene__loading"><span/>Загружаем 3D-сцену…</div>}><SimulationScene3D robots={result.robots} order={sceneOrder} time={time} duration={result.duration_seconds} playing={playing} view={view} activeRobot={activeRobot} onRobotSelect={id=>setActiveRobot(id||null)} canvasRef={sceneCanvas}/></Suspense></div>
-          <div className="simulation-stage__zones" aria-hidden="true"><span>Заказ: {number(result.kpi.target)}</span><span>Склад: {warehouseLayout.width} × {warehouseLayout.depth} м</span><span>Рабочих зон: {sceneOrder.stationCount}</span><span>Зарядок: {sceneOrder.chargerCount}</span></div>
+          <div className="simulation-stage__zones" aria-hidden="true"><span>Заказ: {number(result.kpi.target)}</span><span>{(result.scene??GENERIC_SCENE).label}: условная схема</span><span>{(result.scene??GENERIC_SCENE).target_zone} · постов: {sceneOrder.stationCount}</span><span>Зарядок: {sceneOrder.chargerCount}</span></div>
           <div className="simulation-stage__legend">{[["Движение","outbound"],["Работа","operation"],["Очередь","station_queue"],["Зарядка","charging"]].map(([label,state])=><span key={state}><i style={{background:STATES[state].color}}/>{label}</span>)}</div>
         </div>
         <aside className="simulation-live__aside">
           <div className="simulation-live-card simulation-live-card--accent"><p>Выполнено сейчас</p><strong>{number(frame.completed)}</strong><span>из {number(frame.arrived)} поступивших</span><progress max={Math.max(1,frame.arrived)} value={frame.completed}/></div>
           <div className="simulation-live-card"><div className="simulation-live-card__head"><p>Очередь заданий</p><span className={frame.queue>0?"is-warning":""}>{number(frame.queue)}</span></div><small>Максимум за смену: {number(result.kpi.max_queue)}</small></div>
-          <div className="simulation-live-card"><p>Состояние парка</p><ul className="simulation-state-list">{Object.entries(stateCounts).sort((a,b)=>b[1]-a[1]).map(([state,count])=><li key={state}><i style={{background:STATES[state]?.color??"#8998aa"}}/><span>{STATES[state]?.short??state}</span><strong>{count}</strong></li>)}</ul></div>
+          <div className="simulation-live-card"><p>{result.robots.length<result.quantity?`Состояние ${result.robots.length} роботов с траекториями`:'Состояние парка'}</p><ul className="simulation-state-list">{Object.entries(stateCounts).sort((a,b)=>b[1]-a[1]).map(([state,count])=><li key={state}><i style={{background:STATES[state]?.color??"#8998aa"}}/><span>{STATES[state]?.short??state}</span><strong>{count}</strong></li>)}</ul></div>
           <div className={`simulation-live-card simulation-robot-card ${selectedRobot?"is-selected":""}`}><p>{selectedRobot?`Робот №${selectedRobot.id}`:"Инспектор робота"}</p>{selectedRobot?<><strong><i style={{background:STATES[selectedState??"idle"]?.color}}/>{STATES[selectedState??"idle"]?.name??selectedState}</strong><span>Нажмите на другого робота, чтобы проверить его состояние.</span></>:<span>Выберите робота прямо на 3D-сцене.</span>}</div>
         </aside>
       </div>
     </section>
 
-    <p className="simulation-caption">В 3D показаны первые {Math.min(VISIBLE_ROBOTS,result.quantity)} из {result.quantity} роботов; KPI учитывают весь парк. Геометрия условная, расчётная длина маршрута — {number(result.options.route_m)} м.</p>
+    <p className="simulation-caption">В 3D показаны первые {Math.min(VISIBLE_ROBOTS,result.robots.length)} из {result.quantity} роботов; KPI учитывают весь парк. Тип модели — {(result.scene?.robot?.solution_type?.name)??'условный, уточнить тип в каталоге'}. Геометрия условная, расчётная длина маршрута — {number(result.options.route_m)} м.</p>
     <div className="simulation-export"><div><Download size={18} aria-hidden="true"/><span><strong>Материалы для отчёта</strong><small>Сцена, расчётный снимок и исходные показатели</small></span></div><div className="projects-actions"><button type="button" className="btn btn--ghost" onClick={()=>exportImage(false)}>Сохранить схему SVG</button><button type="button" className="btn btn--ghost" onClick={()=>exportImage(true)}>Сохранить схему PNG</button>
       <button type="button" className="btn btn--ghost" onClick={()=>download(new Blob([JSON.stringify(run,null,2)],{type:"application/json"}),"robot-simulation.json")}>Скачать результат JSON</button></div></div>
     {exportError&&<p role="alert" className="economics__error">{exportError}</p>}
@@ -257,8 +270,8 @@ function SimulationReport({refElement,result,time,frame}:{refElement:RefObject<S
     <rect x="35" y="112" width="210" height="270" rx="18" fill="#dfeafb" stroke="#a8c2e7"/>
     <rect x="640" y="112" width="225" height="270" rx="18" fill="#dcefe8" stroke="#91b9a9"/>
     <rect x="280" y="412" width="335" height="112" rx="18" fill="#e9e3f6" stroke="#b9a7dc"/>
-    <text x="55" y="144" fill="#0e2748" fontSize="17" fontWeight="bold">Зона выдачи заданий</text>
-    <text x="655" y="144" fill="#0e2748" fontSize="17" fontWeight="bold">Зона операций</text>
+    <text x="55" y="144" fill="#0e2748" fontSize="17" fontWeight="bold">{(result.scene??GENERIC_SCENE).source_zone}</text>
+    <text x="655" y="144" fill="#0e2748" fontSize="17" fontWeight="bold">{(result.scene??GENERIC_SCENE).target_zone}</text>
     <text x="655" y="169" fill="#3d5a82" fontSize="14">Постов: {result.equipment.items[1]?.quantity??0}</text>
     <text x="300" y="444" fill="#0e2748" fontSize="17" fontWeight="bold">Зарядных станций: {result.equipment.items[0]?.quantity??0}</text>
     <path d="M 150 225 H 750 M 750 326 H 150" fill="none" stroke="#a8bedb" strokeWidth="9" strokeDasharray="13 9"/>
@@ -276,7 +289,7 @@ function SimulationReport({refElement,result,time,frame}:{refElement:RefObject<S
     })}
     <text x="34" y="556" fontSize="13" fill="#3d5a82">Синий — движение · зелёный — операция · оранжевый — очередь · фиолетовый — зарядка</text>
     <text x="34" y="582" fontSize="13" fill="#0e2748">Итог смены: {number(result.kpi.completion_percent)}% потока · выработка {number(result.kpi.throughput)} {result.unit}</text>
-    <text x="34" y="607" fontSize="12" fill="#3d5a82">Условная схема. Показано до 30 роботов; показатели рассчитаны для всего парка. {result.model_version}</text>
+    <text x="34" y="607" fontSize="12" fill="#3d5a82">{(result.scene??GENERIC_SCENE).label}. Условная схема. Показано до 30 роботов; показатели рассчитаны для всего парка. {result.model_version}</text>
     <text x="34" y="628" fontSize="12" fill="#3d5a82">Предварительная оценка: требуется верификация при обследовании объекта.</text>
   </svg>;
 }

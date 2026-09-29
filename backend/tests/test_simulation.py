@@ -84,7 +84,7 @@ def test_fractional_batch_does_not_invent_demand():
 @pytest.mark.parametrize("change", ["fleet", "battery", "excluded"])
 def test_unsupported_workload_fails_with_actionable_error(change):
     source = snapshot()
-    if change == "fleet": source["quantity"] = 201
+    if change == "fleet": source["quantity"] = 100001
     if change == "battery": source["equipment"]["runtime_hours"] = .001
     if change == "excluded": source["candidate"]["status"] = "excluded"
     with pytest.raises(ValueError):
@@ -221,3 +221,33 @@ def test_large_queue_preserves_demand_without_old_12000_limit():
     assert result["kpi"]["target"] == 12001
     assert result["frames"][-1]["arrived"] == 12001
     assert result["kpi"]["completed"] <= 12001
+
+
+def test_large_fleet_is_calculated_in_full_with_bounded_trajectories():
+    source = snapshot()
+    source["quantity"] = 250
+    result = simulate(source, SimulationOptions())
+    assert result["quantity"] == 250 and len(result["robots"]) == 60
+    assert sum(result["kpi"]["state_hours"].values()) == pytest.approx(250 * 8, abs=.001)
+    assert result["kpi"]["completed"] + result["kpi"]["backlog"] == pytest.approx(result["kpi"]["target"])
+
+
+@pytest.mark.parametrize("facility,process,expected", [("warehouse","inbound","pallet"),("airport","baggage","baggage"),("medical","food","food"),("medical","cleaning","none")])
+def test_scene_follows_facility_process_and_preserves_robot(facility, process, expected):
+    source = snapshot()
+    source.update(facility={"code":facility},process={"code":process,"name":process})
+    source["candidate"]["robot_visual"]={"solution_type":{"code":"cleaning_robot","name":"Уборщик"}}
+    result = simulate(source, SimulationOptions())
+    assert result["scene"]["facility_code"] == facility
+    assert result["scene"]["cargo"] == expected
+    assert result["scene"]["robot"]["solution_type"]["code"] == "cleaning_robot"
+
+
+def test_defaults_use_object_route_and_do_not_exceed_catalog_speed():
+    from app.services.simulation_profiles import default_options
+    source = snapshot()
+    source.update(facility={"code":"medical"},process={"code":"food","name":"Питание"},parameters={"kitchen_to_ward_distance_m":240})
+    source["candidate"]["specs_snapshot"]={"max_speed_mps":{"value":.5,"unit":"м/с"}}
+    defaults = default_options(source)
+    assert defaults["route_m"] == 240 and defaults["speed_mps"] == .5
+    assert "kitchen_to_ward_distance_m" in defaults["reason"]

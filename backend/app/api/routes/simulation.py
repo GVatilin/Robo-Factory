@@ -9,7 +9,7 @@ from sqlalchemy import select
 from app.api.deps import DbSession, OptionalUser
 from app.api.routes.projects import visible_project
 from app.api.routes.project_selection import select_for_project
-from app.models import CalculationRun
+from app.models import CalculationRun, FacilityType
 from app.models.enums import CalculationStatus, CalculationType
 from app.schemas.equipment import EquipmentInput
 from app.schemas.simulation import SimulationRequest
@@ -48,10 +48,25 @@ async def simulation_snapshot(db, project, data):
     context = selection["context"]
     if not equipment:
         equipment = EquipmentInput(peak_rate=context["daily_demand"] / context["hours_per_day"] * context["peak_factor"]).model_dump()
-    return {"name": name, "quantity": quantity, "candidate": candidate, "context": context,
+    facility = selection.get("facility")
+    if not facility and getattr(project, "facility_type_id", None):
+        ref = await db.get(FacilityType, project.facility_type_id)
+        if ref:
+            facility = {"id": ref.id, "code": ref.code, "name": ref.name}
+    return {"facility": facility, "process": selection.get("process"), "name": name, "quantity": quantity, "candidate": candidate, "context": context,
             "selection_options": selection["options"], "parameters": parameters, "equipment": equipment,
             "source_run_id": str(data.economics_run_id) if data.economics_run_id else None,
             "scenario_index": data.scenario_index, "project_name": project.name}
+
+
+@router.post("/{project_id}/simulations/defaults", summary="Маршрут и скорость выбранного объекта и робота")
+async def simulation_defaults(project_id: uuid.UUID, data: SimulationRequest, db: DbSession, user: OptionalUser):
+    from app.services.simulation_profiles import default_options, scene_profile
+    project = await visible_project(db, project_id, user)
+    if project.updated_at != data.project_updated_at:
+        raise HTTPException(409, "Проект изменён. Повторите подбор.")
+    snapshot = await simulation_snapshot(db, project, data)
+    return {"options": default_options(snapshot), "scene": scene_profile(snapshot)}
 
 
 @router.post("/{project_id}/simulations", summary="Рассчитать имитацию выбранного сценария; при save=true сохранить")

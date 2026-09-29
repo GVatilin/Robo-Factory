@@ -42,6 +42,7 @@ async def select_for_project(db, project, options):
     for candidate in candidates:
         candidate["capacity_example"] = capacity_example(candidate["unit"]).model_dump()
     return {"model_version": VERSION, "formula": FORMULA, "context": context,
+            "facility": {"id": facility.id, "code": facility.code, "name": facility.name},
             "ranking_weights": RANKING_WEIGHTS,
             "process": {"id": process.id, "name": process.name, "code": process.code}, "options": options.model_dump(mode="json"),
             "project_updated_at": project.updated_at.isoformat(), "parameters": project.parameters, "candidates": candidates}

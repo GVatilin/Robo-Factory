@@ -1,5 +1,9 @@
+import type {ProductClass} from "../../api/types";
+export type SimulationSceneProfile={facility_code:string;label:string;source_zone:string;target_zone:string;process_code:string;process_name:string;cargo:string;robot?:{solution_type?:{code:string;name:string;category?:{code:string;name:string}|null}|null;product_class?:ProductClass|null}};
+export const GENERIC_SCENE:SimulationSceneProfile={facility_code:'generic',label:'Объект',source_zone:'Выдача заданий',target_zone:'Операции',process_code:'',process_name:'Выбранный процесс',cargo:'box'};
 export type SimulationSceneOrder={
   key:string;
+  scene?:SimulationSceneProfile;
   target:number;
   fleet:number;
   routeM:number;
@@ -36,7 +40,7 @@ export function createSimulationWarehouseLayout(order:SimulationSceneOrder):Simu
   const target=Math.max(1,order.target);
   const fleet=Math.max(1,order.fleet);
   const demand=Math.log10(target+1);
-  const seed=hashOrder(`${order.key}|${order.target}|${order.fleet}|${order.routeM}|${order.stationCount}|${order.chargerCount}`);
+  const seed=hashOrder(`${order.scene?.facility_code??'generic'}|${order.key}|${order.target}|${order.fleet}|${order.routeM}|${order.stationCount}|${order.chargerCount}`);
   return {
     seed,
     width:Math.round(clamp(42+demand*2.5+Math.sqrt(fleet)*.7+order.routeM/150,44,62)),

@@ -6,6 +6,9 @@ import {CELLS} from "../../scene/layout";
 import {Manipulator} from "../../scene/Manipulator";
 import {palette} from "../../scene/palette";
 import {People} from "../../scene/People";
+import {resolveKind,resolveSize} from "../../scene/robots/kinds";
+import {MedicalFacility,AirportFacility,FacilityFloor,FACILITY_WALKERS} from "./SimulationFacility";
+import {GENERIC_SCENE} from "./SimulationLayout";
 import {RobotModel} from "../../scene/robots/RobotModel";
 import {geometries, material} from "../../scene/shared";
 import {SceneBoundary, supportsWebGL} from "../../scene/support";
@@ -170,15 +173,24 @@ function SimulationInfrastructure({layout}:{layout:OrderLayout}){
   return <group><SourceZone/><ChargingZone layout={layout}/><RouteMarkings layout={layout}/></group>;
 }
 
-function Robot({robot,time,duration,playing,active,layout,onSelect}:{robot:SimulationRobot;time:number;duration:number;playing:boolean;active:boolean;layout:OrderLayout;onSelect:(id:number)=>void}){
+function Robot({robot,time,duration,playing,active,layout,onSelect,order}:{order:SimulationSceneOrder;robot:SimulationRobot;time:number;duration:number;playing:boolean;active:boolean;layout:OrderLayout;onSelect:(id:number)=>void}){
   const pose=robotPose(robot,time,duration,layout);
+  const profile=order.scene??GENERIC_SCENE;
+  const kind=resolveKind(profile.robot?.solution_type,profile.robot?.product_class);
+  const displayKind=kind==='generic'?(profile.process_code==='cleaning'?'cleaner':profile.facility_code==='medical'?'delivery':profile.facility_code==='airport'?'tug':'platform'):kind;
+  const fixed=['arm','storage','software'].includes(displayKind);
+  if(fixed){const cell=layout.cells[(robot.id-1)%layout.cells.length];pose.x=cell.base[0]+2;pose.z=5.2+Math.floor((robot.id-1)/layout.cells.length)*1.1;}
+  const shape=resolveSize(displayKind,null).size;
+  const scale=Math.min(1.2,1.6/Math.max(shape.l,shape.w,shape.h));
   const moving=pose.state==="outbound"||pose.state==="return";
   return <group position={[pose.x,.075,pose.z]} rotation-y={-pose.rotation} onClick={event=>{event.stopPropagation();onSelect(robot.id);}}>
     <mesh position={[0,-.03,0]} scale={[active ? .82 : .68,.04,active ? .82 : .68]} geometry={geometries.cylinder} material={material(stateColors[pose.state]??stateColors.idle)} receiveShadow/>
     <group scale={active?1.1:1}>
-      <RobotModel kind="platform" size={{l:1.15,w:.76,h:.3}} tone={active?"highlight":pose.state==="idle"||pose.state==="downtime"?"muted":"default"} animate={playing&&moving}/>
-      <Block position={[-.1,.46,0]} size={[.62,.27,.5]} color="#edf3fb" rounded/>
-      <Block position={[.33,.46,0]} size={[.2,.27,.5]} color="#adc6e4" rounded/>
+      <RobotModel kind={displayKind} size={{l:shape.l*scale,w:shape.w*scale,h:shape.h*scale}} tone={active?"highlight":pose.state==="idle"||pose.state==="downtime"?"muted":"default"} animate={playing&&(fixed?pose.state==="operation":moving)}/>
+      {displayKind==='platform'&&profile.cargo!=='none'&&<>
+        <Block position={[-.1,.52,0]} size={[.62,profile.facility_code==='medical'?.55:.3,.5]} color={profile.facility_code==='airport'?'#7ba0bd':profile.facility_code==='medical'?'#d3ede6':'#c1ac87'} rounded/>
+        {profile.facility_code==='medical'&&<Block position={[.215,.53,0]} size={[.02,.12,.3]} color="#48a696"/>}
+      </>}
     </group>
   </group>;
 }
@@ -226,23 +238,24 @@ function Scene({robots,order,time,duration,playing,view,activeRobot,onRobotSelec
     <fog attach="fog" args={[palette.background,78,132]}/>
     <CameraRig view={view} animate={playing} width={layout.width} depth={layout.depth}/>
     <Lights/>
-    <Warehouse seed={layout.seed} occupancy={layout.occupancy} dockCount={layout.dockCount} rackRows={layout.rackRows} width={layout.width} depth={layout.depth}/>
+    {order.scene?.facility_code==='warehouse'?<Warehouse seed={layout.seed} occupancy={layout.occupancy} dockCount={layout.dockCount} rackRows={layout.rackRows} width={layout.width} depth={layout.depth}/>:<><FacilityFloor width={layout.width} depth={layout.depth}/>{order.scene?.facility_code==='medical'?<MedicalFacility/>:order.scene?.facility_code==='airport'?<AirportFacility/>:null}</>}
     <SimulationInfrastructure layout={layout}/>
-    {layout.cells.map((cell,index)=><Manipulator key={`${cell.base[0]}-${index}`} layout={cell} seed={layout.seed+index*17} animate={playing&&activeCells.has(index)}/>) }
-    <People animate={playing}/>
-    {robots.slice(0,VISIBLE_ROBOTS).map(robot=><Robot key={robot.id} robot={robot} time={time} duration={duration} playing={playing} active={robot.id===activeRobot} layout={layout} onSelect={onRobotSelect}/>) }
+    {order.scene?.facility_code==='warehouse'&&layout.cells.map((cell,index)=><Manipulator key={`${cell.base[0]}-${index}`} layout={cell} seed={layout.seed+index*17} animate={playing&&activeCells.has(index)}/>) }
+    <People animate={playing} layouts={order.scene?.facility_code==='warehouse'?undefined:FACILITY_WALKERS} standing={order.scene?.facility_code==='warehouse'?undefined:[]}/>
+    {robots.slice(0,VISIBLE_ROBOTS).map(robot=><Robot key={robot.id} robot={robot} time={time} duration={duration} playing={playing} active={robot.id===activeRobot} layout={layout} order={order} onSelect={onRobotSelect}/>) }
   </>;
 }
 
-function StaticFallback(){
+function StaticFallback({order}:Pick<SceneProps,"order">){
+  const scene=order.scene??GENERIC_SCENE;
   return <div className="simulation-scene__fallback" role="img" aria-label="Упрощённая схема объекта">
-    <div><span>Выдача заданий</span><i/></div><div><span>Маршрут</span><i/></div><div><span>Операции</span><i/></div><div><span>Зарядка</span><i/></div>
+    <div><span>{scene.source_zone}</span><i/></div><div><span>Маршрут</span><i/></div><div><span>{scene.target_zone}</span><i/></div><div><span>Зарядка</span><i/></div>
   </div>;
 }
 
 export default function SimulationScene3D(props:SceneProps){
-  if(!supportsWebGL())return <StaticFallback/>;
-  return <SceneBoundary fallback={<StaticFallback/>}>
+  if(!supportsWebGL())return <StaticFallback order={props.order}/>;
+  return <SceneBoundary fallback={<StaticFallback order={props.order}/>}>
     <Canvas orthographic flat shadows="percentage" dpr={[1,1.6]} camera={CAMERA} gl={GL} frameloop={props.playing?"always":"demand"}
       onCreated={({gl})=>{props.canvasRef.current=gl.domElement;}} onPointerMissed={()=>props.onRobotSelect(0)}>
       <Scene {...props}/>
