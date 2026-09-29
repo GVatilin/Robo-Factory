@@ -1389,6 +1389,19 @@
         "background": "#ffffff",
         "note": null
       }
+    },
+    {
+      "name": "ООО \"Русский Робот\"",
+      "logo": {
+        "approved": true,
+        "sha256": "670d97be97c20801709681358a6578b39dc5096376496edca173e7155d67cc1f",
+        "original_sha256": "37668369ddb3aeca8463bfa0ab026680f2841723d219ae1895478334bd215e8e",
+        "source_url": "https://rusrobot.ru/",
+        "original_url": "https://rusrobot.ru/bitrix/templates/rusrobot/img/logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": "Официальный логотип с сайта производителя, преобразован из SVG."
+      }
     }
   ]
 }

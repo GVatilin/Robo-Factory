@@ -41,6 +41,10 @@ datasets/catalog_expansion_20260929/*
 datasets/catalog_expansion_20260929_batch2/*
 !datasets/catalog_expansion_20260929_batch2/bundle.json
 !datasets/catalog_expansion_20260929_batch2/assets/
+!datasets/catalog_expansion_20260929_russia/
+datasets/catalog_expansion_20260929_russia/*
+!datasets/catalog_expansion_20260929_russia/bundle.json
+!datasets/catalog_expansion_20260929_russia/assets/
 
 # Файлы данных в любом другом месте репозитория.
 *.csv

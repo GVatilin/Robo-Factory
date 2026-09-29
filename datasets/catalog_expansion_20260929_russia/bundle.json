@@ -1,0 +1,1418 @@
+{
+  "version": 2,
+  "expansion_id": "official-russian-models-2026-09-29",
+  "prepared_at": "2026-09-29",
+  "manufacturers": [
+    {
+      "name": "ООО \"Русский Робот\"",
+      "country": "Россия",
+      "region": "Челябинская область",
+      "website": "https://rusrobot.ru/",
+      "contact_email": "info@rusrobot.ru",
+      "phone": "+7 (495) 664-23-73",
+      "description": "Российский разработчик промышленных роботов RusRobot. Контрактное серийное производство — ООО «Завод Роботов», компоненты — ЧКПЗ. Источники: https://rusrobot.ru/about/ и https://rusrobot.ru/contacts/; проверено 29.09.2026."
+    }
+  ],
+  "products": [
+    {
+      "product_name": "DOKA RC3",
+      "manufacturer": "ООО \"Робопро\"",
+      "url": "https://doka-robots.ru/cobots/rc3/",
+      "title": "DOKA RC3 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "kollaborativnyy_robot_manipulyator",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Укладка продукции в короб и на паллету, обслуживание станков и контроль качества",
+        "description": "Коллаборативный манипулятор РОБОПРО / DOKA. Номинальная нагрузка 3 кг, предельная — 4 кг; рабочий радиус 650 мм. Скорость центра инструмента до 2 м/с. Управление через ПО «Пульс» и Python API.",
+        "limitations": "Стационарная роботизированная ячейка: скорость инструмента не является скоростью перевозки груза по складу. Нужны подбор захвата и оценка безопасности операции. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://doka-robots.ru/cobots/"
+      },
+      "reviewed_urls": [
+        "https://doka-robots.ru/cobots/rc3/",
+        "https://doka-robots.ru/cobots/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями. В исходном каталоге имеется объединённая строка RC5–16; здесь представлены отдельные модели с индивидуальными паспортными данными. Радиус рабочей зоны не записан как длина корпуса.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc3/",
+          "value": 3,
+          "note": "Номинальная нагрузка. Максимальная 4 кг приведена отдельно; допустимый режим уточняется по руководству."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc3/",
+          "value": 16,
+          "note": "Масса манипулятора без контроллера и оснастки."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc3/",
+          "value": 0.05,
+          "note": "Повторяемость ± указанное значение; не абсолютная точность позиционирования."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc3/",
+          "text": "Защита манипулятора IP54; контроллер IP42. Для контроллера указаны 0…+45 °C. Параметры контроллера не перенесены на манипулятор."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc3/",
+          "text": "Сетевое питание комплектного контроллера: 100–240 В AC, 47–55 Гц. Аккумуляторная автономность для данной ячейки не заявлена."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc3/",
+          "text": "Контроллер: Ethernet, USB, цифровые и аналоговые входы/выходы, входы безопасности."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc3/",
+          "text": "ПО «Пульс», Python API; взаимодействие с периферийным оборудованием через входы/выходы контроллера."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/support-docs/",
+          "text": "Производитель публикует руководство по вводу в эксплуатацию, документацию ПО и принимает заявки в поддержку."
+        }
+      ],
+      "image": {
+        "url": "https://doka-robots.ru/upload/iblock/fa7/5b7qfk6eaoj0vyz2zgzht4r7mqc5xr7f/Untitled_1-1-_5_.jpg",
+        "page_url": "https://doka-robots.ru/cobots/",
+        "caption": "DOKA RC3 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/45466564e804ded8b230ccc4eda5f7eb520efc3db92bf0f0fc1495cf3eefd739.webp",
+        "sha256": "45466564e804ded8b230ccc4eda5f7eb520efc3db92bf0f0fc1495cf3eefd739",
+        "original_sha256": "2e595424a570c7c69514d689af7242dd2ece394a1cba35c9266d587bdbc82edb",
+        "width": 1600,
+        "height": 1151,
+        "original_dimensions": [
+          1780,
+          1280
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "DOKA RC5",
+      "manufacturer": "ООО \"Робопро\"",
+      "url": "https://doka-robots.ru/cobots/rc5/",
+      "title": "DOKA RC5 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "kollaborativnyy_robot_manipulyator",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Укладка продукции в короб и на паллету, обслуживание станков и контроль качества",
+        "description": "Коллаборативный манипулятор РОБОПРО / DOKA. Номинальная нагрузка 5 кг, предельная — 6 кг; рабочий радиус 915 мм. Скорость центра инструмента до 2 м/с. Управление через ПО «Пульс» и Python API.",
+        "limitations": "Стационарная роботизированная ячейка: скорость инструмента не является скоростью перевозки груза по складу. Нужны подбор захвата и оценка безопасности операции. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://doka-robots.ru/cobots/"
+      },
+      "reviewed_urls": [
+        "https://doka-robots.ru/cobots/rc5/",
+        "https://doka-robots.ru/cobots/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями. В исходном каталоге имеется объединённая строка RC5–16; здесь представлены отдельные модели с индивидуальными паспортными данными. Радиус рабочей зоны не записан как длина корпуса.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc5/",
+          "value": 5,
+          "note": "Номинальная нагрузка. Максимальная 6 кг приведена отдельно; допустимый режим уточняется по руководству."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc5/",
+          "value": 27,
+          "note": "Масса манипулятора без контроллера и оснастки."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc5/",
+          "value": 0.05,
+          "note": "Повторяемость ± указанное значение; не абсолютная точность позиционирования."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc5/",
+          "text": "Защита манипулятора IP54; контроллер IP42. Для контроллера указаны 0…+45 °C. Параметры контроллера не перенесены на манипулятор."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc5/",
+          "text": "Сетевое питание комплектного контроллера: 100–240 В AC, 47–55 Гц. Аккумуляторная автономность для данной ячейки не заявлена."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc5/",
+          "text": "Контроллер: Ethernet, USB, цифровые и аналоговые входы/выходы, входы безопасности."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc5/",
+          "text": "ПО «Пульс», Python API; взаимодействие с периферийным оборудованием через входы/выходы контроллера."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/support-docs/",
+          "text": "Производитель публикует руководство по вводу в эксплуатацию, документацию ПО и принимает заявки в поддержку."
+        }
+      ],
+      "image": {
+        "url": "https://doka-robots.ru/upload/iblock/9cc/9s4csbv7eg7cw9wqzda231p5api1tybr/Untitled_1-1-_4_.jpg",
+        "page_url": "https://doka-robots.ru/cobots/",
+        "caption": "DOKA RC5 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/bc47d32d576447f704df9258acd174942571eb35f12cb5c1f704c1b1c03418a5.webp",
+        "sha256": "bc47d32d576447f704df9258acd174942571eb35f12cb5c1f704c1b1c03418a5",
+        "original_sha256": "abbe6a0461f6301111bcc97ce1dd3971c752947c224d0925e5efdee3fd0bceac",
+        "width": 1600,
+        "height": 1151,
+        "original_dimensions": [
+          1780,
+          1280
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "DOKA RC10",
+      "manufacturer": "ООО \"Робопро\"",
+      "url": "https://doka-robots.ru/cobots/rc10/",
+      "title": "DOKA RC10 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "kollaborativnyy_robot_manipulyator",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Укладка продукции в короб и на паллету, обслуживание станков и контроль качества",
+        "description": "Коллаборативный манипулятор РОБОПРО / DOKA. Номинальная нагрузка 10 кг, предельная — 12 кг; рабочий радиус 1300 мм. Скорость центра инструмента до 2 м/с. Управление через ПО «Пульс» и Python API.",
+        "limitations": "Стационарная роботизированная ячейка: скорость инструмента не является скоростью перевозки груза по складу. Нужны подбор захвата и оценка безопасности операции. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://doka-robots.ru/cobots/"
+      },
+      "reviewed_urls": [
+        "https://doka-robots.ru/cobots/rc10/",
+        "https://doka-robots.ru/cobots/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями. В исходном каталоге имеется объединённая строка RC5–16; здесь представлены отдельные модели с индивидуальными паспортными данными. Радиус рабочей зоны не записан как длина корпуса.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc10/",
+          "value": 10,
+          "note": "Номинальная нагрузка. Максимальная 12 кг приведена отдельно; допустимый режим уточняется по руководству."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc10/",
+          "value": 38,
+          "note": "Масса манипулятора без контроллера и оснастки."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc10/",
+          "value": 0.05,
+          "note": "Повторяемость ± указанное значение; не абсолютная точность позиционирования."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc10/",
+          "text": "Защита манипулятора IP54; контроллер IP42. Для контроллера указаны 0…+45 °C. Параметры контроллера не перенесены на манипулятор."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc10/",
+          "text": "Сетевое питание комплектного контроллера: 100–240 В AC, 47–55 Гц. Аккумуляторная автономность для данной ячейки не заявлена."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc10/",
+          "text": "Контроллер: Ethernet, USB, цифровые и аналоговые входы/выходы, входы безопасности."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc10/",
+          "text": "ПО «Пульс», Python API; взаимодействие с периферийным оборудованием через входы/выходы контроллера."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/support-docs/",
+          "text": "Производитель публикует руководство по вводу в эксплуатацию, документацию ПО и принимает заявки в поддержку."
+        }
+      ],
+      "image": {
+        "url": "https://doka-robots.ru/upload/iblock/082/7dw60m53ifnrjkaggm4v1lcbgck8g1d6/Untitled_1-1-_3_.jpg",
+        "page_url": "https://doka-robots.ru/cobots/",
+        "caption": "DOKA RC10 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/89200e089eab70bf6945a3513fd1a5cb6e6daf35c3ef67f41c0a56a929113b4c.webp",
+        "sha256": "89200e089eab70bf6945a3513fd1a5cb6e6daf35c3ef67f41c0a56a929113b4c",
+        "original_sha256": "244879efe260528d7fbbb72b063c030260feca5dfb488e4697dbdcea5626aa15",
+        "width": 1600,
+        "height": 1151,
+        "original_dimensions": [
+          1780,
+          1280
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "DOKA RC16",
+      "manufacturer": "ООО \"Робопро\"",
+      "url": "https://doka-robots.ru/cobots/rc16/",
+      "title": "DOKA RC16 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "kollaborativnyy_robot_manipulyator",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Укладка продукции в короб и на паллету, обслуживание станков и контроль качества",
+        "description": "Коллаборативный манипулятор РОБОПРО / DOKA. Номинальная нагрузка 16 кг, предельная — 18 кг; рабочий радиус 950 мм. Скорость центра инструмента до 2 м/с. Управление через ПО «Пульс» и Python API.",
+        "limitations": "Стационарная роботизированная ячейка: скорость инструмента не является скоростью перевозки груза по складу. Нужны подбор захвата и оценка безопасности операции. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://doka-robots.ru/cobots/"
+      },
+      "reviewed_urls": [
+        "https://doka-robots.ru/cobots/rc16/",
+        "https://doka-robots.ru/cobots/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями. В исходном каталоге имеется объединённая строка RC5–16; здесь представлены отдельные модели с индивидуальными паспортными данными. Радиус рабочей зоны не записан как длина корпуса.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc16/",
+          "value": 16,
+          "note": "Номинальная нагрузка. Максимальная 18 кг приведена отдельно; допустимый режим уточняется по руководству."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc16/",
+          "value": 36,
+          "note": "Масса манипулятора без контроллера и оснастки."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc16/",
+          "value": 0.05,
+          "note": "Повторяемость ± указанное значение; не абсолютная точность позиционирования."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc16/",
+          "text": "Защита манипулятора IP54; контроллер IP42. Для контроллера указаны 0…+45 °C. Параметры контроллера не перенесены на манипулятор."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc16/",
+          "text": "Сетевое питание комплектного контроллера: 100–240 В AC, 47–55 Гц. Аккумуляторная автономность для данной ячейки не заявлена."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc16/",
+          "text": "Контроллер: Ethernet, USB, цифровые и аналоговые входы/выходы, входы безопасности."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc16/",
+          "text": "ПО «Пульс», Python API; взаимодействие с периферийным оборудованием через входы/выходы контроллера."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/support-docs/",
+          "text": "Производитель публикует руководство по вводу в эксплуатацию, документацию ПО и принимает заявки в поддержку."
+        }
+      ],
+      "image": {
+        "url": "https://doka-robots.ru/upload/iblock/baf/v32kiavnvc6in24by20z0c03b1iys7sj/Frame-1321317932.jpg",
+        "page_url": "https://doka-robots.ru/cobots/",
+        "caption": "DOKA RC16 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/42cd7393bdae40eee8f48d2666214c5ac9243239c81a6304783f6542833fe869.webp",
+        "sha256": "42cd7393bdae40eee8f48d2666214c5ac9243239c81a6304783f6542833fe869",
+        "original_sha256": "9276b01fdc02f72cb989e8c715a405369d9cd3898933ad00d97f44c6afd4295e",
+        "width": 1600,
+        "height": 1151,
+        "original_dimensions": [
+          1780,
+          1280
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "DOKA RC20",
+      "manufacturer": "ООО \"Робопро\"",
+      "url": "https://doka-robots.ru/cobots/rc20/",
+      "title": "DOKA RC20 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "kollaborativnyy_robot_manipulyator",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Укладка продукции в короб и на паллету, обслуживание станков и контроль качества",
+        "description": "Коллаборативный манипулятор РОБОПРО / DOKA. Номинальная нагрузка 20 кг, предельная — 23 кг; рабочий радиус 1750 мм. Скорость центра инструмента до 3 м/с. Управление через ПО «Пульс» и Python API.",
+        "limitations": "Стационарная роботизированная ячейка: скорость инструмента не является скоростью перевозки груза по складу. Нужны подбор захвата и оценка безопасности операции. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://doka-robots.ru/cobots/"
+      },
+      "reviewed_urls": [
+        "https://doka-robots.ru/cobots/rc20/",
+        "https://doka-robots.ru/cobots/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями. В исходном каталоге имеется объединённая строка RC5–16; здесь представлены отдельные модели с индивидуальными паспортными данными. Радиус рабочей зоны не записан как длина корпуса. Для RC20 использованы актуальные данные именно производителя: масса 70 кг, повторяемость ±0,1 мм; отличающиеся цифры дилеров не использованы.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc20/",
+          "value": 20,
+          "note": "Номинальная нагрузка. Максимальная 23 кг приведена отдельно; допустимый режим уточняется по руководству."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc20/",
+          "value": 70,
+          "note": "Масса манипулятора без контроллера и оснастки."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc20/",
+          "value": 0.1,
+          "note": "Повторяемость ± указанное значение; не абсолютная точность позиционирования."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc20/",
+          "text": "Защита манипулятора IP54; контроллер IP42. Для контроллера указаны 0…+45 °C. Параметры контроллера не перенесены на манипулятор."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc20/",
+          "text": "Сетевое питание комплектного контроллера: 100–240 В AC, 47–55 Гц. Аккумуляторная автономность для данной ячейки не заявлена."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc20/",
+          "text": "Контроллер: Ethernet, USB, цифровые и аналоговые входы/выходы, входы безопасности."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc20/",
+          "text": "ПО «Пульс», Python API; взаимодействие с периферийным оборудованием через входы/выходы контроллера."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/support-docs/",
+          "text": "Производитель публикует руководство по вводу в эксплуатацию, документацию ПО и принимает заявки в поддержку."
+        }
+      ],
+      "image": {
+        "url": "https://doka-robots.ru/upload/iblock/4f2/gxyccx12ob513x0g51twdpp9qjl3fd99/Frame-1321317953.jpg",
+        "page_url": "https://doka-robots.ru/cobots/",
+        "caption": "DOKA RC20 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/875258be7732cd7da614872e901894738d2a04f1c62d73163c897284de5be4f4.webp",
+        "sha256": "875258be7732cd7da614872e901894738d2a04f1c62d73163c897284de5be4f4",
+        "original_sha256": "6a680e41ee112165af680712b294b7e61a5e6b9e3c030428fe50bfeb893cd2e6",
+        "width": 1600,
+        "height": 1151,
+        "original_dimensions": [
+          1780,
+          1280
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "DOKA RC30",
+      "manufacturer": "ООО \"Робопро\"",
+      "url": "https://doka-robots.ru/cobots/rc30/",
+      "title": "DOKA RC30 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "kollaborativnyy_robot_manipulyator",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Укладка продукции в короб и на паллету, обслуживание станков и контроль качества",
+        "description": "Коллаборативный манипулятор РОБОПРО / DOKA. Номинальная нагрузка 30 кг, предельная — 33 кг; рабочий радиус 1300 мм. Скорость центра инструмента до 2 м/с. Управление через ПО «Пульс» и Python API.",
+        "limitations": "Стационарная роботизированная ячейка: скорость инструмента не является скоростью перевозки груза по складу. Нужны подбор захвата и оценка безопасности операции. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://doka-robots.ru/cobots/"
+      },
+      "reviewed_urls": [
+        "https://doka-robots.ru/cobots/rc30/",
+        "https://doka-robots.ru/cobots/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями. В исходном каталоге имеется объединённая строка RC5–16; здесь представлены отдельные модели с индивидуальными паспортными данными. Радиус рабочей зоны не записан как длина корпуса.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc30/",
+          "value": 30,
+          "note": "Номинальная нагрузка. Максимальная 33 кг приведена отдельно; допустимый режим уточняется по руководству."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc30/",
+          "value": 70,
+          "note": "Масса манипулятора без контроллера и оснастки."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc30/",
+          "value": 0.05,
+          "note": "Повторяемость ± указанное значение; не абсолютная точность позиционирования."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc30/",
+          "text": "Защита манипулятора IP54; контроллер IP42. Для контроллера указаны 0…+45 °C. Параметры контроллера не перенесены на манипулятор."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc30/",
+          "text": "Сетевое питание комплектного контроллера: 100–240 В AC, 47–55 Гц. Аккумуляторная автономность для данной ячейки не заявлена."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc30/",
+          "text": "Контроллер: Ethernet, USB, цифровые и аналоговые входы/выходы, входы безопасности."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/cobots/rc30/",
+          "text": "ПО «Пульс», Python API; взаимодействие с периферийным оборудованием через входы/выходы контроллера."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://doka-robots.ru/support-docs/",
+          "text": "Производитель публикует руководство по вводу в эксплуатацию, документацию ПО и принимает заявки в поддержку."
+        }
+      ],
+      "image": {
+        "url": "https://doka-robots.ru/upload/iblock/e05/qtpfvflnyuu4oolx0v4u11isvdwjmdkn/Frame-1321317936.jpg",
+        "page_url": "https://doka-robots.ru/cobots/",
+        "caption": "DOKA RC30 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/ca3729b4816ad180bd90f75bfe713db997597fac4752fc3709e54b2adc5a3327.webp",
+        "sha256": "ca3729b4816ad180bd90f75bfe713db997597fac4752fc3709e54b2adc5a3327",
+        "original_sha256": "f2e308e70d1df707ecb5070ce56c33c678d6b51cd510b62579605db8c01443d6",
+        "width": 1600,
+        "height": 1151,
+        "original_dimensions": [
+          1780,
+          1280
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "Сёмабот 50",
+      "manufacturer": "ООО \"Семаргл\"",
+      "url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+      "title": "Сёмабот 50 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "amr",
+      "processes": [
+        [
+          "warehouse",
+          "internal_transport"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Перевозка ящиков, паллет и стеллажей внутри склада или производства",
+        "description": "Мобильный робот собственной разработки «Семаргл», исполнение грузоподъёмностью 50 кг. Производитель также разрабатывает зарядное устройство и программное управление. Доступны варианты оснащения подъёмным столом, конвейером или манипулятором.",
+        "limitations": "Скорость, габариты, минимальный проход и время работы конкретного исполнения в открытой карточке не указаны. Нельзя переносить их с другой модели линейки. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://semargl.pro/production/"
+      },
+      "reviewed_urls": [
+        "https://semargl.pro/equipment/agv-roboty-syemabot/",
+        "https://semargl.pro/production/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями. Исполнение 1500 кг уже есть в исходном каталоге и повторно не добавлялось.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "value": 50,
+          "note": "Отдельное исполнение из официальной линейки грузоподъёмности."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "text": "SLAM (техническое зрение) либо навигация по маякам/меткам Data Matrix — в зависимости от исполнения."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "text": "Бортовая аккумуляторная батарея и беспроводная зарядная станция собственной разработки производителя."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "text": "Интеграция с автоматизированными складскими системами и станочным оборудованием; конкретные протоколы не перечислены."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/services/service/",
+          "text": "Собственная служба: монтаж, пусконаладка, техническое и гарантийное обслуживание; предусмотрены планы обслуживания."
+        }
+      ],
+      "image": {
+        "url": "https://semargl.pro/upload/iblock/4bd/wdvkwqvy0702zcths2av4mji53ex3400.png",
+        "page_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+        "caption": "Сёмабот 50 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/00964b71a327d94f792c0ba1562f94a56ad1ba1336110fac95682f19e0f80946.webp",
+        "sha256": "00964b71a327d94f792c0ba1562f94a56ad1ba1336110fac95682f19e0f80946",
+        "original_sha256": "04a0598bb8fe5dd9ff8903d10fa258f96c230b9c669db189e1e6ab3d44a720cd",
+        "width": 1600,
+        "height": 899,
+        "original_dimensions": [
+          3000,
+          1686
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "Сёмабот 400",
+      "manufacturer": "ООО \"Семаргл\"",
+      "url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+      "title": "Сёмабот 400 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "amr",
+      "processes": [
+        [
+          "warehouse",
+          "internal_transport"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Перевозка ящиков, паллет и стеллажей внутри склада или производства",
+        "description": "Мобильный робот собственной разработки «Семаргл», исполнение грузоподъёмностью 400 кг. Производитель также разрабатывает зарядное устройство и программное управление. Доступны варианты оснащения подъёмным столом, конвейером или манипулятором.",
+        "limitations": "Скорость, габариты, минимальный проход и время работы конкретного исполнения в открытой карточке не указаны. Нельзя переносить их с другой модели линейки. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://semargl.pro/production/"
+      },
+      "reviewed_urls": [
+        "https://semargl.pro/equipment/agv-roboty-syemabot/",
+        "https://semargl.pro/production/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями. Исполнение 1500 кг уже есть в исходном каталоге и повторно не добавлялось.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "value": 400,
+          "note": "Отдельное исполнение из официальной линейки грузоподъёмности."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "text": "SLAM (техническое зрение) либо навигация по маякам/меткам Data Matrix — в зависимости от исполнения."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "text": "Бортовая аккумуляторная батарея и беспроводная зарядная станция собственной разработки производителя."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "text": "Интеграция с автоматизированными складскими системами и станочным оборудованием; конкретные протоколы не перечислены."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/services/service/",
+          "text": "Собственная служба: монтаж, пусконаладка, техническое и гарантийное обслуживание; предусмотрены планы обслуживания."
+        }
+      ],
+      "image": {
+        "url": "https://semargl.pro/upload/iblock/4b3/w8qos2envc4s4p2bg0kd19bb9k3u6ycw.png",
+        "page_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+        "caption": "Сёмабот 400 — общее официальное изображение исполнений 400/1000/1500 кг",
+        "is_illustration": false,
+        "file": "assets/17e4d2ca777de877d3d9e4b72224542f9e49d62e95be700d0134f1e23d7e1d9c.webp",
+        "sha256": "17e4d2ca777de877d3d9e4b72224542f9e49d62e95be700d0134f1e23d7e1d9c",
+        "original_sha256": "141ca981bc10e81d864687041a5b9103000312b97d21ba8c2e9f9816e5c18304",
+        "width": 1600,
+        "height": 898,
+        "original_dimensions": [
+          3000,
+          1684
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Производитель использует это изображение для группы 400/1000/1500 кг; отдельная фотография данного исполнения не опубликована."
+      }
+    },
+    {
+      "product_name": "Сёмабот 1000",
+      "manufacturer": "ООО \"Семаргл\"",
+      "url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+      "title": "Сёмабот 1000 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "amr",
+      "processes": [
+        [
+          "warehouse",
+          "internal_transport"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Перевозка ящиков, паллет и стеллажей внутри склада или производства",
+        "description": "Мобильный робот собственной разработки «Семаргл», исполнение грузоподъёмностью 1000 кг. Производитель также разрабатывает зарядное устройство и программное управление. Доступны варианты оснащения подъёмным столом, конвейером или манипулятором.",
+        "limitations": "Скорость, габариты, минимальный проход и время работы конкретного исполнения в открытой карточке не указаны. Нельзя переносить их с другой модели линейки. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://semargl.pro/production/"
+      },
+      "reviewed_urls": [
+        "https://semargl.pro/equipment/agv-roboty-syemabot/",
+        "https://semargl.pro/production/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями. Исполнение 1500 кг уже есть в исходном каталоге и повторно не добавлялось.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "value": 1000,
+          "note": "Отдельное исполнение из официальной линейки грузоподъёмности."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "text": "SLAM (техническое зрение) либо навигация по маякам/меткам Data Matrix — в зависимости от исполнения."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "text": "Бортовая аккумуляторная батарея и беспроводная зарядная станция собственной разработки производителя."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "text": "Интеграция с автоматизированными складскими системами и станочным оборудованием; конкретные протоколы не перечислены."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/services/service/",
+          "text": "Собственная служба: монтаж, пусконаладка, техническое и гарантийное обслуживание; предусмотрены планы обслуживания."
+        }
+      ],
+      "image": {
+        "url": "https://semargl.pro/upload/iblock/4b3/w8qos2envc4s4p2bg0kd19bb9k3u6ycw.png",
+        "page_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+        "caption": "Сёмабот 1000 — общее официальное изображение исполнений 400/1000/1500 кг",
+        "is_illustration": false,
+        "file": "assets/17e4d2ca777de877d3d9e4b72224542f9e49d62e95be700d0134f1e23d7e1d9c.webp",
+        "sha256": "17e4d2ca777de877d3d9e4b72224542f9e49d62e95be700d0134f1e23d7e1d9c",
+        "original_sha256": "141ca981bc10e81d864687041a5b9103000312b97d21ba8c2e9f9816e5c18304",
+        "width": 1600,
+        "height": 898,
+        "original_dimensions": [
+          3000,
+          1684
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Производитель использует это изображение для группы 400/1000/1500 кг; отдельная фотография данного исполнения не опубликована."
+      }
+    },
+    {
+      "product_name": "Сёмабот 2000",
+      "manufacturer": "ООО \"Семаргл\"",
+      "url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+      "title": "Сёмабот 2000 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "amr",
+      "processes": [
+        [
+          "warehouse",
+          "internal_transport"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Перевозка ящиков, паллет и стеллажей внутри склада или производства",
+        "description": "Мобильный робот собственной разработки «Семаргл», исполнение грузоподъёмностью 2000 кг. Производитель также разрабатывает зарядное устройство и программное управление. Доступны варианты оснащения подъёмным столом, конвейером или манипулятором.",
+        "limitations": "Скорость, габариты, минимальный проход и время работы конкретного исполнения в открытой карточке не указаны. Нельзя переносить их с другой модели линейки. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://semargl.pro/production/"
+      },
+      "reviewed_urls": [
+        "https://semargl.pro/equipment/agv-roboty-syemabot/",
+        "https://semargl.pro/production/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями. Исполнение 1500 кг уже есть в исходном каталоге и повторно не добавлялось.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "value": 2000,
+          "note": "Отдельное исполнение из официальной линейки грузоподъёмности."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "text": "SLAM (техническое зрение) либо навигация по маякам/меткам Data Matrix — в зависимости от исполнения."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "text": "Бортовая аккумуляторная батарея и беспроводная зарядная станция собственной разработки производителя."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+          "text": "Интеграция с автоматизированными складскими системами и станочным оборудованием; конкретные протоколы не перечислены."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/services/service/",
+          "text": "Собственная служба: монтаж, пусконаладка, техническое и гарантийное обслуживание; предусмотрены планы обслуживания."
+        }
+      ],
+      "image": {
+        "url": "https://semargl.pro/upload/iblock/ee1/g9n2sgxnb0plg5g8dtyqh0z1m6bbradf.png",
+        "page_url": "https://semargl.pro/equipment/agv-roboty-syemabot/",
+        "caption": "Сёмабот 2000 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/b27206dfdbac91747cb8b7f0efd6df2487aeaab2772d3fce33cf623a318a856e.webp",
+        "sha256": "b27206dfdbac91747cb8b7f0efd6df2487aeaab2772d3fce33cf623a318a856e",
+        "original_sha256": "aef6abfe1bc11f5b5d215e1b1059780917871bcdc0df70a3197235f481985b00",
+        "width": 1600,
+        "height": 899,
+        "original_dimensions": [
+          3000,
+          1686
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "TAGARKA 2t",
+      "manufacturer": "ООО \"Семаргл\"",
+      "url": "https://semargl.pro/equipment/avtomatizirovannye-transportnye-sistemy-tagarka-agv-sagv-m/",
+      "title": "TAGARKA 2t — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "robotizirovannaya_telezhka",
+      "processes": [
+        [
+          "warehouse",
+          "internal_transport"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Внутрицеховое перемещение тяжёлых заготовок, оснастки и материалов",
+        "description": "Многоходовая транспортная платформа «Семаргл» грузоподъёмностью 2 т. Возможны автоматическое управление и радиопульт, установка подъёмных механизмов, интеграция с роботизированными ячейками.",
+        "limitations": "При заказе требуется выбрать автоматизированную комплектацию AGV/SAGV: вариант с радиопультом сам по себе не обеспечивает автономную работу. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://semargl.pro/production/"
+      },
+      "reviewed_urls": [
+        "https://semargl.pro/equipment/avtomatizirovannye-transportnye-sistemy-tagarka-agv-sagv-m/",
+        "https://semargl.pro/production/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/avtomatizirovannye-transportnye-sistemy-tagarka-agv-sagv-m/",
+          "value": 2000,
+          "note": "2 т переведены в килограммы."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/equipment/avtomatizirovannye-transportnye-sistemy-tagarka-agv-sagv-m/",
+          "text": "Взаимодействие с роботизированными ячейками; возможно оснащение подъёмными столами, кассетами или манипуляторами."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://semargl.pro/services/service/",
+          "text": "Монтаж, пусконаладка, техническое и гарантийное обслуживание собственной службой."
+        }
+      ],
+      "image": {
+        "url": "https://semargl.pro/upload/iblock/4e6/2of9zh0b7c1bw8t3x7i1vh4ls8z38rnw.jpg",
+        "page_url": "https://semargl.pro/equipment/avtomatizirovannye-transportnye-sistemy-tagarka-agv-sagv-m/",
+        "caption": "TAGARKA 2t — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/9f284af94f0374619fe9ecd15bb9a330c56421d80075d77d4c1db40e4137c79f.webp",
+        "sha256": "9f284af94f0374619fe9ecd15bb9a330c56421d80075d77d4c1db40e4137c79f",
+        "original_sha256": "51ed40246584fec4f85a5b2036ff0470d038de6c9da073d92420fd178781728d",
+        "width": 1600,
+        "height": 998,
+        "original_dimensions": [
+          1920,
+          1198
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "RusRobot RR 120-2900",
+      "manufacturer": "ООО \"Русский Робот\"",
+      "url": "https://rusrobot.ru/catalog/universalnyy-promyshlennyyrobot-rr-120-2900/",
+      "title": "RusRobot RR 120-2900 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Перемещение заготовок и загрузка/выгрузка производственного оборудования",
+        "description": "Промышленный шестиосевой манипулятор RusRobot: нагрузка 120 кг, досягаемость 2900 мм. Предназначен для перемещения деталей и обслуживания производственного оборудования.",
+        "limitations": "Производственная ячейка. Автономная перевозка паллет, применение в аэропорту и медицинские допуски не заявлены. Габариты приведены для транспортного положения и не определяют размер безопасной рабочей зоны. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://rusrobot.ru/about/"
+      },
+      "reviewed_urls": [
+        "https://rusrobot.ru/catalog/universalnyy-promyshlennyyrobot-rr-120-2900/",
+        "https://rusrobot.ru/about/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/universalnyy-promyshlennyyrobot-rr-120-2900/",
+          "value": 120
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/universalnyy-promyshlennyyrobot-rr-120-2900/",
+          "value": 1700,
+          "note": "Габарит в транспортном положении; не размер рабочей зоны с оснасткой."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/universalnyy-promyshlennyyrobot-rr-120-2900/",
+          "value": 950,
+          "note": "Габарит в транспортном положении; не размер рабочей зоны с оснасткой."
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/universalnyy-promyshlennyyrobot-rr-120-2900/",
+          "value": 1950,
+          "note": "Габарит в транспортном положении; не размер рабочей зоны с оснасткой."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/universalnyy-promyshlennyyrobot-rr-120-2900/",
+          "text": "Взаимодействие с производственным оборудованием по промышленным сетевым протоколам. Перечень протоколов для данной комплектации не опубликован."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/universalnyy-promyshlennyyrobot-rr-120-2900/",
+          "text": "Напольное монтажное положение; параметры основания и анкеровки требуют проектирования ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://rusrobot.ru/upload/resize_cache/iblock/da2/690_552_2/fk1wa7jdppo9qesxbrg9vffxzxl7if9k.png",
+        "page_url": "https://rusrobot.ru/catalog/universalnyy-promyshlennyyrobot-rr-120-2900/",
+        "caption": "RusRobot RR 120-2900 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/6415f21b247b3d3d0b4c7724c8b71f6a8373336b551248fc92b51d25be0f959d.webp",
+        "sha256": "6415f21b247b3d3d0b4c7724c8b71f6a8373336b551248fc92b51d25be0f959d",
+        "original_sha256": "bbaee5d2c573320338a1c61184a6fdcd6a233ca6ff17b7e19ca774e53b5a1b95",
+        "width": 690,
+        "height": 552,
+        "original_dimensions": [
+          690,
+          552
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "RusRobot RR 60-2100",
+      "manufacturer": "ООО \"Русский Робот\"",
+      "url": "https://rusrobot.ru/catalog/promyshlennyy-robot-miass/",
+      "title": "RusRobot RR 60-2100 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Перемещение заготовок и загрузка/выгрузка производственного оборудования",
+        "description": "Промышленный шестиосевой манипулятор RusRobot: нагрузка 60 кг, досягаемость 2100 мм. Предназначен для перемещения деталей и обслуживания производственного оборудования.",
+        "limitations": "Производственная ячейка. Автономная перевозка паллет, применение в аэропорту и медицинские допуски не заявлены. Габариты приведены для транспортного положения и не определяют размер безопасной рабочей зоны. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://rusrobot.ru/about/"
+      },
+      "reviewed_urls": [
+        "https://rusrobot.ru/catalog/promyshlennyy-robot-miass/",
+        "https://rusrobot.ru/about/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-miass/",
+          "value": 60
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-miass/",
+          "value": 690
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-miass/",
+          "value": 1280,
+          "note": "Габарит в транспортном положении; не размер рабочей зоны с оснасткой."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-miass/",
+          "value": 980,
+          "note": "Габарит в транспортном положении; не размер рабочей зоны с оснасткой."
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-miass/",
+          "value": 1460,
+          "note": "Габарит в транспортном положении; не размер рабочей зоны с оснасткой."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-miass/",
+          "text": "Взаимодействие с производственным оборудованием по промышленным сетевым протоколам. Перечень протоколов для данной комплектации не опубликован."
+        }
+      ],
+      "image": {
+        "url": "https://rusrobot.ru/upload/resize_cache/iblock/94f/690_552_2/hh6t1uqmjskr5b0mui8ic6jo5jbbjwwi.jpg",
+        "page_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-miass/",
+        "caption": "RusRobot RR 60-2100 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/91ff89252bdad0bc7aadb01d0c9239454420a83212456075c6c42209a16d860e.webp",
+        "sha256": "91ff89252bdad0bc7aadb01d0c9239454420a83212456075c6c42209a16d860e",
+        "original_sha256": "ccf156b5586bb28b561ce4843788001c23cf0d8082fdb0c4077a90f52828760c",
+        "width": 690,
+        "height": 552,
+        "original_dimensions": [
+          690,
+          552
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "RusRobot Forge RR 120-2900",
+      "manufacturer": "ООО \"Русский Робот\"",
+      "url": "https://rusrobot.ru/catalog/promyshlennyy-robot-rusrobot-forge-rr120-2900/",
+      "title": "RusRobot Forge RR 120-2900 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Перемещение заготовок и загрузка/выгрузка производственного оборудования",
+        "description": "Промышленный шестиосевой манипулятор RusRobot: нагрузка 120 кг, досягаемость 2900 мм. Предназначен для перемещения деталей и обслуживания производственного оборудования. Версия Forge имеет термостойкое покрытие и дополнительный воздушный наддув корпуса.",
+        "limitations": "Производственная ячейка. Автономная перевозка паллет, применение в аэропорту и медицинские допуски не заявлены. Габариты приведены для транспортного положения и не определяют размер безопасной рабочей зоны. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://rusrobot.ru/about/"
+      },
+      "reviewed_urls": [
+        "https://rusrobot.ru/catalog/promyshlennyy-robot-rusrobot-forge-rr120-2900/",
+        "https://rusrobot.ru/about/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-rusrobot-forge-rr120-2900/",
+          "value": 120
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-rusrobot-forge-rr120-2900/",
+          "value": 1700,
+          "note": "Габарит в транспортном положении; не размер рабочей зоны с оснасткой."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-rusrobot-forge-rr120-2900/",
+          "value": 950,
+          "note": "Габарит в транспортном положении; не размер рабочей зоны с оснасткой."
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-rusrobot-forge-rr120-2900/",
+          "value": 1950,
+          "note": "Габарит в транспортном положении; не размер рабочей зоны с оснасткой."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-rusrobot-forge-rr120-2900/",
+          "text": "IP54, напольный монтаж, термостойкое исполнение и воздушный наддув. Заявление о среде от 200 °C требует согласования длительности и условий воздействия; верхний предел не опубликован."
+        }
+      ],
+      "image": {
+        "url": "https://rusrobot.ru/upload/resize_cache/iblock/38c/690_552_2/3vbumop6k43a22nu1d8f4wgew529s2i6.png",
+        "page_url": "https://rusrobot.ru/catalog/promyshlennyy-robot-rusrobot-forge-rr120-2900/",
+        "caption": "RusRobot Forge RR 120-2900 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/6415f21b247b3d3d0b4c7724c8b71f6a8373336b551248fc92b51d25be0f959d.webp",
+        "sha256": "6415f21b247b3d3d0b4c7724c8b71f6a8373336b551248fc92b51d25be0f959d",
+        "original_sha256": "bbaee5d2c573320338a1c61184a6fdcd6a233ca6ff17b7e19ca774e53b5a1b95",
+        "width": 690,
+        "height": 552,
+        "original_dimensions": [
+          690,
+          552
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "RusRobot GR-40",
+      "manufacturer": "ООО \"Русский Робот\"",
+      "url": "https://rusrobot.ru/catalog/konsolno-portalnyy-robot-rusrobot-gr-40/",
+      "title": "RusRobot GR-40 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Перемещение заготовок и загрузка/выгрузка производственного оборудования",
+        "description": "Консольно-портальный робот для загрузки и выгрузки станков. Переносит до двух изделий за движение; производитель указывает обслуживание 4–5 станков, вылет консоли 1500 мм и ход по X до 10120 мм.",
+        "limitations": "Производственная ячейка. Автономная перевозка паллет, применение в аэропорту и медицинские допуски не заявлены. Габариты приведены для транспортного положения и не определяют размер безопасной рабочей зоны. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://rusrobot.ru/about/"
+      },
+      "reviewed_urls": [
+        "https://rusrobot.ru/catalog/konsolno-portalnyy-robot-rusrobot-gr-40/",
+        "https://rusrobot.ru/about/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/konsolno-portalnyy-robot-rusrobot-gr-40/",
+          "value": 70
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://rusrobot.ru/catalog/konsolno-portalnyy-robot-rusrobot-gr-40/",
+          "text": "Потолочное монтажное положение; требуется несущая конструкция. Ход по X до 10120 мм, вылет консоли 1500 мм."
+        }
+      ],
+      "image": {
+        "url": "https://rusrobot.ru/upload/resize_cache/iblock/e0a/690_552_2/o5clkv1ec3l9wf2jydg7r95eij672fwi.jpg",
+        "page_url": "https://rusrobot.ru/catalog/konsolno-portalnyy-robot-rusrobot-gr-40/",
+        "caption": "RusRobot GR-40 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/bbb74b1890c41a8cade567d2efae0d8b862059383f3a92f64fd9ab34674eb9c9.webp",
+        "sha256": "bbb74b1890c41a8cade567d2efae0d8b862059383f3a92f64fd9ab34674eb9c9",
+        "original_sha256": "1ab49a2dd39f7c29fff1fd6d042dd187dc6db41eed4bfa59811a096c2dedaa27",
+        "width": 690,
+        "height": 552,
+        "original_dimensions": [
+          690,
+          552
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    },
+    {
+      "product_name": "Эйдос AC10-1300",
+      "manufacturer": "АО \"Эйдос Робототехника\"",
+      "url": "https://eidos-robotics.ru/cobot-ac10-1300",
+      "title": "Эйдос AC10-1300 — официальные характеристики производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "kollaborativnyy_robot_manipulyator",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Упаковка, сборка, загрузка станков, операции с контролем усилия",
+        "description": "Шестиосевой кобот Эйдос с рабочим радиусом 1300 мм. В описании указана нагрузка 10 кг, в таблице — максимальная 12 кг. В комплект входят контроллер ERC-2-220-1, пульт RCS HMI, кабели и ПО.",
+        "limitations": "В карточке производителя различаются отдельные сведения о питании и влажности. Они сохранены как расхождения, а не сведены в вымышленный единый паспорт. Предел нагрузки и параметры монтажа следует уточнить перед проектированием. Комплектацию, условия поставки и требования к конкретному объекту необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://eidos-robotics.ru/"
+      },
+      "reviewed_urls": [
+        "https://eidos-robotics.ru/cobot-ac10-1300",
+        "https://eidos-robotics.ru/"
+      ],
+      "research_note": "Характеристики сверены с официальным сайтом 29.09.2026. Российское происхождение подтверждено публикацией производителя; это не заключение о проценте локализации. Публичные цены оборудования, ПО, внедрения, обслуживания и срок службы не установлены. Недостающие значения не заменены предположениями.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://eidos-robotics.ru/cobot-ac10-1300",
+          "value": 10,
+          "note": "Рабочая нагрузка из описания. В таблице производителя максимальная нагрузка — 12 кг; режим применения требует уточнения."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://eidos-robotics.ru/cobot-ac10-1300",
+          "value": 36
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://eidos-robotics.ru/cobot-ac10-1300",
+          "value": 0.03,
+          "note": "Повторяемость ±0,03 мм, не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://eidos-robotics.ru/cobot-ac10-1300",
+          "value": 0,
+          "value_max": 50
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://eidos-robotics.ru/cobot-ac10-1300",
+          "value": 65,
+          "note": "Не более 65 дБ по таблице производителя."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://eidos-robotics.ru/cobot-ac10-1300",
+          "text": "IP54. В таблице влажность до 70%, кратковременно до 95% без конденсата; в верхнем блоке страницы указано 80%. Требуется согласовать паспорт конкретной поставки."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://eidos-robotics.ru/cobot-ac10-1300",
+          "text": "Питание от электросети. В верхнем блоке 220 В, 50 Гц, 1 кВт; в таблице входное питание 230 В, 50 Гц, 2,5 А. Производитель должен уточнить расхождение."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://eidos-robotics.ru/cobot-ac10-1300",
+          "text": "Допускаются напольное, настенное и подвесное крепление; требуется расчёт опоры и зоны безопасности."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://eidos-robotics.ru/cobot-ac10-1300",
+          "text": "RCS HMI, программирование на Python; Modbus TCP в стандартной поставке ПО. Другие протоколы доступны через шлюзы."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://eidos-robotics.ru/cobot-ac10-1300",
+          "text": "Обмен данными со сторонним оборудованием по Modbus TCP; коммуникационные модули расширяют интерфейсы."
+        }
+      ],
+      "image": {
+        "url": "https://static.tildacdn.com/tild6162-6562-4864-b139-363365646232/1.png",
+        "page_url": "https://eidos-robotics.ru/cobot-ac10-1300",
+        "caption": "Эйдос AC10-1300 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/65a9d63f8078906d0204a5bbae758f3eb2b8eb3713c49d3e6421ff3855026448.webp",
+        "sha256": "65a9d63f8078906d0204a5bbae758f3eb2b8eb3713c49d3e6421ff3855026448",
+        "original_sha256": "39ee525ca1246080f7c239f361fc7dddda27392c94de02dd9ae8ad520ba20d26",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Изображение визуально проверено; соответствие модели установлено по подписи в официальной карточке."
+      }
+    }
+  ]
+}

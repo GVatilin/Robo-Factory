@@ -91,15 +91,18 @@ async def main(package: Path, preview: bool):
         created = []
         for row in rows:
             primary = await source(row)
+            origin_source = await source(row, row.get("field_sources", {}).get("country_of_origin"))
             verified = {"source_id": primary.id, "retrieved_at": row["retrieved_at"], "is_confirmed": True}
             p = Product(name=row["product_name"], manufacturer=makers[row["manufacturer"]],
                 solution_type=types[row["solution_type"]], product_class=ProductClass.BRS,
                 readiness_status=ReadinessStatus.OPERATION, is_published=True,
                 country_of_origin=row["fields"]["country_of_origin"],
-                dataset_version_id=version.id, spec_values=[], applications=[], offers=[], sources=[primary],
+                dataset_version_id=version.id, spec_values=[], applications=[], offers=[],
+                sources=list({s.id: s for s in (primary, origin_source)}.values()),
                 processes=[processes[tuple(key)] for key in row["processes"]],
                 source_payload={"expansion_id": batch, "field_evidence": {
-                    "name": verified, "manufacturer_id": verified, "readiness_status": verified},
+                    "name": verified, "manufacturer_id": verified, "readiness_status": verified,
+                    "country_of_origin": {**verified, "source_id": origin_source.id}},
                     "availability_note": "Есть в официальном коммерческом каталоге. Наличие, поставка в РФ и комплектация подтверждаются запросом поставщику."})
             session.add(p)
             for case in row.get("cases", []):
