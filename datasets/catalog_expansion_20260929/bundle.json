@@ -1,0 +1,2184 @@
+{
+  "version": 2,
+  "expansion_id": "official-models-2026-09-29",
+  "prepared_at": "2026-09-29",
+  "manufacturers": [
+    {
+      "name": "Gausium",
+      "website": "https://gausium.com/",
+      "description": "Производитель коммерческих автономных роботов для уборки. Источник: официальный каталог https://gausium.com/; проверено 29.09.2026.",
+      "country": "Китай",
+      "contact_email": "inquiry@gausium.com"
+    }
+  ],
+  "products": [
+    {
+      "product_name": "PUDU CC1",
+      "manufacturer": "Pudu Robotics",
+      "url": "https://www.pudurobotics.com/en/products/puduCC1",
+      "title": "PUDU CC1 — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "cleaning_robot",
+      "processes": [
+        [
+          "warehouse",
+          "cleaning"
+        ],
+        [
+          "airport",
+          "cleaning"
+        ],
+        [
+          "medical",
+          "cleaning"
+        ]
+      ],
+      "fields": {
+        "purpose": "Автономная влажная и сухая уборка помещений",
+        "description": "Четыре режима: мытьё, подметание, пылесос и сухая протирка. Возобновление уборки после зарядки, управление лифтами и отчёты об уборке.",
+        "limitations": "Параметры зависят от режима и комплектации. Уборка в медучреждении не означает подтверждённую стерилизацию или допуск в режимные зоны. Сроки поставки в РФ и состав станции уточняются у поставщика.",
+        "country_of_origin": "Китай"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf",
+          "value": 629
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf",
+          "value": 552
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf",
+          "value": 695
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf",
+          "value": 75
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/puduCC1",
+          "value": 1.2
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf",
+          "value": 700
+        },
+        {
+          "code": "cleaning_width_mm",
+          "confirmed": true,
+          "source_url": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf",
+          "value": 500
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/puduCC1",
+          "text": "VSLAM + LiDAR SLAM"
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/puduCC1",
+          "value": 700,
+          "value_max": 1000,
+          "note": "Сплошная уборка; точечная уборка имеет отдельный показатель и не использована как производительность полного покрытия.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/puduCC1",
+          "value": 5,
+          "note": "CC1: мытьё 5 ч; ковры 4 ч; тихая протирка 9 ч."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/puduCC1",
+          "value": 3,
+          "note": "Верхняя граница: производитель указывает время меньше этого значения."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/puduCC1",
+          "text": "Автоматическая зарядная станция; отдельная рабочая станция поддерживает подачу и слив воды, приобретается отдельно."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/puduCC1",
+          "text": "Pudu Link, управление лифтами и электронными проходными; состав IoT-модулей согласуется при внедрении."
+        },
+        {
+          "code": "elevator_integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/puduCC1",
+          "flag": true,
+          "note": "Требуются совместимые устройства управления лифтами."
+        },
+        {
+          "code": "tank_volume_l",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/puduCC1",
+          "value": 15
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/puduCC1",
+          "text": "Твёрдые полы и ковры; для CC1 модуль уборки ковров приобретается отдельно."
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.pudurobotics.com/en/products/puduCC1",
+        "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены.",
+      "image": {
+        "url": "https://cdn.pudutech.com/nav_product_cc1_8baf7f1424.png",
+        "page_url": "https://www.pudurobotics.com/en/products",
+        "caption": "PUDU CC1 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/5c407b072d30164fd87d0f72c7ec87c74c265a86784db2b3d807566c03f6f3b8.webp",
+        "sha256": "5c407b072d30164fd87d0f72c7ec87c74c265a86784db2b3d807566c03f6f3b8",
+        "original_sha256": "f037a316c7c89987671824ea4d6199730793bed567a0c5b1dae2517aa1f8d4b5",
+        "width": 372,
+        "height": 440,
+        "original_dimensions": [
+          372,
+          440
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [],
+      "field_sources": {
+        "country_of_origin": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      }
+    },
+    {
+      "product_name": "PUDU CC1 Pro",
+      "manufacturer": "Pudu Robotics",
+      "url": "https://www.pudurobotics.com/en/products/cc1-pro",
+      "title": "PUDU CC1 Pro — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "cleaning_robot",
+      "processes": [
+        [
+          "warehouse",
+          "cleaning"
+        ],
+        [
+          "airport",
+          "cleaning"
+        ],
+        [
+          "medical",
+          "cleaning"
+        ]
+      ],
+      "fields": {
+        "purpose": "Автономная влажная и сухая уборка помещений",
+        "description": "Четыре режима: мытьё, подметание, пылесос и сухая протирка. Автоматическая подстройка уборки с использованием камер и распознавания загрязнений.",
+        "limitations": "Параметры зависят от режима и комплектации. Уборка в медучреждении не означает подтверждённую стерилизацию или допуск в режимные зоны. Сроки поставки в РФ и состав станции уточняются у поставщика.",
+        "country_of_origin": "Китай"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "value": 629
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "value": 552
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "value": 695
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "value": 75
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "value": 1.2
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "value": 700
+        },
+        {
+          "code": "cleaning_width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "value": 500
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "text": "VSLAM + LiDAR SLAM"
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "value": 700,
+          "value_max": 1000,
+          "note": "Сплошная уборка; точечная уборка имеет отдельный показатель и не использована как производительность полного покрытия.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "value": 5,
+          "note": "CC1: мытьё 5 ч; ковры 4 ч; тихая протирка 9 ч."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "value": 3,
+          "note": "Около 3 часов."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "text": "Автоматическая зарядная станция; отдельная рабочая станция поддерживает подачу и слив воды, приобретается отдельно."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "text": "Pudu Link, управление лифтами и электронными проходными; состав IoT-модулей согласуется при внедрении."
+        },
+        {
+          "code": "elevator_integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "flag": true,
+          "note": "Требуются совместимые устройства управления лифтами."
+        },
+        {
+          "code": "tank_volume_l",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "value": 15
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "text": "Твёрдые полы и ковры; автоматическое распознавание типа покрытия."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "text": "4G, Wi-Fi, Bluetooth; управление дверями и лифтами — опционально."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/cc1-pro",
+          "text": "Самодиагностика компонентов; рабочая станция поддерживает самоочистку роликовой щётки и водосборной планки."
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.pudurobotics.com/en/products/cc1-pro",
+        "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены.",
+      "image": {
+        "url": "https://cdn.pudutech.com/nav_product_cc1_Pro_7de75f36ae.png",
+        "page_url": "https://www.pudurobotics.com/en/products",
+        "caption": "PUDU CC1 Pro — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/df0e2e9e74b9811948dc82e67011b8eb808da8278288f99396f82194a054f915.webp",
+        "sha256": "df0e2e9e74b9811948dc82e67011b8eb808da8278288f99396f82194a054f915",
+        "original_sha256": "05ff74e9139275fe4e892b377555de6b231e5d012dbfaf28188e822cfaf1379f",
+        "width": 744,
+        "height": 880,
+        "original_dimensions": [
+          744,
+          880
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [],
+      "field_sources": {
+        "country_of_origin": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      }
+    },
+    {
+      "product_name": "PUDU MT1",
+      "manufacturer": "Pudu Robotics",
+      "url": "https://www.pudurobotics.com/en/products/mt1",
+      "title": "PUDU MT1 — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "cleaning_robot",
+      "processes": [
+        [
+          "warehouse",
+          "cleaning"
+        ],
+        [
+          "airport",
+          "cleaning"
+        ],
+        [
+          "medical",
+          "cleaning"
+        ]
+      ],
+      "fields": {
+        "purpose": "Автономная сухая уборка полов",
+        "description": "Робот для сбора мусора и сухой уборки больших помещений. Автоматическая подстройка уборки с использованием камер и распознавания загрязнений.",
+        "limitations": "Параметры зависят от режима и комплектации. Уборка в медучреждении не означает подтверждённую стерилизацию или допуск в режимные зоны. Сроки поставки в РФ и состав станции уточняются у поставщика.",
+        "country_of_origin": "Китай"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "value": 840
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "value": 600
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "value": 490
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "value": 65,
+          "note": "На странице модели: 65 кг. В общей брошюре 17.04.2026: 74 кг. Выбрана отдельная страница; комплектацию и массу необходимо подтвердить при заказе."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "value": 1.2
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "value": 750
+        },
+        {
+          "code": "cleaning_width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "value": 700
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "text": "VSLAM + LiDAR SLAM"
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "value": 1800,
+          "note": "Сплошная уборка; точечная уборка имеет отдельный показатель и не использована как производительность полного покрытия.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "value": 4,
+          "value_max": 8,
+          "note": "Зависит от интенсивности уборки."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "value": 3,
+          "note": "Верхняя граница: производитель указывает время меньше этого значения."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "text": "Автоматическая зарядная станция. Для MT1/MT1 Max доступна отдельная станция выгрузки мусора."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "text": "Pudu Link, управление лифтами и электронными проходными; состав IoT-модулей согласуется при внедрении."
+        },
+        {
+          "code": "elevator_integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "flag": true,
+          "note": "Требуются совместимые устройства управления лифтами."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1",
+          "text": "Быстросъёмные ёмкости, щётки и расходные элементы; обслуживание модулей без сложной разборки."
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.pudurobotics.com/en/products/mt1",
+        "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены. Есть расхождение массы между страницей модели и общей брошюрой; оба источника сохранены.",
+      "image": {
+        "url": "https://cdn.pudutech.com/nav_product_mt_9d40c8e237.webp",
+        "page_url": "https://www.pudurobotics.com/en/products",
+        "caption": "PUDU MT1 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/42688471f0023681cab557cb9e1d7dc023d5ac5a498ccba2bbb12839cf9550e4.webp",
+        "sha256": "42688471f0023681cab557cb9e1d7dc023d5ac5a498ccba2bbb12839cf9550e4",
+        "original_sha256": "b0da9f61a72ddf422f38baa63193f0cd005387af162ee966663b37868bbc849a",
+        "width": 372,
+        "height": 440,
+        "original_dimensions": [
+          372,
+          440
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [],
+      "field_sources": {
+        "country_of_origin": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      }
+    },
+    {
+      "product_name": "PUDU MT1 Vac",
+      "manufacturer": "Pudu Robotics",
+      "url": "https://www.pudurobotics.com/en/products/mt1-vac",
+      "title": "PUDU MT1 Vac — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "cleaning_robot",
+      "processes": [
+        [
+          "warehouse",
+          "cleaning"
+        ],
+        [
+          "airport",
+          "cleaning"
+        ],
+        [
+          "medical",
+          "cleaning"
+        ]
+      ],
+      "fields": {
+        "purpose": "Автономная сухая уборка полов",
+        "description": "Робот для сбора мусора и сухой уборки больших помещений. Автоматическая подстройка уборки с использованием камер и распознавания загрязнений.",
+        "limitations": "Параметры зависят от режима и комплектации. Уборка в медучреждении не означает подтверждённую стерилизацию или допуск в режимные зоны. Сроки поставки в РФ и состав станции уточняются у поставщика.",
+        "country_of_origin": "Китай"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "value": 840
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "value": 600
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "value": 490
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "value": 75,
+          "note": "На странице модели: 75 кг. В общей брошюре 17.04.2026: 73 кг. Выбрана отдельная страница; комплектацию и массу необходимо подтвердить при заказе."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "value": 1.2
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "value": 750
+        },
+        {
+          "code": "cleaning_width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "value": 700
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "text": "VSLAM + LiDAR SLAM"
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "value": 1400,
+          "note": "Сплошная уборка; точечная уборка имеет отдельный показатель и не использована как производительность полного покрытия.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "value": 4,
+          "note": "MT1 Vac: стандартный режим на твёрдом полу 4 ч, диапазон 3–6,5 ч."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "value": 3.5,
+          "note": "Верхняя граница: производитель указывает время меньше этого значения."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "text": "Автоматическая зарядная станция."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "text": "Pudu Link, управление лифтами и электронными проходными; состав IoT-модулей согласуется при внедрении."
+        },
+        {
+          "code": "elevator_integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "flag": true,
+          "note": "Требуются совместимые устройства управления лифтами."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "text": "Ковры и твёрдые полы; автоматическая регулировка мощности всасывания и щёток."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-vac",
+          "text": "Быстросъёмные ёмкости, щётки и расходные элементы; обслуживание модулей без сложной разборки."
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.pudurobotics.com/en/products/mt1-vac",
+        "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены. Есть расхождение массы между страницей модели и общей брошюрой; оба источника сохранены.",
+      "image": {
+        "url": "https://cdn.pudutech.com/nav_MT_1_Vac_ad6172aa60.png",
+        "page_url": "https://www.pudurobotics.com/en/products",
+        "caption": "PUDU MT1 Vac — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/1ce239a464a3a2bcc20bca3983937b3bd4f9abe0f684afbf2e761031b745d81c.webp",
+        "sha256": "1ce239a464a3a2bcc20bca3983937b3bd4f9abe0f684afbf2e761031b745d81c",
+        "original_sha256": "5fe3465c9936fe4a699eeeeaba73a9139244d0d3bb40c2449e47f874805a3721",
+        "width": 744,
+        "height": 880,
+        "original_dimensions": [
+          744,
+          880
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [],
+      "field_sources": {
+        "country_of_origin": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      }
+    },
+    {
+      "product_name": "PUDU MT1 Max",
+      "manufacturer": "Pudu Robotics",
+      "url": "https://www.pudurobotics.com/en/products/mt1-max",
+      "title": "PUDU MT1 Max — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "cleaning_robot",
+      "processes": [
+        [
+          "warehouse",
+          "cleaning"
+        ],
+        [
+          "airport",
+          "cleaning"
+        ],
+        [
+          "medical",
+          "cleaning"
+        ]
+      ],
+      "fields": {
+        "purpose": "Автономная сухая уборка полов",
+        "description": "Робот для сбора мусора и сухой уборки больших помещений. Автоматическая подстройка уборки с использованием камер и распознавания загрязнений.",
+        "limitations": "Параметры зависят от режима и комплектации. Уборка в медучреждении не означает подтверждённую стерилизацию или допуск в режимные зоны. Сроки поставки в РФ и состав станции уточняются у поставщика.",
+        "country_of_origin": "Китай"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "value": 840
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "value": 600
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "value": 675
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "value": 85,
+          "note": "На странице модели: 85 кг. В общей брошюре 17.04.2026: 81 кг. Выбрана отдельная страница; комплектацию и массу необходимо подтвердить при заказе."
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "value": 1.2
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf",
+          "value": 750
+        },
+        {
+          "code": "cleaning_width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "value": 700
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "text": "VSLAM + Marker + 3D LiDAR SLAM"
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "value": 2200,
+          "note": "Сплошная уборка; точечная уборка имеет отдельный показатель и не использована как производительность полного покрытия.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "value": 8,
+          "note": "Стандартный режим 8 ч, общий диапазон 5–10 ч."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "value": 3.5,
+          "note": "Верхняя граница: производитель указывает время меньше этого значения."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "text": "Автоматическая зарядная станция. Для MT1/MT1 Max доступна отдельная станция выгрузки мусора."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "text": "Pudu Link, управление лифтами и электронными проходными; состав IoT-модулей согласуется при внедрении."
+        },
+        {
+          "code": "elevator_integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "flag": true,
+          "note": "Требуются совместимые устройства управления лифтами."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "text": "Автоматическая очистка фильтра; опциональная станция автоматической выгрузки мусора."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/mt1-max",
+          "text": "IP54; работа на открытых и полуоткрытых площадках. Производитель запрещает уборку при экстремальной погоде; предусмотрено избегание дождя."
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.pudurobotics.com/en/products/mt1-max",
+        "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены. Есть расхождение массы между страницей модели и общей брошюрой; оба источника сохранены.",
+      "image": {
+        "url": "https://cdn.pudutech.com/nav_MT_1_Max_c1c3a6b01b.png",
+        "page_url": "https://www.pudurobotics.com/en/products",
+        "caption": "PUDU MT1 Max — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/948b994de17132021e769b5471ea27def106979fa611532d3f725793806efc70.webp",
+        "sha256": "948b994de17132021e769b5471ea27def106979fa611532d3f725793806efc70",
+        "original_sha256": "285f5116eb156745059c6ac849a1ed74cfd0b9bf340dce3c73297a2c70bfd7ba",
+        "width": 744,
+        "height": 880,
+        "original_dimensions": [
+          744,
+          880
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [],
+      "field_sources": {
+        "country_of_origin": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      }
+    },
+    {
+      "product_name": "PUDU T300 Standard",
+      "manufacturer": "Pudu Robotics",
+      "url": "https://www.pudurobotics.com/en/products/pudut300",
+      "title": "PUDU T300 Standard — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "amr",
+      "processes": [
+        [
+          "warehouse",
+          "internal_transport"
+        ],
+        [
+          "warehouse",
+          "inbound"
+        ],
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "purpose": "Перемещение грузов на складе и производстве",
+        "description": "Промышленный мобильный робот с сенсорным экраном, обходом препятствий и интеграцией с лифтами и проходными.",
+        "limitations": "Допуск на объект, совместимость лифтов и дверей, стоимость интеграции проверяются отдельно. Нет подтверждения пригодности для опасных грузов, стерильных материалов или медицинских отходов.",
+        "country_of_origin": "Китай"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "value": 835
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "value": 500
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "value": 1350
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "value": 65
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "value": 1.2
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "value": 600
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "value": 8,
+          "note": "При полной нагрузке; без нагрузки до 12 ч."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "text": "VSLAM + LiDAR SLAM"
+        },
+        {
+          "code": "elevator_integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "flag": true
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "value": 2,
+          "note": "От 0 до 90% заряда."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "text": "Автоматическая зарядная станция и сменная батарея."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "text": "Управление лифтами, проходными и Pudu Link. Аппаратные и программные интерфейсы для систем предприятия."
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "value": 300
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut300",
+          "text": "Преодоление порога до 20 мм и канавки до 35 мм; требуется проверка маршрута с фактическим грузом."
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.pudurobotics.com/en/products/pudut300"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены.",
+      "image": {
+        "url": "https://cdn.pudutech.com/nav_product_0dd9c73f5a.png",
+        "page_url": "https://www.pudurobotics.com/en/products",
+        "caption": "PUDU T300 Standard — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/2bed6e1d73ddb7adda70281f07a310a4d507ff6571820f659d5deceddf2c5fd7.webp",
+        "sha256": "2bed6e1d73ddb7adda70281f07a310a4d507ff6571820f659d5deceddf2c5fd7",
+        "original_sha256": "69af77ec64c2d71356f95faf4a9a4b9e738bb480aab1812a71284c9ddcf620bd",
+        "width": 1116,
+        "height": 1320,
+        "original_dimensions": [
+          1116,
+          1320
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [],
+      "field_sources": {
+        "country_of_origin": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      }
+    },
+    {
+      "product_name": "PUDU T600 Upright",
+      "manufacturer": "Pudu Robotics",
+      "url": "https://www.pudurobotics.com/en/products/pudut600",
+      "title": "PUDU T600 Upright — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "amr",
+      "processes": [
+        [
+          "warehouse",
+          "internal_transport"
+        ],
+        [
+          "warehouse",
+          "inbound"
+        ],
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "purpose": "Перемещение грузов на складе и производстве",
+        "description": "Промышленный мобильный робот с сенсорным экраном, обходом препятствий и интеграцией с лифтами и проходными.",
+        "limitations": "Допуск на объект, совместимость лифтов и дверей, стоимость интеграции проверяются отдельно. Нет подтверждения пригодности для опасных грузов, стерильных материалов или медицинских отходов.",
+        "country_of_origin": "Китай"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "value": 960
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "value": 500
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "value": 1350
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "value": 112
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "value": 1.2
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "value": 700
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "value": 12,
+          "note": "Без нагрузки; время при полной нагрузке на странице не указано."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "text": "VSLAM + LiDAR SLAM"
+        },
+        {
+          "code": "elevator_integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "flag": true
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "value": 2,
+          "note": "От 0 до 90% заряда."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "text": "Автоматическая зарядная станция и сменная батарея."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "text": "Управление лифтами, проходными и Pudu Link. VDA5050; локальное развёртывание системы управления."
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "value": 600
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "text": "Преодоление порога до 10 мм и канавки до 35 мм; требуется проверка маршрута с фактическим грузом."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "value": 0,
+          "value_max": 40
+        },
+        {
+          "code": "lift_height_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/pudut600",
+          "value": 60
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.pudurobotics.com/en/products/pudut600"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены.",
+      "image": {
+        "url": "https://cdn.pudutech.com/nav_product_T600_536ed98413.png",
+        "page_url": "https://www.pudurobotics.com/en/products",
+        "caption": "PUDU T600 Upright — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/9e570050720f25dc4d52964cc62eb3295766d5230ad46754d7c470726d65ddfd.webp",
+        "sha256": "9e570050720f25dc4d52964cc62eb3295766d5230ad46754d7c470726d65ddfd",
+        "original_sha256": "1f52ff290a1b07722f42128db1b5c821c1ecfbd319ca3fe64f2224440fd73e3c",
+        "width": 744,
+        "height": 880,
+        "original_dimensions": [
+          744,
+          880
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [],
+      "field_sources": {
+        "country_of_origin": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      }
+    },
+    {
+      "product_name": "PUDU FlashBot Max",
+      "manufacturer": "Pudu Robotics",
+      "url": "https://www.pudurobotics.com/en/products/flashbot-new",
+      "title": "PUDU FlashBot Max — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "indoor_delivery_robot",
+      "processes": [
+        [
+          "airport",
+          "terminal_logistics"
+        ]
+      ],
+      "fields": {
+        "purpose": "Доставка грузов между этажами и зонами здания",
+        "description": "Закрытые регулируемые отсеки, доступ по паролю, телефону или NFC. Управление лифтами и автоматическая зарядка.",
+        "limitations": "Допуск на объект, совместимость лифтов и дверей, стоимость интеграции проверяются отдельно. Нет подтверждения пригодности для опасных грузов, стерильных материалов или медицинских отходов.",
+        "country_of_origin": "Китай"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "value": 538
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "value": 534
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "value": 1052
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "value": 60
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "value": 1.2
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "value": 600
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "value": 9,
+          "note": "Заявленное время работы; условия испытаний не уточнены."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "text": "VSLAM + LiDAR SLAM"
+        },
+        {
+          "code": "elevator_integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "flag": true
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "value": 4
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "text": "Автоматическая зарядная станция."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "text": "Управление лифтами, проходными и Pudu Link. Облачный или аппаратный контроллер лифта."
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "text": "10 кг на один отсек",
+          "note": "Не является общей грузоподъёмностью робота. Общая масса груза зависит от конфигурации 2–4 отсеков и в источнике отдельно не задана."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://www.pudurobotics.com/en/products/flashbot-new",
+          "text": "Удалённое наблюдение, развёртывание и обслуживание через платформу Pudu."
+        }
+      ],
+      "reviewed_urls": [
+        "https://www.pudurobotics.com/en/products/flashbot-new"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены.",
+      "image": {
+        "url": "https://cdn.pudutech.com/nav_flashbot_new_e3c621b5fd.png",
+        "page_url": "https://www.pudurobotics.com/en/products",
+        "caption": "PUDU FlashBot Max — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/7843d4fda5f97e935986c0d02356d6524c443357a1d289d2a3698d66dd28ad6b.webp",
+        "sha256": "7843d4fda5f97e935986c0d02356d6524c443357a1d289d2a3698d66dd28ad6b",
+        "original_sha256": "209bed2f67eb87e19eda55ea9d6f76c1464c2a98e92aaea7ab1caaddd28c0e4f",
+        "width": 744,
+        "height": 880,
+        "original_dimensions": [
+          744,
+          880
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [],
+      "field_sources": {
+        "country_of_origin": "https://cdn.pudutech.com/Pudu_Robotics_Cleaning_Product_Brochure_EN_20260417_compressed_67e532c8e1.pdf"
+      }
+    },
+    {
+      "product_name": "Gausium Phantas",
+      "manufacturer": "Gausium",
+      "url": "https://gausium.com/specs/phantas/",
+      "title": "Gausium Phantas — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "cleaning_robot",
+      "processes": [
+        [
+          "warehouse",
+          "cleaning"
+        ],
+        [
+          "airport",
+          "cleaning"
+        ],
+        [
+          "medical",
+          "cleaning"
+        ]
+      ],
+      "fields": {
+        "purpose": "Автономная уборка полов",
+        "description": "Коммерческий робот для мытья и сухой уборки. ",
+        "limitations": "Результаты зависят от покрытия и загрязнений. Указана практическая производительность, а не теоретический максимум. Санитарный режим и допуск в медицинские зоны согласуются отдельно.",
+        "country_of_origin": "Китай (страна производителя)"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/phantas/",
+          "value": 585
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/phantas/",
+          "value": 445
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/phantas/",
+          "value": 619
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/phantas/",
+          "value": 65
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/phantas/",
+          "value": 350,
+          "value_max": 700,
+          "note": "Практический диапазон производителя; не гарантия для конкретного объекта.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/phantas/",
+          "value": 4.5,
+          "note": "При мытье пола."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/phantas/",
+          "value": 2
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/phantas/",
+          "value": 650
+        },
+        {
+          "code": "cleaning_width_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/phantas/",
+          "value": 330
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/phantas/",
+          "text": "LiDAR, камеры глубины и RGB, обход препятствий"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://gausium.com/products/phantas/",
+          "text": "Удалённое управление заданиями и мониторинг через мобильное приложение Gausium."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://gausium.com/products/phantas/",
+          "text": "Автоматическая зарядная станция WS-03. Рабочая станция также поддерживает заправку и слив воды."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://gausium.com/products/phantas/",
+          "text": "Твёрдые покрытия и ковры; режим уборки выбирается по типу пола."
+        },
+        {
+          "code": "tank_volume_l",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/phantas/",
+          "value": 11.5,
+          "note": "Бак чистой воды."
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/phantas/",
+          "value": 60,
+          "note": "Тихий режим, не более 60 дБ."
+        }
+      ],
+      "reviewed_urls": [
+        "https://gausium.com/specs/phantas/",
+        "https://gausium.com/products/phantas/",
+        "https://gausium.com/contact/"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены. Страна производителя подтверждена адресом штаб-квартиры; место изготовления конкретной поставки проверяется по документам.",
+      "image": {
+        "url": "https://gausium.com/wp-content/uploads/2022/04/phantas-v1.3-card.png",
+        "page_url": "https://gausium.com/products/phantas/",
+        "caption": "Gausium Phantas — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/89b41fd603c8fdc064fd90f9cce1e5d16908cbf63326115654206b42fcf974a5.webp",
+        "sha256": "89b41fd603c8fdc064fd90f9cce1e5d16908cbf63326115654206b42fcf974a5",
+        "original_sha256": "78352271f9540fbf45379f78d40d71aa02caefe8c65176d9ba71dc274520cbd9",
+        "width": 1600,
+        "height": 995,
+        "original_dimensions": [
+          2812,
+          1748
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [],
+      "cases": [
+        {
+          "url": "https://gausium.com/case/intercontinental-wien-elevates-hotel-cleanliness-with-gausium-vacuum-40-and-phantas/",
+          "description": "Уборка в отеле InterContinental Wien совместно с Vacuum 40."
+        }
+      ],
+      "field_sources": {
+        "country_of_origin": "https://gausium.com/contact/"
+      }
+    },
+    {
+      "product_name": "Gausium Scrubber 50 Disc",
+      "manufacturer": "Gausium",
+      "url": "https://gausium.com/specs/scrubber50/",
+      "title": "Gausium Scrubber 50 Disc — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "cleaning_robot",
+      "processes": [
+        [
+          "warehouse",
+          "cleaning"
+        ],
+        [
+          "airport",
+          "cleaning"
+        ],
+        [
+          "medical",
+          "cleaning"
+        ]
+      ],
+      "fields": {
+        "purpose": "Автономная уборка полов",
+        "description": "Коммерческий робот для мытья и сухой уборки. Версия с дисковой щёткой.",
+        "limitations": "Результаты зависят от покрытия и загрязнений. Указана практическая производительность, а не теоретический максимум. Санитарный режим и допуск в медицинские зоны согласуются отдельно.",
+        "country_of_origin": "Китай (страна производителя)"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber50/",
+          "value": 810
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber50/",
+          "value": 700
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber50/",
+          "value": 1070
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber50/",
+          "value": 157
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber50/",
+          "value": 500,
+          "value_max": 1300,
+          "note": "Практический диапазон производителя; не гарантия для конкретного объекта.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber50/",
+          "value": 3,
+          "note": "При мытье пола."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber50/",
+          "value": 2
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber50/",
+          "value": 800
+        },
+        {
+          "code": "cleaning_width_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber50/",
+          "value": 460
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber50/",
+          "value": 1.2,
+          "note": "Скорость уборки."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber50/",
+          "text": "LiDAR, камеры глубины и RGB, обход препятствий"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://gausium.com/products/scrubber50/",
+          "text": "Удалённое управление заданиями и мониторинг через мобильное приложение Gausium."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://gausium.com/products/scrubber50/",
+          "text": "Автоматическая зарядная станция CD-01 / WS-01. Рабочая станция также поддерживает заправку и слив воды."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://gausium.com/products/scrubber50/",
+          "text": "Быстросъёмные водосборная планка и фильтры: обслуживание без инструментов."
+        },
+        {
+          "code": "tank_volume_l",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber50/",
+          "value": 30,
+          "note": "Бак чистой воды."
+        }
+      ],
+      "reviewed_urls": [
+        "https://gausium.com/specs/scrubber50/",
+        "https://gausium.com/products/scrubber50/",
+        "https://gausium.com/contact/"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены. Страна производителя подтверждена адресом штаб-квартиры; место изготовления конкретной поставки проверяется по документам.",
+      "image": {
+        "url": "https://gausium.com/wp-content/uploads/2022/04/sc50-v4.2_disc-card-1.png",
+        "page_url": "https://gausium.com/products/scrubber50/",
+        "caption": "Gausium Scrubber 50 Disc — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/6fa6825ce45bc301f40f12fb08fb531b7c2abac829fbb2df7ff3fee5cc93d72d.webp",
+        "sha256": "6fa6825ce45bc301f40f12fb08fb531b7c2abac829fbb2df7ff3fee5cc93d72d",
+        "original_sha256": "ef64bbaf8e9c3598322ae06d11db912dbf19feac975442c329636933956d23f8",
+        "width": 1600,
+        "height": 995,
+        "original_dimensions": [
+          2751,
+          1710
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [],
+      "cases": [
+        {
+          "url": "https://gausium.com/case/da-nang-international-airport/",
+          "description": "Уборка в международном аэропорту Дананг; публикация относится к линейке Scrubber 50, исполнение щётки не уточнено."
+        }
+      ],
+      "field_sources": {
+        "country_of_origin": "https://gausium.com/contact/"
+      }
+    },
+    {
+      "product_name": "Gausium Scrubber 75",
+      "manufacturer": "Gausium",
+      "url": "https://gausium.com/specs/scrubber-75/",
+      "title": "Gausium Scrubber 75 — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "cleaning_robot",
+      "processes": [
+        [
+          "warehouse",
+          "cleaning"
+        ],
+        [
+          "airport",
+          "cleaning"
+        ]
+      ],
+      "fields": {
+        "purpose": "Автономная уборка полов",
+        "description": "Коммерческий робот для мытья и сухой уборки. ",
+        "limitations": "Результаты зависят от покрытия и загрязнений. Указана практическая производительность, а не теоретический максимум. Санитарный режим и допуск в медицинские зоны согласуются отдельно.",
+        "country_of_origin": "Китай (страна производителя)"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber-75/",
+          "value": 1370
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber-75/",
+          "value": 962
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber-75/",
+          "value": 1417
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber-75/",
+          "value": 400
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber-75/",
+          "value": 700,
+          "value_max": 1400,
+          "note": "Практический диапазон производителя; не гарантия для конкретного объекта.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber-75/",
+          "value": 4,
+          "value_max": 6,
+          "note": "Зависит от режима."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber-75/",
+          "value": 5
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber-75/",
+          "value": 1400,
+          "note": "Общий проход 1400 мм; подземный паркинг 1800 мм; разворот 2000 мм."
+        },
+        {
+          "code": "cleaning_width_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber-75/",
+          "value": 750
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber-75/",
+          "value": 1.1,
+          "note": "Скорость уборки."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber-75/",
+          "text": "3D и 2D LiDAR, камеры глубины и RGB, обход препятствий"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://gausium.com/products/scrubber-75/",
+          "text": "Удалённое управление заданиями и мониторинг через мобильное приложение Gausium."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://gausium.com/products/scrubber-75/",
+          "text": "Автоматическая зарядная станция WS-02. Рабочая станция также поддерживает заправку и слив воды."
+        },
+        {
+          "code": "tank_volume_l",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/scrubber-75/",
+          "value": 75,
+          "note": "Бак чистой воды."
+        }
+      ],
+      "reviewed_urls": [
+        "https://gausium.com/specs/scrubber-75/",
+        "https://gausium.com/products/scrubber-75/",
+        "https://gausium.com/contact/"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены. Страна производителя подтверждена адресом штаб-квартиры; место изготовления конкретной поставки проверяется по документам.",
+      "image": {
+        "url": "https://gausium.com/wp-content/uploads/2022/04/SC75-V4.2-card-1.png",
+        "page_url": "https://gausium.com/products/scrubber-75/",
+        "caption": "Gausium Scrubber 75 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/7e013c665f3f6ec442878717b6733e920c6847a171e13a06ccc83baef2e8a526.webp",
+        "sha256": "7e013c665f3f6ec442878717b6733e920c6847a171e13a06ccc83baef2e8a526",
+        "original_sha256": "c842d52cbb93e144440991c0d1358fd0f8be6a9b4da968f2787b18196ff178c4",
+        "width": 1600,
+        "height": 994,
+        "original_dimensions": [
+          3342,
+          2077
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [],
+      "cases": [
+        {
+          "url": "https://gausium.com/case/scrubber-75-working-at-helsinki-vantaa-airport/",
+          "description": "Уборка в аэропорту Хельсинки-Вантаа."
+        }
+      ],
+      "field_sources": {
+        "country_of_origin": "https://gausium.com/contact/"
+      }
+    },
+    {
+      "product_name": "Gausium Vacuum 40",
+      "manufacturer": "Gausium",
+      "url": "https://gausium.com/specs/vacuum-40/",
+      "title": "Gausium Vacuum 40 — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "cleaning_robot",
+      "processes": [
+        [
+          "warehouse",
+          "cleaning"
+        ],
+        [
+          "airport",
+          "cleaning"
+        ],
+        [
+          "medical",
+          "cleaning"
+        ]
+      ],
+      "fields": {
+        "purpose": "Автономная уборка полов",
+        "description": "Коммерческий робот для пылесосной и сухой уборки; базовая версия без модуля Diffuser.",
+        "limitations": "Результаты зависят от покрытия и загрязнений. Указана практическая производительность, а не теоретический максимум. Санитарный режим и допуск в медицинские зоны согласуются отдельно.",
+        "country_of_origin": "Китай (страна производителя)"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/vacuum-40/",
+          "value": 800
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/vacuum-40/",
+          "value": 690
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/vacuum-40/",
+          "value": 890
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/vacuum-40/",
+          "value": 91
+        },
+        {
+          "code": "throughput",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/vacuum-40/",
+          "value": 400,
+          "value_max": 800,
+          "note": "Практический диапазон производителя; не гарантия для конкретного объекта.",
+          "unit": "м²/ч"
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/vacuum-40/",
+          "value": 3,
+          "note": "При работе пылесоса; сухая протирка до 18 ч."
+        },
+        {
+          "code": "charge_time_h",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/vacuum-40/",
+          "value": 2.5
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/vacuum-40/",
+          "value": 800
+        },
+        {
+          "code": "cleaning_width_mm",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/vacuum-40/",
+          "value": 720
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/vacuum-40/",
+          "value": 0.9,
+          "note": "Скорость движения."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://gausium.com/specs/vacuum-40/",
+          "text": "LiDAR, камеры глубины и RGB, обход препятствий"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://gausium.com/products/vacuum40/",
+          "text": "Удалённое управление заданиями и мониторинг через мобильное приложение Gausium."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://gausium.com/products/vacuum40/",
+          "text": "Автоматическая зарядная станция CD-01. Приобретается отдельно."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://gausium.com/products/vacuum40/",
+          "text": "Твёрдые покрытия и ковры; режим уборки выбирается по типу пола."
+        }
+      ],
+      "reviewed_urls": [
+        "https://gausium.com/specs/vacuum-40/",
+        "https://gausium.com/products/vacuum40/",
+        "https://gausium.com/contact/"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены. Страна производителя подтверждена адресом штаб-квартиры; место изготовления конкретной поставки проверяется по документам.",
+      "image": {
+        "url": "https://gausium.com/wp-content/uploads/2022/04/40-v1.6-card-1.png",
+        "page_url": "https://gausium.com/products/vacuum40/",
+        "caption": "Gausium Vacuum 40 — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/81ba36c3a39affc1f5825e5b2ce6851988c7eff6b9c6c5ce1db4bb18d94fdf59.webp",
+        "sha256": "81ba36c3a39affc1f5825e5b2ce6851988c7eff6b9c6c5ce1db4bb18d94fdf59",
+        "original_sha256": "262e7faf49de174a04eae9ba5c6e346104a1e850ba0ac42c5c954afcc144c3b4",
+        "width": 1600,
+        "height": 994,
+        "original_dimensions": [
+          2380,
+          1479
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [],
+      "cases": [
+        {
+          "url": "https://gausium.com/case/intercontinental-wien-elevates-hotel-cleanliness-with-gausium-vacuum-40-and-phantas/",
+          "description": "В отеле InterContinental Wien использована версия Vacuum 40 Diffuser совместно с Phantas. Это кейс линейки; добавленная карточка содержит ТТХ базовой версии без Diffuser."
+        }
+      ],
+      "field_sources": {
+        "country_of_origin": "https://gausium.com/contact/"
+      }
+    },
+    {
+      "product_name": "Ronavi E",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/catalogue/e",
+      "title": "Ronavi E — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "amr",
+      "processes": [
+        [
+          "warehouse",
+          "internal_transport"
+        ],
+        [
+          "warehouse",
+          "inbound"
+        ],
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "purpose": "Горизонтальная перевозка паллет без транспортировочного столика",
+        "description": "Автономный паллетоперевозчик с вилочным захватом. Российская разработка Ronavi.",
+        "limitations": "Требуется согласование планировки, типов паллет и конфигурации. Публичная минимальная цена относится к партии от 100 штук; доставка, ПО и интеграция рассчитываются отдельно.",
+        "country_of_origin": "Россия"
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "value": 1380
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "value": 1030
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "value": 245
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "value": 450
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "value": 1200
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "value": 1.5
+        },
+        {
+          "code": "lift_height_mm",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "value": 375
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "value": 8,
+          "note": "Разряд аккумулятора с 80% до 20%; не полный цикл батареи."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "text": "SLAM"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "text": "Wi-Fi 2,4/5 ГГц"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "text": "Открытые интерфейсы интеграции с WMS/MES; диспетчеризация через RMS."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "text": "Гарантия 1 год, локальная поддержка Ronavi."
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "value": 1500,
+          "note": "В источнике это ширина для разворота; ширина прямого прохода отдельно не опубликована."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "text": "Ручная зарядка или автоматическая док-станция; замена батареи примерно за 2 минуты."
+        }
+      ],
+      "reviewed_urls": [
+        "https://ronavi-robotics.ru/catalogue/e"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild3238-3234-4762-b830-383431326266/Ronavi_E_Shadow_1.png",
+        "page_url": "https://ronavi-robotics.ru/catalogue/e",
+        "caption": "Ronavi E — изображение производителя",
+        "is_illustration": false,
+        "file": "assets/03a3f88b11efdf2f8e3325836d464e2a9b2d54aa04659dcce813b09a2357021d.webp",
+        "sha256": "03a3f88b11efdf2f8e3325836d464e2a9b2d54aa04659dcce813b09a2357021d",
+        "original_sha256": "e8ae9eb9e7da52109c4e8bb1b7ddf1eaf16c4bab37918284e0c557be7d8584ec",
+        "width": 1600,
+        "height": 1052,
+        "original_dimensions": [
+          1680,
+          1105
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [
+        {
+          "label": "Опубликованная цена от 100 шт.; уточняется при заказе",
+          "equipment_price": 1700000,
+          "currency": "RUB",
+          "acquisition_model": "purchase",
+          "minimum_quantity": 100,
+          "estimation_eligible": false,
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/e",
+          "notes": "Нижняя граница официального диапазона 1,7–2,9 млн ₽ за единицу. Партия от 100 шт. НДС и состав поставки не уточнены; автоматический расчёт по этой цене отключён до получения КП."
+        }
+      ]
+    },
+    {
+      "product_name": "Ronavi × Seer CBD16",
+      "manufacturer": "ООО \"Ронави Роботикс\"",
+      "url": "https://ronavi-robotics.ru/catalogue/cbd16",
+      "title": "Ronavi × Seer CBD16 — официальные характеристики",
+      "retrieved_at": "2026-09-29",
+      "source_type": "integrator",
+      "solution_type": "amr",
+      "processes": [
+        [
+          "warehouse",
+          "internal_transport"
+        ],
+        [
+          "warehouse",
+          "inbound"
+        ],
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "purpose": "Горизонтальная перевозка паллет без транспортировочного столика",
+        "description": "Автономный паллетоперевозчик с вилочным захватом. Модель SEER в совместном предложении Ronavi × Seer; Ronavi выступает поставщиком и интегратором, не объявляется российским изготовителем этой модели.",
+        "limitations": "Требуется согласование планировки, типов паллет и конфигурации. Публичная минимальная цена относится к партии от 100 штук; доставка, ПО и интеграция рассчитываются отдельно."
+      },
+      "specs": [
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "value": 1681
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "value": 880
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "value": 2462
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "value": 460
+        },
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "value": 1600
+        },
+        {
+          "code": "max_speed_mps",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "value": 1.8,
+          "note": "Таблица ТТХ: 1,8 м/с. В описании скорость с грузом ограничена 1,5 м/с."
+        },
+        {
+          "code": "lift_height_mm",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "value": 205
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "value": 6,
+          "value_max": 10,
+          "note": "Разряд аккумулятора с 80% до 20%; не полный цикл батареи."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "text": "SLAM"
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "text": "4G / 5G / Wi-Fi 802.11 a/b/g/n/ac"
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "text": "Открытые интерфейсы интеграции с WMS/MES; диспетчеризация через RMS."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "text": "Сервисная поддержка, запасные части и обновления через Ronavi."
+        },
+        {
+          "code": "min_aisle_width_mm",
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "value": 1080
+        }
+      ],
+      "reviewed_urls": [
+        "https://ronavi-robotics.ru/catalogue/cbd16"
+      ],
+      "research_note": "Проверено по официальным открытым публикациям. Цена ПО, внедрения и обслуживания, срок службы и непубликуемые характеристики требуют запроса поставщику; нулевые цены и расчётные ТТХ не подставлены.",
+      "image": {
+        "url": "https://static.tildacdn.com/tild6639-3730-4434-b031-663363636637/ronavi_cbd16_1.webp",
+        "page_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+        "caption": "Ronavi × Seer CBD16 — изображение производителя",
+        "is_illustration": false,
+        "approved": true,
+        "file": "assets/9b48858b0143ad7c487e166ade4afe5d6e3be2bc89a8a87bd781be118574465d.webp",
+        "sha256": "9b48858b0143ad7c487e166ade4afe5d6e3be2bc89a8a87bd781be118574465d",
+        "original_sha256": "9b115ae28e94de5bc3096050fb8298ca2e71d0fcc15ca6363d41f6ad66411914",
+        "width": 950,
+        "height": 814,
+        "original_dimensions": [
+          950,
+          814
+        ],
+        "retrieved_at": "2026-09-29",
+        "review_note": "Проверено визуально: официальное изображение именно указанной модели."
+      },
+      "offers": [
+        {
+          "label": "Опубликованная цена от 100 шт.; уточняется при заказе",
+          "equipment_price": 1950000,
+          "currency": "RUB",
+          "acquisition_model": "purchase",
+          "minimum_quantity": 100,
+          "estimation_eligible": false,
+          "confirmed": true,
+          "source_url": "https://ronavi-robotics.ru/catalogue/cbd16",
+          "notes": "Нижняя граница официального диапазона 1,95–4,0 млн ₽ за единицу. Партия от 100 шт. НДС и состав поставки не уточнены; автоматический расчёт по этой цене отключён до получения КП."
+        }
+      ]
+    }
+  ]
+}

@@ -1350,6 +1350,19 @@
         "background": "#ffffff",
         "note": null
       }
+    },
+    {
+      "name": "Gausium",
+      "logo": {
+        "approved": true,
+        "sha256": "7a5251106239aae6bdfe95ccf715a0fdea20b7a7442717ce4e68b23dae13068f",
+        "original_sha256": "6bf8e3d881a4d56e5a8829622d025bbfa0509306d9c2cd0bb31003bf7b16b28d",
+        "source_url": "https://gausium.com/",
+        "original_url": "https://gausium.com/wp-content/uploads/2024/07/gausium-logotype.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
     }
   ]
 }

@@ -32,6 +32,11 @@ datasets/*
 !datasets/discover_manufacturer_logos.py
 !datasets/load_manufacturer_logos.py
 !datasets/manufacturer_logos/
+!datasets/load_catalog_expansion.py
+!datasets/catalog_expansion_20260929/
+datasets/catalog_expansion_20260929/*
+!datasets/catalog_expansion_20260929/bundle.json
+!datasets/catalog_expansion_20260929/assets/
 
 # Файлы данных в любом другом месте репозитория.
 *.csv

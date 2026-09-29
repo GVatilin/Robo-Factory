@@ -203,9 +203,12 @@ async def update_catalog(session: AsyncSession, *, apply: bool, expected_checksu
                 if field not in FIELDS or source is None:
                     raise ValueError("Неподдерживаемое поле или отсутствует источник: " + field)
                 if field not in payload.get("manual_fields", []) and not getattr(product, field) and value is not None:
+                    field_source = await source_for(item, item.get("field_sources", {}).get(field))
+                    if field_source not in product.sources:
+                        product.sources.append(field_source)
                     setattr(product, field, number(value, 1) if field == "service_life_years" else value)
-                    evidence[field] = {"source_id": source.id, "retrieved_at": received.isoformat(),
-                                       "is_confirmed": source.source_type in PRIMARY}
+                    evidence[field] = {"source_id": field_source.id, "retrieved_at": received.isoformat(),
+                                       "is_confirmed": field_source.source_type in PRIMARY}
                     report["fields_added"] += 1
                     change(product, "field", field)
             payload["field_evidence"] = evidence
