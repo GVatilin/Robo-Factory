@@ -297,6 +297,9 @@ async def save_product(
     if errors:
         raise ApiValidationError(errors)
     assert manufacturer is not None and solution_type is not None
+    from app.services.catalog_scope import require_russian
+    require_russian(manufacturer.country, "manufacturer_id")
+    require_russian(data.country_of_origin, "country_of_origin")
 
     source = await resolve_source(session, data.source, user, manufacturer)
     retrieved_at = (data.source.retrieved_at if data.source else None) or date.today()

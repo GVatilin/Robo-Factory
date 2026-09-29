@@ -17,7 +17,8 @@ from collections.abc import Callable, Sequence
 from dataclasses import dataclass, field
 from typing import Literal
 
-from sqlalchemy import or_, select
+from sqlalchemy import and_, or_, select
+from app.services.catalog_scope import russian_product
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
@@ -107,10 +108,10 @@ class Entry:
 def visibility_filter(user: User | None):
     """Гость и пользователь видят опубликованные товары; вендор — ещё и свои; администратор — все."""
     if user is not None and has_permission(user.role, Permission.PRODUCTS_MANAGE):
-        return None
+        return russian_product()
     if user is not None and user.manufacturer_id is not None and sees_unpublished(user, user.manufacturer_id):
-        return or_(Product.is_published.is_(True), Product.manufacturer_id == user.manufacturer_id)
-    return Product.is_published.is_(True)
+        return and_(russian_product(), or_(Product.is_published.is_(True), Product.manufacturer_id == user.manufacturer_id))
+    return and_(russian_product(), Product.is_published.is_(True))
 
 
 def make_entry(product: Product, hierarchy: Hierarchy, mandatory: Sequence[SpecDefinition]) -> Entry:

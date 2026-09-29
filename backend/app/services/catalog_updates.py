@@ -119,6 +119,11 @@ async def update_catalog(session: AsyncSession, *, apply: bool, expected_checksu
                 report["protected"].append({"product": item["product_name"], "reason": "Товар удалён или переименован: необходимо вручную подтвердить соответствие модели."})
                 continue
             product = lookup[key]
+            from app.services.catalog_scope import eligible, is_russian
+            proposed_country = item.get("fields", {}).get("country_of_origin", product.country_of_origin)
+            if not eligible(product) or not is_russian(proposed_country):
+                report["protected"].append({"product": product.name, "reason": "Каталог ограничен российскими производителями и моделями."})
+                continue
             reviewed.add(product.id)
             received = date.fromisoformat(item["retrieved_at"])
             payload = dict(product.source_payload or {})

@@ -14,6 +14,7 @@ from app.models import Product, ProductImage, SpecDefinition, User
 from app.models.enums import AcquisitionModel, ProductClass, ReadinessStatus
 from app.schemas.catalog import CatalogFacets, CatalogItem, CatalogPage
 from app.schemas.products import ProductIn, ProductOut, PublicationIn
+from app.services.catalog_scope import eligible, require_russian
 from app.services import audit
 from app.services.catalog_query import (
     CatalogFilters,
@@ -38,7 +39,7 @@ _FORBIDDEN_OWN = "Вендор может добавлять и изменять
 
 async def _get_visible(db: DbSession, product_id: int, user: User | None) -> Product:
     product = await load_product(db, product_id)
-    if product is None or (not product.is_published and not sees_unpublished(user, product.manufacturer_id)):
+    if product is None or not eligible(product) or (not product.is_published and not sees_unpublished(user, product.manufacturer_id)):
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Товар не найден или ещё не опубликован.")
     return product
 
@@ -149,6 +150,9 @@ async def set_publication(
 ) -> ProductOut:
     """Проверка карточки вендора администратором: публикация делает товар видимым всем и доступным для подбора."""
     product = await _get_visible(db, product_id, user)
+    if data.is_published:
+        require_russian(product.manufacturer.country, "manufacturer_id")
+        require_russian(product.country_of_origin, "country_of_origin")
     product.is_published = data.is_published
     audit.record(db, user, "product", product.id, "publish" if data.is_published else "unpublish", {})
     await db.commit()

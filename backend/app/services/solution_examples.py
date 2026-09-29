@@ -195,10 +195,13 @@ async def find_or_create_product(
     if product is not None:
         return product, False
     spec = MISSING_PRODUCTS.get(solution.model)
-    if spec is None:
+    from app.services.catalog_scope import is_russian
+    if spec is None or not is_russian(spec.country):
         return None, False
 
     manufacturer = await session.scalar(select(Manufacturer).where(Manufacturer.name == spec.manufacturer))
+    if manufacturer is not None and not is_russian(manufacturer.country):
+        return None, False
     if manufacturer is None:
         manufacturer = Manufacturer(name=spec.manufacturer, country=spec.country, website=spec.manufacturer_website)
         session.add(manufacturer)

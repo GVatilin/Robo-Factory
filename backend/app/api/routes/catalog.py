@@ -13,6 +13,7 @@ from app.services.catalog_query import FILTER_OPERATOR, NUMERIC, build_tree, loa
 from app.services.catalog_view import mandatory_specs
 from app.services.comparison import MAX_COMPARE, build_groups
 from app.services.products import PRODUCT_DETAIL_OPTIONS
+from app.services.catalog_scope import eligible
 
 router = APIRouter(prefix="/catalog", tags=["Каталог: решения"])
 
@@ -83,7 +84,7 @@ async def compare(
     found = {
         p.id: p
         for p in (await db.scalars(select(Product).where(Product.id.in_(unique)).options(*PRODUCT_DETAIL_OPTIONS))).all()
-        if p.is_published or sees_unpublished(user, p.manufacturer_id)
+        if eligible(p) and (p.is_published or sees_unpublished(user, p.manufacturer_id))
     }
     hierarchy = await load_hierarchy(db)
     mandatory = await mandatory_specs(db)

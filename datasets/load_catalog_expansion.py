@@ -19,6 +19,7 @@ from app.models import (DataSource, DatasetVersion, FacilityType, Manufacturer,
                         Process, Product, ProductApplication, ProductOffer, SolutionType)
 from app.models.enums import AcquisitionModel, DatasetKind, ProductClass, ReadinessStatus, SourceType
 from app.services import audit, catalog_updates
+from app.services.catalog_scope import is_russian
 
 
 async def main(package: Path, preview: bool):
@@ -47,6 +48,14 @@ async def main(package: Path, preview: bool):
             print(json.dumps({"already_applied": True, "batch": batch, "created": 0}))
             return
         makers = {m.name: m for m in (await session.scalars(select(Manufacturer))).all()}
+        countries = {m["name"]: m.get("country") for m in bundle.get("manufacturers", [])}
+        countries.update({m.name: m.country for m in makers.values()})
+        rows = [r for r in rows if is_russian(countries.get(r["manufacturer"]))
+                and is_russian(r.get("fields", {}).get("country_of_origin"))]
+        if not rows:
+            print(json.dumps({"batch": batch, "created": 0, "skipped": "Russian-only catalog"}))
+            return
+        identities = {(r["manufacturer"], r["product_name"]) for r in rows}
         types = {t.code: t for t in (await session.scalars(select(SolutionType))).all()}
         processes = {(f.code, p.code): p for p, f in (await session.execute(
             select(Process, FacilityType).join(FacilityType, Process.facility_type_id == FacilityType.id))).all()}
@@ -55,7 +64,7 @@ async def main(package: Path, preview: bool):
         if identities & existing:
             raise ValueError("Expansion matches existing products; review identities before importing")
         for entry in bundle.get("manufacturers", []):
-            if entry["name"] not in makers:
+            if entry["name"] not in makers and any(r["manufacturer"] == entry["name"] for r in rows):
                 company = Manufacturer(**entry)
                 session.add(company)
                 makers[company.name] = company
@@ -86,6 +95,7 @@ async def main(package: Path, preview: bool):
             p = Product(name=row["product_name"], manufacturer=makers[row["manufacturer"]],
                 solution_type=types[row["solution_type"]], product_class=ProductClass.BRS,
                 readiness_status=ReadinessStatus.OPERATION, is_published=True,
+                country_of_origin=row["fields"]["country_of_origin"],
                 dataset_version_id=version.id, spec_values=[], applications=[], offers=[], sources=[primary],
                 processes=[processes[tuple(key)] for key in row["processes"]],
                 source_payload={"expansion_id": batch, "field_evidence": {

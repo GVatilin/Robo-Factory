@@ -91,7 +91,11 @@ async def import_reference_specs(session: AsyncSession, content: bytes, file_nam
     )
     retrieved_at = date.fromisoformat(data["retrieved_at"]) if data.get("retrieved_at") else None
 
+    from app.services.catalog_scope import is_russian
     for item in products:
+        if not is_russian(item.get("country")):
+            stats.warnings.append(f"{item.get('name')}: пропущен — российское происхождение не указано.")
+            continue
         product = None
         if item.get("match"):
             product = await session.scalar(
@@ -101,6 +105,9 @@ async def import_reference_specs(session: AsyncSession, content: bytes, file_nam
             product = await session.scalar(select(Product).where(Product.name == item["name"]))
         if product is None:
             manufacturer = await session.scalar(select(Manufacturer).where(Manufacturer.name == item["manufacturer"]))
+            if manufacturer is not None and not is_russian(manufacturer.country):
+                stats.warnings.append(f"{item['name']}: пропущен — производитель не российский.")
+                continue
             if manufacturer is None:
                 manufacturer = Manufacturer(name=item["manufacturer"], country=item.get("country"))
                 session.add(manufacturer)

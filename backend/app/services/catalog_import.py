@@ -33,11 +33,13 @@ from app.models import (
     SolutionType,
 )
 from app.models.enums import AcquisitionModel, DatasetKind, ProductClass, ReadinessStatus, SourceType
+from app.services.catalog_scope import is_russian
 from app.services.taxonomy import resolve_category, resolve_type
 from app.utils.text import normalize_spaces, slugify
 
 REQUIRED_COLUMNS = ["id", "Название", "тип", "статус", "компания", "Тип", "Подтип", "Отрасль", "Цена изделия"]
 CATALOG_SOURCE_PREFIX = "catalog_import:"
+_ORGANIZER_CHECKSUMS = ('365fca469c5430fb12d61a0e09f4dc45ff8f1217f1b313877948487f0591c364', 'e8bc1a1f63b900ac037c63e22d6ba34c0b61083c117b4c4cfa84418dc02695e3')
 
 
 class CatalogFormatError(ValueError):
@@ -269,13 +271,25 @@ async def import_catalog(
         return industry
 
     for record in records:
+        previous = products.get(record.external_id)
+        known_maker = manufacturers.get(record.company)
+        explicit_origin = record.rows[0].get("Страна происхождения")
+        explicit_maker = record.rows[0].get("Страна производителя")
+        origin = explicit_origin or (previous.country_of_origin if previous else None)
+        maker_country = explicit_maker or (known_maker.country if known_maker else None)
+        if checksum in _ORGANIZER_CHECKSUMS and record.region:
+            origin = origin or "Россия"
+            maker_country = maker_country or "Россия"
+        if not is_russian(origin) or not is_russian(maker_country) or (known_maker and not is_russian(known_maker.country)):
+            stats.warnings.append(f"«{record.name}»: пропущен. Для новых строк укажите «Страна происхождения» и «Страна производителя»: Россия, согласно источнику.")
+            continue
         manufacturer = None
         if record.company:
             manufacturer = manufacturers.get(record.company)
             if manufacturer is None:
                 # Все организации каталога — российские юрлица с указанием региона РФ.
                 manufacturer = Manufacturer(
-                    name=record.company, country="Россия" if record.region else None, region=record.region
+                    name=record.company, country=maker_country, region=record.region
                 )
                 session.add(manufacturer)
                 await session.flush()
@@ -294,7 +308,7 @@ async def import_catalog(
             "trl": record.trl,
             "market_potential": record.market_potential,
             "region": record.region,
-            "country_of_origin": "Россия" if record.region else None,
+            "country_of_origin": origin,
             "dataset_version_id": version.id,
             "source_payload": {"rows": record.rows},
         }

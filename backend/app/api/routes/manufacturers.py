@@ -18,6 +18,7 @@ from app.core.permissions import (
 from app.models import Manufacturer, Product, SolutionType, User
 from app.schemas.common import Page
 from app.schemas.manufacturers import ManufacturerIn, ManufacturerOut, ManufacturerSummary
+from app.services.catalog_scope import russian_country, russian_product, require_russian
 from app.services import audit
 from app.services.manufacturer_logos import LOGO_DIR, logo_url
 from app.services.catalog_view import mandatory_specs, product_summary
@@ -26,9 +27,9 @@ from app.utils.text import like_pattern
 
 router = APIRouter(prefix="/manufacturers", tags=["Каталог: производители"])
 
-_published = func.count(distinct(Product.id)).filter(Product.is_published.is_(True))
-_pending = func.count(distinct(Product.id)).filter(Product.is_published.is_(False))
-_type_names = func.array_agg(distinct(SolutionType.name)).filter(Product.is_published.is_(True))
+_published = func.count(distinct(Product.id)).filter(Product.is_published.is_(True), russian_country(Product.country_of_origin))
+_pending = func.count(distinct(Product.id)).filter(Product.is_published.is_(False), russian_country(Product.country_of_origin))
+_type_names = func.array_agg(distinct(SolutionType.name)).filter(Product.is_published.is_(True), russian_country(Product.country_of_origin))
 
 
 def _stats_query():
@@ -36,6 +37,7 @@ def _stats_query():
         select(Manufacturer, _published.label("published"), _pending.label("pending"), _type_names.label("types"))
         .outerjoin(Product, Product.manufacturer_id == Manufacturer.id)
         .outerjoin(SolutionType, SolutionType.id == Product.solution_type_id)
+        .where(russian_country(Manufacturer.country))
         .group_by(Manufacturer.id)
     )
 
@@ -111,7 +113,7 @@ async def _detail(db: DbSession, manufacturer_id: int, user: User | None) -> Man
     if row is None:
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Производитель не найден.")
     manufacturer, published, pending, types = row
-    stmt = select(Product).where(Product.manufacturer_id == manufacturer.id)
+    stmt = select(Product).where(Product.manufacturer_id == manufacturer.id, russian_product())
     if not sees_unpublished(user, manufacturer.id):
         stmt = stmt.where(Product.is_published.is_(True))
     products = (
@@ -147,6 +149,7 @@ async def create_manufacturer(
     db: DbSession,
     user: Annotated[User, require_any(Permission.MANUFACTURERS_CREATE)],
 ) -> ManufacturerOut:
+    require_russian(data.country)
     if await _name_taken(db, data.name):
         raise ApiValidationError([_NAME_TAKEN])
     manufacturer = Manufacturer(**data.model_dump())
@@ -170,6 +173,7 @@ async def update_manufacturer(
         raise HTTPException(status.HTTP_404_NOT_FOUND, "Производитель не найден.")
     if not can_manage_manufacturer(user, manufacturer.id):
         raise HTTPException(status.HTTP_403_FORBIDDEN, "Изменять карточку может администратор или вендор этой компании.")
+    require_russian(data.country)
     if await _name_taken(db, data.name, exclude_id=manufacturer.id):
         raise ApiValidationError([_NAME_TAKEN])
     values = data.model_dump()
