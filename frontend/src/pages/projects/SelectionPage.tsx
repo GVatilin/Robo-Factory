@@ -16,7 +16,8 @@ type Options = {process_id:number; utilization:number; availability:number; rese
   daily_demand?:number; hours_per_day?:number; peak_factor?:number; demand_reason:string;
   throughput_overrides:Record<string,{value:number;reason:string}>};
 type Candidate = {product_id:number;name:string;status:string;quantity:number|null;throughput:number|null;unit:string;equipment:EquipmentPlan|null;
-  reasons:string[];missing:string[];excluded:string[];score:number;score_factors:Record<string,number>};
+  decision?:string;reasons:string[];missing:string[];excluded:string[];risks?:string[];score:number;score_factors:Record<string,number>;
+  calculation?:{peak_hourly_demand:number;required_rate_with_reserve:number;effective_throughput:number;unrounded_quantity:number}|null};
 type Selection = {formula:string;model_version:string;project_updated_at:string;options:Options;parameters:Project['parameters'];
   context:{daily_demand:number|null;hours_per_day:number|null;peak_factor:number;unit:string;missing:string[];assumptions:string[]}; candidates:Candidate[]};
 type Saved = {id:string;created_at:string;stale:boolean;inputs:unknown;results:EconomicsResponse};
@@ -34,7 +35,7 @@ export default function SelectionPage() {
 
 function Workflow({project,processes}:{project:Project;processes:Facility['processes']}) {
   const history = useApi<Saved[]>(`/projects/${project.id}/calculations`);
-  const [options,setOptions] = useState<Options>({process_id:processes[0]?.id ?? 0,utilization:.8,availability:.9,reserve_percent:10,demand_reason:"",throughput_overrides:{},equipment:{...DEFAULT_EQUIPMENT}});
+  const [options,setOptions] = useState<Options>({process_id:processes[0]?.id ?? 0,utilization:.8,availability:.9,reserve_percent:15,demand_reason:"",throughput_overrides:{},equipment:{...DEFAULT_EQUIPMENT}});
   const [selection,setSelection] = useState<Selection|null>(null);
   const [selected,setSelected] = useState<number[]>([]);
   const [comparison,setComparison] = useState<Comparison|null>(null);
@@ -69,7 +70,7 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
         <div className="selection-fields">
           <label>Процесс<select value={options.process_id} onChange={e=>change({process_id:Number(e.target.value),throughput_overrides:{},daily_demand:undefined,hours_per_day:undefined,peak_factor:undefined,demand_reason:""})}>{processes.map(p=><option key={p.id} value={p.id}>{p.name}</option>)}</select></label>
           {([['utilization','Коэффициент загрузки',.01,1],['availability','Техническая доступность',.01,1],['reserve_percent','Резерв парка, %',0,100],['daily_demand','Объём в сутки (пусто — из объекта)',.01,1e9],['hours_per_day','Часы в сутки (пусто — из объекта)',.01,24],['peak_factor','Пиковый коэффициент (пусто — из объекта)',1,10]] as const).map(([key,label,min,max])=><label key={key}>{label}<input type="number" step="any" min={min} max={max} required={['utilization','availability','reserve_percent'].includes(key)} value={options[key]??''} onChange={e=>change({[key]:e.target.value===''?undefined:Number(e.target.value)})}/></label>)}
-          <label>Обоснование изменения нагрузки / режима<input maxLength={1000} value={options.demand_reason} onChange={e=>change({demand_reason:e.target.value})}/></label>
+          <label>Обоснование изменения нагрузки / режима / коэффициентов<input maxLength={1000} value={options.demand_reason} onChange={e=>change({demand_reason:e.target.value})}/></label>
         </div><EquipmentFields value={options.equipment} onChange={equipment=>change({equipment})}/><button className="btn btn--primary" disabled={!options.process_id} type="submit">{busy?'Подбираем…':'Подобрать решения и рассчитать парк'}</button>
       </fieldset></form>
     </section>
@@ -77,15 +78,17 @@ function Workflow({project,processes}:{project:Project;processes:Facility['proce
     {selection && <><section className="card project-card"><h2>2. Результаты подбора</h2>
       <p>{selection.formula}</p><p>Объём: {selection.context.daily_demand??'не указан'} в сутки · Производительность: {selection.context.unit} · Режим: {selection.context.hours_per_day??'не указан'} ч/сутки · Пик: {selection.context.peak_factor}</p>
       <ul>{[...selection.context.missing,...selection.context.assumptions].map((n,i)=><li key={i}>{n}</li>)}</ul>
-      <p>Рейтинг отражает совпадение процесса, технические проверки и полноту данных; он не является гарантией пригодности.</p>
+      <p>Сначала применяются блокирующие ограничения, затем решения ранжируются по совместимости, проверкам, расчётности парка и качеству данных. Балл не является гарантией пригодности.</p>
       {!selection.candidates.length && <p>В опубликованном каталоге нет решений для этого процесса.</p>}
     </section>
     <div className="selection-candidates">{selection.candidates.map(c=><article className="card project-card" key={c.product_id}>
       <h3><Link to={`/products/${c.product_id}`}>{c.name}</Link></h3>
-      <p>{c.status==='excluded'?'Исключено: несовместимость':'Условный подбор: требуется проверка'} · {c.score}/100</p>
+      <p>{c.status==='excluded'?'Исключено':c.status==='suitable'?'Предварительно подходит':'Требуется проверка'} · {c.score}/100</p>
+      {c.decision&&<p>{c.decision}</p>}
       <strong>Количество роботов: {c.quantity??'недостаточно данных'}</strong><p>Производительность: {c.throughput??'не указана'} {c.unit}</p>
+      {c.calculation&&<p>Пиковая потребность: {c.calculation.peak_hourly_demand.toLocaleString('ru-RU')} {c.unit}; эффективная производительность робота: {c.calculation.effective_throughput.toLocaleString('ru-RU')} {c.unit}; до округления: {c.calculation.unrounded_quantity.toLocaleString('ru-RU')}.</p>}
       {c.equipment&&<EquipmentTable plan={c.equipment}/>}
-      <details><summary>Причины, ограничения и рейтинг</summary><ul>{[...c.reasons,...c.excluded,...c.missing].map((v,i)=><li key={i}>{v}</li>)}</ul><dl>{Object.entries(c.score_factors).map(([k,v])=><div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl></details>
+      <details><summary>Причины, ограничения, риски и рейтинг</summary><ul>{[...c.reasons,...c.excluded,...c.missing,...(c.risks??[])].map((v,i)=><li key={i}>{v}</li>)}</ul><dl>{Object.entries(c.score_factors).map(([k,v])=><div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl></details>
       {c.status!=='excluded' && <RateForm key={`${c.product_id}-${revision}`} candidate={c} initial={options.throughput_overrides[c.product_id]} busy={busy} apply={rate=>{const next={...options,throughput_overrides:{...options.throughput_overrides,[c.product_id]:rate}};setOptions(next);void select(undefined,next);}}/>}
       <label><input type="checkbox" disabled={busy || c.status==='excluded'||c.quantity===null || (!selected.includes(c.product_id)&&selected.length>=6)} checked={selected.includes(c.product_id)} onChange={e=>{setSelected(ids=>e.target.checked?[...ids,c.product_id]:ids.filter(id=>id!==c.product_id));setComparison(null);}}/> В экономическую оценку</label>
     </article>)}</div>

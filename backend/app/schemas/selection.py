@@ -1,3 +1,4 @@
+import math
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 from app.schemas.economics import EconomicsInput
@@ -15,7 +16,7 @@ class SelectionInput(BaseModel):
     process_id: int = Field(gt=0)
     utilization: float = Field(default=.8, gt=0, le=1)
     availability: float = Field(default=.9, gt=0, le=1)
-    reserve_percent: float = Field(default=10, ge=0, le=100)
+    reserve_percent: float = Field(default=15, ge=0, le=100)
     daily_demand: float | None = Field(default=None, gt=0, le=1e9)
     hours_per_day: float | None = Field(default=None, gt=0, le=24)
     peak_factor: float | None = Field(default=None, ge=1, le=10)
@@ -25,8 +26,14 @@ class SelectionInput(BaseModel):
 
     @model_validator(mode="after")
     def override_reason(self):
-        if any(v is not None for v in (self.daily_demand, self.hours_per_day, self.peak_factor)) and len(self.demand_reason) < 3:
-            raise ValueError("Обоснуйте изменение нагрузки или режима работы (не менее 3 символов).")
+        changed_normative = not (
+            math.isclose(self.utilization, .8)
+            and math.isclose(self.availability, .9)
+            and math.isclose(self.reserve_percent, 15)
+        )
+        changed_workload = any(v is not None for v in (self.daily_demand, self.hours_per_day, self.peak_factor))
+        if (changed_normative or changed_workload) and len(self.demand_reason) < 3:
+            raise ValueError("Обоснуйте изменение нагрузки, режима или коэффициентов (не менее 3 символов).")
         return self
 
 

@@ -17,7 +17,7 @@ from app.services.economics import calculate
 from app.services.economics_reports import sensitivity, workbook_report
 from app.schemas.economics import EconomicsInput
 from app.schemas.equipment import EquipmentInput
-from app.services.selection import VERSION, FORMULA, demand_context, rank_candidate
+from app.services.selection import FORMULA, RANKING_WEIGHTS, STATUS_ORDER, VERSION, demand_context, rank_candidate
 
 router = APIRouter(prefix="/projects", tags=["Project selection"])
 
@@ -36,8 +36,9 @@ async def select_for_project(db, project, options):
     context = demand_context(facility.code, process.code, project.parameters, options)
     candidates = [rank_candidate(e, facility.code, process.code, project.parameters, options, context)
                   for e in entries if process.id in e.processes]
-    candidates.sort(key=lambda c: (c["status"] == "excluded", -c["score"], c["name"]))
+    candidates.sort(key=lambda c: (STATUS_ORDER[c["status"]], -c["score"], c["name"].casefold(), c["product_id"]))
     return {"model_version": VERSION, "formula": FORMULA, "context": context,
+            "ranking_weights": RANKING_WEIGHTS,
             "process": {"id": process.id, "name": process.name}, "options": options.model_dump(mode="json"),
             "project_updated_at": project.updated_at.isoformat(), "parameters": project.parameters, "candidates": candidates}
 
@@ -111,7 +112,8 @@ async def save_economics(project_id: uuid.UUID, data: SaveProjectEconomics, db: 
     def run(scenario_id, results):
         return CalculationRun(project_id=project.id, scenario_id=scenario_id, calc_type=CalculationType.ECONOMICS,
             status=CalculationStatus.SUCCEEDED, model_version=result["model_version"], inputs_snapshot=snapshot,
-            normatives_snapshot={"selection_model": VERSION, "formula": FORMULA}, results=results,
+            normatives_snapshot={"selection_model": VERSION, "formula": FORMULA,
+                                 "ranking_weights": RANKING_WEIGHTS}, results=results,
             created_by_id=user.id, finished_at=now)
     master = run(None, result)
     db.add(master)

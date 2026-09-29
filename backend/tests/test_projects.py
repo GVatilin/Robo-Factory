@@ -40,10 +40,12 @@ def test_csv_template_roundtrip_and_decimal_comma():
     values={"count":3,"size":2.5,"access":False,"kind":"a","note":"=not_a_formula"}
     content=parameter_template(values,defs()).encode("utf-8")
     assert parse_parameter_file(content,".csv",defs())==values
-    assert parse_parameter_file('code;value\nsize;2,5\naccess;да\n'.encode(),".csv",defs())=={"size":2.5,"access":True}
+    assert parse_parameter_file('code;value;unit\nsize;2,5;\naccess;да;\n'.encode(),".csv",defs())=={"size":2.5,"access":True}
 
 
-@pytest.mark.parametrize("text", ["", "wrong;header\nx;1", "code;value\ncount;3\ncount;4", "code;value\nsize;bad", "code;value\nunknown;1"])
+@pytest.mark.parametrize("text", ["", "wrong;header\nx;1", "code;value\ncount;3",
+                                   "code;value;unit\ncount;3;\ncount;4;",
+                                   "code;value;unit\nsize;bad;", "code;value;unit\nunknown;1;"])
 def test_csv_import_rejects_invalid_structure(text):
     with pytest.raises(ApiValidationError):
         parse_parameter_file(text.encode(),".csv",defs())
@@ -53,9 +55,9 @@ def test_xlsx_import_and_formula_rejection():
     from io import BytesIO
     from openpyxl import Workbook
     workbook=Workbook()
-    workbook.active.append(["code","value"])
-    workbook.active.append(["count",3])
-    workbook.active.append(["access",False])
+    workbook.active.append(["code","value","unit"])
+    workbook.active.append(["count",3,None])
+    workbook.active.append(["access",False,None])
     output=BytesIO();workbook.save(output)
     assert parse_parameter_file(output.getvalue(),".xlsx",defs())=={"count":3,"access":False}
     workbook.active['B2']='=1+2'

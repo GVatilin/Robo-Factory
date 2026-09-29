@@ -12,7 +12,7 @@ from app.models import ParameterDefinition
 
 
 def parse_parameter_file(content: bytes, suffix: str, definitions: Sequence[ParameterDefinition]) -> dict[str, Any]:
-    """Шаблон code,value[,name,unit]. Пустая ячейка очищает значение; отсутствующая строка оставляет его."""
+    """Шаблон code,value,...,unit. Пустая ячейка очищает значение; отсутствующая строка оставляет его."""
     try:
         if suffix == ".csv":
             text = content.decode("utf-8-sig")
