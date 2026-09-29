@@ -22,6 +22,7 @@ from app.schemas.products import (
     SpecValueOut,
 )
 from app.services.completeness import evaluate, not_applicable
+from app.services.manufacturer_logos import logo_url
 
 
 async def mandatory_specs(session: AsyncSession) -> list[SpecDefinition]:
@@ -65,6 +66,7 @@ def _summary_fields(product: Product, mandatory: Sequence[SpecDefinition]) -> di
         "image_caption": product.image.caption if product.image else None,
         "image_source_url": product.image.source.url if product.image and product.image.source else None,
         "manufacturer": Ref.model_validate(product.manufacturer) if product.manufacturer else None,
+        "manufacturer_logo_url": logo_url(product.manufacturer),
         "solution_type": solution_type_ref(product.solution_type),
         "product_class": product.product_class,
         "readiness_status": product.readiness_status,

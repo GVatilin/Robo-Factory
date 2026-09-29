@@ -1,6 +1,8 @@
 from typing import Annotated, Literal
+import re
 
 from fastapi import APIRouter, HTTPException, Query, Response, status
+from fastapi.responses import FileResponse
 from sqlalchemy import distinct, func, select
 from sqlalchemy.exc import IntegrityError
 
@@ -17,6 +19,7 @@ from app.models import Manufacturer, Product, SolutionType, User
 from app.schemas.common import Page
 from app.schemas.manufacturers import ManufacturerIn, ManufacturerOut, ManufacturerSummary
 from app.services import audit
+from app.services.manufacturer_logos import LOGO_DIR, logo_url
 from app.services.catalog_view import mandatory_specs, product_summary
 from app.services.products import PRODUCT_SUMMARY_OPTIONS
 from app.utils.text import like_pattern
@@ -45,6 +48,11 @@ def _summary(manufacturer: Manufacturer, published: int, pending: int, types: li
         "country": manufacturer.country,
         "region": manufacturer.region,
         "website": manufacturer.website,
+        "logo_url": logo_url(manufacturer),
+        "logo_source_url": (manufacturer.logo_metadata or {}).get("source_url"),
+        "logo_original_url": (manufacturer.logo_metadata or {}).get("original_url"),
+        "logo_retrieved_at": (manufacturer.logo_metadata or {}).get("retrieved_at"),
+        "logo_note": (manufacturer.logo_metadata or {}).get("note"),
         "product_count": published + pending if own else published,
         "pending_count": pending if own else 0,
         "solution_types": sorted(t for t in (types or []) if t),
@@ -60,6 +68,16 @@ async def _name_taken(db: DbSession, name: str, exclude_id: int | None = None) -
 
 
 _NAME_TAKEN = FieldError("name", "Производитель с таким названием уже есть в каталоге.")
+
+
+@router.get("/logos/{filename}", summary="Логотип производителя")
+async def company_logo(filename: str):
+    if not re.fullmatch(r"[0-9a-f]{64}\.webp", filename):
+        raise HTTPException(404, "Логотип не найден.")
+    path = LOGO_DIR / filename
+    if not path.is_file():
+        raise HTTPException(404, "Логотип не найден.")
+    return FileResponse(path, media_type="image/webp", headers={"Cache-Control": "public, max-age=31536000, immutable", "X-Content-Type-Options": "nosniff"})
 
 
 @router.get("", response_model=Page[ManufacturerSummary], summary="Производители")

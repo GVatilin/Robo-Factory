@@ -29,6 +29,7 @@ import { COMPARE_LIMIT, useCompare } from "../../compare/CompareContext";
 import { companyShortName, formatDimensions, formatMoneyCompact, formatNumber } from "../../format";
 import { resolveKind, type RobotKind } from "../../scene/robots/kinds";
 import { Badge } from "../../ui/Controls";
+import { CompanyLogo } from "../../ui/CompanyLogo";
 import { cx } from "../../ui/Field";
 
 export const KIND_ICON: Record<RobotKind, LucideIcon> = {
@@ -159,7 +160,9 @@ export function ProductCard({ product, active, onHover, comparable, unknown }: P
           {product.name}
         </Link>
       </h3>
-      {product.manufacturer && <span className="pcard__maker">{companyShortName(product.manufacturer.name)}</span>}
+      {product.manufacturer && <span className="pcard__maker" style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        {product.manufacturer_logo_url && <CompanyLogo name={product.manufacturer.name} url={product.manufacturer_logo_url} size={28} />}
+        {companyShortName(product.manufacturer.name)}</span>}
       {product.purpose && <p className="pcard__purpose">{product.purpose}</p>}
       {specs.length > 0 ? (
         <dl className="pcard__specs">

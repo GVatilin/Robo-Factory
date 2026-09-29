@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date, datetime
 
 from pydantic import EmailStr, Field, field_validator
 
@@ -35,6 +35,11 @@ class ManufacturerSummary(Schema):
     country: str | None
     region: str | None
     website: str | None
+    logo_url: str | None = None
+    logo_source_url: str | None = None
+    logo_original_url: str | None = None
+    logo_retrieved_at: date | None = None
+    logo_note: str | None = None
     product_count: int
     # Товары на проверке — видны администратору и вендору-владельцу.
     pending_count: int = 0

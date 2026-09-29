@@ -7,7 +7,8 @@ import { useApi, useDebounced } from "../../api/hooks";
 import type { ManufacturerSummary, Page } from "../../api/types";
 import { useAuth } from "../../auth/AuthContext";
 import { companyShortName, plural } from "../../format";
-import { Avatar, Badge, EmptyState, ErrorState } from "../../ui/Controls";
+import { Badge, EmptyState, ErrorState } from "../../ui/Controls";
+import { CompanyLogo } from "../../ui/CompanyLogo";
 import { Input } from "../../ui/Field";
 import "./Catalog.css";
 
@@ -19,7 +20,7 @@ function ManufacturerCard({ item }: { item: ManufacturerSummary }) {
   return (
     <Link to={`/manufacturers/${item.id}`} className="mcard">
       <div className="mcard__head">
-        <Avatar name={item.name} size={46} />
+        <CompanyLogo name={item.name} url={item.logo_url} size={52} />
         <div className="mcard__title">
           <h3>{companyShortName(item.name)}</h3>
           <span className="mcard__legal">{item.name}</span>

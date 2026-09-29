@@ -1,0 +1,1355 @@
+{
+  "version": 1,
+  "retrieved_at": "2026-09-29",
+  "companies": [
+    {
+      "name": "Демо Роботикс (демо-вендор)",
+      "logo": null,
+      "research_note": "Вымышленный демонстрационный производитель; реального логотипа нет."
+    },
+    {
+      "name": "ООО \"Ронави Роботикс\"",
+      "logo": {
+        "approved": true,
+        "sha256": "0e9adac776b272fab37da58700b3c31536075855f54f444393db4b5a876a0632",
+        "original_sha256": "3239e96e3c0d4ebc638cd5aefb03fee4d0c641ac298c251a5ef73cbe2724bf33",
+        "source_url": "https://ronavi-robotics.ru/",
+        "original_url": "https://static.tildacdn.com/tild3065-6661-4237-a438-616130613835/Ronavi_logo_new_fin2.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Морос\"",
+      "logo": {
+        "approved": true,
+        "sha256": "cdc74c0aac8bd221dbb5b13823301df2ba524ee590b7d5782cc35ed16b1e47ee",
+        "original_sha256": "24060d27ea63a450d923e9ac7d41af4931d2a684f1a97a0b25507c430122a7f8",
+        "source_url": "https://xn--l1aeahg.xn--p1ai/",
+        "original_url": "https://xn--l1aeahg.xn--p1ai/wp-content/uploads/2025/08/logo.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Диком-Сервис\"",
+      "logo": {
+        "approved": true,
+        "sha256": "95fe70324451126f40b9b63cfb9b91610c79ff15106351b662ce11c28a220e2c",
+        "original_sha256": "ea249c94c92f99fcc32a9f9485f021fd6835c6d5c67b529fd74064a6e0d8a194",
+        "source_url": "https://dikom-a.ru/",
+        "original_url": "https://dikom-a.ru/apple-icon.png?888f3311df356f4f",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Семаргл\"",
+      "logo": {
+        "approved": true,
+        "sha256": "9f780d77d198e8850a9f9dfc0ad83cd569dfba1150f5d70125345f8adcc76dc5",
+        "original_sha256": "3fbf2fd7e1395e3ab7462ece444a601194a60378d8675cbb91f99d89ea785f2f",
+        "source_url": "https://semargl.pro/",
+        "original_url": "https://semargl.pro/#inline-logo",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"ГК Автомакон\"",
+      "logo": {
+        "approved": true,
+        "sha256": "06ba03a8728949fd42691ce9c475e7653825a7eb85ee7f19047a3b7a745ec97c",
+        "original_sha256": "ac3954f44d0fc6a16ca3f927be5fbd369411c8a4b69e6a362a1e15a8605b97e2",
+        "source_url": "https://automacon.ru/",
+        "original_url": "https://automacon.ru/#inline-logo",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Робосиви\"",
+      "logo": {
+        "approved": true,
+        "sha256": "756f07d9282fa1112b3f5241662a6031f5d6734d37e48d30666635a9abe3276f",
+        "original_sha256": "f9da5b046b7afa8ec934b4467470c2b9e95a2ea12d87c7e32537481795273e34",
+        "source_url": "https://robocv.ru/",
+        "original_url": "https://robocv.ru/wp-content/uploads/2020/05/cropped-ltb-logo-png.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"АРС\"",
+      "logo": {
+        "approved": true,
+        "sha256": "7656ca0da383eb50861bae7d1b6eba2fda11c1ce8e975bb18a5b60e3dad5743d",
+        "original_sha256": "486f9ef77d3e22acbb536ac59b879d8f6b5c16c2f35b35571d6c78c618cc8a30",
+        "source_url": "https://arobosys.ru/",
+        "original_url": "https://static.tildacdn.com/tild6231-6562-4365-b035-626636343436/ARS_white_logo_long.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "МФТИ",
+      "logo": {
+        "approved": true,
+        "sha256": "cef807b49ed9036164f15d2aa9e8a297228f02d377896fe76e7782d5176e594e",
+        "original_sha256": "d4902056876106c8de24adfeb2b9df6f1442e7a706f1125a3b48a7cc2b93a644",
+        "source_url": "https://mipt.ru/",
+        "original_url": "https://mipt.ru/f/media/favicons/apple-touch-icon.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО «СМ РОБОТИКС»",
+      "logo": {
+        "approved": true,
+        "sha256": "8d9282b8c927a35e48fcfc4835825594ddbb5059bdafc16adfb18a72b7ede1b8",
+        "original_sha256": "4168977b455bbd05cd6d8b461f5069f892979700bd1dea0c78d3f2e9c301cd65",
+        "source_url": "https://sm-robotics.ru/",
+        "original_url": "https://static.tildacdn.com/tild3032-6264-4635-b633-346331363734/_SM_ROBOTICS___.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"РОБО\"",
+      "logo": {
+        "approved": true,
+        "sha256": "6b0b2451a71bd1cdba7ec090f4df7138b6b71f4e5369be2baea52efb5e1c28ba",
+        "original_sha256": "a192ab051a543aeffa83403600b784ecd90f5578b13dc8335b9358630e65d7c2",
+        "source_url": "https://robo.ooo/",
+        "original_url": "https://robo.ooo/static/img/logo.0511dd0e136e.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Р2Б\"",
+      "logo": {
+        "approved": true,
+        "sha256": "d203b79d313d74b064aad09c12a3edfbcc71c9662717691ffe61c9aa4e3ccf0a",
+        "original_sha256": "3fcd241f688411cf4ea9a6287f01e32f4fa69135cc31fbed20473562e53bcc6e",
+        "source_url": "https://r2b.company/",
+        "original_url": "https://static.tildacdn.com/tild3163-3036-4166-b031-363534386238/Max_app_logo_1.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Вейбот Автомакон Роботикс\"",
+      "logo": {
+        "approved": true,
+        "sha256": "c94b8d10e5fe4bf274932279190b2e5fae48fea81dc7e37b43c23e2ae11d804a",
+        "original_sha256": "839409f2ddd3c2199e111927b580749f74b749c67a1d9e813dcdf84ccbc9a532",
+        "source_url": "https://waybotrobotics.com/",
+        "original_url": "https://static.tildacdn.com/tild6465-6563-4835-a466-313633376166/logo-black.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Яку Роботикс\"",
+      "logo": {
+        "approved": true,
+        "sha256": "6a8815f69d575da8aba93cb9b0c5895ebbc14c880248b6fe7168b14e5eff2033",
+        "original_sha256": "0fd06f99a2122329635877914f03c5bba35e1237217a28d42510966f9a6fec05",
+        "source_url": "https://yacuai.com/",
+        "original_url": "https://yacuai.com/local/templates/unit/images/favicon.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "АО \"Эйдос Робототехника\"",
+      "logo": {
+        "approved": true,
+        "sha256": "a157db5eaaed0bfab5e2e49c1294189d73523d90591e867931cdfaa79ef375ca",
+        "original_sha256": "c36c82e2e5b745e6a0e3b2f2811e2ad61ec6adf9b4d10d104cc0ea9bc5698dfb",
+        "source_url": "https://eidos-robotics.ru/",
+        "original_url": "https://static.tildacdn.com/tild3966-6438-4939-b566-656166656232/1.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Завод Стелкон\"",
+      "logo": {
+        "approved": true,
+        "sha256": "630b3e8955e479ec0c06446c2cf2dcda8eda4111e578fb16a3c67939b1f8f4f3",
+        "original_sha256": "dc569a2b97e81c78e358756761565b01d4b182726a21f4e64850cbb5b2acd04a",
+        "source_url": "https://www.stelkon.ru/",
+        "original_url": "https://www.stelkon.ru/bitrix/templates/aspro-scorp/images/stelkon_logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Яндекс Роботикс\"",
+      "logo": {
+        "approved": true,
+        "sha256": "c8b7064f53096f9cc4119995cc58a7c51d22a23f6a7d20b7904c3362b8562076",
+        "original_sha256": "40869ad91baa4def62e0e59dce5b5760d017a2dd37994a853c915ba3d3273fea",
+        "source_url": "https://robotics.yandex.ru/",
+        "original_url": "https://avatars.mds.yandex.net/get-lpc/17495851/45151ae8-015c-45de-85cf-e8520124cf04/orig",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ПАО \"Сбербанк\"",
+      "logo": {
+        "approved": true,
+        "sha256": "0777cddeeec19efff2b1192a4777571676379ca1fb079a9fb748e8ad57ef989e",
+        "original_sha256": "0d551f1c41ccd0b45758cc4312bb6a5eecb551f624a7c2f873243201a29af10e",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Logo_Sberbank.svg",
+        "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Logo_Sberbank.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Автор: Сбербанк. Копия с Wikimedia Commons; первоисточник, указанный в карточке файла: sberbank.ru. Логотип используется для идентификации компании."
+      }
+    },
+    {
+      "name": "ООО \"Умный сервис\"",
+      "logo": {
+        "approved": true,
+        "sha256": "c9f0b524ff1c01bf324fef89bb5018835e73c30283175e1025088622bbec916f",
+        "original_sha256": "b0c6e8659db5be95be2adc5222aee361968e16f8fec445b72fead9c167615b61",
+        "source_url": "https://www.umserv.ru/",
+        "original_url": "https://www.umserv.ru/apple-touch-icon.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "НИУ ВШЭ",
+      "logo": {
+        "approved": true,
+        "sha256": "62bd6204ee2aa9066f5bad68c17ca51b2812cde070615e0c1ff8720a662677fc",
+        "original_sha256": "7bcb6a07516c64f15eeb0740db018ccebc19e66b2d2d30aacb4e207f6a7fa794",
+        "source_url": "https://www.hse.ru/",
+        "original_url": "https://www.hse.ru/#inline-logo",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Промобот\"",
+      "logo": {
+        "approved": true,
+        "sha256": "04886f88a4921373ec6c0d309c9d1e7e10998cbc176f2e9f30246cb61dd54701",
+        "original_sha256": "1c48c283bdfe1e58ad168ac4e99c1287ff1a3ee3449b33952a5ae13d3e1a5563",
+        "source_url": "https://promo-bot.ru/",
+        "original_url": "https://promo-bot.ru/wp-content/uploads/2024/05/cropped-Promobot-logo-512h512-180x180.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Айдол\"",
+      "logo": {
+        "approved": true,
+        "sha256": "f8fd4bac7c8d6383e318e99d5f59664c5e30d653179f77a062858c49ea018952",
+        "original_sha256": "2775189bbcfe3b69567f85c6794755254e71cdb4bbc67f7fca5687195995c57c",
+        "source_url": "https://aidoltech.ru/",
+        "original_url": "https://static.tildacdn.com/tild3538-6133-4937-b863-373530653938/logo.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Робопро\"",
+      "logo": {
+        "approved": true,
+        "sha256": "3b34dbe91dd257bd97b3d025c8e736493d517f1872918bb4e64dbf8519f891c6",
+        "original_sha256": "f2055c1324b9510604d60b1e17225e92232832199b27f505b2e575e784259185",
+        "source_url": "https://doka-robots.ru/",
+        "original_url": "https://doka-robots.ru/local/templates/main/include/front_files/images/doka_logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": "Логотип бренда DOKA ROBOTICS компании ООО «Робопро»."
+      }
+    },
+    {
+      "name": "ООО \"Соло Кофе\"",
+      "logo": {
+        "approved": true,
+        "sha256": "e909ae24c073b702e8749b66cce18fba49ac2f9c5eb373be29d5f95f8b39ee46",
+        "original_sha256": "ca89142068707daf27f7c9608cd2a180e391d6ee0c536bf235592fa4eab9660c",
+        "source_url": "https://coffeesolo.ru/",
+        "original_url": "https://coffeesolo.ru/wp-content/themes/solo-coffee/assets/images/index/logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Аврора Роботикс\"",
+      "logo": {
+        "approved": true,
+        "sha256": "c7dbf8d1d65d34cb91940820e8e5c3e327b8b4f8375fe97be6b9cf8e5ee701a2",
+        "original_sha256": "6068b570a3c8c0f3f1a4299abdfae5f74b6f2d289a5681f0b22c24d2f658ae90",
+        "source_url": "https://avrora-robotics.com/",
+        "original_url": "https://avrora-robotics.com/favicon.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "Росатом",
+      "logo": {
+        "approved": true,
+        "sha256": "89eee00c75a6b43cfd50fa52bd5f71f00624b0a392ef2ee719a5dc3f9636bf39",
+        "original_sha256": "5e39cec0725ee5b11dc81996d2fe82a98354d05de34c3055c0401ab02e5e1059",
+        "source_url": "https://www.rosatom.ru/journalist/",
+        "original_url": "https://www.rosatom.ru/local/templates/rosatom/img/logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Дронсхаб\"",
+      "logo": {
+        "approved": true,
+        "sha256": "cb8fc4cba1c0d3c8a486bcc9c124bb8b7cb380f791a77b1cf6821f6decbc3bd3",
+        "original_sha256": "a965d4762f535b47e43cef18d889f202baf6ccff339a4e4b24b9923439c2f063",
+        "source_url": "https://droneshub.group/",
+        "original_url": "https://droneshub.group/apple-touch-icon.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Валдай Роботы\"",
+      "logo": {
+        "approved": true,
+        "sha256": "660778388f9ad2c3e14dbd2d09e5d1da3b67c8aa8531f7ad5ba050e5cf31221f",
+        "original_sha256": "d9a6bf31cfec32ab45fc81deec16f536a9d7cb726ae652e77705ddb3d6895e1c",
+        "source_url": "https://vald.ai/",
+        "original_url": "https://static.tildacdn.com/tild3164-3131-4262-a563-336466323332/Logo_without_bck.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"СМД\"",
+      "logo": {
+        "approved": true,
+        "sha256": "8a37832e03cd64d5f16a46bb0065dbeb228267b0105b74a7e86e18bc2917f2c2",
+        "original_sha256": "a1d3d56173c39c2116cdd797e64042ace2d9e3b20740c2225b56f468aedbb49c",
+        "source_url": "https://smd.com.ru/",
+        "original_url": "https://smd.com.ru/upload/CMax/692/ke2idlncby5kuesopmlkv1ohg81iuv98.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Прикладная Робототехника\"",
+      "logo": {
+        "approved": true,
+        "sha256": "c228b24855863c027b1cdf0504f8dfcab71249b8b0996b4c0e7eba81c4a3bb10",
+        "original_sha256": "7627b1f5774f1853c3ebd70d56c65253636bbfaa81235a7142305d917a02f648",
+        "source_url": "https://www.appliedrobotics-rtc.ru/",
+        "original_url": "https://www.appliedrobotics-rtc.ru/#inline-logo",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Технорэд\"",
+      "logo": {
+        "approved": true,
+        "sha256": "72de3906280276f2d81f6b241bd6012fa0e41977661c8e47c55b1b82e03ff316",
+        "original_sha256": "63242253a69adf72746965dfdeaf9aae2ace67ad30921ba25ba571f4482a3e1d",
+        "source_url": "https://technored.ru/",
+        "original_url": "https://technored.ru/local/templates/redisign/img/svg/logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Битроботикс\"",
+      "logo": {
+        "approved": true,
+        "sha256": "b6769cb5fb4b19b31724191d485c01dbd262e27b1fee4861931f105e17fbdc9b",
+        "original_sha256": "5ecf62517f4cc6577f14df3418e141a43f691f5b4dccc69c11bf1c9e409c45c3",
+        "source_url": "https://bitrobotics.com/",
+        "original_url": "https://static.tildacdn.com/tild6566-6435-4961-a563-396366383361/WRK.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "АО \"ОДК-СТАР\"",
+      "logo": {
+        "approved": true,
+        "sha256": "1a5deba59b97f1a7e5c9fe6f0f60b53310863c9ac0af01872d9f4fcc646d8a14",
+        "original_sha256": "e02e5c3ba6f8eb10250796a9404fdbf91fe129f9eb1138185a2cbe5c664e6b01",
+        "source_url": "https://intellectexport.ru/clients/ao-odk-star/",
+        "original_url": "https://intellectexport.ru/site/assets/files/1189/logotip_odk-star.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип ОДК-СТАР из карточки клиента РТ-Интеллектэкспорт."
+      }
+    },
+    {
+      "name": "ООО \"Арипикс Роботикс\"",
+      "logo": {
+        "approved": true,
+        "sha256": "a454a7840baaedb15c86cc177fbb40a9ce12b842866f7ee19f865c116550feb8",
+        "original_sha256": "0ab6785abe2b23149caf223387d85551935f7a5007d9eb090bd88e14afed1fcd",
+        "source_url": "https://aripix.com/",
+        "original_url": "https://aripix.com/images/aripix/logo-apocalipci.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Атоммаш\"",
+      "logo": {
+        "approved": true,
+        "sha256": "8df6f746b2b870347a6369dee3d5a9c79b8378080ec60f643d874557c37b90e7",
+        "original_sha256": "1fbf4d3005996be1922910c03ec20d59775aa1001ad1cc6fe76ec13dde3a642c",
+        "source_url": "https://atom-mash.com/company/requisites/",
+        "original_url": "https://atom-mash.com/bitrix/templates/bitcorp_s1/img/logo.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Официальный сайт ООО «Атоммаш», Пенза. Не относится к одноимённому предприятию Росатома."
+      }
+    },
+    {
+      "name": "ООО \"Свеза-Лес\"",
+      "logo": {
+        "approved": true,
+        "sha256": "103adca8650204d297d61bc37101600bca3e39fa2f030b4b60049276d647df22",
+        "original_sha256": "18048a19ce796dbb5b61ee27700c152960cb4c5ac0d103b5dfa5dfdbf90a2fd5",
+        "source_url": "https://sveza.com/",
+        "original_url": "https://sveza.com/local/templates/sveza/html/build/assets/img/logo_en.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ПАО \"Газпром Нефть\"",
+      "logo": {
+        "approved": true,
+        "sha256": "4f3e0dd139b86e4c27c99c77cd86273e4a38849af5b8a7b74598d8256792fe54",
+        "original_sha256": "19062c35415464226707c9cff6b83b98b0e156897b28d044c6330a7385326767",
+        "source_url": "https://www.gazprom-neft.ru/",
+        "original_url": "https://www.gazprom-neft.ru/images/z-template/logo-gpn_ru.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Геоскан\"",
+      "logo": {
+        "approved": true,
+        "sha256": "49281a10fd1e41ec302db1eb8d887e4c47e219b33c32d2dc24b0156e1fce1735",
+        "original_sha256": "dfaf545018b97e577ef4f2bb87bf0390c9c90b54da421f48447c27ef394aa546",
+        "source_url": "https://www.geoscankz.aero/",
+        "original_url": "https://www.geoscankz.aero/templates/geoscan/img/favicons/apple-touch-icon.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип с официального сайта Геоскан Казахстан."
+      }
+    },
+    {
+      "name": "ООО \"Финко\"",
+      "logo": {
+        "approved": true,
+        "sha256": "3dd34cd72aa46101af85885baf10806d8ed99d754928d5d86e474d73203ed112",
+        "original_sha256": "47779db3307b0dd0e7cbe9971c2ea898557a2c1185ad2e779541d67bc26d11b9",
+        "source_url": "https://supercam.aero/",
+        "original_url": "https://supercam.aero/images/Логотипы/logo_for_black.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "АО ГК \"Икар\"",
+      "logo": {
+        "approved": true,
+        "sha256": "de90dbc89bffb67a08c978577f5408c7678c1999f7500e2c37b5473b7c6e5c1b",
+        "original_sha256": "7d4c3a1cdfc4447ffacc267ee7b91be61c5b1ff83524a5fd65f0f3d24067aa9a",
+        "source_url": "https://www.diam-aero.ru/",
+        "original_url": "https://www.diam-aero.ru/logo.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Агробит\"",
+      "logo": {
+        "approved": true,
+        "sha256": "e42023140b94c15aa891ca33116e966f4a27254f506da87887335628a06f41cb",
+        "original_sha256": "def97ccfbc81e772d92c03e6ff2716bf782fb315e5b6954162ee1b86245c67e1",
+        "source_url": "https://back.skoltech.ru/storage/app/media/Industry%20Immersion/kniga-proektov-2024-russ.pdf#page=61",
+        "original_url": "https://back.skoltech.ru/storage/app/media/Industry%20Immersion/kniga-proektov-2024-russ.pdf#page=61",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип партнёра из книги проектов Сколтеха 2024, страница 61; изображение извлечено из PDF."
+      }
+    },
+    {
+      "name": "ООО \"Промтехника-Приволжье\"",
+      "logo": {
+        "approved": true,
+        "sha256": "fb329efb528f3610408faec64d62900413ca03bfa649de60e438b298ce95b9ef",
+        "original_sha256": "69cf3208c12e47b2920c548a7558b1e4b74cb568ed008f45f50eeeef8302c801",
+        "source_url": "https://sovmolko.ru/",
+        "original_url": "https://sovmolko.ru/logo.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип бренда СОВМОЛКО компании ООО «Промтехника-Приволжье»."
+      }
+    },
+    {
+      "name": "АО \"Когнитив Пилот\"",
+      "logo": {
+        "approved": true,
+        "sha256": "b6bbce4e90ccd93951071184a8d25c88326967cc42f911b48514cead484ce644",
+        "original_sha256": "4fc800e4dc445084a829d58faf95c35eda4f74666f201d8c6a96a2ed7f8a30ae",
+        "source_url": "https://cognitivepilot.com/",
+        "original_url": "https://cognitivepilot.com/local/templates/cp/assets/images/logo_darck.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Завод Агромаш\"",
+      "logo": {
+        "approved": true,
+        "sha256": "0b54f59d50521b44549a378e0b2c4c6c52ca579664b2b45e7a2806dfde11b094",
+        "original_sha256": "4c23de994889ee4c830bc12a491d7cc0cbc21f072b0e3c04ff3b30e61be5d6d5",
+        "source_url": "https://agromh.tplants.com/",
+        "original_url": "https://agromh.tplants.com/#inline-logo",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "Донской государственный технический университет (ДГТУ)",
+      "logo": {
+        "approved": true,
+        "sha256": "1bff0a995b5665669a110b431d00434eb1ebb2fd27bd7dab149f14f94a00aebf",
+        "original_sha256": "30f04d2d2b21504ab975beed986bbb66f931281cdf0f3717715ade107873fda5",
+        "source_url": "https://donstu.ru/",
+        "original_url": "https://donstu.ru/local/templates/full/i/standart.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Электромотив\"",
+      "logo": {
+        "approved": true,
+        "sha256": "21de0c8dd350fffd136e6220019c141c5e8ebd87eae674c39069ca703d3301eb",
+        "original_sha256": "3aebc1aad1876517f2651652fce414ad83bf058fc303b25fc1d6155f422d01b1",
+        "source_url": "https://electromotive.ru/",
+        "original_url": "https://electromotive.ru/wp-content/themes/electromotive/assets/img/logo_header.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "Финансовый Университет",
+      "logo": {
+        "approved": true,
+        "sha256": "80bdcb461e22d2863fcebb010e26563fdcb641af36ace67b90fbb51050a41f83",
+        "original_sha256": "5d2e5bc216351032f644239020e7cd81f0341ad10a318140ea73fb6c18ae734b",
+        "source_url": "https://www.fa.ru/",
+        "original_url": "https://www.fa.ru/#inline-logo",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "АО \"Петербургский Тракторный Завод\"",
+      "logo": {
+        "approved": true,
+        "sha256": "1ddf2de2af0b7a7e2365e6889173e2ce11a80fec2324cb2f36db628ae3a331c4",
+        "original_sha256": "d1d319a64c0fd312588cce80b10ca620449e4b4872ebcf0c73f897297a01b5dc",
+        "source_url": "https://kirovets-ptz.com/",
+        "original_url": "https://kirovets-ptz.com/upload/logo_ptz.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "Новосибирский Государственный Университет",
+      "logo": {
+        "approved": true,
+        "sha256": "4811d4f932a13a4c56a4fd451bc6233583954a4d717b757d9483651416f77f8f",
+        "original_sha256": "45c53b3af021dcdb87e3e80d79f759df336e34abf1761545c9431c7453e8d708",
+        "source_url": "https://www.nsu.ru/",
+        "original_url": "https://www.nsu.ru/local/templates/nsu_ru/images/NSU_Russian_logo_Green.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ФГАОУ ВО \"ПНИПУ\"",
+      "logo": {
+        "approved": true,
+        "sha256": "0458e5cf874fdfaa10481b9cb73d8e6de50d759498f6642354b563c4f3146601",
+        "original_sha256": "c36866dd4b16feb037a912c7e37b5e33a47951fe464b08a4995dce75b1d17e2f",
+        "source_url": "https://pstu.ru/",
+        "original_url": "https://pstu.ru/assets/images/templates/logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Аэромакс\"",
+      "logo": {
+        "approved": true,
+        "sha256": "a81a35da9576973ade9c0fbf6bf095ae289e32dfe1a2e1fdccfcb4456906f704",
+        "original_sha256": "4f7c017a9bb7faa51dfd138e10cd5d49e3fc1ce4e9c5e65d1b4c7c3d9fe7bd85",
+        "source_url": "https://www.aeromax-group.ru/",
+        "original_url": "https://www.aeromax-group.ru/wp-content/uploads/2021/10/logo-aeromax-300.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Тьюбот\"",
+      "logo": {
+        "approved": true,
+        "sha256": "f1540d114d29c6d814fe2ef3495965d315770d4e5d59420ec684ed15ee69693b",
+        "original_sha256": "21ec287f1b45015103dfe146f52e5ecf77585f66a3299b1dcef9526c5d8f3e58",
+        "source_url": "https://tubot.pro/",
+        "original_url": "https://static.tildacdn.com/tild3165-6161-4664-a633-613732613162/favicon.ico",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Тарис\"",
+      "logo": {
+        "approved": true,
+        "sha256": "dd0ddd2cc4dda4f9279ad97d74225f14a49adbf61fc8e76ae579dfec50285ccd",
+        "original_sha256": "4a4a8341e8b62e7dfc0b66adde70fbd8a47e24bf5379cd363e19377d1de5c9d3",
+        "source_url": "https://taris.ru/",
+        "original_url": "https://taris.ru/dist/img/icons/taris-logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "АО \"Диаконт\"",
+      "logo": {
+        "approved": true,
+        "sha256": "3508345a5190ba25aba6ba56fdfba9c41a609f1d8190b95b2203f9be09d62b32",
+        "original_sha256": "19ce739433b57d74a72f056c463b91e9cc2446c34af78aa89ab06054b684819f",
+        "source_url": "https://www.diakont.ru/",
+        "original_url": "http://www.diakont.ru/wp-content/uploads/2023/04/diakont_favicon-1.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Юникон\"",
+      "logo": {
+        "approved": true,
+        "sha256": "66c864c9466d88f216307bc21cbc1121647bd0567f8866250cdbe89ad8804bfd",
+        "original_sha256": "8cd427a3a9da4a6ab9fbf5319b46f7e5266f1c30334cc9f9557f326ca18b3117",
+        "source_url": "https://unicon-pirs.ru/",
+        "original_url": "https://unicon-pirs.ru/images/logo2.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": "Фирменный блок группы Юникон, опубликованный на сайте unicon-pirs.ru."
+      }
+    },
+    {
+      "name": "ООО \"ДСТ-УРАЛ\"",
+      "logo": {
+        "approved": true,
+        "sha256": "ac8158016afb093403fea04d6a19b70e0fb1c791a9ecf8bf9fad76a84d5a99fa",
+        "original_sha256": "63e0522c20fc91a4ff6376cab15b0bbe100ad14a3ba18382a584e6b53cad8a4a",
+        "source_url": "https://ural-dst.ru/",
+        "original_url": "https://static.tildacdn.com/tild3930-6466-4232-b632-343962386236/Group_230.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип завода из каталога официального поставщика КЗТС-Дормаш."
+      }
+    },
+    {
+      "name": "АО \"168Роботикс\"",
+      "logo": {
+        "approved": true,
+        "sha256": "44b8b79500df6b29bdb84f3a35ec58e117703185780a41fab4c1b15492bedad8",
+        "original_sha256": "67ac6c80ac37c8f4f9797c2ccb1c27125b781f19c9ced274cb4e3c29cc7d3186",
+        "source_url": "https://168robotics.com/",
+        "original_url": "https://static.tildacdn.com/tild3336-6430-4566-a130-326339626639/168r_logo_200.jpg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Автономика\"",
+      "logo": {
+        "approved": true,
+        "sha256": "1ec40c5d84a3ebe6df37edf5f6c1e1255570cebc61a745302979be68af7c1ba8",
+        "original_sha256": "9a8f8f5b4c07e3c056dcc732d6c60e22cfa4b6c9fdf89e872d3cff0a7a34bb6c",
+        "source_url": "https://www.avtonomika.ru/",
+        "original_url": "https://www.avtonomika.ru/#inline-logo",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Робком\"",
+      "logo": {
+        "approved": true,
+        "sha256": "2a62266ef1c2b94e267feb5de0ede95aba0aaa6b778189c1067b8538adef1f1a",
+        "original_sha256": "30d28084d8213fac9d00a8f6a19a6dbfb4893445415cd956d64e714f749f3116",
+        "source_url": "https://rob-com.ru/",
+        "original_url": "https://static.tildacdn.com/tild3837-6437-4839-a631-356533373634/favicon_1.ico",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Виафор\"",
+      "logo": {
+        "approved": true,
+        "sha256": "6f360b6c4ff1f565c5b7c32be2b327109ff5bdc92736ed8626c2e46c01d60057",
+        "original_sha256": "d2ef8eef38a691f92b40470f6412ef0a38731631aee2516c9447a825e1bb1e97",
+        "source_url": "https://promkuban.ru/partners/viafor-ooo",
+        "original_url": "https://s3.twcstorage.ru/3cb523cc-b540c195-dbe1-483d-8781-c5c377aaab13/iblock/312/312dfc965658f9e7b946a851e850697f/5e9149679a57413781430c23b04b505a.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип предприятия из карточки на промышленном портале Краснодарского края."
+      }
+    },
+    {
+      "name": "АО «НПO «Высoкoтoчные кoмплексы»",
+      "logo": {
+        "approved": true,
+        "sha256": "97ca4c865cd65a4c2785298c695622037559a42fbc4ae9a2438ce20dfc31a874",
+        "original_sha256": "4ca8f81def556993d80f287f3f2c9b765618ea5c17a1d7682e8b4f1e390dcb42",
+        "source_url": "https://vpk.name/library/f/npovk.html",
+        "original_url": "https://vpk.name/file/img/v-comlpexes_logo.jpg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип компании из отраслевого справочника ВПК.name; текущий брендбук производителем не подтверждён."
+      }
+    },
+    {
+      "name": "АО \"Астрамис\"",
+      "logo": {
+        "approved": true,
+        "sha256": "a3323e083ad9a42c3b53688961f83bc92c6dc3a9bc66855ca356925ed2b18f66",
+        "original_sha256": "281ac2445e3854835008ad80411278e6a24bbdb6340417b7a410e082ae45d061",
+        "source_url": "https://astramis.com/",
+        "original_url": "https://static.tildacdn.com/tild6230-3364-4837-b632-313338653833/whitelogo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "АО \"Раскат\"",
+      "logo": {
+        "approved": true,
+        "sha256": "6e43e8d701ba08d7102b67dc6e145211f6d30ef5c2a5d69bd78fa4c623e6fa1b",
+        "original_sha256": "3cc7ed67b7cbab102b7b2d510fff00b7ee87e691c5f266dc9628857ab183f935",
+        "source_url": "https://oao-raskat.ru/",
+        "original_url": "https://oao-raskat.ru/wp-content/themes/raskat-2025/img/logo.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"НПО ГКМП\"",
+      "logo": {
+        "approved": true,
+        "sha256": "0871f909a19f02a6ce33e735e693eb76cea57f12dabb7784ff378e4214c339a7",
+        "original_sha256": "b03fa7c7b190008985b0fb41896e240563351bb024912b3a9839ed682f36daa4",
+        "source_url": "https://gkmp32.com/",
+        "original_url": "https://gkmp32.com/local/templates/new_gkmp32/img/logo-ru.webp",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Кингпро\"",
+      "logo": null,
+      "research_note": "Сайт kingpro.global недоступен (страница хостинга); логотип именно производителя БАС не удалось достоверно получить. Логотип одноимённого дистрибьютора одежды king-pro.ru не использован."
+    },
+    {
+      "name": "ООО \"ЭВР\"",
+      "logo": {
+        "approved": true,
+        "sha256": "ea4477e344ff5d24202bf04dd1be95462d786d82bb41ef4baf7b140468d15cdf",
+        "original_sha256": "aa391df45b294d9603c04e9df99374cabfa94506b8690555ba8dee4d285c7eb2",
+        "source_url": "https://technomoscow.ru/rezidenty/evr/",
+        "original_url": "https://technomoscow.ru/upload/iblock/dc3/hh8sa4uo4pfjqyuu82f1rsx2v4wnqb8u.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип резидента на официальном портале ОЭЗ «Технополис Москва»; ИНН 9710112989."
+      }
+    },
+    {
+      "name": "ФГАОУ ВО \"Севастопольский Государственный Университет\"",
+      "logo": {
+        "approved": true,
+        "sha256": "5cd175d6ab086b607290268d8c8dbcd0d88f8c0a6b1416bacd5e4ab51149555d",
+        "original_sha256": "f25a617610f33b17e9024c212dc210bb6e2438fb5e766fd25d7cc1e3556c3a3f",
+        "source_url": "https://www.sevsu.ru/",
+        "original_url": "https://www.sevsu.ru/local/templates/sevgu/static/img/content/logo-footer.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Альбатрос\"",
+      "logo": {
+        "approved": true,
+        "sha256": "1f1a71636f3da0a83ea369288f0eab0117769b84d8b7c33d2526a27a2e2b42af",
+        "original_sha256": "95e605d0d003cf81a081740b3d6f6dc02e1a51a38486eb4d95d1460271fc9f28",
+        "source_url": "https://www.alb.aero/",
+        "original_url": "https://www.alb.aero/bitrix/templates/alb/assets/images/logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"ГК Тихие Крылья\"",
+      "logo": {
+        "approved": true,
+        "sha256": "215caff297f5a83e2ab1c0d06bff39c483f07b55734a50c9ea22031e2e9d08a6",
+        "original_sha256": "30302d9e847f3777503ce83ac11ea673d3b0667a34891f29934705522c756ef9",
+        "source_url": "https://xn--80aaorhk2b.xn--p1ai/sellers/gk-tikhie-krylya",
+        "original_url": "https://cdn.xn--80aaorhk2b.xn--p1ai/seller-avatars/avatar-17-67bd88c1ba197_386x386.jpg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип компании из профиля поставщика на отраслевой площадке Налетай.рф."
+      }
+    },
+    {
+      "name": "ООО \"АМТ\"",
+      "logo": {
+        "approved": true,
+        "sha256": "e90be47c20ffb3258373ffe2f25ee7afa934d37cea5bc909238faab8a2590f60",
+        "original_sha256": "a8f1e090723b4758c882e4c2cbb935f4e181cd5e391e52987561b7f55fa8d519",
+        "source_url": "https://amt-print.com/",
+        "original_url": "https://static.tildacdn.com/tild3434-3836-4033-b665-333135323736/_.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Вирсайн Инновации\"",
+      "logo": {
+        "approved": true,
+        "sha256": "272c7b3f264105638e3947a11a1e4d3200326dd7175d779053f5a54e8ee0fefa",
+        "original_sha256": "531c289d31234a9cab182dfdad929cdce8e47dde35eebac0d4f6f59cfc7e9a9c",
+        "source_url": "https://virsign.ru/",
+        "original_url": "https://static.tildacdn.com/tild3662-3637-4536-a530-613834383633/logo_adjusted.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"КБ-интеграл\"",
+      "logo": {
+        "approved": true,
+        "sha256": "58dc3e79baa56b45516c41a7c1a3a58fbe0da02aeb22debb4e69f792eafa8791",
+        "original_sha256": "ba6abb8d025f99315514ad7f6444f4fc0229f92c71326fb186a7d19806631854",
+        "source_url": "https://kb-integral.ru/",
+        "original_url": "https://kb-integral.ru/wp-content/uploads/2019/12/логотип.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "МАИ",
+      "logo": {
+        "approved": true,
+        "sha256": "fb235ddc1484d9df99affa37e7fe41a85964a0e8d860e13fc7fcf297b2195d88",
+        "original_sha256": "4976d531d3cecd12d4d658f9111b97b66749ecdbed6a25a118bb25acfec33f6b",
+        "source_url": "https://mai.ru/",
+        "original_url": "https://mai.ru/bitrix/templates/mai21/assets/favicon/apple-touch-icon.png?2027",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Деморобот\"",
+      "logo": {
+        "approved": true,
+        "sha256": "6ede351997e54f4c3de67a7e88938f28777e7f36d8f7bf8588d7192712610664",
+        "original_sha256": "8217b2ef9956e916419510c4dbe337c2d97d86ae461e266740f7c7b61ac3858e",
+        "source_url": "https://azarrus.com/",
+        "original_url": "https://azarrus.com/#inline-logo",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип бренда AZARRUS компании ООО «Деморобот»."
+      }
+    },
+    {
+      "name": "АНО ВО \"Университет Иннополис\"",
+      "logo": {
+        "approved": true,
+        "sha256": "aa9a9fb713f940a0b25a65841707c968a15dde6808e20ab82f6891f5257105e6",
+        "original_sha256": "fc428226ab4981582d196269199b8c1830a5954898eb80338f140f05234925c4",
+        "source_url": "https://innopolis.university/",
+        "original_url": "https://innopolis.university/local/templates/.default/static/img/logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Роспроект\"",
+      "logo": {
+        "approved": true,
+        "sha256": "495f5d8bff650327365827a2967fd15477c1829f958f2de84356d35425059dae",
+        "original_sha256": "91563b5a72a03cbf3ebc4b815a0987c550c275e53c843251d384cadf7d7e7036",
+        "source_url": "https://omjet.ru/",
+        "original_url": "https://cdn-ru.bitrix24.ru/b3963943/landing/a83/a83083c88d4bf9a7a14ca186983cf66a/OMJ_hor_low_rus_1x.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО НПП \"Авакс -Геосервис\"",
+      "logo": {
+        "approved": true,
+        "sha256": "6c90e50c67dcd6e08299c0042f07a69098e906af0ce6409fb9b436ee31b1d2ee",
+        "original_sha256": "32235cdbf7c369da4f9346b7ef0c6e5ec1962b9235a7eef8a584e1804a7fe89f",
+        "source_url": "https://uav-siberia.com/",
+        "original_url": "https://static.tildacdn.com/tild6464-6433-4036-a239-373332313334/android-chrome-512x5.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Миррико\"",
+      "logo": {
+        "approved": true,
+        "sha256": "eed3898abaeee5967da06ec36cebb02008fdece9d8382f2530a8f5831156087d",
+        "original_sha256": "bc678cc40452115f38aa00d2bcb9db2c8032b9887a98ad7fe305d2176f1802bc",
+        "source_url": "https://mirrico.ru/",
+        "original_url": "https://mirrico.ru/upload/medialibrary/650/6cpgzizlbhoospcax3vvkvrwwll09hob/logo_rus_s-GK_4d89f4c798cc036f5c67b3f87558fc80e3075d0bea2d231dbbf12099e2b6d3361365977250.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "АНО \"Техносфера\"",
+      "logo": {
+        "approved": true,
+        "sha256": "fd758ad8aa28703f431429686e4e95a66519705a3164ef6106a93bbadad4df08",
+        "original_sha256": "a27331e749313385ba21ba167269929316b3514c28f6b363b43aaf4fdca17339",
+        "source_url": "https://edurobots.org/kruzhok/texnosfera-korsakov/",
+        "original_url": "https://edurobots.org/wp-content/uploads/2021/09/tff-200x200.jpeg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип из профиля центра «Техносфера», Корсаков, в образовательном каталоге Edurobots."
+      }
+    },
+    {
+      "name": "ООО \"Ровбилдер\"",
+      "logo": {
+        "approved": true,
+        "sha256": "4695f413ba7354e71c6df4ce53c1b4f63ae7391bdeed1acb70df9313ddb273ac",
+        "original_sha256": "40c2c2ece1c365040493c7265f8f9d2712aae7dfeb70eb2787610e4b8d030811",
+        "source_url": "https://www.rovbuilder.com/",
+        "original_url": "https://www.rovbuilder.com/wp-content/uploads/2020/01/Logo.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Подводная робототехника\"",
+      "logo": {
+        "approved": true,
+        "sha256": "bf43396275837239154259e336b404fcbfa8135f7de33b968753268d4ef97a15",
+        "original_sha256": "0191d7d4e92f95320b9885e9c02863a2367e4a204209e838428a95ee0e97e448",
+        "source_url": "https://gnomrov.ru/",
+        "original_url": "https://gnomrov.ru/favicon.ico",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "АО \"Зала Аэро\"",
+      "logo": {
+        "approved": true,
+        "sha256": "3f05e60406d36dccdc11fb080e5153355c8f88660397a7c173475903b7323fcc",
+        "original_sha256": "cd7b004ce76726550a0f767b640eae8270e68ca545d65d31ff438b12ce29432f",
+        "source_url": "https://zala-aero.com/",
+        "original_url": "https://zala-aero.com/wp-content/uploads/2024/08/logo_new.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Лаборатория Будущего\"",
+      "logo": {
+        "approved": true,
+        "sha256": "d9fa4f3e922d94e57a76db34407778cd9f7a15b07070a9d46eeb4b4d9b28ac9b",
+        "original_sha256": "79b520b4f7d0fa9c10b6a265f1833cbee13e640eb0286a3efe0e810420c764bc",
+        "source_url": "https://cablewalker.ru/",
+        "original_url": "https://cablewalker.ru/static/images/logo.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Аэродин\"",
+      "logo": {
+        "approved": true,
+        "sha256": "bca803c0ce7c735f011e5ac5efe770e3691cf4babb8a95bbbb359a7c27848fff",
+        "original_sha256": "9e95f5883f5b42a0ebe94acad40e59636c5bcaa222656f9319f91a5cacc423a6",
+        "source_url": "https://aerodyne.tech/",
+        "original_url": "https://static.tildacdn.com/tild6439-3061-4264-a464-386566366336/Aerodyne_rus_black_s.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Гумич РТК\"",
+      "logo": {
+        "approved": true,
+        "sha256": "df264658bdd80fb6553b04905633a550bdc06ea42a1d70bc4300a6785f96f2e2",
+        "original_sha256": "cdcf1a1a36349233a03ed643f265023242fe13e2eb17692d9aafdccc0a509c8c",
+        "source_url": "https://gumich-rtk.ru/",
+        "original_url": "https://gumich-rtk.ru/wp-content/uploads/2022/Resurs-1-4.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"СМП Сервис\"",
+      "logo": {
+        "approved": true,
+        "sha256": "b34d234eb18cfe05ea8b0f726a55dda75d86c32c4532bb16098a4aa648bd1d2d",
+        "original_sha256": "1afc263e368ffa500b71675daa5f7ee980efac1dbfdf1308315a97d04b0b6626",
+        "source_url": "https://www.smprobotics.ru/",
+        "original_url": "https://static.tildacdn.com/tild6365-3061-4265-a539-343063636134/Group_341149.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"ЛМТ\"",
+      "logo": {
+        "approved": true,
+        "sha256": "37d7cd5241d7b92f1ce2a2d039ade747e7dda653ec938dc0a8039e3052eed460",
+        "original_sha256": "28540f190439a61eb25bec1843601ee669f10aaed546800d40d868676b854931",
+        "source_url": "https://dexaero.ru/",
+        "original_url": "https://dexaero.ru/wp-content/themes/dex/_dist/img/mainscreen-logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Клеверкоптер\"",
+      "logo": {
+        "approved": true,
+        "sha256": "b59dc6eb16272e3c8bccab447bade9e1039b41ac5e1d58db6845be7ebc2ce9e9",
+        "original_sha256": "86ead13c58bda0028b623c9d0820c3f1698b72932a7344b7cb4dce9dcff1cb9b",
+        "source_url": "https://clevercopter.ru/",
+        "original_url": "https://clevercopter.ru/wp-content/uploads/2023/09/Без-названия.webp",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "АО \"НПО Андроидная Техника\"",
+      "logo": {
+        "approved": true,
+        "sha256": "f243243a469ce22a75006d5b9614512b3f52a54738a1907d7eeeb9e3d1799769",
+        "original_sha256": "c8781e5ea8c6c5a344332e5b4412cf9fb5298f27d9fef84969aa640d1b67c756",
+        "source_url": "https://vpk.name/library/f/npo-at.html",
+        "original_url": "https://vpk.name/file/img/npo-at-logo_130417_1.jpg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип компании из отраслевого справочника ВПК.name; текущий брендбук производителем не подтверждён."
+      }
+    },
+    {
+      "name": "ООО \"Коруфайер\"",
+      "logo": {
+        "approved": true,
+        "sha256": "18073dc4f04d6cb429b19ca9f2e14d0935e0dde5f322881cb40f2fac914cbfb9",
+        "original_sha256": "3ccbf9841ca4c00dec1def44ba1140dad4cc88d5458efa7d15e4e52cc482382f",
+        "source_url": "https://korufire.ru/",
+        "original_url": "https://korufire.ru/upload/CAllcorp3/b62/nammip2jksbn6g9eghmvpv1b7natuyoo/korufire_logo_rus_mini.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "АО \"НПП ПТ Океанос\"",
+      "logo": {
+        "approved": true,
+        "sha256": "7127a280480c82c90dd1a6237b08abf3d52a798b42bd39060f3ce98c6c9b6c36",
+        "original_sha256": "3d3f11c3c4c7c28bd0448002894f96c773440ee2594cec331afd6574fd48a18c",
+        "source_url": "https://www.oceanos.ru/",
+        "original_url": "https://www.oceanos.ru/images/logo.jpg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Эвокарго\"",
+      "logo": {
+        "approved": true,
+        "sha256": "158049e4f4bec8458ff14768be06064e0956d19965a34ecd6c7200df0ff930ca",
+        "original_sha256": "4bca31dbd92ce17eb821aaa076c754c0bc2e4c3c18c590130e55fe94f2ef673e",
+        "source_url": "https://www.evocargo.com/",
+        "original_url": "https://www.evocargo.com/#inline-logo",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Амт Н.В.\"",
+      "logo": {
+        "approved": true,
+        "sha256": "a9f8d2eb555ddcef6df1e6d98dfb147bb22eca851633b504119c6b97c4511da8",
+        "original_sha256": "37aaf5b0d6857cb727fc5c4863938a60dff8f51b3cf4c65ff48430e662dcd61e",
+        "source_url": "https://amt-nv.ru/",
+        "original_url": "https://amt-nv.ru/local/templates/.default/img/logo.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"ПК ТС\"",
+      "logo": {
+        "approved": true,
+        "sha256": "0648c225f98de05080ee09700861c9b7b1cd1a613e10043888e0f78dfa7e7c56",
+        "original_sha256": "e103a8f69b801b39cd7797c189a828bd6a3d92bc0e7d849efd3577fdc7893575",
+        "source_url": "https://pk-ts.org/",
+        "original_url": "https://pk-ts.org/images/img/logo.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "АО \"Метровагонмаш\"",
+      "logo": {
+        "approved": true,
+        "sha256": "3e03e4850bf48a691d39c1a20c72b1b876dd5f2abf9386ef05f0f5a33dbf8b61",
+        "original_sha256": "0fb2e7b2e3d08310015a765060af9dfc35b9a7cb3b8a9586a4b6cd77a6431f4d",
+        "source_url": "https://metrowagonmash.ru/",
+        "original_url": "https://metrowagonmash.ru/_images/logo_new.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Автотех\"",
+      "logo": {
+        "approved": true,
+        "sha256": "a635d6548015b10c33f90bb2305031ad4fd5320e7057b748ed9c1af73660026f",
+        "original_sha256": "d9ac0dba1cfe05847467a11637ce81159c1974415ccf1fcbd93b8809b5aa8353",
+        "source_url": "https://truck.navio.auto/",
+        "original_url": "https://truck.navio.auto/#inline-logo",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Яндекс\"",
+      "logo": {
+        "approved": true,
+        "sha256": "9fa11bc11eea2c85ce4da9b5d0e5b6bf42c19214709cbf06e8770431019eeaf9",
+        "original_sha256": "3c14217df0b5e0dc1ef4278672bee2f49abb01b0d08802954bbb9cbad8196579",
+        "source_url": "https://yandex.ru/company/",
+        "original_url": "https://yastatic.net/s3/home-static/_/31/3111cd045f263a072f504780b8535840.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "АО \"Концерн Телематика\"",
+      "logo": {
+        "approved": true,
+        "sha256": "e66468fa6c8694de16925b3256fa011fcce5c892882e39f553e36a2f7db80d27",
+        "original_sha256": "c8f1713bec31eb188e20dfe1af4227d41bd1f8a2993a2f86c7f73ebedce2ed2c",
+        "source_url": "https://telematika.com/",
+        "original_url": "https://telematika.com/img/NTS_sign.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": null
+      }
+    },
+    {
+      "name": "АО \"Нииас\"",
+      "logo": {
+        "approved": true,
+        "sha256": "b9b8b25e66a79ffc5c70cfc6297cb280f504dad25be91ef865a8d6ddd18c8967",
+        "original_sha256": "3550d37d803de72a9bd09db96a35c895cf7e0918bd0a791d0adb7fb50e5b7423",
+        "source_url": "https://niias.ru/logo/",
+        "original_url": "https://niias.ru/favicon.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "АО \"НПП \"Радар ММС\"",
+      "logo": {
+        "approved": true,
+        "sha256": "4b1f246516fcddf3dbd6e20d05d33d9e4cbbb4fb5acccf0a1624af070091d133",
+        "original_sha256": "7f1e0619c85efba2106f7cae776cce51e850373950e93e01cf225eca3b53620e",
+        "source_url": "https://vpk.name/news/625005_radar_mms_postavil_zakazchiku_morskoi_meteokompleks.html",
+        "original_url": "https://vpk.name/file/img/radar-mms-logo.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": "Логотип из публикации ТАСС, размещённой отраслевым изданием ВПК.name."
+      }
+    },
+    {
+      "name": "ЗАО \"Си Проект\"",
+      "logo": {
+        "approved": true,
+        "sha256": "f3a1097953ecc798b3dc718360cce4760f0e1c0d842f68202bdc7abd7c261d86",
+        "original_sha256": "29c4a2203c473189a8ebb4bd7bb19c2683aaf0b16c683f45b5e53a09223ed6c1",
+        "source_url": "https://seaproject.ru/",
+        "original_url": "https://static.tildacdn.com/tild3034-3063-4437-b739-353633333766/Seaproject.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Бас Глори Эйр\"",
+      "logo": {
+        "approved": true,
+        "sha256": "cf43e945cb93a62201b3e5799f0517f94cf5abcc61e459494232f3c8c9adccd6",
+        "original_sha256": "c61b099a0bf39fff73fe3ae63619e7744994dce8b7fda04ce439f3d921c6ece0",
+        "source_url": "https://basga.ru/",
+        "original_url": "https://static.tildacdn.com/tild6561-6431-4536-b935-376666383162/_.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"Интэк\"",
+      "logo": {
+        "approved": true,
+        "sha256": "50349836e91c8c84f1ac35946f9f9185c7a03bd402f8102db7b3918f40163ae8",
+        "original_sha256": "cbdc0c1e389ddfb62fedb44c3736f579dfbacc8e9c8a9baa795b757aa6a1948c",
+        "source_url": "https://uav.intecgroup.ru/",
+        "original_url": "https://static.tildacdn.com/tild3637-6131-4130-a364-663564353736/__1.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "ООО \"КБ Атл\"",
+      "logo": {
+        "approved": true,
+        "sha256": "8cfa5bf3a18bafd1c1a7dbedee32c6cb384c7a5ebc35bd116d95d3d59a31620d",
+        "original_sha256": "1dfa44d7d74b1c934f4031b558701436fa6a67993c15437311d3f1ceba379e5d",
+        "source_url": "https://kb-atl.ru/",
+        "original_url": "https://static.tildacdn.com/tild6464-6662-4261-b432-303233343635/__6.png",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    },
+    {
+      "name": "Pudu Robotics",
+      "logo": {
+        "approved": true,
+        "sha256": "518be00e39af3c52cf6cb3d82e90f7c1d7e6099c036ee96dcdcbea2967c3fdc0",
+        "original_sha256": "1d5dc5b5347ce0453baac432fa462b7af706c7c3b2aaa4a334f0deb713a22299",
+        "source_url": "https://www.pudurobotics.com/",
+        "original_url": "https://www.pudurobotics.com/_next/static/media/logo.851bf515.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#ffffff",
+        "note": null
+      }
+    }
+  ]
+}

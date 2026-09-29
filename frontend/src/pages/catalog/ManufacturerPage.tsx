@@ -5,11 +5,12 @@ import { Link, useNavigate, useParams } from "react-router";
 import { api, ApiError } from "../../api/client";
 import { useApi } from "../../api/hooks";
 import type { Manufacturer } from "../../api/types";
-import { companyShortName, plural } from "../../format";
+import { companyShortName, formatDate, plural } from "../../format";
 import { resolveKind, resolveSize } from "../../scene/robots/kinds";
 import type { LineupItem } from "../../scene/robots/Lineup";
 import { SceneBoundary, supportsWebGL, usePrefersReducedMotion } from "../../scene/support";
-import { Avatar, Badge, ConfirmDialog, EmptyState, ErrorState, Notice, Spinner } from "../../ui/Controls";
+import { Badge, ConfirmDialog, EmptyState, ErrorState, Notice, Spinner } from "../../ui/Controls";
+import { CompanyLogo } from "../../ui/CompanyLogo";
 import { ProductCard } from "./ProductCard";
 import "./Catalog.css";
 
@@ -89,7 +90,7 @@ export default function ManufacturerPage() {
 
       <section className="mhero card">
         <div className="mhero__main">
-          <Avatar name={data.name} size={76} />
+          <CompanyLogo name={data.name} url={data.logo_url} size={86} />
           <div className="mhero__text">
             <h1>{shortName}</h1>
             {shortName !== data.name && <p className="mhero__legal">{data.name}</p>}
@@ -122,6 +123,13 @@ export default function ManufacturerPage() {
               )}
             </ul>
             {data.description && <p className="mhero__description">{data.description}</p>}
+            {data.logo_source_url && <details className="company-logo-source">
+              <summary>Источник логотипа</summary>
+              <p><a href={data.logo_source_url} target="_blank" rel="noreferrer noopener">Страница источника</a>
+                {data.logo_original_url && <> · <a href={data.logo_original_url} target="_blank" rel="noreferrer noopener">Оригинал</a></>}</p>
+              <p>Получено: {formatDate(data.logo_retrieved_at ?? null)}</p>
+              {data.logo_note && <p>{data.logo_note}</p>}
+            </details>}
           </div>
         </div>
         <aside className="mhero__side">

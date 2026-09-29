@@ -139,6 +139,7 @@ export interface ProductImage {
 }
 
 export interface ProductSummary {
+  manufacturer_logo_url?: string | null;
   id: number;
   name: string;
   /** Превью фотографии для карточки. */
@@ -253,6 +254,11 @@ export interface Product extends ProductSummary {
 }
 
 export interface ManufacturerSummary {
+  logo_url?: string | null;
+  logo_source_url?: string | null;
+  logo_original_url?: string | null;
+  logo_retrieved_at?: string | null;
+  logo_note?: string | null;
   id: number;
   name: string;
   country: string | null;

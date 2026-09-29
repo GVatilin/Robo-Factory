@@ -29,6 +29,9 @@ datasets/*
 !datasets/research_round2_*.json
 !datasets/prepare_catalog_update.py
 !datasets/catalog_image_review.json
+!datasets/discover_manufacturer_logos.py
+!datasets/load_manufacturer_logos.py
+!datasets/manufacturer_logos/
 
 # Файлы данных в любом другом месте репозитория.
 *.csv

@@ -240,6 +240,7 @@ class ProductSummary(BaseModel):
     image_caption: str | None = None
     image_source_url: str | None = None
     manufacturer: Ref | None
+    manufacturer_logo_url: str | None = None
     solution_type: SolutionTypeRef | None
     product_class: ProductClass
     readiness_status: ReadinessStatus | None

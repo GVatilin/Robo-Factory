@@ -1,7 +1,7 @@
+import { CompanyLogo } from "../../ui/CompanyLogo";
 import {
   BadgeCheck,
   Box,
-  Building2,
   Camera,
   CircleCheck,
   Clock,
@@ -286,7 +286,7 @@ export default function ProductPage() {
           </section>}
           {product.manufacturer && (
             <Link className="phero__maker" to={`/manufacturers/${product.manufacturer.id}`}>
-              <Building2 size={15} aria-hidden="true" />
+              <CompanyLogo name={product.manufacturer.name} url={product.manufacturer_logo_url} size={30} />
               {companyShortName(product.manufacturer.name)}
             </Link>
           )}

@@ -38,6 +38,11 @@ if ! compose up -d --wait --wait-timeout 240; then
     exit 1
 fi
 compose exec -T frontend wget -q -O /dev/null http://127.0.0.1/api/health
+# Curated logo assets travel with the release; repeat imports are idempotent.
+if [[ -s "$RELEASE/datasets/manufacturer_logos/manifest.json" ]]; then
+    compose run --rm --no-deps --user root --entrypoint python \
+        -v "$RELEASE/datasets:/logo-data:ro" backend /logo-data/load_manufacturer_logos.py
+fi
 [[ -z "$PREVIOUS" ]] || ln -sfn "$PREVIOUS" "$BASE/previous"
 ln -sfn "$RELEASE" "$BASE/current"
 install -m 700 "$RELEASE/deploy/deploy.sh" "$BASE/bin/deploy.sh.next"

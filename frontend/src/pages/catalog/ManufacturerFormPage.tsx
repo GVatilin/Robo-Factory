@@ -1,3 +1,4 @@
+import { CompanyLogo } from "../../ui/CompanyLogo";
 import { Building2, Globe, Mail, MapPin, Phone, Save } from "lucide-react";
 import { useEffect, useState, type FormEvent } from "react";
 import { Link, useNavigate, useParams } from "react-router";
@@ -6,7 +7,7 @@ import { api, ApiError } from "../../api/client";
 import { useApi } from "../../api/hooks";
 import type { Manufacturer, ManufacturerInput } from "../../api/types";
 import { companyShortName } from "../../format";
-import { Avatar, ErrorState, Notice, Spinner } from "../../ui/Controls";
+import { ErrorState, Notice, Spinner } from "../../ui/Controls";
 import { Field, Input, TextArea } from "../../ui/Field";
 import "./Catalog.css";
 
@@ -160,7 +161,7 @@ export default function ManufacturerFormPage() {
             <p className="mform__preview-label">Так карточка выглядит в каталоге</p>
             <div className="mcard mcard--static">
               <div className="mcard__head">
-                <Avatar name={previewName} size={46} />
+                <CompanyLogo name={previewName} url={existing.data?.logo_url} size={46} />
                 <div className="mcard__title">
                   <h3>{companyShortName(previewName)}</h3>
                   <span className="mcard__legal">{previewName}</span>
