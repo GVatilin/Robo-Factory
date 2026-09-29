@@ -1,0 +1,10 @@
+{$APP_DOMAIN} {
+    encode zstd gzip
+    reverse_proxy frontend:80
+}
+
+# Temporary access by the server IP while domain registration/DNS propagates.
+http:// {
+    encode gzip
+    reverse_proxy frontend:80
+}

@@ -13,7 +13,7 @@ import "./AuthPages.css";
 
 const RobotPreview = lazy(() => import("../scene/robots/RobotPreview"));
 
-const DEMO_ACCOUNTS = [
+const DEMO_ACCOUNTS = import.meta.env.VITE_SHOW_DEMO_ACCOUNTS === "false" ? [] : [
   { role: "Администратор", email: "admin@example.com", password: "admin12345", icon: ShieldCheck, text: "Каталог, публикация, роли" },
   { role: "Вендор", email: "vendor@example.com", password: "vendor12345", icon: Building2, text: "Товары своей компании" },
   { role: "Пользователь", email: "user@example.com", password: "user12345", icon: UserIcon, text: "Каталог и проекты" },
@@ -132,7 +132,7 @@ export function LoginPage() {
             </button>
           </form>
 
-          <div className="auth__demo">
+          {DEMO_ACCOUNTS.length > 0 && <div className="auth__demo">
             <p className="auth__demo-title">Демо-учётки для проверки ролей</p>
             <div className="auth__demo-list">
               {DEMO_ACCOUNTS.map(({ role, email: demoEmail, password: demoPassword, icon: Icon, text }) => (
@@ -155,7 +155,7 @@ export function LoginPage() {
                 </button>
               ))}
             </div>
-          </div>
+          </div>}
 
           <p className="auth__switch">
             Нет учётной записи? <Link to="/register">Зарегистрируйтесь</Link> или{" "}
