@@ -1,0 +1,2762 @@
+{
+  "version": 2,
+  "expansion_id": "official-russian-models-30-2026-09-29",
+  "prepared_at": "2026-09-29",
+  "manufacturers": [
+    {
+      "name": "ООО \"Роботех\"",
+      "country": "Россия",
+      "region": "Пермский край",
+      "website": "https://robotech.digital/",
+      "contact_email": "info@robotech.digital",
+      "phone": "+7 (342) 292-14-60",
+      "description": "Российский производитель промышленной робототехники ROBOTECH. Производство и сборка в Перми. Источники: https://robotech.digital/company/research-product-base/ и https://robotech.digital/contacts/; проверено 29.09.2026."
+    }
+  ],
+  "products": [
+    {
+      "product_name": "ROBOTECH RX-5/700",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rx-5-700/",
+      "title": "ROBOTECH RX-5/700 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Cортировка, сборка, маркировка, дозировка, визуальный контроль",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 723 мм. Назначение: cортировка, сборка, маркировка, дозировка, визуальный контроль. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rx-5-700/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rx-5-700/",
+          "value": 7.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 7 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rx-5-700/",
+          "value": 33.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rx-5-700/",
+          "value": 0.02,
+          "note": "Повторяемость положения: +/- 0,02 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rx-5-700/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rx-5-700/",
+          "value": 70.0,
+          "note": "Верхняя граница, источник указывает: < 70 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rx-5-700/",
+          "text": "Корпус: IP65. Механическая рука: IP67. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rx-5-700/",
+          "text": "Способы монтажа: напольный, подвесной, портальный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/c45/rxskco424b0m7yirdz7i5omqm6d2u2x0.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rx-5-700/",
+        "caption": "ROBOTECH RX-5/700 — изображение из официальной карточки (общее изображение исполнений производителя)",
+        "is_illustration": false,
+        "file": "assets/29f98270544f80aabf8e401f02b786be2bc1fd3c0c344565c0325d1929b37791.webp",
+        "sha256": "29f98270544f80aabf8e401f02b786be2bc1fd3c0c344565c0325d1929b37791",
+        "original_sha256": "fd2ffd0617a966511e4ead065d4cb47c5a8f41be65ae93bb79b41c4cacc8f1d2",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели. Производитель использует одно изображение для: ROBOTECH RX-5/700, ROBOTECH RX-5/900."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-5/900",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-900/",
+      "title": "ROBOTECH RX-5/900 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Сортировка, сборка, маркировка, дозировка, визуальный контроль",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 912 мм. Назначение: сортировка, сборка, маркировка, дозировка, визуальный контроль. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-900/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-900/",
+          "value": 7.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 7 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-900/",
+          "value": 35.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-900/",
+          "value": 0.03,
+          "note": "Повторяемость положения: +/- 0,03 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-900/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-900/",
+          "value": 70.0,
+          "note": "Верхняя граница, источник указывает: < 70 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-900/",
+          "text": "Корпус: IP65. Механическая рука: IP67. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-900/",
+          "text": "Способы монтажа: Напольный, подвесной, портальный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/c45/rxskco424b0m7yirdz7i5omqm6d2u2x0.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-900/",
+        "caption": "ROBOTECH RX-5/900 — изображение из официальной карточки (общее изображение исполнений производителя)",
+        "is_illustration": false,
+        "file": "assets/29f98270544f80aabf8e401f02b786be2bc1fd3c0c344565c0325d1929b37791.webp",
+        "sha256": "29f98270544f80aabf8e401f02b786be2bc1fd3c0c344565c0325d1929b37791",
+        "original_sha256": "fd2ffd0617a966511e4ead065d4cb47c5a8f41be65ae93bb79b41c4cacc8f1d2",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели. Производитель использует одно изображение для: ROBOTECH RX-5/700, ROBOTECH RX-5/900."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-5/1400",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-1400/",
+      "title": "ROBOTECH RX-5/1400 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, паллетирование, обслуживание станков",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 1405 мм. Назначение: обработка материалов, паллетирование, обслуживание станков. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-1400/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-1400/",
+          "value": 7.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 7 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-1400/",
+          "value": 143.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-1400/",
+          "value": 0.05,
+          "note": "Повторяемость положения: +/- 0,05 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-1400/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-1400/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-1400/",
+          "text": "Корпус: IP40. Механическая рука: IP65. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-1400/",
+          "text": "Способы монтажа: Напольный, подвесной, портальный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/b9c/zp4bxmr1fz6lnmtse25ioaff62j2mxp2.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-1400/",
+        "caption": "ROBOTECH RX-5/1400 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/30884bba8f8d56487493cf88592fc8e4a6cbe99fd9f613fa42a4e1be5834b908.webp",
+        "sha256": "30884bba8f8d56487493cf88592fc8e4a6cbe99fd9f613fa42a4e1be5834b908",
+        "original_sha256": "830f4ee0a634d51e5b8ab6b8e00d69da12610d258c28112c19ff1404212e4a7a",
+        "width": 1080,
+        "height": 1079,
+        "original_dimensions": [
+          1080,
+          1079
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-5(8)/1400",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-8-1400/",
+      "title": "ROBOTECH RX-5(8)/1400 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, паллетирование, обслуживание станков",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 1405 мм. Назначение: обработка материалов, паллетирование, обслуживание станков. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-8-1400/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-8-1400/",
+          "value": 8.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 8 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-8-1400/",
+          "value": 143.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-8-1400/",
+          "value": 0.05,
+          "note": "Повторяемость положения: +/- 0,05 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-8-1400/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-8-1400/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-8-1400/",
+          "text": "Корпус: IP40. Механическая рука: IP65. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-8-1400/",
+          "text": "Способы монтажа: Напольный, подвесной, портальный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/022/wkjdrcmizbprdrzpfz0893evmgc4dhrd.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-5/rkh-5-8-1400/",
+        "caption": "ROBOTECH RX-5(8)/1400 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/e4365460b43d5a745ed6646073c46e95f7b6df5312c00bd2062e67d3ff0e839e.webp",
+        "sha256": "e4365460b43d5a745ed6646073c46e95f7b6df5312c00bd2062e67d3ff0e839e",
+        "original_sha256": "0aa13cd0d95ad296c99dc0dfd37afc33442770015a549ce76cff76dba1c2b254",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-10/1400",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-1400/",
+      "title": "ROBOTECH RX-10/1400 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, сборка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 1460 мм. Назначение: обработка материалов, сборка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-1400/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-1400/",
+          "value": 12.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 12 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-1400/",
+          "value": 160.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-1400/",
+          "value": 0.03,
+          "note": "Повторяемость положения: +/- 0,03 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-1400/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-1400/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-1400/",
+          "text": "Корпус: IP65. Механическая рука: IP67. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-1400/",
+          "text": "Способы монтажа: Напольный, подвесной, портальный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/36b/gb497yipklww9oprpn4zh52z7m5udm39.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-1400/",
+        "caption": "ROBOTECH RX-10/1400 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/34b99bca81f1babc7aabadbc2dcc2a30285e6ce7f062e0650fd7e36f85aea7cd.webp",
+        "sha256": "34b99bca81f1babc7aabadbc2dcc2a30285e6ce7f062e0650fd7e36f85aea7cd",
+        "original_sha256": "74104b5e92b026de9968fcb42c1e2f196e7710184f096768194b4afb0f7bc1d7",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-10/2000",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-2000/",
+      "title": "ROBOTECH RX-10/2000 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, сборка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 2010 мм. Назначение: обработка материалов, сборка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-2000/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-2000/",
+          "value": 10.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 10 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-2000/",
+          "value": 241.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-2000/",
+          "value": 0.05,
+          "note": "Повторяемость положения: +/- 0,05 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-2000/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-2000/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-2000/",
+          "text": "Корпус: IP54. Механическая рука: IP65. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-2000/",
+          "text": "Способы монтажа: Напольный, подвесной, портальный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/9c8/irfuruvbxphxre4h5umcpylj1ev96fls.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-10/rx-10-2000/",
+        "caption": "ROBOTECH RX-10/2000 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/025075147b02a2c56e1c235a8fde2de3733588ef7b7d343c095c647947990c2b.webp",
+        "sha256": "025075147b02a2c56e1c235a8fde2de3733588ef7b7d343c095c647947990c2b",
+        "original_sha256": "c54051ca087e59d953399a0eda0e028e8f688c5bcf9b001f0bff67478bdeb650",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-20/1700",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-20/rkh-20-1700/",
+      "title": "ROBOTECH RX-20/1700 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, паллетирование, обслуживание станков, гибка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 1718 мм. Назначение: обработка материалов, паллетирование, обслуживание станков, гибка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-20/rkh-20-1700/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-20/rkh-20-1700/",
+          "value": 20.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 20 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-20/rkh-20-1700/",
+          "value": 235.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-20/rkh-20-1700/",
+          "value": 0.05,
+          "note": "Повторяемость положения: +/- 0,05 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-20/rkh-20-1700/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-20/rkh-20-1700/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-20/rkh-20-1700/",
+          "text": "Корпус: IP54. Механическая рука: IP65. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-20/rkh-20-1700/",
+          "text": "Способы монтажа: Напольный, подвесной, портальный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/a6a/q2nzajcwafrt2leepkifbx02evj0zrog.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-20/rkh-20-1700/",
+        "caption": "ROBOTECH RX-20/1700 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/46e5eb8b4b11da861cfc10efab9709e1c88f4246649ef589471f216b4f9ebee0.webp",
+        "sha256": "46e5eb8b4b11da861cfc10efab9709e1c88f4246649ef589471f216b4f9ebee0",
+        "original_sha256": "dc5d947fee225dfc4f1746028032c31f476997db8d636d96cbd01656dcaaa68f",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-25/1700",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-25/rkh-25-1700/",
+      "title": "ROBOTECH RX-25/1700 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, сборка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 1718 мм. Назначение: обработка материалов, сборка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-25/rkh-25-1700/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-25/rkh-25-1700/",
+          "value": 25.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 25 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-25/rkh-25-1700/",
+          "value": 235.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-25/rkh-25-1700/",
+          "value": 0.05,
+          "note": "Повторяемость положения: +/- 0,05 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-25/rkh-25-1700/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-25/rkh-25-1700/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-25/rkh-25-1700/",
+          "text": "Корпус: IP54. Механическая рука: IP65. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-25/rkh-25-1700/",
+          "text": "Способы монтажа: Напольный, подвесной, портальный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/31b/zfw7lan00ma3rwvtjrg7d91dpburif4e.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-25/rkh-25-1700/",
+        "caption": "ROBOTECH RX-25/1700 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/6b01464fa0e8390058bf8f63231a77aa79fdb7643d507a207772060f97c4ce7c.webp",
+        "sha256": "6b01464fa0e8390058bf8f63231a77aa79fdb7643d507a207772060f97c4ce7c",
+        "original_sha256": "68ddc304e3050f25d571b963c7de2f2ad5c1cf6426d2af5ab0848bd9415be8c9",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-50/2200",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-50/rx-50-2200/",
+      "title": "ROBOTECH RX-50/2200 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, сборка, лазерная резка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 2180 мм. Назначение: обработка материалов, сборка, лазерная резка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-50/rx-50-2200/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-50/rx-50-2200/",
+          "value": 50.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 50 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-50/rx-50-2200/",
+          "value": 560.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-50/rx-50-2200/",
+          "value": 0.06,
+          "note": "Повторяемость положения: +/- 0,06 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-50/rx-50-2200/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-50/rx-50-2200/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-50/rx-50-2200/",
+          "text": "Корпус: IP54. Механическая рука: IP65. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-50/rx-50-2200/",
+          "text": "Способы монтажа: Напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/4cb/2dwrwc326q4lc2eehrn25jbscfwruf4w.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-50/rx-50-2200/",
+        "caption": "ROBOTECH RX-50/2200 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/8a06dbe32741c72e67e0a8e8703f4cc8ce4bbc362d4ac35290c9721ea5fa2d87.webp",
+        "sha256": "8a06dbe32741c72e67e0a8e8703f4cc8ce4bbc362d4ac35290c9721ea5fa2d87",
+        "original_sha256": "b0ac38f6a15f9664b797465a4abc2c33234ad7f2cdfcb70542d25e0a5b694b16",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RP-65/2300",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-65m/rp-65-2300/",
+      "title": "ROBOTECH RP-65/2300 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "robot_ukladchik",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Паллетирование",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 4; досягаемость: 2319 мм. Назначение: паллетирование. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-65m/rp-65-2300/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-65m/rp-65-2300/",
+          "value": 65.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: До 65 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-65m/rp-65-2300/",
+          "value": 400.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-65m/rp-65-2300/",
+          "value": 0.5,
+          "note": "Повторяемость положения: +/- 0,5 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-65m/rp-65-2300/",
+          "value": 10,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-65m/rp-65-2300/",
+          "text": "Корпус: IP65."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-65m/rp-65-2300/",
+          "text": "Способы монтажа: напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/f31/gkgcajbhrpx8c8um1ejgm7ecp1r306qw.JPG",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-65m/rp-65-2300/",
+        "caption": "ROBOTECH RP-65/2300 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/114e20c92c115d0be668942f25a93fd25d69c35ebe01f41e9b67dc17912a09d2.webp",
+        "sha256": "114e20c92c115d0be668942f25a93fd25d69c35ebe01f41e9b67dc17912a09d2",
+        "original_sha256": "47a5928663f636216c030d287b79dc232c16f6e41a6433b1e6cc7f576bdce683",
+        "width": 800,
+        "height": 800,
+        "original_dimensions": [
+          800,
+          800
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-60/2300",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-60/rx-60-2300/",
+      "title": "ROBOTECH RX-60/2300 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, паллетирование, обслуживание станков, гибка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 2281 мм. Назначение: обработка материалов, паллетирование, обслуживание станков, гибка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-60/rx-60-2300/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками. Для RX-60/2300 таблица указывает до 55 кг; сохранено именно опубликованное значение, требуется уточнение перед закупкой.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-60/rx-60-2300/",
+          "value": 55.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 55 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-60/rx-60-2300/",
+          "value": 756.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-60/rx-60-2300/",
+          "value": 0.06,
+          "note": "Повторяемость положения: +/- 0,06 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-60/rx-60-2300/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-60/rx-60-2300/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-60/rx-60-2300/",
+          "text": "Корпус: IP40. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-60/rx-60-2300/",
+          "text": "Способы монтажа: Напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/dd0/a71du8bbnk03t6gyphekzsat9ef9coj3.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-60/rx-60-2300/",
+        "caption": "ROBOTECH RX-60/2300 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/1a61384f20bec9ad22a85212a278a24e53e3af5aaec8e0bc83a25ef75e2c1263.webp",
+        "sha256": "1a61384f20bec9ad22a85212a278a24e53e3af5aaec8e0bc83a25ef75e2c1263",
+        "original_sha256": "bfb6aa5946f109c079c0b37bc086b4be0c67fde5450bff4762a32874cf6f37d3",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-70/2200",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-70/rx-70-2200/",
+      "title": "ROBOTECH RX-70/2200 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, сборка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 2180 мм. Назначение: обработка материалов, сборка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-70/rx-70-2200/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-70/rx-70-2200/",
+          "value": 70.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 70 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-70/rx-70-2200/",
+          "value": 570.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-70/rx-70-2200/",
+          "value": 0.06,
+          "note": "Повторяемость положения: +/- 0,06 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-70/rx-70-2200/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-70/rx-70-2200/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-70/rx-70-2200/",
+          "text": "Корпус: IP54. Механическая рука: IP65. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-70/rx-70-2200/",
+          "text": "Способы монтажа: Напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/859/sqw1rf1urwznigovuvcccmcof1e8707q.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-70/rx-70-2200/",
+        "caption": "ROBOTECH RX-70/2200 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/c08e69f13ee3f7c8f90cb8522064e0c3d31bcb322b4329d383e7fdbb35a1aed1.webp",
+        "sha256": "c08e69f13ee3f7c8f90cb8522064e0c3d31bcb322b4329d383e7fdbb35a1aed1",
+        "original_sha256": "b7a5c3c629af918e2ac731299c8b5e1e87582f1b44fb8b564baee617cadd0427",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-90/2300",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-90/rx-90-2300/",
+      "title": "ROBOTECH RX-90/2300 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, паллетирование, обслуживание станков, гибка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 2281 мм. Назначение: обработка материалов, паллетирование, обслуживание станков, гибка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-90/rx-90-2300/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-90/rx-90-2300/",
+          "value": 90.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 90 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-90/rx-90-2300/",
+          "value": 759.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-90/rx-90-2300/",
+          "value": 0.06,
+          "note": "Повторяемость положения: +/- 0,06 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-90/rx-90-2300/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-90/rx-90-2300/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-90/rx-90-2300/",
+          "text": "Корпус: IP40. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-90/rx-90-2300/",
+          "text": "Способы монтажа: Напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/5e2/k1c1ekfeo83lux1imn3676giwn7frh7n.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-90/rx-90-2300/",
+        "caption": "ROBOTECH RX-90/2300 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/c04d51054e636251c4bc9e968fb35316124fc8de40966ff6485f7e776e6064f9.webp",
+        "sha256": "c04d51054e636251c4bc9e968fb35316124fc8de40966ff6485f7e776e6064f9",
+        "original_sha256": "07e8b9a53c2c01643cd89b76399a98a90518085d42c5469ad6b3db0ef39b6617",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-120(175)/2700",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-2700/",
+      "title": "ROBOTECH RX-120(175)/2700 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, сборка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 2701 мм. Назначение: обработка материалов, сборка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-2700/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-2700/",
+          "value": 175.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 175 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-2700/",
+          "value": 1100.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-2700/",
+          "value": 0.1,
+          "note": "Повторяемость положения: +/- 0,1 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-2700/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-2700/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-2700/",
+          "text": "Корпус: IP65. Механическая рука: IP67. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-2700/",
+          "text": "Способы монтажа: Напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/735/wtmd29gjbzt0e7enub8ecyd1eljazegu.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-2700/",
+        "caption": "ROBOTECH RX-120(175)/2700 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/cef7a09818f510e2f4b0567acb3bafb82f62a79aedee7b680662a2b7fe7d7aea.webp",
+        "sha256": "cef7a09818f510e2f4b0567acb3bafb82f62a79aedee7b680662a2b7fe7d7aea",
+        "original_sha256": "20fcf227e04e08ecc081a1498fd6f000050c1c9d56e331689b9990bb29bef457",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-120(175)/3200",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-3200/",
+      "title": "ROBOTECH RX-120(175)/3200 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, сборка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 3200 мм. Назначение: обработка материалов, сборка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-3200/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-3200/",
+          "value": 175.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 175 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-3200/",
+          "value": 1150.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-3200/",
+          "value": 0.1,
+          "note": "Повторяемость положения: +/- 0,1 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-3200/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-3200/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-3200/",
+          "text": "Корпус: IP65. Механическая рука: IP67. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-3200/",
+          "text": "Способы монтажа: Напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/439/ti6ktij8qjb0wqhdcdav6nj447kc6jfm.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-175-3200/",
+        "caption": "ROBOTECH RX-120(175)/3200 — изображение из официальной карточки (общее изображение исполнений производителя)",
+        "is_illustration": false,
+        "file": "assets/d6d3dc098feaedee0f0a6c75d5b0919fdd6273d70d8cd683ce52151761a8b15b.webp",
+        "sha256": "d6d3dc098feaedee0f0a6c75d5b0919fdd6273d70d8cd683ce52151761a8b15b",
+        "original_sha256": "5e31ceb467460fc9e4606ac58337504af020b3d30926b24d65e6cde72aa0f4f4",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели. Производитель использует одно изображение для: ROBOTECH RX-120(175)/3200, ROBOTECH RX-120(220)/3100."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-120(220)/2700",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-2700/",
+      "title": "ROBOTECH RX-120(220)/2700 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, сборка, точечная сварка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 2701 мм. Назначение: обработка материалов, сборка, точечная сварка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-2700/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-2700/",
+          "value": 220.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 220 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-2700/",
+          "value": 1100.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-2700/",
+          "value": 0.1,
+          "note": "Повторяемость положения: +/- 0,1 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-2700/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-2700/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-2700/",
+          "text": "Корпус: IP65. Механическая рука: IP67. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-2700/",
+          "text": "Способы монтажа: Напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/2cd/34auha6ucpc921zesnkvt4t3ekiamrgr.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-2700/",
+        "caption": "ROBOTECH RX-120(220)/2700 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/c11fddcb0d6b6fe8ae19c29933191a674dffe49e2d61a9ad8ecf1c48ce16edeb.webp",
+        "sha256": "c11fddcb0d6b6fe8ae19c29933191a674dffe49e2d61a9ad8ecf1c48ce16edeb",
+        "original_sha256": "94b1db8242217dd85ab68c491137b6554c607ebe464611148c5225c6cbfc972b",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-120(220)/3100",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-3100/",
+      "title": "ROBOTECH RX-120(220)/3100 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, сборка, точечная сварка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 3100 мм. Назначение: обработка материалов, сборка, точечная сварка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-3100/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-3100/",
+          "value": 220.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 220 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-3100/",
+          "value": 1100.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-3100/",
+          "value": 0.1,
+          "note": "Повторяемость положения: +/- 0,1 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-3100/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-3100/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-3100/",
+          "text": "Корпус: IP65. Механическая рука: IP67. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-3100/",
+          "text": "Способы монтажа: Напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/439/ti6ktij8qjb0wqhdcdav6nj447kc6jfm.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-220-3100/",
+        "caption": "ROBOTECH RX-120(220)/3100 — изображение из официальной карточки (общее изображение исполнений производителя)",
+        "is_illustration": false,
+        "file": "assets/d6d3dc098feaedee0f0a6c75d5b0919fdd6273d70d8cd683ce52151761a8b15b.webp",
+        "sha256": "d6d3dc098feaedee0f0a6c75d5b0919fdd6273d70d8cd683ce52151761a8b15b",
+        "original_sha256": "5e31ceb467460fc9e4606ac58337504af020b3d30926b24d65e6cde72aa0f4f4",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели. Производитель использует одно изображение для: ROBOTECH RX-120(175)/3200, ROBOTECH RX-120(220)/3100."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-120(280)/2850",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-2850/",
+      "title": "ROBOTECH RX-120(280)/2850 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, сборка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 2851 мм. Назначение: обработка материалов, сборка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-2850/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-2850/",
+          "value": 280.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 280 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-2850/",
+          "value": 1630.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-2850/",
+          "value": 0.1,
+          "note": "Повторяемость положения: +/- 0,1 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-2850/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-2850/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-2850/",
+          "text": "Корпус: IP54. Механическая рука: IP65. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-2850/",
+          "text": "Способы монтажа: Напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/04b/iy8eeza72fhhufizhy12xtboeek1x2vl.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-2850/",
+        "caption": "ROBOTECH RX-120(280)/2850 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/b075e13f8e6c6cb10a936a12bf0d29ea59208636fbe0f536871aa48711e99e39.webp",
+        "sha256": "b075e13f8e6c6cb10a936a12bf0d29ea59208636fbe0f536871aa48711e99e39",
+        "original_sha256": "5808accca0b005a026aeaecadbe6749c42b3bf5b1bc6e88977b04250c61597d2",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-120(280)/3200",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-3200/",
+      "title": "ROBOTECH RX-120(280)/3200 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Обработка материалов, сборка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 3203 мм. Назначение: обработка материалов, сборка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-3200/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-3200/",
+          "value": 280.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 280 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-3200/",
+          "value": 1650.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-3200/",
+          "value": 0.1,
+          "note": "Повторяемость положения: +/- 0,1 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-3200/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-3200/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-3200/",
+          "text": "Корпус: IP54. Механическая рука: IP65. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-3200/",
+          "text": "Способы монтажа: Напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/576/u8e0ud6qly17cy25ny02gchb0e1qqnnh.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/universalnye-roboty/rx-120/rx-120-280-3200/",
+        "caption": "ROBOTECH RX-120(280)/3200 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/2a667ef410b72f4c0a601bfe10bede832ad27cb754257d7ebebaf78f8b5d6ba0.webp",
+        "sha256": "2a667ef410b72f4c0a601bfe10bede832ad27cb754257d7ebebaf78f8b5d6ba0",
+        "original_sha256": "4c378b4945f93c94a711c553e5aefd5e978291fe4fa096fab682e25276d1899b",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-5/1445W350",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-5w/rx-5-1445w350/",
+      "title": "ROBOTECH RX-5/1445W350 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Сварка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 1445 мм. Назначение: сварка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-5w/rx-5-1445w350/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-5w/rx-5-1445w350/",
+          "value": 6.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 6 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-5w/rx-5-1445w350/",
+          "value": 155.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-5w/rx-5-1445w350/",
+          "value": 0.05,
+          "note": "Повторяемость положения: +/- 0,05 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-5w/rx-5-1445w350/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-5w/rx-5-1445w350/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-5w/rx-5-1445w350/",
+          "text": "Корпус: IP54. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-5w/rx-5-1445w350/",
+          "text": "Способы монтажа: Напольный, подвесной, портальный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/710/9eeuw7086wp9ftw4znolrngohsfwvewj.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-5w/rx-5-1445w350/",
+        "caption": "ROBOTECH RX-5/1445W350 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/8f41514a47a601e7d081a395caf252b6ac36d0a344c97a38adacb7922c05cf5a.webp",
+        "sha256": "8f41514a47a601e7d081a395caf252b6ac36d0a344c97a38adacb7922c05cf5a",
+        "original_sha256": "059484a90040a398d3318e03c842c583a2d6e4a88c88dca9dc36174806b375a6",
+        "width": 919,
+        "height": 919,
+        "original_dimensions": [
+          919,
+          919
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RX-10/2010W350",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-10w/rx-10-2010w350/",
+      "title": "ROBOTECH RX-10/2010W350 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "manipulyator",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Сварка",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 6; досягаемость: 2010 мм. Назначение: сварка. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-10w/rx-10-2010w350/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-10w/rx-10-2010w350/",
+          "value": 10.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 10 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-10w/rx-10-2010w350/",
+          "value": 210.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-10w/rx-10-2010w350/",
+          "value": 0.05,
+          "note": "Повторяемость положения: +/- 0,05 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-10w/rx-10-2010w350/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-10w/rx-10-2010w350/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-10w/rx-10-2010w350/",
+          "text": "Корпус: IP54. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-10w/rx-10-2010w350/",
+          "text": "Способы монтажа: Напольный, подвесной, портальный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/ced/u9rgmrgrkim5g88oiu0j4kpg0yzcbp8x.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/svarochnye-roboty/rx-10w/rx-10-2010w350/",
+        "caption": "ROBOTECH RX-10/2010W350 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/783af1e10693dccadaafa61342ee1896fb27ab88eb3722cd2a0b60b0603f4e7a.webp",
+        "sha256": "783af1e10693dccadaafa61342ee1896fb27ab88eb3722cd2a0b60b0603f4e7a",
+        "original_sha256": "68642e2d03c58d0ef5c905b24663c6d3fa17ec9afc041902302e4c3d1df1437e",
+        "width": 1138,
+        "height": 1080,
+        "original_dimensions": [
+          1138,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RP-110/2300",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-2300/",
+      "title": "ROBOTECH RP-110/2300 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "robot_ukladchik",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Паллетирование",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 4; досягаемость: 2403 мм. Назначение: паллетирование. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-2300/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-2300/",
+          "value": 120.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 120 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-2300/",
+          "value": 1045.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-2300/",
+          "value": 0.05,
+          "note": "Повторяемость положения: +/- 0,05 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-2300/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-2300/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-2300/",
+          "text": "Корпус: IP40. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-2300/",
+          "text": "Способы монтажа: Напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/824/pfa2b7iwtomik3dumrpir4htk9kafjuv.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-2300/",
+        "caption": "ROBOTECH RP-110/2300 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/5413e77c7c5ca2f0ddd8ed30a0fb7616d44ae0c3e285d38d60122808d5822cc7.webp",
+        "sha256": "5413e77c7c5ca2f0ddd8ed30a0fb7616d44ae0c3e285d38d60122808d5822cc7",
+        "original_sha256": "a5e62eb9f65b53784167b1e2670502e1fbc68220bab1f85ba49a9fda19fcb18c",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ROBOTECH RP-110(180)/3200",
+      "manufacturer": "ООО \"Роботех\"",
+      "url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-180-3200/",
+      "title": "ROBOTECH RP-110(180)/3200 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "robot_ukladchik",
+      "processes": [
+        [
+          "warehouse",
+          "outbound"
+        ]
+      ],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Паллетирование",
+        "description": "Промышленный робот собственной линейки ROBOTECH. Количество осей: 4; досягаемость: 3155 мм. Назначение: паллетирование. Производственная база и сборка — Пермь.",
+        "limitations": "Стационарный промышленный манипулятор. Досягаемость не является габаритом корпуса; повторяемость не является абсолютной точностью. Скорости осей в градусах/с не перенесены в скорость перемещения в м/с. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://robotech.digital/company/research-product-base/"
+      },
+      "reviewed_urls": [
+        "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-180-3200/",
+        "https://robotech.digital/company/research-product-base/"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "payload_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-180-3200/",
+          "value": 180.0,
+          "note": "Максимальная грузоподъёмность из таблицы производителя: до 180 кг. Число в названии модели не используется как характеристика."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-180-3200/",
+          "value": 1130.0,
+          "note": "Масса робота; периферия и ограждения отдельно."
+        },
+        {
+          "code": "positioning_accuracy_mm",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-180-3200/",
+          "value": 0.05,
+          "note": "Повторяемость положения: +/- 0,05 мм; не абсолютная точность."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-180-3200/",
+          "value": 0,
+          "note": "Рекомендуемая рабочая температура.",
+          "value_max": 45
+        },
+        {
+          "code": "noise_dba",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-180-3200/",
+          "value": 80.0,
+          "note": "Верхняя граница, источник указывает: < 80 дБ(А)"
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-180-3200/",
+          "text": "Корпус: IP54. Влажность ниже 75%, кратковременно до 95%, без конденсации."
+        },
+        {
+          "code": "floor_requirements",
+          "confirmed": true,
+          "source_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-180-3200/",
+          "text": "Способы монтажа: напольный. Требования к основанию и креплению уточняются при проектировании ячейки."
+        }
+      ],
+      "image": {
+        "url": "https://robotech.digital/upload/iblock/d76/8gkur2i52xw350giqktri3nsleba494p.jpg",
+        "page_url": "https://robotech.digital/product/robotizatsiya-i-proizvodstvo/promyshlennye-roboty/roboty-palletayzery/rp-110/rp-110-180-3200/",
+        "caption": "ROBOTECH RP-110(180)/3200 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/3f554a0edccec63dd8dc9eb1fe2fff2db536f9ebb79ac56dac39aca13e79be49.webp",
+        "sha256": "3f554a0edccec63dd8dc9eb1fe2fff2db536f9ebb79ac56dac39aca13e79be49",
+        "original_sha256": "98526493b5dd86232715a6d604709cfd94f9438ae73b876f498297cc278cecfd",
+        "width": 1080,
+        "height": 1080,
+        "original_dimensions": [
+          1080,
+          1080
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ТАРИС SIGMA 100D",
+      "manufacturer": "ООО \"Тарис\"",
+      "url": "https://taris.ru/teleinspekziya-truboprovodov/sigma-100d",
+      "title": "ТАРИС SIGMA 100D — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "vnutritrubnye_robotizirovannye_sistemy",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Видеоинспекция труб диаметром 100–1500 мм",
+        "description": "Модульная цифровая система телеинспекции. Транспортный модуль 6×6, поворотная камера, кабельный барабан и пост управления. Управление с помощью нейросетевого круиз-контроля или оператором; кабельная связь на расстоянии до 500 м.",
+        "limitations": "Не предназначен для перевозки складских грузов. Проходимость зависит от диаметра, отложений и состояния трубы. Специальные исполнения и дополнительное оборудование согласуются отдельно. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://taris.ru/about"
+      },
+      "reviewed_urls": [
+        "https://taris.ru/teleinspekziya-truboprovodov/sigma-100d",
+        "https://taris.ru/about",
+        "https://taris.ru/service-center"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками. В каталоге уже есть сводная карточка семейства SIGMA; эта запись описывает конкретную модель и не наследует параметры других исполнений.",
+      "specs": [
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://taris.ru/service-center",
+          "text": "Сервисный центр производителя: диагностика, гарантийное и послегарантийное обслуживание, ремонт и запасные части."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/sigma-100d",
+          "text": "Видеоинспекция труб диаметром 100–1500 мм. Герметичный транспортный модуль IP68."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/sigma-100d",
+          "text": "Управление и передача видео по кабелю через кабельный барабан. Дальность до 500 м."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/sigma-100d",
+          "text": "Пост управления с программным обеспечением TELESCAN для обработки и документирования телеинспекции."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/sigma-100d",
+          "text": "Нейросетевой круиз-контроль с анализом изображения и датчиков; при необходимости управление оператором."
+        }
+      ],
+      "image": {
+        "url": "https://taris.ru/uploads/Block/678/sigma-100_side-front-view_basic.jpg",
+        "page_url": "https://taris.ru/teleinspekziya-truboprovodov/sigma-100d",
+        "caption": "ТАРИС SIGMA 100D — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/4a17255ff9358594e5b5120b169235fb6ca55c6f1e970d3a767cc73a499f92e7.webp",
+        "sha256": "4a17255ff9358594e5b5120b169235fb6ca55c6f1e970d3a767cc73a499f92e7",
+        "original_sha256": "06f522b8e7772c10abde2b6c399f1a07ccdba404424c2d81d79c7533cdf20d5b",
+        "width": 745,
+        "height": 499,
+        "original_dimensions": [
+          745,
+          499
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ТАРИС SIGMA 150",
+      "manufacturer": "ООО \"Тарис\"",
+      "url": "https://taris.ru/teleinspekziya-truboprovodov/sigma-150",
+      "title": "ТАРИС SIGMA 150 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "vnutritrubnye_robotizirovannye_sistemy",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Видеоинспекция труб диаметром от 150 мм",
+        "description": "Компактная полноприводная система телеинспекции с подъёмником камеры, камерой Full HD, измерительными лазерами, барабаном и постом управления. Поддерживает измерение уклонов и поворотов, защиту от опрокидывания и круиз-контроль.",
+        "limitations": "Не предназначен для перевозки складских грузов. Проходимость зависит от диаметра, отложений и состояния трубы. Специальные исполнения и дополнительное оборудование согласуются отдельно. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://taris.ru/about"
+      },
+      "reviewed_urls": [
+        "https://taris.ru/teleinspekziya-truboprovodov/sigma-150",
+        "https://taris.ru/about",
+        "https://taris.ru/service-center"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками. В каталоге уже есть сводная карточка семейства SIGMA; эта запись описывает конкретную модель и не наследует параметры других исполнений.",
+      "specs": [
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://taris.ru/service-center",
+          "text": "Сервисный центр производителя: диагностика, гарантийное и послегарантийное обслуживание, ремонт и запасные части."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/sigma-150",
+          "text": "Видеоинспекция труб диаметром от 150 мм. Герметичный транспортный модуль IP68."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/sigma-150",
+          "text": "Управление и передача видео по кабелю через кабельный барабан."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/sigma-150",
+          "text": "Пост управления с программным обеспечением TELESCAN для обработки и документирования телеинспекции."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/sigma-150",
+          "text": "Управление оператором, круиз-контроль и датчики уклона и поворота; защита от опрокидывания."
+        }
+      ],
+      "image": {
+        "url": "https://taris.ru/uploads/Page/73/sigma-150_web_0_basic.jpeg",
+        "page_url": "https://taris.ru/teleinspekziya-truboprovodov/sigma-150",
+        "caption": "ТАРИС SIGMA 150 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/c7b22acdfa2d1a4f6a6c383649d0895781790c64946749f8e47fa2e53890a184.webp",
+        "sha256": "c7b22acdfa2d1a4f6a6c383649d0895781790c64946749f8e47fa2e53890a184",
+        "original_sha256": "a63200875a69112147ab0a119c7f48ae3d7c14ab44789f47e446bfbb1f4b15e5",
+        "width": 916,
+        "height": 610,
+        "original_dimensions": [
+          916,
+          610
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ТАРИС SIGMA 200",
+      "manufacturer": "ООО \"Тарис\"",
+      "url": "https://taris.ru/teleinspekziya-truboprovodov/robot-sigma",
+      "title": "ТАРИС SIGMA 200 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "vnutritrubnye_robotizirovannye_sistemy",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Видеоинспекция труб диаметром от 200 мм",
+        "description": "Модульная система телеинспекции: транспортная платформа 4×4, подъёмник камеры, кабельный барабан и пост управления. Численные размеры и масса в карточке относятся к транспортному модулю, а не ко всему комплексу.",
+        "limitations": "Не предназначен для перевозки складских грузов. Проходимость зависит от диаметра, отложений и состояния трубы. Специальные исполнения и дополнительное оборудование согласуются отдельно. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://taris.ru/about"
+      },
+      "reviewed_urls": [
+        "https://taris.ru/teleinspekziya-truboprovodov/robot-sigma",
+        "https://taris.ru/about",
+        "https://taris.ru/service-center"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками. В каталоге уже есть сводная карточка семейства SIGMA; эта запись описывает конкретную модель и не наследует параметры других исполнений.",
+      "specs": [
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://taris.ru/service-center",
+          "text": "Сервисный центр производителя: диагностика, гарантийное и послегарантийное обслуживание, ремонт и запасные части."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/robot-sigma",
+          "text": "Видеоинспекция труб диаметром от 200 мм. Герметичный транспортный модуль IP68."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/robot-sigma",
+          "text": "Управление и передача видео по кабелю через кабельный барабан."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/robot-sigma",
+          "text": "Пост управления с программным обеспечением TELESCAN для обработки и документирования телеинспекции."
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/robot-sigma",
+          "value": 360,
+          "note": "Транспортный модуль; габариты без подъёмного механизма камеры. Не размеры/масса всего комплекса."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/robot-sigma",
+          "value": 120,
+          "note": "Транспортный модуль; габариты без подъёмного механизма камеры. Не размеры/масса всего комплекса."
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/robot-sigma",
+          "value": 100,
+          "note": "Транспортный модуль; габариты без подъёмного механизма камеры. Не размеры/масса всего комплекса."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/robot-sigma",
+          "value": 20,
+          "note": "Транспортный модуль; габариты без подъёмного механизма камеры. Не размеры/масса всего комплекса."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://taris.ru/teleinspekziya-truboprovodov/robot-sigma",
+          "value": -20,
+          "note": "Температурный диапазон транспортного модуля.",
+          "value_max": 60
+        }
+      ],
+      "image": {
+        "url": "https://taris.ru/uploads/Page/7/sigma-200-web_basic.jpg",
+        "page_url": "https://taris.ru/teleinspekziya-truboprovodov/robot-sigma",
+        "caption": "ТАРИС SIGMA 200 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/cf528a1a02821060b4e211652fe20e878f8b55425522eab19647cd64ee9e5baa.webp",
+        "sha256": "cf528a1a02821060b4e211652fe20e878f8b55425522eab19647cd64ee9e5baa",
+        "original_sha256": "7d4026077e400d20716900ee540fd3d17d7e562434bc7669c70cc56d7d74b119",
+        "width": 800,
+        "height": 709,
+        "original_dimensions": [
+          800,
+          709
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ТАРИС SIGMA 250A",
+      "manufacturer": "ООО \"Тарис\"",
+      "url": "https://taris.ru/avtonomnie-roboty/sigma-250a",
+      "title": "ТАРИС SIGMA 250A — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "vnutritrubnye_robotizirovannye_sistemy",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Автономная видеоинспекция труб диаметром от 250 мм",
+        "description": "Автономный робот с нейросетевым управлением для обследования подземных коммуникаций. Доступны автономный режим, радиоуправление и управление по кабелю. Протяжка кабеля и троса — дополнительная опция.",
+        "limitations": "Не предназначен для перевозки складских грузов. Проходимость зависит от диаметра, отложений и состояния трубы. Специальные исполнения и дополнительное оборудование согласуются отдельно. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://taris.ru/about"
+      },
+      "reviewed_urls": [
+        "https://taris.ru/avtonomnie-roboty/sigma-250a",
+        "https://taris.ru/about",
+        "https://taris.ru/service-center"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://taris.ru/service-center",
+          "text": "Сервисный центр производителя: диагностика, гарантийное и послегарантийное обслуживание, ремонт и запасные части."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/sigma-250a",
+          "value": 5,
+          "note": "До указанного времени; зависит от режима и нагрузки."
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/sigma-250a",
+          "value": 4,
+          "note": "До указанной дальности без кабеля; не длина гарантированного инспектируемого участка."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/sigma-250a",
+          "text": "Съёмный литий-железо-фосфатный аккумулятор LiFePO4. Параметры зарядного устройства необходимо уточнить."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/sigma-250a",
+          "text": "Автономный режим, управление по кабелю или радиоканалу. Дальняя радиосвязь рассчитана на металлическую трубу как волновод."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/sigma-250a",
+          "text": "Автономная видеоинспекция труб диаметром от 250 мм. Герметичный корпус из нержавеющей стали с закачкой азота."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/sigma-250a",
+          "text": "Автономное нейросетевое управление по камерам и датчикам с объездом препятствий; альтернативно управление оператором."
+        },
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/sigma-250a",
+          "text": "Программный комплекс TELESCAN на посту управления."
+        }
+      ],
+      "image": {
+        "url": "https://taris.ru/uploads/Page/94/5327_web_basic.jpg",
+        "page_url": "https://taris.ru/avtonomnie-roboty/sigma-250a",
+        "caption": "ТАРИС SIGMA 250A — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/d62aeba46d56031eda297cf5fb8fb61b29d3465fec8474e4c4408b56f4a919c1.webp",
+        "sha256": "d62aeba46d56031eda297cf5fb8fb61b29d3465fec8474e4c4408b56f4a919c1",
+        "original_sha256": "96b82a76db2f6d31be4e096aa1205589638cf809778685bdb5b3b63e96346cc2",
+        "width": 920,
+        "height": 612,
+        "original_dimensions": [
+          920,
+          612
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ТАРИС TRF 500",
+      "manufacturer": "ООО \"Тарис\"",
+      "url": "https://taris.ru/avtonomnie-roboty/trf-500",
+      "title": "ТАРИС TRF 500 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "vnutritrubnye_robotizirovannye_sistemy",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Протяжка кабеля и телеинспекция труб диаметром от 530 мм",
+        "description": "Автономный робот для прокладки кабеля и диагностики труб. Полноприводная платформа 4×4, видеокамеры, сменный аккумулятор и сменные колёса. Производитель заявляет протяжку облегчённого кабеля Taris G6 до 7 км в чистой трубе; результат зависит от кабеля и состояния трассы.",
+        "limitations": "Не предназначен для перевозки складских грузов. Проходимость зависит от диаметра, отложений и состояния трубы. Специальные исполнения и дополнительное оборудование согласуются отдельно. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://taris.ru/about"
+      },
+      "reviewed_urls": [
+        "https://taris.ru/avtonomnie-roboty/trf-500",
+        "https://taris.ru/about",
+        "https://taris.ru/service-center"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://taris.ru/service-center",
+          "text": "Сервисный центр производителя: диагностика, гарантийное и послегарантийное обслуживание, ремонт и запасные части."
+        },
+        {
+          "code": "runtime_h",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trf-500",
+          "value": 10,
+          "note": "До указанного времени; зависит от режима и нагрузки."
+        },
+        {
+          "code": "range_km",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trf-500",
+          "value": 10,
+          "note": "До указанной дальности без кабеля; не длина гарантированного инспектируемого участка."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trf-500",
+          "text": "Съёмный литий-железо-фосфатный аккумулятор LiFePO4. Параметры зарядного устройства необходимо уточнить."
+        },
+        {
+          "code": "connectivity",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trf-500",
+          "text": "Автономный режим, управление по кабелю или радиоканалу. Дальняя радиосвязь рассчитана на металлическую трубу как волновод."
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trf-500",
+          "text": "Протяжка кабеля и телеинспекция труб диаметром от 530 мм. Корпус из нержавеющей стали; контроль герметичности с закачкой азота. Специальное взрывозащищённое исполнение согласуется отдельно."
+        }
+      ],
+      "image": {
+        "url": "https://taris.ru/uploads/Block/706/trf-500_akb2_basic.jpeg",
+        "page_url": "https://taris.ru/avtonomnie-roboty/trf-500",
+        "caption": "ТАРИС TRF 500 — вид спереди, официальная фотография производителя",
+        "is_illustration": false,
+        "file": "assets/ac998c82e37accdd5a5707b109d1fed9c3ca2e91bdc24611d7c3c9d5e417bf58.webp",
+        "sha256": "ac998c82e37accdd5a5707b109d1fed9c3ca2e91bdc24611d7c3c9d5e417bf58",
+        "original_sha256": "bfceb1db153db46f02201c1c84af95ec777fddf49bb459ae73ce29b11bce290b",
+        "width": 922,
+        "height": 614,
+        "original_dimensions": [
+          922,
+          614
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "ТАРИС ТР 250",
+      "manufacturer": "ООО \"Тарис\"",
+      "url": "https://taris.ru/avtonomnie-roboty/trosoprotyagivatel-samohodnyi-tr250",
+      "title": "ТАРИС ТР 250 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "vnutritrubnye_robotizirovannye_sistemy",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Протяжка троса в трубах диаметром от 225 мм",
+        "description": "Самоходный аккумуляторный тросопротягиватель для ввода троса в трубопровод. Корпус из нержавеющей стали. Габариты производителя указаны без колёс; масса включает аккумулятор.",
+        "limitations": "Не предназначен для перевозки складских грузов. Проходимость зависит от диаметра, отложений и состояния трубы. Специальные исполнения и дополнительное оборудование согласуются отдельно. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://taris.ru/about"
+      },
+      "reviewed_urls": [
+        "https://taris.ru/avtonomnie-roboty/trosoprotyagivatel-samohodnyi-tr250",
+        "https://taris.ru/about",
+        "https://taris.ru/service-center"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://taris.ru/service-center",
+          "text": "Сервисный центр производителя: диагностика, гарантийное и послегарантийное обслуживание, ремонт и запасные части."
+        },
+        {
+          "code": "navigation_type",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trosoprotyagivatel-samohodnyi-tr250",
+          "text": "Автономное движение с датчиками и бортовым компьютером: выравнивание на препятствиях, включение заднего хода при невозможности проезда."
+        },
+        {
+          "code": "length_mm",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trosoprotyagivatel-samohodnyi-tr250",
+          "value": 440,
+          "note": "Габариты без колёс; масса с аккумулятором."
+        },
+        {
+          "code": "width_mm",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trosoprotyagivatel-samohodnyi-tr250",
+          "value": 140,
+          "note": "Габариты без колёс; масса с аккумулятором."
+        },
+        {
+          "code": "height_mm",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trosoprotyagivatel-samohodnyi-tr250",
+          "value": 160,
+          "note": "Габариты без колёс; масса с аккумулятором."
+        },
+        {
+          "code": "weight_kg",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trosoprotyagivatel-samohodnyi-tr250",
+          "value": 21,
+          "note": "Габариты без колёс; масса с аккумулятором."
+        },
+        {
+          "code": "operating_temp_c",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trosoprotyagivatel-samohodnyi-tr250",
+          "value": -30,
+          "note": "Диапазон из таблицы характеристик модели.",
+          "value_max": 60
+        },
+        {
+          "code": "operating_conditions",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trosoprotyagivatel-samohodnyi-tr250",
+          "text": "Трубы диаметром от 225 мм; корпус из нержавеющей стали, защита IP68."
+        },
+        {
+          "code": "charging_infrastructure",
+          "confirmed": true,
+          "source_url": "https://taris.ru/avtonomnie-roboty/trosoprotyagivatel-samohodnyi-tr250",
+          "text": "Электропитание от съёмной аккумуляторной батареи."
+        }
+      ],
+      "image": {
+        "url": "https://taris.ru/uploads/Block/456/B8BC8624-7731-40B7-91C7-40C91698AA50_basic.jpeg",
+        "page_url": "https://taris.ru/avtonomnie-roboty/trosoprotyagivatel-samohodnyi-tr250",
+        "caption": "ТАРИС ТР 250 — изображение из официальной карточки",
+        "is_illustration": false,
+        "file": "assets/9331989e4fb9cf2cfeaccbec70e100b592aa7af38a8308b8f329a17b04ac3e25.webp",
+        "sha256": "9331989e4fb9cf2cfeaccbec70e100b592aa7af38a8308b8f329a17b04ac3e25",
+        "original_sha256": "5c1b1f8e769b6f8ce2361163d966d30ca4e24336999c625b9f71bc1abdb267f4",
+        "width": 900,
+        "height": 675,
+        "original_dimensions": [
+          900,
+          675
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    },
+    {
+      "product_name": "Promobot Robo-C2",
+      "manufacturer": "ООО \"Промобот\"",
+      "url": "https://promo-bot.ru/production/robo-c/",
+      "title": "Promobot Robo-C2 — официальная карточка производителя",
+      "retrieved_at": "2026-09-29",
+      "source_type": "manufacturer",
+      "solution_type": "antropomorfnyy_robot",
+      "processes": [],
+      "fields": {
+        "country_of_origin": "Россия",
+        "purpose": "Консультирование посетителей и презентация информации о компании",
+        "description": "Человекоподобный робот с мимикой, речью и подвижными руками для жестикуляции. Узнаёт собеседников, отвечает на вопросы и воспроизводит подготовленные диалоги. Внешность изготавливается под заказ. Применение: музеи, банки, МФЦ, выставки, учебные заведения и бизнес-центры.",
+        "limitations": "Конкретные возможности зависят от программного сценария и комплектации. Не заявлен как транспортный робот. Масса, размеры, скорость и автономность не перенесены с Promobot V.4. Комплектацию и условия поставки необходимо согласовать с производителем."
+      },
+      "field_sources": {
+        "country_of_origin": "https://promo-bot.ru/about-us/"
+      },
+      "reviewed_urls": [
+        "https://promo-bot.ru/production/robo-c/",
+        "https://promo-bot.ru/about-us/",
+        "https://confluence.promo-bot.ru/pages/viewpage.action?pageId=56951888"
+      ],
+      "research_note": "Проверено 29.09.2026 по официальным материалам. Российское происхождение указано по данным производителя; процент локализации не установлен. Неопубликованные цены оборудования, ПО, внедрения, обслуживания и срок службы не заменены оценками.",
+      "specs": [
+        {
+          "code": "integration",
+          "confirmed": true,
+          "source_url": "https://confluence.promo-bot.ru/pages/viewpage.action?pageId=56951888",
+          "text": "Разработка сценариев через JS API и ROS; возможна связь с внешними системами заказчика. C++ плагины зависят от модели и не переносятся автоматически с V.4 или Promobot Control."
+        },
+        {
+          "code": "service_requirements",
+          "confirmed": true,
+          "source_url": "https://promo-bot.ru/production/robo-c/",
+          "text": "Техническая поддержка действующих клиентов производителя: support@promo-bot.ru; состав обслуживания и сроки согласуются при поставке."
+        }
+      ],
+      "image": {
+        "url": "https://promo-bot.ru/wp-content/uploads/elementor/thumbs/DSC02397_00-pfxzohs2yckgogx5yx7djheudjwsjxj2f0kceb00so-1-pobbq6ldb69sbyravj1pmod940s45hbpxifow0qjuw.png",
+        "page_url": "https://promo-bot.ru/production/robo-c/",
+        "caption": "Promobot Robo-C2 — пример индивидуальной внешности на официальной странице модели",
+        "is_illustration": false,
+        "file": "assets/2a7acd5e9ac9d0bd7832399aaecd5706c1c0f4129d295425d1583eb4e955de99.webp",
+        "sha256": "2a7acd5e9ac9d0bd7832399aaecd5706c1c0f4129d295425d1583eb4e955de99",
+        "original_sha256": "79018a1fd8ab2af84b0ab4ed1743567d3d1515bd6454011f6e07faa52c2dfdf0",
+        "width": 350,
+        "height": 500,
+        "original_dimensions": [
+          350,
+          500
+        ],
+        "retrieved_at": "2026-09-29",
+        "approved": true,
+        "review_note": "Визуально проверено 29.09.2026. Изображение соответствует официальной странице данной модели."
+      }
+    }
+  ]
+}

@@ -1402,6 +1402,19 @@
         "background": "#172a42",
         "note": "Официальный логотип с сайта производителя, преобразован из SVG."
       }
+    },
+    {
+      "name": "ООО \"Роботех\"",
+      "logo": {
+        "approved": true,
+        "sha256": "8864379c329804685567891288a7b59e5a07a197be285fb2fcb30a8648669a9b",
+        "original_sha256": "66d4861a01df84ab4954a6201ae6a4c7239ba470b8265b5683899c3fa2aa1eb1",
+        "source_url": "https://robotech.digital/",
+        "original_url": "https://robotech.digital/local/templates/aspro-allcorp3/assets/images/logo-white.svg",
+        "retrieved_at": "2026-09-29",
+        "background": "#172a42",
+        "note": "Логотип из шапки официального сайта; белый знак на тёмной подложке."
+      }
     }
   ]
 }
