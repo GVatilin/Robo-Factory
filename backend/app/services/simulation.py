@@ -10,8 +10,9 @@ from app.schemas.equipment import EquipmentInput
 from app.schemas.simulation import SimulationOptions
 from app.services.equipment import equipment_plan
 
-VERSION = "simulation-1.0"
-MAX_JOBS = 12000
+VERSION = "simulation-1.1"
+# Bound executed work, rather than rejecting a large incoming queue.
+MAX_STARTED_CYCLES = 200000
 MAX_ROBOTS = 200
 
 
@@ -24,14 +25,23 @@ def simulate(snapshot: dict, options: SimulationOptions) -> dict:
         raise ValueError("Недостаточно данных или решение исключено. Уточните подбор.")
     equipment = EquipmentInput.model_validate(snapshot["equipment"])
     plan = equipment_plan(n, equipment)
+    if not context.get("hours_per_day") or context["hours_per_day"] <= 0 or not context.get("daily_demand") or context["daily_demand"] <= 0:
+        raise ValueError("Для имитации нужны положительные объём операций и часы работы. Уточните подбор.")
     horizon = context["hours_per_day"] * 3600
     rate = context["daily_demand"] / context["hours_per_day"] * context["peak_factor"]
     batch = equipment.operations_per_cycle
     # Stress test: the selected peak demand persists for the whole shift.
     target = rate * horizon / 3600
     jobs = math.ceil(target / batch)
-    if jobs > MAX_JOBS:
-        raise ValueError("Более 12 000 циклов за смену. Увеличьте число единиц за цикл в подборе и пересчитайте сценарий.")
+    arrival_interval = batch / rate * 3600
+
+    def arrivals_at(t):
+        # Arrivals are uniform, beginning at t=0. Avoid accumulating floating-point
+        # drift and keep even a billion queued jobs as a single integer count.
+        return min(jobs, max(0, math.floor(t / arrival_interval + 1e-9) + 1))
+
+    def arrived_amount(t):
+        return min(target, arrivals_at(t) * batch)
     travel = options.route_m / options.speed_mps
     processing = equipment.handling_seconds
     preparation = max(0., 3600 * batch / candidate["throughput"] - 2 * travel - processing)
@@ -49,18 +59,23 @@ def simulate(snapshot: dict, options: SimulationOptions) -> dict:
         nonlocal serial
         serial += 1
         heapq.heappush(events, (t, serial, kind, robot, amount))
-    for index in range(jobs):
-        amount = min(batch, target - index * batch)
-        push(index * batch / rate * 3600, "arrival", amount=amount)
-    pending = deque()
+    push(0., "arrival")
+    arrival_scheduled = True
+    started_jobs = 0
     idle = deque(range(n))
     idle_since = [0.] * n
     batteries = [equipment.runtime_hours * 3600] * n
     segments = [[] for _ in range(n)]
     stats = {key: 0. for key in ("preparation", "outbound", "operation", "return", "station_queue", "charger_queue", "charging", "downtime", "idle")}
-    arrived = completed = in_progress = 0.
+    completed = in_progress = 0.
     max_queue = 0.
-    log = [(0., 0., 0., 0.)]
+    frames = []
+    frame_index = 0
+
+    def append_frame(t):
+        arrived = arrived_amount(t)
+        frames.append({"time": t, "arrived": round(arrived, 3), "completed": round(completed, 3),
+                       "queue": round(max(0., arrived - completed - in_progress), 3)})
     def segment(robot, state, start, end):
         phase_end = end
         start, end = min(start, horizon), min(end, horizon)
@@ -68,8 +83,9 @@ def simulate(snapshot: dict, options: SimulationOptions) -> dict:
             segments[robot].append({"state": state, "start": start, "end": end, "phase_end": phase_end})
             stats[state] += end - start
     def dispatch(now):
-        nonlocal in_progress
-        while pending and idle:
+        nonlocal in_progress, started_jobs, arrival_scheduled
+        available = arrivals_at(now)
+        while started_jobs < available and idle:
             robot = idle.popleft()
             segment(robot, "idle", idle_since[robot], now)
             if batteries[robot] + 1e-8 < active_cycle:
@@ -81,7 +97,10 @@ def simulate(snapshot: dict, options: SimulationOptions) -> dict:
                 segment(robot, "charging", start, end)
                 push(end, "charged", robot)
                 continue
-            amount = pending.popleft()
+            if started_jobs >= MAX_STARTED_CYCLES:
+                raise ValueError("Детальная имитация превысила 200 000 выполняемых циклов. Требуется менее подробная модель для такого режима; параметры объекта и партии автоматически не изменены.")
+            amount = min(batch, target - started_jobs * batch)
+            started_jobs += 1
             in_progress += amount
             arrival = now + preparation + travel
             slot = heapq.heappop(station_slots)
@@ -98,13 +117,26 @@ def simulate(snapshot: dict, options: SimulationOptions) -> dict:
             batteries[robot] -= active_cycle
             push(returned, "complete", robot, amount)
             push(returned + downtime, "ready", robot)
+        # Wake an idle robot for the next arrival. If all robots are busy,
+        # their next event will account for all arrivals since the last event.
+        if idle and started_jobs < jobs and not arrival_scheduled:
+            push(started_jobs * arrival_interval, "arrival")
+            arrival_scheduled = True
     while events:
         now, _, kind, robot, amount = heapq.heappop(events)
         if now > horizon:
             break
+        # Frames before this event use the previous state of the fleet. Equal-time
+        # frames wait until all events at that instant have been processed.
+        while frame_index <= 240 and horizon * frame_index / 240 < now:
+            append_frame(horizon * frame_index / 240)
+            frame_index += 1
+        # Capture the queue just before the event without counting a simultaneous
+        # arrival that an already idle robot can take immediately.
+        prior_arrivals = min(jobs, max(0, math.ceil(now / arrival_interval - 1e-9)))
+        max_queue = max(max_queue, max(0., min(target, prior_arrivals * batch) - completed - in_progress))
         if kind == "arrival":
-            arrived += amount
-            pending.append(amount)
+            arrival_scheduled = False
         elif kind == "complete":
             completed += amount
             in_progress -= amount
@@ -114,19 +146,13 @@ def simulate(snapshot: dict, options: SimulationOptions) -> dict:
             idle.append(robot)
             idle_since[robot] = now
         dispatch(now)
-        queue_amount = max(0., arrived - completed - in_progress)
-        max_queue = max(max_queue, queue_amount)
-        log.append((now, arrived, completed, queue_amount))
+        max_queue = max(max_queue, max(0., arrived_amount(now) - completed - in_progress))
+    max_queue = max(max_queue, max(0., arrived_amount(horizon) - completed - in_progress))
     for robot in idle:
         segment(robot, "idle", idle_since[robot], horizon)
-    frames = []
-    cursor = 0
-    for step in range(241):
-        t = horizon * step / 240
-        while cursor + 1 < len(log) and log[cursor + 1][0] <= t:
-            cursor += 1
-        _, a, c, q = log[cursor]
-        frames.append({"time": t, "arrived": round(a, 3), "completed": round(c, 3), "queue": round(q, 3)})
+    while frame_index <= 240:
+        append_frame(horizon * frame_index / 240)
+        frame_index += 1
     capacity = n * candidate["throughput"] * utilization * availability
     ratio = completed / target if target else 0
     warnings = list(candidate.get("missing", []))
@@ -139,8 +165,9 @@ def simulate(snapshot: dict, options: SimulationOptions) -> dict:
     if ratio < .95:
         warnings.append("За смену выполнено менее 95% заданного пикового объёма. Парк или инфраструктура не обеспечивают этот режим.")
     assumptions = [
-        "Условная 2D-схема одного процесса, а не план здания. Маршрут задаётся в одну сторону; обратный путь равен ему.",
+        "Условная схема одного процесса, а не план здания. Маршрут задаётся в одну сторону; обратный путь равен ему.",
         "Пиковый поток действует всю смену; это нагрузочный сценарий, а не прогноз среднего дня.",
+        "Поступление равномерных партий и очередь рассчитываются по времени без хранения каждой ожидающей заявки. Объём и размер партии не укрупняются; движения, посты и зарядка моделируются по событиям каждого робота.",
         "В начале смены все роботы полностью заряжены. Зарядка после исчерпания ресурса следующего цикла, без подзарядки в простое.",
         "Цикл = max(3600 × единиц за цикл / производительность, путь туда-обратно / скорость + обработка). Последняя неполная партия занимает полный цикл.",
         "Остаток паспортного цикла сверх движения и обработки считается индивидуальной подготовкой робота, не занимающей общий пост. Пост занят только заданное время обработки партии.",

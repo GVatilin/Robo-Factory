@@ -95,7 +95,7 @@ with sync_playwright() as p, tempfile.TemporaryDirectory() as directory:
         target = Path(directory)/f"result.{suffix}"
         download.value.save_as(target)
         assert target.stat().st_size > 100
-        if suffix == "svg": assert "simulation-1.0" in target.read_text(encoding="utf-8")
+        if suffix == "svg": assert "simulation-1.1" in target.read_text(encoding="utf-8")
         if suffix == "png": assert target.read_bytes().startswith(b"\x89PNG")
         if suffix == "json": assert json.loads(target.read_text(encoding="utf-8"))["results"]["quantity"] == 4
     panel.get_by_label("Маршрут в одну сторону, м",exact=True).fill("200")
