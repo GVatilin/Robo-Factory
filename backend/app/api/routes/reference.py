@@ -4,9 +4,10 @@ from sqlalchemy import select
 from sqlalchemy.orm import selectinload
 
 from app.api.deps import DbSession, AdminUser
+from app.api.errors import ApiValidationError
 from app.core import labels
 from app.models import FacilityType, Industry, Process, SolutionType, SpecDefinition, ParameterDefinition, DataSource
-from app.schemas.object_reference import ObjectTypeInput, ObjectParameterInput
+from app.schemas.object_reference import ObjectTypeInput, ObjectParameterInput, ParameterSourceInput
 from app.services.projects import validate_parameters
 from app.schemas.common import Option, Ref
 from app.schemas.reference import (
@@ -40,7 +41,45 @@ async def create_facility(data: ObjectTypeInput, db: DbSession, user: AdminUser)
 @router.get("/parameter-sources", summary="Источники параметров")
 async def parameter_sources(db: DbSession):
     sources = (await db.scalars(select(DataSource).order_by(DataSource.title))).all()
-    return [{"id": s.id, "title": s.title, "url": s.url} for s in sources]
+    return [{"id": s.id, "title": s.title, "url": s.url, "source_type": s.source_type} for s in sources]
+
+
+@router.post("/parameter-sources", status_code=201)
+async def add_parameter_source(data: ParameterSourceInput, db: DbSession, user: AdminUser):
+    from uuid import uuid4
+    from datetime import date
+    source = DataSource(code="parameter-source:" + uuid4().hex,
+        title=data.title, source_type=data.source_type,
+        url=str(data.url) if data.url else None, notes=data.notes, retrieved_at=date.today())
+    db.add(source)
+    await db.commit()
+    return {"id": source.id, "title": source.title}
+
+
+@router.put("/facility-types/{facility_id}/parameters/{code}")
+async def edit_parameter(facility_id: int, code: str, data: ObjectParameterInput, db: DbSession, user: AdminUser):
+    from app.models import Project
+    definition = await db.scalar(select(ParameterDefinition).where(
+        ParameterDefinition.facility_type_id == facility_id, ParameterDefinition.code == code))
+    if definition is None:
+        raise HTTPException(404, "Параметр не найден.")
+    if data.code != code or data.data_type != definition.data_type or data.unit != definition.unit:
+        raise HTTPException(422, "Код, тип и единицы существующего параметра неизменяемы. Добавьте новый параметр.")
+    if not await db.get(DataSource, data.source_id):
+        raise HTTPException(422, "Источник не найден.")
+    candidate = ParameterDefinition(facility_type_id=facility_id, **data.model_dump())
+    validate_parameters({code: candidate.default_value}, [candidate])
+    projects = (await db.scalars(select(Project).where(Project.facility_type_id == facility_id))).all()
+    for project in projects:
+        if code in project.parameters:
+            try:
+                validate_parameters({code: project.parameters[code]}, [candidate])
+            except ApiValidationError:
+                raise HTTPException(409, "Новый диапазон или список исключает значения сохранённых проектов. Расширьте ограничения.") from None
+    for key, value in data.model_dump().items():
+        setattr(definition, key, value)
+    await db.commit()
+    return {"id": definition.id, "code": definition.code}
 
 
 @router.post("/facility-types/{facility_id}/parameters", status_code=201, summary="Добавить параметр объекта (администратор)")

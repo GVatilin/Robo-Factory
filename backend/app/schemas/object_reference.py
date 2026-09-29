@@ -1,5 +1,15 @@
 from typing import Any, Literal
 from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import HttpUrl
+from app.models.enums import SourceType
+
+
+class ParameterSourceInput(BaseModel):
+    model_config = ConfigDict(extra="forbid", str_strip_whitespace=True)
+    title: str = Field(min_length=1, max_length=300)
+    source_type: SourceType
+    url: HttpUrl | None = None
+    notes: str | None = Field(default=None, max_length=2000)
 
 
 class ObjectTypeInput(BaseModel):

@@ -13,6 +13,7 @@ import ProductFormPage from "./pages/product-form/ProductFormPage";
 import ComparePage from "./pages/solutions/ComparePage";
 import SolutionsPage from "./pages/solutions/SolutionsPage";
 import UsersPage from "./pages/UsersPage";
+import ObjectReferencesPage from "./pages/ObjectReferencesPage";
 import ProjectsPage from "./pages/projects/ProjectsPage";
 import ProjectPage from "./pages/projects/ProjectPage";
 import SelectionPage from "./pages/projects/SelectionPage";
@@ -61,6 +62,7 @@ const router = createBrowserRouter([
           { path: "/solutions", element: <LegacyCatalogRedirect /> },
           { path: "/compare", element: <ComparePage /> },
           { path: "/projects", element: <ProjectsPage /> },
+          { path: "/admin/object-references", element: <RequirePermission permissions={["users:manage"]}><ObjectReferencesPage /></RequirePermission> },
           { path: "/projects/new", element: <ProjectPage /> },
           { path: "/projects/:id", element: <ProjectPage /> },
           { path: "/projects/:id/selection", element: <SelectionPage /> },

@@ -33,6 +33,24 @@ DEMO_EXAMPLES = {
 }
 
 
+# Explicit transport counts are kept separately from mass, portions and requests.
+TRANSPORT_FIELDS = {
+    "warehouse": [("internal_moves_per_day", "Внутрискладские перемещения в сутки", 800)],
+    "medical": [
+        ("cargo_trips_per_day", "Перевозки грузов в сутки", 40),
+        ("linen_trips_per_day", "Перевозки белья в сутки", 20),
+        ("food_trips_per_day", "Перевозки питания в сутки", 30),
+        ("medicine_trips_per_day", "Перевозки медикаментов в сутки", 40),
+        ("waste_trips_per_day", "Перевозки отходов в сутки", 20),
+    ],
+}
+for facility, fields in TRANSPORT_FIELDS.items():
+    for code, name, value in fields:
+        ADDITIONS[facility].append((code, name, "integer", "рейсов/сутки", True,
+            "Число отдельных перемещений за сутки; 0, если поток отсутствует. Демонстрационное значение замените замерами объекта."))
+        DEMO_EXAMPLES[facility][code] = value
+
+
 async def ensure_object_requirements(session):
     source = await session.scalar(select(DataSource).where(DataSource.code == "object_requirements_3_2_1"))
     if source is None:
@@ -57,9 +75,9 @@ async def ensure_object_requirements(session):
             definition = existing.get((facility.id, code))
             if definition is None:
                 session.add(ParameterDefinition(facility_type_id=facility.id, code=code, name=name,
-                    section="Зоны и ограничения объекта", data_type=data_type, unit=unit,
-                    is_required=required, default_value=default_value, min_value=0 if data_type == "number" else None,
-                    max_value=1e9 if data_type == "number" else None, allowed_values=ENUMS.get(code),
+                    section="Потоки перевозок" if code.endswith("per_day") else "Зоны и ограничения объекта", data_type=data_type, unit=unit,
+                    is_required=required, default_value=default_value, min_value=0 if data_type in ("number", "integer") else None,
+                    max_value=1e9 if data_type in ("number", "integer") else None, allowed_values=ENUMS.get(code),
                     hint=hint, source_id=default_source.id, source_note=default_note, sort_order=900+index))
             elif definition.default_value is None and definition.source_id == source.id:
                 # Upgrade the definitions shipped previously without defaults, preserving custom definitions.

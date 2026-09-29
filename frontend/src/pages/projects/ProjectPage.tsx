@@ -13,7 +13,7 @@ import "./Projects.css";
 
 type Parameter = { facility_type_id: number; code: string; name: string; section: string | null; unit: string | null; data_type: string;
   is_required: boolean; default_value: string | number | boolean | null; min_value: number | null; max_value: number | null;
-  allowed_values: string[] | null; hint: string | null; example: string | null; source: string | null; source_note: string | null };
+  allowed_values: string[] | null; hint: string | null; example: string | null; source: string | null; source_type?: string; source_url?: string; source_note: string | null };
 
 export default function ProjectPage() {
   const { id } = useParams();
@@ -158,7 +158,7 @@ function ProjectForm({project, definitions, facilities, facilityId, onFacility, 
           <summary><span>{group}</span><small>{definitions.filter(d=>(d.section||"Общие параметры")===group && values[d.code]!==undefined && values[d.code]!=="").length} / {definitions.filter(d=>(d.section||"Общие параметры")===group).length} заполнено</small></summary><div className="project-fields">{definitions.filter(d=>(d.section||"Общие параметры")===group).map(d=>{
             const id=`param-${d.code}`;const value=values[d.code];
             return <Field key={d.code} htmlFor={id} label={d.name} required={d.is_required} error={fields[`parameters.${d.code}`]}
-              aside={<details className="parameter-source"><summary>Источник и допущения</summary><div><strong>{d.source || "Источник не указан"}</strong>{d.source_note && <p>{d.source_note}</p>}<p>{d.default_value===null?"Значение по умолчанию не задано: введите данные объекта.":"Значение по умолчанию справочное. Уточните его для своего объекта."}</p></div></details>}
+              aside={<details className="parameter-source"><summary>Источник и допущения</summary><div><strong>{d.source_type==="team_assumption" ? "Допущение команды" : d.source_type==="organizer" ? "Данные организатора — справочный пример" : d.source_type==="regulation" ? "Нормативный документ" : "Справочные данные"}</strong><p>{d.source || "Источник не указан"}</p>{d.source_url && /^https?:\/\//.test(d.source_url) && <a href={d.source_url} target="_blank" rel="noreferrer">Открыть источник</a>}{d.source_note && <p>{d.source_note}</p>}<p>{d.default_value===null?"Значение по умолчанию не задано: введите данные объекта.":"Значение по умолчанию справочное. Уточните его для своего объекта."}</p></div></details>}
               hint={<>{d.hint} {d.unit && `Единица: ${d.unit}. `}{d.min_value!==null && `Минимум: ${d.min_value}. `}{d.max_value!==null && `Максимум: ${d.max_value}. `}
                 {d.default_value!==null && `По умолчанию: ${typeof d.default_value==="boolean" ? d.default_value ? "Да" : "Нет" : String(d.default_value)}. `}</>}>
               {d.data_type==="boolean" ? <select id={id} value={value===undefined||value===""?"":String(value)} onChange={e=>change(d.code,e.target.value===""?"":e.target.value==="true")}><option value="">Не указано</option><option value="true">Да</option><option value="false">Нет</option></select>

@@ -56,8 +56,10 @@ async def detail(db, project):
 async def parameters(facility_id: int, db: DbSession):
     if not await db.get(FacilityType, facility_id):
         raise HTTPException(404, "Тип объекта не найден.")
-    return [ParameterOut(**{k: getattr(d, k) for k in ParameterOut.model_fields if k != "source"},
-                         source=d.source.title if d.source else None) for d in await definitions(db, facility_id)]
+    return [ParameterOut(**{k: getattr(d, k) for k in ParameterOut.model_fields if k not in {"source", "source_type", "source_url"}},
+                         source=d.source.title if d.source else None,
+                         source_type=d.source.source_type if d.source else None,
+                         source_url=d.source.url if d.source else None) for d in await definitions(db, facility_id)]
 
 
 @router.get("", response_model=list[ProjectSummary])

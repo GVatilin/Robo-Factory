@@ -51,7 +51,7 @@ class DemandRule:
 DRIVERS: dict[tuple[str, str], DemandRule] = {
     ("warehouse", "inbound"): DemandRule("inbound_pallets_per_day", "паллет/ч", "pallet_weight_kg"),
     ("warehouse", "outbound"): DemandRule("outbound_pallets_per_day", "паллет/ч", "pallet_weight_kg"),
-    ("warehouse", "internal_transport"): DemandRule(None, "паллет/ч", "pallet_weight_kg"),
+    ("warehouse", "internal_transport"): DemandRule("internal_moves_per_day", "рейсов/ч", "pallet_weight_kg"),
     ("warehouse", "picking"): DemandRule("picking_lines_per_day", "строк/ч", "unit_weight_kg"),
     ("warehouse", "sorting"): DemandRule("picking_units_per_day", "отправлений/ч", "unit_weight_kg"),
     ("warehouse", "cleaning"): DemandRule("active_area_m2", "м²/ч"),
@@ -127,6 +127,11 @@ def _append_unique(items: list[str], message: str) -> None:
 
 def demand_context(facility: str, process: str, parameters: dict[str, Any], options: SelectionInput) -> dict:
     rule = DRIVERS.get((facility, process), DemandRule(None, "операций/ч"))
+    if facility == "medical":
+        trip_driver = {"linen": "linen_trips_per_day", "food": "food_trips_per_day",
+                       "medicines": "medicine_trips_per_day", "waste": "waste_trips_per_day"}.get(process)
+        if trip_driver and number(parameters, trip_driver) is not None:
+            rule = DemandRule(trip_driver, "рейсов/ч", rule.mass_parameter)
     daily_source = "manual" if options.daily_demand is not None else rule.driver
     daily = options.daily_demand if options.daily_demand is not None else number(parameters, rule.driver)
 
@@ -184,17 +189,19 @@ def demand_context(facility: str, process: str, parameters: dict[str, Any], opti
         assumptions.append(
             "Санитарные требования, разделение чистых и грязных потоков и время доставки проверяются отдельно."
         )
-        if process == "linen":
+        if rule.unit == "рейсов/ч":
+            assumptions.append("Нагрузка задана числом рейсов из параметров проекта. Производительность робота требуется в рейсах/ч; килограммы, порции и заявки автоматически не пересчитываются.")
+        if process == "linen" and rule.unit != "рейсов/ч":
             assumptions.append("Учитывается только грязное бельё; доставку чистого белья рассчитывают отдельно.")
-        if process == "waste":
+        if process == "waste" and rule.unit != "рейсов/ч":
             assumptions.append("Учитываются только отходы класса А; другие классы требуют отдельного подбора.")
-        if process == "medicines":
+        if process == "medicines" and rule.unit != "рейсов/ч":
             assumptions.append("Учитываются заявки на медикаменты; рейсы с расходниками рассчитывают отдельно.")
     if process == "cleaning":
         assumptions.append("Площадь считается одним полным циклом уборки в сутки.")
     if facility == "warehouse" and process == "internal_transport":
         assumptions.append(
-            "Внутренний поток нельзя надёжно вывести из приёмки или отгрузки: укажите число перемещений в сутки."
+            "Внутренний поток берётся из числа внутрискладских перемещений в сутки; один рейс — одно перемещение грузовой единицы."
         )
 
     if peak is None:

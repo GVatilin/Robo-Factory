@@ -182,10 +182,10 @@ export default function AppShell() {
             Производители
           </NavLink>
           {can("users:manage") && (
-            <NavLink to="/admin/users" className={({ isActive }) => cx("shell__link", isActive && "is-active")}>
+            <><NavLink to="/admin/object-references" className={({ isActive }) => cx("shell__link", isActive && "is-active")}>Справочники</NavLink><NavLink to="/admin/users" className={({ isActive }) => cx("shell__link", isActive && "is-active")}>
               <Users size={17} aria-hidden="true" />
               Пользователи и роли
-            </NavLink>
+            </NavLink></>
           )}
         </nav>
         <div className="shell__actions">

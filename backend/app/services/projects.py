@@ -93,7 +93,10 @@ def parameter_template(parameters: dict[str, Any], definitions: Sequence[Paramet
             value = "да" if value else "нет"
         cells = [d.code, value, d.name, d.unit or "", "да" if d.is_required else "нет", d.min_value, d.max_value,
                  " | ".join(map(str, d.allowed_values or [])), d.default_value,
-                 d.source.title if d.source else d.source_note or "Не указан"]
+                 (({"organizer": "Данные организатора (справочный пример)", "team_assumption": "Допущение команды",
+                    "regulation": "Нормативный документ"}.get(d.source.source_type, "Справочные данные") + ": " +
+                   d.source.title + (" — " + d.source.url if d.source.url else "") +
+                   (". " + d.source_note if d.source_note else "")) if d.source else d.source_note or "Не указан")]
         writer.writerow(["'" + c if isinstance(c, str) and c.startswith(("=", "+", "-", "@")) else c for c in cells])
     return "\ufeff" + output.getvalue()
 
@@ -190,7 +193,7 @@ def validate_parameters(values: dict[str, Any], definitions: Sequence[ParameterD
             if d.data_type == "dimensions" or code.endswith("dimensions_mm"):
                 parts = re.split(r"\s*[xх×*]\s*", value.lower())
                 try:
-                    if len(parts) != 3 or any(not 0 < float(p.replace(',', '.')) <= 100000 for p in parts):
+                    if len(parts) != 3 or any(not math.isfinite(float(p.replace(',', '.'))) or not 0 < float(p.replace(',', '.')) <= 100000 for p in parts):
                         raise ValueError()
                 except ValueError:
                     error = "Укажите Д×Ш×В в мм, например 1200×800×1500; каждое измерение больше 0 и не более 100000."

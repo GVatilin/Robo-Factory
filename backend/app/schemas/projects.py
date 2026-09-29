@@ -65,3 +65,7 @@ class ParameterOut(BaseModel):
     example: str | None
     source: str | None
     source_note: str | None
+    source_id: int | None = None
+    source_type: str | None = None
+    source_url: str | None = None
+    sort_order: int = 0
