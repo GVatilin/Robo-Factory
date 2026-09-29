@@ -134,8 +134,8 @@ function SimulationPlayer({run}:{run:SavedSimulation}) {
   const [time,setTime]=useState(0);
   const [playing,setPlaying]=useState(false);
   const [playbackSpeed,setPlaybackSpeed]=useState(120);
-  const [view,setView]=useState<SimulationView>("isometric");
-  const [activeRobot,setActiveRobot]=useState<number|null>(null);
+  const [view,setView]=useState<SimulationView>(result.scene?.facility_code==="medical"?"corridor":"isometric");
+  const [activeRobot,setActiveRobot]=useState<number|null>(result.scene?.facility_code==="medical"?(result.robots[0]?.id??null):null);
   const [exportError,setExportError]=useState("");
   const reportSvg=useRef<SVGSVGElement>(null);
   const sceneCanvas=useRef<HTMLCanvasElement>(null);
@@ -166,6 +166,7 @@ function SimulationPlayer({run}:{run:SavedSimulation}) {
   },[result.robots,result.duration_seconds,time]);
   const selectedRobot=result.robots.find(robot=>robot.id===activeRobot);
   const selectedState=selectedRobot?currentSegment(selectedRobot.segments,Math.min(time,Math.max(0,result.duration_seconds-.0001)))?.state:null;
+  const hospitalTask:Record<string,string>={preparation:'Получает груз в службе доставки',outbound:'Направляется в отделение',operation:result.scene?.cargo==='none'?'Выполняет работу в отделении':'Передаёт груз сотруднику отделения',return:'Возвращается за следующей доставкой',station_queue:'Ожидает освобождения поста',charger_queue:'Ожидает зарядную станцию',charging:'Заряжает аккумулятор',idle:'Ожидает задание',downtime:'Техническая остановка'};
   const healthy=result.kpi.completion_percent>=95;
   const timelineStyle={"--timeline-progress":`${Math.min(100,time/Math.max(1,result.duration_seconds)*100)}%`} as CSSProperties;
   const completionStyle={"--completion-angle":`${Math.min(100,result.kpi.completion_percent)*3.6}deg`} as CSSProperties;
@@ -223,7 +224,7 @@ function SimulationPlayer({run}:{run:SavedSimulation}) {
           <button type="button" className="btn btn--ghost" onClick={restart}><RotateCcw size={17} aria-hidden="true"/>Перезапустить</button>
         </div>
         <div className="simulation-controls__secondary"><label>Скорость<select aria-label="Скорость воспроизведения" value={playbackSpeed} onChange={event=>setPlaybackSpeed(Number(event.target.value))}>{[1,30,120,600,1800].map(value=><option key={value} value={value}>×{value}</option>)}</select></label>
-          <div className="simulation-view-switch" aria-label="Ракурс сцены"><button type="button" className={view==="isometric"?"is-active":""} aria-pressed={view==="isometric"} onClick={()=>setView("isometric")}>3D</button><button type="button" className={view==="top"?"is-active":""} aria-pressed={view==="top"} onClick={()=>setView("top")}>Сверху</button></div>
+          <div className="simulation-view-switch" aria-label="Ракурс сцены">{result.scene?.facility_code==="medical"&&<button type="button" className={view==="corridor"?"is-active":""} aria-pressed={view==="corridor"} onClick={()=>setView("corridor")}>В больнице</button>}<button type="button" className={view==="isometric"?"is-active":""} aria-pressed={view==="isometric"} onClick={()=>setView("isometric")}>3D</button><button type="button" className={view==="top"?"is-active":""} aria-pressed={view==="top"} onClick={()=>setView("top")}>Сверху</button></div>
         </div>
       </div>
       <div className="simulation-timeline" style={timelineStyle}><span><label htmlFor="simulation-position">Позиция воспроизведения</label><output>{clock(time)} <small>/ {clock(result.duration_seconds)}</small></output></span><input id="simulation-position" type="range" min="0" max={result.duration_seconds} step="1" value={time} onChange={event=>{setPlaying(false);setTime(Number(event.target.value));}}/></div>
@@ -233,6 +234,7 @@ function SimulationPlayer({run}:{run:SavedSimulation}) {
           <div className="simulation-stage__hud"><span className={playing?"is-live":""}><i/>{playing?"Модель запущена":"Модель на паузе"}</span><strong>{clock(time)}</strong></div>
           <div className="simulation-scene"><Suspense fallback={<div className="simulation-scene__loading"><span/>Загружаем 3D-сцену…</div>}><SimulationScene3D robots={result.robots} order={sceneOrder} time={time} duration={result.duration_seconds} playing={playing} view={view} activeRobot={activeRobot} onRobotSelect={id=>setActiveRobot(id||null)} canvasRef={sceneCanvas}/></Suspense></div>
           <div className="simulation-stage__zones" aria-hidden="true"><span>Заказ: {number(result.kpi.target)}</span><span>{(result.scene??GENERIC_SCENE).label}: условная схема</span><span>{(result.scene??GENERIC_SCENE).target_zone} · постов: {sceneOrder.stationCount}</span><span>Зарядок: {sceneOrder.chargerCount}</span></div>
+          {result.scene?.facility_code==="medical"&&selectedRobot&&<div className="simulation-stage__task"><strong><i style={{background:STATES[selectedState??"idle"]?.color}}/>Робот №{selectedRobot.id}</strong><span>{hospitalTask[selectedState??"idle"]??STATES[selectedState??"idle"]?.name}</span></div>}
           <div className="simulation-stage__legend">{[["Движение","outbound"],["Работа","operation"],["Очередь","station_queue"],["Зарядка","charging"]].map(([label,state])=><span key={state}><i style={{background:STATES[state].color}}/>{label}</span>)}</div>
         </div>
         <aside className="simulation-live__aside">
@@ -244,6 +246,7 @@ function SimulationPlayer({run}:{run:SavedSimulation}) {
       </div>
     </section>
 
+    {result.scene?.facility_code==="medical"&&<p className="simulation-hospital-tip"><strong>Внутри больницы</strong> {result.scene.cargo==="none"?"Робот проходит по маршруту и выполняет работу в отделении.":"Робот получает груз, проезжает по коридору и передаёт его в отделении."} В ракурсе «В больнице» камера следует за выбранным роботом. Для обзора всех палат переключитесь на «3D». Интерьер и грузовой модуль показаны условно.</p>}
     <p className="simulation-caption">В 3D показаны первые {Math.min(VISIBLE_ROBOTS,result.robots.length)} из {result.quantity} роботов; KPI учитывают весь парк. Тип модели — {(result.scene?.robot?.solution_type?.name)??'условный, уточнить тип в каталоге'}. Геометрия условная, расчётная длина маршрута — {number(result.options.route_m)} м.</p>
     <div className="simulation-export"><div><Download size={18} aria-hidden="true"/><span><strong>Материалы для отчёта</strong><small>Сцена, расчётный снимок и исходные показатели</small></span></div><div className="projects-actions"><button type="button" className="btn btn--ghost" onClick={()=>exportImage(false)}>Сохранить схему SVG</button><button type="button" className="btn btn--ghost" onClick={()=>exportImage(true)}>Сохранить схему PNG</button>
       <button type="button" className="btn btn--ghost" onClick={()=>download(new Blob([JSON.stringify(run,null,2)],{type:"application/json"}),"robot-simulation.json")}>Скачать результат JSON</button></div></div>

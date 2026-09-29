@@ -1,6 +1,6 @@
 import {Canvas, useFrame, useThree} from "@react-three/fiber";
 import {useCallback, useLayoutEffect, useMemo, type RefObject} from "react";
-import {MathUtils, MeshStandardMaterial, Vector3, type OrthographicCamera} from "three";
+import {MathUtils, MeshStandardMaterial, Vector3, type OrthographicCamera, type PerspectiveCamera} from "three";
 
 import {CELLS} from "../../scene/layout";
 import {Manipulator} from "../../scene/Manipulator";
@@ -8,6 +8,7 @@ import {palette} from "../../scene/palette";
 import {People} from "../../scene/People";
 import {resolveKind,resolveSize} from "../../scene/robots/kinds";
 import {MedicalFacility,AirportFacility,FacilityFloor,FACILITY_WALKERS} from "./SimulationFacility";
+import {MedicalCargo,type WardActivity} from "./SimulationHospital";
 import {GENERIC_SCENE} from "./SimulationLayout";
 import {RobotModel} from "../../scene/robots/RobotModel";
 import {geometries, material} from "../../scene/shared";
@@ -17,11 +18,11 @@ import {createSimulationWarehouseLayout, type SimulationSceneOrder, type Simulat
 
 export type SimulationSegment={state:string;start:number;end:number;phase_end?:number};
 export type SimulationRobot={id:number;segments:SimulationSegment[]};
-export type SimulationView="isometric"|"top";
+export type SimulationView="isometric"|"top"|"corridor";
 
 type Point=[number,number];
 type Pose={x:number;z:number;rotation:number;state:string};
-type OrderLayout=SimulationWarehouseLayout&{cells:typeof CELLS};
+type OrderLayout=SimulationWarehouseLayout&{cells:typeof CELLS;medical:boolean};
 type SceneProps={
   robots:SimulationRobot[];
   order:SimulationSceneOrder;
@@ -35,6 +36,7 @@ type SceneProps={
 };
 
 const CAMERA={position:[30,50,50] as [number,number,number],zoom:24,near:.1,far:400};
+const HOSPITAL_CAMERA={position:[12,8,-17] as [number,number,number],fov:52,zoom:1,near:.1,far:200};
 const GL={antialias:true,alpha:true,powerPreference:"high-performance" as const,preserveDrawingBuffer:true};
 const VISIBLE_ROBOTS=18;
 const ELEVATION=MathUtils.degToRad(58);
@@ -53,7 +55,7 @@ const chargingZoneMaterial=new MeshStandardMaterial({color:"#e2d9f4",roughness:.
 
 function createOrderLayout(order:SimulationSceneOrder):OrderLayout{
   const layout=createSimulationWarehouseLayout(order);
-  return {...layout,cells:Array.from({length:layout.cellCount},(_,index)=>CELLS[(layout.cellOffset+index)%CELLS.length])};
+  return {...layout,medical:order.scene?.facility_code==="medical",cells:Array.from({length:layout.cellCount},(_,index)=>CELLS[(layout.cellOffset+index)%CELLS.length])};
 }
 
 function currentSegment(segments:SimulationSegment[],time:number){
@@ -97,16 +99,16 @@ function robotPose(robot:SimulationRobot,time:number,duration:number,layout:Orde
   const index=robot.id-1;
   const home=homePoint(index,layout);
   const cell=layout.cells[index%layout.cells.length];
-  const operation:Point=[cell.pallet[0],5.15+(Math.floor(index/layout.cells.length)%2)*.62];
+  const operation:Point=[cell.pallet[0],(layout.medical?8.25:5.15)+(Math.floor(index/layout.cells.length)%2)*.62];
   if(state==="outbound"){
-    const pose=pathPoint([home,[home[0],-.55],[cell.base[0]+.5,-.55],[cell.base[0]+.5,3.4],operation],progress);
+    const pose=pathPoint(layout.medical?[home,[home[0],-.55],[cell.pallet[0],-.55],[cell.pallet[0],5],operation]:[home,[home[0],-.55],[cell.base[0]+.5,-.55],[cell.base[0]+.5,3.4],operation],progress);
     return {...pose,state};
   }
   if(state==="return"){
-    const pose=pathPoint([operation,[cell.base[0]-.35,3.8],[cell.base[0]-.35,1.15],[home[0],1.15],home],progress);
+    const pose=pathPoint(layout.medical?[operation,[cell.pallet[0],5],[cell.pallet[0],1.15],[home[0],1.15],home]:[operation,[cell.base[0]-.35,3.8],[cell.base[0]-.35,1.15],[home[0],1.15],home],progress);
     return {...pose,state};
   }
-  if(state==="operation")return {x:operation[0],z:operation[1],rotation:Math.PI/2,state};
+  if(state==="operation")return {x:operation[0],z:operation[1],rotation:layout.medical?0:Math.PI/2,state};
   if(state==="station_queue"){
     const order=Math.floor(index/layout.cells.length)%5;
     return {x:cell.base[0]+.65+(order-2)*.72,z:3.35+(order%2)*.58,rotation:Math.PI/2,state};
@@ -182,47 +184,57 @@ function Robot({robot,time,duration,playing,active,layout,onSelect,order}:{order
   if(fixed){const cell=layout.cells[(robot.id-1)%layout.cells.length];pose.x=cell.base[0]+2;pose.z=5.2+Math.floor((robot.id-1)/layout.cells.length)*1.1;}
   const shape=resolveSize(displayKind,null).size;
   const scale=Math.min(1.2,1.6/Math.max(shape.l,shape.w,shape.h));
+  const segment=currentSegment(robot.segments,Math.min(time,Math.max(0,duration-.0001)));
+  const progress=segment?Math.min(1,Math.max(0,(time-segment.start)/Math.max(.001,(segment.phase_end??segment.end)-segment.start))):0;
+  const medical=profile.facility_code==='medical';
   const moving=pose.state==="outbound"||pose.state==="return";
   return <group position={[pose.x,.075,pose.z]} rotation-y={-pose.rotation} onClick={event=>{event.stopPropagation();onSelect(robot.id);}}>
     <mesh position={[0,-.03,0]} scale={[active ? .82 : .68,.04,active ? .82 : .68]} geometry={geometries.cylinder} material={material(stateColors[pose.state]??stateColors.idle)} receiveShadow/>
     <group scale={active?1.1:1}>
       <RobotModel kind={displayKind} size={{l:shape.l*scale,w:shape.w*scale,h:shape.h*scale}} tone={active?"highlight":pose.state==="idle"||pose.state==="downtime"?"muted":"default"} animate={playing&&(fixed?pose.state==="operation":moving)}/>
-      {displayKind==='platform'&&profile.cargo!=='none'&&<>
-        <Block position={[-.1,.52,0]} size={[.62,profile.facility_code==='medical'?.55:.3,.5]} color={profile.facility_code==='airport'?'#7ba0bd':profile.facility_code==='medical'?'#d3ede6':'#c1ac87'} rounded/>
-        {profile.facility_code==='medical'&&<Block position={[.215,.53,0]} size={[.02,.12,.3]} color="#48a696"/>}
-      </>}
+      {displayKind==='platform'&&profile.cargo!=='none'&&(medical?
+        <MedicalCargo baseHeight={shape.h*scale} state={pose.state} progress={progress} cargo={profile.cargo}/>:
+        <Block position={[-.1,.52,0]} size={[.62,.3,.5]} color={profile.facility_code==='airport'?'#7ba0bd':'#c1ac87'} rounded/>)}
+
     </group>
   </group>;
 }
 
-function CameraRig({view,animate,width,depth}:{view:SimulationView;animate:boolean;width:number;depth:number}){
-  const camera=useThree(state=>state.camera) as OrthographicCamera;
+function CameraRig({view,animate,width,depth,medical,focus}:{view:SimulationView;animate:boolean;width:number;depth:number;medical:boolean;focus:Point}){
+  const camera=useThree(state=>state.camera) as OrthographicCamera|PerspectiveCamera;
   const size=useThree(state=>state.size);
   const invalidate=useThree(state=>state.invalidate);
-  const target=useMemo(()=>new Vector3(0,0,0),[]);
+  const [focusX,focusZ]=view==='corridor'?focus:[0,0];
+  const target=useMemo(()=>new Vector3(),[]);
   const place=useCallback((azimuth:number)=>{
-    if(view==="top"){
-      camera.position.set(target.x,82,target.z+.01);
-      camera.up.set(0,0,-1);
+    target.set(0,0,0);
+    if(view==='corridor'){
+      target.set(focusX,1,focusZ+1.2);
+      const distance=Math.max(1,1.1/(size.width/Math.max(1,size.height)));
+      camera.position.set(focusX+4.5*distance,1+5.1*distance,focusZ-8.8*distance);
+      camera.up.set(0,1,0);
+    }else if(view==='top'){
+      camera.position.set(0,82,.01);camera.up.set(0,0,-1);
     }else{
-      const horizontal=DISTANCE*Math.cos(ELEVATION);
-      camera.position.set(target.x+horizontal*Math.sin(azimuth),DISTANCE*Math.sin(ELEVATION),target.z+horizontal*Math.cos(azimuth));
+      const elevation=medical?MathUtils.degToRad(49):ELEVATION;
+      const horizontal=DISTANCE*Math.cos(elevation);
+      camera.position.set(horizontal*Math.sin(azimuth),DISTANCE*Math.sin(elevation),horizontal*Math.cos(azimuth)*(medical?-1:1));
       camera.up.set(0,1,0);
     }
     camera.lookAt(target);
-  },[camera,target,view]);
+  },[camera,target,view,medical,focusX,focusZ,size.width,size.height]);
   useLayoutEffect(()=>{
-    camera.zoom=Math.max(8,Math.min(size.width/(width+(view==="top"?3:8)),size.height/(depth+(view==="top"?3:6))));
+    camera.zoom=view==='corridor'?1:Math.max(8,Math.min(size.width/(width+(view==='top'?3:8)),size.height/(depth+(view==='top'?3:6))));
     place(AZIMUTH);camera.updateProjectionMatrix();invalidate();
   },[camera,depth,invalidate,place,size.height,size.width,view,width]);
-  useFrame(({clock})=>{if(animate&&view==="isometric")place(AZIMUTH+Math.sin(clock.elapsedTime*.09)*.035);});
+  useFrame(({clock})=>{if(animate&&view==='isometric')place(AZIMUTH+Math.sin(clock.elapsedTime*.09)*.035);});
   return null;
 }
 
-function Lights(){
+function Lights({medical=false}:{medical?:boolean}){
   return <>
     <hemisphereLight args={["#ffffff","#b6cef1",1.75]}/>
-    <directionalLight position={[-16,30,14]} intensity={2.2} castShadow shadow-mapSize={[2048,2048]} shadow-bias={-.0004} shadow-normalBias={.03} shadow-radius={3}>
+    <directionalLight position={[-16,30,14]} intensity={medical?1.35:2.2} castShadow shadow-mapSize={[2048,2048]} shadow-bias={-.0004} shadow-normalBias={.03} shadow-radius={3}>
       <orthographicCamera attach="shadow-camera" args={[-30,30,30,-30,1,90]}/>
     </directionalLight>
     <directionalLight position={[20,14,-18]} intensity={.28} color="#c7ddfb"/>
@@ -233,15 +245,30 @@ function Scene({robots,order,time,duration,playing,view,activeRobot,onRobotSelec
   const layout=useMemo(()=>createOrderLayout(order),[order]);
   const sampleTime=Math.min(time,Math.max(0,duration-.0001));
   const activeCells=new Set(robots.filter(robot=>currentSegment(robot.segments,sampleTime)?.state==="operation").map(robot=>(robot.id-1)%layout.cells.length));
+  const medical=order.scene?.facility_code==='medical';
+  const wardActivity=new Map<number,WardActivity>();
+  if(medical)for(const robot of robots.slice(0,VISIBLE_ROBOTS)){
+    const cell=layout.cells[(robot.id-1)%layout.cells.length];
+    const segment=currentSegment(robot.segments,sampleTime);
+    const pose=robotPose(robot,time,duration,layout);
+    const before=wardActivity.get(cell.base[0])??{door:0,progress:null};
+    const moving=['outbound','return','operation'].includes(pose.state);
+    const door=moving?Math.min(1,Math.max(0,(5-Math.abs(pose.z-6.3))/2)):0;
+    const progress=segment?.state==='operation'&&order.scene?.cargo!=='none'?Math.min(1,Math.max(0,(sampleTime-segment.start)/Math.max(.001,(segment.phase_end??segment.end)-segment.start))):null;
+    wardActivity.set(cell.base[0],{door:Math.max(before.door,door),progress:progress??before.progress});
+  }
+  const followed=robots.find(robot=>robot.id===activeRobot)??robots[0];
+  const focus=followed?robotPose(followed,time,duration,layout):{x:4,z:-4.5};
+
   return <>
     <color attach="background" args={[palette.background]}/>
     <fog attach="fog" args={[palette.background,78,132]}/>
-    <CameraRig view={view} animate={playing} width={layout.width} depth={layout.depth}/>
-    <Lights/>
-    {order.scene?.facility_code==='warehouse'?<Warehouse seed={layout.seed} occupancy={layout.occupancy} dockCount={layout.dockCount} rackRows={layout.rackRows} width={layout.width} depth={layout.depth}/>:<><FacilityFloor width={layout.width} depth={layout.depth}/>{order.scene?.facility_code==='medical'?<MedicalFacility/>:order.scene?.facility_code==='airport'?<AirportFacility/>:null}</>}
+    <CameraRig view={view} animate={playing} width={layout.width} depth={layout.depth} medical={medical} focus={[focus.x,focus.z]}/>
+    <Lights medical={medical}/>
+    {order.scene?.facility_code==='warehouse'?<Warehouse seed={layout.seed} occupancy={layout.occupancy} dockCount={layout.dockCount} rackRows={layout.rackRows} width={layout.width} depth={layout.depth}/>:<><FacilityFloor width={layout.width} depth={layout.depth}/>{order.scene?.facility_code==='medical'?<MedicalFacility activity={wardActivity} scene={order.scene} playing={playing}/>:order.scene?.facility_code==='airport'?<AirportFacility/>:null}</>}
     <SimulationInfrastructure layout={layout}/>
     {order.scene?.facility_code==='warehouse'&&layout.cells.map((cell,index)=><Manipulator key={`${cell.base[0]}-${index}`} layout={cell} seed={layout.seed+index*17} animate={playing&&activeCells.has(index)}/>) }
-    <People animate={playing} layouts={order.scene?.facility_code==='warehouse'?undefined:FACILITY_WALKERS} standing={order.scene?.facility_code==='warehouse'?undefined:[]}/>
+    {!medical&&<People animate={playing} layouts={order.scene?.facility_code==='warehouse'?undefined:FACILITY_WALKERS} standing={order.scene?.facility_code==='warehouse'?undefined:[]}/>}
     {robots.slice(0,VISIBLE_ROBOTS).map(robot=><Robot key={robot.id} robot={robot} time={time} duration={duration} playing={playing} active={robot.id===activeRobot} layout={layout} order={order} onSelect={onRobotSelect}/>) }
   </>;
 }
@@ -256,7 +283,7 @@ function StaticFallback({order}:Pick<SceneProps,"order">){
 export default function SimulationScene3D(props:SceneProps){
   if(!supportsWebGL())return <StaticFallback order={props.order}/>;
   return <SceneBoundary fallback={<StaticFallback order={props.order}/>}>
-    <Canvas orthographic flat shadows="percentage" dpr={[1,1.6]} camera={CAMERA} gl={GL} frameloop={props.playing?"always":"demand"}
+    <Canvas key={props.view==='corridor'?'inside':'overview'} orthographic={props.view!=='corridor'} flat shadows="percentage" dpr={[1,1.6]} camera={props.view==='corridor'?HOSPITAL_CAMERA:CAMERA} gl={GL} frameloop={props.playing?"always":"demand"}
       onCreated={({gl})=>{props.canvasRef.current=gl.domElement;}} onPointerMissed={()=>props.onRobotSelect(0)}>
       <Scene {...props}/>
     </Canvas>

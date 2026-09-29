@@ -302,3 +302,10 @@
 .simulation-object small { flex-basis:100%; color:#627d97; }
 .simulation-object--medical { background:#eaf6f2; border-color:#c7e4d9; color:#286859; }
 .simulation-object--airport { background:#edf3fa; border-color:#c6d9eb; color:#365e84; }
+
+.simulation-hospital-tip { margin: 12px 0 0; padding: 12px 15px; border: 1px solid #c6e3db; border-radius: 12px; background: #f0f9f6; color: #4e7770; font-size: 11px; line-height: 1.7; }
+.simulation-hospital-tip strong { color: #237c6e; margin-right: 8px; }
+.simulation-stage--corridor { background: #e4efed; }
+.simulation-stage__task { position: absolute; z-index: 2; left: 14px; bottom: 61px; max-width: calc(100% - 28px); display: grid; gap: 4px; padding: 11px 15px; border: 1px solid #c4e2da; border-radius: 12px; background: rgb(248 255 252 / 94%); box-shadow: 0 6px 20px rgb(34 93 83 / 10%); color: #477a72; font-size: 11px; pointer-events: none; }
+.simulation-stage__task strong { display: flex; align-items: center; gap: 7px; color: #23685e; }
+.simulation-stage__task i { width: 7px; height: 7px; border-radius: 50%; }

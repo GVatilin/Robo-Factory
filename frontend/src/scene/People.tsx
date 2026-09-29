@@ -24,14 +24,14 @@ function useFigureRefs(): FigureRefs {
 }
 
 /** Минималистичный человек: капсулы корпуса, рук и ног, шар головы. */
-function Figure({ refs, carry }: { refs: FigureRefs; carry: boolean }) {
-  const skin = material(palette.person);
+function Figure({ refs, carry, medical = false }: { refs: FigureRefs; carry: boolean; medical?: boolean }) {
+  const skin = material(medical ? "#f7fcfb" : palette.person);
   return (
     <group ref={refs.root}>
       <group ref={refs.body}>
         {([-0.1, 0.1] as const).map((x, i) => (
           <group key={x} ref={refs.legs[i]} position={[x, 0.8, 0]}>
-            <mesh geometry={geometries.limb} material={skin} position={[0, -0.39, 0]} scale={[1.1, 1.08, 1.1]} castShadow />
+            <mesh geometry={geometries.limb} material={medical ? material("#529e9e") : skin} position={[0, -0.39, 0]} scale={[1.1, 1.08, 1.1]} castShadow />
           </group>
         ))}
         <mesh geometry={geometries.torso} material={skin} position={[0, 1.12, 0]} castShadow />
@@ -40,11 +40,16 @@ function Figure({ refs, carry }: { refs: FigureRefs; carry: boolean }) {
             <mesh geometry={geometries.limb} material={skin} position={[0, -0.28, 0]} scale={[0.85, 0.82, 0.85]} castShadow />
           </group>
         ))}
-        <mesh geometry={geometries.head} material={material(palette.personHead)} position={[0, 1.68, 0]} castShadow />
+        <mesh geometry={geometries.head} material={material(medical ? "#dcba9d" : palette.personHead)} position={[0, 1.68, 0]} castShadow />
+        {medical && <>
+          <mesh geometry={geometries.roundedBox} material={material("#56a9a2")} position={[0,1.8,0]} scale={[.28,.09,.26]}/>
+          <mesh geometry={geometries.box} material={material("#309c91")} position={[-.08,1.28,.193]} scale={[.09,.12,.025]}/>
+          <mesh geometry={geometries.box} material={material("#c8e5df")} position={[0,1.7,.12]} scale={[.18,.07,.025]}/>
+        </>}
         {carry && (
           <mesh
             geometry={geometries.roundedBox}
-            material={material(palette.boxes[1])}
+            material={material(medical ? "#9ad5c6" : palette.boxes[1])}
             position={[0, 1.12, 0.36]}
             scale={[0.4, 0.3, 0.32]}
             castShadow
@@ -55,7 +60,7 @@ function Figure({ refs, carry }: { refs: FigureRefs; carry: boolean }) {
   );
 }
 
-function WalkingPerson({ walker, animate }: { walker: Walker; animate: boolean }) {
+function WalkingPerson({ walker, animate, medical }: { walker: Walker; animate: boolean; medical?: boolean }) {
   const refs = useFigureRefs();
 
   const apply = () => {
@@ -88,10 +93,10 @@ function WalkingPerson({ walker, animate }: { walker: Walker; animate: boolean }
     apply();
   });
 
-  return <Figure refs={refs} carry={walker.carry} />;
+  return <Figure refs={refs} carry={walker.carry} medical={medical} />;
 }
 
-function StandingPerson({ layout, phase, animate }: { layout: StandingLayout; phase: number; animate: boolean }) {
+function StandingPerson({ layout, phase, animate, medical }: { layout: StandingLayout; phase: number; animate: boolean; medical?: boolean }) {
   const refs = useFigureRefs();
 
   const apply = (time: number) => {
@@ -110,10 +115,10 @@ function StandingPerson({ layout, phase, animate }: { layout: StandingLayout; ph
     if (animate) apply(clock.elapsedTime + phase);
   });
 
-  return <Figure refs={refs} carry={false} />;
+  return <Figure refs={refs} carry={false} medical={medical} />;
 }
 
-export function People({ animate, layouts = WALKERS, standing = STANDING }: { animate: boolean; layouts?: WalkerLayout[]; standing?: StandingLayout[] }) {
+export function People({ animate, layouts = WALKERS, standing = STANDING, medical = false }: { animate: boolean; layouts?: WalkerLayout[]; standing?: StandingLayout[]; medical?: boolean }) {
   const walkers = useMemo(() => {
     const rand = seededRandom(42);
     return layouts.map((layout) => new Walker(layout, rand));
@@ -122,10 +127,10 @@ export function People({ animate, layouts = WALKERS, standing = STANDING }: { an
   return (
     <group>
       {walkers.map((walker, index) => (
-        <WalkingPerson key={index} walker={walker} animate={animate} />
+        <WalkingPerson key={index} walker={walker} animate={animate} medical={medical} />
       ))}
       {standing.map((layout, index) => (
-        <StandingPerson key={index} layout={layout} phase={index * 1.7} animate={animate} />
+        <StandingPerson key={index} layout={layout} phase={index * 1.7} animate={animate} medical={medical} />
       ))}
     </group>
   );
