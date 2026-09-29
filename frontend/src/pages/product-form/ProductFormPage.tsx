@@ -28,6 +28,7 @@ import { IdentitySection } from "./IdentitySection";
 import { PhotoSection } from "./PhotoSection";
 import { SourceSection } from "./SourceSection";
 import { SpecsSection } from "./SpecsSection";
+import ProductAiImport from "./ProductAiImport";
 import "./ProductForm.css";
 
 const SECTIONS = [
@@ -351,6 +352,19 @@ export default function ProductFormPage() {
           </p>
         </div>
       </header>
+
+      {!editing&&<ProductAiImport initialOpen={params.get('import')==='gpt'} disabled={saving} onApply={(product,source)=>{
+        if((draft.name||draft.purpose||Object.keys(draft.specs).length)&&!window.confirm('Заменить заполненную карточку распознанной моделью? Текущие несохранённые поля будут заменены.'))return false;
+        const matches=manufacturers.data?.items.filter(m=>m.name.trim().toLocaleLowerCase('ru')===product.manufacturer.trim().toLocaleLowerCase('ru'))??[];
+        const next=emptyDraft(isVendor?user?.manufacturer?.id??null:matches.length===1?matches[0].id:null);
+        Object.assign(next,{name:product.name,purpose:product.purpose,description:product.description,country:product.country,
+          limitations:product.limitations,solutionTypeId:product.solution_type_id,processIds:product.process_ids,isPublished:false,
+          source:{type:source.source_type,title:source.title,url:source.url??'',retrievedAt:source.retrieved_at},
+          specs:Object.fromEntries(product.specs.map(s=>[s.code,{...emptySpec(),value:s.value??'',max:s.value_max??'',text:s.text??'',flag:s.flag,unit:s.unit??'',note:s.note,confirmed:false}]))});
+        setDraft(next);setErrors({});setFormError(null);setPhoto(null);setPhotoRemoved(false);setActive('identity');
+        document.getElementById('identity')?.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});
+        return true;
+      }}/>}
 
       <div className="pform">
         <nav className="pform__nav" aria-label="Разделы формы">

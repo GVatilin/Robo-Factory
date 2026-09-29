@@ -1,0 +1,65 @@
+.refs-page { display:grid; grid-template-columns:minmax(0,1fr); gap:22px; color:#213b59; overflow-wrap:anywhere; }
+.refs-page > *, .refs-page .field, .refs-page .input, .refs-page input { min-width:0; }
+.refs-page .btn { white-space:normal; max-width:100%; }
+.refs-hero { display:flex; flex-wrap:wrap; gap:24px; align-items:center; padding:32px; border:1px solid #d9e6f7; border-radius:24px; background:linear-gradient(120deg,#fff,#edf5ff); box-shadow:0 12px 34px #1a467510; }
+.refs-hero > div:nth-child(2) { flex:1 1 350px; }
+.refs-hero h1 { font-size:clamp(26px,3vw,38px); letter-spacing:-.035em; margin:8px 0 10px; }
+.refs-hero p { margin:0; line-height:1.65; color:#59718d; max-width:65ch; }
+.refs-hero__icon { display:grid; place-items:center; width:66px; height:66px; flex-shrink:0; border-radius:20px; background:linear-gradient(140deg,#deebff,#eae5ff); color:#386fd2; }
+.refs-eyebrow { font-size:10px; letter-spacing:.12em; font-weight:800; color:#4475b5; }
+.refs-tabs { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; padding:6px; border:1px solid #dce6f4; background:#fffffff2; border-radius:16px; }
+.refs-tabs button { border:0; border-radius:11px; background:transparent; font:inherit; padding:15px 12px; display:flex; justify-content:center; align-items:center; gap:10px; color:#5c718b; cursor:pointer; min-width:0; }
+.refs-tabs button[aria-current] { background:#eaf2ff; color:#245fc9; font-weight:700; }
+.refs-tabs button:disabled { opacity:.5; cursor:wait; }
+.refs-context { display:flex; flex-wrap:wrap; align-items:center; gap:28px; padding:24px; border-radius:18px; }
+.refs-context > div:first-child { flex:1 1 260px; }
+.refs-context label { display:grid; gap:8px; font-size:12px; margin-top:10px; color:#5c718b; }
+.refs-page select,.refs-page textarea,.refs-search input { width:100%; min-width:0; font:inherit; color:#294360; border:1px solid #d8e2ee; border-radius:10px; background:#fff; padding:11px 12px; }
+.refs-page textarea { min-height:100px; resize:vertical; }
+.refs-stat { display:grid; gap:5px; }
+.refs-stat strong { font-size:28px; color:#285a9b; font-variant-numeric:tabular-nums; }
+.refs-stat span { font-size:12px; color:#667b93; }
+.refs-context > p { flex:1 1 200px; max-width:32ch; font-size:12px; line-height:1.7; color:#6a7e95; }
+.refs-list,.refs-editor,.refs-import-intro { padding:28px; border-radius:20px; min-width:0; }
+.refs-list h2,.refs-editor h2,.refs-import-intro h2 { margin:0 0 8px; font-size:22px; letter-spacing:-.02em; }
+.refs-muted { color:#657b94; font-size:13px; line-height:1.7; }
+.refs-list__heading,.refs-editor__heading { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; }
+.refs-editor { scroll-margin-top:100px; border:1px solid #9fc0f1; box-shadow:0 8px 30px #306ec011; }
+.refs-fields { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:20px; margin:24px 0; }
+.refs-editor form > .field { margin:18px 0; }
+.refs-editor .projects-actions { margin-top:22px; }
+.refs-filters { display:grid; grid-template-columns:minmax(0,2fr) minmax(0,1fr); gap:14px; margin:22px 0; }
+.refs-search { display:flex; align-items:center; gap:10px; border:1px solid #d8e2ee; background:#f8faff; border-radius:11px; padding:0 12px; color:#768eaa; }
+.refs-search input { border:0; background:transparent; }
+.refs-search:focus-within { outline:2px solid #8db6f1; }
+.refs-parameter-list { display:grid; gap:12px; }
+.refs-parameter { display:grid; grid-template-columns:minmax(0,1fr) minmax(100px,190px) auto; gap:22px; align-items:center; padding:20px; border:1px solid #e1e9f4; border-radius:14px; background:#fcfdff; }
+.refs-parameter h3 { font-size:15px; margin:9px 0 7px; }
+.refs-parameter p { margin:6px 0; font-size:12px; color:#667b94; line-height:1.6; }
+.refs-parameter details { margin-top:12px; font-size:12px; line-height:1.6; }
+.refs-parameter summary { cursor:pointer; color:#3968a7; }
+.refs-parameter dl > div { display:grid; grid-template-columns:95px minmax(0,1fr); gap:10px; margin:7px 0; }
+.refs-parameter dd { margin:0; }
+.refs-tag { display:inline-block; padding:4px 8px; border-radius:6px; color:#637fa0; background:#edf3fa; font-size:10px; line-height:1.5; }
+.refs-required { color:#996222; font-weight:650; }
+.refs-default { display:grid; gap:7px; padding:12px; border-radius:10px; background:#f0f5fd; }
+.refs-default small { font-size:10px; color:#6a7e98; }
+.refs-default strong { font-size:14px; color:#365c8c; }
+.refs-split { display:grid; grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); align-items:start; gap:22px; }
+.refs-source { display:flex; align-items:flex-start; gap:14px; padding:20px 0; border-bottom:1px solid #e8eef6; }
+.refs-source > svg { color:#5b83b5; flex-shrink:0; margin-top:4px; }
+.refs-source > div { flex:1; min-width:0; }
+.refs-source h3 { margin:5px 0 8px; font-size:14px; line-height:1.6; }
+.refs-source p,.refs-source a { font-size:12px; line-height:1.7; }
+.refs-sources { max-height:700px; overflow-y:auto; }
+.refs-feedback { display:flex; align-items:center; gap:10px; padding:16px 20px; background:#ebf7f0; border:1px solid #c7e5d5; border-radius:12px; font-size:13px; color:#306e50; }
+.refs-feedback--error { background:#fff1ef; border-color:#efd4cf; color:#a24135; }
+.refs-empty { display:grid; justify-items:center; text-align:center; padding:40px 20px; color:#7389a4; }
+.refs-import-intro { display:grid; justify-items:start; gap:18px; background:linear-gradient(130deg,#fff,#f5f7ff); }
+.refs-import-intro > p { max-width:78ch; line-height:1.8; margin:0; }
+.refs-steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; width:100%; margin:8px 0; padding:0; list-style:none; }
+.refs-steps li { display:grid; gap:8px; padding:20px; background:#edf3fc; border-radius:14px; }
+.refs-steps li > span { color:#3b74cc; font-weight:800; }
+.refs-steps small { color:#687e97; line-height:1.5; }
+@media(max-width:900px) { .refs-split { grid-template-columns:minmax(0,1fr); } .refs-parameter { grid-template-columns:minmax(0,1fr) minmax(100px,160px); } .refs-parameter > button { justify-self:start; } }
+@media(max-width:600px) { .refs-hero,.refs-list,.refs-editor,.refs-import-intro { padding:20px; } .refs-tabs { grid-template-columns:repeat(2,minmax(0,1fr)); } .refs-tabs button { font-size:12px; padding:12px 8px; } .refs-filters,.refs-parameter,.refs-steps { grid-template-columns:minmax(0,1fr); } .refs-source { flex-wrap:wrap; } .refs-context { gap:18px; } .refs-hero__icon { width:48px; height:48px; } }

@@ -1,6 +1,7 @@
-import { ChevronRight, PackageSearch, RotateCcw, Search, X } from "lucide-react";
+import { ChevronRight, PackageSearch, RotateCcw, Search, X, Plus, Sparkles } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router";
+import { Link, useSearchParams } from "react-router";
+import { useAuth } from "../../auth/AuthContext";
 
 import { useApi, useDebounced } from "../../api/hooks";
 import type { CatalogFilterInfo, CatalogPage, FacetValue, TreeNode } from "../../api/types";
@@ -37,6 +38,7 @@ function facetLabel(values: FacetValue[] | undefined, value: string): string {
 }
 
 export default function SolutionsPage() {
+  const {can}=useAuth();
   const [params, setParams] = useSearchParams();
   const [search, setSearch] = useState(params.get("q") ?? "");
   const [limit, setLimit] = useState(PAGE_SIZE);
@@ -109,6 +111,7 @@ export default function SolutionsPage() {
         <div className="page-header__text">
           <h1>Каталог роботов</h1>
         </div>
+        {can('products:manage','products:manage_own')&&<div className="page-header__actions"><Link className="btn btn--ghost" to="/products/new"><Plus size={16}/>Добавить вручную</Link><Link className="btn btn--primary" to="/products/new?import=gpt"><Sparkles size={16}/>Импорт через GPT</Link></div>}
       </header>
 
       <CatalogUpdates onUpdated={() => { page.reload(); tree.reload(); info.reload(); }} />
